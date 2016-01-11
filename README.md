@@ -216,3 +216,18 @@ Markdown 的语法全由一些符号所组成，这些符号经过精挑细选�
 
 使用 * 或 _ 包裹文本产生 strong 效果：<p>
 _语气很重的文本_ 以及 **语气更重的文本**
+
+##...
+
+### 参考资料
+[GitHub Pages 建立个人主页](https://pages.github.com/)
+
+[jekyll](http://jekyll.bootcss.com/)
+
+[GitHub Pages和Jekyll入门](http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html)
+
+[通过GitHub Pages建立个人站点(详细步骤)](http://www.cnblogs.com/purediy/archive/2013/03/07/2948892.html)
+
+[基于jekyll-bootstrap的GitHub Pages搭建过程](http://www.cnblogs.com/Leo_wl/p/3402935.html)
+
+[jekyll-bootstrap模板](http://layouts-the.me.s3-website-us-east-1.amazonaws.com/index.html)
