@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iZheteng</title>
+    <description>活着，就要去折腾！
+</description>
+    <link>http://cuiqingwei.github.com/</link>
+    <atom:link href="http://cuiqingwei.github.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 13 May 2016 12:16:57 +0800</pubDate>
+    <lastBuildDate>Fri, 13 May 2016 12:16:57 +0800</lastBuildDate>
+    <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>通过GitHub建立个人站点</title>
+        <description>&lt;p&gt;Jekyll-简单的博客、静态网站工具&lt;a href=&quot;http://jekyll.bootcss.om/&quot;&gt;http://jekyll.bootcss.com/&lt;/a&gt;;&lt;/p&gt;
+
+&lt;h3 id=&quot;git&quot;&gt;1.Git简介&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。&lt;/li&gt;
+  &lt;li&gt;GitHub可以托管各种git库的站点。&lt;/li&gt;
+  &lt;li&gt;GitHub Pages免费的静态站点，三个特点：免费托管、自带主题、支持自制页面和Jekyll。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;github-pages&quot;&gt;2.为什么使用Github Pages&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;搭建简单而且免费；&lt;/li&gt;
+  &lt;li&gt;支持静态脚本；&lt;/li&gt;
+  &lt;li&gt;可以绑定你的域名；&lt;/li&gt;
+  &lt;li&gt;DIY自由发挥，动手实践一些有意思的东西git,markdown,bootstrap,jekyll；&lt;/li&gt;
+  &lt;li&gt;理想写博环境，git+github+markdown+jekyll；&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;github-pages-1&quot;&gt;3 创建Github Pages&lt;/h3&gt;
+
+&lt;h4 id=&quot;git-1&quot;&gt;3.1 安装git工具&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Windows &lt;a href=&quot;http://windows.github.com/&quot;&gt;http://windows.github.com/&lt;/a&gt;;&lt;/li&gt;
+  &lt;li&gt;Mac OS X &lt;a href=&quot;http://mac.github.com/&amp;amp;gt&quot;&gt;http://mac.github.com/&amp;amp;gt&lt;/a&gt;;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;pages&quot;&gt;3.2 两种pages模式&lt;/h4&gt;
+
+&lt;h5 id=&quot;userorganization-pages-&quot;&gt;1) User/Organization Pages 个人或公司站点&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;使用自己的用户名，每个用户名下面只能建立一个；&lt;/li&gt;
+  &lt;li&gt;资源命名必须符合这样的规则username/username.github.com；&lt;/li&gt;
+  &lt;li&gt;主干上内容被用来构建和发布页面&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;project-pages-&quot;&gt;2) Project Pages 项目站点&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;gh-pages分支用于构建和发布；&lt;/li&gt;
+  &lt;li&gt;如果user/org pages使用了独立域名，那么托管在账户下的所有project pages将使用相同的域名进行重定向，除非project pages使用了自己的独立域名；&lt;/li&gt;
+  &lt;li&gt;如果没有使用独立域名，project pages将通过子路径的形式提供服务username.github.com/projectname；&lt;/li&gt;
+  &lt;li&gt;自定义404页面只能在独立域名下使用，否则会使用User Pages 404；&lt;/li&gt;
+  &lt;li&gt;创建项目站点步骤：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ git clone https://github.com/USERNAME/PROJECT.git PROJECT
+$ git checkout --orphan gh-pages
+$ git rm -rf .
+$ git add .
+$ git commit -a -m &amp;quot;First pages commit&amp;quot;
+$ git push origin gh-pages&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;可以通过User/OrganizationPages建立主站，而通过ProjectPages挂载二级应用页面。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;jekyll&quot;&gt;4 使用Jekyll搭建博客&lt;/h3&gt;
+
+&lt;h4 id=&quot;jekyll-1&quot;&gt;4.1 什么是jekyll&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jekyll是一种简单的、适用于博客的、静态网站生成引擎。它使用一个模板目录作为网站布局的基础框架，支持Markdown、Textile等标记语言的解析，提供了模板、变量、插件等功能，最终生成一个完整的静态Web站点。说白了就是，只要安装Jekyll的规范和结构，不用写html，就可以生成网站。[jekyll介绍][jekyll on github][jekyllbootstrap]。&lt;/li&gt;
+  &lt;li&gt;Jekyll使用Liquid模板语言，通过GitHub建立个人站点表示文章标题，表示文章内容。我们可以用两种Liquid标记语言：输出标记（output markup）和标签标记 (tag markup)。输出标记会输出文本（如果被引用的变量存在），而标签标记不会。输出标记是用双花括号分隔，而标签标记是用花括号-百分号对分隔。[Liquid模板语言] [Liquid模板变量参考]。&lt;/li&gt;
+  &lt;li&gt;jekyll与github的关系：GitHub Pages一个由 GitHub 提供的用于托管项目主页或博客的服务，jekyll是后台所运行的引擎。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;jekyll-2&quot;&gt;4.2 jekyll本地环境搭建&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;下载最新的RubyInstaller并安装(我下载的是rubyinstaller-1.9.3-p194.exe)，设置环境变量，path中配置C:\Ruby193\bin目录，然后在命令行终端下输入gem update –system来升级gem；&lt;/li&gt;
+  &lt;li&gt;下载最新的DevKit，DevKit是windows平台下编译和使用本地C/C++扩展包的工具。它就是用来模拟Linux平台下的make,gcc,sh来进行编译。但是这个方法目前仅支持通过RubyInstaller安装的Ruby，并双击运行解压到C:\DevKit。然后打开终端cmd，输入下列命令进行安装：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;cd C:\DevKit
+ruby dk.rb init
+ruby dk.rb install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;完成上面的准备就可以安装Jekyll了,因为Jekyll是用Ruby编写的,最好的安装方式是通过RubyGems(gem):&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;gem install Jekyll&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;并使用命令检验是否安装成功&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;jekyll --version&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;安装Rdiscount，这个用来解析Markdown标记的包，使用如下命令：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;gem install rdiscount&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;运行本地工程：
+cd 到工程目录，启动服务：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;jekyll --server&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;jekyll-3&quot;&gt;4.3 jekyll目录结构**&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;&lt;strong&gt;_posts：&lt;/strong&gt;&lt;/dt&gt;
+      &lt;dd&gt;_posts中的数据文档，通过注入_layouts定义的模板，通过jekyll –server最终生成的静态页面在_sites目录。目录是用来存放你的文章的，一般以日期的形式书写标题。&lt;/dd&gt;
+    &lt;/dl&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;&lt;strong&gt;_layouts：&lt;/strong&gt;&lt;/dt&gt;
+      &lt;dd&gt;_layouts中的模板一般指向了_includes/themes中的模板。目录是用来存放模板的，在这里你可以定义页面中不同的头部和底部。&lt;/dd&gt;
+    &lt;/dl&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;&lt;strong&gt;_includes：&lt;/strong&gt;&lt;/dt&gt;
+      &lt;dd&gt;_includes/JB中有一些常用的工具，用于列表显示、评论等；&lt;/dd&gt;
+      &lt;dd&gt;_includes/themes中可参看主题的相关html文档。&lt;/dd&gt;
+      &lt;dd&gt;_includes/themes中的主题一般包含default.html、post.html和page.html三个文档。default.html定义了网站的最上层框架（模板），post.html和page.html是其子框架（模板）。&lt;/dd&gt;
+      &lt;dd&gt;生成好的html子页面通过default.html的变量调用，生成整个页面。&lt;/dd&gt;
+    &lt;/dl&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;&lt;strong&gt;assets&lt;/strong&gt;&lt;/dt&gt;
+      &lt;dd&gt;渲染页面的CSS和JS文档在assets/themes中&lt;/dd&gt;
+    &lt;/dl&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;&lt;strong&gt;_config.yml&lt;/strong&gt;&lt;/dt&gt;
+      &lt;dd&gt;站点生成需要用到_config.yml配置文件，站点的全局变量在_config.yml中定义，用site.访问；页面的变量在YAML Front Matter中定义，用page.访问，更多的模板变量可参考模板数据。&lt;/dd&gt;
+    &lt;/dl&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;index.html&lt;/strong&gt; 是你的页面首页。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;jekyll-bootstrap&quot;&gt;4.4 Jekyll-Bootstrap创建博客&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;创建个人站点，即创建一个新资源，格式为username.github.com；&lt;/li&gt;
+  &lt;li&gt;安装Jekyll-Bootstrap：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ git clone https://github.com/plusjade/jekyll-bootstrap.git USERNAME.github.com
+$ cd USERNAME.github.com
+$ git remote set-url origin git@github.com:USERNAME/USERNAME.github.com.git
+$ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;访问创建好的个人站点：username.github.com&lt;/li&gt;
+  &lt;li&gt;在本地测试查看效果：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;cd USERNAME.github.com
+jekyll --server&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;jekyll-&quot;&gt;4.5 Jekyll 写博过程&lt;/h4&gt;
+
+&lt;h5 id=&quot;configyml&quot;&gt;1) 配置_config.yml&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;修改标题：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;title : My Blog =)&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;修改个人信息：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;author :
+name : Name Lastname
+email : blah@email.test
+github : username
+twitter : username
+feedburner : feedname&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h5 id=&quot;section&quot;&gt;2) 写文章&lt;/h5&gt;
+&lt;p&gt;按照_config.yml的格式permalink: /:categories/:year/:month/:day/:title，可以修改格式，创建markdown格式文件，就可以发布了。&lt;/p&gt;
+
+&lt;h5 id=&quot;section-1&quot;&gt;3) 发布&lt;/h5&gt;
+&lt;p&gt;本地预览修改：运行jekyll –server，预览http:127.0.0.1:4000。
+发布到github上：通过命令提交或者客户端提交。&lt;/p&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;4.6 个性化博客&lt;/h4&gt;
+&lt;p&gt;Github Page完成了博客的主要功能，写作、发布、修改，这些都是相对静态的东西，就是你自己可以控制的事情，还有一些动态的东西Github Pages无法支持，比如说文章浏览次数、文章的评论等，还有一些个性化的东西，像个性化页头页尾、代码高亮可以把博客整的更漂亮一点，其实这写都可以通过第三方应用来实现，个性化自己的博客。
+加上Disqus云评论:
+注册http://disqus.com
+修改_config.yml:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;comments :
+provider : disqus
+disqus :
+short_name : tiansj&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;markdown&quot;&gt;5 使用Markdown&lt;/h3&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;5.1 简介&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Markdown 的宗旨是实现「易读易写」。可读性，无论如何，都是最重要的。&lt;/li&gt;
+  &lt;li&gt;Markdown 的语法全由一些符号所组成，这些符号经过精挑细选，其作用一目了然。格式撰写的文件可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。&lt;/li&gt;
+  &lt;li&gt;资料：&lt;a href=&quot;http://www.cnblogs.com/purediy/archive/2013/01/10/2855397.html&quot;&gt;搭建环境&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-4&quot;&gt;5.2 基本语法&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;使用一个或多个空行分隔内容段来生成段落 &amp;lt;p&amp;gt;。&lt;/li&gt;
+  &lt;li&gt;标题（h1~h6）格式为使用相应个数的“#”作前缀，比如表示h3用 ### this is a level-3 header ###&lt;/li&gt;
+  &lt;li&gt;使用“&amp;gt;”作为段落前缀来标识引用文字段落。这其实是 email 中标记引用文字的标准方式；&lt;/li&gt;
+  &lt;li&gt;使用&lt;strong&gt;*&lt;/strong&gt;或&lt;strong&gt;+&lt;/strong&gt;或&lt;strong&gt;-&lt;/strong&gt;来表示无序列表；使用数字加“.”表示有序列表。如：
+    &lt;ol&gt;
+      &lt;li&gt;I am ordered list item 1…&lt;/li&gt;
+      &lt;li&gt;So I should be item 2&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;使用4个以上&lt;strong&gt;空格&lt;/strong&gt;或1个以上的&lt;strong&gt;tab&lt;/strong&gt;来标记代码段落，它们将被&lt;strong&gt;&amp;lt;pre&amp;gt;&lt;/strong&gt;和&lt;strong&gt;&amp;lt;code&amp;gt;&lt;/strong&gt;包裹，这意味着代码段内的字体会是monospace家族的，并且特殊符号不会被转义。&lt;/li&gt;
+  &lt;li&gt;使用[test](http://example.net “optional title”)来标记普通链接。&lt;/li&gt;
+  &lt;li&gt;使用![img](http://example.net/img.png “optional title”)&amp;gt;来标记图片。引号内的title文字是可选的，链接也可以使用相对路径。&lt;/li&gt;
+  &lt;li&gt;使用* 或 _ 包裹文本产生 strong 效果：&lt;em&gt;语气很重的文本&lt;/em&gt; 以及 &lt;strong&gt;语气更重的文本&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;参考资料&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;GitHub Pages 建立个人主页 &lt;a href=&quot;https://pages.github.com/&quot;&gt;https://pages.github.com/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;jekyll &lt;a href=&quot;http://jekyll.bootcss.com/&quot;&gt;http://jekyll.bootcss.com/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;GitHub Pages和Jekyll入门 &lt;a href=&quot;http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html&quot;&gt;http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;通过GitHub Pages建立个人站点 &lt;a href=&quot;http://www.cnblogs.com/purediy/archive/2013/03/07/2948892.html&quot;&gt;http://www.cnblogs.com/purediy/archive/2013/03/07/2948892.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;基于jekyll-bootstrap的GitHub Pages搭建过程 &lt;a href=&quot;http://www.cnblogs.com/Leo_wl/p/3402935.html&quot;&gt;http://www.cnblogs.com/Leo_wl/p/3402935.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;jekyll-bootstrap模板 &lt;a href=&quot;http://layouts-the.me.s3-website-us-east-1.amazonaws.com/index.html&quot;&gt;http://layouts-the.me.s3-website-us-east-1.amazonaws.com/index.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Markdown 语法说明 &lt;a href=&quot;http://wowubuntu.com/markdown/index.html&quot;&gt;http://wowubuntu.com/markdown/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 12 May 2016 19:38:38 +0800</pubDate>
+        <link>http://cuiqingwei.github.com/learn/2016/05/12/%E9%80%9A%E8%BF%87GitHub%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9.html</link>
+        <guid isPermaLink="true">http://cuiqingwei.github.com/learn/2016/05/12/%E9%80%9A%E8%BF%87GitHub%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9.html</guid>
+        
+        
+        <category>learn</category>
+        
+      </item>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;def print_hi(name)
+  puts &amp;quot;Hi, #{name}&amp;quot;
+end
+print_hi(&amp;#39;Tom&amp;#39;)
+#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 07 Sep 2015 07:34:01 +0800</pubDate>
+        <link>http://cuiqingwei.github.com/learn/2015/09/07/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://cuiqingwei.github.com/learn/2015/09/07/welcome-to-jekyll.html</guid>
+        
+        
+        <category>learn</category>
+        
+      </item>
+    
+      <item>
+        <title>Sample post from Daktilo</title>
+        <description>&lt;p&gt;Just a sample post to show some of the &lt;em&gt;typography&lt;/em&gt; elements supported from
+&lt;strong&gt;daktilo&lt;/strong&gt; theme.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;A blockquote:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;We are Hitchhikers in the road of open source knowledge.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;header-2&quot;&gt;Header 2&lt;/h2&gt;
+
+&lt;p&gt;Duis lacinia commodo dui, vel aliquam metus hendrerit eu. Integer et scelerisque dui. Sed nec molestie quam. Donec sit amet nisl a massa commodo ultrices nec quis nunc. Aenean aliquet eu arcu adipiscing dignissim. Nunc dictum elit vitae dolor molestie aliquet.&lt;/p&gt;
+
+&lt;p&gt;Example code:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;var light = new Light();
+var switchUp = new FlipUpCommand(light);
+var switchDown = new FlipDownCommand(light);
+var s = new Switch();
+
+s.storeAndExecute(switchUp);
+s.storeAndExecute(switchDown);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;A list:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Praesent nisi elit, bibendum ut consectetur ac, aliquet in nunc&lt;/li&gt;
+  &lt;li&gt;Donec ante est, volutpat in mi et, pulvinar congue dolor.&lt;/li&gt;
+  &lt;li&gt;Quisque ultrices pulvinar sollicitudin.&lt;/li&gt;
+  &lt;li&gt;Duis elementum odio eu euismod suscipit.&lt;/li&gt;
+  &lt;li&gt;Integer enim lorem, interdum sit amet consectetur non, bibendum eget neque.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A numbered list:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Praesent nisi elit, bibendum ut consectetur ac, aliquet in nunc.&lt;/li&gt;
+  &lt;li&gt;Donec ante est, volutpat in mi et, pulvinar congue dolor.&lt;/li&gt;
+  &lt;li&gt;Quisque ultrices pulvinar sollicitudin.&lt;/li&gt;
+  &lt;li&gt;Duis elementum odio eu euismod suscipit.&lt;/li&gt;
+  &lt;li&gt;Integer enim lorem, interdum sit amet consectetur non, bibendum eget neque.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Definition list:&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Curabitur cursus magna eu sem cursus&lt;/dt&gt;
+  &lt;dd&gt;ac ultrices urna pharetra.&lt;/dd&gt;
+  &lt;dd&gt;Duis scelerisque ipsum eu luctus elementum.&lt;/dd&gt;
+  &lt;dt&gt;Pellentesque habitant morbi tristique senectus&lt;/dt&gt;
+  &lt;dd&gt;Curabitur malesuada lacus ac gravida porttitor&lt;/dd&gt;
+  &lt;dd&gt;Duis sodales feugiat lorem et mollis.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;Want to suggest something? Please &lt;a href=&quot;https://github.com/kronik3r/daktilo/issues/new&quot;&gt;Send me a request&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 20 Aug 2014 07:56:45 +0800</pubDate>
+        <link>http://cuiqingwei.github.com/learn/2014/08/20/sample-post.html</link>
+        <guid isPermaLink="true">http://cuiqingwei.github.com/learn/2014/08/20/sample-post.html</guid>
+        
+        
+        <category>learn</category>
+        
+      </item>
+    
+  </channel>
+</rss>
