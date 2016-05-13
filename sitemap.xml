@@ -18,9 +18,9 @@
   
     
     <url>
-      <loc>http://cuiqingwei.github.com/learn/2015/09/07/welcome-to-jekyll.html/</loc>
+      <loc>http://cuiqingwei.github.com/favorites/2012/10/15/%E6%9B%BE%E7%BB%8F%E6%8A%98%E8%85%BE%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B.html/</loc>
       
-        <lastmod>2015-09-07T07:34:01+08:00</lastmod>
+        <lastmod>2012-10-15T05:41:27+08:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -33,9 +33,39 @@
   
     
     <url>
-      <loc>http://cuiqingwei.github.com/learn/2014/08/20/sample-post.html/</loc>
+      <loc>http://cuiqingwei.github.com/projects/2008/01/03/USB_M8_RGBLED%E5%BD%A9%E7%81%AF.html/</loc>
       
-        <lastmod>2014-08-20T07:56:45+08:00</lastmod>
+        <lastmod>2008-01-03T17:30:15+08:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.7</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://cuiqingwei.github.com/projects/2007/11/20/EAGLE3D%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9A%E4%BA%86.html/</loc>
+      
+        <lastmod>2007-11-20T04:07:41+08:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.7</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://cuiqingwei.github.com/projects/2006/11/01/%E9%97%AA%E5%8A%A8%E7%9A%84-LOVE.html/</loc>
+      
+        <lastmod>2006-11-01T05:41:27+08:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -53,7 +83,7 @@
     <url>
       <loc>http://cuiqingwei.github.com/about/</loc>
       
-        <lastmod>2016-05-13T12:16:57+08:00</lastmod>
+        <lastmod>2016-05-13T17:06:02+08:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -68,7 +98,7 @@
     <url>
       <loc>http://cuiqingwei.github.com/categories/favorites/</loc>
       
-        <lastmod>2016-05-13T12:16:57+08:00</lastmod>
+        <lastmod>2016-05-13T17:06:02+08:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -85,7 +115,7 @@
     <url>
       <loc>http://cuiqingwei.github.com/</loc>
       
-        <lastmod>2016-05-13T12:16:57+08:00</lastmod>
+        <lastmod>2016-05-13T17:06:02+08:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -100,7 +130,7 @@
     <url>
       <loc>http://cuiqingwei.github.com/categories/learn/</loc>
       
-        <lastmod>2016-05-13T12:16:57+08:00</lastmod>
+        <lastmod>2016-05-13T17:06:02+08:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -117,7 +147,7 @@
     <url>
       <loc>http://cuiqingwei.github.com/categories/projects/</loc>
       
-        <lastmod>2016-05-13T12:16:57+08:00</lastmod>
+        <lastmod>2016-05-13T17:06:02+08:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
