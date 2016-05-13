@@ -6,12 +6,12 @@
 </description>
     <link>http://cuiqingwei.github.com/</link>
     <atom:link href="http://cuiqingwei.github.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 13 May 2016 17:06:02 +0800</pubDate>
-    <lastBuildDate>Fri, 13 May 2016 17:06:02 +0800</lastBuildDate>
+    <pubDate>Fri, 13 May 2016 17:15:23 +0800</pubDate>
+    <lastBuildDate>Fri, 13 May 2016 17:15:23 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
-        <title>通过GitHub建立个人站点</title>
+        <title>GitHub建立个人站点</title>
         <description>&lt;p&gt;Jekyll-简单的博客、静态网站工具&lt;a href=&quot;http://jekyll.bootcss.om/&quot;&gt;http://jekyll.bootcss.com/&lt;/a&gt;;&lt;/p&gt;
 
 &lt;h3 id=&quot;git&quot;&gt;1.Git简介&lt;/h3&gt;
@@ -72,7 +72,7 @@ $ git push origin gh-pages&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;h4 id=&quot;jekyll-1&quot;&gt;4.1 什么是jekyll&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;Jekyll是一种简单的、适用于博客的、静态网站生成引擎。它使用一个模板目录作为网站布局的基础框架，支持Markdown、Textile等标记语言的解析，提供了模板、变量、插件等功能，最终生成一个完整的静态Web站点。说白了就是，只要安装Jekyll的规范和结构，不用写html，就可以生成网站。[jekyll介绍][jekyll on github][jekyllbootstrap]。&lt;/li&gt;
-  &lt;li&gt;Jekyll使用Liquid模板语言，通过GitHub建立个人站点表示文章标题，表示文章内容。我们可以用两种Liquid标记语言：输出标记（output markup）和标签标记 (tag markup)。输出标记会输出文本（如果被引用的变量存在），而标签标记不会。输出标记是用双花括号分隔，而标签标记是用花括号-百分号对分隔。[Liquid模板语言] [Liquid模板变量参考]。&lt;/li&gt;
+  &lt;li&gt;Jekyll使用Liquid模板语言，GitHub建立个人站点表示文章标题，表示文章内容。我们可以用两种Liquid标记语言：输出标记（output markup）和标签标记 (tag markup)。输出标记会输出文本（如果被引用的变量存在），而标签标记不会。输出标记是用双花括号分隔，而标签标记是用花括号-百分号对分隔。[Liquid模板语言] [Liquid模板变量参考]。&lt;/li&gt;
   &lt;li&gt;jekyll与github的关系：GitHub Pages一个由 GitHub 提供的用于托管项目主页或博客的服务，jekyll是后台所运行的引擎。&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -245,8 +245,8 @@ short_name : tiansj&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Thu, 12 May 2016 19:38:38 +0800</pubDate>
-        <link>http://cuiqingwei.github.com/learn/2016/05/12/%E9%80%9A%E8%BF%87GitHub%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9.html</link>
-        <guid isPermaLink="true">http://cuiqingwei.github.com/learn/2016/05/12/%E9%80%9A%E8%BF%87GitHub%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9.html</guid>
+        <link>http://cuiqingwei.github.com/learn/2016/05/12/GitHub%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9.html</link>
+        <guid isPermaLink="true">http://cuiqingwei.github.com/learn/2016/05/12/GitHub%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9.html</guid>
         
         
         <category>learn</category>
