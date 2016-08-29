@@ -6,8 +6,8 @@
 </description>
     <link>http://cuiqingwei.github.com/</link>
     <atom:link href="http://cuiqingwei.github.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 29 Aug 2016 14:14:40 +0800</pubDate>
-    <lastBuildDate>Mon, 29 Aug 2016 14:14:40 +0800</lastBuildDate>
+    <pubDate>Mon, 29 Aug 2016 15:49:14 +0800</pubDate>
+    <lastBuildDate>Mon, 29 Aug 2016 15:49:14 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -274,6 +274,170 @@ short_name : tiansj&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
       </item>
     
       <item>
+        <title>eMaker.Space</title>
+        <description>&lt;h1 id=&quot;wiki&quot;&gt;wiki&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.seeedstudio.com/wiki/Main_Page&quot;&gt;http://www.seeedstudio.com/wiki/Main_Page&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://wiki.microduino.cc/index.php&quot;&gt;https://wiki.microduino.cc/index.php&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://wiki.dfrobot.com.cn/index.php&quot;&gt;http://wiki.dfrobot.com.cn/index.php&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.alsrobot.cn/wiki/&quot;&gt;http://www.alsrobot.cn/wiki/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://duinopeak.com/wiki/index.php&quot;&gt;http://duinopeak.com/wiki/index.php&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;open-source-hardware&quot;&gt;Open Source Hardware&lt;/h1&gt;
+&lt;p&gt;[http://www.oshwa.org/open-source-hardware-logo/]
+[http://kb.open.eefocus.com/index.php]&lt;/p&gt;
+
+&lt;h1 id=&quot;duino&quot;&gt;Duino&lt;/h1&gt;
+&lt;p&gt;https://www.arduino.cc/
+http://www.drduino.com/
+https://www.microduino.cn/
+http://www.duino-robotics.com/
+http://www.86duino.com/
+http://www.rfduino.com/
+http://www.netduino.com/
+http://wtfduino.calumk.com/
+https://easyeda.com/seeedstudio/Xadow_Duino-M5d71jdvp
+http://rasp.io/
+http://www.motoduino.com/
+http://cubieboard.org/
+http://www.techbang.com/posts/42412-maker
+http://wiki.iteadstudio.com/Product&lt;/p&gt;
+
+&lt;h1 id=&quot;raspberry&quot;&gt;Raspberry&lt;/h1&gt;
+&lt;p&gt;https://www.cooking-hacks.com/documentation/tutorials/raspberry-pi-to-arduino-shields-connection-bridge/&lt;/p&gt;
+
+&lt;h1 id=&quot;sparkfun&quot;&gt;Sparkfun&lt;/h1&gt;
+&lt;p&gt;https://www.sparkfun.com/products/13111
+https://www.sparkfun.com/products/11511
+https://www.sparkfun.com/products/11683&lt;/p&gt;
+
+&lt;h1 id=&quot;blockly&quot;&gt;blockly&lt;/h1&gt;
+&lt;p&gt;https://developers.google.com/blockly/
+https://blockly-demo.appspot.com/static/demos/index.html
+https://blockly-games.appspot.com/?lang=zh-hans
+https://studio.code.org/&lt;/p&gt;
+
+&lt;h1 id=&quot;ardublock&quot;&gt;Ardublock&lt;/h1&gt;
+&lt;p&gt;https://sourceforge.net/projects/ardublock/
+http://blog.ardublock.com/zh/category/tutorial/
+https://learn.sparkfun.com/resources/59
+https://learn.sparkfun.com/tutorials/alternative-arduino-interfaces/ardublock&lt;/p&gt;
+
+&lt;h1 id=&quot;mixly&quot;&gt;Mixly米思齐&lt;/h1&gt;
+&lt;p&gt;http://mixly.cn/&lt;/p&gt;
+
+&lt;p&gt;MIT App Inventor 2
+http://app.gzjkw.net/
+http://blog.cavedu.com/programming-language/appinventor/appinventorandarduinowithbluetooth/
+http://appinventor.pevest.com/?page_id=10
+https://sites.google.com/site/jingprogram/app&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;软件&lt;/h1&gt;
+&lt;p&gt;http://www.sketchup.com/
+http://www.123dapp.com/design
+https://scratch.mit.edu/
+http://s4a.cat/
+http://www.arduino.cc/
+http://www.arduino.org.cn/
+https://en.wikipedia.org/wiki/Arduino
+http://i.youku.com/u/UNDYwMzEyOTk2
+http://www.makerlab.tw/resources/&lt;/p&gt;
+
+&lt;h1 id=&quot;d-modeling-and-printing-3d&quot;&gt;3D Modeling and Printing ：3D建模和打印&lt;/h1&gt;
+&lt;p&gt;http://the3doodler.com/
+https://www.ultimaker.com/
+http://www.makerbot.com/
+http://www.sketchup.com/
+https://www.tinkercad.com/&lt;/p&gt;
+
+&lt;h1 id=&quot;circuits&quot;&gt;Circuits：电路&lt;/h1&gt;
+&lt;p&gt;http://snapcircuits.net.tw/
+http://courseweb.stthomas.edu/apthomas/SquishyCircuits/buildingCircuits.htm
+http://littlebits.cc/
+http://wiki.funmetas.com/index.php?title=%E9%A6%96%E9%A1%B5
+http://www.makeymakey.com/&lt;/p&gt;
+
+&lt;h1 id=&quot;programmingcoding&quot;&gt;Programming/Coding：程序设计/编程&lt;/h1&gt;
+&lt;p&gt;https://blockly-games.appspot.com/
+https://scratch.mit.edu/
+http://www.arduino.cc/
+https://www.raspberrypi.org/&lt;/p&gt;
+
+&lt;h1 id=&quot;robotics&quot;&gt;Robotics：机器人&lt;/h1&gt;
+&lt;p&gt;http://www.lego.com/zh-cn/mindstorms/?domainredir=mindstorms.lego.com
+http://www.firstinspires.org/robotics/frc
+http://www.arduino.org.cn/products/kits/6-arduino-kits/arduino-starter-kit
+http://mobilerobotkit.com/robot-kits.html&lt;/p&gt;
+
+&lt;h1 id=&quot;tools--materials--&quot;&gt;Tools &amp;amp; Materials : 工具及耗材&lt;/h1&gt;
+&lt;p&gt;Woodworking：木工
+Metalworking：金工
+Laser Cutting：激光切割
+CNC Cutting： 数控切割&lt;/p&gt;
+
+&lt;h1 id=&quot;makerspae&quot;&gt;MakerSpae&lt;/h1&gt;
+&lt;p&gt;http://www.makezine.com.tw/makerspace.html
+http://www.fablabtaiwan.org.tw/
+http://www.fablabtaipei.org/2510520497303403537320633.html
+http://www.weschool.tw/26377217382012335373206332403720855.html&lt;/p&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;国内创客空间&lt;/h1&gt;
+&lt;p&gt;http://www.chaihuo.org/products/list
+http://xinchejian.com/?lang=zh
+http://www.bjmakerspace.com/&lt;/p&gt;
+
+&lt;h1 id=&quot;digital-sandbox&quot;&gt;Digital Sandbox&lt;/h1&gt;
+&lt;p&gt;https://www.sparkfun.com/products/12651 
+http://b2b.hc360.com/supplyself/348068096.html
+https://learn.sparkfun.com/tutorials/digital-sandbox-experiment-guide/setting-up-arduino-and-ardublock
+http://classes.engr.oregonstate.edu/eecs/fall2015/cs160-501/labs/lab_01.pdf
+https://learn.sparkfun.com/tutorials/alternative-arduino-interfaces/codebender&lt;/p&gt;
+
+&lt;h1 id=&quot;section-2&quot;&gt;创客空间里面都有那些设备&lt;/h1&gt;
+&lt;p&gt;http://www.zhishihao.com/xue/show/155996&lt;/p&gt;
+
+&lt;h1 id=&quot;section-3&quot;&gt;趣味电子&lt;/h1&gt;
+&lt;p&gt;Back in Time木质时光倒流时钟
+https://item.taobao.com/item.htm?spm=a1z10.5-c.w4002-11172345288.31.fQeFq4&amp;amp;id=45557720848
+基于Arduino设计的简易宠物喂食机
+http://bbs.intorobot.com/thread-683-1-1.html
+3D打印全自动宠物喂食器
+http://bbs.intorobot.com/thread-684-1-1.html
+Plotclock小贱钟
+http://www.arduino.cn/thread-6049-1-1.html
+http://jjrobots.com/projects-2/&lt;/p&gt;
+
+&lt;h1 id=&quot;section-4&quot;&gt;课程&lt;/h1&gt;
+&lt;p&gt;http://robert.cireddu.free.fr/
+http://pedagogie.ac-toulouse.fr/lp-baylet-valence-agen/&lt;/p&gt;
+
+&lt;h1 id=&quot;stem&quot;&gt;STEM&lt;/h1&gt;
+&lt;p&gt;http://www.creativelearningsystems.com/&lt;/p&gt;
+
+&lt;h1 id=&quot;d&quot;&gt;走进3D&lt;/h1&gt;
+&lt;p&gt;http://k12.leiphone.com/article/201601/Nnf0kNrFwit3zZBV.html
+http://www.e-works.net.cn/report/2015stratasys3d/2015stratasys3d.html&lt;/p&gt;
+
+&lt;h1 id=&quot;section-5&quot;&gt;配套&lt;/h1&gt;
+&lt;p&gt;洞洞板
+https://item.taobao.com/item.htm?spm=2013.1.20141001.1.QOwtaJ&amp;amp;id=35618674019&amp;amp;;scm=1007.10115.22552.100200300000000&amp;amp;pvid=3a6eaed6-f152-4ad3-a716-ed9d05874607&lt;/p&gt;
+
+&lt;h1 id=&quot;section-6&quot;&gt;想做创客？这些关于开源硬件的知识你不得不知&lt;/h1&gt;
+&lt;p&gt;http://www.csdn.net/article/2014-06-30/2820457/2&lt;/p&gt;
+
+&lt;h1 id=&quot;diy&quot;&gt;DIY示波器&lt;/h1&gt;
+&lt;p&gt;https://item.taobao.com/item.htm?spm=a230r.1.14.16.HxgqLG&amp;amp;id=43507787334&amp;amp;ns=1&amp;amp;abbucket=20#detail
+http://www.jyetech.com/index.php&lt;/p&gt;
+</description>
+        <pubDate>Wed, 09 Mar 2016 05:34:00 +0800</pubDate>
+        <link>http://cuiqingwei.github.com/favorites/2016/03/09/eMaker.Space.html</link>
+        <guid isPermaLink="true">http://cuiqingwei.github.com/favorites/2016/03/09/eMaker.Space.html</guid>
+        
+        
+        <category>favorites</category>
+        
+      </item>
+    
+      <item>
         <title>Linux</title>
         <description>&lt;p&gt;&lt;strong&gt;通过8个技巧让你成为一个超强的Linux终端用户&lt;/strong&gt; &lt;a href=&quot;http://www.geekfan.net/7112/&quot;&gt;http://www.geekfan.net/7112/&lt;/a&gt;&lt;/p&gt;
 
@@ -467,7 +631,7 @@ http://guide.macports.org/#installing.macports&lt;/p&gt;
       </item>
     
       <item>
-        <title>在eclipse上安装 Marketplace Client</title>
+        <title>Marketplace Client</title>
         <description>&lt;p&gt;Eclipse Marketplace是个插件应用商店，很实用的一个功能。&lt;/p&gt;
 
 &lt;p&gt;打开 eclipse，help–Eclipse Marketplace Client就能找到&lt;/p&gt;
@@ -486,11 +650,419 @@ http://guide.macports.org/#installing.macports&lt;/p&gt;
 &lt;p&gt;就可以下载了。下载完成后，重启eclipse，help–Eclipse Marketplace Client&lt;/p&gt;
 </description>
         <pubDate>Sat, 06 Jul 2013 00:54:27 +0800</pubDate>
-        <link>http://cuiqingwei.github.com/favorites/2013/07/06/%E5%9C%A8eclipse%E4%B8%8A%E5%AE%89%E8%A3%85-Marketplace-Client.html</link>
-        <guid isPermaLink="true">http://cuiqingwei.github.com/favorites/2013/07/06/%E5%9C%A8eclipse%E4%B8%8A%E5%AE%89%E8%A3%85-Marketplace-Client.html</guid>
+        <link>http://cuiqingwei.github.com/favorites/2013/07/06/Marketplace-Client.html</link>
+        <guid isPermaLink="true">http://cuiqingwei.github.com/favorites/2013/07/06/Marketplace-Client.html</guid>
         
         
         <category>favorites</category>
+        
+      </item>
+    
+      <item>
+        <title>InstantContiki2.6 for cc2530</title>
+        <description>&lt;p&gt;搞zigbee算是国内第一批了，很早就知道6lowpan。用cc2430时，从研究&lt;a href=&quot;http://www.tinyos8051wg.net&quot;&gt;http://www.tinyos8051wg.net&lt;/a&gt;，找寻资料了解到 Nanostack1.0.0，直到Nanostack1.1.0 之后就转为contiki了。好久没发帖了，发个帖Mark一下，先！&lt;/p&gt;
+
+&lt;p&gt;1.Download Instant Contiki&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://sourceforge.net/projects/contiki/files/Instant%20Contiki/&quot;&gt;&lt;font color=&quot;#000080&quot;&gt;http://sourceforge.net/projects/contiki/files/Instant%20Contiki/&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2.Install VMWare Player&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/5_0&quot;&gt;&lt;font color=&quot;#000080&quot;&gt;https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/5_0&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;3.Log into Instant Contiki.&lt;/p&gt;
+
+&lt;p&gt;password is: &lt;strong&gt;&lt;font color=&quot;red&quot;&gt;user&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;4.编译~/contiki/examples/cc2530dk下例子，需要先安装SDCC.&lt;/p&gt;
+
+&lt;p&gt;  参考文档&lt;/p&gt;
+
+&lt;p&gt;  &lt;a href=&quot;https://github.com/contiki-os/contiki/wiki/8051-Requirements&quot;&gt;&lt;font color=&quot;#000080&quot;&gt;https://github.com/contiki-os/contiki/wiki/8051-Requirements&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;  4.1）下载SDCC&lt;/p&gt;
+
+&lt;font color=&quot;blue&quot;&gt;&amp;nbsp;&amp;nbsp;cd /opt
+
+&amp;nbsp;&amp;nbsp;sudo svn co -r 7100 &lt;/font&gt;
+&lt;p&gt;&lt;a href=&quot;https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk/sdcc/&quot;&gt;&lt;font color=&quot;blue&quot;&gt;&amp;nbsp;&amp;nbsp;https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk/sdcc/&lt;/font&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;  4.2) 更改配置&lt;/p&gt;
+
+&lt;p&gt;  &lt;font color=&quot;blue&quot;&gt;sudo vi /opt/sdcc/device/libs/incl.mk&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;  将最后一行&lt;/p&gt;
+
+&lt;p&gt;  MODELS = small medium large&lt;/p&gt;
+
+&lt;p&gt;  替换为&lt;/p&gt;
+
+&lt;p&gt;  &lt;strong&gt;MODELS = small &lt;font color=&quot;red&quot;&gt;large huge&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;  &lt;font color=&quot;blue&quot;&gt;sudo vi /opt/sdcc/device/libs/Makefile.in&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;  将最后一行&lt;/p&gt;
+
+&lt;p&gt;  TARGETS += models small-mcs51-stack-auto&lt;/p&gt;
+
+&lt;p&gt;  替换为&lt;/p&gt;
+
+&lt;p&gt;  &lt;strong&gt;TARGETS += models &lt;font color=&quot;red&quot;&gt;model-&lt;/font&gt;mcs51-stack-auto&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;  &lt;font color=&quot;blue&quot;&gt;cd /opt/sdcc&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;  •Run this:&lt;/p&gt;
+
+&lt;p&gt;  &lt;font color=&quot;blue&quot;&gt;sudo ./configure --disable-gbz80-port --disable-z80-port --disable-ds390-port \&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;  &lt;font color=&quot;blue&quot;&gt;--disable-ds400-port --disable-pic14-port --disable-pic16-port \&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;  &lt;font color=&quot;blue&quot;&gt;--disable-hc08-port --disable-r2k-port --disable-z180-port \&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;  &lt;font color=&quot;blue&quot;&gt;--disable-sdcdb --disable-ucsim&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;  此过程若出现&lt;/p&gt;
+
+&lt;p&gt;  &lt;em&gt;configure: error: boost library not found (boost/graph/adjacency_list.hpp)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;  执行&lt;/p&gt;
+
+&lt;font color=&quot;red&quot;&gt;&amp;nbsp;&amp;nbsp;sudo apt-get install libboost-graph-dev&lt;/font&gt;
+
+&lt;p&gt;  完成后，重新执行&lt;/p&gt;
+
+&lt;p&gt;   &lt;font color=&quot;blue&quot;&gt;sudo ./configure --disable-gbz80-port --disable-z80-port --disable-ds390-port \&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;  &lt;font color=&quot;blue&quot;&gt;--disable-ds400-port --disable-pic14-port --disable-pic16-port \&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;  &lt;font color=&quot;blue&quot;&gt;--disable-hc08-port --disable-r2k-port --disable-z180-port \&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;  &lt;font color=&quot;blue&quot;&gt;--disable-sdcdb --disable-ucsim_&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;  4.3）编译，安装&lt;/p&gt;
+
+&lt;font color=&quot;blue&quot;&gt;&amp;nbsp;&amp;nbsp;sudo make
+
+&amp;nbsp;&amp;nbsp;sudo make install&lt;/font&gt;
+
+&lt;p&gt;  4.4）完成&lt;/p&gt;
+
+&lt;font color=&quot;blue&quot;&gt;&amp;nbsp;&amp;nbsp;sdcc -v&lt;/font&gt;
+
+&lt;p&gt;  显示&lt;/p&gt;
+
+&lt;p&gt;  &lt;em&gt;SDCC : mcs51 3.1.1 #7100 (Jan 10 2013) (Linux)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;5.编译cc2530dk&lt;/p&gt;
+
+&lt;p&gt;  5.1) hello world&lt;/p&gt;
+
+&lt;p&gt;  &lt;font color=&quot;blue&quot;&gt;cd ~/contiki/examples/cc2530dk&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;  &lt;font color=&quot;blue&quot;&gt;make hello-world&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;  编译完成&lt;/p&gt;
+
+&lt;p&gt;  &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#117;&amp;#115;&amp;#101;&amp;#114;&amp;#064;&amp;#105;&amp;#110;&amp;#115;&amp;#116;&amp;#097;&amp;#110;&amp;#116;&amp;#045;&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#105;&amp;#107;&amp;#105;&amp;#058;&amp;#126;&amp;#047;&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#105;&amp;#107;&amp;#105;&amp;#047;&amp;#101;&amp;#120;&amp;#097;&amp;#109;&amp;#112;&amp;#108;&amp;#101;&amp;#115;&amp;#047;&amp;#099;&amp;#099;&amp;#050;&amp;#053;&amp;#051;&amp;#048;&amp;#100;&amp;#107;&amp;#036;&quot;&gt;&lt;font color=&quot;#000080&quot;&gt;user@instant-contiki:~/contiki/examples/cc2530dk$&lt;/font&gt;&lt;/a&gt; ls&lt;/p&gt;
+
+&lt;p&gt;  blink-hello.c         hello-world.c         obj_cc2530dk           timer-test.c&lt;/p&gt;
+
+&lt;p&gt;  blink-hello.cc2530dk  hello-world.cc2530dk  sensors-demo.c         timer-test.cc2530dk&lt;/p&gt;
+
+&lt;p&gt;  blink-hello.cdb       hello-world.cdb       sensors-demo.cc2530dk  timer-test.cdb&lt;/p&gt;
+
+&lt;p&gt;  blink-hello.hex       hello-world.hex       sensors-demo.cdb       timer-test.hex&lt;/p&gt;
+
+&lt;p&gt;  blink-hello.lk        hello-world.lk        sensors-demo.hex       timer-test.lk&lt;/p&gt;
+
+&lt;p&gt;  blink-hello.map       hello-world.map       sensors-demo.lk        timer-test.map&lt;/p&gt;
+
+&lt;p&gt;  blink-hello.mem       hello-world.mem       sensors-demo.map       timer-test.mem&lt;/p&gt;
+
+&lt;p&gt;  blink-hello.omf       hello-world.omf       sensors-demo.mem       timer-test.omf&lt;/p&gt;
+
+&lt;p&gt;  border-router         Makefile              sensors-demo.omf       udp-ipv6&lt;/p&gt;
+
+&lt;p&gt;  contiki-cc2530dk.lib  Makefile.target       sniffer&lt;/p&gt;
+
+&lt;p&gt;  5.2) udp-ipv6&lt;/p&gt;
+
+&lt;font color=&quot;blue&quot;&gt;&amp;nbsp;&amp;nbsp;cd ~/contiki/examples/cc2530dk/udp-ipv6&lt;/font&gt;
+
+&lt;font color=&quot;blue&quot;&gt;&amp;nbsp;&amp;nbsp;make&lt;/font&gt;
+
+&lt;p&gt;  报错，缺少&lt;strong&gt;&lt;font color=&quot;red&quot;&gt;srecord&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;  Pack hex file&lt;/p&gt;
+
+&lt;p&gt;  ===============&lt;/p&gt;
+
+&lt;p&gt;  srec_cat -disable_sequence_warnings client.banked-hex -intel -crop 0x18000 0x1FFFF -offset -65536 -o bank1.hex -intel&lt;/p&gt;
+
+&lt;p&gt;  /bin/sh: 5: srec_cat: not found&lt;/p&gt;
+
+&lt;p&gt;  srec_cat -disable_sequence_warnings client.banked-hex -intel -crop 0x28000 0x2FFFF -offset -98304 -o bank2.hex -intel&lt;/p&gt;
+
+&lt;p&gt;  /bin/sh: 5: srec_cat: not found&lt;/p&gt;
+
+&lt;p&gt;  srec_cat -disable_sequence_warnings client.banked-hex -intel -crop 0x38000 0x3FFFF -offset -131072 -o bank3.hex -intel&lt;/p&gt;
+
+&lt;p&gt;  /bin/sh: 5: srec_cat: not found&lt;/p&gt;
+
+&lt;p&gt;  srec_cat -disable_sequence_warnings client.banked-hex -intel -crop 0x48000 0x4FFFF -offset -163840 -o bank4.hex -intel&lt;/p&gt;
+
+&lt;p&gt;  /bin/sh: 5: srec_cat: not found&lt;/p&gt;
+
+&lt;p&gt;  make: *** [client.hex] Error 127&lt;/p&gt;
+
+&lt;p&gt;  执行&lt;/p&gt;
+
+&lt;p&gt;  &lt;font color=&quot;blue&quot;&gt;sudo apt-get install srecord&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;6.TI SmartRF Flash Programmer 烧录 *.hex&lt;/p&gt;
+
+&lt;p&gt;  已烧录hello-world.hex为例，CC2530 UART0 会打印输出如下信息：&lt;/p&gt;
+
+&lt;p&gt;  ##########################################&lt;/p&gt;
+
+&lt;p&gt;  Contiki-2.6&lt;/p&gt;
+
+&lt;p&gt;  TI SmartRF05 EB&lt;/p&gt;
+
+&lt;p&gt;  cc2530-F256, 08KB SRAM&lt;/p&gt;
+
+&lt;p&gt;  SDCC Build:&lt;/p&gt;
+
+&lt;p&gt;    –model-large&lt;/p&gt;
+
+&lt;p&gt;    –stack-auto&lt;/p&gt;
+
+&lt;p&gt;   Net: Rime&lt;/p&gt;
+
+&lt;p&gt;   MAC: CSMA&lt;/p&gt;
+
+&lt;p&gt;   RDC: nullrdc&lt;/p&gt;
+
+&lt;p&gt;  ##########################################&lt;/p&gt;
+
+&lt;p&gt;  Rime is 0x02 bytes long&lt;/p&gt;
+
+&lt;p&gt;  Reading MAC from Info Page&lt;/p&gt;
+
+&lt;p&gt;  Rime configured with address c6:1c&lt;/p&gt;
+
+&lt;p&gt;  Rime is 0x02 bytes long&lt;/p&gt;
+
+&lt;p&gt;  Reading MAC from Info Page&lt;/p&gt;
+
+&lt;p&gt;  Rime configured with address 67:af&lt;/p&gt;
+
+&lt;font color=&quot;magenta&quot;&gt;&amp;nbsp;&amp;nbsp;Hello World!&lt;/font&gt;
+
+&lt;p&gt;7.建立自己的硬件平台[我的是：edutech]和工程[我的是：edutech]&lt;/p&gt;
+
+&lt;p&gt;  7.1) cpu&lt;/p&gt;
+
+&lt;p&gt;  &lt;font color=&quot;blue&quot;&gt;cd ~/contiki/cpu/cc253x&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;  cp Makefile.cc253x Makefile.cc253x-edutech&lt;/p&gt;
+
+&lt;p&gt;  cp bank-alloc.py bank-alloc-edutech.py&amp;lt;/font&amp;gt;&lt;/p&gt;
+
+&lt;font color=&quot;blue&quot;&gt;&amp;nbsp;&amp;nbsp;vi Makefile.cc253x-edutech&lt;/font&gt;
+
+&lt;p&gt;  编辑第14行&lt;/p&gt;
+
+&lt;p&gt;  BANK_ALLOC = $(CONTIKI_CPU)/bank-alloc.py&lt;/p&gt;
+
+&lt;p&gt;  为&lt;/p&gt;
+
+&lt;p&gt;  &lt;strong&gt;BANK_ALLOC = $(CONTIKI_CPU)/&lt;font color=&quot;red&quot;&gt;bank-alloc-edutech.py&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;  保存&lt;/p&gt;
+
+&lt;font color=&quot;blue&quot;&gt;&amp;nbsp;&amp;nbsp;:wq&lt;/font&gt;
+
+&lt;font color=&quot;blue&quot;&gt;&amp;nbsp;&amp;nbsp;vi bank-alloc-edutech.py&lt;/font&gt;
+
+&lt;p&gt;  编辑第101行&lt;/p&gt;
+
+&lt;p&gt;  file_pat = re.compile(‘obj_cc2530dk[^ ]+.’)&lt;/p&gt;
+
+&lt;p&gt;  为&lt;/p&gt;
+
+&lt;p&gt;** file_pat = re.compile(&lt;font color=&quot;red&quot;&gt;&#39;obj_edutech&lt;/font&gt;[^ ]+.’)**&lt;/p&gt;
+
+&lt;p&gt;  将文中4处，157、158、172、173行中&lt;/p&gt;
+
+&lt;p&gt;  bank-alloc.py 替换为 **&lt;font color=&quot;red&quot;&gt;bank-alloc-edutech.py&lt;/font&gt; **&lt;/p&gt;
+
+&lt;p&gt;  保存&lt;/p&gt;
+
+&lt;font color=&quot;blue&quot;&gt;&amp;nbsp;&amp;nbsp;:wq&lt;/font&gt;
+
+&lt;p&gt;  7.2) platform&lt;/p&gt;
+
+&lt;font color=&quot;blue&quot;&gt;&amp;nbsp;&amp;nbsp;cd ~/contiki/platform
+
+&amp;nbsp;&amp;nbsp;cp cc2530dk edutech -R
+
+&amp;nbsp;&amp;nbsp;cd edutech
+
+&amp;nbsp;&amp;nbsp;mv Makefile.cc2530dk&amp;nbsp;&amp;nbsp;Makefile.edutech
+
+&amp;nbsp;&amp;nbsp;vi Makefile.edutech&lt;/font&gt;
+
+&lt;p&gt;  编辑第1行[非必须]&lt;/p&gt;
+
+&lt;p&gt;  # cc2530dk platform makefile&lt;/p&gt;
+
+&lt;p&gt;  为&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;  # &lt;font color=&quot;red&quot;&gt;edutech&lt;/font&gt; platform makefile&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;  编辑第19行&lt;/p&gt;
+
+&lt;p&gt;  CLEAN += *.cc2530dk&lt;/p&gt;
+
+&lt;p&gt;  为&lt;/p&gt;
+
+&lt;p&gt;  CLEAN += &lt;font color=&quot;red&quot;&gt;*.edutech *.native&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;/font&amp;gt;  编辑第52行,最后一行&lt;/p&gt;
+
+&lt;p&gt;  include $(CONTIKI_CPU)/Makefile.cc253x&lt;/p&gt;
+
+&lt;p&gt;  为&lt;/p&gt;
+
+&lt;p&gt;  &lt;strong&gt;include $(CONTIKI_CPU)/&lt;font color=&quot;red&quot;&gt;Makefile.cc253x-edutech&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;  保存&lt;/p&gt;
+
+&lt;font color=&quot;blue&quot;&gt;&amp;nbsp;&amp;nbsp;:wq&lt;/font&gt;
+
+&lt;p&gt;  接下来根据实际硬件情况，编辑或创建驱动文件&lt;/p&gt;
+
+&lt;p&gt;  7.3) project&lt;/p&gt;
+
+&lt;font color=&quot;blue&quot;&gt;&amp;nbsp;&amp;nbsp;cd ~/contiki/examples
+
+&amp;nbsp;&amp;nbsp;cp cc2530dk/ edutech -R
+
+&amp;nbsp;&amp;nbsp;cd edutech
+
+&amp;nbsp;&amp;nbsp;vi Makefile.target&lt;/font&gt;
+
+&lt;p&gt;  编辑第1行&lt;/p&gt;
+
+&lt;p&gt;  TARGET = cc2530dk&lt;/p&gt;
+
+&lt;p&gt;  为&lt;/p&gt;
+
+&lt;p&gt;  TARGET = &lt;font color=&quot;red&quot;&gt;edutech&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;  保存&lt;/p&gt;
+
+&lt;font color=&quot;blue&quot;&gt;&amp;nbsp;&amp;nbsp;:wq&lt;/font&gt;
+
+&lt;font color=&quot;blue&quot;&gt;&amp;nbsp;&amp;nbsp;make&lt;/font&gt;
+
+&lt;p&gt;  烧录&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/markdown/20130111/1.jpg&quot; alt=&quot;programmer&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;using-ti-cc-debugger-based-on-ubuntu&quot;&gt;using TI CC Debugger (based on Ubuntu)&lt;/h1&gt;
+&lt;p&gt;install Package libboost-all-dev and libusb-1.0-0-dev by using command&lt;/p&gt;
+
+&lt;p&gt;sudo apt-get install libboost-all-dev&lt;/p&gt;
+
+&lt;p&gt;sudo apt-get install libusb-1.0-0-dev&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;download cc-tool source code from https://github.com/misham/cc-tool&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;extract cc-tool source code and install by using command&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;sudo wget https://github.com/misham/cc-tool/archive/master.zip&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;sudo unzip master.zip&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;cd cc-tool- master&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;sudo ./configure&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;make&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;make install&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;use lsusb command for list your Board&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;lsusb&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;the output should be&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;..Bus 006 Device 015: ID 0451:16a0 Texas Instruments, Inc. Bus 006 Device 013: ID 0451:16a0 Texas Instruments, Inc. ..&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;change directory to your .hex file&lt;/p&gt;
+
+    &lt;p&gt;(example /home/user/contiki-sensinode/examples/cc2530dk)&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;cd /home/user/contiki-sensinode/examples/cc2530dk&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;start program board (cc-tool -ew FILE_NAME.hex -d’Bus:Device’ -v)&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;cc-tool -ew blink-hello.hex -d’006:015’ -v&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;the result should be&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Programmer: SmartRF05EB Target: CC2530 Erasing flash… Erasing completed Writing flash… (42 KB)… Writing completed (3.13 s.) Verifying flash… Verification completed (3.33 s.)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;for more cc-tool command option you can use –help&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;cc-tool –help&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;可使用 &lt;strong&gt;&lt;font color=&quot;red&quot;&gt;sudo cc-tool –n cc2530 –w blink-hello.hex –v&lt;/font&gt;&lt;/strong&gt; 烧录&lt;/p&gt;
+
+&lt;h1 id=&quot;sensniff&quot;&gt;sensniff&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/g-oikonomou/sensniff&quot;&gt;https://github.com/g-oikonomou/sensniff&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/jerusalemdax/contiki-cc2530eb&quot;&gt;https://github.com/jerusalemdax/contiki-cc2530eb&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;下载&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;git clone git://github.com/jerusalemdax/contiki-cc2530eb.git&quot;&gt;git clone git://github.com/jerusalemdax/contiki-cc2530eb.git&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;发表链接&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;amoBBS 阿莫电子论坛 &lt;a href=&quot;http://www.amobbs.com/thread-5515866-1-1.html&quot;&gt;http://www.amobbs.com/thread-5515866-1-1.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;www.iotdev.net &lt;a href=&quot;http://www.iotdev.net/thread-210-1-1.html&quot;&gt;http://www.iotdev.net/thread-210-1-1.html&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 Jan 2013 21:14:34 +0800</pubDate>
+        <link>http://cuiqingwei.github.com/projects/2013/01/11/InstantContiki2.6-for-CC2530.html</link>
+        <guid isPermaLink="true">http://cuiqingwei.github.com/projects/2013/01/11/InstantContiki2.6-for-CC2530.html</guid>
+        
+        
+        <category>projects</category>
         
       </item>
     
@@ -931,61 +1503,6 @@ SIGNAL (SIG_OVERFLOW0)
         <pubDate>Thu, 03 Jan 2008 17:30:15 +0800</pubDate>
         <link>http://cuiqingwei.github.com/projects/2008/01/03/USB_M8_RGBLED%E5%BD%A9%E7%81%AF.html</link>
         <guid isPermaLink="true">http://cuiqingwei.github.com/projects/2008/01/03/USB_M8_RGBLED%E5%BD%A9%E7%81%AF.html</guid>
-        
-        
-        <category>projects</category>
-        
-      </item>
-    
-      <item>
-        <title>EAGLE3D终于搞定了!</title>
-        <description>&lt;h1 id=&quot;d&quot;&gt;3D效果&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_182056.png&quot; alt=&quot;3d&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section&quot;&gt;实物&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_185116.JPG&quot; alt=&quot;实物&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-1&quot;&gt;再传一下，我实验阶段的手工作品，看起来还是洗板的效果好啊，呵呵。&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_185117.JPG&quot; alt=&quot;手工&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;a href=&quot;http://www.amobbs.com/thread-854275-1-1.html&quot;&gt;论坛链接&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 20 Nov 2007 04:07:41 +0800</pubDate>
-        <link>http://cuiqingwei.github.com/projects/2007/11/20/EAGLE3D%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9A%E4%BA%86.html</link>
-        <guid isPermaLink="true">http://cuiqingwei.github.com/projects/2007/11/20/EAGLE3D%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9A%E4%BA%86.html</guid>
-        
-        
-        <category>projects</category>
-        
-      </item>
-    
-      <item>
-        <title>闪动的“LOVE”!</title>
-        <description>&lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_180972.gif&quot; alt=&quot;love gif&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section&quot;&gt;§ №.1 ★背景&lt;/h1&gt;
-&lt;p&gt;这个简单的东东制作于2001年参加电子设计竞赛，赛前强化培训期间。那段时光是多么美好呀，资源时间双丰富呀。想必，参加过竞赛的都会有体会的。一开始老师就让照着《电子线路设计·实验·测试》这本书做实验，直流稳压电流、数字时钟、抢答器……一个个搭，这个板子就是在这种环境中诞生的，一天晚上实验老师不在，自己发神精就搞了这个，当时我们同组几个成员还把实验室的灯关了看效果，现在想想……:)，后来参赛时我们组做的“C题自动往返电动小车”得了个二等奖，毕业时小车老师不给呀，要不怎么也留作纪念！昨天是晚上整理杂物时找到此板，根据板子在Proteus绘出原理图并仿真，整理此文档留作纪念！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_180973.JPG&quot; alt=&quot;实物&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-1&quot;&gt;§ №.2 ★思想发源地&lt;/h1&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_180975.jpg&quot; alt=&quot;原理&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-2&quot;&gt;§ №.3 ★电路原理图&lt;/h1&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_180976.jpg&quot; alt=&quot;原理图&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-3&quot;&gt;§ №.4 ★ 仿真效果&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_180977.gif&quot; alt=&quot;仿真&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-4&quot;&gt;§ №.5 ★ 实际效果&lt;/h1&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_180979.gif&quot; alt=&quot;动画&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 01 Nov 2006 05:41:27 +0800</pubDate>
-        <link>http://cuiqingwei.github.com/projects/2006/11/01/%E9%97%AA%E5%8A%A8%E7%9A%84-LOVE.html</link>
-        <guid isPermaLink="true">http://cuiqingwei.github.com/projects/2006/11/01/%E9%97%AA%E5%8A%A8%E7%9A%84-LOVE.html</guid>
         
         
         <category>projects</category>

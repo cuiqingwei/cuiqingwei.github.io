@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> InstantContiki2.6 for cc2530 — InstantContiki &raquo;  iZheteng</title>
+<meta name="description" content="活着，就要去折腾！
+">
+<meta name="keywords" content="">
+<link rel="canonical" href="http://cuiqingwei.github.com/projects/2013/01/11/InstantContiki2.6-for-CC2530.html">
+        
+
+
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="InstantContiki2.6 for cc2530" />
+<meta name="twitter:description" content="活着，就要去折腾！
+" />
+<meta name="twitter:image" content="http://cuiqingwei.github.com" />
+
+<!-- Google plus -->
+<meta name="author" content="https://www.google.com/+cuiqingwei">
+<link rel="author" href="https://www.google.com/+cuiqingwei">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="InstantContiki2.6 for cc2530">
+<meta property="og:description" content="活着，就要去折腾！
+">
+<meta property="og:url" content="http://cuiqingwei.github.com/projects/2013/01/11/InstantContiki2.6-for-CC2530.html">
+<meta property="og:site_name" content="iZheteng">
+
+        <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/assets/vendor/normalize-css/normalize.css">
+<link rel="stylesheet" href="/css/main.css">
+
+  <link rel="stylesheet" href="/assets/vendor/highlight/styles/agate.css">
+
+<link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.css">
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <header class="header">
+    <div class="navigation">
+        <!-- <a href="/" class="logo">iZheteng</a> -->
+        <a href="/" class="logo"><img src="/images/logo.png" height="56" alt="" /></a>
+        
+        <ul class="menu">
+            <li class="menu__entry"><a href="/about">About</a></li>
+            <li class="menu__entry"><a href="/">Blog</a></li>
+        </ul>
+    </div>
+
+    <ul class="social-links">
+        
+            <a href="https://github.com/cuiqingwei" class="social-links__entry" target="_blank">
+                <i class="fa fa-github"></i>
+            </a>
+        
+
+        
+            <a href="https://twitter.com/cuiqingwei" class="social-links__entry" target="_blank">
+                <i class="fa fa-twitter"></i>
+            </a>
+        
+    </ul>
+</header>
+
+            <h1 class="page-title post-title">
+    <div class="page-title__text post-title__text">InstantContiki2.6 for cc2530</div>
+    <div class="page-title__subtitle post-title__subtitle">InstantContiki</div>
+</h1>
+
+<div class="content">
+    <p>搞zigbee算是国内第一批了，很早就知道6lowpan。用cc2430时，从研究<a href="http://www.tinyos8051wg.net">http://www.tinyos8051wg.net</a>，找寻资料了解到 Nanostack1.0.0，直到Nanostack1.1.0 之后就转为contiki了。好久没发帖了，发个帖Mark一下，先！</p>
+
+<p>1.Download Instant Contiki</p>
+
+<p><a href="http://sourceforge.net/projects/contiki/files/Instant%20Contiki/"><font color="#000080">http://sourceforge.net/projects/contiki/files/Instant%20Contiki/</font></a></p>
+
+<p>2.Install VMWare Player</p>
+
+<p><a href="https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/5_0"><font color="#000080">https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/5_0</font></a></p>
+
+<p>3.Log into Instant Contiki.</p>
+
+<p>password is: <strong><font color="red">user</font></strong></p>
+
+<p>4.编译~/contiki/examples/cc2530dk下例子，需要先安装SDCC.</p>
+
+<p>  参考文档</p>
+
+<p>  <a href="https://github.com/contiki-os/contiki/wiki/8051-Requirements"><font color="#000080">https://github.com/contiki-os/contiki/wiki/8051-Requirements</font></a></p>
+
+<p>  4.1）下载SDCC</p>
+
+<font color="blue">&nbsp;&nbsp;cd /opt
+
+&nbsp;&nbsp;sudo svn co -r 7100 </font>
+<p><a href="https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk/sdcc/"><font color="blue">&nbsp;&nbsp;https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk/sdcc/</font></a></p>
+
+<p>  4.2) 更改配置</p>
+
+<p>  <font color="blue">sudo vi /opt/sdcc/device/libs/incl.mk</font></p>
+
+<p>  将最后一行</p>
+
+<p>  MODELS = small medium large</p>
+
+<p>  替换为</p>
+
+<p>  <strong>MODELS = small <font color="red">large huge</font></strong></p>
+
+<p>  <font color="blue">sudo vi /opt/sdcc/device/libs/Makefile.in</font></p>
+
+<p>  将最后一行</p>
+
+<p>  TARGETS += models small-mcs51-stack-auto</p>
+
+<p>  替换为</p>
+
+<p>  <strong>TARGETS += models <font color="red">model-</font>mcs51-stack-auto</strong></p>
+
+<p>  <font color="blue">cd /opt/sdcc</font></p>
+
+<p>  •Run this:</p>
+
+<p>  <font color="blue">sudo ./configure --disable-gbz80-port --disable-z80-port --disable-ds390-port \</font></p>
+
+<p>  <font color="blue">--disable-ds400-port --disable-pic14-port --disable-pic16-port \</font></p>
+
+<p>  <font color="blue">--disable-hc08-port --disable-r2k-port --disable-z180-port \</font></p>
+
+<p>  <font color="blue">--disable-sdcdb --disable-ucsim</font></p>
+
+<p>  此过程若出现</p>
+
+<p>  <em>configure: error: boost library not found (boost/graph/adjacency_list.hpp)</em></p>
+
+<p>  执行</p>
+
+<font color="red">&nbsp;&nbsp;sudo apt-get install libboost-graph-dev</font>
+
+<p>  完成后，重新执行</p>
+
+<p>   <font color="blue">sudo ./configure --disable-gbz80-port --disable-z80-port --disable-ds390-port \</font></p>
+
+<p>  <font color="blue">--disable-ds400-port --disable-pic14-port --disable-pic16-port \</font></p>
+
+<p>  <font color="blue">--disable-hc08-port --disable-r2k-port --disable-z180-port \</font></p>
+
+<p>  <font color="blue">--disable-sdcdb --disable-ucsim_</font></p>
+
+<p>  4.3）编译，安装</p>
+
+<font color="blue">&nbsp;&nbsp;sudo make
+
+&nbsp;&nbsp;sudo make install</font>
+
+<p>  4.4）完成</p>
+
+<font color="blue">&nbsp;&nbsp;sdcc -v</font>
+
+<p>  显示</p>
+
+<p>  <em>SDCC : mcs51 3.1.1 #7100 (Jan 10 2013) (Linux)</em></p>
+
+<p>5.编译cc2530dk</p>
+
+<p>  5.1) hello world</p>
+
+<p>  <font color="blue">cd ~/contiki/examples/cc2530dk</font></p>
+
+<p>  <font color="blue">make hello-world</font></p>
+
+<p>  编译完成</p>
+
+<p>  <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#117;&#115;&#101;&#114;&#064;&#105;&#110;&#115;&#116;&#097;&#110;&#116;&#045;&#099;&#111;&#110;&#116;&#105;&#107;&#105;&#058;&#126;&#047;&#099;&#111;&#110;&#116;&#105;&#107;&#105;&#047;&#101;&#120;&#097;&#109;&#112;&#108;&#101;&#115;&#047;&#099;&#099;&#050;&#053;&#051;&#048;&#100;&#107;&#036;"><font color="#000080">user@instant-contiki:~/contiki/examples/cc2530dk$</font></a> ls</p>
+
+<p>  blink-hello.c         hello-world.c         obj_cc2530dk           timer-test.c</p>
+
+<p>  blink-hello.cc2530dk  hello-world.cc2530dk  sensors-demo.c         timer-test.cc2530dk</p>
+
+<p>  blink-hello.cdb       hello-world.cdb       sensors-demo.cc2530dk  timer-test.cdb</p>
+
+<p>  blink-hello.hex       hello-world.hex       sensors-demo.cdb       timer-test.hex</p>
+
+<p>  blink-hello.lk        hello-world.lk        sensors-demo.hex       timer-test.lk</p>
+
+<p>  blink-hello.map       hello-world.map       sensors-demo.lk        timer-test.map</p>
+
+<p>  blink-hello.mem       hello-world.mem       sensors-demo.map       timer-test.mem</p>
+
+<p>  blink-hello.omf       hello-world.omf       sensors-demo.mem       timer-test.omf</p>
+
+<p>  border-router         Makefile              sensors-demo.omf       udp-ipv6</p>
+
+<p>  contiki-cc2530dk.lib  Makefile.target       sniffer</p>
+
+<p>  5.2) udp-ipv6</p>
+
+<font color="blue">&nbsp;&nbsp;cd ~/contiki/examples/cc2530dk/udp-ipv6</font>
+
+<font color="blue">&nbsp;&nbsp;make</font>
+
+<p>  报错，缺少<strong><font color="red">srecord</font></strong></p>
+
+<p>  Pack hex file</p>
+
+<p>  ===============</p>
+
+<p>  srec_cat -disable_sequence_warnings client.banked-hex -intel -crop 0x18000 0x1FFFF -offset -65536 -o bank1.hex -intel</p>
+
+<p>  /bin/sh: 5: srec_cat: not found</p>
+
+<p>  srec_cat -disable_sequence_warnings client.banked-hex -intel -crop 0x28000 0x2FFFF -offset -98304 -o bank2.hex -intel</p>
+
+<p>  /bin/sh: 5: srec_cat: not found</p>
+
+<p>  srec_cat -disable_sequence_warnings client.banked-hex -intel -crop 0x38000 0x3FFFF -offset -131072 -o bank3.hex -intel</p>
+
+<p>  /bin/sh: 5: srec_cat: not found</p>
+
+<p>  srec_cat -disable_sequence_warnings client.banked-hex -intel -crop 0x48000 0x4FFFF -offset -163840 -o bank4.hex -intel</p>
+
+<p>  /bin/sh: 5: srec_cat: not found</p>
+
+<p>  make: *** [client.hex] Error 127</p>
+
+<p>  执行</p>
+
+<p>  <font color="blue">sudo apt-get install srecord</font></p>
+
+<p>6.TI SmartRF Flash Programmer 烧录 *.hex</p>
+
+<p>  已烧录hello-world.hex为例，CC2530 UART0 会打印输出如下信息：</p>
+
+<p>  ##########################################</p>
+
+<p>  Contiki-2.6</p>
+
+<p>  TI SmartRF05 EB</p>
+
+<p>  cc2530-F256, 08KB SRAM</p>
+
+<p>  SDCC Build:</p>
+
+<p>    –model-large</p>
+
+<p>    –stack-auto</p>
+
+<p>   Net: Rime</p>
+
+<p>   MAC: CSMA</p>
+
+<p>   RDC: nullrdc</p>
+
+<p>  ##########################################</p>
+
+<p>  Rime is 0x02 bytes long</p>
+
+<p>  Reading MAC from Info Page</p>
+
+<p>  Rime configured with address c6:1c</p>
+
+<p>  Rime is 0x02 bytes long</p>
+
+<p>  Reading MAC from Info Page</p>
+
+<p>  Rime configured with address 67:af</p>
+
+<font color="magenta">&nbsp;&nbsp;Hello World!</font>
+
+<p>7.建立自己的硬件平台[我的是：edutech]和工程[我的是：edutech]</p>
+
+<p>  7.1) cpu</p>
+
+<p>  <font color="blue">cd ~/contiki/cpu/cc253x</font></p>
+
+<p>  cp Makefile.cc253x Makefile.cc253x-edutech</p>
+
+<p>  cp bank-alloc.py bank-alloc-edutech.py&lt;/font&gt;</p>
+
+<font color="blue">&nbsp;&nbsp;vi Makefile.cc253x-edutech</font>
+
+<p>  编辑第14行</p>
+
+<p>  BANK_ALLOC = $(CONTIKI_CPU)/bank-alloc.py</p>
+
+<p>  为</p>
+
+<p>  <strong>BANK_ALLOC = $(CONTIKI_CPU)/<font color="red">bank-alloc-edutech.py</font></strong></p>
+
+<p>  保存</p>
+
+<font color="blue">&nbsp;&nbsp;:wq</font>
+
+<font color="blue">&nbsp;&nbsp;vi bank-alloc-edutech.py</font>
+
+<p>  编辑第101行</p>
+
+<p>  file_pat = re.compile(‘obj_cc2530dk[^ ]+.’)</p>
+
+<p>  为</p>
+
+<p>** file_pat = re.compile(<font color="red">'obj_edutech</font>[^ ]+.’)**</p>
+
+<p>  将文中4处，157、158、172、173行中</p>
+
+<p>  bank-alloc.py 替换为 **<font color="red">bank-alloc-edutech.py</font> **</p>
+
+<p>  保存</p>
+
+<font color="blue">&nbsp;&nbsp;:wq</font>
+
+<p>  7.2) platform</p>
+
+<font color="blue">&nbsp;&nbsp;cd ~/contiki/platform
+
+&nbsp;&nbsp;cp cc2530dk edutech -R
+
+&nbsp;&nbsp;cd edutech
+
+&nbsp;&nbsp;mv Makefile.cc2530dk&nbsp;&nbsp;Makefile.edutech
+
+&nbsp;&nbsp;vi Makefile.edutech</font>
+
+<p>  编辑第1行[非必须]</p>
+
+<p>  # cc2530dk platform makefile</p>
+
+<p>  为</p>
+
+<p><strong>  # <font color="red">edutech</font> platform makefile</strong></p>
+
+<p>  编辑第19行</p>
+
+<p>  CLEAN += *.cc2530dk</p>
+
+<p>  为</p>
+
+<p>  CLEAN += <font color="red">*.edutech *.native</font></p>
+
+<p>&lt;/font&gt;  编辑第52行,最后一行</p>
+
+<p>  include $(CONTIKI_CPU)/Makefile.cc253x</p>
+
+<p>  为</p>
+
+<p>  <strong>include $(CONTIKI_CPU)/<font color="red">Makefile.cc253x-edutech</font></strong></p>
+
+<p>  保存</p>
+
+<font color="blue">&nbsp;&nbsp;:wq</font>
+
+<p>  接下来根据实际硬件情况，编辑或创建驱动文件</p>
+
+<p>  7.3) project</p>
+
+<font color="blue">&nbsp;&nbsp;cd ~/contiki/examples
+
+&nbsp;&nbsp;cp cc2530dk/ edutech -R
+
+&nbsp;&nbsp;cd edutech
+
+&nbsp;&nbsp;vi Makefile.target</font>
+
+<p>  编辑第1行</p>
+
+<p>  TARGET = cc2530dk</p>
+
+<p>  为</p>
+
+<p>  TARGET = <font color="red">edutech</font></p>
+
+<p>  保存</p>
+
+<font color="blue">&nbsp;&nbsp;:wq</font>
+
+<font color="blue">&nbsp;&nbsp;make</font>
+
+<p>  烧录</p>
+
+<p><img src="/images/markdown/20130111/1.jpg" alt="programmer" /></p>
+
+<h1 id="using-ti-cc-debugger-based-on-ubuntu">using TI CC Debugger (based on Ubuntu)</h1>
+<p>install Package libboost-all-dev and libusb-1.0-0-dev by using command</p>
+
+<p>sudo apt-get install libboost-all-dev</p>
+
+<p>sudo apt-get install libusb-1.0-0-dev</p>
+
+<ul>
+  <li>
+    <p>download cc-tool source code from https://github.com/misham/cc-tool</p>
+  </li>
+  <li>
+    <p>extract cc-tool source code and install by using command</p>
+
+    <p><strong>sudo wget https://github.com/misham/cc-tool/archive/master.zip</strong></p>
+
+    <p><strong>sudo unzip master.zip</strong></p>
+
+    <p><strong>cd cc-tool- master</strong></p>
+
+    <p><strong>sudo ./configure</strong></p>
+
+    <p><strong>make</strong></p>
+
+    <p><strong>make install</strong></p>
+  </li>
+  <li>
+    <p>use lsusb command for list your Board</p>
+
+    <p><strong>lsusb</strong></p>
+  </li>
+  <li>
+    <p>the output should be</p>
+  </li>
+</ul>
+
+<p>..Bus 006 Device 015: ID 0451:16a0 Texas Instruments, Inc. Bus 006 Device 013: ID 0451:16a0 Texas Instruments, Inc. ..</p>
+
+<ul>
+  <li>
+    <p>change directory to your .hex file</p>
+
+    <p>(example /home/user/contiki-sensinode/examples/cc2530dk)</p>
+
+    <p><strong>cd /home/user/contiki-sensinode/examples/cc2530dk</strong></p>
+  </li>
+  <li>
+    <p>start program board (cc-tool -ew FILE_NAME.hex -d’Bus:Device’ -v)</p>
+
+    <p><strong>cc-tool -ew blink-hello.hex -d’006:015’ -v</strong></p>
+  </li>
+  <li>
+    <p>the result should be</p>
+  </li>
+</ul>
+
+<p>Programmer: SmartRF05EB Target: CC2530 Erasing flash… Erasing completed Writing flash… (42 KB)… Writing completed (3.13 s.) Verifying flash… Verification completed (3.33 s.)</p>
+
+<ul>
+  <li>
+    <p>for more cc-tool command option you can use –help</p>
+
+    <p><strong>cc-tool –help</strong></p>
+  </li>
+</ul>
+
+<p>可使用 <strong><font color="red">sudo cc-tool –n cc2530 –w blink-hello.hex –v</font></strong> 烧录</p>
+
+<h1 id="sensniff">sensniff</h1>
+
+<p><a href="https://github.com/g-oikonomou/sensniff">https://github.com/g-oikonomou/sensniff</a></p>
+
+<p><a href="https://github.com/jerusalemdax/contiki-cc2530eb">https://github.com/jerusalemdax/contiki-cc2530eb</a></p>
+
+<p>下载</p>
+
+<p><a href="git clone git://github.com/jerusalemdax/contiki-cc2530eb.git">git clone git://github.com/jerusalemdax/contiki-cc2530eb.git</a></p>
+
+<hr />
+
+<p><em>发表链接</em></p>
+
+<p>amoBBS 阿莫电子论坛 <a href="http://www.amobbs.com/thread-5515866-1-1.html">http://www.amobbs.com/thread-5515866-1-1.html</a></p>
+
+<p>www.iotdev.net <a href="http://www.iotdev.net/thread-210-1-1.html">http://www.iotdev.net/thread-210-1-1.html</a></p>
+
+</div>
+
+<div class="about">
+    <div class="about__devider">*****</div>
+    <div class="about__text">
+        Written by <strong>  cuiqingwei </strong>
+        on <strong>11 January 2013</strong>
+    </div>
+</div>
+
+
+        </div>
+
+        <script src="/assets/vendor/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+        
+    </body>
+</html>
