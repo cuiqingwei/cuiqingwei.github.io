@@ -6,8 +6,8 @@
 </description>
     <link>http://cuiqingwei.github.com/</link>
     <atom:link href="http://cuiqingwei.github.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 29 Aug 2016 15:49:14 +0800</pubDate>
-    <lastBuildDate>Mon, 29 Aug 2016 15:49:14 +0800</lastBuildDate>
+    <pubDate>Mon, 29 Aug 2016 17:50:48 +0800</pubDate>
+    <lastBuildDate>Mon, 29 Aug 2016 17:50:48 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -283,150 +283,154 @@ short_name : tiansj&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;a href=&quot;http://duinopeak.com/wiki/index.php&quot;&gt;http://duinopeak.com/wiki/index.php&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;open-source-hardware&quot;&gt;Open Source Hardware&lt;/h1&gt;
-&lt;p&gt;[http://www.oshwa.org/open-source-hardware-logo/]
-[http://kb.open.eefocus.com/index.php]&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.oshwa.org/open-source-hardware-logo/&quot;&gt;http://www.oshwa.org/open-source-hardware-logo/&lt;/a&gt;
+&lt;a href=&quot;http://kb.open.eefocus.com/index.php&quot;&gt;http://kb.open.eefocus.com/index.php&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;duino&quot;&gt;Duino&lt;/h1&gt;
-&lt;p&gt;https://www.arduino.cc/
-http://www.drduino.com/
-https://www.microduino.cn/
-http://www.duino-robotics.com/
-http://www.86duino.com/
-http://www.rfduino.com/
-http://www.netduino.com/
-http://wtfduino.calumk.com/
-https://easyeda.com/seeedstudio/Xadow_Duino-M5d71jdvp
-http://rasp.io/
-http://www.motoduino.com/
-http://cubieboard.org/
-http://www.techbang.com/posts/42412-maker
-http://wiki.iteadstudio.com/Product&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.arduino.cc/&quot;&gt;https://www.arduino.cc/&lt;/a&gt;
+&lt;a href=&quot;http://www.drduino.com/&quot;&gt;http://www.drduino.com/&lt;/a&gt;
+&lt;a href=&quot;https://www.microduino.cn/&quot;&gt;https://www.microduino.cn/&lt;/a&gt;
+&lt;a href=&quot;http://www.duino-robotics.com/&quot;&gt;http://www.duino-robotics.com/&lt;/a&gt;
+&lt;a href=&quot;http://www.86duino.com/&quot;&gt;http://www.86duino.com/&lt;/a&gt;
+&lt;a href=&quot;http://www.rfduino.com/&quot;&gt;http://www.rfduino.com/&lt;/a&gt;
+&lt;a href=&quot;http://www.netduino.com/&quot;&gt;http://www.netduino.com/&lt;/a&gt;
+&lt;a href=&quot;http://wtfduino.calumk.com/&quot;&gt;http://wtfduino.calumk.com/&lt;/a&gt;
+&lt;a href=&quot;https://easyeda.com/seeedstudio/Xadow_Duino-M5d71jdvp&quot;&gt;https://easyeda.com/seeedstudio/Xadow_Duino-M5d71jdvp&lt;/a&gt;
+&lt;a href=&quot;http://rasp.io/&quot;&gt;http://rasp.io/&lt;/a&gt;
+&lt;a href=&quot;http://www.motoduino.com/&quot;&gt;http://www.motoduino.com/&lt;/a&gt;
+&lt;a href=&quot;http://cubieboard.org/&quot;&gt;http://cubieboard.org/&lt;/a&gt;
+&lt;a href=&quot;http://www.techbang.com/posts/42412-maker&quot;&gt;http://www.techbang.com/posts/42412-maker&lt;/a&gt;
+&lt;a href=&quot;http://wiki.iteadstudio.com/Product&quot;&gt;http://wiki.iteadstudio.com/Product&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;raspberry&quot;&gt;Raspberry&lt;/h1&gt;
-&lt;p&gt;https://www.cooking-hacks.com/documentation/tutorials/raspberry-pi-to-arduino-shields-connection-bridge/&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.cooking-hacks.com/documentation/tutorials/raspberry-pi-to-arduino-shields-connection-bridge/&quot;&gt;https://www.cooking-hacks.com/documentation/tutorials/raspberry-pi-to-arduino-shields-connection-bridge/&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;sparkfun&quot;&gt;Sparkfun&lt;/h1&gt;
-&lt;p&gt;https://www.sparkfun.com/products/13111
-https://www.sparkfun.com/products/11511
-https://www.sparkfun.com/products/11683&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.sparkfun.com/products/13111&quot;&gt;https://www.sparkfun.com/products/13111&lt;/a&gt;
+&lt;a href=&quot;https://www.sparkfun.com/products/11511&quot;&gt;https://www.sparkfun.com/products/11511&lt;/a&gt;
+&lt;a href=&quot;https://www.sparkfun.com/products/11683&quot;&gt;https://www.sparkfun.com/products/11683&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;blockly&quot;&gt;blockly&lt;/h1&gt;
-&lt;p&gt;https://developers.google.com/blockly/
-https://blockly-demo.appspot.com/static/demos/index.html
-https://blockly-games.appspot.com/?lang=zh-hans
-https://studio.code.org/&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/blockly/&quot;&gt;https://developers.google.com/blockly/&lt;/a&gt;
+&lt;a href=&quot;https://blockly-demo.appspot.com/static/demos/index.html&quot;&gt;https://blockly-demo.appspot.com/static/demos/index.html&lt;/a&gt;
+&lt;a href=&quot;https://blockly-games.appspot.com/?lang=zh-hans&quot;&gt;https://blockly-games.appspot.com/?lang=zh-hans&lt;/a&gt;
+&lt;a href=&quot;https://studio.code.org/&quot;&gt;https://studio.code.org/&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;ardublock&quot;&gt;Ardublock&lt;/h1&gt;
-&lt;p&gt;https://sourceforge.net/projects/ardublock/
-http://blog.ardublock.com/zh/category/tutorial/
-https://learn.sparkfun.com/resources/59
-https://learn.sparkfun.com/tutorials/alternative-arduino-interfaces/ardublock&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://sourceforge.net/projects/ardublock/&quot;&gt;https://sourceforge.net/projects/ardublock/&lt;/a&gt;
+&lt;a href=&quot;http://blog.ardublock.com/zh/category/tutorial/&quot;&gt;http://blog.ardublock.com/zh/category/tutorial/&lt;/a&gt;
+&lt;a href=&quot;https://learn.sparkfun.com/resources/59&quot;&gt;https://learn.sparkfun.com/resources/59&lt;/a&gt;
+&lt;a href=&quot;https://learn.sparkfun.com/tutorials/alternative-arduino-interfaces/ardublock&quot;&gt;https://learn.sparkfun.com/tutorials/alternative-arduino-interfaces/ardublock&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;mixly&quot;&gt;Mixly米思齐&lt;/h1&gt;
-&lt;p&gt;http://mixly.cn/&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://mixly.cn/&quot;&gt;http://mixly.cn/&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;MIT App Inventor 2
-http://app.gzjkw.net/
-http://blog.cavedu.com/programming-language/appinventor/appinventorandarduinowithbluetooth/
-http://appinventor.pevest.com/?page_id=10
-https://sites.google.com/site/jingprogram/app&lt;/p&gt;
+&lt;h1 id=&quot;mit-app-inventor-2&quot;&gt;MIT App Inventor 2&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://app.gzjkw.net/&quot;&gt;http://app.gzjkw.net/&lt;/a&gt;
+&lt;a href=&quot;http://blog.cavedu.com/programming-language/appinventor/appinventorandarduinowithbluetooth/&quot;&gt;http://blog.cavedu.com/programming-language/appinventor/appinventorandarduinowithbluetooth/&lt;/a&gt;
+&lt;a href=&quot;http://appinventor.pevest.com/?page_id=10&quot;&gt;http://appinventor.pevest.com/?page_id=10&lt;/a&gt;
+&lt;a href=&quot;https://sites.google.com/site/jingprogram/app&quot;&gt;https://sites.google.com/site/jingprogram/app&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;section&quot;&gt;软件&lt;/h1&gt;
-&lt;p&gt;http://www.sketchup.com/
-http://www.123dapp.com/design
-https://scratch.mit.edu/
-http://s4a.cat/
-http://www.arduino.cc/
-http://www.arduino.org.cn/
-https://en.wikipedia.org/wiki/Arduino
-http://i.youku.com/u/UNDYwMzEyOTk2
-http://www.makerlab.tw/resources/&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.sketchup.com/&quot;&gt;http://www.sketchup.com/&lt;/a&gt;
+&lt;a href=&quot;http://www.123dapp.com/design&quot;&gt;http://www.123dapp.com/design&lt;/a&gt;
+&lt;a href=&quot;https://scratch.mit.edu/&quot;&gt;https://scratch.mit.edu/&lt;/a&gt;
+&lt;a href=&quot;http://s4a.cat/&quot;&gt;http://s4a.cat/&lt;/a&gt;
+&lt;a href=&quot;http://www.arduino.cc/&quot;&gt;http://www.arduino.cc/&lt;/a&gt;
+&lt;a href=&quot;http://www.arduino.org.cn/&quot;&gt;http://www.arduino.org.cn/&lt;/a&gt;
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Arduino&quot;&gt;https://en.wikipedia.org/wiki/Arduino&lt;/a&gt;
+&lt;a href=&quot;http://i.youku.com/u/UNDYwMzEyOTk2&quot;&gt;http://i.youku.com/u/UNDYwMzEyOTk2&lt;/a&gt;
+&lt;a href=&quot;http://www.makerlab.tw/resources/&quot;&gt;http://www.makerlab.tw/resources/&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;d-modeling-and-printing-3d&quot;&gt;3D Modeling and Printing ：3D建模和打印&lt;/h1&gt;
-&lt;p&gt;http://the3doodler.com/
-https://www.ultimaker.com/
-http://www.makerbot.com/
-http://www.sketchup.com/
-https://www.tinkercad.com/&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://the3doodler.com/&quot;&gt;http://the3doodler.com/&lt;/a&gt;
+&lt;a href=&quot;https://www.ultimaker.com/&quot;&gt;https://www.ultimaker.com/&lt;/a&gt;
+&lt;a href=&quot;http://www.makerbot.com/&quot;&gt;http://www.makerbot.com/&lt;/a&gt;
+&lt;a href=&quot;http://www.sketchup.com/&quot;&gt;http://www.sketchup.com/&lt;/a&gt;
+&lt;a href=&quot;https://www.tinkercad.com/&quot;&gt;https://www.tinkercad.com/&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;circuits&quot;&gt;Circuits：电路&lt;/h1&gt;
-&lt;p&gt;http://snapcircuits.net.tw/
-http://courseweb.stthomas.edu/apthomas/SquishyCircuits/buildingCircuits.htm
-http://littlebits.cc/
-http://wiki.funmetas.com/index.php?title=%E9%A6%96%E9%A1%B5
-http://www.makeymakey.com/&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://snapcircuits.net.tw/&quot;&gt;http://snapcircuits.net.tw/&lt;/a&gt;
+&lt;a href=&quot;http://courseweb.stthomas.edu/apthomas/SquishyCircuits/buildingCircuits.htm&quot;&gt;http://courseweb.stthomas.edu/apthomas/SquishyCircuits/buildingCircuits.htm&lt;/a&gt;
+&lt;a href=&quot;http://littlebits.cc/&quot;&gt;http://littlebits.cc/&lt;/a&gt;
+&lt;a href=&quot;http://wiki.funmetas.com/index.php?title=%E9%A6%96%E9%A1%B5&quot;&gt;http://wiki.funmetas.com/index.php?title=%E9%A6%96%E9%A1%B5&lt;/a&gt;
+&lt;a href=&quot;http://www.makeymakey.com/&quot;&gt;http://www.makeymakey.com/&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;programmingcoding&quot;&gt;Programming/Coding：程序设计/编程&lt;/h1&gt;
-&lt;p&gt;https://blockly-games.appspot.com/
-https://scratch.mit.edu/
-http://www.arduino.cc/
-https://www.raspberrypi.org/&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blockly-games.appspot.com/&quot;&gt;https://blockly-games.appspot.com/&lt;/a&gt;
+&lt;a href=&quot;https://scratch.mit.edu/&quot;&gt;https://scratch.mit.edu/&lt;/a&gt;
+&lt;a href=&quot;http://www.arduino.cc/&quot;&gt;http://www.arduino.cc/&lt;/a&gt;
+&lt;a href=&quot;https://www.raspberrypi.org/&quot;&gt;https://www.raspberrypi.org/&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;robotics&quot;&gt;Robotics：机器人&lt;/h1&gt;
-&lt;p&gt;http://www.lego.com/zh-cn/mindstorms/?domainredir=mindstorms.lego.com
-http://www.firstinspires.org/robotics/frc
-http://www.arduino.org.cn/products/kits/6-arduino-kits/arduino-starter-kit
-http://mobilerobotkit.com/robot-kits.html&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.lego.com/zh-cn/mindstorms/?domainredir=mindstorms.lego.com&quot;&gt;http://www.lego.com/zh-cn/mindstorms/?domainredir=mindstorms.lego.com&lt;/a&gt;
+&lt;a href=&quot;http://www.firstinspires.org/robotics/frc&quot;&gt;http://www.firstinspires.org/robotics/frc&lt;/a&gt;
+&lt;a href=&quot;http://www.arduino.org.cn/products/kits/6-arduino-kits/arduino-starter-kit&quot;&gt;http://www.arduino.org.cn/products/kits/6-arduino-kits/arduino-starter-kit&lt;/a&gt;
+&lt;a href=&quot;http://mobilerobotkit.com/robot-kits.html&quot;&gt;http://mobilerobotkit.com/robot-kits.html&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;tools--materials--&quot;&gt;Tools &amp;amp; Materials : 工具及耗材&lt;/h1&gt;
-&lt;p&gt;Woodworking：木工
-Metalworking：金工
-Laser Cutting：激光切割
-CNC Cutting： 数控切割&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Woodworking：木工&lt;/li&gt;
+  &lt;li&gt;Metalworking：金工&lt;/li&gt;
+  &lt;li&gt;Laser Cutting：激光切割&lt;/li&gt;
+  &lt;li&gt;CNC Cutting： 数控切割&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h1 id=&quot;makerspae&quot;&gt;MakerSpae&lt;/h1&gt;
-&lt;p&gt;http://www.makezine.com.tw/makerspace.html
-http://www.fablabtaiwan.org.tw/
-http://www.fablabtaipei.org/2510520497303403537320633.html
-http://www.weschool.tw/26377217382012335373206332403720855.html&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.makezine.com.tw/makerspace.html&quot;&gt;http://www.makezine.com.tw/makerspace.html&lt;/a&gt;
+&lt;a href=&quot;http://www.fablabtaiwan.org.tw/&quot;&gt;http://www.fablabtaiwan.org.tw/&lt;/a&gt;
+&lt;a href=&quot;http://www.fablabtaipei.org/2510520497303403537320633.html&quot;&gt;http://www.fablabtaipei.org/2510520497303403537320633.html&lt;/a&gt;
+&lt;a href=&quot;http://www.weschool.tw/26377217382012335373206332403720855.html&quot;&gt;http://www.weschool.tw/26377217382012335373206332403720855.html&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;section-1&quot;&gt;国内创客空间&lt;/h1&gt;
-&lt;p&gt;http://www.chaihuo.org/products/list
-http://xinchejian.com/?lang=zh
-http://www.bjmakerspace.com/&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.chaihuo.org/products/list&quot;&gt;http://www.chaihuo.org/products/list&lt;/a&gt;
+&lt;a href=&quot;http://xinchejian.com/?lang=zh&quot;&gt;http://xinchejian.com/?lang=zh&lt;/a&gt;
+&lt;a href=&quot;http://www.bjmakerspace.com/&quot;&gt;http://www.bjmakerspace.com/&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;digital-sandbox&quot;&gt;Digital Sandbox&lt;/h1&gt;
-&lt;p&gt;https://www.sparkfun.com/products/12651 
-http://b2b.hc360.com/supplyself/348068096.html
-https://learn.sparkfun.com/tutorials/digital-sandbox-experiment-guide/setting-up-arduino-and-ardublock
-http://classes.engr.oregonstate.edu/eecs/fall2015/cs160-501/labs/lab_01.pdf
-https://learn.sparkfun.com/tutorials/alternative-arduino-interfaces/codebender&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.sparkfun.com/products/12651&quot;&gt;https://www.sparkfun.com/products/12651&lt;/a&gt;
+&lt;a href=&quot;http://b2b.hc360.com/supplyself/348068096.html&quot;&gt;http://b2b.hc360.com/supplyself/348068096.html&lt;/a&gt;
+&lt;a href=&quot;https://learn.sparkfun.com/tutorials/digital-sandbox-experiment-guide/setting-up-arduino-and-ardublock&quot;&gt;https://learn.sparkfun.com/tutorials/digital-sandbox-experiment-guide/setting-up-arduino-and-ardublock&lt;/a&gt;
+&lt;a href=&quot;http://classes.engr.oregonstate.edu/eecs/fall2015/cs160-501/labs/lab_01.pdf&quot;&gt;http://classes.engr.oregonstate.edu/eecs/fall2015/cs160-501/labs/lab_01.pdf&lt;/a&gt;
+&lt;a href=&quot;https://learn.sparkfun.com/tutorials/alternative-arduino-interfaces/codebender&quot;&gt;https://learn.sparkfun.com/tutorials/alternative-arduino-interfaces/codebender&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;section-2&quot;&gt;创客空间里面都有那些设备&lt;/h1&gt;
-&lt;p&gt;http://www.zhishihao.com/xue/show/155996&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.zhishihao.com/xue/show/155996&quot;&gt;http://www.zhishihao.com/xue/show/155996&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;section-3&quot;&gt;趣味电子&lt;/h1&gt;
-&lt;p&gt;Back in Time木质时光倒流时钟
-https://item.taobao.com/item.htm?spm=a1z10.5-c.w4002-11172345288.31.fQeFq4&amp;amp;id=45557720848
-基于Arduino设计的简易宠物喂食机
-http://bbs.intorobot.com/thread-683-1-1.html
-3D打印全自动宠物喂食器
-http://bbs.intorobot.com/thread-684-1-1.html
-Plotclock小贱钟
-http://www.arduino.cn/thread-6049-1-1.html
-http://jjrobots.com/projects-2/&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Back in Time木质时光倒流时钟&lt;/strong&gt;
+&lt;a href=&quot;https://item.taobao.com/item.htm?spm=a1z10.5-c.w4002-11172345288.31.fQeFq4&amp;amp;id=45557720848&quot;&gt;https://item.taobao.com/item.htm?spm=a1z10.5-c.w4002-11172345288.31.fQeFq4&amp;amp;id=45557720848&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;基于Arduino设计的简易宠物喂食机&lt;/strong&gt;
+&lt;a href=&quot;http://bbs.intorobot.com/thread-683-1-1.html&quot;&gt;http://bbs.intorobot.com/thread-683-1-1.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;3D打印全自动宠物喂食器&lt;/strong&gt;
+&lt;a href=&quot;http://bbs.intorobot.com/thread-684-1-1.html&quot;&gt;http://bbs.intorobot.com/thread-684-1-1.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Plotclock小贱钟&lt;/strong&gt;
+&lt;a href=&quot;http://www.arduino.cn/thread-6049-1-1.html&quot;&gt;http://www.arduino.cn/thread-6049-1-1.html&lt;/a&gt;
+&lt;a href=&quot;http://jjrobots.com/projects-2/&quot;&gt;http://jjrobots.com/projects-2/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h1 id=&quot;section-4&quot;&gt;课程&lt;/h1&gt;
-&lt;p&gt;http://robert.cireddu.free.fr/
-http://pedagogie.ac-toulouse.fr/lp-baylet-valence-agen/&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://robert.cireddu.free.fr/&quot;&gt;http://robert.cireddu.free.fr/&lt;/a&gt;
+&lt;a href=&quot;http://pedagogie.ac-toulouse.fr/lp-baylet-valence-agen/&quot;&gt;http://pedagogie.ac-toulouse.fr/lp-baylet-valence-agen/&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;stem&quot;&gt;STEM&lt;/h1&gt;
-&lt;p&gt;http://www.creativelearningsystems.com/&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.creativelearningsystems.com/&quot;&gt;http://www.creativelearningsystems.com/&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;d&quot;&gt;走进3D&lt;/h1&gt;
-&lt;p&gt;http://k12.leiphone.com/article/201601/Nnf0kNrFwit3zZBV.html
-http://www.e-works.net.cn/report/2015stratasys3d/2015stratasys3d.html&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://k12.leiphone.com/article/201601/Nnf0kNrFwit3zZBV.html&quot;&gt;http://k12.leiphone.com/article/201601/Nnf0kNrFwit3zZBV.html&lt;/a&gt;
+&lt;a href=&quot;http://www.e-works.net.cn/report/2015stratasys3d/2015stratasys3d.html&quot;&gt;http://www.e-works.net.cn/report/2015stratasys3d/2015stratasys3d.html&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;section-5&quot;&gt;配套&lt;/h1&gt;
-&lt;p&gt;洞洞板
-https://item.taobao.com/item.htm?spm=2013.1.20141001.1.QOwtaJ&amp;amp;id=35618674019&amp;amp;;scm=1007.10115.22552.100200300000000&amp;amp;pvid=3a6eaed6-f152-4ad3-a716-ed9d05874607&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;洞洞板&lt;/strong&gt;
+&lt;a href=&quot;https://item.taobao.com/item.htm?spm=2013.1.20141001.1.QOwtaJ&amp;amp;id=35618674019&amp;amp;;scm=1007.10115.22552.100200300000000&amp;amp;pvid=3a6eaed6-f152-4ad3-a716-ed9d05874607&quot;&gt;https://item.taobao.com/item.htm?spm=2013.1.20141001.1.QOwtaJ&amp;amp;id=35618674019&amp;amp;;scm=1007.10115.22552.100200300000000&amp;amp;pvid=3a6eaed6-f152-4ad3-a716-ed9d05874607&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;section-6&quot;&gt;想做创客？这些关于开源硬件的知识你不得不知&lt;/h1&gt;
-&lt;p&gt;http://www.csdn.net/article/2014-06-30/2820457/2&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.csdn.net/article/2014-06-30/2820457/2&quot;&gt;http://www.csdn.net/article/2014-06-30/2820457/2&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;diy&quot;&gt;DIY示波器&lt;/h1&gt;
-&lt;p&gt;https://item.taobao.com/item.htm?spm=a230r.1.14.16.HxgqLG&amp;amp;id=43507787334&amp;amp;ns=1&amp;amp;abbucket=20#detail
-http://www.jyetech.com/index.php&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://item.taobao.com/item.htm?spm=a230r.1.14.16.HxgqLG&amp;amp;id=43507787334&amp;amp;ns=1&amp;amp;abbucket=20#detail&quot;&gt;https://item.taobao.com/item.htm?spm=a230r.1.14.16.HxgqLG&amp;amp;id=43507787334&amp;amp;ns=1&amp;amp;abbucket=20#detail&lt;/a&gt;
+&lt;a href=&quot;http://www.jyetech.com/index.php&quot;&gt;http://www.jyetech.com/index.php&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 09 Mar 2016 05:34:00 +0800</pubDate>
         <link>http://cuiqingwei.github.com/favorites/2016/03/09/eMaker.Space.html</link>
