@@ -6,8 +6,8 @@
 </description>
     <link>http://cuiqingwei.github.com/</link>
     <atom:link href="http://cuiqingwei.github.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 29 Aug 2016 17:50:48 +0800</pubDate>
-    <lastBuildDate>Mon, 29 Aug 2016 17:50:48 +0800</lastBuildDate>
+    <pubDate>Mon, 29 Aug 2016 18:22:34 +0800</pubDate>
+    <lastBuildDate>Mon, 29 Aug 2016 18:22:34 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -501,6 +501,1152 @@ $ speedtest-cli&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
       </item>
     
       <item>
+        <title>OpenWRT折腾日记</title>
+        <description>&lt;h1 id=&quot;openwrt-yun&quot;&gt;2016-04-23 Openwrt Yun&lt;/h1&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;#!/bin/bash -ex
+
+# FEEDS
+./scripts/feeds uninstall -a
+rm -rf feeds
+./scripts/feeds update -a
+./scripts/feeds install -a
+./scripts/feeds uninstall erlang freeswitch remotefs libzstream shflags opensips pulseaudio xmlrpc-c rtorrent sox umurmur-polarssl freecwmp-zstream osirisd logtrigger libplist libimobiledevice cmus mxml boost wt etherpuppet php4 aprx n2n pdnsd crtmpserver kissdx openconnect telepathy-python alljoyn
+
+# CONFIG
+rm -f .config
+git checkout .config
+
+sed &amp;#39;s/=m$/=n/&amp;#39; &amp;lt; .config &amp;gt; .baseonlyconfig
+mv .config .origconfig
+mv .baseonlyconfig .config
+
+make oldconfig
+
+# BUILDING
+nice -n 10 make -j 2 V=s
+
+
+/etc/config/wireless
+config wifi-iface
+	option network &amp;#39;wwan&amp;#39;
+	option ssid &amp;#39;MiWiFi&amp;#39;
+	option encryption &amp;#39;psk2&amp;#39;
+	option device &amp;#39;radio0&amp;#39;
+	option mode &amp;#39;sta&amp;#39;
+	option bssid &amp;#39;8C:BE:BE:29:FE:56&amp;#39;
+	option key &amp;#39;1981021400&amp;#39;
+
+wireless.@wifi-iface[0]=wifi-iface                                              
+wireless.@wifi-iface[0].network=wwan                                            
+wireless.@wifi-iface[0].ssid=MiWiFi                                             
+wireless.@wifi-iface[0].encryption=psk2                                         
+wireless.@wifi-iface[0].device=radio0                                           
+wireless.@wifi-iface[0].mode=sta                                                
+wireless.@wifi-iface[0].bssid=8C:BE:BE:29:FE:56                                 
+wireless.@wifi-iface[0].key=1981021400&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;draginoyun-shield&quot;&gt;2016-04-11 DraginoYun Shield&lt;/h1&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;echo src-svn packages https://github.com/arduino/openwrt-packages-yun/trunk &amp;gt;&amp;gt; feed.conf.default
+
+＃更新package
+./scripts/feeds update -a
+＃安装package
+./scripts/feeds install yun-conf
+./scripts/feeds install yun-scripts
+./scripts/feeds install luci-app-arduino-webpanel
+
+＃单独编译package
+make package/yun-conf/compile 
+make package/yun-scripts/compile 
+make package/luci-app-arduino-webpanel/compile 
+make package/yun-conf/install
+make package/yun-scripts/install
+make package/luci-app-arduino-webpanel/install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;draginoyun-shield-1&quot;&gt;2016-04-08 DraginoYun Shield&lt;/h1&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;svn checkout https://github.com/dragino/openwrt-yun.git dragino-yun
+cd dragino-yun/trunk
+./build_image.sh
+cd openwrt
+
+vi feeds.config.default
+#断开packages,链接本地dragino-packages
+#src-git dragino https://github.com/dragino/dragino-packages.git
+src-link dragino ../../dragino-packages
+
+＃卸载package
+./scripts/feeds uninstall luci-app-iot-webpanel
+./scripts/feeds uninstall luci-app-sensor
+＃更新package
+./scripts/feeds update luci-app-iot-webpanel
+＃安装package
+./scripts/feeds install luci-app-iot-webpanel
+＃单独编译package
+make package/luci-app-iot-webpanel/compile 
+make package/luci-app-iot-webpanel/install
+＃安装package
+scp bin/ar71xx/packages/[packagename].ipk roo@ip:/tmp
+opkg install /tmp/[packagename].ipk
+
+http://www.doodle3d.com/help/wiki/installing-updating-packages
+https://wiki.openwrt.org/doc/howto/build&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;2016-04-05 ArduinoYun Shield&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;http://www.znck007.com/forum.php?mod=viewthread&amp;amp;tid=22687
+
+# 源
+https://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/
+http://downloads.arduino.cc/openwrtyun/1/packages/
+
+vi /etc/opkg.conf
+src/gz attitude_adjustment https://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/
+
+# 使用putty登陆openwrt输入
+opkg update
+opkg install kmod-usb-storage block-mount block-hotplug kmod-fs-ext4
+mkfs.ext4 /dev/sda1# 格式化TF卡，第一次使用须格式化
+mkdir -p /mnt/sda1# 新建一个TF卡目录
+mount /dev/sda1 /mnt/sda1# 将TF卡挂载到/mnt/sda1目录
+
+# 自动挂载（这样就不需要每次都执行上面的命令挂载SD卡了）
+vi /etc/config/fstab
+# 移到最下面，按i键（编辑模式）然后复制下面，右击到putty就自动粘贴上去了！
+config &amp;#39;mount&amp;#39;
+        option &amp;#39;device&amp;#39; &amp;#39;/dev/sda1&amp;#39;
+        option &amp;#39;options&amp;#39; &amp;#39;rw,sync&amp;#39;
+        option &amp;#39;enabled_fsck&amp;#39; &amp;#39;0&amp;#39;
+        option &amp;#39;enabled&amp;#39; &amp;#39;1&amp;#39;
+        option &amp;#39;target&amp;#39; &amp;#39;/mnt/sda1&amp;#39;
+
+mkdir -p /mnt/sda1/php# 新建软件包目录
+echo dest phpdisk /mnt/sda1/php/ &amp;gt;&amp;gt; /etc/opkg.conf
+opkg --dest phpdisk install php5-fastcgi php5-mod-gd php5-mod-xml php5-mod-ctype php5-mod-session php5-mod-sockets php5-mod-tokenizer php5-mod-mcrypt php5-mod-mbstring php5-mod-pdo php5-mod-curl php5-mod-mysql
+
+# 安装一个时区信息软件包，否则系统无法识别时区。
+opkg install zoneinfo-asia
+
+# 建立软连接，不然会找不到对应的库和配置文件：
+ln -s /mnt/sda1/php/etc/php.ini /etc/php.ini
+ln -s /mnt/sda1/php/etc/php5 /etc/php5
+ln -s /mnt/sda1/php/usr/lib/libpcre.so.0.0.1 /usr/lib/libpcre.so.0
+ln -s /mnt/sda1/php/usr/lib/libpcreposix.so.0.0.0 /usr/lib/libpcreposix.so.0
+ln -s /mnt/sda1/php/usr/lib/libsqlite.so.0.8.6 /usr/lib/libsqlite.so.0
+ln -s /mnt/sda1/php/usr/lib/libsqlite3.so.0.8.6 /usr/lib/libsqlite3.so.0
+ln -s /mnt/sda1/php/usr/lib/libxml2.so.2.7.8 /usr/lib/libxml2.so.2
+ln -s /mnt/sda1/php/usr/lib/libz.so.1.2.3 /usr/lib/libz.so
+ln -s /mnt/sda1/php/usr/lib/libuClibc++-0.2.4.so /usr/lib/libuClibc++.so.0
+ln -s /mnt/sda1/php/usr/lib/libmysqlclient.so.16 /usr/lib/libmysqlclient.so.16
+ln -s /mnt/sda1/php/usr/lib/php /usr/lib/php
+ln -s /mnt/sda1/php/usr/bin/php-cgi /usr/bin/php-cgi
+
+# 安装到内存
+opkg install php5-fastcgi php5-mod-gd php5-mod-xml php5-mod-ctype php5-mod-session php5-mod-sockets php5-mod-tokenizer php5-mod-mcrypt php5-mod-mbstring php5-mod-pdo php5-mod-curl php5-mod-mysql
+
+# 编辑php.ini，方法如下。
+
+# 找到下面的字段修改为如下，如果有用&amp;quot;;&amp;quot;注析的就删掉：
+short_open_tag = On
+
+error_log = /var/log/php_errors.log
+doc_root = &amp;quot;/mnt/sda1/www&amp;quot;  修改成sd卡的路径。
+
+extension=ctype.so
+extension=curl.so
+extension=dom.so
+extension=exif.so
+extension=ftp.so
+extension=gd.so
+extension=gmp.so
+extension=hash.so
+extension=iconv.so
+extension=json.so
+extension=ldap.so
+extension=mbstring.so
+extension=mcrypt.so
+extension=mysql.so
+extension=openssl.so
+extension=pcre.so
+extension=pdo.so
+extension=pdo-mysql.so
+extension=pdo-pgsql.so
+extension=pdo_sqlite.so
+extension=pgsql.so
+extension=session.so
+extension=soap.so
+extension=sockets.so
+extension=sqlite.so
+extension=sqlite3.so
+extension=tokenizer.so
+extension=xml.so
+extension=xmlreader.so
+extension=xmlwriter.so 
+
+date.timezone = Asia/Shanghai
+mysql.default_socket = /var/run/mysqld.sock
+session.auto_start = 1
+
+# 和上面一样，打开/etc/config/uhttpd
+option home &amp;#39;/mnt/sda1/www&amp;#39;                 #把/www修改成/mnt/sda1/www为放置网页的目录。
+option index_page index.php               #添加到后面
+list interpreter &amp;quot;.php=/usr/bin/php-cgi&amp;quot;   #添加到后面
+
+# 然后重启uhttpd（在putty里输入命令回车）：
+/etc/init.d/uhttpd restart
+
+# 使用putty安装mysql。
+opkg update
+opkg install mysql-server
+
+# 创建数据库目录
+mkdir -p /mnt/sda1/mysql/data/mysql
+mkdir -p /mnt/sda1/mysql/data/tmp
+
+# 查找到以下内容并修改如下：
+datadir = /mnt/sda1/mysql/data/mysql/
+tmpdir  = /mnt/sda1/mysql/data/tmp/
+# bind-address = 192.168.1.1
+
+# 初始化建库
+mysql_install_db --force
+# 以关闭授权的方式启动mysql
+mysqld --skip-grant &amp;amp;
+# 进入mysql,修改账号连接权限
+mysql -u root mysql
+# 进入mysql以后出现mysql&amp;gt;提示符，再修改账号连接权限：
+update user set host=&amp;#39;%&amp;#39; where user=&amp;#39;root&amp;#39; and host=&amp;#39;localhost&amp;#39;;
+# 修改数据库密码为edutech
+update user set password=PASSWORD(&amp;#39;edutech&amp;#39;) where user=&amp;#39;root&amp;#39;;
+# 刷新数据库
+flush privileges;
+# 上面ok了以后，退出mysql
+exit;
+
+# 重启mysql，以授权验证方式启动（为了系统安全）
+killall mysqld
+# 设定开机运行 
+/etc/init.d/mysqld enable 
+# 启动MySQL服务
+/etc/init.d/mysqld start 
+
+# 用Navicat新建数据库
+znckapi
+# 新建查询
+CREATE TABLE IF NOT EXISTS `api_worklist` (
+`id` int(16) unsigned NOT NULL AUTO_INCREMENT,
+`type` int(2) NOT NULL COMMENT &amp;#39;1网设2上传3定时&amp;#39;,
+`uid` int(8) NOT NULL,
+`sid` varchar(3) NOT NULL,
+`nid` varchar(3) NOT NULL,
+`data` varchar(32) NOT NULL,
+`note` varchar(64) NOT NULL,
+`status` int(2) NOT NULL COMMENT &amp;#39;1成功2失败3超过次数4超15分&amp;#39;,
+`time` datetime NOT NULL,
+`ip` varchar(16) NOT NULL,
+`num` int(2) NOT NULL,
+PRIMARY KEY(`id`),
+KEY `uid` (`uid`),
+KEY `time` (`time`)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+# 安装python
+mkdir -p /mnt/sda1/python
+echo dest pythondisk /mnt/sda1/python/ &amp;gt;&amp;gt; /etc/opkg.conf
+opkg --dest pythondisk install python
+ln -s /mnt/sda1/python/usr/bin/python /usr/bin/python
+opkg --dest pythondisk install pyserial# 安装串口通讯类
+opkg --dest pythondisk install python-mysql# 安装mysql操作类
+
+# http://see.sl088.com/wiki/Opkg
+cd /mnt/sda1
+wget http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/pyserial_2.4-1_ar71xx.ipk
+wget http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/python-mysql_1.2.2-1_ar71xx.ipk
+
+2016-03-03 DRAGINO Yun Shield
+ssh root@192.168.199.159
+dragino
+
+root@dragino-7676e6:~# cd /tmp/
+root@dragino-7676e6:/tmp# 
+root@dragino-7676e6:/tmp# wget http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/luci-i18n-chine
+se_0.11.1-1_ar71xx.ipk
+root@dragino-7676e6:/tmp# opkg install luci-i18n-chinese_0.11.1-1_ar71xx.ipk&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;luci&quot;&gt;2016-03-03 luci&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/luopeng/p/4678704.html&quot;&gt;http://www.cnblogs.com/luopeng/p/4678704.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;webmjpg-streamer&quot;&gt;2016-01-22 web摄像头、mjpg-streamer&lt;/h1&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;wget https://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/openwrt-ar71xx-generic-tl-wr2543-v1-squashfs-factory.bin
+scp bin/ar71xx/openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin root@192.168.199.193:/tmp/
+mtd -r write openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin firmware
+
+uci show network.lan
+uci set network.lan.proto=dhcp
+uci commit
+/etc/init.d/networtk restart
+
+&amp;gt;&amp;gt; opkg install kmod-video-uvc。
+&amp;gt;&amp;gt; ls /dev，如果有vedio的话，说明驱动安装成功（前提是要把摄像头插上）
+&amp;gt;&amp;gt; opkg install mjpg-streamer
+&amp;gt;&amp;gt; mjpg_streamer -b -i &amp;quot;input_uvc.so /dev/video0 -r 640x480 -yuv&amp;quot; -o &amp;quot;output_http.so -p 8080 -w /web&amp;quot;
+
+http://192.168.199.193:8080/?action=stream（动态视频）
+http://192.168.199.193:8080/?action=snapshot（静态图像）&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;mtk-openwrt-sdk&quot;&gt;2015-08-25 mtk openwrt-sdk&lt;/h1&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;#　for mtksdk-openwrt-3.10.14-20141127-30965ec3.tar.bz2
+
+ack -w MediaTek --html
+
+openwrt-3.10.14_2014/package/ralink/ui/luci-mtk/patches/001-logo.patch
+改logo MediaTek-&amp;gt;Edutech
+
+openwrt-3.10.14_2014/package/ralink/ui/luci-mtk/src/modules/base/root/etc/config
+luci 改language
+
+openwrt-3.10.14_2014/package/ralink/drivers/mt76x2e/files
+mt7612e.sh 改SSID
+
+# for mtksdk-openwrt-3.10.14-20150311-d021c937.tar.bz2
+
+openwrt-3.10.14_2014/package/ramips/ui/luci-mtk/patches/001-logo.patch
+改logo MediaTek-&amp;gt;Edutech
+
+openwrt-3.10.14_2014/package/ramips/ui/luci-mtk/src/modules/base/root/etc/config
+luci 改language
+
+openwrt-3.10.14_2014/package/ramips/drivers/mt7620/files
+mt7620.sh 改SSID
+openwrt-3.10.14_2014/package/ramips/drivers/mt76x2e/files
+mt7612e.sh 改SSID
+
+# 更新opkg.config源
+/openwrt-3.10.14/package/base-files/image-config.in　文件中 173　行
+http://downloads.openwrt.org/barrier_breaker/14.07/ramips/mt7620a/packages
+
+# 版本号
+/openwrt-3.10.14/package/ramips/ui/luci-mtk/src/build/mkversion.sh
+更改　luciname 和 luciversion为
+luciname    = &amp;quot;Edutech LuCI &amp;quot;
+luciversion = &amp;quot;0.12&amp;quot;
+
+# banner
+figlet edutech -f speed.flf -c -w 52
+         _________      _____           ______  
+    ___________  /___  ___  /______________  /_ 
+    _  _ \  __  /_  / / /  __/  _ \  ___/_  __ \
+    /  __/ /_/ / / /_/ // /_ /  __/ /__ _  / / /
+    \___/\__,_/  \__,_/ \__/ \___/\___/ /_/ /_/ 
+                                               
+ -----------------------------------------------------
+             Shanghai Edutech Co.,Ltd
+ -----------------------------------------------------
+ 
+# profiles 和　固件名
+openwrt-3.10.14/target/linux/ramips/mt7620/profiles
+MT7620a_MT7612e.mk
+
+openwrt-3.10.14/target/linux/ramips/image/Makefile
+# add by cuiqingwei at 20150828
+Image/Build/Profile/MT7620a_MT7612e=$(call BuildFirmware/Default8M/$(1),$(1),mt7612e,MT7620a_MT7612e)
+                                                
+# 去除有问题的iw
+./scripts/feeds uninstall iw
+删除openwrt-3.10.14/package/network/utils目录下的iw目录&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;openwrt-yun-1&quot;&gt;2015-08-13 openwrt-yun&lt;/h1&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;目录openwrt-yun/feeds/packages下arduino文件夹复制
+到/openwrt/branches/barrier_breaker/package目录下
+对应源码在openwrt/branches/barrier_breaker/build_dir/target-mips_34kc_uClibc-0.9.33.2/目录下
+
+make menuconfig
+
+Base System ---&amp;gt; 
+&amp;lt;*&amp;gt; yun-conf...................................... Custom Yún configurations            
+ &amp;lt;*&amp;gt; yun-scripts.......................................... Custom Yún scripts
+
+LuCI ---&amp;gt;
+3. Applications ---&amp;gt; 
+&amp;lt;*&amp;gt; luci-app-arduino-webpanel............ simplified wifi configuration panel  
+
+echo &amp;quot;src/gz barrier_breaker http://download.linino.org/dogstick/all-in-one/latest/packages/&amp;quot; &amp;gt;&amp;gt; /etc/opkg.conf
+
+opkg install rng-tools --force-depends
+opkg install gnupg
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+“Not enough random bytes available. Please do some other work to give
+　the OS a chance to collect more entropy! (Need 284 more bytes)”
+
+First make sure you have the following available and have the rights to it:
+
+ls -l /dev/urandom 
+
+then execute rngd against it:
+
+rngd -r /dev/urandom
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/etc/init.d/generate_new_gpg_key start
+
+http://192.168.199.192/cgi-bin/luci/webpanel/homepage
+
+成功！&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;arduino-yun&quot;&gt;2015-08-12 arduino-yun&lt;/h1&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;https://www.snip2code.com/Snippet/38230/Install-Arduino-Yun-%28Linino%29-software-on
+
+opkg install luci-lib-json luci rng-tools
+
+# If rng-tools is not installable, then install it by hand from e.g., http://download.linino.org/linino_distro/linino_dev/latest/packages/rng-tools_3-2_ar71xx.ipk
+
+# Edit your /etc/opkg.conf, add
+src/gz barrier_breaker http://download.linino.org/dogstick/all-in-one/latest/packages/
+# Comment out your earlier src/gz
+
+opkg update
+opkg list|grep bridge
+opkg list|grep yun
+
+opkg install -force-overwrite cpu-mcu-bridge yun-conf yun-scripts luci-app-arduino-webpanel avrdude gnupg temboo spacebrew uSDaemon 
+
+/etc/init.d/avahi-daemon start
+
+# Need to edit in order to change to correct LED
+/usr/bin/blink-start
+/usr/bin/blink-stop
+
+rm /tmp/luci-indexcache
+
+# In /etc/avahi/avahi-daemon.conf edit
+[server]
+enable-dbus=no
+
+/etc/init.d/avahi-daemon enable
+/etc/init.d/avahi-daemon start
+
+SHOULD SHOW 
+http://192.168.199.192/cgi-bin/luci/webpanel/homepage
+
+# NEED TO GENERATE A GPG KEY -- WHY??? 
+
+/etc/init.d/generate_new_gpg_key start
+
+# Works only if rngd is there, generates
+
+/etc/arduino/arduino_gpg.asc
+/etc/arduino/arduino_gpg.pub
+/etc/arduino/arduino_gpg.sec
+
+# Apparently Yun uses avrdude linuxgpio, this is suggested by /etc/linino/test_avrdude.sh
+
+# run-avrdude wants to edit sys/class/gpio/gpio21/value which does not exist here
+
+# Also see http://www.tonylianlong.com/?p=135
+# It has modified files for the Arduino IDE and it has the GPG key and gpg binary
+
+# They have also a modified /usr/bin/run-avrdude script which is pure genius, it changes linuxgpio to serial programming and if that is all that is required to change makes it trivial to hook up different boards via USB as well:
+
+#!/bin/sh
+
+#echo 1 &amp;gt; /sys/class/gpio/gpio21/value
+#avrdude -c linuxgpio -C /etc/avrdude.conf -p m32u4 -U lfuse:w:0xFF:m -U hfuse:w:0xD8:m -U efuse:w:0xFB:m -Uflash:w:$1:i $2
+#echo 0 &amp;gt; /sys/class/gpio/gpio21/value
+#echo &amp;quot;$2&amp;quot; &amp;gt; /s2
+echo &amp;quot;&amp;quot; &amp;gt; /dev/ttyACM0
+lsusb|grep 0043
+if [ &amp;quot;$?&amp;quot;x == &amp;quot;0&amp;quot;x ];then
+echo UNO
+avrdude -V -p m328p -c arduino -b 115200 -P /dev/ttyACM0 -C /etc/avrdude.conf -U flash:w:$1 $2
+fi
+lsusb|grep 0042
+if [ &amp;quot;$?&amp;quot;x == &amp;quot;0&amp;quot;x ];then
+echo MEGA
+avrdude -V -C/etc/avrdude.conf -patmega2560 -cstk500v2 -P/dev/ttyACM0 -b115200 -D -Uflash:w:$1 $2      
+fi
+
+echo &amp;quot;&amp;quot; &amp;gt; /dev/ttyACM0
+
+====
+
+# kmod-fs-hfsplus and kmod-nls-utf8 sufficient to mount Mac devices?
+
+====
+
+For my own reference, these are the packages that come with the YUN according to http://download.linino.org/linino_distro/linino_dev/latest/openwrt-ar71xx-generic-rootfs.tar.gz:
+luci-lib-sys kmod-usb-storage terminfo libuci-lua libc opkg triggerhappy kmod-usb-core libpthread ubus iw kmod-crypto-manager luci-mod-admin-core busybox libubus-lua python-json kmod-crypto-hash libiwinfo-lua swconfig kmod-fs-reiserfs libiwinfo libdbus libcurl libdw kmod-lib-crc-ccitt libgpgme luci-theme-openwrt luci-theme-bootstrap kmod-pppoe kmod-video-core libavahi-client kmod-pppox kmod-ipt-conntrack kmod-lib-crc16 base-files kmod-fs-hfsplus netifd uboot-envtools kmod-usb-ohci dnsmasq usbutils luci-sgi-cgi libblkid ubusd libelf1 kmod-spi-gpio python kmod-i2c-core libgpg-error block-mount kmod-fs-vfat kmod-usb2 firewall luci-app-firewall kmod-fs-hfs temboo luci-lib-ipkg libuci liblua libip4tc avahi-dnsconfd libcyassl libdaemon kmod-ath9k libavahi uci lua kmod-fs-ext4 wpad-mini dbus dropbear kmod-ledtrig-timer curl kmod-nls-utf8 kmod-crypto-aes mtd libstdcpp kmod-crypto-core luci-theme-base libjson-c libgcc libreadline libip6tc luci-proto-ppp libffi libuuid luci-mod-admin-full ppp libubox kmod-leds-gpio libusb-1.0 kmod-gpio-button-hotplug gnupg libjson cpu-mcu-bridge luci-lib-web spacebrew librt libassuan kmod-mac80211 libjson-script swap-utils libblobmsg-json iptables hotplug2 kmod-ipt-nathelper kmod-fs-ntfs kmod-fuse jshn libncurses kmod-ipt-core luci-webpanel-linino kmod-ledtrig-default-on rng-tools libpolarssl kmod-ppp kmod-spi-bitbang avahi-daemon uhttpd-mod-lua python-mini kmod-wdt-ath79 avahi-utils libubus uhttpd libxtables avrdude zlib luci-lib-nixio luci-lib-json luci kmod-spi-tty-ds kmod-ath libexpat kernel libnl-tiny libbz2 blkid libusb luci-proto-core px5g kmod-nls-base luci-i18n-english libgdbm yun-scripts libusb-compat uhttpd-mod-ubus uSDaemon wireless-tools kmod-ath9k-common kmod-crypto-arc4 libopenssl kmod-scsi-core kmod-cfg80211 libavahi-dbus-support luci-lib-core ppp-mod-pppoe kmod-spi-dev kmod-ipt-nat kmod-ledtrig-netdev 
+
+====
+
+opkg install avrdude --force-depends
+opkg install rng-tools --force-depends
+
+＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋＋
+
+opkg update
+opkg list|grep bridge
+opkg list|grep yun
+
+opkg install luci
+opkg install -force-overwrite cpu-mcu-bridge yun-conf yun-scripts luci-app-arduino-webpanel gnupg uSDaemon 
+
+opkg install rng-tools avrdude --force-depends
+
+rm /tmp/luci-indexcache
+
+/etc/init.d/generate_new_gpg_key start
+
+http://192.168.199.192/cgi-bin/luci/webpanel/homepage&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;2015-07-24 YunWebUI&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;将feeds.conf中
+src-git luci https://github.com/openwrt/luci.git
+替换为
+src-git luci https://github.com/openwrt/luci.git;luci-0.11
+
+
+Development: the easy way
+
+The easiest way to hack the web panel is to copy on your Yún the files you find in this repo, maintaining the folders structure.
+
+For example, file usr/lib/lua/luci/controller/arduino/index.lua will go to /usr/lib/lua/luci/controller/arduino/index.lua on your Yún.
+
+Then access the webpanel at http://arduino.local/ (where &amp;quot;arduino&amp;quot; is the name of your Yún), properly edit file index.lua and refresh the page to see the changes.
+
+Once done, copy the files back to your pc and submit us a pull request, so that everyone can take advantage of the improvements you made.
+Development: the fast, local but hard way
+
+You need a GNU/Linux box and the following tools: subversion, gnupg, lua, make, gcc, wget. On Debian based distros, these are packages subversion, gnupg, lua5.1, liblua5.1-0-dev, build-essential, wget.
+
+
+参考
+https://github.com/arduino/YunWebUI
+
+ubuntu系统设置
+sudo mkdir /etc/arduino
+cd /etc/arduino
+sudo wget https://raw.githubusercontent.com/arduino/openwrt-packages-yun/master/arduino/yun-conf/files/etc/arduino/gpg_gen_key_batch
+sudo gpg --batch --gen-key /etc/arduino/gpg_gen_key_batch
+sudo rm -f /etc/arduino/arduino_gpg.asc
+sudo gpg --no-default-keyring --secret-keyring /etc/arduino/arduino_gpg.sec --keyring /etc/arduino/arduino_gpg.pub --export --armor --output /etc/arduino/arduino_gpg.asc
+sudo chmod 644 /etc/arduino/arduino_gpg.*
+
+svn co http://svn.luci.subsignal.org/luci/branches/luci-0.11 luci
+
+cd /home/router-dev/iot-gateway
+svn co https://github.com/arduino/YunWebUI/trunk yunWebUI
+
+进入openwrt目录
+cd /home/router-dev/openwrt/branches/attitude_adjustment/feeds
+
+cd luci
+mkdir applications/arduino
+cp applications/myapplication/Makefile applications/arduino
+ln -s /home/router-dev/iot-gateway/yunWebUI/usr/lib/lua/luci applications/arduino/luasrc
+ln -s /home/router-dev/iot-gateway/yunWebUI/www applications/arduino/htdocs
+
+回到openwrt目录/home/router-dev/openwrt/branches/attitude_adjustment/feeds/luci
+make runuhttpd
+
+http://localhost:8080/cgi-bin/luci/webpanel/
+passwd：admin
+
+## luci-app-arduino-webpanel-1.5.6
+#  http://arduino.cc/download.php?f=/luci-app-arduino-webpanel-1.5.6.tar.bz2
+
+cd /home/router-dev/openwrt/branches/attitude_adjustment/package
+mkdir arduino
+touch Makefile
+
+复制以下内容
+
+#
+# Copyright (c) 2014 Arduino LLC. All right reserved.
+#
+# This is free software, licensed under the GNU General Public License v2.
+# See /LICENSE for more information.
+#
+
+include $(TOPDIR)/rules.mk
+
+PKG_NAME:=luci-app-arduino-webpanel
+PKG_VERSION:=1.5.6
+PKG_RELEASE:=1
+
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
+PKG_SOURCE_URL:=http://arduino.cc/download.php?f=/
+PKG_MD5SUM:=fbcadb0b846db24302cd4e027bf3927e
+
+include $(INCLUDE_DIR)/package.mk
+
+define Package/luci-app-arduino-webpanel
+  SECTION:=luci
+  CATEGORY:=LuCI
+  SUBMENU:=3. Applications
+  TITLE:= simplified wifi configuration panel
+  DEPENDS:=+luci +luci-lib-json +uhttpd-mod-lua +yun-scripts
+endef
+
+define Package/luci-app-arduino-webpanel/description
+simplified wifi configuration panel
+endef
+
+define Build/Compile
+# NOOP
+endef
+
+define Package/luci-app-arduino-webpanel/install
+$(INSTALL_DIR) $(1)/usr/lib/lua/luci/controller/arduino
+$(INSTALL_DIR) $(1)/usr/lib/lua/luci/view/arduino
+$(INSTALL_DIR) $(1)/www/luci-static/resources/arduino
+
+find $(PKG_BUILD_DIR)/usr/ -name &amp;#39;*.lua&amp;#39; -exec luac -s -o {} {} \;
+$(CP) $(PKG_BUILD_DIR)/usr/* $(1)/usr/
+$(CP) $(PKG_BUILD_DIR)/www/* $(1)/www/
+endef
+
+$(eval $(call BuildPackage,luci-app-arduino-webpanel))
+
+make menuconfig
+
+git clone https://github.com/arduino/openwrt-yun.git&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;zigbeegw-luci&quot;&gt;2015-07-22 zigbeegw-luci&lt;/h1&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;# zigbeegw-luci 
+
+cd /home/router-dev/openwrt/branches/attitude_adjustment/package
+svn co https://github.com/paradislover/zigbeegw-luci/trunk zigbeegw
+
+make menuconfig
+LuCI ---&amp;gt; 
+    3.Applications ---&amp;gt;
+&amp;lt;*&amp;gt; luci-app-zigbeegw ................ LuCI Support for zigbeegw
+Kernel modules ---&amp;gt; 
+    USB Support ---&amp;gt;
+&amp;lt;*&amp;gt; kmod-usb-acm
+&amp;lt;*&amp;gt; kmod-usb-serial
+&amp;lt;*&amp;gt;   kmod-usb-cp210x
+&amp;lt;*&amp;gt;   kmod-usb-pl2303
+
+make package/zigbee/clean
+make package/zigbee/compile
+make package/zibgee/install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;openwrt&quot;&gt;2015-07-10,13,16,21 OpenWRT下远程调试&lt;/h1&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;# OpenWRT下远程调试 attitude_adjustment WR703N
+
+svn co svn://svn.openwrt.org/openwrt/branches/attitude_adjustment
+
+# http://blog.csdn.net/piggy1924/article/details/8557350
+# http://wenku.baidu.com/link?url=evvS3AjpZeFeKQYHPw7_80UctmoG0uVmNqKpZO-PDRwRw8jOydDBVkFeOpCpukEhyKwcVPpoVFR-byD1VeNfzpSYpIsn_thKC_mudbA5xzO
+
+配置编译OpenWRT
+
+复制 feeds.conf.default 为 feeds.conf
+~$ cp feeds.conf.default feeds.conf
+将feeds.conf中
+src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package
+src-svn luci http://svn.luci.subsignal.org/luci/branches/luci-0.11/contrib/package
+注释为
+#src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package
+#src-svn luci http://svn.luci.subsignal.org/luci/branches/luci-0.11/contrib/package
+并增加
+src-git luci https://github.com/openwrt/luci.git;luci-0.11
+诸如此类源码,你得定期更新Feeds。 通过如上相同的命令:
+~$ ./scripts/feeds update -a
+~$ ./scripts/feeds install -a
+~$ make menuconfig
+
+选择
+?6?1 [*] Build the OpenWrt SDK
+?6?1 [*] Build the OpenWrt based Toolchain
+?6?1 [*] Advanced configuration options (fordevelopers)
+      -&amp;gt; [*] Toolchain Options
+   -&amp;gt; [*]Build/install c++ compiler and libstdc++” (if C++ is required)
+-&amp;gt; [*]Build gdb
+
+
+Base System –&amp;gt; &amp;lt;*&amp;gt; dropbear        
+           　–&amp;gt; &amp;lt;*&amp;gt; libstdcpp
+
+Network –&amp;gt; file trasfer
+        &amp;lt;*&amp;gt; vsftpd
+–&amp;gt; SSH
+        &amp;lt;*&amp;gt; openssh-sftp-server
+
+Utilities –&amp;gt; // 这两个选项会导致wr703n固件编译不出
+&amp;lt;*&amp;gt; gdb
+&amp;lt;*&amp;gt; gdbserver
+
+# https://dev.openwrt.org/ticket/18331
+
+$ tar -xjf OpenWrt-ImageBuilder-ar71xx_generic-for-linux-i686.tar.bz2
+$ cd OpenWrt-ImageBuilder-ar71xx_generic-for-linux-i686/
+$ make info | grep 703
+TLWR703:
+TP-LINK TL-WR703N
+$ make image PROFILE=TLWR703
+[...]
+$ ls -l bin/ar71xx/
+
+make image PROFILE=TLWR703 PACKAGES=&amp;quot;luci luci-i18n-chinese libstdcpp vsftpd openssh-sftp-server gdb gdbserver&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;openwrt-1&quot;&gt;2015-07-09 OpenWRT下远程调试&lt;/h1&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;# OpenWRT下远程调试 attitude_adjustment WR703N
+
+svn co svn://svn.openwrt.org/openwrt/branches/attitude_adjustment
+
+# http://blog.csdn.net/piggy1924/article/details/8557350
+# http://wenku.baidu.com/link?url=evvS3AjpZeFeKQYHPw7_80UctmoG0uVmNqKpZO-PDRwRw8jOydDBVkFeOpCpukEhyKwcVPpoVFR-byD1VeNfzpSYpIsn_thKC_mudbA5xzO
+
+配置编译OpenWRT
+
+复制 feeds.conf.default 为 feeds.conf
+~$ cp feeds.conf.default feeds.conf
+将feeds.conf中
+src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package
+注释为
+#src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package
+并增加
+src-git luci https://github.com/openwrt/luci.git;luci-0.11
+诸如此类源码,你得定期更新Feeds。 通过如上相同的命令:
+~$ ./scripts/feeds update -a
+~$ ./scripts/feeds install -a
+~$ make defconfig
+~$ make menuconfig
+
+选择
+?6?1 [*] Build the OpenWrt SDK
+?6?1 [*] Build the OpenWrt based Toolchain
+?6?1 [*] Advanced configuration options (fordevelopers)
+      -&amp;gt; [*] Toolchain Options
+   -&amp;gt; [*]Build/install c++ compiler and libstdc++” (if C++ is required)
+-&amp;gt; [*]Build with debug information
+-&amp;gt; [*]Build gdb
+
+Base System –&amp;gt; &amp;lt;*&amp;gt; dropbear        
+           　–&amp;gt; &amp;lt;*&amp;gt; libstdcpp
+
+Network –&amp;gt; file trasfer
+        &amp;lt;*&amp;gt; vsftpd
+–&amp;gt; SSH
+        &amp;lt;*&amp;gt; openssh-sftp-server
+
+Utilities –&amp;gt; &amp;lt;*&amp;gt; gdbserver
+ 
+结论：　未完全成功！！！&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;openwrt-7620n&quot;&gt;2015-07-08 OpenWRT下远程调试 7620n&lt;/h1&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;# OpenWRT下远程调试 barrier_breaker 7620n
+svn co svn://svn.openwrt.org/openwrt/branches/barrier_breaker
+
+# http://blog.csdn.net/piggy1924/article/details/8557350
+# http://wenku.baidu.com/link?url=evvS3AjpZeFeKQYHPw7_80UctmoG0uVmNqKpZO-PDRwRw8jOydDBVkFeOpCpukEhyKwcVPpoVFR-byD1VeNfzpSYpIsn_thKC_mudbA5xzO
+
+配置编译OpenWRT
+
+复制 feeds.conf.default 为 feeds.conf
+~$ cp feeds.conf.default feeds.conf
+将feeds.conf中
+src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package
+注释为
+#src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package
+诸如此类源码,你得定期更新Feeds。 通过如上相同的命令:
+~$ ./scripts/feeds update -a
+~$ ./scripts/feeds install -a
+~$ make defconfig
+~$ make menuconfig
+
+选择
+?6?1 [*] Build the OpenWrt SDK
+?6?1 [*] Build the OpenWrt based Toolchain
+?6?1 [*] Advanced configuration options (fordevelopers)
+   -&amp;gt; [*] Toolchain Options
+       -&amp;gt; [*]Build/install fortran compiler
+   //  -&amp;gt; [*]Build with debug information
+       -&amp;gt; [*]Build gdb
+
+   //→ “gdb”
+   //→ “Build/install c++ compiler and libstdc++” (if C++ is required)
+
+启动以下五项
+
+// Global build setting –&amp;gt; Preferred standard C++ library -&amp;gt; libstdc++
+
+Base System –&amp;gt; &amp;lt;*&amp;gt; dropbear
+            –&amp;gt; &amp;lt;*&amp;gt; libstdcpp
+
+Development –&amp;gt; &amp;lt;*&amp;gt; gdb
+               &amp;lt;*&amp;gt; gdbserver
+
+network –&amp;gt; file trasfer
+        &amp;lt;*&amp;gt; vsftpd
+–&amp;gt; SSH
+        &amp;lt;*&amp;gt; openssh-sftp-server
+
+~$ make V=s
+
+结论：　未完全成功！！！&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;helloworld&quot;&gt;2015-07-07 helloworld&lt;/h1&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;#　内置　helloworld
+
+a).在package目录下创建helloworld目录
+~$ cd package
+~$ mkdir helloworld
+~$ cd helloworld
+
+b).建立Makefile
+~$ touch Makefile
+~$ vim Makefile
+
+Makefile文件模板内容如下：
+##############################################
+# OpenWrt Makefile for helloworld program
+#
+#
+# Most of the variables used here are defined in
+# the include directives below. We just need to
+# specify a basic description of the package,
+# where to build our program, where to find
+# the source files, and where to install the
+# compiled program on the router.
+#
+# Be very careful of spacing in this file.
+# Indents should be tabs, not spaces, and
+# there should be no trailing whitespace in
+# lines that are not commented.
+#
+##############################################
+
+include $(TOPDIR)/rules.mk
+
+# Name and release number of this package
+PKG_NAME:=helloworld.qq.com/
+PKG_RELEASE:=1
+
+
+# This specifies the directory where we&amp;#39;re going to build the program. 
+# The root build directory, $(BUILD_DIR), is by default the build_mipsel
+# directory in your OpenWrt SDK directory
+PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)
+
+
+include $(INCLUDE_DIR)/package.mk
+
+ 
+
+# Specify package information for this program.
+# The variables defined here should be self explanatory.
+# If you are running Kamikaze, delete the DESCRIPTION
+# variable below and uncomment the Kamikaze define
+# directive for the description below
+define Package/helloworld
+SECTION:=utils
+CATEGORY:=Utilities
+TITLE:=Helloworld -- prints a test message
+endef
+
+
+# Uncomment portion below for Kamikaze and delete DESCRIPTION variable above
+define Package/helloworld/description
+        If you can&amp;#39;t figure out what this program does, you&amp;#39;re probably
+        brain-dead and need immediate medical attention.
+endef
+
+ 
+
+# Specify what needs to be done to prepare for building the package.
+# In our case, we need to copy the source files to the build directory.
+# This is NOT the default.  The default uses the PKG_SOURCE_URL and the
+# PKG_SOURCE which is not defined here to download the source from the web.
+# In order to just build a simple program that we have just written, it is
+# much easier to do it this way.
+define Build/Prepare
+mkdir -p $(PKG_BUILD_DIR)
+$(CP) ./src/* $(PKG_BUILD_DIR)/
+endef
+
+
+# We do not need to define Build/Configure or Build/Compile directives
+# The defaults are appropriate for compiling a simple program such as this one
+
+
+# Specify where and how to install the program. Since we only have one file,
+# the helloworld executable, install it by copying it to the /bin directory on
+# the router. The $(1) variable represents the root directory on the router running
+# OpenWrt. The $(INSTALL_DIR) variable contains a command to prepare the install
+# directory if it does not already exist.  Likewise $(INSTALL_BIN) contains the
+# command to copy the binary file from its current location (in our case the build
+# directory) to the install directory.
+define Package/helloworld/install
+$(INSTALL_DIR) $(1)/bin
+$(INSTALL_BIN) $(PKG_BUILD_DIR)/helloworld $(1)/bin/
+endef
+
+
+# This line executes the necessary commands to compile our program.
+# The above define directives specify all the information needed, but this
+# line calls BuildPackage which in turn actually uses this information to
+# build a package.
+$(eval $(call BuildPackage,helloworld))
+
+c).创建src目录，并编写helloworld程序
+~$ mkdir src
+~$ cd src
+
+/**************** 
+* Helloworld.c 
+*****************/
+
+#include &amp;lt;stdio.h&amp;gt; 
+#include &amp;lt;unistd.h&amp;gt; 
+
+int main(void) 
+{ 
+printf(&amp;quot;hello world! \n\n&amp;quot;); 
+return 0; 
+}
+
+
+编写Makefile文件
+
+# build helloworld executable when user executes &amp;quot;make&amp;quot;
+
+helloworld: helloworld.o
+$(CC) $(LDFLAGS) helloworld.o -o helloworld
+
+helloworld.o: helloworld.c
+$(CC) $(CFLAGS) -c helloworld.c
+
+# remove object files and executable when user executes &amp;quot;make clean&amp;quot;
+clean:
+rm *.o helloworld
+
+在这两个文件的目录下，执行make 应该可以生成helloworld的可执行文件。执行helloworld后，能够打印出“hello world!”。 这一步，主要保证我们的源程序是可以正常编译的。
+
+d).编译
+~$ make menuconfig 
+
+?6?1 Utilities -&amp;gt; Toolchain Options
+→ (*) helloworld
+
+~$ make V=s&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;openwrt-build&quot;&gt;2015-07-06 OpenWRT Build&lt;/h1&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;#　1.下载OpenWRT源码包：
+  
+~$ svn checkout svn://svn.openwrt.org/openwrt/trunk 
+进入源码文件夹：  
+~$ cd trunk 
+
+复制 feeds.conf.default 为 feeds.conf
+~$ cp feeds.conf.default feeds.conf
+
+将feeds.conf中
+src-git luci https://github.com/openwrt/luci.git
+替换为
+src-git luci https://github.com/openwrt/luci.git;luci-0.12
+
+诸如此类源码,你得定期更新Feeds。 通过如上相同的命令:
+~$ ./scripts/feeds update -a
+~$ ./scripts/feeds install -a
+
+下一步是检查编译环境，若可进行编译则生成默认配置：
+~$ make defconfig
+
+menuconfig是一个基于文本的工具，它处理选择的目标（需要还是不需要）、编译生成软件包（openwrt下是IPKG格式）以及内核选项（编译成模块还是内核）等等 
+~$ make menuconfig
+
+
+# 2. 增加profile
+
+$ 在../target/linux/ramips/mt7620/profiles 目录增加 wrtnode.mk
+
+#
+# Copyright (C) 2015 OpenWrt.org
+#
+# This is free software, licensed under the GNU General Public License v2.
+# See /LICENSE for more information.
+# add by : cuiqingwei
+#
+
+define Profile/WRTNODE
+ NAME:=Wrtnode
+ PACKAGES:=\
+kmod-usb-core kmod-usb-dwc2 kmod-usb2 kmod-usb-ohci \
+kmod-mt76
+endef
+
+define Profile/WRTNODE/Description
+ Support for WRTnode Board
+endef
+$(eval $(call Profile,WRTNODE))
+
+特别提醒：
+a).profile文件的格式一定要书写正确。特别是 “\”反斜杠后面，千万不能有空格，否则会导致mt7620a整个subtarget都消失不见。
+b).注意package之间的依赖关系，如kmod-ac97 kmod-sound-soc-core kmod-sound-mt7620都依赖于kmod-sound-core，那么就应该按照先后顺序依次写出，同样的道理：kmod-ac97 kmod-sound-soc-core应该出现在kmod-sound-mt7620前面。
+c).必须删除tmp目录，才能让添加的profile生效。
+最后，就可以在make menuconfig中看到你想要的东西啦。
+
+# 3.更改kernel console打印波特率
+在..target/linux/ramips/dts/WRTNODE.dts中添加
+
+chosen {
+bootargs = &amp;quot;console=ttyS0,115200&amp;quot;;
+};&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;# 常用命令&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;### 常用命令
+make clean[清楚bin 目录]
+make dirclean[make clean]+[清除交叉编译工具及工具链目录]
+make distclean[清除所有相关的东西，包括下载的软件包，配置文件，feed内容等]
+
+### 装 Luci web UI :
+./scripts/feeds update packages luci
+./scripts/feeds install -a -p luci
+
+### tftp更新固件
+tftp 0x80000000 wr703n-f.bin
+tftp 0x80000000 openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin
+erase 0x9f020000 +0x3c0000
+cp.b 0x80000000 0x9f020000 0x3c0000
+bootm 0x9f020000
+
+### scp至路由器更新固件
+scp bin/ar71xx/openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin root@192.168.199.175:/tmp/
+mtd -r write openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin firmware
+
+scp zbGateway.bin root@192.168.199.175:/tmp/
+
+### Network-testing with iperf
+
+ping -c 5 192.168.199.175
+
+netcat -u -l -p 2000 &amp;gt; /dev/null
+nc -u -l -p 2000 &amp;gt; /dev/null
+dd if=/dev/zero bs=1M count=100 | pv -brt | netcat -u 192.168.199.175 2000
+
+# TCP
+iperf -s
+iperf -c 192.168.199.175
+# UDP
+iperf -s -u
+iperf -c 192.168.199.175 -u
+
+scp root@192.168.199.175:/etc/opkg.conf /home/router-dev/
+scp /home/router-dev/opkg.conf root@192.168.199.175:/etc/
+scp openwrt-helloworld root@192.168.199.175:/usr/
+root@OpenWrt:/# gdbserver 192.168.199.175:10000 /usr/openwrt-helloworld
+
+### eclipse调试[没有成功]
+/home/router-dev/openwrt/branches/attitude_adjustment/staging_dir
+mips-openwrt-linux-
+/home/router-dev/openwrt/branches/attitude_adjustment/staging_dir/toolchain-mips_r2_gcc-4.6-linaro_uClibc-0.9.33.2/bin
+/home/router-dev/openwrt/branches/attitude_adjustment/build_dir/toolchain-mips_r2_gcc-4.6-linaro_uClibc-0.9.33.2/gdb-linaro-7.2-2011.03-0/gdb/gdb
+
+/home/router-dev/openwrt/branches/barrier_breaker/staging_dir
+mipsel-openwrt-linux-
+/home/router-dev/openwrt/branches/barrier_breaker/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin
+/home/router-dev/openwrt/branches/barrier_breaker/build_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/gdb-linaro-7.6-2013.05/gdb/gdb
+
+############################################################
+??? 问题
+mipsel-openwrt-linux-g++: warning: environment variable &amp;#39;STAGING_DIR&amp;#39; not defined
+!!! 解决
+eclipse菜单Window-&amp;gt;Preferences-&amp;gt;C/C++-&amp;gt;Environmentz增加
+STAGING_DIR　
+/home/router-dev/openwrt/trunk-dev/staging_dir
+
+http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
+将vsftpd编译进openwrt的固件中去
+# http://chaochaoblog.com/archives/1007
+首先进去我们已经下载好了源码的目录，如backfire或者其它分支的。然后利用feeds来下载安装vsftpd
+~$ ./scripts/feeds update
+~$ ./scripts/feeds install -d m vsftpd
+之后你可以到目录/feeds/package/net/下看了，就会发现我们的vsftpd这个源码包都下载下来了。
+之后回根目录，输入
+~$ make menuconfig
+在network –&amp;gt; file trasfer下就可以找到vsftpd了，果断按下y选择编译进固件，当然你也可以选择m那么就只会编译出ipk文件来了。
+~$ make V=s 编译出bin的固件镜像文件来，刷入flash，然后ssh之后ps查看进程
+OpenWrt开启sftp，方便传输文件。修改opkg.conf文件
+# http://see.sl088.com/wiki/Openwrt_opkg%E6%BA%90%E8%AE%BE%E7%BD%AE
+root@OpenWrt:~# vi /etc/opkg.conf
+为
+option overlay_root /overlay
+# src/gz chaos_calmer_base http://downloads.openwrt.org/snapshots/trunk/ramips/mt7620/packages/base
+# src/gz chaos_calmer_luci http://downloads.openwrt.org/snapshots/trunk/ramips/mt7620/packages/luci
+src/gz chaos_calmer_packages http://downloads.openwrt.org/chaos_calmer/15.05-rc2/ramips/mt7620/packages/packages
+# option check_signature 1
+主要去掉签名check,增加
+src/gz chaos_calmer_packages http://downloads.openwrt.org/chaos_calmer/15.05-rc2/ramips/mt7620/packages/packages
+root@OpenWrt:~# opkg update
+root@OpenWrt:~# opkg install vsftpd openssh-sftp-server
+root@OpenWrt:~# /etc/init.d/vsftpd enable
+root@OpenWrt:~# /etc/init.d/vsftpd start
+
+.....................
+
+# http://www.cnblogs.com/peteryj/archive/2011/08/23/2151216.html
+a).建立调试环境
+配置编译OpenWRT
+make menuconfig
+启动以下两项
+Advanced configuration options (for developers) –&amp;gt; Toolchain options –&amp;gt; Build gdb
+Development –&amp;gt; gdbserver
+b).编译
+make V=99，如果已经编译过，则make toolchain/install 编译下gdb即可
+c).编译待调试程序
+make menuconfig
+启动Advanced configuration options (for developers) –&amp;gt; Build options –&amp;gt; Enable debugging
+编译程序
+以snmpd为例 ，使用make package/net-snmp/compile去编译程序，生成带调试信息的snmpd，作为宿主机调试使用。
+以上就是准备工作。下面简单介绍一下调试过程。
+d).调试程序
+启动目标机上的待调试程序
+首先加载并启动编译好的OpenWRT系统，然后
+gdbserver &amp;lt;local_IP&amp;gt;:&amp;lt;port&amp;gt; &amp;lt;program&amp;gt; &amp;lt;args&amp;gt;
+启动宿主机gdb
+(这里要修复一个bug，方法是：cd &amp;lt;openwrtdir&amp;gt;/staging_dir/&amp;lt;targetarch&amp;gt;; rmdir lib; ln -s ../toolchain-&amp;lt;targetarch&amp;gt;_&amp;lt;gccver&amp;gt;/lib lib)。
+cd &amp;lt;openwrtdir&amp;gt;/build_dir/toolchain-&amp;lt;targetarch&amp;gt;_&amp;lt;gccver&amp;gt;/gdb-6.3/gdb
+./gdb-- 启动
+设置gdb，并启动调试程序
+set solib-absolute-prefix &amp;lt;openwrtdir&amp;gt;/staging_dir/&amp;lt;targetarch&amp;gt;
+file &amp;lt;openwrtdir&amp;gt;/build_dir/&amp;lt;targetarch&amp;gt;/&amp;lt;path&amp;gt;/&amp;lt;executable&amp;gt;
+连接目标机：target remote &amp;lt;ip&amp;gt;:&amp;lt;port&amp;gt;
+连接成功之后，就可以按正常的gdb调试流程进行调试了。&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+</description>
+        <pubDate>Thu, 09 Jul 2015 02:00:00 +0800</pubDate>
+        <link>http://cuiqingwei.github.com/projects/2015/07/09/OpenWRT%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0.html</link>
+        <guid isPermaLink="true">http://cuiqingwei.github.com/projects/2015/07/09/OpenWRT%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0.html</guid>
+        
+        
+        <category>projects</category>
+        
+      </item>
+    
+      <item>
         <title>Ubuntu</title>
         <description>&lt;h3 id=&quot;section&quot;&gt;1.常用指令&lt;/h3&gt;
 
@@ -663,7 +1809,7 @@ http://guide.macports.org/#installing.macports&lt;/p&gt;
       </item>
     
       <item>
-        <title>InstantContiki2.6 for cc2530</title>
+        <title>InstantContiki2.6 for CC2530</title>
         <description>&lt;p&gt;搞zigbee算是国内第一批了，很早就知道6lowpan。用cc2430时，从研究&lt;a href=&quot;http://www.tinyos8051wg.net&quot;&gt;http://www.tinyos8051wg.net&lt;/a&gt;，找寻资料了解到 Nanostack1.0.0，直到Nanostack1.1.0 之后就转为contiki了。好久没发帖了，发个帖Mark一下，先！&lt;/p&gt;
 
 &lt;p&gt;1.Download Instant Contiki&lt;/p&gt;
@@ -1279,237 +2425,6 @@ http://guide.macports.org/#installing.macports&lt;/p&gt;
         
         
         <category>favorites</category>
-        
-      </item>
-    
-      <item>
-        <title>USB_M8_RGBLED彩灯</title>
-        <description>&lt;p&gt;用M8控制RGBLED测试了一下，效果不错。并做了一个上位机软件，通过USB控制，现将资料整理上传与君共享！&lt;/p&gt;
-
-&lt;h1 id=&quot;section&quot;&gt;原理图&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_198395.PNG&quot; alt=&quot;原理图&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-1&quot;&gt;源代码&lt;/h1&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;/******************************************************************************
-* rgbCtrl.h 
-*
-* Copyright XiaoCui&amp;#39; Products
-*
-* DESCRIPTION: 
-*
-* modification history
-* --------------------
-* 01a, 01jan2008, cuiqingwei written
-* --------------------
-******************************************************************************/
-
-#include &amp;lt;avr/io.h&amp;gt;
-#include &amp;lt;avr/interrupt.h&amp;gt;
-#include &amp;lt;avr/pgmspace.h&amp;gt;
-#include &amp;lt;avr/wdt.h&amp;gt;
-
-#include &amp;quot;usbdrv.h&amp;quot;
-/* Explanation of the HSV color space:
-H: Hue        - 色调(如红，蓝，黄，绿...)
-S: Saturation - 饱和度
-V: Value      - 亮度
-
-Scaling of the HSV values:
-H: [0-255] 0 = red, 42 = yellow, 85 = green, 128 = turquoise, 171 = blue, 214 = purple
-S: [0-255] 0 = white, 255 = pure colors
-V: [0-255] 0 = off,   255 = maximum brightness */
-
-typedef struct {
-    unsigned char r;
-    unsigned char g;
-    unsigned char b;
-} RGB;
-
-#define Ledport         PORTD            // RGB Led Port
-#define DDR_Ledport     DDRD
-#define R_PIN           5                // R Output
-#define G_PIN           6                // G
-#define B_PIN           7                // B
-
-/* 函数声名 */
-void init(void);
-void hsv_to_rgb (unsigned char h, unsigned char s, unsigned char v, RGB * out);
-
-/* 全局变量 */
-RGB lamp = {0,0,0};
-unsigned char type,H,S,V;
-
-//-----------------------------------------------------------------------------
-// Init
-//-----------------------------------------------------------------------------
-void init(void)
-{
-    PORTD = 0;
-    PORTB = 0;                  // no pullups on USB and ISP pins 
-    DDRD = ~(1 &amp;lt;&amp;lt; 2);           // all outputs except PD2 = INT0 
-    DDRB = 0;                   // all USB and ISP pins inputs 
-    DDR_Ledport = (1&amp;lt;&amp;lt;R_PIN)|(1&amp;lt;&amp;lt;G_PIN)|(1&amp;lt;&amp;lt;B_PIN);
-    TCCR0 = 1;
-    TIMSK = (1&amp;lt;&amp;lt;TOIE0);        // Overflow Interrupt f/256  
-}
-
-uchar usbFunctionSetup(uchar data[8]) 
-{
-    usbRequest_t *rq = (void *)data;
-
-    if( rq-&amp;gt;bRequest )
-    {
-        type = 1;
-        H = rq-&amp;gt;wValue.bytes[0];
-        S = rq-&amp;gt;wValue.bytes[1];
-        V = rq-&amp;gt;wValue.bytes[2];
-    }
-    else
-    {
-        type = 0;
-        lamp.r = rq-&amp;gt;wValue.bytes[0];
-        lamp.g = rq-&amp;gt;wValue.bytes[1];
-        lamp.b = rq-&amp;gt;wValue.bytes[2];
-    }
-    //computeOutputStatus();
-    return 0;
-}
-
-//-----------------------------------------------------------------------------
-// Main
-//-----------------------------------------------------------------------------
-int main(void)
-{        
-    cli();
-    init();
-    usbInit();
-    sei();
-
-    H = 180;
-    S = 255;
-    V = 355;
-    type = 1;
-                
-    for(;;)
-    {
-        usbPoll();
-
-        if ( type )
-        {
-            type = 0;
-            hsv_to_rgb(H,S,V,&amp;amp;lamp);
-        }
-    }
-    return 0;
-}
-
-//-----------------------------------------------------------------------------
-// Converts HSV to RGB
-//-----------------------------------------------------------------------------
-void hsv_to_rgb (unsigned char h, unsigned char s, unsigned char v, RGB * out)
-{
-    unsigned char r=0,g=0,b=0, i, f;
-    unsigned int p, q, t;
-
-    if( s == 0 ) 
-    {        
-        r = g = b = v;
-    }
-    else
-    {        
-        i=h/43;
-        f=h%43;
-        p = (v * (255 - s))/256;
-        q = (v * ((10710 - (s * f))/42))/256;
-        t = (v * ((10710 - (s * (42 - f)))/42))/256;
-
-        switch( i )
-        {        
-            case 0:
-                r = v; g = t; b = p; break;
-            case 1:
-                r = q; g = v; b = p; break;
-            case 2:
-                r = p; g = v; b = t; break;
-            case 3:
-                r = p; g = q; b = v; break;                        
-            case 4:
-                r = t; g = p; b = v; break;                                
-            case 5:
-                r = v; g = p; b = q; break;
-        }
-    }
-    out-&amp;gt;r=r; out-&amp;gt;g=g; out-&amp;gt;b=b;
-}
-
-//-----------------------------------------------------------------------------
-// Timer  0 Interrupt, f/256
-//-----------------------------------------------------------------------------
-SIGNAL (SIG_OVERFLOW0)
-{        
-    static unsigned char PWM_cnt;
-    static unsigned char prescale;
-
-    if(prescale++)
-    {                                
-        prescale=0;                // Used to halve the PWM frequency
-        return;
-    }
-
-    if (PWM_cnt &amp;lt;lamp.r)
-        Ledport |= (1 &amp;lt;&amp;lt; R_PIN);
-    else
-        Ledport &amp;amp;=~(1 &amp;lt;&amp;lt; R_PIN);
-
-    if (PWM_cnt &amp;lt;lamp.g)
-        Ledport |= (1 &amp;lt;&amp;lt; G_PIN);
-    else
-        Ledport &amp;amp;=~(1 &amp;lt;&amp;lt; G_PIN);
-
-    if (PWM_cnt &amp;lt;lamp.b)
-        Ledport |= (1 &amp;lt;&amp;lt; B_PIN);
-    else
-        Ledport &amp;amp;=~(1 &amp;lt;&amp;lt; B_PIN);
-
-    PWM_cnt++;
-}
-/*-----------------------------------------------------------------------------
-                                0ooo
-                       ooo0     (   )
-                       (   )     ) /
-                        \ (     (_/
-                         \_)        By:cuiqingwei [gary]
------------------------------------------------------------------------------*/&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h1 id=&quot;pc&quot;&gt;PC软件界面&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_196733.png&quot; alt=&quot;界面&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-2&quot;&gt;调光效果&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_196737.JPG&quot; alt=&quot;效果&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-3&quot;&gt;调试一角&lt;/h1&gt;
-&lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_196739.JPG&quot; alt=&quot;调试&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-4&quot;&gt;资料包&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_196735.rar&quot;&gt;Mega8源码(文件大小:1.52M)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_198432.rar&quot;&gt;上位机源码(文件大小:989K)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;所用控件
-    &lt;ol&gt;
-      &lt;li&gt;&lt;a href=&quot;http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_198433.rar&quot;&gt;iocomp.v3.04.SP2.Delphi.BCB(文件大小:336K)&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_198434.rar&quot;&gt;AAFont 平滑特效字体控件包 V2.63(文件大小:12.28M)&lt;/a&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Thu, 03 Jan 2008 17:30:15 +0800</pubDate>
-        <link>http://cuiqingwei.github.com/projects/2008/01/03/USB_M8_RGBLED%E5%BD%A9%E7%81%AF.html</link>
-        <guid isPermaLink="true">http://cuiqingwei.github.com/projects/2008/01/03/USB_M8_RGBLED%E5%BD%A9%E7%81%AF.html</guid>
-        
-        
-        <category>projects</category>
         
       </item>
     
