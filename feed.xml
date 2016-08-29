@@ -6,8 +6,8 @@
 </description>
     <link>http://cuiqingwei.github.com/</link>
     <atom:link href="http://cuiqingwei.github.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 12 Aug 2016 17:12:38 +0800</pubDate>
-    <lastBuildDate>Fri, 12 Aug 2016 17:12:38 +0800</lastBuildDate>
+    <pubDate>Mon, 29 Aug 2016 14:14:40 +0800</pubDate>
+    <lastBuildDate>Mon, 29 Aug 2016 14:14:40 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -270,6 +270,227 @@ short_name : tiansj&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
         
         
         <category>learn</category>
+        
+      </item>
+    
+      <item>
+        <title>Linux</title>
+        <description>&lt;p&gt;&lt;strong&gt;通过8个技巧让你成为一个超强的Linux终端用户&lt;/strong&gt; &lt;a href=&quot;http://www.geekfan.net/7112/&quot;&gt;http://www.geekfan.net/7112/&lt;/a&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Tab键自动补全
+管道符命令　ls | grep really
+通配符　rm really*name
+输出重定向　ls &amp;gt; file1
+命令行历史　hirstory
+波浪符”~”代表当前用户的主目录。所以，你可以使用”cd ~”切换到你的主目录，而不用输入”cd /home/name”。
+这对相对路径同样使用，比如”cd ~/Desktop”会切换到当前用户的桌面目录。 
+与之类似的是，”.”代表当前目录，”..”代表父级目录。所有，”cd ..”会跳到父级目录。
+后台命令　firefox &amp;amp;
+条件执行　sleep 5 &amp;amp;&amp;amp; gnome-screenshot 停5秒然后运行gnome的截屏工具&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;在Linux上安装ack&lt;/strong&gt; &lt;a href=&quot;http://www.geekfan.net/6881/&quot;&gt;http://www.geekfan.net/6881/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;linux 文本查找 grep, ack&lt;/strong&gt; &lt;a href=&quot;http://ju.outofmemory.cn/entry/26149&quot;&gt;http://ju.outofmemory.cn/entry/26149&lt;/a&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ wget http://beyondgrep.com/ack-2.12-single-file
+$ sudo mv ack-2.12-single-file /usr/local/bin/ack
+$ sudo chmod 0755 /usr/local/bin/ack&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;怎样从Linux终端管理进程：10个你必须知道的命令&lt;/strong&gt; &lt;a href=&quot;http://www.geekfan.net/7112/&quot;&gt;http://www.geekfan.net/7112/&lt;/a&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;top、htop、ps、pstree、kill、killall、xkill、pgrep&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;如何用Linux命令行管理网络：11个你必须知道的命令&lt;/strong&gt;	&lt;a href=&quot;http://www.geekfan.net/7192/&quot;&gt;http://www.geekfan.net/7192/&lt;/a&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;ping -c 4 baidu.com
+tracepath baidu.com
+tracerouter baidu.com
+mtr baidu.com
+whois baidu.com
+ifconfig eth0
+sudo ifdown eth0
+sudo ifup eth0
+sudo dhclient -r
+netstat -s&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;使用Linux命令行测试网速&lt;/strong&gt;	&lt;a href=&quot;http://www.geekfan.net/5521/&quot;&gt;http://www.geekfan.net/5521/&lt;/a&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ wget https://raw.github.com/sivel/speedtest-cli/master/speedtest_cli.py
+$ chmod a+rx speedtest_cli.py
+$ sudo mv speedtest_cli.py /usr/local/bin/speedtest-cli
+$ sudo chown root:root /usr/local/bin/speedtest-cli
+$ speedtest-cli&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;三张图看遍Linux 性能监控、测试、优化工具&lt;/strong&gt; &lt;a href=&quot;http://www.geekfan.net/13481/&quot;&gt;http://www.geekfan.net/13481/&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 18 Aug 2015 22:50:00 +0800</pubDate>
+        <link>http://cuiqingwei.github.com/favorites/2015/08/18/Linux.html</link>
+        <guid isPermaLink="true">http://cuiqingwei.github.com/favorites/2015/08/18/Linux.html</guid>
+        
+        
+        <category>favorites</category>
+        
+      </item>
+    
+      <item>
+        <title>Ubuntu</title>
+        <description>&lt;h3 id=&quot;section&quot;&gt;1.常用指令&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt; 版本查看：
+       cat /etc/issue
+       sudo lsb_release -a
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;2.环境设置&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;zsh
+     sudo apt-get install zsh
+     https://github.com/robbyrussell/oh-my-zsh
+fortune
+      sudo apt-get install fortune
+      https://github.com/ruanyf/fortunes
+ 
+ 右键添加终端打开
+      sudo apt-get install nautilus-open-terminal
+      sudo reboot
+
+chrome
+      apt-get install chromium chromium-l10n
+      cd /tmp
+      wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+      sudo apt-get install libxss1
+      sudo dpkg -i google-chrome-stable_current_amd64.deb
+  
+svn&amp;amp;git
+      sudo apt-get install subversion
+      sudo apt-get install git
+
+sublime text       
+      wget https://download.sublimetext.com/sublime-text_build-3114_amd64.deb
+      sudo dpkg -i sublime-text_build-3114_amd64.deb
+      key http://www.52pojie.cn/thread-499175-1-1.html
+      &quot;update_check&quot;:false
+      https://packagecontrol.io/installation          
+meld
+     sudo apt-get install meld
+
+eclipse
+     sudo apt-get install eclipse eclipse-cdt
+ 
+arduino
+     sudo apt-get install arduino
+
+eagle
+     wget http://web.cadsoft.de/ftp/eagle/program/7.6/eagle-lin64-7.6.0.run
+     sh eagle-lin64-7.6.0.run
+
+hosts
+     https://github.com/racaljk/hosts
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Cannot Set LC_ALL to default locale: No such file or directory&lt;/strong&gt;&lt;br /&gt;
+&lt;a href=&quot;http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/&quot;&gt;http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;sEx只是调用相关程序，本身并无压缩、解压功能，请注意！
+sEx请到： http://sourceforge.net/projects/sex下载！
+解压后请将sEx拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：
+[root@www2 tmp]# cp sEx /usr/bin/&lt;/p&gt;
+</description>
+        <pubDate>Wed, 14 Jan 2015 05:28:00 +0800</pubDate>
+        <link>http://cuiqingwei.github.com/favorites/2015/01/14/Ubuntu.html</link>
+        <guid isPermaLink="true">http://cuiqingwei.github.com/favorites/2015/01/14/Ubuntu.html</guid>
+        
+        
+        <category>favorites</category>
+        
+      </item>
+    
+      <item>
+        <title>MacOS</title>
+        <description>&lt;h3 id=&quot;mac&quot;&gt;Mac入门&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html&quot;&gt;http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;appstore&quot;&gt;1. AppStore&lt;/h3&gt;
+
+&lt;p&gt;工作：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)
+系统：QQ、CleanMyDrive 3&lt;/p&gt;
+
+&lt;h3 id=&quot;dmg&quot;&gt;2. dmg&lt;/h3&gt;
+
+&lt;p&gt;Chrome、VMwareFusion、RDC、QQInput、RTX、cornerstone
+Sublime Text&lt;/p&gt;
+
+&lt;h3 id=&quot;brew&quot;&gt;3. brew&lt;/h3&gt;
+&lt;p&gt;ruby -e “$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)”
+&lt;a href=&quot;http://brew.sh/&quot;&gt;http://brew.sh/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;升级更新 brew update
+cd /usr/local
+git reset –hard
+git checkout .
+sudo chown -R cuiqingwei /usr/local
+brew update
+http://www.xitongzhijia.net/xtjc/20141204/31879.html&lt;/p&gt;
+
+&lt;h3 id=&quot;macports&quot;&gt;4. MacPorts&lt;/h3&gt;
+&lt;p&gt;https://www.macports.org/install.php
+http://guide.macports.org/#installing.macports&lt;/p&gt;
+
+&lt;h3 id=&quot;wget&quot;&gt;5. wget&lt;/h3&gt;
+&lt;p&gt;sudo port install wget&lt;/p&gt;
+
+&lt;h3 id=&quot;zsh&quot;&gt;6. zsh&lt;/h3&gt;
+&lt;p&gt;wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+&lt;a href=&quot;http://leeiio.me/bash-to-zsh-for-mac/&quot;&gt;http://leeiio.me/bash-to-zsh-for-mac/&lt;/a&gt;
+&lt;a href=&quot;http://www.sketchup.com/download/all&quot;&gt;http://www.sketchup.com/download/all&lt;/a&gt;
+打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!&lt;/p&gt;
+
+&lt;h3 id=&quot;mac-say-&quot;&gt;7. mac say 唱歌&lt;/h3&gt;
+&lt;p&gt;应用程序&amp;gt;实用工具&amp;gt;Terminal 复制和黏贴以下内容，然后回车：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。&lt;/li&gt;
+  &lt;li&gt;在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。&lt;/li&gt;
+  &lt;li&gt;开始听歌了。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://checkcoverage.apple.com/cn/zh/&quot;&gt;https://checkcoverage.apple.com/cn/zh/&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 14 Jan 2015 05:28:00 +0800</pubDate>
+        <link>http://cuiqingwei.github.com/favorites/2015/01/14/MacOS.html</link>
+        <guid isPermaLink="true">http://cuiqingwei.github.com/favorites/2015/01/14/MacOS.html</guid>
+        
+        
+        <category>favorites</category>
+        
+      </item>
+    
+      <item>
+        <title>在eclipse上安装 Marketplace Client</title>
+        <description>&lt;p&gt;Eclipse Marketplace是个插件应用商店，很实用的一个功能。&lt;/p&gt;
+
+&lt;p&gt;打开 eclipse，help–Eclipse Marketplace Client就能找到&lt;/p&gt;
+
+&lt;p&gt;有的eclipse中没有这个功能就需手动添加Eclipse Marketplace Client。&lt;/p&gt;
+
+&lt;p&gt;help–install new software–add&lt;/p&gt;
+
+&lt;p&gt;添加name: Eclipse Marketplace Client  (随意起名)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;   Location:http://download.eclipse.org/mpc/indigo/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;添加完成后，work with 选择Eclipse Marketplace Client&lt;/p&gt;
+
+&lt;p&gt;就可以下载了。下载完成后，重启eclipse，help–Eclipse Marketplace Client&lt;/p&gt;
+</description>
+        <pubDate>Sat, 06 Jul 2013 00:54:27 +0800</pubDate>
+        <link>http://cuiqingwei.github.com/favorites/2013/07/06/%E5%9C%A8eclipse%E4%B8%8A%E5%AE%89%E8%A3%85-Marketplace-Client.html</link>
+        <guid isPermaLink="true">http://cuiqingwei.github.com/favorites/2013/07/06/%E5%9C%A8eclipse%E4%B8%8A%E5%AE%89%E8%A3%85-Marketplace-Client.html</guid>
+        
+        
+        <category>favorites</category>
         
       </item>
     
