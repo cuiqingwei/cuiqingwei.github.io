@@ -81,22 +81,22 @@
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">Tab键自动补全
 管道符命令　ls | grep really
-通配符　rm really*name
+通配符　rm really<span class="k">*</span>name
 输出重定向　ls &gt; file1
 命令行历史　hirstory
 波浪符”~”代表当前用户的主目录。所以，你可以使用”cd ~”切换到你的主目录，而不用输入”cd /home/name”。
 这对相对路径同样使用，比如”cd ~/Desktop”会切换到当前用户的桌面目录。 
 与之类似的是，”.”代表当前目录，”..”代表父级目录。所有，”cd ..”会跳到父级目录。
 后台命令　firefox &amp;
-条件执行　sleep 5 &amp;&amp; gnome-screenshot 停5秒然后运行gnome的截屏工具</code></pre></figure>
+条件执行　sleep 5 <span class="o">&amp;&amp;</span> gnome-screenshot 停5秒然后运行gnome的截屏工具</code></pre></figure>
 
 <p><strong>在Linux上安装ack</strong> <a href="http://www.geekfan.net/6881/">http://www.geekfan.net/6881/</a></p>
 
 <p><strong>linux 文本查找 grep, ack</strong> <a href="http://ju.outofmemory.cn/entry/26149">http://ju.outofmemory.cn/entry/26149</a></p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">$ wget http://beyondgrep.com/ack-2.12-single-file
-$ sudo mv ack-2.12-single-file /usr/local/bin/ack
-$ sudo chmod 0755 /usr/local/bin/ack</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>wget http://beyondgrep.com/ack-2.12-single-file
+<span class="gp">$ </span>sudo mv ack-2.12-single-file /usr/local/bin/ack
+<span class="gp">$ </span>sudo chmod 0755 /usr/local/bin/ack</code></pre></figure>
 
 <p><strong>怎样从Linux终端管理进程：10个你必须知道的命令</strong> <a href="http://www.geekfan.net/7112/">http://www.geekfan.net/7112/</a></p>
 
@@ -117,11 +117,11 @@ netstat -s</code></pre></figure>
 
 <p><strong>使用Linux命令行测试网速</strong>	<a href="http://www.geekfan.net/5521/">http://www.geekfan.net/5521/</a></p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">$ wget https://raw.github.com/sivel/speedtest-cli/master/speedtest_cli.py
-$ chmod a+rx speedtest_cli.py
-$ sudo mv speedtest_cli.py /usr/local/bin/speedtest-cli
-$ sudo chown root:root /usr/local/bin/speedtest-cli
-$ speedtest-cli</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>wget https://raw.github.com/sivel/speedtest-cli/master/speedtest_cli.py
+<span class="gp">$ </span>chmod a+rx speedtest_cli.py
+<span class="gp">$ </span>sudo mv speedtest_cli.py /usr/local/bin/speedtest-cli
+<span class="gp">$ </span>sudo chown root:root /usr/local/bin/speedtest-cli
+<span class="gp">$ </span>speedtest-cli</code></pre></figure>
 
 <p><strong>三张图看遍Linux 性能监控、测试、优化工具</strong> <a href="http://www.geekfan.net/13481/">http://www.geekfan.net/13481/</a></p>
 

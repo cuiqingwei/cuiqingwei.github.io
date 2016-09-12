@@ -79,51 +79,51 @@
 <div class="content">
     <h1 id="openwrt-yun">2016-04-23 Openwrt Yun</h1>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">#!/bin/bash -ex
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/bin/bash -ex</span>
 
-# FEEDS
+<span class="c"># FEEDS</span>
 ./scripts/feeds uninstall -a
 rm -rf feeds
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 ./scripts/feeds uninstall erlang freeswitch remotefs libzstream shflags opensips pulseaudio xmlrpc-c rtorrent sox umurmur-polarssl freecwmp-zstream osirisd logtrigger libplist libimobiledevice cmus mxml boost wt etherpuppet php4 aprx n2n pdnsd crtmpserver kissdx openconnect telepathy-python alljoyn
 
-# CONFIG
+<span class="c"># CONFIG</span>
 rm -f .config
 git checkout .config
 
-sed &#39;s/=m$/=n/&#39; &lt; .config &gt; .baseonlyconfig
+sed <span class="s1">'s/=m$/=n/'</span> &lt; .config &gt; .baseonlyconfig
 mv .config .origconfig
 mv .baseonlyconfig .config
 
 make oldconfig
 
-# BUILDING
-nice -n 10 make -j 2 V=s
+<span class="c"># BUILDING</span>
+nice -n 10 make -j 2 <span class="nv">V</span><span class="o">=</span>s
 
 
 /etc/config/wireless
 config wifi-iface
-	option network &#39;wwan&#39;
-	option ssid &#39;MiWiFi&#39;
-	option encryption &#39;psk2&#39;
-	option device &#39;radio0&#39;
-	option mode &#39;sta&#39;
-	option bssid &#39;8C:BE:BE:29:FE:56&#39;
-	option key &#39;1981021400&#39;
+	option network <span class="s1">'wwan'</span>
+	option ssid <span class="s1">'MiWiFi'</span>
+	option encryption <span class="s1">'psk2'</span>
+	option device <span class="s1">'radio0'</span>
+	option mode <span class="s1">'sta'</span>
+	option bssid <span class="s1">'8C:BE:BE:29:FE:56'</span>
+	option key <span class="s1">'1981021400'</span>
 
-wireless.@wifi-iface[0]=wifi-iface                                              
-wireless.@wifi-iface[0].network=wwan                                            
-wireless.@wifi-iface[0].ssid=MiWiFi                                             
-wireless.@wifi-iface[0].encryption=psk2                                         
-wireless.@wifi-iface[0].device=radio0                                           
-wireless.@wifi-iface[0].mode=sta                                                
-wireless.@wifi-iface[0].bssid=8C:BE:BE:29:FE:56                                 
-wireless.@wifi-iface[0].key=1981021400</code></pre></figure>
+wireless.@wifi-iface[0]<span class="o">=</span>wifi-iface                                              
+wireless.@wifi-iface[0].network<span class="o">=</span>wwan                                            
+wireless.@wifi-iface[0].ssid<span class="o">=</span>MiWiFi                                             
+wireless.@wifi-iface[0].encryption<span class="o">=</span>psk2                                         
+wireless.@wifi-iface[0].device<span class="o">=</span>radio0                                           
+wireless.@wifi-iface[0].mode<span class="o">=</span>sta                                                
+wireless.@wifi-iface[0].bssid<span class="o">=</span>8C:BE:BE:29:FE:56                                 
+wireless.@wifi-iface[0].key<span class="o">=</span>1981021400 </code></pre></figure>
 
 <h1 id="draginoyun-shield">2016-04-11 DraginoYun Shield</h1>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">echo src-svn packages https://github.com/arduino/openwrt-packages-yun/trunk &gt;&gt; feed.conf.default
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo </span>src-svn packages https://github.com/arduino/openwrt-packages-yun/trunk &gt;&gt; feed.conf.default
 
 ＃更新package
 ./scripts/feeds update -a
@@ -143,13 +143,13 @@ make package/luci-app-arduino-webpanel/install</code></pre></figure>
 <h1 id="draginoyun-shield-1">2016-04-08 DraginoYun Shield</h1>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">svn checkout https://github.com/dragino/openwrt-yun.git dragino-yun
-cd dragino-yun/trunk
+<span class="nb">cd </span>dragino-yun/trunk
 ./build_image.sh
-cd openwrt
+<span class="nb">cd </span>openwrt
 
 vi feeds.config.default
-#断开packages,链接本地dragino-packages
-#src-git dragino https://github.com/dragino/dragino-packages.git
+<span class="c">#断开packages,链接本地dragino-packages</span>
+<span class="c">#src-git dragino https://github.com/dragino/dragino-packages.git</span>
 src-link dragino ../../dragino-packages
 
 ＃卸载package
@@ -171,40 +171,40 @@ https://wiki.openwrt.org/doc/howto/build</code></pre></figure>
 
 <p>2016-04-05 ArduinoYun Shield</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">http://www.znck007.com/forum.php?mod=viewthread&amp;tid=22687
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">http://www.znck007.com/forum.php?mod<span class="o">=</span>viewthread&amp;tid<span class="o">=</span>22687
 
-# 源
+<span class="c"># 源</span>
 https://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/
 http://downloads.arduino.cc/openwrtyun/1/packages/
 
 vi /etc/opkg.conf
 src/gz attitude_adjustment https://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/
 
-# 使用putty登陆openwrt输入
+<span class="c"># 使用putty登陆openwrt输入</span>
 opkg update
 opkg install kmod-usb-storage block-mount block-hotplug kmod-fs-ext4
 mkfs.ext4 /dev/sda1# 格式化TF卡，第一次使用须格式化
 mkdir -p /mnt/sda1# 新建一个TF卡目录
 mount /dev/sda1 /mnt/sda1# 将TF卡挂载到/mnt/sda1目录
 
-# 自动挂载（这样就不需要每次都执行上面的命令挂载SD卡了）
+<span class="c"># 自动挂载（这样就不需要每次都执行上面的命令挂载SD卡了）</span>
 vi /etc/config/fstab
-# 移到最下面，按i键（编辑模式）然后复制下面，右击到putty就自动粘贴上去了！
-config &#39;mount&#39;
-        option &#39;device&#39; &#39;/dev/sda1&#39;
-        option &#39;options&#39; &#39;rw,sync&#39;
-        option &#39;enabled_fsck&#39; &#39;0&#39;
-        option &#39;enabled&#39; &#39;1&#39;
-        option &#39;target&#39; &#39;/mnt/sda1&#39;
+<span class="c"># 移到最下面，按i键（编辑模式）然后复制下面，右击到putty就自动粘贴上去了！</span>
+config <span class="s1">'mount'</span>
+        option <span class="s1">'device'</span> <span class="s1">'/dev/sda1'</span>
+        option <span class="s1">'options'</span> <span class="s1">'rw,sync'</span>
+        option <span class="s1">'enabled_fsck'</span> <span class="s1">'0'</span>
+        option <span class="s1">'enabled'</span> <span class="s1">'1'</span>
+        option <span class="s1">'target'</span> <span class="s1">'/mnt/sda1'</span>
 
 mkdir -p /mnt/sda1/php# 新建软件包目录
-echo dest phpdisk /mnt/sda1/php/ &gt;&gt; /etc/opkg.conf
+<span class="nb">echo </span>dest phpdisk /mnt/sda1/php/ &gt;&gt; /etc/opkg.conf
 opkg --dest phpdisk install php5-fastcgi php5-mod-gd php5-mod-xml php5-mod-ctype php5-mod-session php5-mod-sockets php5-mod-tokenizer php5-mod-mcrypt php5-mod-mbstring php5-mod-pdo php5-mod-curl php5-mod-mysql
 
-# 安装一个时区信息软件包，否则系统无法识别时区。
+<span class="c"># 安装一个时区信息软件包，否则系统无法识别时区。</span>
 opkg install zoneinfo-asia
 
-# 建立软连接，不然会找不到对应的库和配置文件：
+<span class="c"># 建立软连接，不然会找不到对应的库和配置文件：</span>
 ln -s /mnt/sda1/php/etc/php.ini /etc/php.ini
 ln -s /mnt/sda1/php/etc/php5 /etc/php5
 ln -s /mnt/sda1/php/usr/lib/libpcre.so.0.0.1 /usr/lib/libpcre.so.0
@@ -218,125 +218,125 @@ ln -s /mnt/sda1/php/usr/lib/libmysqlclient.so.16 /usr/lib/libmysqlclient.so.16
 ln -s /mnt/sda1/php/usr/lib/php /usr/lib/php
 ln -s /mnt/sda1/php/usr/bin/php-cgi /usr/bin/php-cgi
 
-# 安装到内存
+<span class="c"># 安装到内存</span>
 opkg install php5-fastcgi php5-mod-gd php5-mod-xml php5-mod-ctype php5-mod-session php5-mod-sockets php5-mod-tokenizer php5-mod-mcrypt php5-mod-mbstring php5-mod-pdo php5-mod-curl php5-mod-mysql
 
-# 编辑php.ini，方法如下。
+<span class="c"># 编辑php.ini，方法如下。</span>
 
-# 找到下面的字段修改为如下，如果有用&quot;;&quot;注析的就删掉：
-short_open_tag = On
+<span class="c"># 找到下面的字段修改为如下，如果有用";"注析的就删掉：</span>
+short_open_tag <span class="o">=</span> On
 
-error_log = /var/log/php_errors.log
-doc_root = &quot;/mnt/sda1/www&quot;  修改成sd卡的路径。
+error_log <span class="o">=</span> /var/log/php_errors.log
+doc_root <span class="o">=</span> <span class="s2">"/mnt/sda1/www"</span>  修改成sd卡的路径。
 
-extension=ctype.so
-extension=curl.so
-extension=dom.so
-extension=exif.so
-extension=ftp.so
-extension=gd.so
-extension=gmp.so
-extension=hash.so
-extension=iconv.so
-extension=json.so
-extension=ldap.so
-extension=mbstring.so
-extension=mcrypt.so
-extension=mysql.so
-extension=openssl.so
-extension=pcre.so
-extension=pdo.so
-extension=pdo-mysql.so
-extension=pdo-pgsql.so
-extension=pdo_sqlite.so
-extension=pgsql.so
-extension=session.so
-extension=soap.so
-extension=sockets.so
-extension=sqlite.so
-extension=sqlite3.so
-extension=tokenizer.so
-extension=xml.so
-extension=xmlreader.so
-extension=xmlwriter.so 
+<span class="nv">extension</span><span class="o">=</span>ctype.so
+<span class="nv">extension</span><span class="o">=</span>curl.so
+<span class="nv">extension</span><span class="o">=</span>dom.so
+<span class="nv">extension</span><span class="o">=</span>exif.so
+<span class="nv">extension</span><span class="o">=</span>ftp.so
+<span class="nv">extension</span><span class="o">=</span>gd.so
+<span class="nv">extension</span><span class="o">=</span>gmp.so
+<span class="nv">extension</span><span class="o">=</span>hash.so
+<span class="nv">extension</span><span class="o">=</span>iconv.so
+<span class="nv">extension</span><span class="o">=</span>json.so
+<span class="nv">extension</span><span class="o">=</span>ldap.so
+<span class="nv">extension</span><span class="o">=</span>mbstring.so
+<span class="nv">extension</span><span class="o">=</span>mcrypt.so
+<span class="nv">extension</span><span class="o">=</span>mysql.so
+<span class="nv">extension</span><span class="o">=</span>openssl.so
+<span class="nv">extension</span><span class="o">=</span>pcre.so
+<span class="nv">extension</span><span class="o">=</span>pdo.so
+<span class="nv">extension</span><span class="o">=</span>pdo-mysql.so
+<span class="nv">extension</span><span class="o">=</span>pdo-pgsql.so
+<span class="nv">extension</span><span class="o">=</span>pdo_sqlite.so
+<span class="nv">extension</span><span class="o">=</span>pgsql.so
+<span class="nv">extension</span><span class="o">=</span>session.so
+<span class="nv">extension</span><span class="o">=</span>soap.so
+<span class="nv">extension</span><span class="o">=</span>sockets.so
+<span class="nv">extension</span><span class="o">=</span>sqlite.so
+<span class="nv">extension</span><span class="o">=</span>sqlite3.so
+<span class="nv">extension</span><span class="o">=</span>tokenizer.so
+<span class="nv">extension</span><span class="o">=</span>xml.so
+<span class="nv">extension</span><span class="o">=</span>xmlreader.so
+<span class="nv">extension</span><span class="o">=</span>xmlwriter.so 
 
-date.timezone = Asia/Shanghai
-mysql.default_socket = /var/run/mysqld.sock
-session.auto_start = 1
+date.timezone <span class="o">=</span> Asia/Shanghai
+mysql.default_socket <span class="o">=</span> /var/run/mysqld.sock
+session.auto_start <span class="o">=</span> 1
 
-# 和上面一样，打开/etc/config/uhttpd
-option home &#39;/mnt/sda1/www&#39;                 #把/www修改成/mnt/sda1/www为放置网页的目录。
-option index_page index.php               #添加到后面
-list interpreter &quot;.php=/usr/bin/php-cgi&quot;   #添加到后面
+<span class="c"># 和上面一样，打开/etc/config/uhttpd</span>
+option home <span class="s1">'/mnt/sda1/www'</span>                 <span class="c">#把/www修改成/mnt/sda1/www为放置网页的目录。</span>
+option index_page index.php               <span class="c">#添加到后面</span>
+list interpreter <span class="s2">".php=/usr/bin/php-cgi"</span>   <span class="c">#添加到后面</span>
 
-# 然后重启uhttpd（在putty里输入命令回车）：
+<span class="c"># 然后重启uhttpd（在putty里输入命令回车）：</span>
 /etc/init.d/uhttpd restart
 
-# 使用putty安装mysql。
+<span class="c"># 使用putty安装mysql。</span>
 opkg update
 opkg install mysql-server
 
-# 创建数据库目录
+<span class="c"># 创建数据库目录</span>
 mkdir -p /mnt/sda1/mysql/data/mysql
 mkdir -p /mnt/sda1/mysql/data/tmp
 
-# 查找到以下内容并修改如下：
-datadir = /mnt/sda1/mysql/data/mysql/
-tmpdir  = /mnt/sda1/mysql/data/tmp/
-# bind-address = 192.168.1.1
+<span class="c"># 查找到以下内容并修改如下：</span>
+datadir <span class="o">=</span> /mnt/sda1/mysql/data/mysql/
+tmpdir  <span class="o">=</span> /mnt/sda1/mysql/data/tmp/
+<span class="c"># bind-address = 192.168.1.1</span>
 
-# 初始化建库
+<span class="c"># 初始化建库</span>
 mysql_install_db --force
-# 以关闭授权的方式启动mysql
+<span class="c"># 以关闭授权的方式启动mysql</span>
 mysqld --skip-grant &amp;
-# 进入mysql,修改账号连接权限
+<span class="c"># 进入mysql,修改账号连接权限</span>
 mysql -u root mysql
-# 进入mysql以后出现mysql&gt;提示符，再修改账号连接权限：
-update user set host=&#39;%&#39; where user=&#39;root&#39; and host=&#39;localhost&#39;;
-# 修改数据库密码为edutech
-update user set password=PASSWORD(&#39;edutech&#39;) where user=&#39;root&#39;;
-# 刷新数据库
+<span class="c"># 进入mysql以后出现mysql&gt;提示符，再修改账号连接权限：</span>
+update user <span class="nb">set </span><span class="nv">host</span><span class="o">=</span><span class="s1">'%'</span> where <span class="nv">user</span><span class="o">=</span><span class="s1">'root'</span> and <span class="nv">host</span><span class="o">=</span><span class="s1">'localhost'</span>;
+<span class="c"># 修改数据库密码为edutech</span>
+update user <span class="nb">set </span><span class="nv">password</span><span class="o">=</span>PASSWORD<span class="o">(</span><span class="s1">'edutech'</span><span class="o">)</span> where <span class="nv">user</span><span class="o">=</span><span class="s1">'root'</span>;
+<span class="c"># 刷新数据库</span>
 flush privileges;
-# 上面ok了以后，退出mysql
-exit;
+<span class="c"># 上面ok了以后，退出mysql</span>
+<span class="nb">exit</span>;
 
-# 重启mysql，以授权验证方式启动（为了系统安全）
+<span class="c"># 重启mysql，以授权验证方式启动（为了系统安全）</span>
 killall mysqld
-# 设定开机运行 
-/etc/init.d/mysqld enable 
-# 启动MySQL服务
+<span class="c"># 设定开机运行 </span>
+/etc/init.d/mysqld <span class="nb">enable</span> 
+<span class="c"># 启动MySQL服务</span>
 /etc/init.d/mysqld start 
 
-# 用Navicat新建数据库
+<span class="c"># 用Navicat新建数据库</span>
 znckapi
-# 新建查询
-CREATE TABLE IF NOT EXISTS `api_worklist` (
-`id` int(16) unsigned NOT NULL AUTO_INCREMENT,
-`type` int(2) NOT NULL COMMENT &#39;1网设2上传3定时&#39;,
-`uid` int(8) NOT NULL,
-`sid` varchar(3) NOT NULL,
-`nid` varchar(3) NOT NULL,
-`data` varchar(32) NOT NULL,
-`note` varchar(64) NOT NULL,
-`status` int(2) NOT NULL COMMENT &#39;1成功2失败3超过次数4超15分&#39;,
-`time` datetime NOT NULL,
-`ip` varchar(16) NOT NULL,
-`num` int(2) NOT NULL,
-PRIMARY KEY(`id`),
-KEY `uid` (`uid`),
-KEY `time` (`time`)
-)ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+<span class="c"># 新建查询</span>
+CREATE TABLE IF NOT EXISTS <span class="sb">`</span>api_worklist<span class="sb">`</span> <span class="o">(</span>
+<span class="sb">`</span>id<span class="sb">`</span> int<span class="o">(</span>16<span class="o">)</span> unsigned NOT NULL AUTO_INCREMENT,
+<span class="sb">`</span><span class="nb">type</span><span class="sb">`</span> int<span class="o">(</span>2<span class="o">)</span> NOT NULL COMMENT <span class="s1">'1网设2上传3定时'</span>,
+<span class="sb">`</span>uid<span class="sb">`</span> int<span class="o">(</span>8<span class="o">)</span> NOT NULL,
+<span class="sb">`</span>sid<span class="sb">`</span> varchar<span class="o">(</span>3<span class="o">)</span> NOT NULL,
+<span class="sb">`</span>nid<span class="sb">`</span> varchar<span class="o">(</span>3<span class="o">)</span> NOT NULL,
+<span class="sb">`</span>data<span class="sb">`</span> varchar<span class="o">(</span>32<span class="o">)</span> NOT NULL,
+<span class="sb">`</span>note<span class="sb">`</span> varchar<span class="o">(</span>64<span class="o">)</span> NOT NULL,
+<span class="sb">`</span>status<span class="sb">`</span> int<span class="o">(</span>2<span class="o">)</span> NOT NULL COMMENT <span class="s1">'1成功2失败3超过次数4超15分'</span>,
+<span class="sb">`</span><span class="nb">time</span><span class="sb">`</span> datetime NOT NULL,
+<span class="sb">`</span>ip<span class="sb">`</span> varchar<span class="o">(</span>16<span class="o">)</span> NOT NULL,
+<span class="sb">`</span>num<span class="sb">`</span> int<span class="o">(</span>2<span class="o">)</span> NOT NULL,
+PRIMARY KEY<span class="o">(</span><span class="sb">`</span>id<span class="sb">`</span><span class="o">)</span>,
+KEY <span class="sb">`</span>uid<span class="sb">`</span> <span class="o">(</span><span class="sb">`</span>uid<span class="sb">`</span><span class="o">)</span>,
+KEY <span class="sb">`</span><span class="nb">time</span><span class="sb">`</span> <span class="o">(</span><span class="sb">`</span><span class="nb">time</span><span class="sb">`</span><span class="o">)</span>
+<span class="o">)</span><span class="nv">ENGINE</span><span class="o">=</span>MyISAM DEFAULT <span class="nv">CHARSET</span><span class="o">=</span>utf8 <span class="nv">AUTO_INCREMENT</span><span class="o">=</span>1;
 
-# 安装python
+<span class="c"># 安装python</span>
 mkdir -p /mnt/sda1/python
-echo dest pythondisk /mnt/sda1/python/ &gt;&gt; /etc/opkg.conf
+<span class="nb">echo </span>dest pythondisk /mnt/sda1/python/ &gt;&gt; /etc/opkg.conf
 opkg --dest pythondisk install python
 ln -s /mnt/sda1/python/usr/bin/python /usr/bin/python
 opkg --dest pythondisk install pyserial# 安装串口通讯类
 opkg --dest pythondisk install python-mysql# 安装mysql操作类
 
-# http://see.sl088.com/wiki/Opkg
-cd /mnt/sda1
+<span class="c"># http://see.sl088.com/wiki/Opkg</span>
+<span class="nb">cd</span> /mnt/sda1
 wget http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/pyserial_2.4-1_ar71xx.ipk
 wget http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/python-mysql_1.2.2-1_ar71xx.ipk
 
@@ -344,11 +344,11 @@ wget http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packa
 ssh root@192.168.199.159
 dragino
 
-root@dragino-7676e6:~# cd /tmp/
-root@dragino-7676e6:/tmp# 
-root@dragino-7676e6:/tmp# wget http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/luci-i18n-chine
+<span class="gp">root@dragino-7676e6:~# </span><span class="nb">cd</span> /tmp/
+<span class="gp">root@dragino-7676e6:/tmp# </span>
+<span class="gp">root@dragino-7676e6:/tmp# </span>wget http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/luci-i18n-chine
 se_0.11.1-1_ar71xx.ipk
-root@dragino-7676e6:/tmp# opkg install luci-i18n-chinese_0.11.1-1_ar71xx.ipk</code></pre></figure>
+<span class="gp">root@dragino-7676e6:/tmp# </span>opkg install luci-i18n-chinese_0.11.1-1_ar71xx.ipk </code></pre></figure>
 
 <h1 id="luci">2016-03-03 luci</h1>
 <p><a href="http://www.cnblogs.com/luopeng/p/4678704.html">http://www.cnblogs.com/luopeng/p/4678704.html</a></p>
@@ -360,21 +360,21 @@ scp bin/ar71xx/openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin root@192
 mtd -r write openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin firmware
 
 uci show network.lan
-uci set network.lan.proto=dhcp
+uci <span class="nb">set </span>network.lan.proto<span class="o">=</span>dhcp
 uci commit
 /etc/init.d/networtk restart
 
-&gt;&gt; opkg install kmod-video-uvc。
-&gt;&gt; ls /dev，如果有vedio的话，说明驱动安装成功（前提是要把摄像头插上）
-&gt;&gt; opkg install mjpg-streamer
-&gt;&gt; mjpg_streamer -b -i &quot;input_uvc.so /dev/video0 -r 640x480 -yuv&quot; -o &quot;output_http.so -p 8080 -w /web&quot;
+<span class="gp">&gt;&gt; </span>opkg install kmod-video-uvc。
+<span class="gp">&gt;&gt; </span>ls /dev，如果有vedio的话，说明驱动安装成功（前提是要把摄像头插上）
+<span class="gp">&gt;&gt; </span>opkg install mjpg-streamer
+<span class="gp">&gt;&gt; </span>mjpg_streamer -b -i <span class="s2">"input_uvc.so /dev/video0 -r 640x480 -yuv"</span> -o <span class="s2">"output_http.so -p 8080 -w /web"</span>
 
-http://192.168.199.193:8080/?action=stream（动态视频）
-http://192.168.199.193:8080/?action=snapshot（静态图像）</code></pre></figure>
+http://192.168.199.193:8080/?action<span class="o">=</span>stream（动态视频）
+http://192.168.199.193:8080/?action<span class="o">=</span>snapshot（静态图像）</code></pre></figure>
 
 <h1 id="mtk-openwrt-sdk">2015-08-25 mtk openwrt-sdk</h1>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">#　for mtksdk-openwrt-3.10.14-20141127-30965ec3.tar.bz2
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#　for mtksdk-openwrt-3.10.14-20141127-30965ec3.tar.bz2</span>
 
 ack -w MediaTek --html
 
@@ -387,7 +387,7 @@ luci 改language
 openwrt-3.10.14_2014/package/ralink/drivers/mt76x2e/files
 mt7612e.sh 改SSID
 
-# for mtksdk-openwrt-3.10.14-20150311-d021c937.tar.bz2
+<span class="c"># for mtksdk-openwrt-3.10.14-20150311-d021c937.tar.bz2</span>
 
 openwrt-3.10.14_2014/package/ramips/ui/luci-mtk/patches/001-logo.patch
 改logo MediaTek-&gt;Edutech
@@ -400,37 +400,37 @@ mt7620.sh 改SSID
 openwrt-3.10.14_2014/package/ramips/drivers/mt76x2e/files
 mt7612e.sh 改SSID
 
-# 更新opkg.config源
+<span class="c"># 更新opkg.config源</span>
 /openwrt-3.10.14/package/base-files/image-config.in　文件中 173　行
 http://downloads.openwrt.org/barrier_breaker/14.07/ramips/mt7620a/packages
 
-# 版本号
+<span class="c"># 版本号</span>
 /openwrt-3.10.14/package/ramips/ui/luci-mtk/src/build/mkversion.sh
 更改　luciname 和 luciversion为
-luciname    = &quot;Edutech LuCI &quot;
-luciversion = &quot;0.12&quot;
+luciname    <span class="o">=</span> <span class="s2">"Edutech LuCI "</span>
+luciversion <span class="o">=</span> <span class="s2">"0.12"</span>
 
-# banner
+<span class="c"># banner</span>
 figlet edutech -f speed.flf -c -w 52
          _________      _____           ______  
     ___________  /___  ___  /______________  /_ 
-    _  _ \  __  /_  / / /  __/  _ \  ___/_  __ \
+    _  _ <span class="se">\ </span> __  /_  / / /  __/  _ <span class="se">\ </span> ___/_  __ <span class="se">\</span>
     /  __/ /_/ / / /_/ // /_ /  __/ /__ _  / / /
-    \___/\__,_/  \__,_/ \__/ \___/\___/ /_/ /_/ 
+    <span class="se">\_</span>__/<span class="se">\_</span>_,_/  <span class="se">\_</span>_,_/ <span class="se">\_</span>_/ <span class="se">\_</span>__/<span class="se">\_</span>__/ /_/ /_/ 
                                                
  -----------------------------------------------------
              Shanghai Edutech Co.,Ltd
  -----------------------------------------------------
  
-# profiles 和　固件名
+<span class="c"># profiles 和　固件名</span>
 openwrt-3.10.14/target/linux/ramips/mt7620/profiles
 MT7620a_MT7612e.mk
 
 openwrt-3.10.14/target/linux/ramips/image/Makefile
-# add by cuiqingwei at 20150828
-Image/Build/Profile/MT7620a_MT7612e=$(call BuildFirmware/Default8M/$(1),$(1),mt7612e,MT7620a_MT7612e)
+<span class="c"># add by cuiqingwei at 20150828</span>
+Image/Build/Profile/MT7620a_MT7612e<span class="o">=</span><span class="k">$(</span>call BuildFirmware/Default8M/<span class="k">$(</span>1<span class="k">)</span>,<span class="k">$(</span>1<span class="k">)</span>,mt7612e,MT7620a_MT7612e<span class="k">)</span>
                                                 
-# 去除有问题的iw
+<span class="c"># 去除有问题的iw</span>
 ./scripts/feeds uninstall iw
 删除openwrt-3.10.14/package/network/utils目录下的iw目录</code></pre></figure>
 
@@ -443,27 +443,27 @@ Image/Build/Profile/MT7620a_MT7612e=$(call BuildFirmware/Default8M/$(1),$(1),mt7
 make menuconfig
 
 Base System ---&gt; 
-&lt;*&gt; yun-conf...................................... Custom Yún configurations            
- &lt;*&gt; yun-scripts.......................................... Custom Yún scripts
+<span class="gp">&lt;*&gt; </span>yun-conf...................................... Custom Yún configurations            
+ &lt;<span class="k">*</span>&gt; yun-scripts.......................................... Custom Yún scripts
 
 LuCI ---&gt;
 3. Applications ---&gt; 
-&lt;*&gt; luci-app-arduino-webpanel............ simplified wifi configuration panel  
+<span class="gp">&lt;*&gt; </span>luci-app-arduino-webpanel............ simplified wifi configuration panel  
 
-echo &quot;src/gz barrier_breaker http://download.linino.org/dogstick/all-in-one/latest/packages/&quot; &gt;&gt; /etc/opkg.conf
+<span class="nb">echo</span> <span class="s2">"src/gz barrier_breaker http://download.linino.org/dogstick/all-in-one/latest/packages/"</span> &gt;&gt; /etc/opkg.conf
 
 opkg install rng-tools --force-depends
 opkg install gnupg
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-“Not enough random bytes available. Please do some other work to give
-　the OS a chance to collect more entropy! (Need 284 more bytes)”
+“Not enough random bytes available. Please <span class="k">do </span>some other work to give
+　the OS a chance to collect more entropy! <span class="o">(</span>Need 284 more bytes<span class="o">)</span>”
 
 First make sure you have the following available and have the rights to it:
 
 ls -l /dev/urandom 
 
-then execute rngd against it:
+<span class="k">then </span>execute rngd against it:
 
 rngd -r /dev/urandom
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -480,11 +480,11 @@ http://192.168.199.192/cgi-bin/luci/webpanel/homepage
 
 opkg install luci-lib-json luci rng-tools
 
-# If rng-tools is not installable, then install it by hand from e.g., http://download.linino.org/linino_distro/linino_dev/latest/packages/rng-tools_3-2_ar71xx.ipk
+<span class="c"># If rng-tools is not installable, then install it by hand from e.g., http://download.linino.org/linino_distro/linino_dev/latest/packages/rng-tools_3-2_ar71xx.ipk</span>
 
-# Edit your /etc/opkg.conf, add
+<span class="c"># Edit your /etc/opkg.conf, add</span>
 src/gz barrier_breaker http://download.linino.org/dogstick/all-in-one/latest/packages/
-# Comment out your earlier src/gz
+<span class="c"># Comment out your earlier src/gz</span>
 
 opkg update
 opkg list|grep bridge
@@ -494,71 +494,71 @@ opkg install -force-overwrite cpu-mcu-bridge yun-conf yun-scripts luci-app-ardui
 
 /etc/init.d/avahi-daemon start
 
-# Need to edit in order to change to correct LED
+<span class="c"># Need to edit in order to change to correct LED</span>
 /usr/bin/blink-start
 /usr/bin/blink-stop
 
 rm /tmp/luci-indexcache
 
-# In /etc/avahi/avahi-daemon.conf edit
-[server]
-enable-dbus=no
+<span class="c"># In /etc/avahi/avahi-daemon.conf edit</span>
+<span class="o">[</span>server]
+<span class="nb">enable</span>-dbus<span class="o">=</span>no
 
-/etc/init.d/avahi-daemon enable
+/etc/init.d/avahi-daemon <span class="nb">enable</span>
 /etc/init.d/avahi-daemon start
 
 SHOULD SHOW 
 http://192.168.199.192/cgi-bin/luci/webpanel/homepage
 
-# NEED TO GENERATE A GPG KEY -- WHY??? 
+<span class="c"># NEED TO GENERATE A GPG KEY -- WHY??? </span>
 
 /etc/init.d/generate_new_gpg_key start
 
-# Works only if rngd is there, generates
+<span class="c"># Works only if rngd is there, generates</span>
 
 /etc/arduino/arduino_gpg.asc
 /etc/arduino/arduino_gpg.pub
 /etc/arduino/arduino_gpg.sec
 
-# Apparently Yun uses avrdude linuxgpio, this is suggested by /etc/linino/test_avrdude.sh
+<span class="c"># Apparently Yun uses avrdude linuxgpio, this is suggested by /etc/linino/test_avrdude.sh</span>
 
-# run-avrdude wants to edit sys/class/gpio/gpio21/value which does not exist here
+<span class="c"># run-avrdude wants to edit sys/class/gpio/gpio21/value which does not exist here</span>
 
-# Also see http://www.tonylianlong.com/?p=135
-# It has modified files for the Arduino IDE and it has the GPG key and gpg binary
+<span class="c"># Also see http://www.tonylianlong.com/?p=135</span>
+<span class="c"># It has modified files for the Arduino IDE and it has the GPG key and gpg binary</span>
 
-# They have also a modified /usr/bin/run-avrdude script which is pure genius, it changes linuxgpio to serial programming and if that is all that is required to change makes it trivial to hook up different boards via USB as well:
+<span class="c"># They have also a modified /usr/bin/run-avrdude script which is pure genius, it changes linuxgpio to serial programming and if that is all that is required to change makes it trivial to hook up different boards via USB as well:</span>
 
-#!/bin/sh
+<span class="c">#!/bin/sh</span>
 
-#echo 1 &gt; /sys/class/gpio/gpio21/value
-#avrdude -c linuxgpio -C /etc/avrdude.conf -p m32u4 -U lfuse:w:0xFF:m -U hfuse:w:0xD8:m -U efuse:w:0xFB:m -Uflash:w:$1:i $2
-#echo 0 &gt; /sys/class/gpio/gpio21/value
-#echo &quot;$2&quot; &gt; /s2
-echo &quot;&quot; &gt; /dev/ttyACM0
+<span class="c">#echo 1 &gt; /sys/class/gpio/gpio21/value</span>
+<span class="c">#avrdude -c linuxgpio -C /etc/avrdude.conf -p m32u4 -U lfuse:w:0xFF:m -U hfuse:w:0xD8:m -U efuse:w:0xFB:m -Uflash:w:$1:i $2</span>
+<span class="c">#echo 0 &gt; /sys/class/gpio/gpio21/value</span>
+<span class="c">#echo "$2" &gt; /s2</span>
+<span class="nb">echo</span> <span class="s2">""</span> &gt; /dev/ttyACM0
 lsusb|grep 0043
-if [ &quot;$?&quot;x == &quot;0&quot;x ];then
-echo UNO
-avrdude -V -p m328p -c arduino -b 115200 -P /dev/ttyACM0 -C /etc/avrdude.conf -U flash:w:$1 $2
-fi
-lsusb|grep 0042
-if [ &quot;$?&quot;x == &quot;0&quot;x ];then
-echo MEGA
-avrdude -V -C/etc/avrdude.conf -patmega2560 -cstk500v2 -P/dev/ttyACM0 -b115200 -D -Uflash:w:$1 $2      
-fi
+<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$?</span><span class="s2">"</span>x <span class="o">==</span> <span class="s2">"0"</span>x <span class="o">]</span>;<span class="k">then
+</span><span class="nb">echo </span>UNO
+avrdude -V -p m328p -c arduino -b 115200 -P /dev/ttyACM0 -C /etc/avrdude.conf -U flash:w:<span class="nv">$1</span> <span class="nv">$2</span>
+<span class="k">fi
+</span>lsusb|grep 0042
+<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$?</span><span class="s2">"</span>x <span class="o">==</span> <span class="s2">"0"</span>x <span class="o">]</span>;<span class="k">then
+</span><span class="nb">echo </span>MEGA
+avrdude -V -C/etc/avrdude.conf -patmega2560 -cstk500v2 -P/dev/ttyACM0 -b115200 -D -Uflash:w:<span class="nv">$1</span> <span class="nv">$2</span>      
+<span class="k">fi
 
-echo &quot;&quot; &gt; /dev/ttyACM0
+</span><span class="nb">echo</span> <span class="s2">""</span> &gt; /dev/ttyACM0
 
-====
+<span class="o">====</span>
 
-# kmod-fs-hfsplus and kmod-nls-utf8 sufficient to mount Mac devices?
+<span class="c"># kmod-fs-hfsplus and kmod-nls-utf8 sufficient to mount Mac devices?</span>
 
-====
+<span class="o">====</span>
 
 For my own reference, these are the packages that come with the YUN according to http://download.linino.org/linino_distro/linino_dev/latest/openwrt-ar71xx-generic-rootfs.tar.gz:
 luci-lib-sys kmod-usb-storage terminfo libuci-lua libc opkg triggerhappy kmod-usb-core libpthread ubus iw kmod-crypto-manager luci-mod-admin-core busybox libubus-lua python-json kmod-crypto-hash libiwinfo-lua swconfig kmod-fs-reiserfs libiwinfo libdbus libcurl libdw kmod-lib-crc-ccitt libgpgme luci-theme-openwrt luci-theme-bootstrap kmod-pppoe kmod-video-core libavahi-client kmod-pppox kmod-ipt-conntrack kmod-lib-crc16 base-files kmod-fs-hfsplus netifd uboot-envtools kmod-usb-ohci dnsmasq usbutils luci-sgi-cgi libblkid ubusd libelf1 kmod-spi-gpio python kmod-i2c-core libgpg-error block-mount kmod-fs-vfat kmod-usb2 firewall luci-app-firewall kmod-fs-hfs temboo luci-lib-ipkg libuci liblua libip4tc avahi-dnsconfd libcyassl libdaemon kmod-ath9k libavahi uci lua kmod-fs-ext4 wpad-mini dbus dropbear kmod-ledtrig-timer curl kmod-nls-utf8 kmod-crypto-aes mtd libstdcpp kmod-crypto-core luci-theme-base libjson-c libgcc libreadline libip6tc luci-proto-ppp libffi libuuid luci-mod-admin-full ppp libubox kmod-leds-gpio libusb-1.0 kmod-gpio-button-hotplug gnupg libjson cpu-mcu-bridge luci-lib-web spacebrew librt libassuan kmod-mac80211 libjson-script swap-utils libblobmsg-json iptables hotplug2 kmod-ipt-nathelper kmod-fs-ntfs kmod-fuse jshn libncurses kmod-ipt-core luci-webpanel-linino kmod-ledtrig-default-on rng-tools libpolarssl kmod-ppp kmod-spi-bitbang avahi-daemon uhttpd-mod-lua python-mini kmod-wdt-ath79 avahi-utils libubus uhttpd libxtables avrdude zlib luci-lib-nixio luci-lib-json luci kmod-spi-tty-ds kmod-ath libexpat kernel libnl-tiny libbz2 blkid libusb luci-proto-core px5g kmod-nls-base luci-i18n-english libgdbm yun-scripts libusb-compat uhttpd-mod-ubus uSDaemon wireless-tools kmod-ath9k-common kmod-crypto-arc4 libopenssl kmod-scsi-core kmod-cfg80211 libavahi-dbus-support luci-lib-core ppp-mod-pppoe kmod-spi-dev kmod-ipt-nat kmod-ledtrig-netdev 
 
-====
+<span class="o">====</span>
 
 opkg install avrdude --force-depends
 opkg install rng-tools --force-depends
@@ -590,14 +590,14 @@ src-git luci https://github.com/openwrt/luci.git;luci-0.11
 
 Development: the easy way
 
-The easiest way to hack the web panel is to copy on your Yún the files you find in this repo, maintaining the folders structure.
+The easiest way to hack the web panel is to copy on your Yún the files you find <span class="k">in </span>this repo, maintaining the folders structure.
 
 For example, file usr/lib/lua/luci/controller/arduino/index.lua will go to /usr/lib/lua/luci/controller/arduino/index.lua on your Yún.
 
-Then access the webpanel at http://arduino.local/ (where &quot;arduino&quot; is the name of your Yún), properly edit file index.lua and refresh the page to see the changes.
+Then access the webpanel at http://arduino.local/ <span class="o">(</span>where <span class="s2">"arduino"</span> is the name of your Yún<span class="o">)</span>, properly edit file index.lua and refresh the page to see the changes.
 
-Once done, copy the files back to your pc and submit us a pull request, so that everyone can take advantage of the improvements you made.
-Development: the fast, local but hard way
+Once <span class="k">done</span>, copy the files back to your pc and submit us a pull request, so that everyone can take advantage of the improvements you made.
+Development: the fast, <span class="nb">local </span>but hard way
 
 You need a GNU/Linux box and the following tools: subversion, gnupg, lua, make, gcc, wget. On Debian based distros, these are packages subversion, gnupg, lua5.1, liblua5.1-0-dev, build-essential, wget.
 
@@ -607,22 +607,22 @@ https://github.com/arduino/YunWebUI
 
 ubuntu系统设置
 sudo mkdir /etc/arduino
-cd /etc/arduino
+<span class="nb">cd</span> /etc/arduino
 sudo wget https://raw.githubusercontent.com/arduino/openwrt-packages-yun/master/arduino/yun-conf/files/etc/arduino/gpg_gen_key_batch
 sudo gpg --batch --gen-key /etc/arduino/gpg_gen_key_batch
 sudo rm -f /etc/arduino/arduino_gpg.asc
 sudo gpg --no-default-keyring --secret-keyring /etc/arduino/arduino_gpg.sec --keyring /etc/arduino/arduino_gpg.pub --export --armor --output /etc/arduino/arduino_gpg.asc
-sudo chmod 644 /etc/arduino/arduino_gpg.*
+sudo chmod 644 /etc/arduino/arduino_gpg.<span class="k">*</span>
 
 svn co http://svn.luci.subsignal.org/luci/branches/luci-0.11 luci
 
-cd /home/router-dev/iot-gateway
+<span class="nb">cd</span> /home/router-dev/iot-gateway
 svn co https://github.com/arduino/YunWebUI/trunk yunWebUI
 
 进入openwrt目录
-cd /home/router-dev/openwrt/branches/attitude_adjustment/feeds
+<span class="nb">cd</span> /home/router-dev/openwrt/branches/attitude_adjustment/feeds
 
-cd luci
+<span class="nb">cd </span>luci
 mkdir applications/arduino
 cp applications/myapplication/Makefile applications/arduino
 ln -s /home/router-dev/iot-gateway/yunWebUI/usr/lib/lua/luci applications/arduino/luasrc
@@ -634,40 +634,40 @@ make runuhttpd
 http://localhost:8080/cgi-bin/luci/webpanel/
 passwd：admin
 
-## luci-app-arduino-webpanel-1.5.6
-#  http://arduino.cc/download.php?f=/luci-app-arduino-webpanel-1.5.6.tar.bz2
+<span class="c">## luci-app-arduino-webpanel-1.5.6</span>
+<span class="c">#  http://arduino.cc/download.php?f=/luci-app-arduino-webpanel-1.5.6.tar.bz2</span>
 
-cd /home/router-dev/openwrt/branches/attitude_adjustment/package
+<span class="nb">cd</span> /home/router-dev/openwrt/branches/attitude_adjustment/package
 mkdir arduino
 touch Makefile
 
 复制以下内容
 
-#
-# Copyright (c) 2014 Arduino LLC. All right reserved.
-#
-# This is free software, licensed under the GNU General Public License v2.
-# See /LICENSE for more information.
-#
+<span class="c">#</span>
+<span class="c"># Copyright (c) 2014 Arduino LLC. All right reserved.</span>
+<span class="c">#</span>
+<span class="c"># This is free software, licensed under the GNU General Public License v2.</span>
+<span class="c"># See /LICENSE for more information.</span>
+<span class="c">#</span>
 
-include $(TOPDIR)/rules.mk
+include <span class="k">$(</span>TOPDIR<span class="k">)</span>/rules.mk
 
-PKG_NAME:=luci-app-arduino-webpanel
-PKG_VERSION:=1.5.6
-PKG_RELEASE:=1
+PKG_NAME:<span class="o">=</span>luci-app-arduino-webpanel
+PKG_VERSION:<span class="o">=</span>1.5.6
+PKG_RELEASE:<span class="o">=</span>1
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
-PKG_SOURCE_URL:=http://arduino.cc/download.php?f=/
-PKG_MD5SUM:=fbcadb0b846db24302cd4e027bf3927e
+PKG_SOURCE:<span class="o">=</span><span class="k">$(</span>PKG_NAME<span class="k">)</span>-<span class="k">$(</span>PKG_VERSION<span class="k">)</span>.tar.bz2
+PKG_SOURCE_URL:<span class="o">=</span>http://arduino.cc/download.php?f<span class="o">=</span>/
+PKG_MD5SUM:<span class="o">=</span>fbcadb0b846db24302cd4e027bf3927e
 
-include $(INCLUDE_DIR)/package.mk
+include <span class="k">$(</span>INCLUDE_DIR<span class="k">)</span>/package.mk
 
 define Package/luci-app-arduino-webpanel
-  SECTION:=luci
-  CATEGORY:=LuCI
-  SUBMENU:=3. Applications
-  TITLE:= simplified wifi configuration panel
-  DEPENDS:=+luci +luci-lib-json +uhttpd-mod-lua +yun-scripts
+  SECTION:<span class="o">=</span>luci
+  CATEGORY:<span class="o">=</span>LuCI
+  SUBMENU:<span class="o">=</span>3. Applications
+  TITLE:<span class="o">=</span> simplified wifi configuration panel
+  DEPENDS:<span class="o">=</span>+luci +luci-lib-json +uhttpd-mod-lua +yun-scripts
 endef
 
 define Package/luci-app-arduino-webpanel/description
@@ -675,20 +675,20 @@ simplified wifi configuration panel
 endef
 
 define Build/Compile
-# NOOP
+<span class="c"># NOOP</span>
 endef
 
 define Package/luci-app-arduino-webpanel/install
-$(INSTALL_DIR) $(1)/usr/lib/lua/luci/controller/arduino
-$(INSTALL_DIR) $(1)/usr/lib/lua/luci/view/arduino
-$(INSTALL_DIR) $(1)/www/luci-static/resources/arduino
+<span class="k">$(</span>INSTALL_DIR<span class="k">)</span> <span class="k">$(</span>1<span class="k">)</span>/usr/lib/lua/luci/controller/arduino
+<span class="k">$(</span>INSTALL_DIR<span class="k">)</span> <span class="k">$(</span>1<span class="k">)</span>/usr/lib/lua/luci/view/arduino
+<span class="k">$(</span>INSTALL_DIR<span class="k">)</span> <span class="k">$(</span>1<span class="k">)</span>/www/luci-static/resources/arduino
 
-find $(PKG_BUILD_DIR)/usr/ -name &#39;*.lua&#39; -exec luac -s -o {} {} \;
-$(CP) $(PKG_BUILD_DIR)/usr/* $(1)/usr/
-$(CP) $(PKG_BUILD_DIR)/www/* $(1)/www/
+find <span class="k">$(</span>PKG_BUILD_DIR<span class="k">)</span>/usr/ -name <span class="s1">'*.lua'</span> -exec luac -s -o <span class="o">{}</span> <span class="o">{}</span> <span class="se">\;</span>
+<span class="k">$(</span>CP<span class="k">)</span> <span class="k">$(</span>PKG_BUILD_DIR<span class="k">)</span>/usr/<span class="k">*</span> <span class="k">$(</span>1<span class="k">)</span>/usr/
+<span class="k">$(</span>CP<span class="k">)</span> <span class="k">$(</span>PKG_BUILD_DIR<span class="k">)</span>/www/<span class="k">*</span> <span class="k">$(</span>1<span class="k">)</span>/www/
 endef
 
-$(eval $(call BuildPackage,luci-app-arduino-webpanel))
+<span class="k">$(</span><span class="nb">eval</span> <span class="k">$(</span>call BuildPackage,luci-app-arduino-webpanel<span class="k">))</span>
 
 make menuconfig
 
@@ -696,21 +696,21 @@ git clone https://github.com/arduino/openwrt-yun.git</code></pre></figure>
 
 <h1 id="zigbeegw-luci">2015-07-22 zigbeegw-luci</h1>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"># zigbeegw-luci 
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># zigbeegw-luci </span>
 
-cd /home/router-dev/openwrt/branches/attitude_adjustment/package
+<span class="nb">cd</span> /home/router-dev/openwrt/branches/attitude_adjustment/package
 svn co https://github.com/paradislover/zigbeegw-luci/trunk zigbeegw
 
 make menuconfig
 LuCI ---&gt; 
     3.Applications ---&gt;
-&lt;*&gt; luci-app-zigbeegw ................ LuCI Support for zigbeegw
+<span class="gp">&lt;*&gt; </span>luci-app-zigbeegw ................ LuCI Support <span class="k">for </span>zigbeegw
 Kernel modules ---&gt; 
     USB Support ---&gt;
-&lt;*&gt; kmod-usb-acm
-&lt;*&gt; kmod-usb-serial
-&lt;*&gt;   kmod-usb-cp210x
-&lt;*&gt;   kmod-usb-pl2303
+<span class="gp">&lt;*&gt; </span>kmod-usb-acm
+<span class="gp">&lt;*&gt; </span>kmod-usb-serial
+<span class="gp">&lt;*&gt;   </span>kmod-usb-cp210x
+<span class="gp">&lt;*&gt;   </span>kmod-usb-pl2303
 
 make package/zigbee/clean
 make package/zigbee/compile
@@ -718,319 +718,319 @@ make package/zibgee/install</code></pre></figure>
 
 <h1 id="openwrt">2015-07-10,13,16,21 OpenWRT下远程调试</h1>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"># OpenWRT下远程调试 attitude_adjustment WR703N
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># OpenWRT下远程调试 attitude_adjustment WR703N</span>
 
 svn co svn://svn.openwrt.org/openwrt/branches/attitude_adjustment
 
-# http://blog.csdn.net/piggy1924/article/details/8557350
-# http://wenku.baidu.com/link?url=evvS3AjpZeFeKQYHPw7_80UctmoG0uVmNqKpZO-PDRwRw8jOydDBVkFeOpCpukEhyKwcVPpoVFR-byD1VeNfzpSYpIsn_thKC_mudbA5xzO
+<span class="c"># http://blog.csdn.net/piggy1924/article/details/8557350</span>
+<span class="c"># http://wenku.baidu.com/link?url=evvS3AjpZeFeKQYHPw7_80UctmoG0uVmNqKpZO-PDRwRw8jOydDBVkFeOpCpukEhyKwcVPpoVFR-byD1VeNfzpSYpIsn_thKC_mudbA5xzO</span>
 
 配置编译OpenWRT
 
 复制 feeds.conf.default 为 feeds.conf
-~$ cp feeds.conf.default feeds.conf
+<span class="gp">~$ </span>cp feeds.conf.default feeds.conf
 将feeds.conf中
 src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package
 src-svn luci http://svn.luci.subsignal.org/luci/branches/luci-0.11/contrib/package
 注释为
-#src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package
-#src-svn luci http://svn.luci.subsignal.org/luci/branches/luci-0.11/contrib/package
+<span class="c">#src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package</span>
+<span class="c">#src-svn luci http://svn.luci.subsignal.org/luci/branches/luci-0.11/contrib/package</span>
 并增加
 src-git luci https://github.com/openwrt/luci.git;luci-0.11
 诸如此类源码,你得定期更新Feeds。 通过如上相同的命令:
-~$ ./scripts/feeds update -a
-~$ ./scripts/feeds install -a
-~$ make menuconfig
+<span class="gp">~$ </span>./scripts/feeds update -a
+<span class="gp">~$ </span>./scripts/feeds install -a
+<span class="gp">~$ </span>make menuconfig
 
 选择
-?6?1 [*] Build the OpenWrt SDK
-?6?1 [*] Build the OpenWrt based Toolchain
-?6?1 [*] Advanced configuration options (fordevelopers)
-      -&gt; [*] Toolchain Options
-   -&gt; [*]Build/install c++ compiler and libstdc++” (if C++ is required)
--&gt; [*]Build gdb
+?6?1 <span class="o">[</span><span class="k">*</span><span class="o">]</span> Build the OpenWrt SDK
+?6?1 <span class="o">[</span><span class="k">*</span><span class="o">]</span> Build the OpenWrt based Toolchain
+?6?1 <span class="o">[</span><span class="k">*</span><span class="o">]</span> Advanced configuration options <span class="o">(</span>fordevelopers<span class="o">)</span>
+      -&gt; <span class="o">[</span><span class="k">*</span><span class="o">]</span> Toolchain Options
+   -&gt; <span class="o">[</span><span class="k">*</span><span class="o">]</span>Build/install c++ compiler and libstdc++” <span class="o">(</span><span class="k">if </span>C++ is required<span class="o">)</span>
+<span class="gp">-&gt; </span><span class="o">[</span><span class="k">*</span><span class="o">]</span>Build gdb
 
 
-Base System –&gt; &lt;*&gt; dropbear        
-           　–&gt; &lt;*&gt; libstdcpp
+Base System –&gt; &lt;<span class="k">*</span>&gt; dropbear        
+           　–&gt; &lt;<span class="k">*</span>&gt; libstdcpp
 
 Network –&gt; file trasfer
-        &lt;*&gt; vsftpd
-–&gt; SSH
-        &lt;*&gt; openssh-sftp-server
+        &lt;<span class="k">*</span>&gt; vsftpd
+<span class="gp">–&gt; </span>SSH
+        &lt;<span class="k">*</span>&gt; openssh-sftp-server
 
 Utilities –&gt; // 这两个选项会导致wr703n固件编译不出
-&lt;*&gt; gdb
-&lt;*&gt; gdbserver
+<span class="gp">&lt;*&gt; </span>gdb
+<span class="gp">&lt;*&gt; </span>gdbserver
 
-# https://dev.openwrt.org/ticket/18331
+<span class="c"># https://dev.openwrt.org/ticket/18331</span>
 
-$ tar -xjf OpenWrt-ImageBuilder-ar71xx_generic-for-linux-i686.tar.bz2
-$ cd OpenWrt-ImageBuilder-ar71xx_generic-for-linux-i686/
-$ make info | grep 703
+<span class="gp">$ </span>tar -xjf OpenWrt-ImageBuilder-ar71xx_generic-for-linux-i686.tar.bz2
+<span class="gp">$ </span><span class="nb">cd </span>OpenWrt-ImageBuilder-ar71xx_generic-for-linux-i686/
+<span class="gp">$ </span>make info | grep 703
 TLWR703:
 TP-LINK TL-WR703N
-$ make image PROFILE=TLWR703
-[...]
-$ ls -l bin/ar71xx/
+<span class="gp">$ </span>make image <span class="nv">PROFILE</span><span class="o">=</span>TLWR703
+<span class="o">[</span>...]
+<span class="gp">$ </span>ls -l bin/ar71xx/
 
-make image PROFILE=TLWR703 PACKAGES=&quot;luci luci-i18n-chinese libstdcpp vsftpd openssh-sftp-server gdb gdbserver&quot;</code></pre></figure>
+make image <span class="nv">PROFILE</span><span class="o">=</span>TLWR703 <span class="nv">PACKAGES</span><span class="o">=</span><span class="s2">"luci luci-i18n-chinese libstdcpp vsftpd openssh-sftp-server gdb gdbserver"</span></code></pre></figure>
 
 <h1 id="openwrt-1">2015-07-09 OpenWRT下远程调试</h1>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"># OpenWRT下远程调试 attitude_adjustment WR703N
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># OpenWRT下远程调试 attitude_adjustment WR703N</span>
 
 svn co svn://svn.openwrt.org/openwrt/branches/attitude_adjustment
 
-# http://blog.csdn.net/piggy1924/article/details/8557350
-# http://wenku.baidu.com/link?url=evvS3AjpZeFeKQYHPw7_80UctmoG0uVmNqKpZO-PDRwRw8jOydDBVkFeOpCpukEhyKwcVPpoVFR-byD1VeNfzpSYpIsn_thKC_mudbA5xzO
+<span class="c"># http://blog.csdn.net/piggy1924/article/details/8557350</span>
+<span class="c"># http://wenku.baidu.com/link?url=evvS3AjpZeFeKQYHPw7_80UctmoG0uVmNqKpZO-PDRwRw8jOydDBVkFeOpCpukEhyKwcVPpoVFR-byD1VeNfzpSYpIsn_thKC_mudbA5xzO</span>
 
 配置编译OpenWRT
 
 复制 feeds.conf.default 为 feeds.conf
-~$ cp feeds.conf.default feeds.conf
+<span class="gp">~$ </span>cp feeds.conf.default feeds.conf
 将feeds.conf中
 src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package
 注释为
-#src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package
+<span class="c">#src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package</span>
 并增加
 src-git luci https://github.com/openwrt/luci.git;luci-0.11
 诸如此类源码,你得定期更新Feeds。 通过如上相同的命令:
-~$ ./scripts/feeds update -a
-~$ ./scripts/feeds install -a
-~$ make defconfig
-~$ make menuconfig
+<span class="gp">~$ </span>./scripts/feeds update -a
+<span class="gp">~$ </span>./scripts/feeds install -a
+<span class="gp">~$ </span>make defconfig
+<span class="gp">~$ </span>make menuconfig
 
 选择
-?6?1 [*] Build the OpenWrt SDK
-?6?1 [*] Build the OpenWrt based Toolchain
-?6?1 [*] Advanced configuration options (fordevelopers)
-      -&gt; [*] Toolchain Options
-   -&gt; [*]Build/install c++ compiler and libstdc++” (if C++ is required)
--&gt; [*]Build with debug information
--&gt; [*]Build gdb
+?6?1 <span class="o">[</span><span class="k">*</span><span class="o">]</span> Build the OpenWrt SDK
+?6?1 <span class="o">[</span><span class="k">*</span><span class="o">]</span> Build the OpenWrt based Toolchain
+?6?1 <span class="o">[</span><span class="k">*</span><span class="o">]</span> Advanced configuration options <span class="o">(</span>fordevelopers<span class="o">)</span>
+      -&gt; <span class="o">[</span><span class="k">*</span><span class="o">]</span> Toolchain Options
+   -&gt; <span class="o">[</span><span class="k">*</span><span class="o">]</span>Build/install c++ compiler and libstdc++” <span class="o">(</span><span class="k">if </span>C++ is required<span class="o">)</span>
+<span class="gp">-&gt; </span><span class="o">[</span><span class="k">*</span><span class="o">]</span>Build with debug information
+<span class="gp">-&gt; </span><span class="o">[</span><span class="k">*</span><span class="o">]</span>Build gdb
 
-Base System –&gt; &lt;*&gt; dropbear        
-           　–&gt; &lt;*&gt; libstdcpp
+Base System –&gt; &lt;<span class="k">*</span>&gt; dropbear        
+           　–&gt; &lt;<span class="k">*</span>&gt; libstdcpp
 
 Network –&gt; file trasfer
-        &lt;*&gt; vsftpd
-–&gt; SSH
-        &lt;*&gt; openssh-sftp-server
+        &lt;<span class="k">*</span>&gt; vsftpd
+<span class="gp">–&gt; </span>SSH
+        &lt;<span class="k">*</span>&gt; openssh-sftp-server
 
-Utilities –&gt; &lt;*&gt; gdbserver
+Utilities –&gt; &lt;<span class="k">*</span>&gt; gdbserver
  
 结论：　未完全成功！！！</code></pre></figure>
 
 <h1 id="openwrt-7620n">2015-07-08 OpenWRT下远程调试 7620n</h1>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"># OpenWRT下远程调试 barrier_breaker 7620n
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># OpenWRT下远程调试 barrier_breaker 7620n</span>
 svn co svn://svn.openwrt.org/openwrt/branches/barrier_breaker
 
-# http://blog.csdn.net/piggy1924/article/details/8557350
-# http://wenku.baidu.com/link?url=evvS3AjpZeFeKQYHPw7_80UctmoG0uVmNqKpZO-PDRwRw8jOydDBVkFeOpCpukEhyKwcVPpoVFR-byD1VeNfzpSYpIsn_thKC_mudbA5xzO
+<span class="c"># http://blog.csdn.net/piggy1924/article/details/8557350</span>
+<span class="c"># http://wenku.baidu.com/link?url=evvS3AjpZeFeKQYHPw7_80UctmoG0uVmNqKpZO-PDRwRw8jOydDBVkFeOpCpukEhyKwcVPpoVFR-byD1VeNfzpSYpIsn_thKC_mudbA5xzO</span>
 
 配置编译OpenWRT
 
 复制 feeds.conf.default 为 feeds.conf
-~$ cp feeds.conf.default feeds.conf
+<span class="gp">~$ </span>cp feeds.conf.default feeds.conf
 将feeds.conf中
 src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package
 注释为
-#src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package
+<span class="c">#src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package</span>
 诸如此类源码,你得定期更新Feeds。 通过如上相同的命令:
-~$ ./scripts/feeds update -a
-~$ ./scripts/feeds install -a
-~$ make defconfig
-~$ make menuconfig
+<span class="gp">~$ </span>./scripts/feeds update -a
+<span class="gp">~$ </span>./scripts/feeds install -a
+<span class="gp">~$ </span>make defconfig
+<span class="gp">~$ </span>make menuconfig
 
 选择
-?6?1 [*] Build the OpenWrt SDK
-?6?1 [*] Build the OpenWrt based Toolchain
-?6?1 [*] Advanced configuration options (fordevelopers)
-   -&gt; [*] Toolchain Options
-       -&gt; [*]Build/install fortran compiler
-   //  -&gt; [*]Build with debug information
-       -&gt; [*]Build gdb
+?6?1 <span class="o">[</span><span class="k">*</span><span class="o">]</span> Build the OpenWrt SDK
+?6?1 <span class="o">[</span><span class="k">*</span><span class="o">]</span> Build the OpenWrt based Toolchain
+?6?1 <span class="o">[</span><span class="k">*</span><span class="o">]</span> Advanced configuration options <span class="o">(</span>fordevelopers<span class="o">)</span>
+   -&gt; <span class="o">[</span><span class="k">*</span><span class="o">]</span> Toolchain Options
+       -&gt; <span class="o">[</span><span class="k">*</span><span class="o">]</span>Build/install fortran compiler
+   //  -&gt; <span class="o">[</span><span class="k">*</span><span class="o">]</span>Build with debug information
+       -&gt; <span class="o">[</span><span class="k">*</span><span class="o">]</span>Build gdb
 
    //→ “gdb”
-   //→ “Build/install c++ compiler and libstdc++” (if C++ is required)
+   //→ “Build/install c++ compiler and libstdc++” <span class="o">(</span><span class="k">if </span>C++ is required<span class="o">)</span>
 
 启动以下五项
 
 // Global build setting –&gt; Preferred standard C++ library -&gt; libstdc++
 
-Base System –&gt; &lt;*&gt; dropbear
-            –&gt; &lt;*&gt; libstdcpp
+Base System –&gt; &lt;<span class="k">*</span>&gt; dropbear
+            –&gt; &lt;<span class="k">*</span>&gt; libstdcpp
 
-Development –&gt; &lt;*&gt; gdb
-               &lt;*&gt; gdbserver
+Development –&gt; &lt;<span class="k">*</span>&gt; gdb
+               &lt;<span class="k">*</span>&gt; gdbserver
 
 network –&gt; file trasfer
-        &lt;*&gt; vsftpd
-–&gt; SSH
-        &lt;*&gt; openssh-sftp-server
+        &lt;<span class="k">*</span>&gt; vsftpd
+<span class="gp">–&gt; </span>SSH
+        &lt;<span class="k">*</span>&gt; openssh-sftp-server
 
-~$ make V=s
+<span class="gp">~$ </span>make <span class="nv">V</span><span class="o">=</span>s
 
 结论：　未完全成功！！！</code></pre></figure>
 
 <h1 id="helloworld">2015-07-07 helloworld</h1>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">#　内置　helloworld
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#　内置　helloworld</span>
 
-a).在package目录下创建helloworld目录
-~$ cd package
-~$ mkdir helloworld
-~$ cd helloworld
+a<span class="o">)</span>.在package目录下创建helloworld目录
+<span class="gp">~$ </span><span class="nb">cd </span>package
+<span class="gp">~$ </span>mkdir helloworld
+<span class="gp">~$ </span><span class="nb">cd </span>helloworld
 
-b).建立Makefile
-~$ touch Makefile
-~$ vim Makefile
+b<span class="o">)</span>.建立Makefile
+<span class="gp">~$ </span>touch Makefile
+<span class="gp">~$ </span>vim Makefile
 
 Makefile文件模板内容如下：
-##############################################
-# OpenWrt Makefile for helloworld program
-#
-#
-# Most of the variables used here are defined in
-# the include directives below. We just need to
-# specify a basic description of the package,
-# where to build our program, where to find
-# the source files, and where to install the
-# compiled program on the router.
-#
-# Be very careful of spacing in this file.
-# Indents should be tabs, not spaces, and
-# there should be no trailing whitespace in
-# lines that are not commented.
-#
-##############################################
+<span class="c">##############################################</span>
+<span class="c"># OpenWrt Makefile for helloworld program</span>
+<span class="c">#</span>
+<span class="c">#</span>
+<span class="c"># Most of the variables used here are defined in</span>
+<span class="c"># the include directives below. We just need to</span>
+<span class="c"># specify a basic description of the package,</span>
+<span class="c"># where to build our program, where to find</span>
+<span class="c"># the source files, and where to install the</span>
+<span class="c"># compiled program on the router.</span>
+<span class="c">#</span>
+<span class="c"># Be very careful of spacing in this file.</span>
+<span class="c"># Indents should be tabs, not spaces, and</span>
+<span class="c"># there should be no trailing whitespace in</span>
+<span class="c"># lines that are not commented.</span>
+<span class="c">#</span>
+<span class="c">##############################################</span>
 
-include $(TOPDIR)/rules.mk
+include <span class="k">$(</span>TOPDIR<span class="k">)</span>/rules.mk
 
-# Name and release number of this package
-PKG_NAME:=helloworld.qq.com/
-PKG_RELEASE:=1
-
-
-# This specifies the directory where we&#39;re going to build the program. 
-# The root build directory, $(BUILD_DIR), is by default the build_mipsel
-# directory in your OpenWrt SDK directory
-PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)
+<span class="c"># Name and release number of this package</span>
+PKG_NAME:<span class="o">=</span>helloworld.qq.com/
+PKG_RELEASE:<span class="o">=</span>1
 
 
-include $(INCLUDE_DIR)/package.mk
+<span class="c"># This specifies the directory where we're going to build the program. </span>
+<span class="c"># The root build directory, $(BUILD_DIR), is by default the build_mipsel</span>
+<span class="c"># directory in your OpenWrt SDK directory</span>
+PKG_BUILD_DIR :<span class="o">=</span> <span class="k">$(</span>BUILD_DIR<span class="k">)</span>/<span class="k">$(</span>PKG_NAME<span class="k">)</span>
+
+
+include <span class="k">$(</span>INCLUDE_DIR<span class="k">)</span>/package.mk
 
  
 
-# Specify package information for this program.
-# The variables defined here should be self explanatory.
-# If you are running Kamikaze, delete the DESCRIPTION
-# variable below and uncomment the Kamikaze define
-# directive for the description below
+<span class="c"># Specify package information for this program.</span>
+<span class="c"># The variables defined here should be self explanatory.</span>
+<span class="c"># If you are running Kamikaze, delete the DESCRIPTION</span>
+<span class="c"># variable below and uncomment the Kamikaze define</span>
+<span class="c"># directive for the description below</span>
 define Package/helloworld
-SECTION:=utils
-CATEGORY:=Utilities
-TITLE:=Helloworld -- prints a test message
+SECTION:<span class="o">=</span>utils
+CATEGORY:<span class="o">=</span>Utilities
+TITLE:<span class="o">=</span>Helloworld -- prints a <span class="nb">test </span>message
 endef
 
 
-# Uncomment portion below for Kamikaze and delete DESCRIPTION variable above
+<span class="c"># Uncomment portion below for Kamikaze and delete DESCRIPTION variable above</span>
 define Package/helloworld/description
-        If you can&#39;t figure out what this program does, you&#39;re probably
+        If you can<span class="s1">'t figure out what this program does, you'</span>re probably
         brain-dead and need immediate medical attention.
 endef
 
  
 
-# Specify what needs to be done to prepare for building the package.
-# In our case, we need to copy the source files to the build directory.
-# This is NOT the default.  The default uses the PKG_SOURCE_URL and the
-# PKG_SOURCE which is not defined here to download the source from the web.
-# In order to just build a simple program that we have just written, it is
-# much easier to do it this way.
+<span class="c"># Specify what needs to be done to prepare for building the package.</span>
+<span class="c"># In our case, we need to copy the source files to the build directory.</span>
+<span class="c"># This is NOT the default.  The default uses the PKG_SOURCE_URL and the</span>
+<span class="c"># PKG_SOURCE which is not defined here to download the source from the web.</span>
+<span class="c"># In order to just build a simple program that we have just written, it is</span>
+<span class="c"># much easier to do it this way.</span>
 define Build/Prepare
-mkdir -p $(PKG_BUILD_DIR)
-$(CP) ./src/* $(PKG_BUILD_DIR)/
+mkdir -p <span class="k">$(</span>PKG_BUILD_DIR<span class="k">)</span>
+<span class="k">$(</span>CP<span class="k">)</span> ./src/<span class="k">*</span> <span class="k">$(</span>PKG_BUILD_DIR<span class="k">)</span>/
 endef
 
 
-# We do not need to define Build/Configure or Build/Compile directives
-# The defaults are appropriate for compiling a simple program such as this one
+<span class="c"># We do not need to define Build/Configure or Build/Compile directives</span>
+<span class="c"># The defaults are appropriate for compiling a simple program such as this one</span>
 
 
-# Specify where and how to install the program. Since we only have one file,
-# the helloworld executable, install it by copying it to the /bin directory on
-# the router. The $(1) variable represents the root directory on the router running
-# OpenWrt. The $(INSTALL_DIR) variable contains a command to prepare the install
-# directory if it does not already exist.  Likewise $(INSTALL_BIN) contains the
-# command to copy the binary file from its current location (in our case the build
-# directory) to the install directory.
+<span class="c"># Specify where and how to install the program. Since we only have one file,</span>
+<span class="c"># the helloworld executable, install it by copying it to the /bin directory on</span>
+<span class="c"># the router. The $(1) variable represents the root directory on the router running</span>
+<span class="c"># OpenWrt. The $(INSTALL_DIR) variable contains a command to prepare the install</span>
+<span class="c"># directory if it does not already exist.  Likewise $(INSTALL_BIN) contains the</span>
+<span class="c"># command to copy the binary file from its current location (in our case the build</span>
+<span class="c"># directory) to the install directory.</span>
 define Package/helloworld/install
-$(INSTALL_DIR) $(1)/bin
-$(INSTALL_BIN) $(PKG_BUILD_DIR)/helloworld $(1)/bin/
+<span class="k">$(</span>INSTALL_DIR<span class="k">)</span> <span class="k">$(</span>1<span class="k">)</span>/bin
+<span class="k">$(</span>INSTALL_BIN<span class="k">)</span> <span class="k">$(</span>PKG_BUILD_DIR<span class="k">)</span>/helloworld <span class="k">$(</span>1<span class="k">)</span>/bin/
 endef
 
 
-# This line executes the necessary commands to compile our program.
-# The above define directives specify all the information needed, but this
-# line calls BuildPackage which in turn actually uses this information to
-# build a package.
-$(eval $(call BuildPackage,helloworld))
+<span class="c"># This line executes the necessary commands to compile our program.</span>
+<span class="c"># The above define directives specify all the information needed, but this</span>
+<span class="c"># line calls BuildPackage which in turn actually uses this information to</span>
+<span class="c"># build a package.</span>
+<span class="k">$(</span><span class="nb">eval</span> <span class="k">$(</span>call BuildPackage,helloworld<span class="k">))</span>
 
-c).创建src目录，并编写helloworld程序
-~$ mkdir src
-~$ cd src
+c<span class="o">)</span>.创建src目录，并编写helloworld程序
+<span class="gp">~$ </span>mkdir src
+<span class="gp">~$ </span><span class="nb">cd </span>src
 
-/**************** 
-* Helloworld.c 
-*****************/
+/<span class="k">****************</span> 
+<span class="k">*</span> Helloworld.c 
+<span class="k">*****************</span>/
 
-#include &lt;stdio.h&gt; 
-#include &lt;unistd.h&gt; 
+<span class="c">#include &lt;stdio.h&gt; </span>
+<span class="c">#include &lt;unistd.h&gt; </span>
 
-int main(void) 
-{ 
-printf(&quot;hello world! \n\n&quot;); 
-return 0; 
-}
+int main<span class="o">(</span>void<span class="o">)</span> 
+<span class="o">{</span> 
+<span class="nb">printf</span><span class="o">(</span><span class="s2">"hello world! </span><span class="se">\n\n</span><span class="s2">"</span><span class="o">)</span>; 
+<span class="k">return </span>0; 
+<span class="o">}</span>
 
 
 编写Makefile文件
 
-# build helloworld executable when user executes &quot;make&quot;
+<span class="c"># build helloworld executable when user executes "make"</span>
 
 helloworld: helloworld.o
-$(CC) $(LDFLAGS) helloworld.o -o helloworld
+<span class="k">$(</span>CC<span class="k">)</span> <span class="k">$(</span>LDFLAGS<span class="k">)</span> helloworld.o -o helloworld
 
 helloworld.o: helloworld.c
-$(CC) $(CFLAGS) -c helloworld.c
+<span class="k">$(</span>CC<span class="k">)</span> <span class="k">$(</span>CFLAGS<span class="k">)</span> -c helloworld.c
 
-# remove object files and executable when user executes &quot;make clean&quot;
+<span class="c"># remove object files and executable when user executes "make clean"</span>
 clean:
-rm *.o helloworld
+rm <span class="k">*</span>.o helloworld
 
 在这两个文件的目录下，执行make 应该可以生成helloworld的可执行文件。执行helloworld后，能够打印出“hello world!”。 这一步，主要保证我们的源程序是可以正常编译的。
 
-d).编译
-~$ make menuconfig 
+d<span class="o">)</span>.编译
+<span class="gp">~$ </span>make menuconfig 
 
 ?6?1 Utilities -&gt; Toolchain Options
-→ (*) helloworld
+→ <span class="o">(</span><span class="k">*</span><span class="o">)</span> helloworld
 
-~$ make V=s</code></pre></figure>
+<span class="gp">~$ </span>make <span class="nv">V</span><span class="o">=</span>s</code></pre></figure>
 
 <h1 id="openwrt-build">2015-07-06 OpenWRT Build</h1>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">#　1.下载OpenWRT源码包：
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#　1.下载OpenWRT源码包：</span>
   
-~$ svn checkout svn://svn.openwrt.org/openwrt/trunk 
+<span class="gp">~$ </span>svn checkout svn://svn.openwrt.org/openwrt/trunk 
 进入源码文件夹：  
-~$ cd trunk 
+<span class="gp">~$ </span><span class="nb">cd </span>trunk 
 
 复制 feeds.conf.default 为 feeds.conf
-~$ cp feeds.conf.default feeds.conf
+<span class="gp">~$ </span>cp feeds.conf.default feeds.conf
 
 将feeds.conf中
 src-git luci https://github.com/openwrt/luci.git
@@ -1038,99 +1038,99 @@ src-git luci https://github.com/openwrt/luci.git
 src-git luci https://github.com/openwrt/luci.git;luci-0.12
 
 诸如此类源码,你得定期更新Feeds。 通过如上相同的命令:
-~$ ./scripts/feeds update -a
-~$ ./scripts/feeds install -a
+<span class="gp">~$ </span>./scripts/feeds update -a
+<span class="gp">~$ </span>./scripts/feeds install -a
 
 下一步是检查编译环境，若可进行编译则生成默认配置：
-~$ make defconfig
+<span class="gp">~$ </span>make defconfig
 
 menuconfig是一个基于文本的工具，它处理选择的目标（需要还是不需要）、编译生成软件包（openwrt下是IPKG格式）以及内核选项（编译成模块还是内核）等等 
-~$ make menuconfig
+<span class="gp">~$ </span>make menuconfig
 
 
-# 2. 增加profile
+<span class="c"># 2. 增加profile</span>
 
-$ 在../target/linux/ramips/mt7620/profiles 目录增加 wrtnode.mk
+<span class="gp">$ </span>在../target/linux/ramips/mt7620/profiles 目录增加 wrtnode.mk
 
-#
-# Copyright (C) 2015 OpenWrt.org
-#
-# This is free software, licensed under the GNU General Public License v2.
-# See /LICENSE for more information.
-# add by : cuiqingwei
-#
+<span class="c">#</span>
+<span class="c"># Copyright (C) 2015 OpenWrt.org</span>
+<span class="c">#</span>
+<span class="c"># This is free software, licensed under the GNU General Public License v2.</span>
+<span class="c"># See /LICENSE for more information.</span>
+<span class="c"># add by : cuiqingwei</span>
+<span class="c">#</span>
 
 define Profile/WRTNODE
- NAME:=Wrtnode
- PACKAGES:=\
-kmod-usb-core kmod-usb-dwc2 kmod-usb2 kmod-usb-ohci \
+ NAME:<span class="o">=</span>Wrtnode
+ PACKAGES:<span class="o">=</span><span class="se">\</span>
+kmod-usb-core kmod-usb-dwc2 kmod-usb2 kmod-usb-ohci <span class="se">\</span>
 kmod-mt76
 endef
 
 define Profile/WRTNODE/Description
- Support for WRTnode Board
+ Support <span class="k">for </span>WRTnode Board
 endef
-$(eval $(call Profile,WRTNODE))
+<span class="k">$(</span><span class="nb">eval</span> <span class="k">$(</span>call Profile,WRTNODE<span class="k">))</span>
 
 特别提醒：
-a).profile文件的格式一定要书写正确。特别是 “\”反斜杠后面，千万不能有空格，否则会导致mt7620a整个subtarget都消失不见。
-b).注意package之间的依赖关系，如kmod-ac97 kmod-sound-soc-core kmod-sound-mt7620都依赖于kmod-sound-core，那么就应该按照先后顺序依次写出，同样的道理：kmod-ac97 kmod-sound-soc-core应该出现在kmod-sound-mt7620前面。
-c).必须删除tmp目录，才能让添加的profile生效。
+a<span class="o">)</span>.profile文件的格式一定要书写正确。特别是 “<span class="se">\”</span>反斜杠后面，千万不能有空格，否则会导致mt7620a整个subtarget都消失不见。
+b<span class="o">)</span>.注意package之间的依赖关系，如kmod-ac97 kmod-sound-soc-core kmod-sound-mt7620都依赖于kmod-sound-core，那么就应该按照先后顺序依次写出，同样的道理：kmod-ac97 kmod-sound-soc-core应该出现在kmod-sound-mt7620前面。
+c<span class="o">)</span>.必须删除tmp目录，才能让添加的profile生效。
 最后，就可以在make menuconfig中看到你想要的东西啦。
 
-# 3.更改kernel console打印波特率
+<span class="c"># 3.更改kernel console打印波特率</span>
 在..target/linux/ramips/dts/WRTNODE.dts中添加
 
-chosen {
-bootargs = &quot;console=ttyS0,115200&quot;;
-};</code></pre></figure>
+chosen <span class="o">{</span>
+bootargs <span class="o">=</span> <span class="s2">"console=ttyS0,115200"</span>;
+<span class="o">}</span>;</code></pre></figure>
 
 <hr />
-<p># 常用命令</p>
+<h1 id="section">常用命令</h1>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">### 常用命令
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">### 常用命令</span>
 make clean[清楚bin 目录]
 make dirclean[make clean]+[清除交叉编译工具及工具链目录]
 make distclean[清除所有相关的东西，包括下载的软件包，配置文件，feed内容等]
 
-### 装 Luci web UI :
+<span class="c">### 装 Luci web UI :</span>
 ./scripts/feeds update packages luci
 ./scripts/feeds install -a -p luci
 
-### tftp更新固件
+<span class="c">### tftp更新固件</span>
 tftp 0x80000000 wr703n-f.bin
 tftp 0x80000000 openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin
 erase 0x9f020000 +0x3c0000
 cp.b 0x80000000 0x9f020000 0x3c0000
 bootm 0x9f020000
 
-### scp至路由器更新固件
+<span class="c">### scp至路由器更新固件</span>
 scp bin/ar71xx/openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin root@192.168.199.175:/tmp/
 mtd -r write openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin firmware
 
 scp zbGateway.bin root@192.168.199.175:/tmp/
 
-### Network-testing with iperf
+<span class="c">### Network-testing with iperf</span>
 
 ping -c 5 192.168.199.175
 
 netcat -u -l -p 2000 &gt; /dev/null
 nc -u -l -p 2000 &gt; /dev/null
-dd if=/dev/zero bs=1M count=100 | pv -brt | netcat -u 192.168.199.175 2000
+dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span>100 | pv -brt | netcat -u 192.168.199.175 2000
 
-# TCP
+<span class="c"># TCP</span>
 iperf -s
 iperf -c 192.168.199.175
-# UDP
+<span class="c"># UDP</span>
 iperf -s -u
 iperf -c 192.168.199.175 -u
 
 scp root@192.168.199.175:/etc/opkg.conf /home/router-dev/
 scp /home/router-dev/opkg.conf root@192.168.199.175:/etc/
 scp openwrt-helloworld root@192.168.199.175:/usr/
-root@OpenWrt:/# gdbserver 192.168.199.175:10000 /usr/openwrt-helloworld
+<span class="gp">root@OpenWrt:/# </span>gdbserver 192.168.199.175:10000 /usr/openwrt-helloworld
 
-### eclipse调试[没有成功]
+<span class="c">### eclipse调试[没有成功]</span>
 /home/router-dev/openwrt/branches/attitude_adjustment/staging_dir
 mips-openwrt-linux-
 /home/router-dev/openwrt/branches/attitude_adjustment/staging_dir/toolchain-mips_r2_gcc-4.6-linaro_uClibc-0.9.33.2/bin
@@ -1141,9 +1141,9 @@ mipsel-openwrt-linux-
 /home/router-dev/openwrt/branches/barrier_breaker/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin
 /home/router-dev/openwrt/branches/barrier_breaker/build_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/gdb-linaro-7.6-2013.05/gdb/gdb
 
-############################################################
+<span class="c">############################################################</span>
 ??? 问题
-mipsel-openwrt-linux-g++: warning: environment variable &#39;STAGING_DIR&#39; not defined
+mipsel-openwrt-linux-g++: warning: environment variable <span class="s1">'STAGING_DIR'</span> not defined
 !!! 解决
 eclipse菜单Window-&gt;Preferences-&gt;C/C++-&gt;Environmentz增加
 STAGING_DIR　
@@ -1156,58 +1156,58 @@ http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/
 //////////////////////////////////////////////////////////////////////////////////////
 
 将vsftpd编译进openwrt的固件中去
-# http://chaochaoblog.com/archives/1007
+<span class="c"># http://chaochaoblog.com/archives/1007</span>
 首先进去我们已经下载好了源码的目录，如backfire或者其它分支的。然后利用feeds来下载安装vsftpd
-~$ ./scripts/feeds update
-~$ ./scripts/feeds install -d m vsftpd
+<span class="gp">~$ </span>./scripts/feeds update
+<span class="gp">~$ </span>./scripts/feeds install -d m vsftpd
 之后你可以到目录/feeds/package/net/下看了，就会发现我们的vsftpd这个源码包都下载下来了。
 之后回根目录，输入
-~$ make menuconfig
+<span class="gp">~$ </span>make menuconfig
 在network –&gt; file trasfer下就可以找到vsftpd了，果断按下y选择编译进固件，当然你也可以选择m那么就只会编译出ipk文件来了。
-~$ make V=s 编译出bin的固件镜像文件来，刷入flash，然后ssh之后ps查看进程
+<span class="gp">~$ </span>make <span class="nv">V</span><span class="o">=</span>s 编译出bin的固件镜像文件来，刷入flash，然后ssh之后ps查看进程
 OpenWrt开启sftp，方便传输文件。修改opkg.conf文件
-# http://see.sl088.com/wiki/Openwrt_opkg%E6%BA%90%E8%AE%BE%E7%BD%AE
-root@OpenWrt:~# vi /etc/opkg.conf
+<span class="c"># http://see.sl088.com/wiki/Openwrt_opkg%E6%BA%90%E8%AE%BE%E7%BD%AE</span>
+<span class="gp">root@OpenWrt:~# </span>vi /etc/opkg.conf
 为
 option overlay_root /overlay
-# src/gz chaos_calmer_base http://downloads.openwrt.org/snapshots/trunk/ramips/mt7620/packages/base
-# src/gz chaos_calmer_luci http://downloads.openwrt.org/snapshots/trunk/ramips/mt7620/packages/luci
+<span class="c"># src/gz chaos_calmer_base http://downloads.openwrt.org/snapshots/trunk/ramips/mt7620/packages/base</span>
+<span class="c"># src/gz chaos_calmer_luci http://downloads.openwrt.org/snapshots/trunk/ramips/mt7620/packages/luci</span>
 src/gz chaos_calmer_packages http://downloads.openwrt.org/chaos_calmer/15.05-rc2/ramips/mt7620/packages/packages
-# option check_signature 1
+<span class="c"># option check_signature 1</span>
 主要去掉签名check,增加
 src/gz chaos_calmer_packages http://downloads.openwrt.org/chaos_calmer/15.05-rc2/ramips/mt7620/packages/packages
-root@OpenWrt:~# opkg update
-root@OpenWrt:~# opkg install vsftpd openssh-sftp-server
-root@OpenWrt:~# /etc/init.d/vsftpd enable
-root@OpenWrt:~# /etc/init.d/vsftpd start
+<span class="gp">root@OpenWrt:~# </span>opkg update
+<span class="gp">root@OpenWrt:~# </span>opkg install vsftpd openssh-sftp-server
+<span class="gp">root@OpenWrt:~# </span>/etc/init.d/vsftpd <span class="nb">enable
+</span><span class="gp">root@OpenWrt:~# </span>/etc/init.d/vsftpd start
 
 .....................
 
-# http://www.cnblogs.com/peteryj/archive/2011/08/23/2151216.html
-a).建立调试环境
+<span class="c"># http://www.cnblogs.com/peteryj/archive/2011/08/23/2151216.html</span>
+a<span class="o">)</span>.建立调试环境
 配置编译OpenWRT
 make menuconfig
 启动以下两项
-Advanced configuration options (for developers) –&gt; Toolchain options –&gt; Build gdb
+Advanced configuration options <span class="o">(</span><span class="k">for </span>developers<span class="o">)</span> –&gt; Toolchain options –&gt; Build gdb
 Development –&gt; gdbserver
-b).编译
-make V=99，如果已经编译过，则make toolchain/install 编译下gdb即可
-c).编译待调试程序
+b<span class="o">)</span>.编译
+make <span class="nv">V</span><span class="o">=</span>99，如果已经编译过，则make toolchain/install 编译下gdb即可
+c<span class="o">)</span>.编译待调试程序
 make menuconfig
-启动Advanced configuration options (for developers) –&gt; Build options –&gt; Enable debugging
+启动Advanced configuration options <span class="o">(</span><span class="k">for </span>developers<span class="o">)</span> –&gt; Build options –&gt; Enable debugging
 编译程序
 以snmpd为例 ，使用make package/net-snmp/compile去编译程序，生成带调试信息的snmpd，作为宿主机调试使用。
 以上就是准备工作。下面简单介绍一下调试过程。
-d).调试程序
+d<span class="o">)</span>.调试程序
 启动目标机上的待调试程序
 首先加载并启动编译好的OpenWRT系统，然后
 gdbserver &lt;local_IP&gt;:&lt;port&gt; &lt;program&gt; &lt;args&gt;
 启动宿主机gdb
-(这里要修复一个bug，方法是：cd &lt;openwrtdir&gt;/staging_dir/&lt;targetarch&gt;; rmdir lib; ln -s ../toolchain-&lt;targetarch&gt;_&lt;gccver&gt;/lib lib)。
-cd &lt;openwrtdir&gt;/build_dir/toolchain-&lt;targetarch&gt;_&lt;gccver&gt;/gdb-6.3/gdb
+<span class="o">(</span>这里要修复一个bug，方法是：cd &lt;openwrtdir&gt;/staging_dir/&lt;targetarch&gt;; rmdir lib; ln -s ../toolchain-&lt;targetarch&gt;_&lt;gccver&gt;/lib lib<span class="o">)</span>。
+<span class="nb">cd</span> &lt;openwrtdir&gt;/build_dir/toolchain-&lt;targetarch&gt;_&lt;gccver&gt;/gdb-6.3/gdb
 ./gdb-- 启动
 设置gdb，并启动调试程序
-set solib-absolute-prefix &lt;openwrtdir&gt;/staging_dir/&lt;targetarch&gt;
+<span class="nb">set </span>solib-absolute-prefix &lt;openwrtdir&gt;/staging_dir/&lt;targetarch&gt;
 file &lt;openwrtdir&gt;/build_dir/&lt;targetarch&gt;/&lt;path&gt;/&lt;executable&gt;
 连接目标机：target remote &lt;ip&gt;:&lt;port&gt;
 连接成功之后，就可以按正常的gdb调试流程进行调试了。</code></pre></figure>

@@ -84,26 +84,26 @@
 
 <h1 id="section-1">源代码</h1>
 
-<figure class="highlight"><pre><code class="language-c" data-lang="c">/******************************************************************************
-* rgbCtrl.h 
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cm">/******************************************************************************
+* rgbCtrl.h
 *
-* Copyright XiaoCui&#39; Products
+* Copyright XiaoCui' Products
 *
-* DESCRIPTION: 
+* DESCRIPTION:
 *
 * modification history
 * --------------------
 * 01a, 01jan2008, cuiqingwei written
 * --------------------
-******************************************************************************/
+******************************************************************************/</span>
 
-#include &lt;avr/io.h&gt;
+<span class="cp">#include &lt;avr/io.h&gt;
 #include &lt;avr/interrupt.h&gt;
 #include &lt;avr/pgmspace.h&gt;
 #include &lt;avr/wdt.h&gt;
-
-#include &quot;usbdrv.h&quot;
-/* Explanation of the HSV color space:
+</span>
+<span class="cp">#include "usbdrv.h"
+</span><span class="cm">/* Explanation of the HSV color space:
 H: Hue        - 色调(如红，蓝，黄，绿...)
 S: Saturation - 饱和度
 V: Value      - 亮度
@@ -111,169 +111,169 @@ V: Value      - 亮度
 Scaling of the HSV values:
 H: [0-255] 0 = red, 42 = yellow, 85 = green, 128 = turquoise, 171 = blue, 214 = purple
 S: [0-255] 0 = white, 255 = pure colors
-V: [0-255] 0 = off,   255 = maximum brightness */
+V: [0-255] 0 = off,   255 = maximum brightness */</span>
 
-typedef struct {
-    unsigned char r;
-    unsigned char g;
-    unsigned char b;
-} RGB;
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">r</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">g</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">RGB</span><span class="p">;</span>
 
-#define Ledport         PORTD            // RGB Led Port
+<span class="cp">#define Ledport         PORTD            // RGB Led Port
 #define DDR_Ledport     DDRD
 #define R_PIN           5                // R Output
 #define G_PIN           6                // G
 #define B_PIN           7                // B
+</span>
+<span class="cm">/* 函数声名 */</span>
+<span class="kt">void</span> <span class="n">init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="kt">void</span> <span class="n">hsv_to_rgb</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">h</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">s</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">v</span><span class="p">,</span> <span class="n">RGB</span> <span class="o">*</span> <span class="n">out</span><span class="p">);</span>
 
-/* 函数声名 */
-void init(void);
-void hsv_to_rgb (unsigned char h, unsigned char s, unsigned char v, RGB * out);
+<span class="cm">/* 全局变量 */</span>
+<span class="n">RGB</span> <span class="n">lamp</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">};</span>
+<span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">type</span><span class="p">,</span><span class="n">H</span><span class="p">,</span><span class="n">S</span><span class="p">,</span><span class="n">V</span><span class="p">;</span>
 
-/* 全局变量 */
-RGB lamp = {0,0,0};
-unsigned char type,H,S,V;
-
-//-----------------------------------------------------------------------------
+<span class="c1">//-----------------------------------------------------------------------------
 // Init
 //-----------------------------------------------------------------------------
-void init(void)
-{
-    PORTD = 0;
-    PORTB = 0;                  // no pullups on USB and ISP pins 
-    DDRD = ~(1 &lt;&lt; 2);           // all outputs except PD2 = INT0 
-    DDRB = 0;                   // all USB and ISP pins inputs 
-    DDR_Ledport = (1&lt;&lt;R_PIN)|(1&lt;&lt;G_PIN)|(1&lt;&lt;B_PIN);
-    TCCR0 = 1;
-    TIMSK = (1&lt;&lt;TOIE0);        // Overflow Interrupt f/256  
-}
+</span><span class="kt">void</span> <span class="nf">init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">PORTD</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">PORTB</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                  <span class="c1">// no pullups on USB and ISP pins
+</span>    <span class="n">DDRD</span> <span class="o">=</span> <span class="o">~</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">);</span>           <span class="c1">// all outputs except PD2 = INT0
+</span>    <span class="n">DDRB</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                   <span class="c1">// all USB and ISP pins inputs
+</span>    <span class="n">DDR_Ledport</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">R_PIN</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">G_PIN</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">B_PIN</span><span class="p">);</span>
+    <span class="n">TCCR0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">TIMSK</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">TOIE0</span><span class="p">);</span>        <span class="c1">// Overflow Interrupt f/256  
+</span><span class="p">}</span>
 
-uchar usbFunctionSetup(uchar data[8]) 
-{
-    usbRequest_t *rq = (void *)data;
+<span class="n">uchar</span> <span class="nf">usbFunctionSetup</span><span class="p">(</span><span class="n">uchar</span> <span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">])</span>
+<span class="p">{</span>
+    <span class="n">usbRequest_t</span> <span class="o">*</span><span class="n">rq</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">data</span><span class="p">;</span>
 
-    if( rq-&gt;bRequest )
-    {
-        type = 1;
-        H = rq-&gt;wValue.bytes[0];
-        S = rq-&gt;wValue.bytes[1];
-        V = rq-&gt;wValue.bytes[2];
-    }
-    else
-    {
-        type = 0;
-        lamp.r = rq-&gt;wValue.bytes[0];
-        lamp.g = rq-&gt;wValue.bytes[1];
-        lamp.b = rq-&gt;wValue.bytes[2];
-    }
-    //computeOutputStatus();
-    return 0;
-}
+    <span class="k">if</span><span class="p">(</span> <span class="n">rq</span><span class="o">-&gt;</span><span class="n">bRequest</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">type</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">H</span> <span class="o">=</span> <span class="n">rq</span><span class="o">-&gt;</span><span class="n">wValue</span><span class="p">.</span><span class="n">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+        <span class="n">S</span> <span class="o">=</span> <span class="n">rq</span><span class="o">-&gt;</span><span class="n">wValue</span><span class="p">.</span><span class="n">bytes</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+        <span class="n">V</span> <span class="o">=</span> <span class="n">rq</span><span class="o">-&gt;</span><span class="n">wValue</span><span class="p">.</span><span class="n">bytes</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">type</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">lamp</span><span class="p">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">rq</span><span class="o">-&gt;</span><span class="n">wValue</span><span class="p">.</span><span class="n">bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+        <span class="n">lamp</span><span class="p">.</span><span class="n">g</span> <span class="o">=</span> <span class="n">rq</span><span class="o">-&gt;</span><span class="n">wValue</span><span class="p">.</span><span class="n">bytes</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+        <span class="n">lamp</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">rq</span><span class="o">-&gt;</span><span class="n">wValue</span><span class="p">.</span><span class="n">bytes</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="c1">//computeOutputStatus();
+</span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-//-----------------------------------------------------------------------------
+<span class="c1">//-----------------------------------------------------------------------------
 // Main
 //-----------------------------------------------------------------------------
-int main(void)
-{        
-    cli();
-    init();
-    usbInit();
-    sei();
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>        
+    <span class="n">cli</span><span class="p">();</span>
+    <span class="n">init</span><span class="p">();</span>
+    <span class="n">usbInit</span><span class="p">();</span>
+    <span class="n">sei</span><span class="p">();</span>
 
-    H = 180;
-    S = 255;
-    V = 355;
-    type = 1;
-                
-    for(;;)
-    {
-        usbPoll();
+    <span class="n">H</span> <span class="o">=</span> <span class="mi">180</span><span class="p">;</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="mi">255</span><span class="p">;</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="mi">355</span><span class="p">;</span>
+    <span class="n">type</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
-        if ( type )
-        {
-            type = 0;
-            hsv_to_rgb(H,S,V,&amp;lamp);
-        }
-    }
-    return 0;
-}
+    <span class="k">for</span><span class="p">(;;)</span>
+    <span class="p">{</span>
+        <span class="n">usbPoll</span><span class="p">();</span>
 
-//-----------------------------------------------------------------------------
+        <span class="k">if</span> <span class="p">(</span> <span class="n">type</span> <span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">type</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">hsv_to_rgb</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">S</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="o">&amp;</span><span class="n">lamp</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//-----------------------------------------------------------------------------
 // Converts HSV to RGB
 //-----------------------------------------------------------------------------
-void hsv_to_rgb (unsigned char h, unsigned char s, unsigned char v, RGB * out)
-{
-    unsigned char r=0,g=0,b=0, i, f;
-    unsigned int p, q, t;
+</span><span class="kt">void</span> <span class="nf">hsv_to_rgb</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">h</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">s</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">v</span><span class="p">,</span> <span class="n">RGB</span> <span class="o">*</span> <span class="n">out</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">g</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">f</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">t</span><span class="p">;</span>
 
-    if( s == 0 ) 
-    {        
-        r = g = b = v;
-    }
-    else
-    {        
-        i=h/43;
-        f=h%43;
-        p = (v * (255 - s))/256;
-        q = (v * ((10710 - (s * f))/42))/256;
-        t = (v * ((10710 - (s * (42 - f)))/42))/256;
+    <span class="k">if</span><span class="p">(</span> <span class="n">s</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span>
+    <span class="p">{</span>        
+        <span class="n">r</span> <span class="o">=</span> <span class="n">g</span> <span class="o">=</span> <span class="n">b</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>        
+        <span class="n">i</span><span class="o">=</span><span class="n">h</span><span class="o">/</span><span class="mi">43</span><span class="p">;</span>
+        <span class="n">f</span><span class="o">=</span><span class="n">h</span><span class="o">%</span><span class="mi">43</span><span class="p">;</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">v</span> <span class="o">*</span> <span class="p">(</span><span class="mi">255</span> <span class="o">-</span> <span class="n">s</span><span class="p">))</span><span class="o">/</span><span class="mi">256</span><span class="p">;</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="p">(</span><span class="n">v</span> <span class="o">*</span> <span class="p">((</span><span class="mi">10710</span> <span class="o">-</span> <span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="n">f</span><span class="p">))</span><span class="o">/</span><span class="mi">42</span><span class="p">))</span><span class="o">/</span><span class="mi">256</span><span class="p">;</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="n">v</span> <span class="o">*</span> <span class="p">((</span><span class="mi">10710</span> <span class="o">-</span> <span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="p">(</span><span class="mi">42</span> <span class="o">-</span> <span class="n">f</span><span class="p">)))</span><span class="o">/</span><span class="mi">42</span><span class="p">))</span><span class="o">/</span><span class="mi">256</span><span class="p">;</span>
 
-        switch( i )
-        {        
-            case 0:
-                r = v; g = t; b = p; break;
-            case 1:
-                r = q; g = v; b = p; break;
-            case 2:
-                r = p; g = v; b = t; break;
-            case 3:
-                r = p; g = q; b = v; break;                        
-            case 4:
-                r = t; g = p; b = v; break;                                
-            case 5:
-                r = v; g = p; b = q; break;
-        }
-    }
-    out-&gt;r=r; out-&gt;g=g; out-&gt;b=b;
-}
+        <span class="k">switch</span><span class="p">(</span> <span class="n">i</span> <span class="p">)</span>
+        <span class="p">{</span>        
+            <span class="k">case</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span> <span class="n">g</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="n">q</span><span class="p">;</span> <span class="n">g</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span> <span class="n">g</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span> <span class="n">g</span> <span class="o">=</span> <span class="n">q</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>                        
+            <span class="k">case</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span> <span class="n">g</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>                                
+            <span class="k">case</span> <span class="mi">5</span><span class="p">:</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span> <span class="n">g</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">q</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">out</span><span class="o">-&gt;</span><span class="n">r</span><span class="o">=</span><span class="n">r</span><span class="p">;</span> <span class="n">out</span><span class="o">-&gt;</span><span class="n">g</span><span class="o">=</span><span class="n">g</span><span class="p">;</span> <span class="n">out</span><span class="o">-&gt;</span><span class="n">b</span><span class="o">=</span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
 
-//-----------------------------------------------------------------------------
+<span class="c1">//-----------------------------------------------------------------------------
 // Timer  0 Interrupt, f/256
 //-----------------------------------------------------------------------------
-SIGNAL (SIG_OVERFLOW0)
-{        
-    static unsigned char PWM_cnt;
-    static unsigned char prescale;
+</span><span class="n">SIGNAL</span> <span class="p">(</span><span class="n">SIG_OVERFLOW0</span><span class="p">)</span>
+<span class="p">{</span>        
+    <span class="k">static</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">PWM_cnt</span><span class="p">;</span>
+    <span class="k">static</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">prescale</span><span class="p">;</span>
 
-    if(prescale++)
-    {                                
-        prescale=0;                // Used to halve the PWM frequency
-        return;
-    }
+    <span class="k">if</span><span class="p">(</span><span class="n">prescale</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>                                
+        <span class="n">prescale</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>                <span class="c1">// Used to halve the PWM frequency
+</span>        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    if (PWM_cnt &lt;lamp.r)
-        Ledport |= (1 &lt;&lt; R_PIN);
-    else
-        Ledport &amp;=~(1 &lt;&lt; R_PIN);
+    <span class="k">if</span> <span class="p">(</span><span class="n">PWM_cnt</span> <span class="o">&lt;</span><span class="n">lamp</span><span class="p">.</span><span class="n">r</span><span class="p">)</span>
+        <span class="n">Ledport</span> <span class="o">|=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">R_PIN</span><span class="p">);</span>
+    <span class="k">else</span>
+        <span class="n">Ledport</span> <span class="o">&amp;=~</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">R_PIN</span><span class="p">);</span>
 
-    if (PWM_cnt &lt;lamp.g)
-        Ledport |= (1 &lt;&lt; G_PIN);
-    else
-        Ledport &amp;=~(1 &lt;&lt; G_PIN);
+    <span class="k">if</span> <span class="p">(</span><span class="n">PWM_cnt</span> <span class="o">&lt;</span><span class="n">lamp</span><span class="p">.</span><span class="n">g</span><span class="p">)</span>
+        <span class="n">Ledport</span> <span class="o">|=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">G_PIN</span><span class="p">);</span>
+    <span class="k">else</span>
+        <span class="n">Ledport</span> <span class="o">&amp;=~</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">G_PIN</span><span class="p">);</span>
 
-    if (PWM_cnt &lt;lamp.b)
-        Ledport |= (1 &lt;&lt; B_PIN);
-    else
-        Ledport &amp;=~(1 &lt;&lt; B_PIN);
+    <span class="k">if</span> <span class="p">(</span><span class="n">PWM_cnt</span> <span class="o">&lt;</span><span class="n">lamp</span><span class="p">.</span><span class="n">b</span><span class="p">)</span>
+        <span class="n">Ledport</span> <span class="o">|=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">B_PIN</span><span class="p">);</span>
+    <span class="k">else</span>
+        <span class="n">Ledport</span> <span class="o">&amp;=~</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">B_PIN</span><span class="p">);</span>
 
-    PWM_cnt++;
-}
-/*-----------------------------------------------------------------------------
+    <span class="n">PWM_cnt</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cm">/*-----------------------------------------------------------------------------
                                 0ooo
                        ooo0     (   )
                        (   )     ) /
                         \ (     (_/
                          \_)        By:cuiqingwei [gary]
------------------------------------------------------------------------------*/</code></pre></figure>
+-----------------------------------------------------------------------------*/</span></code></pre></figure>
 
 <h1 id="pc">PC软件界面</h1>
 <p><img src="http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_196733.png" alt="界面" /></p>
@@ -296,6 +296,11 @@ SIGNAL (SIG_OVERFLOW0)
   </li>
 </ul>
 
+<hr />
+
+<p><em>发表链接</em></p>
+
+<p>amoBBS 阿莫电子论坛 <a href="http://www.amobbs.com/thread-883719-1-1.html">http://www.amobbs.com/thread-883719-1-1.html</a></p>
 
 </div>
 

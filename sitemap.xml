@@ -153,6 +153,66 @@
   
     
     <url>
+      <loc>http://cuiqingwei.github.com/projects/2010/07/24/Tcp&Telnet&Socket%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7.html/</loc>
+      
+        <lastmod>2010-07-24T01:04:45+08:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.7</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://cuiqingwei.github.com/projects/2009/03/13/%E5%9C%A8TI-CC1111&CC25111%E4%B8%8A%E6%90%9E%E5%AE%9AUSBHID.html/</loc>
+      
+        <lastmod>2009-03-13T08:42:08+08:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.7</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://cuiqingwei.github.com/projects/2008/07/09/Rf_Calc.html/</loc>
+      
+        <lastmod>2008-07-09T20:42:45+08:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.7</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://cuiqingwei.github.com/projects/2008/05/11/Proteus%E4%BA%A7%E5%93%81%E4%BB%BF%E7%9C%9F.html/</loc>
+      
+        <lastmod>2008-05-11T18:20:19+08:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.7</priority>
+      
+    </url>
+    
+  
+    
+    <url>
       <loc>http://cuiqingwei.github.com/projects/2008/01/03/USB_M8_RGBLED%E5%BD%A9%E7%81%AF.html/</loc>
       
         <lastmod>2008-01-03T17:30:15+08:00</lastmod>
@@ -171,6 +231,51 @@
       <loc>http://cuiqingwei.github.com/projects/2007/11/20/EAGLE3D%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9A%E4%BA%86.html/</loc>
       
         <lastmod>2007-11-20T04:07:41+08:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.7</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://cuiqingwei.github.com/projects/2007/10/12/CC2430%E6%A8%A1%E5%9D%97%E8%87%AA%E6%B5%8B%E7%A8%8B%E5%BA%8F.html/</loc>
+      
+        <lastmod>2007-10-12T21:22:02+08:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.7</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://cuiqingwei.github.com/projects/2006/12/25/%E5%9F%BA%E4%BA%8ECport%E7%9A%84%E5%A4%9A%E5%8A%9F%E8%83%BD%E4%B8%B2%E5%8F%A3%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7.html/</loc>
+      
+        <lastmod>2006-12-25T16:45:37+08:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.7</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://cuiqingwei.github.com/projects/2006/12/06/AT91SAM7S64%E7%9A%84%E5%AE%9A%E6%97%B6%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E8%AE%A1%E7%AE%97%E5%B7%A5%E5%99%A8.html/</loc>
+      
+        <lastmod>2006-12-06T23:25:34+08:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -203,7 +308,7 @@
     <url>
       <loc>http://cuiqingwei.github.com/about/</loc>
       
-        <lastmod>2016-08-30T14:54:03+08:00</lastmod>
+        <lastmod>2016-09-13T00:55:32+08:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -218,7 +323,7 @@
     <url>
       <loc>http://cuiqingwei.github.com/categories/favorites/</loc>
       
-        <lastmod>2016-08-30T14:54:03+08:00</lastmod>
+        <lastmod>2016-09-13T00:55:32+08:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -235,7 +340,7 @@
     <url>
       <loc>http://cuiqingwei.github.com/</loc>
       
-        <lastmod>2016-08-30T14:54:03+08:00</lastmod>
+        <lastmod>2016-09-13T00:55:32+08:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -250,7 +355,7 @@
     <url>
       <loc>http://cuiqingwei.github.com/categories/learn/</loc>
       
-        <lastmod>2016-08-30T14:54:03+08:00</lastmod>
+        <lastmod>2016-09-13T00:55:32+08:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -267,7 +372,7 @@
     <url>
       <loc>http://cuiqingwei.github.com/categories/projects/</loc>
       
-        <lastmod>2016-08-30T14:54:03+08:00</lastmod>
+        <lastmod>2016-09-13T00:55:32+08:00</lastmod>
       
       
         <changefreq>monthly</changefreq>

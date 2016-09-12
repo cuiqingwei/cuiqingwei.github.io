@@ -6,9 +6,9 @@
 </description>
     <link>http://cuiqingwei.github.com/</link>
     <atom:link href="http://cuiqingwei.github.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 30 Aug 2016 14:54:03 +0800</pubDate>
-    <lastBuildDate>Tue, 30 Aug 2016 14:54:03 +0800</lastBuildDate>
-    <generator>Jekyll v3.0.1</generator>
+    <pubDate>Tue, 13 Sep 2016 00:55:32 +0800</pubDate>
+    <lastBuildDate>Tue, 13 Sep 2016 00:55:32 +0800</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>网站设计的最简主义</title>
@@ -76,12 +76,12 @@
   &lt;li&gt;创建项目站点步骤：&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ git clone https://github.com/USERNAME/PROJECT.git PROJECT
-$ git checkout --orphan gh-pages
-$ git rm -rf .
-$ git add .
-$ git commit -a -m &amp;quot;First pages commit&amp;quot;
-$ git push origin gh-pages&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git clone https://github.com/USERNAME/PROJECT.git PROJECT
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git checkout --orphan gh-pages
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git rm -rf .
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git add .
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git commit -a -m &lt;span class=&quot;s2&quot;&gt;&quot;First pages commit&quot;&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git push origin gh-pages&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;ul&gt;
   &lt;li&gt;可以通过User/OrganizationPages建立主站，而通过ProjectPages挂载二级应用页面。&lt;/li&gt;
@@ -92,7 +92,183 @@ $ git push origin gh-pages&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;h4 id=&quot;jekyll-1&quot;&gt;4.1 什么是jekyll&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;Jekyll是一种简单的、适用于博客的、静态网站生成引擎。它使用一个模板目录作为网站布局的基础框架，支持Markdown、Textile等标记语言的解析，提供了模板、变量、插件等功能，最终生成一个完整的静态Web站点。说白了就是，只要安装Jekyll的规范和结构，不用写html，就可以生成网站。[jekyll介绍][jekyll on github][jekyllbootstrap]。&lt;/li&gt;
-  &lt;li&gt;Jekyll使用Liquid模板语言，GitHub建立个人站点表示文章标题，表示文章内容。我们可以用两种Liquid标记语言：输出标记（output markup）和标签标记 (tag markup)。输出标记会输出文本（如果被引用的变量存在），而标签标记不会。输出标记是用双花括号分隔，而标签标记是用花括号-百分号对分隔。[Liquid模板语言] [Liquid模板变量参考]。&lt;/li&gt;
+  &lt;li&gt;Jekyll使用Liquid模板语言，GitHub建立个人站点表示文章标题，&amp;lt;h1 class=&quot;page-title post-title&quot;&amp;gt;
+    &lt;div class=&quot;page-title__text post-title__text&quot;&gt;eMaker.Space&lt;/div&gt;
+    &lt;div class=&quot;page-title__subtitle post-title__subtitle&quot;&gt;创客信息收集分类&lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;lt;/h1&amp;gt;&lt;/p&gt;
+
+&lt;div class=&quot;content&quot;&gt;
+    &lt;h1 id=&quot;wiki&quot;&gt;wiki&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.seeedstudio.com/wiki/Main_Page&quot;&gt;http://www.seeedstudio.com/wiki/Main_Page&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://wiki.microduino.cc/index.php&quot;&gt;https://wiki.microduino.cc/index.php&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://wiki.dfrobot.com.cn/index.php&quot;&gt;http://wiki.dfrobot.com.cn/index.php&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.alsrobot.cn/wiki/&quot;&gt;http://www.alsrobot.cn/wiki/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://duinopeak.com/wiki/index.php&quot;&gt;http://duinopeak.com/wiki/index.php&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;open-source-hardware&quot;&gt;Open Source Hardware&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.oshwa.org/open-source-hardware-logo/&quot;&gt;http://www.oshwa.org/open-source-hardware-logo/&lt;/a&gt;
+&lt;a href=&quot;http://kb.open.eefocus.com/index.php&quot;&gt;http://kb.open.eefocus.com/index.php&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;duino&quot;&gt;Duino&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.arduino.cc/&quot;&gt;https://www.arduino.cc/&lt;/a&gt;
+&lt;a href=&quot;http://www.drduino.com/&quot;&gt;http://www.drduino.com/&lt;/a&gt;
+&lt;a href=&quot;https://www.microduino.cn/&quot;&gt;https://www.microduino.cn/&lt;/a&gt;
+&lt;a href=&quot;http://www.duino-robotics.com/&quot;&gt;http://www.duino-robotics.com/&lt;/a&gt;
+&lt;a href=&quot;http://www.86duino.com/&quot;&gt;http://www.86duino.com/&lt;/a&gt;
+&lt;a href=&quot;http://www.rfduino.com/&quot;&gt;http://www.rfduino.com/&lt;/a&gt;
+&lt;a href=&quot;http://www.netduino.com/&quot;&gt;http://www.netduino.com/&lt;/a&gt;
+&lt;a href=&quot;http://wtfduino.calumk.com/&quot;&gt;http://wtfduino.calumk.com/&lt;/a&gt;
+&lt;a href=&quot;https://easyeda.com/seeedstudio/Xadow_Duino-M5d71jdvp&quot;&gt;https://easyeda.com/seeedstudio/Xadow_Duino-M5d71jdvp&lt;/a&gt;
+&lt;a href=&quot;http://rasp.io/&quot;&gt;http://rasp.io/&lt;/a&gt;
+&lt;a href=&quot;http://www.motoduino.com/&quot;&gt;http://www.motoduino.com/&lt;/a&gt;
+&lt;a href=&quot;http://cubieboard.org/&quot;&gt;http://cubieboard.org/&lt;/a&gt;
+&lt;a href=&quot;http://www.techbang.com/posts/42412-maker&quot;&gt;http://www.techbang.com/posts/42412-maker&lt;/a&gt;
+&lt;a href=&quot;http://wiki.iteadstudio.com/Product&quot;&gt;http://wiki.iteadstudio.com/Product&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;raspberry&quot;&gt;Raspberry&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.cooking-hacks.com/documentation/tutorials/raspberry-pi-to-arduino-shields-connection-bridge/&quot;&gt;https://www.cooking-hacks.com/documentation/tutorials/raspberry-pi-to-arduino-shields-connection-bridge/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;sparkfun&quot;&gt;Sparkfun&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.sparkfun.com/products/13111&quot;&gt;https://www.sparkfun.com/products/13111&lt;/a&gt;
+&lt;a href=&quot;https://www.sparkfun.com/products/11511&quot;&gt;https://www.sparkfun.com/products/11511&lt;/a&gt;
+&lt;a href=&quot;https://www.sparkfun.com/products/11683&quot;&gt;https://www.sparkfun.com/products/11683&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;blockly&quot;&gt;blockly&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/blockly/&quot;&gt;https://developers.google.com/blockly/&lt;/a&gt;
+&lt;a href=&quot;https://blockly-demo.appspot.com/static/demos/index.html&quot;&gt;https://blockly-demo.appspot.com/static/demos/index.html&lt;/a&gt;
+&lt;a href=&quot;https://blockly-games.appspot.com/?lang=zh-hans&quot;&gt;https://blockly-games.appspot.com/?lang=zh-hans&lt;/a&gt;
+&lt;a href=&quot;https://studio.code.org/&quot;&gt;https://studio.code.org/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;ardublock&quot;&gt;Ardublock&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://sourceforge.net/projects/ardublock/&quot;&gt;https://sourceforge.net/projects/ardublock/&lt;/a&gt;
+&lt;a href=&quot;http://blog.ardublock.com/zh/category/tutorial/&quot;&gt;http://blog.ardublock.com/zh/category/tutorial/&lt;/a&gt;
+&lt;a href=&quot;https://learn.sparkfun.com/resources/59&quot;&gt;https://learn.sparkfun.com/resources/59&lt;/a&gt;
+&lt;a href=&quot;https://learn.sparkfun.com/tutorials/alternative-arduino-interfaces/ardublock&quot;&gt;https://learn.sparkfun.com/tutorials/alternative-arduino-interfaces/ardublock&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;mixly&quot;&gt;Mixly米思齐&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://mixly.cn/&quot;&gt;http://mixly.cn/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;mit-app-inventor-2&quot;&gt;MIT App Inventor 2&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://app.gzjkw.net/&quot;&gt;http://app.gzjkw.net/&lt;/a&gt;
+&lt;a href=&quot;http://blog.cavedu.com/programming-language/appinventor/appinventorandarduinowithbluetooth/&quot;&gt;http://blog.cavedu.com/programming-language/appinventor/appinventorandarduinowithbluetooth/&lt;/a&gt;
+&lt;a href=&quot;http://appinventor.pevest.com/?page_id=10&quot;&gt;http://appinventor.pevest.com/?page_id=10&lt;/a&gt;
+&lt;a href=&quot;https://sites.google.com/site/jingprogram/app&quot;&gt;https://sites.google.com/site/jingprogram/app&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;软件&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.sketchup.com/&quot;&gt;http://www.sketchup.com/&lt;/a&gt;
+&lt;a href=&quot;http://www.123dapp.com/design&quot;&gt;http://www.123dapp.com/design&lt;/a&gt;
+&lt;a href=&quot;https://scratch.mit.edu/&quot;&gt;https://scratch.mit.edu/&lt;/a&gt;
+&lt;a href=&quot;http://s4a.cat/&quot;&gt;http://s4a.cat/&lt;/a&gt;
+&lt;a href=&quot;http://www.arduino.cc/&quot;&gt;http://www.arduino.cc/&lt;/a&gt;
+&lt;a href=&quot;http://www.arduino.org.cn/&quot;&gt;http://www.arduino.org.cn/&lt;/a&gt;
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Arduino&quot;&gt;https://en.wikipedia.org/wiki/Arduino&lt;/a&gt;
+&lt;a href=&quot;http://i.youku.com/u/UNDYwMzEyOTk2&quot;&gt;http://i.youku.com/u/UNDYwMzEyOTk2&lt;/a&gt;
+&lt;a href=&quot;http://www.makerlab.tw/resources/&quot;&gt;http://www.makerlab.tw/resources/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;d-modeling-and-printing-3d&quot;&gt;3D Modeling and Printing ：3D建模和打印&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://the3doodler.com/&quot;&gt;http://the3doodler.com/&lt;/a&gt;
+&lt;a href=&quot;https://www.ultimaker.com/&quot;&gt;https://www.ultimaker.com/&lt;/a&gt;
+&lt;a href=&quot;http://www.makerbot.com/&quot;&gt;http://www.makerbot.com/&lt;/a&gt;
+&lt;a href=&quot;http://www.sketchup.com/&quot;&gt;http://www.sketchup.com/&lt;/a&gt;
+&lt;a href=&quot;https://www.tinkercad.com/&quot;&gt;https://www.tinkercad.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;circuits&quot;&gt;Circuits：电路&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://snapcircuits.net.tw/&quot;&gt;http://snapcircuits.net.tw/&lt;/a&gt;
+&lt;a href=&quot;http://courseweb.stthomas.edu/apthomas/SquishyCircuits/buildingCircuits.htm&quot;&gt;http://courseweb.stthomas.edu/apthomas/SquishyCircuits/buildingCircuits.htm&lt;/a&gt;
+&lt;a href=&quot;http://littlebits.cc/&quot;&gt;http://littlebits.cc/&lt;/a&gt;
+&lt;a href=&quot;http://wiki.funmetas.com/index.php?title=%E9%A6%96%E9%A1%B5&quot;&gt;http://wiki.funmetas.com/index.php?title=%E9%A6%96%E9%A1%B5&lt;/a&gt;
+&lt;a href=&quot;http://www.makeymakey.com/&quot;&gt;http://www.makeymakey.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;programmingcoding&quot;&gt;Programming/Coding：程序设计/编程&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://blockly-games.appspot.com/&quot;&gt;https://blockly-games.appspot.com/&lt;/a&gt;
+&lt;a href=&quot;https://scratch.mit.edu/&quot;&gt;https://scratch.mit.edu/&lt;/a&gt;
+&lt;a href=&quot;http://www.arduino.cc/&quot;&gt;http://www.arduino.cc/&lt;/a&gt;
+&lt;a href=&quot;https://www.raspberrypi.org/&quot;&gt;https://www.raspberrypi.org/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;robotics&quot;&gt;Robotics：机器人&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.lego.com/zh-cn/mindstorms/?domainredir=mindstorms.lego.com&quot;&gt;http://www.lego.com/zh-cn/mindstorms/?domainredir=mindstorms.lego.com&lt;/a&gt;
+&lt;a href=&quot;http://www.firstinspires.org/robotics/frc&quot;&gt;http://www.firstinspires.org/robotics/frc&lt;/a&gt;
+&lt;a href=&quot;http://www.arduino.org.cn/products/kits/6-arduino-kits/arduino-starter-kit&quot;&gt;http://www.arduino.org.cn/products/kits/6-arduino-kits/arduino-starter-kit&lt;/a&gt;
+&lt;a href=&quot;http://mobilerobotkit.com/robot-kits.html&quot;&gt;http://mobilerobotkit.com/robot-kits.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;tools--materials--&quot;&gt;Tools &amp;amp; Materials : 工具及耗材&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Woodworking：木工&lt;/li&gt;
+  &lt;li&gt;Metalworking：金工&lt;/li&gt;
+  &lt;li&gt;Laser Cutting：激光切割&lt;/li&gt;
+  &lt;li&gt;CNC Cutting： 数控切割&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;makerspae&quot;&gt;MakerSpae&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.makezine.com.tw/makerspace.html&quot;&gt;http://www.makezine.com.tw/makerspace.html&lt;/a&gt;
+&lt;a href=&quot;http://www.fablabtaiwan.org.tw/&quot;&gt;http://www.fablabtaiwan.org.tw/&lt;/a&gt;
+&lt;a href=&quot;http://www.fablabtaipei.org/2510520497303403537320633.html&quot;&gt;http://www.fablabtaipei.org/2510520497303403537320633.html&lt;/a&gt;
+&lt;a href=&quot;http://www.weschool.tw/26377217382012335373206332403720855.html&quot;&gt;http://www.weschool.tw/26377217382012335373206332403720855.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;国内创客空间&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.chaihuo.org/products/list&quot;&gt;http://www.chaihuo.org/products/list&lt;/a&gt;
+&lt;a href=&quot;http://xinchejian.com/?lang=zh&quot;&gt;http://xinchejian.com/?lang=zh&lt;/a&gt;
+&lt;a href=&quot;http://www.bjmakerspace.com/&quot;&gt;http://www.bjmakerspace.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;digital-sandbox&quot;&gt;Digital Sandbox&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.sparkfun.com/products/12651&quot;&gt;https://www.sparkfun.com/products/12651&lt;/a&gt;
+&lt;a href=&quot;http://b2b.hc360.com/supplyself/348068096.html&quot;&gt;http://b2b.hc360.com/supplyself/348068096.html&lt;/a&gt;
+&lt;a href=&quot;https://learn.sparkfun.com/tutorials/digital-sandbox-experiment-guide/setting-up-arduino-and-ardublock&quot;&gt;https://learn.sparkfun.com/tutorials/digital-sandbox-experiment-guide/setting-up-arduino-and-ardublock&lt;/a&gt;
+&lt;a href=&quot;http://classes.engr.oregonstate.edu/eecs/fall2015/cs160-501/labs/lab_01.pdf&quot;&gt;http://classes.engr.oregonstate.edu/eecs/fall2015/cs160-501/labs/lab_01.pdf&lt;/a&gt;
+&lt;a href=&quot;https://learn.sparkfun.com/tutorials/alternative-arduino-interfaces/codebender&quot;&gt;https://learn.sparkfun.com/tutorials/alternative-arduino-interfaces/codebender&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-2&quot;&gt;创客空间里面都有那些设备&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.zhishihao.com/xue/show/155996&quot;&gt;http://www.zhishihao.com/xue/show/155996&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-3&quot;&gt;趣味电子&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Back in Time木质时光倒流时钟&lt;/strong&gt;
+&lt;a href=&quot;https://item.taobao.com/item.htm?spm=a1z10.5-c.w4002-11172345288.31.fQeFq4&amp;amp;id=45557720848&quot;&gt;https://item.taobao.com/item.htm?spm=a1z10.5-c.w4002-11172345288.31.fQeFq4&amp;amp;id=45557720848&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;基于Arduino设计的简易宠物喂食机&lt;/strong&gt;
+&lt;a href=&quot;http://bbs.intorobot.com/thread-683-1-1.html&quot;&gt;http://bbs.intorobot.com/thread-683-1-1.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;3D打印全自动宠物喂食器&lt;/strong&gt;
+&lt;a href=&quot;http://bbs.intorobot.com/thread-684-1-1.html&quot;&gt;http://bbs.intorobot.com/thread-684-1-1.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Plotclock小贱钟&lt;/strong&gt;
+&lt;a href=&quot;http://www.arduino.cn/thread-6049-1-1.html&quot;&gt;http://www.arduino.cn/thread-6049-1-1.html&lt;/a&gt;
+&lt;a href=&quot;http://jjrobots.com/projects-2/&quot;&gt;http://jjrobots.com/projects-2/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;section-4&quot;&gt;课程&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://robert.cireddu.free.fr/&quot;&gt;http://robert.cireddu.free.fr/&lt;/a&gt;
+&lt;a href=&quot;http://pedagogie.ac-toulouse.fr/lp-baylet-valence-agen/&quot;&gt;http://pedagogie.ac-toulouse.fr/lp-baylet-valence-agen/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;stem&quot;&gt;STEM&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.creativelearningsystems.com/&quot;&gt;http://www.creativelearningsystems.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;d&quot;&gt;走进3D&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://k12.leiphone.com/article/201601/Nnf0kNrFwit3zZBV.html&quot;&gt;http://k12.leiphone.com/article/201601/Nnf0kNrFwit3zZBV.html&lt;/a&gt;
+&lt;a href=&quot;http://www.e-works.net.cn/report/2015stratasys3d/2015stratasys3d.html&quot;&gt;http://www.e-works.net.cn/report/2015stratasys3d/2015stratasys3d.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-5&quot;&gt;配套&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;洞洞板&lt;/strong&gt;
+&lt;a href=&quot;https://item.taobao.com/item.htm?spm=2013.1.20141001.1.QOwtaJ&amp;amp;id=35618674019&amp;amp;;scm=1007.10115.22552.100200300000000&amp;amp;pvid=3a6eaed6-f152-4ad3-a716-ed9d05874607&quot;&gt;https://item.taobao.com/item.htm?spm=2013.1.20141001.1.QOwtaJ&amp;amp;id=35618674019&amp;amp;;scm=1007.10115.22552.100200300000000&amp;amp;pvid=3a6eaed6-f152-4ad3-a716-ed9d05874607&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-6&quot;&gt;想做创客？这些关于开源硬件的知识你不得不知&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.csdn.net/article/2014-06-30/2820457/2&quot;&gt;http://www.csdn.net/article/2014-06-30/2820457/2&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;diy&quot;&gt;DIY示波器&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://item.taobao.com/item.htm?spm=a230r.1.14.16.HxgqLG&amp;amp;id=43507787334&amp;amp;ns=1&amp;amp;abbucket=20#detail&quot;&gt;https://item.taobao.com/item.htm?spm=a230r.1.14.16.HxgqLG&amp;amp;id=43507787334&amp;amp;ns=1&amp;amp;abbucket=20#detail&lt;/a&gt;
+&lt;a href=&quot;http://www.jyetech.com/index.php&quot;&gt;http://www.jyetech.com/index.php&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;about&quot;&gt;
+    &lt;div class=&quot;about__devider&quot;&gt;*****&lt;/div&gt;
+    &lt;div class=&quot;about__text&quot;&gt;
+        Written by &lt;strong&gt;  cuiqingwei &lt;/strong&gt;
+        on &lt;strong&gt;09 March 2016&lt;/strong&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;表示文章内容。我们可以用两种Liquid标记语言：输出标记（output markup）和标签标记 (tag markup)。输出标记会输出文本（如果被引用的变量存在），而标签标记不会。输出标记是用双花括号分隔，而标签标记是用花括号-百分号对分隔。[Liquid模板语言] [Liquid模板变量参考]。&lt;/p&gt;
+&lt;ul&gt;
   &lt;li&gt;jekyll与github的关系：GitHub Pages一个由 GitHub 提供的用于托管项目主页或博客的服务，jekyll是后台所运行的引擎。&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -102,7 +278,7 @@ $ git push origin gh-pages&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
   &lt;li&gt;下载最新的DevKit，DevKit是windows平台下编译和使用本地C/C++扩展包的工具。它就是用来模拟Linux平台下的make,gcc,sh来进行编译。但是这个方法目前仅支持通过RubyInstaller安装的Ruby，并双击运行解压到C:\DevKit。然后打开终端cmd，输入下列命令进行安装：&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;cd C:\DevKit
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;C:&lt;span class=&quot;se&quot;&gt;\D&lt;/span&gt;evKit
 ruby dk.rb init
 ruby dk.rb install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -151,9 +327,186 @@ cd 到工程目录，启动服务：&lt;/li&gt;
       &lt;dd&gt;_includes/JB中有一些常用的工具，用于列表显示、评论等；&lt;/dd&gt;
       &lt;dd&gt;_includes/themes中可参看主题的相关html文档。&lt;/dd&gt;
       &lt;dd&gt;_includes/themes中的主题一般包含default.html、post.html和page.html三个文档。default.html定义了网站的最上层框架（模板），post.html和page.html是其子框架（模板）。&lt;/dd&gt;
-      &lt;dd&gt;生成好的html子页面通过default.html的变量调用，生成整个页面。&lt;/dd&gt;
+      &lt;dd&gt;生成好的html子页面通过default.html的&amp;lt;h1 class=&quot;page-title post-title&quot;&amp;gt;
+        &lt;div class=&quot;page-title__text post-title__text&quot;&gt;eMaker.Space&lt;/div&gt;
+        &lt;div class=&quot;page-title__subtitle post-title__subtitle&quot;&gt;创客信息收集分类&lt;/div&gt;
+      &lt;/dd&gt;
     &lt;/dl&gt;
   &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;lt;/h1&amp;gt;&lt;/p&gt;
+
+&lt;div class=&quot;content&quot;&gt;
+    &lt;h1 id=&quot;wiki&quot;&gt;wiki&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.seeedstudio.com/wiki/Main_Page&quot;&gt;http://www.seeedstudio.com/wiki/Main_Page&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://wiki.microduino.cc/index.php&quot;&gt;https://wiki.microduino.cc/index.php&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://wiki.dfrobot.com.cn/index.php&quot;&gt;http://wiki.dfrobot.com.cn/index.php&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.alsrobot.cn/wiki/&quot;&gt;http://www.alsrobot.cn/wiki/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://duinopeak.com/wiki/index.php&quot;&gt;http://duinopeak.com/wiki/index.php&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;open-source-hardware&quot;&gt;Open Source Hardware&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.oshwa.org/open-source-hardware-logo/&quot;&gt;http://www.oshwa.org/open-source-hardware-logo/&lt;/a&gt;
+&lt;a href=&quot;http://kb.open.eefocus.com/index.php&quot;&gt;http://kb.open.eefocus.com/index.php&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;duino&quot;&gt;Duino&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.arduino.cc/&quot;&gt;https://www.arduino.cc/&lt;/a&gt;
+&lt;a href=&quot;http://www.drduino.com/&quot;&gt;http://www.drduino.com/&lt;/a&gt;
+&lt;a href=&quot;https://www.microduino.cn/&quot;&gt;https://www.microduino.cn/&lt;/a&gt;
+&lt;a href=&quot;http://www.duino-robotics.com/&quot;&gt;http://www.duino-robotics.com/&lt;/a&gt;
+&lt;a href=&quot;http://www.86duino.com/&quot;&gt;http://www.86duino.com/&lt;/a&gt;
+&lt;a href=&quot;http://www.rfduino.com/&quot;&gt;http://www.rfduino.com/&lt;/a&gt;
+&lt;a href=&quot;http://www.netduino.com/&quot;&gt;http://www.netduino.com/&lt;/a&gt;
+&lt;a href=&quot;http://wtfduino.calumk.com/&quot;&gt;http://wtfduino.calumk.com/&lt;/a&gt;
+&lt;a href=&quot;https://easyeda.com/seeedstudio/Xadow_Duino-M5d71jdvp&quot;&gt;https://easyeda.com/seeedstudio/Xadow_Duino-M5d71jdvp&lt;/a&gt;
+&lt;a href=&quot;http://rasp.io/&quot;&gt;http://rasp.io/&lt;/a&gt;
+&lt;a href=&quot;http://www.motoduino.com/&quot;&gt;http://www.motoduino.com/&lt;/a&gt;
+&lt;a href=&quot;http://cubieboard.org/&quot;&gt;http://cubieboard.org/&lt;/a&gt;
+&lt;a href=&quot;http://www.techbang.com/posts/42412-maker&quot;&gt;http://www.techbang.com/posts/42412-maker&lt;/a&gt;
+&lt;a href=&quot;http://wiki.iteadstudio.com/Product&quot;&gt;http://wiki.iteadstudio.com/Product&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;raspberry&quot;&gt;Raspberry&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.cooking-hacks.com/documentation/tutorials/raspberry-pi-to-arduino-shields-connection-bridge/&quot;&gt;https://www.cooking-hacks.com/documentation/tutorials/raspberry-pi-to-arduino-shields-connection-bridge/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;sparkfun&quot;&gt;Sparkfun&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.sparkfun.com/products/13111&quot;&gt;https://www.sparkfun.com/products/13111&lt;/a&gt;
+&lt;a href=&quot;https://www.sparkfun.com/products/11511&quot;&gt;https://www.sparkfun.com/products/11511&lt;/a&gt;
+&lt;a href=&quot;https://www.sparkfun.com/products/11683&quot;&gt;https://www.sparkfun.com/products/11683&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;blockly&quot;&gt;blockly&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/blockly/&quot;&gt;https://developers.google.com/blockly/&lt;/a&gt;
+&lt;a href=&quot;https://blockly-demo.appspot.com/static/demos/index.html&quot;&gt;https://blockly-demo.appspot.com/static/demos/index.html&lt;/a&gt;
+&lt;a href=&quot;https://blockly-games.appspot.com/?lang=zh-hans&quot;&gt;https://blockly-games.appspot.com/?lang=zh-hans&lt;/a&gt;
+&lt;a href=&quot;https://studio.code.org/&quot;&gt;https://studio.code.org/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;ardublock&quot;&gt;Ardublock&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://sourceforge.net/projects/ardublock/&quot;&gt;https://sourceforge.net/projects/ardublock/&lt;/a&gt;
+&lt;a href=&quot;http://blog.ardublock.com/zh/category/tutorial/&quot;&gt;http://blog.ardublock.com/zh/category/tutorial/&lt;/a&gt;
+&lt;a href=&quot;https://learn.sparkfun.com/resources/59&quot;&gt;https://learn.sparkfun.com/resources/59&lt;/a&gt;
+&lt;a href=&quot;https://learn.sparkfun.com/tutorials/alternative-arduino-interfaces/ardublock&quot;&gt;https://learn.sparkfun.com/tutorials/alternative-arduino-interfaces/ardublock&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;mixly&quot;&gt;Mixly米思齐&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://mixly.cn/&quot;&gt;http://mixly.cn/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;mit-app-inventor-2&quot;&gt;MIT App Inventor 2&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://app.gzjkw.net/&quot;&gt;http://app.gzjkw.net/&lt;/a&gt;
+&lt;a href=&quot;http://blog.cavedu.com/programming-language/appinventor/appinventorandarduinowithbluetooth/&quot;&gt;http://blog.cavedu.com/programming-language/appinventor/appinventorandarduinowithbluetooth/&lt;/a&gt;
+&lt;a href=&quot;http://appinventor.pevest.com/?page_id=10&quot;&gt;http://appinventor.pevest.com/?page_id=10&lt;/a&gt;
+&lt;a href=&quot;https://sites.google.com/site/jingprogram/app&quot;&gt;https://sites.google.com/site/jingprogram/app&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;软件&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.sketchup.com/&quot;&gt;http://www.sketchup.com/&lt;/a&gt;
+&lt;a href=&quot;http://www.123dapp.com/design&quot;&gt;http://www.123dapp.com/design&lt;/a&gt;
+&lt;a href=&quot;https://scratch.mit.edu/&quot;&gt;https://scratch.mit.edu/&lt;/a&gt;
+&lt;a href=&quot;http://s4a.cat/&quot;&gt;http://s4a.cat/&lt;/a&gt;
+&lt;a href=&quot;http://www.arduino.cc/&quot;&gt;http://www.arduino.cc/&lt;/a&gt;
+&lt;a href=&quot;http://www.arduino.org.cn/&quot;&gt;http://www.arduino.org.cn/&lt;/a&gt;
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Arduino&quot;&gt;https://en.wikipedia.org/wiki/Arduino&lt;/a&gt;
+&lt;a href=&quot;http://i.youku.com/u/UNDYwMzEyOTk2&quot;&gt;http://i.youku.com/u/UNDYwMzEyOTk2&lt;/a&gt;
+&lt;a href=&quot;http://www.makerlab.tw/resources/&quot;&gt;http://www.makerlab.tw/resources/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;d-modeling-and-printing-3d&quot;&gt;3D Modeling and Printing ：3D建模和打印&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://the3doodler.com/&quot;&gt;http://the3doodler.com/&lt;/a&gt;
+&lt;a href=&quot;https://www.ultimaker.com/&quot;&gt;https://www.ultimaker.com/&lt;/a&gt;
+&lt;a href=&quot;http://www.makerbot.com/&quot;&gt;http://www.makerbot.com/&lt;/a&gt;
+&lt;a href=&quot;http://www.sketchup.com/&quot;&gt;http://www.sketchup.com/&lt;/a&gt;
+&lt;a href=&quot;https://www.tinkercad.com/&quot;&gt;https://www.tinkercad.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;circuits&quot;&gt;Circuits：电路&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://snapcircuits.net.tw/&quot;&gt;http://snapcircuits.net.tw/&lt;/a&gt;
+&lt;a href=&quot;http://courseweb.stthomas.edu/apthomas/SquishyCircuits/buildingCircuits.htm&quot;&gt;http://courseweb.stthomas.edu/apthomas/SquishyCircuits/buildingCircuits.htm&lt;/a&gt;
+&lt;a href=&quot;http://littlebits.cc/&quot;&gt;http://littlebits.cc/&lt;/a&gt;
+&lt;a href=&quot;http://wiki.funmetas.com/index.php?title=%E9%A6%96%E9%A1%B5&quot;&gt;http://wiki.funmetas.com/index.php?title=%E9%A6%96%E9%A1%B5&lt;/a&gt;
+&lt;a href=&quot;http://www.makeymakey.com/&quot;&gt;http://www.makeymakey.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;programmingcoding&quot;&gt;Programming/Coding：程序设计/编程&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://blockly-games.appspot.com/&quot;&gt;https://blockly-games.appspot.com/&lt;/a&gt;
+&lt;a href=&quot;https://scratch.mit.edu/&quot;&gt;https://scratch.mit.edu/&lt;/a&gt;
+&lt;a href=&quot;http://www.arduino.cc/&quot;&gt;http://www.arduino.cc/&lt;/a&gt;
+&lt;a href=&quot;https://www.raspberrypi.org/&quot;&gt;https://www.raspberrypi.org/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;robotics&quot;&gt;Robotics：机器人&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.lego.com/zh-cn/mindstorms/?domainredir=mindstorms.lego.com&quot;&gt;http://www.lego.com/zh-cn/mindstorms/?domainredir=mindstorms.lego.com&lt;/a&gt;
+&lt;a href=&quot;http://www.firstinspires.org/robotics/frc&quot;&gt;http://www.firstinspires.org/robotics/frc&lt;/a&gt;
+&lt;a href=&quot;http://www.arduino.org.cn/products/kits/6-arduino-kits/arduino-starter-kit&quot;&gt;http://www.arduino.org.cn/products/kits/6-arduino-kits/arduino-starter-kit&lt;/a&gt;
+&lt;a href=&quot;http://mobilerobotkit.com/robot-kits.html&quot;&gt;http://mobilerobotkit.com/robot-kits.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;tools--materials--&quot;&gt;Tools &amp;amp; Materials : 工具及耗材&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Woodworking：木工&lt;/li&gt;
+  &lt;li&gt;Metalworking：金工&lt;/li&gt;
+  &lt;li&gt;Laser Cutting：激光切割&lt;/li&gt;
+  &lt;li&gt;CNC Cutting： 数控切割&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;makerspae&quot;&gt;MakerSpae&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.makezine.com.tw/makerspace.html&quot;&gt;http://www.makezine.com.tw/makerspace.html&lt;/a&gt;
+&lt;a href=&quot;http://www.fablabtaiwan.org.tw/&quot;&gt;http://www.fablabtaiwan.org.tw/&lt;/a&gt;
+&lt;a href=&quot;http://www.fablabtaipei.org/2510520497303403537320633.html&quot;&gt;http://www.fablabtaipei.org/2510520497303403537320633.html&lt;/a&gt;
+&lt;a href=&quot;http://www.weschool.tw/26377217382012335373206332403720855.html&quot;&gt;http://www.weschool.tw/26377217382012335373206332403720855.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;国内创客空间&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.chaihuo.org/products/list&quot;&gt;http://www.chaihuo.org/products/list&lt;/a&gt;
+&lt;a href=&quot;http://xinchejian.com/?lang=zh&quot;&gt;http://xinchejian.com/?lang=zh&lt;/a&gt;
+&lt;a href=&quot;http://www.bjmakerspace.com/&quot;&gt;http://www.bjmakerspace.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;digital-sandbox&quot;&gt;Digital Sandbox&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.sparkfun.com/products/12651&quot;&gt;https://www.sparkfun.com/products/12651&lt;/a&gt;
+&lt;a href=&quot;http://b2b.hc360.com/supplyself/348068096.html&quot;&gt;http://b2b.hc360.com/supplyself/348068096.html&lt;/a&gt;
+&lt;a href=&quot;https://learn.sparkfun.com/tutorials/digital-sandbox-experiment-guide/setting-up-arduino-and-ardublock&quot;&gt;https://learn.sparkfun.com/tutorials/digital-sandbox-experiment-guide/setting-up-arduino-and-ardublock&lt;/a&gt;
+&lt;a href=&quot;http://classes.engr.oregonstate.edu/eecs/fall2015/cs160-501/labs/lab_01.pdf&quot;&gt;http://classes.engr.oregonstate.edu/eecs/fall2015/cs160-501/labs/lab_01.pdf&lt;/a&gt;
+&lt;a href=&quot;https://learn.sparkfun.com/tutorials/alternative-arduino-interfaces/codebender&quot;&gt;https://learn.sparkfun.com/tutorials/alternative-arduino-interfaces/codebender&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-2&quot;&gt;创客空间里面都有那些设备&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.zhishihao.com/xue/show/155996&quot;&gt;http://www.zhishihao.com/xue/show/155996&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-3&quot;&gt;趣味电子&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Back in Time木质时光倒流时钟&lt;/strong&gt;
+&lt;a href=&quot;https://item.taobao.com/item.htm?spm=a1z10.5-c.w4002-11172345288.31.fQeFq4&amp;amp;id=45557720848&quot;&gt;https://item.taobao.com/item.htm?spm=a1z10.5-c.w4002-11172345288.31.fQeFq4&amp;amp;id=45557720848&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;基于Arduino设计的简易宠物喂食机&lt;/strong&gt;
+&lt;a href=&quot;http://bbs.intorobot.com/thread-683-1-1.html&quot;&gt;http://bbs.intorobot.com/thread-683-1-1.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;3D打印全自动宠物喂食器&lt;/strong&gt;
+&lt;a href=&quot;http://bbs.intorobot.com/thread-684-1-1.html&quot;&gt;http://bbs.intorobot.com/thread-684-1-1.html&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Plotclock小贱钟&lt;/strong&gt;
+&lt;a href=&quot;http://www.arduino.cn/thread-6049-1-1.html&quot;&gt;http://www.arduino.cn/thread-6049-1-1.html&lt;/a&gt;
+&lt;a href=&quot;http://jjrobots.com/projects-2/&quot;&gt;http://jjrobots.com/projects-2/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;section-4&quot;&gt;课程&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://robert.cireddu.free.fr/&quot;&gt;http://robert.cireddu.free.fr/&lt;/a&gt;
+&lt;a href=&quot;http://pedagogie.ac-toulouse.fr/lp-baylet-valence-agen/&quot;&gt;http://pedagogie.ac-toulouse.fr/lp-baylet-valence-agen/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;stem&quot;&gt;STEM&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.creativelearningsystems.com/&quot;&gt;http://www.creativelearningsystems.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;d&quot;&gt;走进3D&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://k12.leiphone.com/article/201601/Nnf0kNrFwit3zZBV.html&quot;&gt;http://k12.leiphone.com/article/201601/Nnf0kNrFwit3zZBV.html&lt;/a&gt;
+&lt;a href=&quot;http://www.e-works.net.cn/report/2015stratasys3d/2015stratasys3d.html&quot;&gt;http://www.e-works.net.cn/report/2015stratasys3d/2015stratasys3d.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-5&quot;&gt;配套&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;洞洞板&lt;/strong&gt;
+&lt;a href=&quot;https://item.taobao.com/item.htm?spm=2013.1.20141001.1.QOwtaJ&amp;amp;id=35618674019&amp;amp;;scm=1007.10115.22552.100200300000000&amp;amp;pvid=3a6eaed6-f152-4ad3-a716-ed9d05874607&quot;&gt;https://item.taobao.com/item.htm?spm=2013.1.20141001.1.QOwtaJ&amp;amp;id=35618674019&amp;amp;;scm=1007.10115.22552.100200300000000&amp;amp;pvid=3a6eaed6-f152-4ad3-a716-ed9d05874607&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-6&quot;&gt;想做创客？这些关于开源硬件的知识你不得不知&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.csdn.net/article/2014-06-30/2820457/2&quot;&gt;http://www.csdn.net/article/2014-06-30/2820457/2&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;diy&quot;&gt;DIY示波器&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://item.taobao.com/item.htm?spm=a230r.1.14.16.HxgqLG&amp;amp;id=43507787334&amp;amp;ns=1&amp;amp;abbucket=20#detail&quot;&gt;https://item.taobao.com/item.htm?spm=a230r.1.14.16.HxgqLG&amp;amp;id=43507787334&amp;amp;ns=1&amp;amp;abbucket=20#detail&lt;/a&gt;
+&lt;a href=&quot;http://www.jyetech.com/index.php&quot;&gt;http://www.jyetech.com/index.php&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;about&quot;&gt;
+    &lt;div class=&quot;about__devider&quot;&gt;*****&lt;/div&gt;
+    &lt;div class=&quot;about__text&quot;&gt;
+        Written by &lt;strong&gt;  cuiqingwei &lt;/strong&gt;
+        on &lt;strong&gt;09 March 2016&lt;/strong&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;变量调用，生成整个页面。&lt;/p&gt;
+
+&lt;ul&gt;
   &lt;li&gt;
     &lt;dl&gt;
       &lt;dt&gt;&lt;strong&gt;assets&lt;/strong&gt;&lt;/dt&gt;
@@ -175,17 +528,17 @@ cd 到工程目录，启动服务：&lt;/li&gt;
   &lt;li&gt;安装Jekyll-Bootstrap：&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ git clone https://github.com/plusjade/jekyll-bootstrap.git USERNAME.github.com
-$ cd USERNAME.github.com
-$ git remote set-url origin git@github.com:USERNAME/USERNAME.github.com.git
-$ git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git clone https://github.com/plusjade/jekyll-bootstrap.git USERNAME.github.com
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;USERNAME.github.com
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git remote &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;-url origin git@github.com:USERNAME/USERNAME.github.com.git
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git push origin master&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;ul&gt;
   &lt;li&gt;访问创建好的个人站点：username.github.com&lt;/li&gt;
   &lt;li&gt;在本地测试查看效果：&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;cd USERNAME.github.com
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;USERNAME.github.com
 jekyll --server&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h4 id=&quot;jekyll-&quot;&gt;4.5 Jekyll 写博过程&lt;/h4&gt;
@@ -195,7 +548,7 @@ jekyll --server&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
   &lt;li&gt;修改标题：&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;title : My Blog =)&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;title : My Blog &lt;span class=&quot;o&quot;&gt;=)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;ul&gt;
   &lt;li&gt;修改个人信息：&lt;/li&gt;
@@ -447,22 +800,22 @@ short_name : tiansj&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Tab键自动补全
 管道符命令　ls | grep really
-通配符　rm really*name
+通配符　rm really&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;name
 输出重定向　ls &amp;gt; file1
 命令行历史　hirstory
 波浪符”~”代表当前用户的主目录。所以，你可以使用”cd ~”切换到你的主目录，而不用输入”cd /home/name”。
 这对相对路径同样使用，比如”cd ~/Desktop”会切换到当前用户的桌面目录。 
 与之类似的是，”.”代表当前目录，”..”代表父级目录。所有，”cd ..”会跳到父级目录。
 后台命令　firefox &amp;amp;
-条件执行　sleep 5 &amp;amp;&amp;amp; gnome-screenshot 停5秒然后运行gnome的截屏工具&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+条件执行　sleep 5 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; gnome-screenshot 停5秒然后运行gnome的截屏工具&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;在Linux上安装ack&lt;/strong&gt; &lt;a href=&quot;http://www.geekfan.net/6881/&quot;&gt;http://www.geekfan.net/6881/&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;linux 文本查找 grep, ack&lt;/strong&gt; &lt;a href=&quot;http://ju.outofmemory.cn/entry/26149&quot;&gt;http://ju.outofmemory.cn/entry/26149&lt;/a&gt;&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ wget http://beyondgrep.com/ack-2.12-single-file
-$ sudo mv ack-2.12-single-file /usr/local/bin/ack
-$ sudo chmod 0755 /usr/local/bin/ack&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;wget http://beyondgrep.com/ack-2.12-single-file
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo mv ack-2.12-single-file /usr/local/bin/ack
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo chmod 0755 /usr/local/bin/ack&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;怎样从Linux终端管理进程：10个你必须知道的命令&lt;/strong&gt; &lt;a href=&quot;http://www.geekfan.net/7112/&quot;&gt;http://www.geekfan.net/7112/&lt;/a&gt;&lt;/p&gt;
 
@@ -483,11 +836,11 @@ netstat -s&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;使用Linux命令行测试网速&lt;/strong&gt;	&lt;a href=&quot;http://www.geekfan.net/5521/&quot;&gt;http://www.geekfan.net/5521/&lt;/a&gt;&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;$ wget https://raw.github.com/sivel/speedtest-cli/master/speedtest_cli.py
-$ chmod a+rx speedtest_cli.py
-$ sudo mv speedtest_cli.py /usr/local/bin/speedtest-cli
-$ sudo chown root:root /usr/local/bin/speedtest-cli
-$ speedtest-cli&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;wget https://raw.github.com/sivel/speedtest-cli/master/speedtest_cli.py
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;chmod a+rx speedtest_cli.py
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo mv speedtest_cli.py /usr/local/bin/speedtest-cli
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;sudo chown root:root /usr/local/bin/speedtest-cli
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;speedtest-cli&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;三张图看遍Linux 性能监控、测试、优化工具&lt;/strong&gt; &lt;a href=&quot;http://www.geekfan.net/13481/&quot;&gt;http://www.geekfan.net/13481/&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -504,51 +857,51 @@ $ speedtest-cli&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
         <title>OpenWRT折腾日记</title>
         <description>&lt;h1 id=&quot;openwrt-yun&quot;&gt;2016-04-23 Openwrt Yun&lt;/h1&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;#!/bin/bash -ex
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash -ex&lt;/span&gt;
 
-# FEEDS
+&lt;span class=&quot;c&quot;&gt;# FEEDS&lt;/span&gt;
 ./scripts/feeds uninstall -a
 rm -rf feeds
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 ./scripts/feeds uninstall erlang freeswitch remotefs libzstream shflags opensips pulseaudio xmlrpc-c rtorrent sox umurmur-polarssl freecwmp-zstream osirisd logtrigger libplist libimobiledevice cmus mxml boost wt etherpuppet php4 aprx n2n pdnsd crtmpserver kissdx openconnect telepathy-python alljoyn
 
-# CONFIG
+&lt;span class=&quot;c&quot;&gt;# CONFIG&lt;/span&gt;
 rm -f .config
 git checkout .config
 
-sed &amp;#39;s/=m$/=n/&amp;#39; &amp;lt; .config &amp;gt; .baseonlyconfig
+sed &lt;span class=&quot;s1&quot;&gt;'s/=m$/=n/'&lt;/span&gt; &amp;lt; .config &amp;gt; .baseonlyconfig
 mv .config .origconfig
 mv .baseonlyconfig .config
 
 make oldconfig
 
-# BUILDING
-nice -n 10 make -j 2 V=s
+&lt;span class=&quot;c&quot;&gt;# BUILDING&lt;/span&gt;
+nice -n 10 make -j 2 &lt;span class=&quot;nv&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;s
 
 
 /etc/config/wireless
 config wifi-iface
-	option network &amp;#39;wwan&amp;#39;
-	option ssid &amp;#39;MiWiFi&amp;#39;
-	option encryption &amp;#39;psk2&amp;#39;
-	option device &amp;#39;radio0&amp;#39;
-	option mode &amp;#39;sta&amp;#39;
-	option bssid &amp;#39;8C:BE:BE:29:FE:56&amp;#39;
-	option key &amp;#39;1981021400&amp;#39;
+	option network &lt;span class=&quot;s1&quot;&gt;'wwan'&lt;/span&gt;
+	option ssid &lt;span class=&quot;s1&quot;&gt;'MiWiFi'&lt;/span&gt;
+	option encryption &lt;span class=&quot;s1&quot;&gt;'psk2'&lt;/span&gt;
+	option device &lt;span class=&quot;s1&quot;&gt;'radio0'&lt;/span&gt;
+	option mode &lt;span class=&quot;s1&quot;&gt;'sta'&lt;/span&gt;
+	option bssid &lt;span class=&quot;s1&quot;&gt;'8C:BE:BE:29:FE:56'&lt;/span&gt;
+	option key &lt;span class=&quot;s1&quot;&gt;'1981021400'&lt;/span&gt;
 
-wireless.@wifi-iface[0]=wifi-iface                                              
-wireless.@wifi-iface[0].network=wwan                                            
-wireless.@wifi-iface[0].ssid=MiWiFi                                             
-wireless.@wifi-iface[0].encryption=psk2                                         
-wireless.@wifi-iface[0].device=radio0                                           
-wireless.@wifi-iface[0].mode=sta                                                
-wireless.@wifi-iface[0].bssid=8C:BE:BE:29:FE:56                                 
-wireless.@wifi-iface[0].key=1981021400&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+wireless.@wifi-iface[0]&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;wifi-iface                                              
+wireless.@wifi-iface[0].network&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;wwan                                            
+wireless.@wifi-iface[0].ssid&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;MiWiFi                                             
+wireless.@wifi-iface[0].encryption&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;psk2                                         
+wireless.@wifi-iface[0].device&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;radio0                                           
+wireless.@wifi-iface[0].mode&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;sta                                                
+wireless.@wifi-iface[0].bssid&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;8C:BE:BE:29:FE:56                                 
+wireless.@wifi-iface[0].key&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1981021400 &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h1 id=&quot;draginoyun-shield&quot;&gt;2016-04-11 DraginoYun Shield&lt;/h1&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;echo src-svn packages https://github.com/arduino/openwrt-packages-yun/trunk &amp;gt;&amp;gt; feed.conf.default
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;src-svn packages https://github.com/arduino/openwrt-packages-yun/trunk &amp;gt;&amp;gt; feed.conf.default
 
 ＃更新package
 ./scripts/feeds update -a
@@ -568,13 +921,13 @@ make package/luci-app-arduino-webpanel/install&lt;/code&gt;&lt;/pre&gt;&lt;/figu
 &lt;h1 id=&quot;draginoyun-shield-1&quot;&gt;2016-04-08 DraginoYun Shield&lt;/h1&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;svn checkout https://github.com/dragino/openwrt-yun.git dragino-yun
-cd dragino-yun/trunk
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;dragino-yun/trunk
 ./build_image.sh
-cd openwrt
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;openwrt
 
 vi feeds.config.default
-#断开packages,链接本地dragino-packages
-#src-git dragino https://github.com/dragino/dragino-packages.git
+&lt;span class=&quot;c&quot;&gt;#断开packages,链接本地dragino-packages&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#src-git dragino https://github.com/dragino/dragino-packages.git&lt;/span&gt;
 src-link dragino ../../dragino-packages
 
 ＃卸载package
@@ -596,40 +949,40 @@ https://wiki.openwrt.org/doc/howto/build&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;2016-04-05 ArduinoYun Shield&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;http://www.znck007.com/forum.php?mod=viewthread&amp;amp;tid=22687
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;http://www.znck007.com/forum.php?mod&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;viewthread&amp;amp;tid&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;22687
 
-# 源
+&lt;span class=&quot;c&quot;&gt;# 源&lt;/span&gt;
 https://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/
 http://downloads.arduino.cc/openwrtyun/1/packages/
 
 vi /etc/opkg.conf
 src/gz attitude_adjustment https://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/
 
-# 使用putty登陆openwrt输入
+&lt;span class=&quot;c&quot;&gt;# 使用putty登陆openwrt输入&lt;/span&gt;
 opkg update
 opkg install kmod-usb-storage block-mount block-hotplug kmod-fs-ext4
 mkfs.ext4 /dev/sda1# 格式化TF卡，第一次使用须格式化
 mkdir -p /mnt/sda1# 新建一个TF卡目录
 mount /dev/sda1 /mnt/sda1# 将TF卡挂载到/mnt/sda1目录
 
-# 自动挂载（这样就不需要每次都执行上面的命令挂载SD卡了）
+&lt;span class=&quot;c&quot;&gt;# 自动挂载（这样就不需要每次都执行上面的命令挂载SD卡了）&lt;/span&gt;
 vi /etc/config/fstab
-# 移到最下面，按i键（编辑模式）然后复制下面，右击到putty就自动粘贴上去了！
-config &amp;#39;mount&amp;#39;
-        option &amp;#39;device&amp;#39; &amp;#39;/dev/sda1&amp;#39;
-        option &amp;#39;options&amp;#39; &amp;#39;rw,sync&amp;#39;
-        option &amp;#39;enabled_fsck&amp;#39; &amp;#39;0&amp;#39;
-        option &amp;#39;enabled&amp;#39; &amp;#39;1&amp;#39;
-        option &amp;#39;target&amp;#39; &amp;#39;/mnt/sda1&amp;#39;
+&lt;span class=&quot;c&quot;&gt;# 移到最下面，按i键（编辑模式）然后复制下面，右击到putty就自动粘贴上去了！&lt;/span&gt;
+config &lt;span class=&quot;s1&quot;&gt;'mount'&lt;/span&gt;
+        option &lt;span class=&quot;s1&quot;&gt;'device'&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/dev/sda1'&lt;/span&gt;
+        option &lt;span class=&quot;s1&quot;&gt;'options'&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'rw,sync'&lt;/span&gt;
+        option &lt;span class=&quot;s1&quot;&gt;'enabled_fsck'&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'0'&lt;/span&gt;
+        option &lt;span class=&quot;s1&quot;&gt;'enabled'&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'1'&lt;/span&gt;
+        option &lt;span class=&quot;s1&quot;&gt;'target'&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/mnt/sda1'&lt;/span&gt;
 
 mkdir -p /mnt/sda1/php# 新建软件包目录
-echo dest phpdisk /mnt/sda1/php/ &amp;gt;&amp;gt; /etc/opkg.conf
+&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;dest phpdisk /mnt/sda1/php/ &amp;gt;&amp;gt; /etc/opkg.conf
 opkg --dest phpdisk install php5-fastcgi php5-mod-gd php5-mod-xml php5-mod-ctype php5-mod-session php5-mod-sockets php5-mod-tokenizer php5-mod-mcrypt php5-mod-mbstring php5-mod-pdo php5-mod-curl php5-mod-mysql
 
-# 安装一个时区信息软件包，否则系统无法识别时区。
+&lt;span class=&quot;c&quot;&gt;# 安装一个时区信息软件包，否则系统无法识别时区。&lt;/span&gt;
 opkg install zoneinfo-asia
 
-# 建立软连接，不然会找不到对应的库和配置文件：
+&lt;span class=&quot;c&quot;&gt;# 建立软连接，不然会找不到对应的库和配置文件：&lt;/span&gt;
 ln -s /mnt/sda1/php/etc/php.ini /etc/php.ini
 ln -s /mnt/sda1/php/etc/php5 /etc/php5
 ln -s /mnt/sda1/php/usr/lib/libpcre.so.0.0.1 /usr/lib/libpcre.so.0
@@ -643,125 +996,125 @@ ln -s /mnt/sda1/php/usr/lib/libmysqlclient.so.16 /usr/lib/libmysqlclient.so.16
 ln -s /mnt/sda1/php/usr/lib/php /usr/lib/php
 ln -s /mnt/sda1/php/usr/bin/php-cgi /usr/bin/php-cgi
 
-# 安装到内存
+&lt;span class=&quot;c&quot;&gt;# 安装到内存&lt;/span&gt;
 opkg install php5-fastcgi php5-mod-gd php5-mod-xml php5-mod-ctype php5-mod-session php5-mod-sockets php5-mod-tokenizer php5-mod-mcrypt php5-mod-mbstring php5-mod-pdo php5-mod-curl php5-mod-mysql
 
-# 编辑php.ini，方法如下。
+&lt;span class=&quot;c&quot;&gt;# 编辑php.ini，方法如下。&lt;/span&gt;
 
-# 找到下面的字段修改为如下，如果有用&amp;quot;;&amp;quot;注析的就删掉：
-short_open_tag = On
+&lt;span class=&quot;c&quot;&gt;# 找到下面的字段修改为如下，如果有用&quot;;&quot;注析的就删掉：&lt;/span&gt;
+short_open_tag &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; On
 
-error_log = /var/log/php_errors.log
-doc_root = &amp;quot;/mnt/sda1/www&amp;quot;  修改成sd卡的路径。
+error_log &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; /var/log/php_errors.log
+doc_root &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/mnt/sda1/www&quot;&lt;/span&gt;  修改成sd卡的路径。
 
-extension=ctype.so
-extension=curl.so
-extension=dom.so
-extension=exif.so
-extension=ftp.so
-extension=gd.so
-extension=gmp.so
-extension=hash.so
-extension=iconv.so
-extension=json.so
-extension=ldap.so
-extension=mbstring.so
-extension=mcrypt.so
-extension=mysql.so
-extension=openssl.so
-extension=pcre.so
-extension=pdo.so
-extension=pdo-mysql.so
-extension=pdo-pgsql.so
-extension=pdo_sqlite.so
-extension=pgsql.so
-extension=session.so
-extension=soap.so
-extension=sockets.so
-extension=sqlite.so
-extension=sqlite3.so
-extension=tokenizer.so
-extension=xml.so
-extension=xmlreader.so
-extension=xmlwriter.so 
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ctype.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;curl.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;dom.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;exif.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ftp.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;gd.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;gmp.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;hash.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;iconv.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;json.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ldap.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;mbstring.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;mcrypt.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;mysql.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;openssl.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pcre.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pdo.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pdo-mysql.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pdo-pgsql.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pdo_sqlite.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pgsql.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;session.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;soap.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;sockets.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;sqlite.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;sqlite3.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;tokenizer.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;xml.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;xmlreader.so
+&lt;span class=&quot;nv&quot;&gt;extension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;xmlwriter.so 
 
-date.timezone = Asia/Shanghai
-mysql.default_socket = /var/run/mysqld.sock
-session.auto_start = 1
+date.timezone &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Asia/Shanghai
+mysql.default_socket &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; /var/run/mysqld.sock
+session.auto_start &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 1
 
-# 和上面一样，打开/etc/config/uhttpd
-option home &amp;#39;/mnt/sda1/www&amp;#39;                 #把/www修改成/mnt/sda1/www为放置网页的目录。
-option index_page index.php               #添加到后面
-list interpreter &amp;quot;.php=/usr/bin/php-cgi&amp;quot;   #添加到后面
+&lt;span class=&quot;c&quot;&gt;# 和上面一样，打开/etc/config/uhttpd&lt;/span&gt;
+option home &lt;span class=&quot;s1&quot;&gt;'/mnt/sda1/www'&lt;/span&gt;                 &lt;span class=&quot;c&quot;&gt;#把/www修改成/mnt/sda1/www为放置网页的目录。&lt;/span&gt;
+option index_page index.php               &lt;span class=&quot;c&quot;&gt;#添加到后面&lt;/span&gt;
+list interpreter &lt;span class=&quot;s2&quot;&gt;&quot;.php=/usr/bin/php-cgi&quot;&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;#添加到后面&lt;/span&gt;
 
-# 然后重启uhttpd（在putty里输入命令回车）：
+&lt;span class=&quot;c&quot;&gt;# 然后重启uhttpd（在putty里输入命令回车）：&lt;/span&gt;
 /etc/init.d/uhttpd restart
 
-# 使用putty安装mysql。
+&lt;span class=&quot;c&quot;&gt;# 使用putty安装mysql。&lt;/span&gt;
 opkg update
 opkg install mysql-server
 
-# 创建数据库目录
+&lt;span class=&quot;c&quot;&gt;# 创建数据库目录&lt;/span&gt;
 mkdir -p /mnt/sda1/mysql/data/mysql
 mkdir -p /mnt/sda1/mysql/data/tmp
 
-# 查找到以下内容并修改如下：
-datadir = /mnt/sda1/mysql/data/mysql/
-tmpdir  = /mnt/sda1/mysql/data/tmp/
-# bind-address = 192.168.1.1
+&lt;span class=&quot;c&quot;&gt;# 查找到以下内容并修改如下：&lt;/span&gt;
+datadir &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; /mnt/sda1/mysql/data/mysql/
+tmpdir  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; /mnt/sda1/mysql/data/tmp/
+&lt;span class=&quot;c&quot;&gt;# bind-address = 192.168.1.1&lt;/span&gt;
 
-# 初始化建库
+&lt;span class=&quot;c&quot;&gt;# 初始化建库&lt;/span&gt;
 mysql_install_db --force
-# 以关闭授权的方式启动mysql
+&lt;span class=&quot;c&quot;&gt;# 以关闭授权的方式启动mysql&lt;/span&gt;
 mysqld --skip-grant &amp;amp;
-# 进入mysql,修改账号连接权限
+&lt;span class=&quot;c&quot;&gt;# 进入mysql,修改账号连接权限&lt;/span&gt;
 mysql -u root mysql
-# 进入mysql以后出现mysql&amp;gt;提示符，再修改账号连接权限：
-update user set host=&amp;#39;%&amp;#39; where user=&amp;#39;root&amp;#39; and host=&amp;#39;localhost&amp;#39;;
-# 修改数据库密码为edutech
-update user set password=PASSWORD(&amp;#39;edutech&amp;#39;) where user=&amp;#39;root&amp;#39;;
-# 刷新数据库
+&lt;span class=&quot;c&quot;&gt;# 进入mysql以后出现mysql&amp;gt;提示符，再修改账号连接权限：&lt;/span&gt;
+update user &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'%'&lt;/span&gt; where &lt;span class=&quot;nv&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'root'&lt;/span&gt; and &lt;span class=&quot;nv&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'localhost'&lt;/span&gt;;
+&lt;span class=&quot;c&quot;&gt;# 修改数据库密码为edutech&lt;/span&gt;
+update user &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;PASSWORD&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'edutech'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; where &lt;span class=&quot;nv&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'root'&lt;/span&gt;;
+&lt;span class=&quot;c&quot;&gt;# 刷新数据库&lt;/span&gt;
 flush privileges;
-# 上面ok了以后，退出mysql
-exit;
+&lt;span class=&quot;c&quot;&gt;# 上面ok了以后，退出mysql&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;;
 
-# 重启mysql，以授权验证方式启动（为了系统安全）
+&lt;span class=&quot;c&quot;&gt;# 重启mysql，以授权验证方式启动（为了系统安全）&lt;/span&gt;
 killall mysqld
-# 设定开机运行 
-/etc/init.d/mysqld enable 
-# 启动MySQL服务
+&lt;span class=&quot;c&quot;&gt;# 设定开机运行 &lt;/span&gt;
+/etc/init.d/mysqld &lt;span class=&quot;nb&quot;&gt;enable&lt;/span&gt; 
+&lt;span class=&quot;c&quot;&gt;# 启动MySQL服务&lt;/span&gt;
 /etc/init.d/mysqld start 
 
-# 用Navicat新建数据库
+&lt;span class=&quot;c&quot;&gt;# 用Navicat新建数据库&lt;/span&gt;
 znckapi
-# 新建查询
-CREATE TABLE IF NOT EXISTS `api_worklist` (
-`id` int(16) unsigned NOT NULL AUTO_INCREMENT,
-`type` int(2) NOT NULL COMMENT &amp;#39;1网设2上传3定时&amp;#39;,
-`uid` int(8) NOT NULL,
-`sid` varchar(3) NOT NULL,
-`nid` varchar(3) NOT NULL,
-`data` varchar(32) NOT NULL,
-`note` varchar(64) NOT NULL,
-`status` int(2) NOT NULL COMMENT &amp;#39;1成功2失败3超过次数4超15分&amp;#39;,
-`time` datetime NOT NULL,
-`ip` varchar(16) NOT NULL,
-`num` int(2) NOT NULL,
-PRIMARY KEY(`id`),
-KEY `uid` (`uid`),
-KEY `time` (`time`)
-)ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+&lt;span class=&quot;c&quot;&gt;# 新建查询&lt;/span&gt;
+CREATE TABLE IF NOT EXISTS &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;api_worklist&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;id&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; int&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;16&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; unsigned NOT NULL AUTO_INCREMENT,
+&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; int&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; NOT NULL COMMENT &lt;span class=&quot;s1&quot;&gt;'1网设2上传3定时'&lt;/span&gt;,
+&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;uid&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; int&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;8&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; NOT NULL,
+&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;sid&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; varchar&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;3&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; NOT NULL,
+&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;nid&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; varchar&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;3&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; NOT NULL,
+&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;data&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; varchar&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;32&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; NOT NULL,
+&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;note&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; varchar&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;64&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; NOT NULL,
+&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;status&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; int&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; NOT NULL COMMENT &lt;span class=&quot;s1&quot;&gt;'1成功2失败3超过次数4超15分'&lt;/span&gt;,
+&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; datetime NOT NULL,
+&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;ip&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; varchar&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;16&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; NOT NULL,
+&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;num&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; int&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; NOT NULL,
+PRIMARY KEY&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;id&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;,
+KEY &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;uid&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;uid&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;,
+KEY &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ENGINE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;MyISAM DEFAULT &lt;span class=&quot;nv&quot;&gt;CHARSET&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;utf8 &lt;span class=&quot;nv&quot;&gt;AUTO_INCREMENT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1;
 
-# 安装python
+&lt;span class=&quot;c&quot;&gt;# 安装python&lt;/span&gt;
 mkdir -p /mnt/sda1/python
-echo dest pythondisk /mnt/sda1/python/ &amp;gt;&amp;gt; /etc/opkg.conf
+&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;dest pythondisk /mnt/sda1/python/ &amp;gt;&amp;gt; /etc/opkg.conf
 opkg --dest pythondisk install python
 ln -s /mnt/sda1/python/usr/bin/python /usr/bin/python
 opkg --dest pythondisk install pyserial# 安装串口通讯类
 opkg --dest pythondisk install python-mysql# 安装mysql操作类
 
-# http://see.sl088.com/wiki/Opkg
-cd /mnt/sda1
+&lt;span class=&quot;c&quot;&gt;# http://see.sl088.com/wiki/Opkg&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /mnt/sda1
 wget http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/pyserial_2.4-1_ar71xx.ipk
 wget http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/python-mysql_1.2.2-1_ar71xx.ipk
 
@@ -769,11 +1122,11 @@ wget http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packa
 ssh root@192.168.199.159
 dragino
 
-root@dragino-7676e6:~# cd /tmp/
-root@dragino-7676e6:/tmp# 
-root@dragino-7676e6:/tmp# wget http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/luci-i18n-chine
+&lt;span class=&quot;gp&quot;&gt;root@dragino-7676e6:~# &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /tmp/
+&lt;span class=&quot;gp&quot;&gt;root@dragino-7676e6:/tmp# &lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;root@dragino-7676e6:/tmp# &lt;/span&gt;wget http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/luci-i18n-chine
 se_0.11.1-1_ar71xx.ipk
-root@dragino-7676e6:/tmp# opkg install luci-i18n-chinese_0.11.1-1_ar71xx.ipk&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;gp&quot;&gt;root@dragino-7676e6:/tmp# &lt;/span&gt;opkg install luci-i18n-chinese_0.11.1-1_ar71xx.ipk &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h1 id=&quot;luci&quot;&gt;2016-03-03 luci&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/luopeng/p/4678704.html&quot;&gt;http://www.cnblogs.com/luopeng/p/4678704.html&lt;/a&gt;&lt;/p&gt;
@@ -785,21 +1138,21 @@ scp bin/ar71xx/openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin root@192
 mtd -r write openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin firmware
 
 uci show network.lan
-uci set network.lan.proto=dhcp
+uci &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;network.lan.proto&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;dhcp
 uci commit
 /etc/init.d/networtk restart
 
-&amp;gt;&amp;gt; opkg install kmod-video-uvc。
-&amp;gt;&amp;gt; ls /dev，如果有vedio的话，说明驱动安装成功（前提是要把摄像头插上）
-&amp;gt;&amp;gt; opkg install mjpg-streamer
-&amp;gt;&amp;gt; mjpg_streamer -b -i &amp;quot;input_uvc.so /dev/video0 -r 640x480 -yuv&amp;quot; -o &amp;quot;output_http.so -p 8080 -w /web&amp;quot;
+&lt;span class=&quot;gp&quot;&gt;&amp;gt;&amp;gt; &lt;/span&gt;opkg install kmod-video-uvc。
+&lt;span class=&quot;gp&quot;&gt;&amp;gt;&amp;gt; &lt;/span&gt;ls /dev，如果有vedio的话，说明驱动安装成功（前提是要把摄像头插上）
+&lt;span class=&quot;gp&quot;&gt;&amp;gt;&amp;gt; &lt;/span&gt;opkg install mjpg-streamer
+&lt;span class=&quot;gp&quot;&gt;&amp;gt;&amp;gt; &lt;/span&gt;mjpg_streamer -b -i &lt;span class=&quot;s2&quot;&gt;&quot;input_uvc.so /dev/video0 -r 640x480 -yuv&quot;&lt;/span&gt; -o &lt;span class=&quot;s2&quot;&gt;&quot;output_http.so -p 8080 -w /web&quot;&lt;/span&gt;
 
-http://192.168.199.193:8080/?action=stream（动态视频）
-http://192.168.199.193:8080/?action=snapshot（静态图像）&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+http://192.168.199.193:8080/?action&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;stream（动态视频）
+http://192.168.199.193:8080/?action&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;snapshot（静态图像）&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h1 id=&quot;mtk-openwrt-sdk&quot;&gt;2015-08-25 mtk openwrt-sdk&lt;/h1&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;#　for mtksdk-openwrt-3.10.14-20141127-30965ec3.tar.bz2
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#　for mtksdk-openwrt-3.10.14-20141127-30965ec3.tar.bz2&lt;/span&gt;
 
 ack -w MediaTek --html
 
@@ -812,7 +1165,7 @@ luci 改language
 openwrt-3.10.14_2014/package/ralink/drivers/mt76x2e/files
 mt7612e.sh 改SSID
 
-# for mtksdk-openwrt-3.10.14-20150311-d021c937.tar.bz2
+&lt;span class=&quot;c&quot;&gt;# for mtksdk-openwrt-3.10.14-20150311-d021c937.tar.bz2&lt;/span&gt;
 
 openwrt-3.10.14_2014/package/ramips/ui/luci-mtk/patches/001-logo.patch
 改logo MediaTek-&amp;gt;Edutech
@@ -825,37 +1178,37 @@ mt7620.sh 改SSID
 openwrt-3.10.14_2014/package/ramips/drivers/mt76x2e/files
 mt7612e.sh 改SSID
 
-# 更新opkg.config源
+&lt;span class=&quot;c&quot;&gt;# 更新opkg.config源&lt;/span&gt;
 /openwrt-3.10.14/package/base-files/image-config.in　文件中 173　行
 http://downloads.openwrt.org/barrier_breaker/14.07/ramips/mt7620a/packages
 
-# 版本号
+&lt;span class=&quot;c&quot;&gt;# 版本号&lt;/span&gt;
 /openwrt-3.10.14/package/ramips/ui/luci-mtk/src/build/mkversion.sh
 更改　luciname 和 luciversion为
-luciname    = &amp;quot;Edutech LuCI &amp;quot;
-luciversion = &amp;quot;0.12&amp;quot;
+luciname    &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Edutech LuCI &quot;&lt;/span&gt;
+luciversion &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;0.12&quot;&lt;/span&gt;
 
-# banner
+&lt;span class=&quot;c&quot;&gt;# banner&lt;/span&gt;
 figlet edutech -f speed.flf -c -w 52
          _________      _____           ______  
     ___________  /___  ___  /______________  /_ 
-    _  _ \  __  /_  / / /  __/  _ \  ___/_  __ \
+    _  _ &lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt; __  /_  / / /  __/  _ &lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt; ___/_  __ &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
     /  __/ /_/ / / /_/ // /_ /  __/ /__ _  / / /
-    \___/\__,_/  \__,_/ \__/ \___/\___/ /_/ /_/ 
+    &lt;span class=&quot;se&quot;&gt;\_&lt;/span&gt;__/&lt;span class=&quot;se&quot;&gt;\_&lt;/span&gt;_,_/  &lt;span class=&quot;se&quot;&gt;\_&lt;/span&gt;_,_/ &lt;span class=&quot;se&quot;&gt;\_&lt;/span&gt;_/ &lt;span class=&quot;se&quot;&gt;\_&lt;/span&gt;__/&lt;span class=&quot;se&quot;&gt;\_&lt;/span&gt;__/ /_/ /_/ 
                                                
  -----------------------------------------------------
              Shanghai Edutech Co.,Ltd
  -----------------------------------------------------
  
-# profiles 和　固件名
+&lt;span class=&quot;c&quot;&gt;# profiles 和　固件名&lt;/span&gt;
 openwrt-3.10.14/target/linux/ramips/mt7620/profiles
 MT7620a_MT7612e.mk
 
 openwrt-3.10.14/target/linux/ramips/image/Makefile
-# add by cuiqingwei at 20150828
-Image/Build/Profile/MT7620a_MT7612e=$(call BuildFirmware/Default8M/$(1),$(1),mt7612e,MT7620a_MT7612e)
+&lt;span class=&quot;c&quot;&gt;# add by cuiqingwei at 20150828&lt;/span&gt;
+Image/Build/Profile/MT7620a_MT7612e&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;call BuildFirmware/Default8M/&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;1&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;,&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;1&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;,mt7612e,MT7620a_MT7612e&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
                                                 
-# 去除有问题的iw
+&lt;span class=&quot;c&quot;&gt;# 去除有问题的iw&lt;/span&gt;
 ./scripts/feeds uninstall iw
 删除openwrt-3.10.14/package/network/utils目录下的iw目录&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -868,27 +1221,27 @@ Image/Build/Profile/MT7620a_MT7612e=$(call BuildFirmware/Default8M/$(1),$(1),mt7
 make menuconfig
 
 Base System ---&amp;gt; 
-&amp;lt;*&amp;gt; yun-conf...................................... Custom Yún configurations            
- &amp;lt;*&amp;gt; yun-scripts.......................................... Custom Yún scripts
+&lt;span class=&quot;gp&quot;&gt;&amp;lt;*&amp;gt; &lt;/span&gt;yun-conf...................................... Custom Yún configurations            
+ &amp;lt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&amp;gt; yun-scripts.......................................... Custom Yún scripts
 
 LuCI ---&amp;gt;
 3. Applications ---&amp;gt; 
-&amp;lt;*&amp;gt; luci-app-arduino-webpanel............ simplified wifi configuration panel  
+&lt;span class=&quot;gp&quot;&gt;&amp;lt;*&amp;gt; &lt;/span&gt;luci-app-arduino-webpanel............ simplified wifi configuration panel  
 
-echo &amp;quot;src/gz barrier_breaker http://download.linino.org/dogstick/all-in-one/latest/packages/&amp;quot; &amp;gt;&amp;gt; /etc/opkg.conf
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;src/gz barrier_breaker http://download.linino.org/dogstick/all-in-one/latest/packages/&quot;&lt;/span&gt; &amp;gt;&amp;gt; /etc/opkg.conf
 
 opkg install rng-tools --force-depends
 opkg install gnupg
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-“Not enough random bytes available. Please do some other work to give
-　the OS a chance to collect more entropy! (Need 284 more bytes)”
+“Not enough random bytes available. Please &lt;span class=&quot;k&quot;&gt;do &lt;/span&gt;some other work to give
+　the OS a chance to collect more entropy! &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;Need 284 more bytes&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;”
 
 First make sure you have the following available and have the rights to it:
 
 ls -l /dev/urandom 
 
-then execute rngd against it:
+&lt;span class=&quot;k&quot;&gt;then &lt;/span&gt;execute rngd against it:
 
 rngd -r /dev/urandom
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -905,11 +1258,11 @@ http://192.168.199.192/cgi-bin/luci/webpanel/homepage
 
 opkg install luci-lib-json luci rng-tools
 
-# If rng-tools is not installable, then install it by hand from e.g., http://download.linino.org/linino_distro/linino_dev/latest/packages/rng-tools_3-2_ar71xx.ipk
+&lt;span class=&quot;c&quot;&gt;# If rng-tools is not installable, then install it by hand from e.g., http://download.linino.org/linino_distro/linino_dev/latest/packages/rng-tools_3-2_ar71xx.ipk&lt;/span&gt;
 
-# Edit your /etc/opkg.conf, add
+&lt;span class=&quot;c&quot;&gt;# Edit your /etc/opkg.conf, add&lt;/span&gt;
 src/gz barrier_breaker http://download.linino.org/dogstick/all-in-one/latest/packages/
-# Comment out your earlier src/gz
+&lt;span class=&quot;c&quot;&gt;# Comment out your earlier src/gz&lt;/span&gt;
 
 opkg update
 opkg list|grep bridge
@@ -919,71 +1272,71 @@ opkg install -force-overwrite cpu-mcu-bridge yun-conf yun-scripts luci-app-ardui
 
 /etc/init.d/avahi-daemon start
 
-# Need to edit in order to change to correct LED
+&lt;span class=&quot;c&quot;&gt;# Need to edit in order to change to correct LED&lt;/span&gt;
 /usr/bin/blink-start
 /usr/bin/blink-stop
 
 rm /tmp/luci-indexcache
 
-# In /etc/avahi/avahi-daemon.conf edit
-[server]
-enable-dbus=no
+&lt;span class=&quot;c&quot;&gt;# In /etc/avahi/avahi-daemon.conf edit&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;server]
+&lt;span class=&quot;nb&quot;&gt;enable&lt;/span&gt;-dbus&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;no
 
-/etc/init.d/avahi-daemon enable
+/etc/init.d/avahi-daemon &lt;span class=&quot;nb&quot;&gt;enable&lt;/span&gt;
 /etc/init.d/avahi-daemon start
 
 SHOULD SHOW 
 http://192.168.199.192/cgi-bin/luci/webpanel/homepage
 
-# NEED TO GENERATE A GPG KEY -- WHY??? 
+&lt;span class=&quot;c&quot;&gt;# NEED TO GENERATE A GPG KEY -- WHY??? &lt;/span&gt;
 
 /etc/init.d/generate_new_gpg_key start
 
-# Works only if rngd is there, generates
+&lt;span class=&quot;c&quot;&gt;# Works only if rngd is there, generates&lt;/span&gt;
 
 /etc/arduino/arduino_gpg.asc
 /etc/arduino/arduino_gpg.pub
 /etc/arduino/arduino_gpg.sec
 
-# Apparently Yun uses avrdude linuxgpio, this is suggested by /etc/linino/test_avrdude.sh
+&lt;span class=&quot;c&quot;&gt;# Apparently Yun uses avrdude linuxgpio, this is suggested by /etc/linino/test_avrdude.sh&lt;/span&gt;
 
-# run-avrdude wants to edit sys/class/gpio/gpio21/value which does not exist here
+&lt;span class=&quot;c&quot;&gt;# run-avrdude wants to edit sys/class/gpio/gpio21/value which does not exist here&lt;/span&gt;
 
-# Also see http://www.tonylianlong.com/?p=135
-# It has modified files for the Arduino IDE and it has the GPG key and gpg binary
+&lt;span class=&quot;c&quot;&gt;# Also see http://www.tonylianlong.com/?p=135&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# It has modified files for the Arduino IDE and it has the GPG key and gpg binary&lt;/span&gt;
 
-# They have also a modified /usr/bin/run-avrdude script which is pure genius, it changes linuxgpio to serial programming and if that is all that is required to change makes it trivial to hook up different boards via USB as well:
+&lt;span class=&quot;c&quot;&gt;# They have also a modified /usr/bin/run-avrdude script which is pure genius, it changes linuxgpio to serial programming and if that is all that is required to change makes it trivial to hook up different boards via USB as well:&lt;/span&gt;
 
-#!/bin/sh
+&lt;span class=&quot;c&quot;&gt;#!/bin/sh&lt;/span&gt;
 
-#echo 1 &amp;gt; /sys/class/gpio/gpio21/value
-#avrdude -c linuxgpio -C /etc/avrdude.conf -p m32u4 -U lfuse:w:0xFF:m -U hfuse:w:0xD8:m -U efuse:w:0xFB:m -Uflash:w:$1:i $2
-#echo 0 &amp;gt; /sys/class/gpio/gpio21/value
-#echo &amp;quot;$2&amp;quot; &amp;gt; /s2
-echo &amp;quot;&amp;quot; &amp;gt; /dev/ttyACM0
+&lt;span class=&quot;c&quot;&gt;#echo 1 &amp;gt; /sys/class/gpio/gpio21/value&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#avrdude -c linuxgpio -C /etc/avrdude.conf -p m32u4 -U lfuse:w:0xFF:m -U hfuse:w:0xD8:m -U efuse:w:0xFB:m -Uflash:w:$1:i $2&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#echo 0 &amp;gt; /sys/class/gpio/gpio21/value&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#echo &quot;$2&quot; &amp;gt; /s2&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt; &amp;gt; /dev/ttyACM0
 lsusb|grep 0043
-if [ &amp;quot;$?&amp;quot;x == &amp;quot;0&amp;quot;x ];then
-echo UNO
-avrdude -V -p m328p -c arduino -b 115200 -P /dev/ttyACM0 -C /etc/avrdude.conf -U flash:w:$1 $2
-fi
-lsusb|grep 0042
-if [ &amp;quot;$?&amp;quot;x == &amp;quot;0&amp;quot;x ];then
-echo MEGA
-avrdude -V -C/etc/avrdude.conf -patmega2560 -cstk500v2 -P/dev/ttyACM0 -b115200 -D -Uflash:w:$1 $2      
-fi
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$?&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;x &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;0&quot;&lt;/span&gt;x &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;;&lt;span class=&quot;k&quot;&gt;then
+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;UNO
+avrdude -V -p m328p -c arduino -b 115200 -P /dev/ttyACM0 -C /etc/avrdude.conf -U flash:w:&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$2&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;fi
+&lt;/span&gt;lsusb|grep 0042
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$?&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;x &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;0&quot;&lt;/span&gt;x &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;;&lt;span class=&quot;k&quot;&gt;then
+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;MEGA
+avrdude -V -C/etc/avrdude.conf -patmega2560 -cstk500v2 -P/dev/ttyACM0 -b115200 -D -Uflash:w:&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$2&lt;/span&gt;      
+&lt;span class=&quot;k&quot;&gt;fi
 
-echo &amp;quot;&amp;quot; &amp;gt; /dev/ttyACM0
+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt; &amp;gt; /dev/ttyACM0
 
-====
+&lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;
 
-# kmod-fs-hfsplus and kmod-nls-utf8 sufficient to mount Mac devices?
+&lt;span class=&quot;c&quot;&gt;# kmod-fs-hfsplus and kmod-nls-utf8 sufficient to mount Mac devices?&lt;/span&gt;
 
-====
+&lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;
 
 For my own reference, these are the packages that come with the YUN according to http://download.linino.org/linino_distro/linino_dev/latest/openwrt-ar71xx-generic-rootfs.tar.gz:
 luci-lib-sys kmod-usb-storage terminfo libuci-lua libc opkg triggerhappy kmod-usb-core libpthread ubus iw kmod-crypto-manager luci-mod-admin-core busybox libubus-lua python-json kmod-crypto-hash libiwinfo-lua swconfig kmod-fs-reiserfs libiwinfo libdbus libcurl libdw kmod-lib-crc-ccitt libgpgme luci-theme-openwrt luci-theme-bootstrap kmod-pppoe kmod-video-core libavahi-client kmod-pppox kmod-ipt-conntrack kmod-lib-crc16 base-files kmod-fs-hfsplus netifd uboot-envtools kmod-usb-ohci dnsmasq usbutils luci-sgi-cgi libblkid ubusd libelf1 kmod-spi-gpio python kmod-i2c-core libgpg-error block-mount kmod-fs-vfat kmod-usb2 firewall luci-app-firewall kmod-fs-hfs temboo luci-lib-ipkg libuci liblua libip4tc avahi-dnsconfd libcyassl libdaemon kmod-ath9k libavahi uci lua kmod-fs-ext4 wpad-mini dbus dropbear kmod-ledtrig-timer curl kmod-nls-utf8 kmod-crypto-aes mtd libstdcpp kmod-crypto-core luci-theme-base libjson-c libgcc libreadline libip6tc luci-proto-ppp libffi libuuid luci-mod-admin-full ppp libubox kmod-leds-gpio libusb-1.0 kmod-gpio-button-hotplug gnupg libjson cpu-mcu-bridge luci-lib-web spacebrew librt libassuan kmod-mac80211 libjson-script swap-utils libblobmsg-json iptables hotplug2 kmod-ipt-nathelper kmod-fs-ntfs kmod-fuse jshn libncurses kmod-ipt-core luci-webpanel-linino kmod-ledtrig-default-on rng-tools libpolarssl kmod-ppp kmod-spi-bitbang avahi-daemon uhttpd-mod-lua python-mini kmod-wdt-ath79 avahi-utils libubus uhttpd libxtables avrdude zlib luci-lib-nixio luci-lib-json luci kmod-spi-tty-ds kmod-ath libexpat kernel libnl-tiny libbz2 blkid libusb luci-proto-core px5g kmod-nls-base luci-i18n-english libgdbm yun-scripts libusb-compat uhttpd-mod-ubus uSDaemon wireless-tools kmod-ath9k-common kmod-crypto-arc4 libopenssl kmod-scsi-core kmod-cfg80211 libavahi-dbus-support luci-lib-core ppp-mod-pppoe kmod-spi-dev kmod-ipt-nat kmod-ledtrig-netdev 
 
-====
+&lt;span class=&quot;o&quot;&gt;====&lt;/span&gt;
 
 opkg install avrdude --force-depends
 opkg install rng-tools --force-depends
@@ -1015,14 +1368,14 @@ src-git luci https://github.com/openwrt/luci.git;luci-0.11
 
 Development: the easy way
 
-The easiest way to hack the web panel is to copy on your Yún the files you find in this repo, maintaining the folders structure.
+The easiest way to hack the web panel is to copy on your Yún the files you find &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;this repo, maintaining the folders structure.
 
 For example, file usr/lib/lua/luci/controller/arduino/index.lua will go to /usr/lib/lua/luci/controller/arduino/index.lua on your Yún.
 
-Then access the webpanel at http://arduino.local/ (where &amp;quot;arduino&amp;quot; is the name of your Yún), properly edit file index.lua and refresh the page to see the changes.
+Then access the webpanel at http://arduino.local/ &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;where &lt;span class=&quot;s2&quot;&gt;&quot;arduino&quot;&lt;/span&gt; is the name of your Yún&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, properly edit file index.lua and refresh the page to see the changes.
 
-Once done, copy the files back to your pc and submit us a pull request, so that everyone can take advantage of the improvements you made.
-Development: the fast, local but hard way
+Once &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;, copy the files back to your pc and submit us a pull request, so that everyone can take advantage of the improvements you made.
+Development: the fast, &lt;span class=&quot;nb&quot;&gt;local &lt;/span&gt;but hard way
 
 You need a GNU/Linux box and the following tools: subversion, gnupg, lua, make, gcc, wget. On Debian based distros, these are packages subversion, gnupg, lua5.1, liblua5.1-0-dev, build-essential, wget.
 
@@ -1032,22 +1385,22 @@ https://github.com/arduino/YunWebUI
 
 ubuntu系统设置
 sudo mkdir /etc/arduino
-cd /etc/arduino
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /etc/arduino
 sudo wget https://raw.githubusercontent.com/arduino/openwrt-packages-yun/master/arduino/yun-conf/files/etc/arduino/gpg_gen_key_batch
 sudo gpg --batch --gen-key /etc/arduino/gpg_gen_key_batch
 sudo rm -f /etc/arduino/arduino_gpg.asc
 sudo gpg --no-default-keyring --secret-keyring /etc/arduino/arduino_gpg.sec --keyring /etc/arduino/arduino_gpg.pub --export --armor --output /etc/arduino/arduino_gpg.asc
-sudo chmod 644 /etc/arduino/arduino_gpg.*
+sudo chmod 644 /etc/arduino/arduino_gpg.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
 
 svn co http://svn.luci.subsignal.org/luci/branches/luci-0.11 luci
 
-cd /home/router-dev/iot-gateway
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /home/router-dev/iot-gateway
 svn co https://github.com/arduino/YunWebUI/trunk yunWebUI
 
 进入openwrt目录
-cd /home/router-dev/openwrt/branches/attitude_adjustment/feeds
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /home/router-dev/openwrt/branches/attitude_adjustment/feeds
 
-cd luci
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;luci
 mkdir applications/arduino
 cp applications/myapplication/Makefile applications/arduino
 ln -s /home/router-dev/iot-gateway/yunWebUI/usr/lib/lua/luci applications/arduino/luasrc
@@ -1059,40 +1412,40 @@ make runuhttpd
 http://localhost:8080/cgi-bin/luci/webpanel/
 passwd：admin
 
-## luci-app-arduino-webpanel-1.5.6
-#  http://arduino.cc/download.php?f=/luci-app-arduino-webpanel-1.5.6.tar.bz2
+&lt;span class=&quot;c&quot;&gt;## luci-app-arduino-webpanel-1.5.6&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#  http://arduino.cc/download.php?f=/luci-app-arduino-webpanel-1.5.6.tar.bz2&lt;/span&gt;
 
-cd /home/router-dev/openwrt/branches/attitude_adjustment/package
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /home/router-dev/openwrt/branches/attitude_adjustment/package
 mkdir arduino
 touch Makefile
 
 复制以下内容
 
-#
-# Copyright (c) 2014 Arduino LLC. All right reserved.
-#
-# This is free software, licensed under the GNU General Public License v2.
-# See /LICENSE for more information.
-#
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Copyright (c) 2014 Arduino LLC. All right reserved.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# This is free software, licensed under the GNU General Public License v2.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# See /LICENSE for more information.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
 
-include $(TOPDIR)/rules.mk
+include &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;TOPDIR&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/rules.mk
 
-PKG_NAME:=luci-app-arduino-webpanel
-PKG_VERSION:=1.5.6
-PKG_RELEASE:=1
+PKG_NAME:&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;luci-app-arduino-webpanel
+PKG_VERSION:&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1.5.6
+PKG_RELEASE:&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
-PKG_SOURCE_URL:=http://arduino.cc/download.php?f=/
-PKG_MD5SUM:=fbcadb0b846db24302cd4e027bf3927e
+PKG_SOURCE:&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;PKG_NAME&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;-&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;PKG_VERSION&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;.tar.bz2
+PKG_SOURCE_URL:&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;http://arduino.cc/download.php?f&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/
+PKG_MD5SUM:&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;fbcadb0b846db24302cd4e027bf3927e
 
-include $(INCLUDE_DIR)/package.mk
+include &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;INCLUDE_DIR&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/package.mk
 
 define Package/luci-app-arduino-webpanel
-  SECTION:=luci
-  CATEGORY:=LuCI
-  SUBMENU:=3. Applications
-  TITLE:= simplified wifi configuration panel
-  DEPENDS:=+luci +luci-lib-json +uhttpd-mod-lua +yun-scripts
+  SECTION:&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;luci
+  CATEGORY:&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;LuCI
+  SUBMENU:&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;3. Applications
+  TITLE:&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; simplified wifi configuration panel
+  DEPENDS:&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;+luci +luci-lib-json +uhttpd-mod-lua +yun-scripts
 endef
 
 define Package/luci-app-arduino-webpanel/description
@@ -1100,20 +1453,20 @@ simplified wifi configuration panel
 endef
 
 define Build/Compile
-# NOOP
+&lt;span class=&quot;c&quot;&gt;# NOOP&lt;/span&gt;
 endef
 
 define Package/luci-app-arduino-webpanel/install
-$(INSTALL_DIR) $(1)/usr/lib/lua/luci/controller/arduino
-$(INSTALL_DIR) $(1)/usr/lib/lua/luci/view/arduino
-$(INSTALL_DIR) $(1)/www/luci-static/resources/arduino
+&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;INSTALL_DIR&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;1&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/usr/lib/lua/luci/controller/arduino
+&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;INSTALL_DIR&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;1&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/usr/lib/lua/luci/view/arduino
+&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;INSTALL_DIR&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;1&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/www/luci-static/resources/arduino
 
-find $(PKG_BUILD_DIR)/usr/ -name &amp;#39;*.lua&amp;#39; -exec luac -s -o {} {} \;
-$(CP) $(PKG_BUILD_DIR)/usr/* $(1)/usr/
-$(CP) $(PKG_BUILD_DIR)/www/* $(1)/www/
+find &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;PKG_BUILD_DIR&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/usr/ -name &lt;span class=&quot;s1&quot;&gt;'*.lua'&lt;/span&gt; -exec luac -s -o &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;CP&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;PKG_BUILD_DIR&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/usr/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;1&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/usr/
+&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;CP&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;PKG_BUILD_DIR&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/www/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;1&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/www/
 endef
 
-$(eval $(call BuildPackage,luci-app-arduino-webpanel))
+&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;call BuildPackage,luci-app-arduino-webpanel&lt;span class=&quot;k&quot;&gt;))&lt;/span&gt;
 
 make menuconfig
 
@@ -1121,21 +1474,21 @@ git clone https://github.com/arduino/openwrt-yun.git&lt;/code&gt;&lt;/pre&gt;&lt
 
 &lt;h1 id=&quot;zigbeegw-luci&quot;&gt;2015-07-22 zigbeegw-luci&lt;/h1&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;# zigbeegw-luci 
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# zigbeegw-luci &lt;/span&gt;
 
-cd /home/router-dev/openwrt/branches/attitude_adjustment/package
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /home/router-dev/openwrt/branches/attitude_adjustment/package
 svn co https://github.com/paradislover/zigbeegw-luci/trunk zigbeegw
 
 make menuconfig
 LuCI ---&amp;gt; 
     3.Applications ---&amp;gt;
-&amp;lt;*&amp;gt; luci-app-zigbeegw ................ LuCI Support for zigbeegw
+&lt;span class=&quot;gp&quot;&gt;&amp;lt;*&amp;gt; &lt;/span&gt;luci-app-zigbeegw ................ LuCI Support &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;zigbeegw
 Kernel modules ---&amp;gt; 
     USB Support ---&amp;gt;
-&amp;lt;*&amp;gt; kmod-usb-acm
-&amp;lt;*&amp;gt; kmod-usb-serial
-&amp;lt;*&amp;gt;   kmod-usb-cp210x
-&amp;lt;*&amp;gt;   kmod-usb-pl2303
+&lt;span class=&quot;gp&quot;&gt;&amp;lt;*&amp;gt; &lt;/span&gt;kmod-usb-acm
+&lt;span class=&quot;gp&quot;&gt;&amp;lt;*&amp;gt; &lt;/span&gt;kmod-usb-serial
+&lt;span class=&quot;gp&quot;&gt;&amp;lt;*&amp;gt;   &lt;/span&gt;kmod-usb-cp210x
+&lt;span class=&quot;gp&quot;&gt;&amp;lt;*&amp;gt;   &lt;/span&gt;kmod-usb-pl2303
 
 make package/zigbee/clean
 make package/zigbee/compile
@@ -1143,319 +1496,319 @@ make package/zibgee/install&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h1 id=&quot;openwrt&quot;&gt;2015-07-10,13,16,21 OpenWRT下远程调试&lt;/h1&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;# OpenWRT下远程调试 attitude_adjustment WR703N
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# OpenWRT下远程调试 attitude_adjustment WR703N&lt;/span&gt;
 
 svn co svn://svn.openwrt.org/openwrt/branches/attitude_adjustment
 
-# http://blog.csdn.net/piggy1924/article/details/8557350
-# http://wenku.baidu.com/link?url=evvS3AjpZeFeKQYHPw7_80UctmoG0uVmNqKpZO-PDRwRw8jOydDBVkFeOpCpukEhyKwcVPpoVFR-byD1VeNfzpSYpIsn_thKC_mudbA5xzO
+&lt;span class=&quot;c&quot;&gt;# http://blog.csdn.net/piggy1924/article/details/8557350&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# http://wenku.baidu.com/link?url=evvS3AjpZeFeKQYHPw7_80UctmoG0uVmNqKpZO-PDRwRw8jOydDBVkFeOpCpukEhyKwcVPpoVFR-byD1VeNfzpSYpIsn_thKC_mudbA5xzO&lt;/span&gt;
 
 配置编译OpenWRT
 
 复制 feeds.conf.default 为 feeds.conf
-~$ cp feeds.conf.default feeds.conf
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;cp feeds.conf.default feeds.conf
 将feeds.conf中
 src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package
 src-svn luci http://svn.luci.subsignal.org/luci/branches/luci-0.11/contrib/package
 注释为
-#src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package
-#src-svn luci http://svn.luci.subsignal.org/luci/branches/luci-0.11/contrib/package
+&lt;span class=&quot;c&quot;&gt;#src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#src-svn luci http://svn.luci.subsignal.org/luci/branches/luci-0.11/contrib/package&lt;/span&gt;
 并增加
 src-git luci https://github.com/openwrt/luci.git;luci-0.11
 诸如此类源码,你得定期更新Feeds。 通过如上相同的命令:
-~$ ./scripts/feeds update -a
-~$ ./scripts/feeds install -a
-~$ make menuconfig
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;./scripts/feeds update -a
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;./scripts/feeds install -a
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;make menuconfig
 
 选择
-?6?1 [*] Build the OpenWrt SDK
-?6?1 [*] Build the OpenWrt based Toolchain
-?6?1 [*] Advanced configuration options (fordevelopers)
-      -&amp;gt; [*] Toolchain Options
-   -&amp;gt; [*]Build/install c++ compiler and libstdc++” (if C++ is required)
--&amp;gt; [*]Build gdb
+?6?1 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Build the OpenWrt SDK
+?6?1 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Build the OpenWrt based Toolchain
+?6?1 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Advanced configuration options &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;fordevelopers&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+      -&amp;gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Toolchain Options
+   -&amp;gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;Build/install c++ compiler and libstdc++” &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;C++ is required&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;-&amp;gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;Build gdb
 
 
-Base System –&amp;gt; &amp;lt;*&amp;gt; dropbear        
-           　–&amp;gt; &amp;lt;*&amp;gt; libstdcpp
+Base System –&amp;gt; &amp;lt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&amp;gt; dropbear        
+           　–&amp;gt; &amp;lt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&amp;gt; libstdcpp
 
 Network –&amp;gt; file trasfer
-        &amp;lt;*&amp;gt; vsftpd
-–&amp;gt; SSH
-        &amp;lt;*&amp;gt; openssh-sftp-server
+        &amp;lt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&amp;gt; vsftpd
+&lt;span class=&quot;gp&quot;&gt;–&amp;gt; &lt;/span&gt;SSH
+        &amp;lt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&amp;gt; openssh-sftp-server
 
 Utilities –&amp;gt; // 这两个选项会导致wr703n固件编译不出
-&amp;lt;*&amp;gt; gdb
-&amp;lt;*&amp;gt; gdbserver
+&lt;span class=&quot;gp&quot;&gt;&amp;lt;*&amp;gt; &lt;/span&gt;gdb
+&lt;span class=&quot;gp&quot;&gt;&amp;lt;*&amp;gt; &lt;/span&gt;gdbserver
 
-# https://dev.openwrt.org/ticket/18331
+&lt;span class=&quot;c&quot;&gt;# https://dev.openwrt.org/ticket/18331&lt;/span&gt;
 
-$ tar -xjf OpenWrt-ImageBuilder-ar71xx_generic-for-linux-i686.tar.bz2
-$ cd OpenWrt-ImageBuilder-ar71xx_generic-for-linux-i686/
-$ make info | grep 703
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;tar -xjf OpenWrt-ImageBuilder-ar71xx_generic-for-linux-i686.tar.bz2
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;OpenWrt-ImageBuilder-ar71xx_generic-for-linux-i686/
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;make info | grep 703
 TLWR703:
 TP-LINK TL-WR703N
-$ make image PROFILE=TLWR703
-[...]
-$ ls -l bin/ar71xx/
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;make image &lt;span class=&quot;nv&quot;&gt;PROFILE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;TLWR703
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;...]
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ls -l bin/ar71xx/
 
-make image PROFILE=TLWR703 PACKAGES=&amp;quot;luci luci-i18n-chinese libstdcpp vsftpd openssh-sftp-server gdb gdbserver&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+make image &lt;span class=&quot;nv&quot;&gt;PROFILE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;TLWR703 &lt;span class=&quot;nv&quot;&gt;PACKAGES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;luci luci-i18n-chinese libstdcpp vsftpd openssh-sftp-server gdb gdbserver&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h1 id=&quot;openwrt-1&quot;&gt;2015-07-09 OpenWRT下远程调试&lt;/h1&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;# OpenWRT下远程调试 attitude_adjustment WR703N
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# OpenWRT下远程调试 attitude_adjustment WR703N&lt;/span&gt;
 
 svn co svn://svn.openwrt.org/openwrt/branches/attitude_adjustment
 
-# http://blog.csdn.net/piggy1924/article/details/8557350
-# http://wenku.baidu.com/link?url=evvS3AjpZeFeKQYHPw7_80UctmoG0uVmNqKpZO-PDRwRw8jOydDBVkFeOpCpukEhyKwcVPpoVFR-byD1VeNfzpSYpIsn_thKC_mudbA5xzO
+&lt;span class=&quot;c&quot;&gt;# http://blog.csdn.net/piggy1924/article/details/8557350&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# http://wenku.baidu.com/link?url=evvS3AjpZeFeKQYHPw7_80UctmoG0uVmNqKpZO-PDRwRw8jOydDBVkFeOpCpukEhyKwcVPpoVFR-byD1VeNfzpSYpIsn_thKC_mudbA5xzO&lt;/span&gt;
 
 配置编译OpenWRT
 
 复制 feeds.conf.default 为 feeds.conf
-~$ cp feeds.conf.default feeds.conf
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;cp feeds.conf.default feeds.conf
 将feeds.conf中
 src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package
 注释为
-#src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package
+&lt;span class=&quot;c&quot;&gt;#src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package&lt;/span&gt;
 并增加
 src-git luci https://github.com/openwrt/luci.git;luci-0.11
 诸如此类源码,你得定期更新Feeds。 通过如上相同的命令:
-~$ ./scripts/feeds update -a
-~$ ./scripts/feeds install -a
-~$ make defconfig
-~$ make menuconfig
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;./scripts/feeds update -a
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;./scripts/feeds install -a
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;make defconfig
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;make menuconfig
 
 选择
-?6?1 [*] Build the OpenWrt SDK
-?6?1 [*] Build the OpenWrt based Toolchain
-?6?1 [*] Advanced configuration options (fordevelopers)
-      -&amp;gt; [*] Toolchain Options
-   -&amp;gt; [*]Build/install c++ compiler and libstdc++” (if C++ is required)
--&amp;gt; [*]Build with debug information
--&amp;gt; [*]Build gdb
+?6?1 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Build the OpenWrt SDK
+?6?1 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Build the OpenWrt based Toolchain
+?6?1 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Advanced configuration options &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;fordevelopers&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+      -&amp;gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Toolchain Options
+   -&amp;gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;Build/install c++ compiler and libstdc++” &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;C++ is required&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;-&amp;gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;Build with debug information
+&lt;span class=&quot;gp&quot;&gt;-&amp;gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;Build gdb
 
-Base System –&amp;gt; &amp;lt;*&amp;gt; dropbear        
-           　–&amp;gt; &amp;lt;*&amp;gt; libstdcpp
+Base System –&amp;gt; &amp;lt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&amp;gt; dropbear        
+           　–&amp;gt; &amp;lt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&amp;gt; libstdcpp
 
 Network –&amp;gt; file trasfer
-        &amp;lt;*&amp;gt; vsftpd
-–&amp;gt; SSH
-        &amp;lt;*&amp;gt; openssh-sftp-server
+        &amp;lt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&amp;gt; vsftpd
+&lt;span class=&quot;gp&quot;&gt;–&amp;gt; &lt;/span&gt;SSH
+        &amp;lt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&amp;gt; openssh-sftp-server
 
-Utilities –&amp;gt; &amp;lt;*&amp;gt; gdbserver
+Utilities –&amp;gt; &amp;lt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&amp;gt; gdbserver
  
 结论：　未完全成功！！！&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h1 id=&quot;openwrt-7620n&quot;&gt;2015-07-08 OpenWRT下远程调试 7620n&lt;/h1&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;# OpenWRT下远程调试 barrier_breaker 7620n
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# OpenWRT下远程调试 barrier_breaker 7620n&lt;/span&gt;
 svn co svn://svn.openwrt.org/openwrt/branches/barrier_breaker
 
-# http://blog.csdn.net/piggy1924/article/details/8557350
-# http://wenku.baidu.com/link?url=evvS3AjpZeFeKQYHPw7_80UctmoG0uVmNqKpZO-PDRwRw8jOydDBVkFeOpCpukEhyKwcVPpoVFR-byD1VeNfzpSYpIsn_thKC_mudbA5xzO
+&lt;span class=&quot;c&quot;&gt;# http://blog.csdn.net/piggy1924/article/details/8557350&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# http://wenku.baidu.com/link?url=evvS3AjpZeFeKQYHPw7_80UctmoG0uVmNqKpZO-PDRwRw8jOydDBVkFeOpCpukEhyKwcVPpoVFR-byD1VeNfzpSYpIsn_thKC_mudbA5xzO&lt;/span&gt;
 
 配置编译OpenWRT
 
 复制 feeds.conf.default 为 feeds.conf
-~$ cp feeds.conf.default feeds.conf
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;cp feeds.conf.default feeds.conf
 将feeds.conf中
 src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package
 注释为
-#src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package
+&lt;span class=&quot;c&quot;&gt;#src-svn xwrt http://x-wrt.googlecode.com/svn/trunk/package&lt;/span&gt;
 诸如此类源码,你得定期更新Feeds。 通过如上相同的命令:
-~$ ./scripts/feeds update -a
-~$ ./scripts/feeds install -a
-~$ make defconfig
-~$ make menuconfig
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;./scripts/feeds update -a
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;./scripts/feeds install -a
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;make defconfig
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;make menuconfig
 
 选择
-?6?1 [*] Build the OpenWrt SDK
-?6?1 [*] Build the OpenWrt based Toolchain
-?6?1 [*] Advanced configuration options (fordevelopers)
-   -&amp;gt; [*] Toolchain Options
-       -&amp;gt; [*]Build/install fortran compiler
-   //  -&amp;gt; [*]Build with debug information
-       -&amp;gt; [*]Build gdb
+?6?1 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Build the OpenWrt SDK
+?6?1 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Build the OpenWrt based Toolchain
+?6?1 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Advanced configuration options &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;fordevelopers&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+   -&amp;gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; Toolchain Options
+       -&amp;gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;Build/install fortran compiler
+   //  -&amp;gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;Build with debug information
+       -&amp;gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;Build gdb
 
    //→ “gdb”
-   //→ “Build/install c++ compiler and libstdc++” (if C++ is required)
+   //→ “Build/install c++ compiler and libstdc++” &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;C++ is required&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 
 启动以下五项
 
 // Global build setting –&amp;gt; Preferred standard C++ library -&amp;gt; libstdc++
 
-Base System –&amp;gt; &amp;lt;*&amp;gt; dropbear
-            –&amp;gt; &amp;lt;*&amp;gt; libstdcpp
+Base System –&amp;gt; &amp;lt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&amp;gt; dropbear
+            –&amp;gt; &amp;lt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&amp;gt; libstdcpp
 
-Development –&amp;gt; &amp;lt;*&amp;gt; gdb
-               &amp;lt;*&amp;gt; gdbserver
+Development –&amp;gt; &amp;lt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&amp;gt; gdb
+               &amp;lt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&amp;gt; gdbserver
 
 network –&amp;gt; file trasfer
-        &amp;lt;*&amp;gt; vsftpd
-–&amp;gt; SSH
-        &amp;lt;*&amp;gt; openssh-sftp-server
+        &amp;lt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&amp;gt; vsftpd
+&lt;span class=&quot;gp&quot;&gt;–&amp;gt; &lt;/span&gt;SSH
+        &amp;lt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&amp;gt; openssh-sftp-server
 
-~$ make V=s
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;make &lt;span class=&quot;nv&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;s
 
 结论：　未完全成功！！！&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h1 id=&quot;helloworld&quot;&gt;2015-07-07 helloworld&lt;/h1&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;#　内置　helloworld
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#　内置　helloworld&lt;/span&gt;
 
-a).在package目录下创建helloworld目录
-~$ cd package
-~$ mkdir helloworld
-~$ cd helloworld
+a&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.在package目录下创建helloworld目录
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;package
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;mkdir helloworld
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;helloworld
 
-b).建立Makefile
-~$ touch Makefile
-~$ vim Makefile
+b&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.建立Makefile
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;touch Makefile
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;vim Makefile
 
 Makefile文件模板内容如下：
-##############################################
-# OpenWrt Makefile for helloworld program
-#
-#
-# Most of the variables used here are defined in
-# the include directives below. We just need to
-# specify a basic description of the package,
-# where to build our program, where to find
-# the source files, and where to install the
-# compiled program on the router.
-#
-# Be very careful of spacing in this file.
-# Indents should be tabs, not spaces, and
-# there should be no trailing whitespace in
-# lines that are not commented.
-#
-##############################################
+&lt;span class=&quot;c&quot;&gt;##############################################&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# OpenWrt Makefile for helloworld program&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Most of the variables used here are defined in&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# the include directives below. We just need to&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# specify a basic description of the package,&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# where to build our program, where to find&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# the source files, and where to install the&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# compiled program on the router.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Be very careful of spacing in this file.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Indents should be tabs, not spaces, and&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# there should be no trailing whitespace in&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# lines that are not commented.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;##############################################&lt;/span&gt;
 
-include $(TOPDIR)/rules.mk
+include &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;TOPDIR&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/rules.mk
 
-# Name and release number of this package
-PKG_NAME:=helloworld.qq.com/
-PKG_RELEASE:=1
-
-
-# This specifies the directory where we&amp;#39;re going to build the program. 
-# The root build directory, $(BUILD_DIR), is by default the build_mipsel
-# directory in your OpenWrt SDK directory
-PKG_BUILD_DIR := $(BUILD_DIR)/$(PKG_NAME)
+&lt;span class=&quot;c&quot;&gt;# Name and release number of this package&lt;/span&gt;
+PKG_NAME:&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;helloworld.qq.com/
+PKG_RELEASE:&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1
 
 
-include $(INCLUDE_DIR)/package.mk
+&lt;span class=&quot;c&quot;&gt;# This specifies the directory where we're going to build the program. &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# The root build directory, $(BUILD_DIR), is by default the build_mipsel&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# directory in your OpenWrt SDK directory&lt;/span&gt;
+PKG_BUILD_DIR :&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;BUILD_DIR&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;PKG_NAME&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
+
+
+include &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;INCLUDE_DIR&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/package.mk
 
  
 
-# Specify package information for this program.
-# The variables defined here should be self explanatory.
-# If you are running Kamikaze, delete the DESCRIPTION
-# variable below and uncomment the Kamikaze define
-# directive for the description below
+&lt;span class=&quot;c&quot;&gt;# Specify package information for this program.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# The variables defined here should be self explanatory.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# If you are running Kamikaze, delete the DESCRIPTION&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# variable below and uncomment the Kamikaze define&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# directive for the description below&lt;/span&gt;
 define Package/helloworld
-SECTION:=utils
-CATEGORY:=Utilities
-TITLE:=Helloworld -- prints a test message
+SECTION:&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;utils
+CATEGORY:&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Utilities
+TITLE:&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Helloworld -- prints a &lt;span class=&quot;nb&quot;&gt;test &lt;/span&gt;message
 endef
 
 
-# Uncomment portion below for Kamikaze and delete DESCRIPTION variable above
+&lt;span class=&quot;c&quot;&gt;# Uncomment portion below for Kamikaze and delete DESCRIPTION variable above&lt;/span&gt;
 define Package/helloworld/description
-        If you can&amp;#39;t figure out what this program does, you&amp;#39;re probably
+        If you can&lt;span class=&quot;s1&quot;&gt;'t figure out what this program does, you'&lt;/span&gt;re probably
         brain-dead and need immediate medical attention.
 endef
 
  
 
-# Specify what needs to be done to prepare for building the package.
-# In our case, we need to copy the source files to the build directory.
-# This is NOT the default.  The default uses the PKG_SOURCE_URL and the
-# PKG_SOURCE which is not defined here to download the source from the web.
-# In order to just build a simple program that we have just written, it is
-# much easier to do it this way.
+&lt;span class=&quot;c&quot;&gt;# Specify what needs to be done to prepare for building the package.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# In our case, we need to copy the source files to the build directory.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# This is NOT the default.  The default uses the PKG_SOURCE_URL and the&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# PKG_SOURCE which is not defined here to download the source from the web.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# In order to just build a simple program that we have just written, it is&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# much easier to do it this way.&lt;/span&gt;
 define Build/Prepare
-mkdir -p $(PKG_BUILD_DIR)
-$(CP) ./src/* $(PKG_BUILD_DIR)/
+mkdir -p &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;PKG_BUILD_DIR&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;CP&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; ./src/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;PKG_BUILD_DIR&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/
 endef
 
 
-# We do not need to define Build/Configure or Build/Compile directives
-# The defaults are appropriate for compiling a simple program such as this one
+&lt;span class=&quot;c&quot;&gt;# We do not need to define Build/Configure or Build/Compile directives&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# The defaults are appropriate for compiling a simple program such as this one&lt;/span&gt;
 
 
-# Specify where and how to install the program. Since we only have one file,
-# the helloworld executable, install it by copying it to the /bin directory on
-# the router. The $(1) variable represents the root directory on the router running
-# OpenWrt. The $(INSTALL_DIR) variable contains a command to prepare the install
-# directory if it does not already exist.  Likewise $(INSTALL_BIN) contains the
-# command to copy the binary file from its current location (in our case the build
-# directory) to the install directory.
+&lt;span class=&quot;c&quot;&gt;# Specify where and how to install the program. Since we only have one file,&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# the helloworld executable, install it by copying it to the /bin directory on&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# the router. The $(1) variable represents the root directory on the router running&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# OpenWrt. The $(INSTALL_DIR) variable contains a command to prepare the install&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# directory if it does not already exist.  Likewise $(INSTALL_BIN) contains the&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# command to copy the binary file from its current location (in our case the build&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# directory) to the install directory.&lt;/span&gt;
 define Package/helloworld/install
-$(INSTALL_DIR) $(1)/bin
-$(INSTALL_BIN) $(PKG_BUILD_DIR)/helloworld $(1)/bin/
+&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;INSTALL_DIR&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;1&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/bin
+&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;INSTALL_BIN&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;PKG_BUILD_DIR&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/helloworld &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;1&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt;/bin/
 endef
 
 
-# This line executes the necessary commands to compile our program.
-# The above define directives specify all the information needed, but this
-# line calls BuildPackage which in turn actually uses this information to
-# build a package.
-$(eval $(call BuildPackage,helloworld))
+&lt;span class=&quot;c&quot;&gt;# This line executes the necessary commands to compile our program.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# The above define directives specify all the information needed, but this&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# line calls BuildPackage which in turn actually uses this information to&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# build a package.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;call BuildPackage,helloworld&lt;span class=&quot;k&quot;&gt;))&lt;/span&gt;
 
-c).创建src目录，并编写helloworld程序
-~$ mkdir src
-~$ cd src
+c&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.创建src目录，并编写helloworld程序
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;mkdir src
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;src
 
-/**************** 
-* Helloworld.c 
-*****************/
+/&lt;span class=&quot;k&quot;&gt;****************&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; Helloworld.c 
+&lt;span class=&quot;k&quot;&gt;*****************&lt;/span&gt;/
 
-#include &amp;lt;stdio.h&amp;gt; 
-#include &amp;lt;unistd.h&amp;gt; 
+&lt;span class=&quot;c&quot;&gt;#include &amp;lt;stdio.h&amp;gt; &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#include &amp;lt;unistd.h&amp;gt; &lt;/span&gt;
 
-int main(void) 
-{ 
-printf(&amp;quot;hello world! \n\n&amp;quot;); 
-return 0; 
-}
+int main&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;void&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;hello world! &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;; 
+&lt;span class=&quot;k&quot;&gt;return &lt;/span&gt;0; 
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
 
 编写Makefile文件
 
-# build helloworld executable when user executes &amp;quot;make&amp;quot;
+&lt;span class=&quot;c&quot;&gt;# build helloworld executable when user executes &quot;make&quot;&lt;/span&gt;
 
 helloworld: helloworld.o
-$(CC) $(LDFLAGS) helloworld.o -o helloworld
+&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;CC&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;LDFLAGS&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; helloworld.o -o helloworld
 
 helloworld.o: helloworld.c
-$(CC) $(CFLAGS) -c helloworld.c
+&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;CC&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;CFLAGS&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; -c helloworld.c
 
-# remove object files and executable when user executes &amp;quot;make clean&amp;quot;
+&lt;span class=&quot;c&quot;&gt;# remove object files and executable when user executes &quot;make clean&quot;&lt;/span&gt;
 clean:
-rm *.o helloworld
+rm &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.o helloworld
 
 在这两个文件的目录下，执行make 应该可以生成helloworld的可执行文件。执行helloworld后，能够打印出“hello world!”。 这一步，主要保证我们的源程序是可以正常编译的。
 
-d).编译
-~$ make menuconfig 
+d&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.编译
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;make menuconfig 
 
 ?6?1 Utilities -&amp;gt; Toolchain Options
-→ (*) helloworld
+→ &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; helloworld
 
-~$ make V=s&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;make &lt;span class=&quot;nv&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;s&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h1 id=&quot;openwrt-build&quot;&gt;2015-07-06 OpenWRT Build&lt;/h1&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;#　1.下载OpenWRT源码包：
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#　1.下载OpenWRT源码包：&lt;/span&gt;
   
-~$ svn checkout svn://svn.openwrt.org/openwrt/trunk 
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;svn checkout svn://svn.openwrt.org/openwrt/trunk 
 进入源码文件夹：  
-~$ cd trunk 
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;trunk 
 
 复制 feeds.conf.default 为 feeds.conf
-~$ cp feeds.conf.default feeds.conf
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;cp feeds.conf.default feeds.conf
 
 将feeds.conf中
 src-git luci https://github.com/openwrt/luci.git
@@ -1463,99 +1816,99 @@ src-git luci https://github.com/openwrt/luci.git
 src-git luci https://github.com/openwrt/luci.git;luci-0.12
 
 诸如此类源码,你得定期更新Feeds。 通过如上相同的命令:
-~$ ./scripts/feeds update -a
-~$ ./scripts/feeds install -a
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;./scripts/feeds update -a
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;./scripts/feeds install -a
 
 下一步是检查编译环境，若可进行编译则生成默认配置：
-~$ make defconfig
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;make defconfig
 
 menuconfig是一个基于文本的工具，它处理选择的目标（需要还是不需要）、编译生成软件包（openwrt下是IPKG格式）以及内核选项（编译成模块还是内核）等等 
-~$ make menuconfig
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;make menuconfig
 
 
-# 2. 增加profile
+&lt;span class=&quot;c&quot;&gt;# 2. 增加profile&lt;/span&gt;
 
-$ 在../target/linux/ramips/mt7620/profiles 目录增加 wrtnode.mk
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;在../target/linux/ramips/mt7620/profiles 目录增加 wrtnode.mk
 
-#
-# Copyright (C) 2015 OpenWrt.org
-#
-# This is free software, licensed under the GNU General Public License v2.
-# See /LICENSE for more information.
-# add by : cuiqingwei
-#
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Copyright (C) 2015 OpenWrt.org&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# This is free software, licensed under the GNU General Public License v2.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# See /LICENSE for more information.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# add by : cuiqingwei&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
 
 define Profile/WRTNODE
- NAME:=Wrtnode
- PACKAGES:=\
-kmod-usb-core kmod-usb-dwc2 kmod-usb2 kmod-usb-ohci \
+ NAME:&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;Wrtnode
+ PACKAGES:&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+kmod-usb-core kmod-usb-dwc2 kmod-usb2 kmod-usb-ohci &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
 kmod-mt76
 endef
 
 define Profile/WRTNODE/Description
- Support for WRTnode Board
+ Support &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;WRTnode Board
 endef
-$(eval $(call Profile,WRTNODE))
+&lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;call Profile,WRTNODE&lt;span class=&quot;k&quot;&gt;))&lt;/span&gt;
 
 特别提醒：
-a).profile文件的格式一定要书写正确。特别是 “\”反斜杠后面，千万不能有空格，否则会导致mt7620a整个subtarget都消失不见。
-b).注意package之间的依赖关系，如kmod-ac97 kmod-sound-soc-core kmod-sound-mt7620都依赖于kmod-sound-core，那么就应该按照先后顺序依次写出，同样的道理：kmod-ac97 kmod-sound-soc-core应该出现在kmod-sound-mt7620前面。
-c).必须删除tmp目录，才能让添加的profile生效。
+a&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.profile文件的格式一定要书写正确。特别是 “&lt;span class=&quot;se&quot;&gt;\”&lt;/span&gt;反斜杠后面，千万不能有空格，否则会导致mt7620a整个subtarget都消失不见。
+b&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.注意package之间的依赖关系，如kmod-ac97 kmod-sound-soc-core kmod-sound-mt7620都依赖于kmod-sound-core，那么就应该按照先后顺序依次写出，同样的道理：kmod-ac97 kmod-sound-soc-core应该出现在kmod-sound-mt7620前面。
+c&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.必须删除tmp目录，才能让添加的profile生效。
 最后，就可以在make menuconfig中看到你想要的东西啦。
 
-# 3.更改kernel console打印波特率
+&lt;span class=&quot;c&quot;&gt;# 3.更改kernel console打印波特率&lt;/span&gt;
 在..target/linux/ramips/dts/WRTNODE.dts中添加
 
-chosen {
-bootargs = &amp;quot;console=ttyS0,115200&amp;quot;;
-};&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+chosen &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+bootargs &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;console=ttyS0,115200&quot;&lt;/span&gt;;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;# 常用命令&lt;/p&gt;
+&lt;h1 id=&quot;section&quot;&gt;常用命令&lt;/h1&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;### 常用命令
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;### 常用命令&lt;/span&gt;
 make clean[清楚bin 目录]
 make dirclean[make clean]+[清除交叉编译工具及工具链目录]
 make distclean[清除所有相关的东西，包括下载的软件包，配置文件，feed内容等]
 
-### 装 Luci web UI :
+&lt;span class=&quot;c&quot;&gt;### 装 Luci web UI :&lt;/span&gt;
 ./scripts/feeds update packages luci
 ./scripts/feeds install -a -p luci
 
-### tftp更新固件
+&lt;span class=&quot;c&quot;&gt;### tftp更新固件&lt;/span&gt;
 tftp 0x80000000 wr703n-f.bin
 tftp 0x80000000 openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin
 erase 0x9f020000 +0x3c0000
 cp.b 0x80000000 0x9f020000 0x3c0000
 bootm 0x9f020000
 
-### scp至路由器更新固件
+&lt;span class=&quot;c&quot;&gt;### scp至路由器更新固件&lt;/span&gt;
 scp bin/ar71xx/openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin root@192.168.199.175:/tmp/
 mtd -r write openwrt-ar71xx-generic-tl-wr703n-v1-squashfs-factory.bin firmware
 
 scp zbGateway.bin root@192.168.199.175:/tmp/
 
-### Network-testing with iperf
+&lt;span class=&quot;c&quot;&gt;### Network-testing with iperf&lt;/span&gt;
 
 ping -c 5 192.168.199.175
 
 netcat -u -l -p 2000 &amp;gt; /dev/null
 nc -u -l -p 2000 &amp;gt; /dev/null
-dd if=/dev/zero bs=1M count=100 | pv -brt | netcat -u 192.168.199.175 2000
+dd &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/dev/zero &lt;span class=&quot;nv&quot;&gt;bs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1M &lt;span class=&quot;nv&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;100 | pv -brt | netcat -u 192.168.199.175 2000
 
-# TCP
+&lt;span class=&quot;c&quot;&gt;# TCP&lt;/span&gt;
 iperf -s
 iperf -c 192.168.199.175
-# UDP
+&lt;span class=&quot;c&quot;&gt;# UDP&lt;/span&gt;
 iperf -s -u
 iperf -c 192.168.199.175 -u
 
 scp root@192.168.199.175:/etc/opkg.conf /home/router-dev/
 scp /home/router-dev/opkg.conf root@192.168.199.175:/etc/
 scp openwrt-helloworld root@192.168.199.175:/usr/
-root@OpenWrt:/# gdbserver 192.168.199.175:10000 /usr/openwrt-helloworld
+&lt;span class=&quot;gp&quot;&gt;root@OpenWrt:/# &lt;/span&gt;gdbserver 192.168.199.175:10000 /usr/openwrt-helloworld
 
-### eclipse调试[没有成功]
+&lt;span class=&quot;c&quot;&gt;### eclipse调试[没有成功]&lt;/span&gt;
 /home/router-dev/openwrt/branches/attitude_adjustment/staging_dir
 mips-openwrt-linux-
 /home/router-dev/openwrt/branches/attitude_adjustment/staging_dir/toolchain-mips_r2_gcc-4.6-linaro_uClibc-0.9.33.2/bin
@@ -1566,9 +1919,9 @@ mipsel-openwrt-linux-
 /home/router-dev/openwrt/branches/barrier_breaker/staging_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin
 /home/router-dev/openwrt/branches/barrier_breaker/build_dir/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/gdb-linaro-7.6-2013.05/gdb/gdb
 
-############################################################
+&lt;span class=&quot;c&quot;&gt;############################################################&lt;/span&gt;
 ??? 问题
-mipsel-openwrt-linux-g++: warning: environment variable &amp;#39;STAGING_DIR&amp;#39; not defined
+mipsel-openwrt-linux-g++: warning: environment variable &lt;span class=&quot;s1&quot;&gt;'STAGING_DIR'&lt;/span&gt; not defined
 !!! 解决
 eclipse菜单Window-&amp;gt;Preferences-&amp;gt;C/C++-&amp;gt;Environmentz增加
 STAGING_DIR　
@@ -1581,58 +1934,58 @@ http://downloads.openwrt.org/attitude_adjustment/12.09/ar71xx/generic/packages/
 //////////////////////////////////////////////////////////////////////////////////////
 
 将vsftpd编译进openwrt的固件中去
-# http://chaochaoblog.com/archives/1007
+&lt;span class=&quot;c&quot;&gt;# http://chaochaoblog.com/archives/1007&lt;/span&gt;
 首先进去我们已经下载好了源码的目录，如backfire或者其它分支的。然后利用feeds来下载安装vsftpd
-~$ ./scripts/feeds update
-~$ ./scripts/feeds install -d m vsftpd
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;./scripts/feeds update
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;./scripts/feeds install -d m vsftpd
 之后你可以到目录/feeds/package/net/下看了，就会发现我们的vsftpd这个源码包都下载下来了。
 之后回根目录，输入
-~$ make menuconfig
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;make menuconfig
 在network –&amp;gt; file trasfer下就可以找到vsftpd了，果断按下y选择编译进固件，当然你也可以选择m那么就只会编译出ipk文件来了。
-~$ make V=s 编译出bin的固件镜像文件来，刷入flash，然后ssh之后ps查看进程
+&lt;span class=&quot;gp&quot;&gt;~$ &lt;/span&gt;make &lt;span class=&quot;nv&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;s 编译出bin的固件镜像文件来，刷入flash，然后ssh之后ps查看进程
 OpenWrt开启sftp，方便传输文件。修改opkg.conf文件
-# http://see.sl088.com/wiki/Openwrt_opkg%E6%BA%90%E8%AE%BE%E7%BD%AE
-root@OpenWrt:~# vi /etc/opkg.conf
+&lt;span class=&quot;c&quot;&gt;# http://see.sl088.com/wiki/Openwrt_opkg%E6%BA%90%E8%AE%BE%E7%BD%AE&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;root@OpenWrt:~# &lt;/span&gt;vi /etc/opkg.conf
 为
 option overlay_root /overlay
-# src/gz chaos_calmer_base http://downloads.openwrt.org/snapshots/trunk/ramips/mt7620/packages/base
-# src/gz chaos_calmer_luci http://downloads.openwrt.org/snapshots/trunk/ramips/mt7620/packages/luci
+&lt;span class=&quot;c&quot;&gt;# src/gz chaos_calmer_base http://downloads.openwrt.org/snapshots/trunk/ramips/mt7620/packages/base&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# src/gz chaos_calmer_luci http://downloads.openwrt.org/snapshots/trunk/ramips/mt7620/packages/luci&lt;/span&gt;
 src/gz chaos_calmer_packages http://downloads.openwrt.org/chaos_calmer/15.05-rc2/ramips/mt7620/packages/packages
-# option check_signature 1
+&lt;span class=&quot;c&quot;&gt;# option check_signature 1&lt;/span&gt;
 主要去掉签名check,增加
 src/gz chaos_calmer_packages http://downloads.openwrt.org/chaos_calmer/15.05-rc2/ramips/mt7620/packages/packages
-root@OpenWrt:~# opkg update
-root@OpenWrt:~# opkg install vsftpd openssh-sftp-server
-root@OpenWrt:~# /etc/init.d/vsftpd enable
-root@OpenWrt:~# /etc/init.d/vsftpd start
+&lt;span class=&quot;gp&quot;&gt;root@OpenWrt:~# &lt;/span&gt;opkg update
+&lt;span class=&quot;gp&quot;&gt;root@OpenWrt:~# &lt;/span&gt;opkg install vsftpd openssh-sftp-server
+&lt;span class=&quot;gp&quot;&gt;root@OpenWrt:~# &lt;/span&gt;/etc/init.d/vsftpd &lt;span class=&quot;nb&quot;&gt;enable
+&lt;/span&gt;&lt;span class=&quot;gp&quot;&gt;root@OpenWrt:~# &lt;/span&gt;/etc/init.d/vsftpd start
 
 .....................
 
-# http://www.cnblogs.com/peteryj/archive/2011/08/23/2151216.html
-a).建立调试环境
+&lt;span class=&quot;c&quot;&gt;# http://www.cnblogs.com/peteryj/archive/2011/08/23/2151216.html&lt;/span&gt;
+a&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.建立调试环境
 配置编译OpenWRT
 make menuconfig
 启动以下两项
-Advanced configuration options (for developers) –&amp;gt; Toolchain options –&amp;gt; Build gdb
+Advanced configuration options &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;developers&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; –&amp;gt; Toolchain options –&amp;gt; Build gdb
 Development –&amp;gt; gdbserver
-b).编译
-make V=99，如果已经编译过，则make toolchain/install 编译下gdb即可
-c).编译待调试程序
+b&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.编译
+make &lt;span class=&quot;nv&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;99，如果已经编译过，则make toolchain/install 编译下gdb即可
+c&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.编译待调试程序
 make menuconfig
-启动Advanced configuration options (for developers) –&amp;gt; Build options –&amp;gt; Enable debugging
+启动Advanced configuration options &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;developers&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; –&amp;gt; Build options –&amp;gt; Enable debugging
 编译程序
 以snmpd为例 ，使用make package/net-snmp/compile去编译程序，生成带调试信息的snmpd，作为宿主机调试使用。
 以上就是准备工作。下面简单介绍一下调试过程。
-d).调试程序
+d&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.调试程序
 启动目标机上的待调试程序
 首先加载并启动编译好的OpenWRT系统，然后
 gdbserver &amp;lt;local_IP&amp;gt;:&amp;lt;port&amp;gt; &amp;lt;program&amp;gt; &amp;lt;args&amp;gt;
 启动宿主机gdb
-(这里要修复一个bug，方法是：cd &amp;lt;openwrtdir&amp;gt;/staging_dir/&amp;lt;targetarch&amp;gt;; rmdir lib; ln -s ../toolchain-&amp;lt;targetarch&amp;gt;_&amp;lt;gccver&amp;gt;/lib lib)。
-cd &amp;lt;openwrtdir&amp;gt;/build_dir/toolchain-&amp;lt;targetarch&amp;gt;_&amp;lt;gccver&amp;gt;/gdb-6.3/gdb
+&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;这里要修复一个bug，方法是：cd &amp;lt;openwrtdir&amp;gt;/staging_dir/&amp;lt;targetarch&amp;gt;; rmdir lib; ln -s ../toolchain-&amp;lt;targetarch&amp;gt;_&amp;lt;gccver&amp;gt;/lib lib&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;。
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &amp;lt;openwrtdir&amp;gt;/build_dir/toolchain-&amp;lt;targetarch&amp;gt;_&amp;lt;gccver&amp;gt;/gdb-6.3/gdb
 ./gdb-- 启动
 设置gdb，并启动调试程序
-set solib-absolute-prefix &amp;lt;openwrtdir&amp;gt;/staging_dir/&amp;lt;targetarch&amp;gt;
+&lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;solib-absolute-prefix &amp;lt;openwrtdir&amp;gt;/staging_dir/&amp;lt;targetarch&amp;gt;
 file &amp;lt;openwrtdir&amp;gt;/build_dir/&amp;lt;targetarch&amp;gt;/&amp;lt;path&amp;gt;/&amp;lt;executable&amp;gt;
 连接目标机：target remote &amp;lt;ip&amp;gt;:&amp;lt;port&amp;gt;
 连接成功之后，就可以按正常的gdb调试流程进行调试了。&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -1648,16 +2001,17 @@ file &amp;lt;openwrtdir&amp;gt;/build_dir/&amp;lt;targetarch&amp;gt;/&amp;lt;pat
     
       <item>
         <title>Ubuntu</title>
-        <description>&lt;h3 id=&quot;section&quot;&gt;1.常用指令&lt;/h3&gt;
+        <description>&lt;p&gt;###1.常用指令&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt; 版本查看：
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; 版本查看：
        cat /etc/issue
        sudo lsb_release -a
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;h3 id=&quot;section-1&quot;&gt;2.环境设置&lt;/h3&gt;
+&lt;p&gt;###2.环境设置&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;zsh
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;zsh
      sudo apt-get install zsh
      https://github.com/robbyrussell/oh-my-zsh
 fortune
@@ -1701,6 +2055,7 @@ eagle
 hosts
      https://github.com/racaljk/hosts
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;Cannot Set LC_ALL to default locale: No such file or directory&lt;/strong&gt;&lt;br /&gt;
 &lt;a href=&quot;http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/&quot;&gt;http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/&lt;/a&gt;&lt;/p&gt;
@@ -1721,21 +2076,21 @@ sEx请到： http://sourceforge.net/projects/sex下载！
     
       <item>
         <title>MacOS</title>
-        <description>&lt;h3 id=&quot;mac&quot;&gt;Mac入门&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html&quot;&gt;http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html&lt;/a&gt;&lt;/p&gt;
+        <description>&lt;p&gt;###Mac入门 
+&lt;a href=&quot;http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html&quot;&gt;http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;appstore&quot;&gt;1. AppStore&lt;/h3&gt;
+&lt;p&gt;###1. AppStore&lt;/p&gt;
 
 &lt;p&gt;工作：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)
 系统：QQ、CleanMyDrive 3&lt;/p&gt;
 
-&lt;h3 id=&quot;dmg&quot;&gt;2. dmg&lt;/h3&gt;
+&lt;p&gt;###2. dmg&lt;/p&gt;
 
 &lt;p&gt;Chrome、VMwareFusion、RDC、QQInput、RTX、cornerstone
 Sublime Text&lt;/p&gt;
 
-&lt;h3 id=&quot;brew&quot;&gt;3. brew&lt;/h3&gt;
-&lt;p&gt;ruby -e “$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)”
+&lt;p&gt;###3. brew
+ruby -e “$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)”
 &lt;a href=&quot;http://brew.sh/&quot;&gt;http://brew.sh/&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;升级更新 brew update
@@ -1746,21 +2101,21 @@ sudo chown -R cuiqingwei /usr/local
 brew update
 http://www.xitongzhijia.net/xtjc/20141204/31879.html&lt;/p&gt;
 
-&lt;h3 id=&quot;macports&quot;&gt;4. MacPorts&lt;/h3&gt;
-&lt;p&gt;https://www.macports.org/install.php
+&lt;p&gt;###4. MacPorts
+https://www.macports.org/install.php
 http://guide.macports.org/#installing.macports&lt;/p&gt;
 
-&lt;h3 id=&quot;wget&quot;&gt;5. wget&lt;/h3&gt;
-&lt;p&gt;sudo port install wget&lt;/p&gt;
+&lt;p&gt;###5. wget
+sudo port install wget&lt;/p&gt;
 
-&lt;h3 id=&quot;zsh&quot;&gt;6. zsh&lt;/h3&gt;
-&lt;p&gt;wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+&lt;p&gt;###6. zsh
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 &lt;a href=&quot;http://leeiio.me/bash-to-zsh-for-mac/&quot;&gt;http://leeiio.me/bash-to-zsh-for-mac/&lt;/a&gt;
 &lt;a href=&quot;http://www.sketchup.com/download/all&quot;&gt;http://www.sketchup.com/download/all&lt;/a&gt;
 打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!&lt;/p&gt;
 
-&lt;h3 id=&quot;mac-say-&quot;&gt;7. mac say 唱歌&lt;/h3&gt;
-&lt;p&gt;应用程序&amp;gt;实用工具&amp;gt;Terminal 复制和黏贴以下内容，然后回车：&lt;/p&gt;
+&lt;p&gt;###7. mac say 唱歌
+应用程序&amp;gt;实用工具&amp;gt;Terminal 复制和黏贴以下内容，然后回车：&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。&lt;/li&gt;
@@ -1768,8 +2123,8 @@ http://guide.macports.org/#installing.macports&lt;/p&gt;
   &lt;li&gt;开始听歌了。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;section&quot;&gt;保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://checkcoverage.apple.com/cn/zh/&quot;&gt;https://checkcoverage.apple.com/cn/zh/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;##保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具
+&lt;a href=&quot;https://checkcoverage.apple.com/cn/zh/&quot;&gt;https://checkcoverage.apple.com/cn/zh/&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 14 Jan 2015 05:28:00 +0800</pubDate>
         <link>http://cuiqingwei.github.com/favorites/2015/01/14/MacOS.html</link>
@@ -1792,8 +2147,9 @@ http://guide.macports.org/#installing.macports&lt;/p&gt;
 
 &lt;p&gt;添加name: Eclipse Marketplace Client  (随意起名)&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;   Location:http://download.eclipse.org/mpc/indigo/
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   Location:http://download.eclipse.org/mpc/indigo/
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;添加完成后，work with 选择Eclipse Marketplace Client&lt;/p&gt;
 
@@ -1913,7 +2269,7 @@ http://guide.macports.org/#installing.macports&lt;/p&gt;
 
 &lt;p&gt;  编译完成&lt;/p&gt;
 
-&lt;p&gt;  &lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#117;&amp;#115;&amp;#101;&amp;#114;&amp;#064;&amp;#105;&amp;#110;&amp;#115;&amp;#116;&amp;#097;&amp;#110;&amp;#116;&amp;#045;&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#105;&amp;#107;&amp;#105;&amp;#058;&amp;#126;&amp;#047;&amp;#099;&amp;#111;&amp;#110;&amp;#116;&amp;#105;&amp;#107;&amp;#105;&amp;#047;&amp;#101;&amp;#120;&amp;#097;&amp;#109;&amp;#112;&amp;#108;&amp;#101;&amp;#115;&amp;#047;&amp;#099;&amp;#099;&amp;#050;&amp;#053;&amp;#051;&amp;#048;&amp;#100;&amp;#107;&amp;#036;&quot;&gt;&lt;font color=&quot;#000080&quot;&gt;user@instant-contiki:~/contiki/examples/cc2530dk$&lt;/font&gt;&lt;/a&gt; ls&lt;/p&gt;
+&lt;p&gt;  &lt;a href=&quot;mailto:user@instant-contiki:~/contiki/examples/cc2530dk$&quot;&gt;&lt;font color=&quot;#000080&quot;&gt;user@instant-contiki:~/contiki/examples/cc2530dk$&lt;/font&gt;&lt;/a&gt; ls&lt;/p&gt;
 
 &lt;p&gt;  blink-hello.c         hello-world.c         obj_cc2530dk           timer-test.c&lt;/p&gt;
 
@@ -2041,7 +2397,7 @@ http://guide.macports.org/#installing.macports&lt;/p&gt;
 
 &lt;p&gt;  为&lt;/p&gt;
 
-&lt;p&gt;** file_pat = re.compile(&lt;font color=&quot;red&quot;&gt;&#39;obj_edutech&lt;/font&gt;[^ ]+.’)**&lt;/p&gt;
+&lt;p&gt;** file_pat = re.compile(&lt;font color=&quot;red&quot;&gt;'obj_edutech&lt;/font&gt;[^ ]+.’)**&lt;/p&gt;
 
 &lt;p&gt;  将文中4处，157、158、172、173行中&lt;/p&gt;
 
@@ -2121,8 +2477,8 @@ http://guide.macports.org/#installing.macports&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/markdown/20130111/1.jpg&quot; alt=&quot;programmer&quot; /&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;using-ti-cc-debugger-based-on-ubuntu&quot;&gt;using TI CC Debugger (based on Ubuntu)&lt;/h1&gt;
-&lt;p&gt;install Package libboost-all-dev and libusb-1.0-0-dev by using command&lt;/p&gt;
+&lt;p&gt;#using TI CC Debugger (based on Ubuntu)
+install Package libboost-all-dev and libusb-1.0-0-dev by using command&lt;/p&gt;
 
 &lt;p&gt;sudo apt-get install libboost-all-dev&lt;/p&gt;
 
@@ -2189,7 +2545,7 @@ http://guide.macports.org/#installing.macports&lt;/p&gt;
 
 &lt;p&gt;可使用 &lt;strong&gt;&lt;font color=&quot;red&quot;&gt;sudo cc-tool –n cc2530 –w blink-hello.hex –v&lt;/font&gt;&lt;/strong&gt; 烧录&lt;/p&gt;
 
-&lt;h1 id=&quot;sensniff&quot;&gt;sensniff&lt;/h1&gt;
+&lt;p&gt;#sensniff&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/g-oikonomou/sensniff&quot;&gt;https://github.com/g-oikonomou/sensniff&lt;/a&gt;&lt;/p&gt;
 
@@ -2299,7 +2655,7 @@ http://guide.macports.org/#installing.macports&lt;/p&gt;
   &lt;li&gt;
     &lt;p&gt;2006年10月4日.自学C++Builder
 &lt;img src=&quot;/images/markdown/20121014/24.jpeg&quot; alt=&quot;ThinkPad&quot; /&gt;
-&lt;em&gt;国庆假期自学了C++Builder（图中的ThinkPad花了自己8000多元。当时，自己也不过刚当上万元户，买了ThinkPad就近乎破产了。这也证明了：只有穷单身汉才会毫无顾及的拿出所有积蓄去做自己喜欢的事！珍惜单身的时光，去做点自己喜欢做的事！） 
+&lt;em&gt;国庆假期自学了C++Builder（图中的ThinkPad花了自己8000多元。当时，自己也不过刚当上万元户，买了ThinkPad就近乎破产了。这也证明了：只有穷单身汉才会毫无顾及的拿出所有积蓄去做自己喜欢的事！珍惜单身的时光，去做点自己喜欢做的事！）
 学习单片机，做东西做多了。发现好多时候需要用到上位机软件配合。于是，利用一个十一假期恶补了C++Builder，这个非常有意义，为后面自己做项目奠定了坚实的基础！&lt;/em&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
@@ -2416,8 +2772,11 @@ http://guide.macports.org/#installing.macports&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://user.qzone.qq.com/39886157/blog/1350188306&quot;&gt;http://user.qzone.qq.com/39886157/blog/1350188306&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
 
+&lt;p&gt;&lt;em&gt;发表链接&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;QQZone &lt;a href=&quot;http://user.qzone.qq.com/39886157/blog/1350188306&quot;&gt;http://user.qzone.qq.com/39886157/blog/1350188306&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 15 Oct 2012 05:41:27 +0800</pubDate>
         <link>http://cuiqingwei.github.com/favorites/2012/10/15/%E6%9B%BE%E7%BB%8F%E6%8A%98%E8%85%BE%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B.html</link>
