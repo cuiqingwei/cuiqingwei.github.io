@@ -16,7 +16,7 @@
     
     <entry>
       <title><![CDATA[eMaker.Space]]></title>
-      <url>http://cuiqingwei1981.github.io/2016/03/08/2016-03-08-eMaker.Space/</url>
+      <url>http://cuiqingwei1981.github.io/2016/03/08/2016-03-08-eMaker-Space/</url>
       <content type="html"><![CDATA[<h1 id="wiki"><a href="#wiki" class="headerlink" title="wiki"></a>wiki</h1><p><a href="http://www.seeedstudio.com/wiki/Main_Page" target="_blank" rel="external">http://www.seeedstudio.com/wiki/Main_Page</a><br><a href="https://wiki.microduino.cc/index.php" target="_blank" rel="external">https://wiki.microduino.cc/index.php</a><br><a href="http://wiki.dfrobot.com.cn/index.php" target="_blank" rel="external">http://wiki.dfrobot.com.cn/index.php</a><br><a href="http://www.alsrobot.cn/wiki/" target="_blank" rel="external">http://www.alsrobot.cn/wiki/</a><br><a href="http://duinopeak.com/wiki/index.php" target="_blank" rel="external">http://duinopeak.com/wiki/index.php</a><br><a id="more"></a></p>
 <h1 id="Open-Source-Hardware"><a href="#Open-Source-Hardware" class="headerlink" title="Open Source Hardware"></a>Open Source Hardware</h1><p><a href="http://www.oshwa.org/open-source-hardware-logo/" target="_blank" rel="external">http://www.oshwa.org/open-source-hardware-logo/</a><br><a href="http://kb.open.eefocus.com/index.php" target="_blank" rel="external">http://kb.open.eefocus.com/index.php</a></p>
 <h1 id="Duino"><a href="#Duino" class="headerlink" title="Duino"></a>Duino</h1><p><a href="https://www.arduino.cc/" target="_blank" rel="external">https://www.arduino.cc/</a><br><a href="http://www.drduino.com/" target="_blank" rel="external">http://www.drduino.com/</a><br><a href="https://www.microduino.cn/" target="_blank" rel="external">https://www.microduino.cn/</a><br><a href="http://www.duino-robotics.com/" target="_blank" rel="external">http://www.duino-robotics.com/</a><br><a href="http://www.86duino.com/" target="_blank" rel="external">http://www.86duino.com/</a><br><a href="http://www.rfduino.com/" target="_blank" rel="external">http://www.rfduino.com/</a><br><a href="http://www.netduino.com/" target="_blank" rel="external">http://www.netduino.com/</a><br><a href="http://wtfduino.calumk.com/" target="_blank" rel="external">http://wtfduino.calumk.com/</a><br><a href="https://easyeda.com/seeedstudio/Xadow_Duino-M5d71jdvp" target="_blank" rel="external">https://easyeda.com/seeedstudio/Xadow_Duino-M5d71jdvp</a><br><a href="http://rasp.io/" target="_blank" rel="external">http://rasp.io/</a><br><a href="http://www.motoduino.com/" target="_blank" rel="external">http://www.motoduino.com/</a><br><a href="http://cubieboard.org/" target="_blank" rel="external">http://cubieboard.org/</a><br><a href="http://www.techbang.com/posts/42412-maker" target="_blank" rel="external">http://www.techbang.com/posts/42412-maker</a><br><a href="http://wiki.iteadstudio.com/Product" target="_blank" rel="external">http://wiki.iteadstudio.com/Product</a></p>
@@ -219,7 +219,7 @@ hosts
     
     <entry>
       <title><![CDATA[Marketplace Client]]></title>
-      <url>http://cuiqingwei1981.github.io/2013/07/05/2013-07-05-Marketplace%20Client/</url>
+      <url>http://cuiqingwei1981.github.io/2013/07/05/2013-07-05-Marketplace-Client/</url>
       <content type="html"><![CDATA[<p>Eclipse Marketplace是个插件应用商店，很实用的一个功能。</p>
 <p>打开 eclipse，help–Eclipse Marketplace Client就能找到</p>
 <p>有的eclipse中没有这个功能就需手动添加Eclipse Marketplace Client。</p>
@@ -304,7 +304,7 @@ hosts
     
     <entry>
       <title><![CDATA[Tcp&Telnet&Socket调试工具]]></title>
-      <url>http://cuiqingwei1981.github.io/2010/07/23/2010-07-23-Tcp&Telnet&Socket%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</url>
+      <url>http://cuiqingwei1981.github.io/2010/07/23/2010-07-23-Tcp-Telnet-Socket%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</url>
       <content type="html"><![CDATA[<p>最近在研究 TI Cortex-M3 LM3S8962 调试TCP时，找了一些TCP&amp;UDP调试工具，用起来不怎么习惯。随后自己写了一个调试工具，现与君共享！代码全部公布，喜爱者共同学习完善之！</p>
 <p>该 Tcp &amp; Telnet 调试工具，主要用于 TCP、Telnet 调试，它具有以下特点：</p>
 <p>① 不同的色彩，突出显示RX和TX信息内容;<br>② 支持字符串或十六进制发送、显示;<br>③ 自定义按钮组可定义经常使用的命令;<br>④ 一键点击导出/打印通讯日志。<br><a id="more"></a></p>
@@ -322,7 +322,7 @@ hosts
     
     <entry>
       <title><![CDATA[在TI-CC1111&CC25111上搞定USBHID]]></title>
-      <url>http://cuiqingwei1981.github.io/2009/03/13/2009-03-13-%E5%9C%A8TI-CC1111&CC25111%E4%B8%8A%E6%90%9E%E5%AE%9AUSBHID/</url>
+      <url>http://cuiqingwei1981.github.io/2009/03/13/2009-03-13-%E5%9C%A8TI-CC1111-CC25111%E4%B8%8A%E6%90%9E%E5%AE%9AUSBHID/</url>
       <content type="html"><![CDATA[<p><img src="http://cache.amobbs.com/bbs_upload782111/files_13/ourdev_425633.png" alt="效果图"></p>
 <hr>
 <p><em>发表链接</em></p>
@@ -332,7 +332,7 @@ hosts
     
     <entry>
       <title><![CDATA[Rf_Calc]]></title>
-      <url>http://cuiqingwei1981.github.io/2008/07/09/2008-07-09-Rf_Calc/</url>
+      <url>http://cuiqingwei1981.github.io/2008/07/09/2008-07-09-Rf-Calc/</url>
       <content type="html"><![CDATA[<p>昨晚搞了个小工具，方便大家计算！不用动笔了！欢迎使用，有bug请斧正，谢谢！<br>Rf Calc 包含功能：<br>               ① mW换算为dBm；<br>               ② dBm换算为mW；<br>               ③ 空间损耗计算；<br>               ④ 链路裕量；<br>               ⑤ 传输距离计算。</p>
 <h1 id="软件界面如下："><a href="#软件界面如下：" class="headerlink" title="软件界面如下："></a>软件界面如下：</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_343345.jpg" alt="效果图"><br><a id="more"></a><br><img src="http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_343346.jpg" alt="效果图"></p>
 <ul>

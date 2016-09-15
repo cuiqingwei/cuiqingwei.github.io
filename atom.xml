@@ -46,8 +46,8 @@
   
   <entry>
     <title>eMaker.Space</title>
-    <link href="http://cuiqingwei1981.github.io/2016/03/08/2016-03-08-eMaker.Space/"/>
-    <id>http://cuiqingwei1981.github.io/2016/03/08/2016-03-08-eMaker.Space/</id>
+    <link href="http://cuiqingwei1981.github.io/2016/03/08/2016-03-08-eMaker-Space/"/>
+    <id>http://cuiqingwei1981.github.io/2016/03/08/2016-03-08-eMaker-Space/</id>
     <published>2016-03-08T13:34:00.000Z</published>
     <updated>2016-09-15T13:00:54.000Z</updated>
     
@@ -156,7 +156,7 @@
     <link href="http://cuiqingwei1981.github.io/2015/10/03/2015-10-03-%E6%8A%98%E5%8F%A0%E5%85%AC%E8%B7%AF%E8%BD%A6/"/>
     <id>http://cuiqingwei1981.github.io/2015/10/03/2015-10-03-折叠公路车/</id>
     <published>2015-10-03T00:57:00.000Z</published>
-    <updated>2016-09-15T12:35:22.000Z</updated>
+    <updated>2016-09-15T17:18:25.000Z</updated>
     
     <content type="html"><![CDATA[<h4 id="Ori-Surpaz-CR-1-0"><a href="#Ori-Surpaz-CR-1-0" class="headerlink" title="Ori Surpaz CR 1.0"></a>Ori Surpaz CR 1.0</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=386" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=386</a></p>
 <p><img src="http://15km.hk/bike/images/bikeimage/bike_id_386_0.jpg" alt="1"><br><a id="more"></a><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_386_2.jpg" alt="2"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_386_3.jpg" alt="3"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_386_1.jpg" alt="4"></p>
@@ -219,8 +219,12 @@
     
     </summary>
     
-      <category term="favorites" scheme="http://cuiqingwei1981.github.io/categories/favorites/"/>
     
+      <category term="骑行" scheme="http://cuiqingwei1981.github.io/tags/%E9%AA%91%E8%A1%8C/"/>
+    
+      <category term="折叠公路车" scheme="http://cuiqingwei1981.github.io/tags/%E6%8A%98%E5%8F%A0%E5%85%AC%E8%B7%AF%E8%BD%A6/"/>
+    
+      <category term="自行车" scheme="http://cuiqingwei1981.github.io/tags/%E8%87%AA%E8%A1%8C%E8%BD%A6/"/>
     
   </entry>
   
@@ -229,7 +233,7 @@
     <link href="http://cuiqingwei1981.github.io/2015/01/13/2015-01-13-Ubuntu/"/>
     <id>http://cuiqingwei1981.github.io/2015/01/13/2015-01-13-Ubuntu/</id>
     <published>2015-01-13T13:28:00.000Z</published>
-    <updated>2016-09-15T12:29:25.000Z</updated>
+    <updated>2016-09-15T17:20:57.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="1-常用指令"><a href="#1-常用指令" class="headerlink" title="1.常用指令"></a>1.常用指令</h3><pre><code>版本查看：
       cat /etc/issue
@@ -291,8 +295,12 @@ hosts
     
     </summary>
     
-      <category term="favorites" scheme="http://cuiqingwei1981.github.io/categories/favorites/"/>
     
+      <category term="总结" scheme="http://cuiqingwei1981.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="ubuntu" scheme="http://cuiqingwei1981.github.io/tags/ubuntu/"/>
+    
+      <category term="linux" scheme="http://cuiqingwei1981.github.io/tags/linux/"/>
     
   </entry>
   
@@ -301,7 +309,7 @@ hosts
     <link href="http://cuiqingwei1981.github.io/2015/01/13/2015-01-13-MacOS/"/>
     <id>http://cuiqingwei1981.github.io/2015/01/13/2015-01-13-MacOS/</id>
     <published>2015-01-13T13:28:00.000Z</published>
-    <updated>2016-09-15T13:02:26.000Z</updated>
+    <updated>2016-09-15T17:20:12.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
 <h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p>工作：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br>系统：QQ、CleanMyDrive 3<br><a id="more"></a></p>
@@ -336,10 +344,10 @@ hosts
   
   <entry>
     <title>Marketplace Client</title>
-    <link href="http://cuiqingwei1981.github.io/2013/07/05/2013-07-05-Marketplace%20Client/"/>
-    <id>http://cuiqingwei1981.github.io/2013/07/05/2013-07-05-Marketplace Client/</id>
+    <link href="http://cuiqingwei1981.github.io/2013/07/05/2013-07-05-Marketplace-Client/"/>
+    <id>http://cuiqingwei1981.github.io/2013/07/05/2013-07-05-Marketplace-Client/</id>
     <published>2013-07-05T08:54:27.000Z</published>
-    <updated>2016-09-14T18:16:15.000Z</updated>
+    <updated>2016-09-15T17:20:36.000Z</updated>
     
     <content type="html"><![CDATA[<p>Eclipse Marketplace是个插件应用商店，很实用的一个功能。</p>
 <p>打开 eclipse，help–Eclipse Marketplace Client就能找到</p>
@@ -359,8 +367,8 @@ hosts
     
     </summary>
     
-      <category term="favorites" scheme="http://cuiqingwei1981.github.io/categories/favorites/"/>
     
+      <category term="eclipse" scheme="http://cuiqingwei1981.github.io/tags/eclipse/"/>
     
   </entry>
   
@@ -369,7 +377,7 @@ hosts
     <link href="http://cuiqingwei1981.github.io/2012/10/14/2012-10-14-%E6%9B%BE%E7%BB%8F%E6%8A%98%E8%85%BE%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B/"/>
     <id>http://cuiqingwei1981.github.io/2012/10/14/2012-10-14-曾经折腾过的那些/</id>
     <published>2012-10-14T13:41:27.000Z</published>
-    <updated>2016-09-15T12:58:19.000Z</updated>
+    <updated>2016-09-15T17:21:43.000Z</updated>
     
     <content type="html"><![CDATA[<p>整理硬盘资料时，看到这些图片。心情很激动，这些个都是与硬件相关的，什么MP3啊等等，可惜没有保留图片,纯软件的就更多了。才发现自己2009年到现在这几年一直忙着搞公司的事。已好久没停下来做点自己真正喜欢或是让自己心动的事了！</p>
 <ul>
@@ -446,17 +454,21 @@ hosts
     
     </summary>
     
-      <category term="favorites" scheme="http://cuiqingwei1981.github.io/categories/favorites/"/>
     
+      <category term="折腾" scheme="http://cuiqingwei1981.github.io/tags/%E6%8A%98%E8%85%BE/"/>
+    
+      <category term="DIY" scheme="http://cuiqingwei1981.github.io/tags/DIY/"/>
+    
+      <category term="硬件" scheme="http://cuiqingwei1981.github.io/tags/%E7%A1%AC%E4%BB%B6/"/>
     
   </entry>
   
   <entry>
     <title>Tcp&amp;Telnet&amp;Socket调试工具</title>
-    <link href="http://cuiqingwei1981.github.io/2010/07/23/2010-07-23-Tcp&amp;Telnet&amp;Socket%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/"/>
-    <id>http://cuiqingwei1981.github.io/2010/07/23/2010-07-23-Tcp&amp;Telnet&amp;Socket调试工具/</id>
+    <link href="http://cuiqingwei1981.github.io/2010/07/23/2010-07-23-Tcp-Telnet-Socket%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/"/>
+    <id>http://cuiqingwei1981.github.io/2010/07/23/2010-07-23-Tcp-Telnet-Socket调试工具/</id>
     <published>2010-07-23T09:04:45.000Z</published>
-    <updated>2016-09-15T12:32:06.000Z</updated>
+    <updated>2016-09-15T17:22:24.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近在研究 TI Cortex-M3 LM3S8962 调试TCP时，找了一些TCP&amp;UDP调试工具，用起来不怎么习惯。随后自己写了一个调试工具，现与君共享！代码全部公布，喜爱者共同学习完善之！</p>
 <p>该 Tcp &amp; Telnet 调试工具，主要用于 TCP、Telnet 调试，它具有以下特点：</p>
@@ -480,15 +492,17 @@ hosts
     
     </summary>
     
-      <category term="projects" scheme="http://cuiqingwei1981.github.io/categories/projects/"/>
     
+      <category term="C#.net" scheme="http://cuiqingwei1981.github.io/tags/C-net/"/>
+    
+      <category term="Socket" scheme="http://cuiqingwei1981.github.io/tags/Socket/"/>
     
   </entry>
   
   <entry>
     <title>在TI-CC1111&amp;CC25111上搞定USBHID</title>
-    <link href="http://cuiqingwei1981.github.io/2009/03/13/2009-03-13-%E5%9C%A8TI-CC1111&amp;CC25111%E4%B8%8A%E6%90%9E%E5%AE%9AUSBHID/"/>
-    <id>http://cuiqingwei1981.github.io/2009/03/13/2009-03-13-在TI-CC1111&amp;CC25111上搞定USBHID/</id>
+    <link href="http://cuiqingwei1981.github.io/2009/03/13/2009-03-13-%E5%9C%A8TI-CC1111-CC25111%E4%B8%8A%E6%90%9E%E5%AE%9AUSBHID/"/>
+    <id>http://cuiqingwei1981.github.io/2009/03/13/2009-03-13-在TI-CC1111-CC25111上搞定USBHID/</id>
     <published>2009-03-12T16:42:08.000Z</published>
     <updated>2016-09-15T13:04:30.000Z</updated>
     
@@ -518,8 +532,8 @@ hosts
   
   <entry>
     <title>Rf_Calc</title>
-    <link href="http://cuiqingwei1981.github.io/2008/07/09/2008-07-09-Rf_Calc/"/>
-    <id>http://cuiqingwei1981.github.io/2008/07/09/2008-07-09-Rf_Calc/</id>
+    <link href="http://cuiqingwei1981.github.io/2008/07/09/2008-07-09-Rf-Calc/"/>
+    <id>http://cuiqingwei1981.github.io/2008/07/09/2008-07-09-Rf-Calc/</id>
     <published>2008-07-09T04:42:45.000Z</published>
     <updated>2016-09-15T13:04:59.000Z</updated>
     
