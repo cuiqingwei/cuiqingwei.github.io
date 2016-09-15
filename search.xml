@@ -1,57 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>iZheteng</title>
-  <subtitle>Enjoy work, Enjoy life!</subtitle>
-  <link href="/atom.xml" rel="self"/>
+<search>
   
-  <link href="http://cuiqingwei1981.github.io/"/>
-  <updated>2016-09-15T13:00:03.000Z</updated>
-  <id>http://cuiqingwei1981.github.io/</id>
   
-  <author>
-    <name>cuiqingwei</name>
     
-  </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>网站设计的最简主义</title>
-    <link href="http://cuiqingwei1981.github.io/2016/05/12/2016-05-12-%E7%BD%91%E7%AB%99%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%9C%80%E7%AE%80%E4%B8%BB%E4%B9%89/"/>
-    <id>http://cuiqingwei1981.github.io/2016/05/12/2016-05-12-网站设计的最简主义/</id>
-    <published>2016-05-12T09:23:37.000Z</published>
-    <updated>2016-09-15T13:00:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>之前在阮一峰的网络日志看到《网站设计的最简主义》，文中写到：</p>
+    <entry>
+      <title><![CDATA[网站设计的最简主义]]></title>
+      <url>http://cuiqingwei1981.github.io/2016/05/12/2016-05-12-%E7%BD%91%E7%AB%99%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%9C%80%E7%AE%80%E4%B8%BB%E4%B9%89/</url>
+      <content type="html"><![CDATA[<p>之前在阮一峰的网络日志看到《网站设计的最简主义》，文中写到：</p>
 <p>昨天，我看到了一个网站 (<a href="http://www.plaintxt.org" target="_blank" rel="external"><u>http://www.plaintxt.org</u></a>)，提倡最简主义（<strong>Minimalism</strong>）的设计，这也正是我的想法。我因此感到十分惊喜。所谓”最简主义”设计，就是说网页上没有不相关的内容与装饰，美工基本就是白底黑字，尽量少用图片和复杂的排版，给人一种非常简单朴素的感觉。</p>
 <p><strong>Plaintxt.org</strong>的站长<strong>Scott</strong>说，他信奉”最简主义”设计，因为<strong>2000</strong>年下半年他去尼泊尔当志愿者。在那里，他只能用<strong>24.4K</strong>的<strong>Modem</strong>上网，这意味着一幅<strong>120K</strong>的图片，都要花将近1分钟才能看到。他在尼泊尔待了3年，再回到美国以后，彻底改变了对网站设计的看法，从此走上了宣传”最简主义”的道路。<br><a id="more"></a><br>至于我为什么喜欢”最简主义”，除了因为我喜欢简洁的东西以外，还因为我觉得将页面最简化，可以使访问者集中注意力，关注主要的内容。（顺便说一句，在读书上，我也喜欢”最简主义”的文字，就是说没有不相关的废话。）我认为，”最简主义”有利于节省访问者的时间，体现了对访问者的尊重，最终也有利于网站的成功。Google就是”最简主义”的一个典型，首页上就是只有一个长长的搜索框。</p>
 <p>另外，在Plaintxt.org的首页上，Scott还说了一句很棒的话。他说：<strong>“我不是程序员，也不是设计师，我只是碰巧有一些想法和一台电脑。”（I am not a designer nor a coder. I’m just a guy with a point-of-view and a computer.）</strong>我很喜欢这句话，它也是我的心声。</p>
 <p>赞同<em>最简主义</em>，因此，本人主页追求简洁朴素！</p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;p&gt;之前在阮一峰的网络日志看到《网站设计的最简主义》，文中写到：&lt;/p&gt;
-&lt;p&gt;昨天，我看到了一个网站 (&lt;a href=&quot;http://www.plaintxt.org&quot;&gt;&lt;u&gt;http://www.plaintxt.org&lt;/u&gt;&lt;/a&gt;)，提倡最简主义（&lt;strong&gt;Minimalism&lt;/strong&gt;）的设计，这也正是我的想法。我因此感到十分惊喜。所谓”最简主义”设计，就是说网页上没有不相关的内容与装饰，美工基本就是白底黑字，尽量少用图片和复杂的排版，给人一种非常简单朴素的感觉。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Plaintxt.org&lt;/strong&gt;的站长&lt;strong&gt;Scott&lt;/strong&gt;说，他信奉”最简主义”设计，因为&lt;strong&gt;2000&lt;/strong&gt;年下半年他去尼泊尔当志愿者。在那里，他只能用&lt;strong&gt;24.4K&lt;/strong&gt;的&lt;strong&gt;Modem&lt;/strong&gt;上网，这意味着一幅&lt;strong&gt;120K&lt;/strong&gt;的图片，都要花将近1分钟才能看到。他在尼泊尔待了3年，再回到美国以后，彻底改变了对网站设计的看法，从此走上了宣传”最简主义”的道路。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="网站设计" scheme="http://cuiqingwei1981.github.io/tags/%E7%BD%91%E7%AB%99%E8%AE%BE%E8%AE%A1/"/>
-    
-      <category term="最简主义" scheme="http://cuiqingwei1981.github.io/tags/%E6%9C%80%E7%AE%80%E4%B8%BB%E4%B9%89/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>eMaker.Space</title>
-    <link href="http://cuiqingwei1981.github.io/2016/03/08/2016-03-08-eMaker.Space/"/>
-    <id>http://cuiqingwei1981.github.io/2016/03/08/2016-03-08-eMaker.Space/</id>
-    <published>2016-03-08T13:34:00.000Z</published>
-    <updated>2016-09-15T13:00:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="wiki"><a href="#wiki" class="headerlink" title="wiki"></a>wiki</h1><p><a href="http://www.seeedstudio.com/wiki/Main_Page" target="_blank" rel="external">http://www.seeedstudio.com/wiki/Main_Page</a><br><a href="https://wiki.microduino.cc/index.php" target="_blank" rel="external">https://wiki.microduino.cc/index.php</a><br><a href="http://wiki.dfrobot.com.cn/index.php" target="_blank" rel="external">http://wiki.dfrobot.com.cn/index.php</a><br><a href="http://www.alsrobot.cn/wiki/" target="_blank" rel="external">http://www.alsrobot.cn/wiki/</a><br><a href="http://duinopeak.com/wiki/index.php" target="_blank" rel="external">http://duinopeak.com/wiki/index.php</a><br><a id="more"></a></p>
+    <entry>
+      <title><![CDATA[eMaker.Space]]></title>
+      <url>http://cuiqingwei1981.github.io/2016/03/08/2016-03-08-eMaker.Space/</url>
+      <content type="html"><![CDATA[<h1 id="wiki"><a href="#wiki" class="headerlink" title="wiki"></a>wiki</h1><p><a href="http://www.seeedstudio.com/wiki/Main_Page" target="_blank" rel="external">http://www.seeedstudio.com/wiki/Main_Page</a><br><a href="https://wiki.microduino.cc/index.php" target="_blank" rel="external">https://wiki.microduino.cc/index.php</a><br><a href="http://wiki.dfrobot.com.cn/index.php" target="_blank" rel="external">http://wiki.dfrobot.com.cn/index.php</a><br><a href="http://www.alsrobot.cn/wiki/" target="_blank" rel="external">http://www.alsrobot.cn/wiki/</a><br><a href="http://duinopeak.com/wiki/index.php" target="_blank" rel="external">http://duinopeak.com/wiki/index.php</a><br><a id="more"></a></p>
 <h1 id="Open-Source-Hardware"><a href="#Open-Source-Hardware" class="headerlink" title="Open Source Hardware"></a>Open Source Hardware</h1><p><a href="http://www.oshwa.org/open-source-hardware-logo/" target="_blank" rel="external">http://www.oshwa.org/open-source-hardware-logo/</a><br><a href="http://kb.open.eefocus.com/index.php" target="_blank" rel="external">http://kb.open.eefocus.com/index.php</a></p>
 <h1 id="Duino"><a href="#Duino" class="headerlink" title="Duino"></a>Duino</h1><p><a href="https://www.arduino.cc/" target="_blank" rel="external">https://www.arduino.cc/</a><br><a href="http://www.drduino.com/" target="_blank" rel="external">http://www.drduino.com/</a><br><a href="https://www.microduino.cn/" target="_blank" rel="external">https://www.microduino.cn/</a><br><a href="http://www.duino-robotics.com/" target="_blank" rel="external">http://www.duino-robotics.com/</a><br><a href="http://www.86duino.com/" target="_blank" rel="external">http://www.86duino.com/</a><br><a href="http://www.rfduino.com/" target="_blank" rel="external">http://www.rfduino.com/</a><br><a href="http://www.netduino.com/" target="_blank" rel="external">http://www.netduino.com/</a><br><a href="http://wtfduino.calumk.com/" target="_blank" rel="external">http://wtfduino.calumk.com/</a><br><a href="https://easyeda.com/seeedstudio/Xadow_Duino-M5d71jdvp" target="_blank" rel="external">https://easyeda.com/seeedstudio/Xadow_Duino-M5d71jdvp</a><br><a href="http://rasp.io/" target="_blank" rel="external">http://rasp.io/</a><br><a href="http://www.motoduino.com/" target="_blank" rel="external">http://www.motoduino.com/</a><br><a href="http://cubieboard.org/" target="_blank" rel="external">http://cubieboard.org/</a><br><a href="http://www.techbang.com/posts/42412-maker" target="_blank" rel="external">http://www.techbang.com/posts/42412-maker</a><br><a href="http://wiki.iteadstudio.com/Product" target="_blank" rel="external">http://wiki.iteadstudio.com/Product</a></p>
 <h1 id="Raspberry"><a href="#Raspberry" class="headerlink" title="Raspberry"></a>Raspberry</h1><p><a href="https://www.cooking-hacks.com/documentation/tutorials/raspberry-pi-to-arduino-shields-connection-bridge/" target="_blank" rel="external">https://www.cooking-hacks.com/documentation/tutorials/raspberry-pi-to-arduino-shields-connection-bridge/</a></p>
@@ -88,30 +54,12 @@
 <h1 id="想做创客？这些关于开源硬件的知识你不得不知"><a href="#想做创客？这些关于开源硬件的知识你不得不知" class="headerlink" title="想做创客？这些关于开源硬件的知识你不得不知"></a>想做创客？这些关于开源硬件的知识你不得不知</h1><p><a href="http://www.csdn.net/article/2014-06-30/2820457/2" target="_blank" rel="external">http://www.csdn.net/article/2014-06-30/2820457/2</a></p>
 <h1 id="DIY示波器"><a href="#DIY示波器" class="headerlink" title="DIY示波器"></a>DIY示波器</h1><p><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.16.HxgqLG&amp;id=43507787334&amp;ns=1&amp;abbucket=20#detail" target="_blank" rel="external">https://item.taobao.com/item.htm?spm=a230r.1.14.16.HxgqLG&amp;id=43507787334&amp;ns=1&amp;abbucket=20#detail</a><br><a href="http://www.jyetech.com/index.php" target="_blank" rel="external">http://www.jyetech.com/index.php</a></p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h1 id=&quot;wiki&quot;&gt;&lt;a href=&quot;#wiki&quot; class=&quot;headerlink&quot; title=&quot;wiki&quot;&gt;&lt;/a&gt;wiki&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://www.seeedstudio.com/wiki/Main_Page&quot;&gt;http://www.seeedstudio.com/wiki/Main_Page&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://wiki.microduino.cc/index.php&quot;&gt;https://wiki.microduino.cc/index.php&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://wiki.dfrobot.com.cn/index.php&quot;&gt;http://wiki.dfrobot.com.cn/index.php&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.alsrobot.cn/wiki/&quot;&gt;http://www.alsrobot.cn/wiki/&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://duinopeak.com/wiki/index.php&quot;&gt;http://duinopeak.com/wiki/index.php&lt;/a&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="创客" scheme="http://cuiqingwei1981.github.io/tags/%E5%88%9B%E5%AE%A2/"/>
-    
-      <category term="开源硬件" scheme="http://cuiqingwei1981.github.io/tags/%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6/"/>
-    
-      <category term="链接" scheme="http://cuiqingwei1981.github.io/tags/%E9%93%BE%E6%8E%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>创客硬件</title>
-    <link href="http://cuiqingwei1981.github.io/2015/11/18/2015-11-18-%E5%88%9B%E5%AE%A2%E7%A1%AC%E4%BB%B6/"/>
-    <id>http://cuiqingwei1981.github.io/2015/11/18/2015-11-18-创客硬件/</id>
-    <published>2015-11-17T16:26:00.000Z</published>
-    <updated>2016-09-15T13:00:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>SparkFun Electronics<br><a href="https://www.sparkfun.com/" target="_blank" rel="external">https://www.sparkfun.com/</a><br>美国Sparkfun是世界最具盛名的电子零配件供应商，主要面向产品原型开发以及项目设计。电子产品种类相当齐全多大上万种，有许多国内少见的电子产品都可以在这里觅寻到。</p>
+    <entry>
+      <title><![CDATA[创客硬件]]></title>
+      <url>http://cuiqingwei1981.github.io/2015/11/18/2015-11-18-%E5%88%9B%E5%AE%A2%E7%A1%AC%E4%BB%B6/</url>
+      <content type="html"><![CDATA[<p>SparkFun Electronics<br><a href="https://www.sparkfun.com/" target="_blank" rel="external">https://www.sparkfun.com/</a><br>美国Sparkfun是世界最具盛名的电子零配件供应商，主要面向产品原型开发以及项目设计。电子产品种类相当齐全多大上万种，有许多国内少见的电子产品都可以在这里觅寻到。</p>
 <p>Adafruit Industries, Unique &amp; fun DIY electronics and kits<br><a href="http://www.adafruit.com/" target="_blank" rel="external">http://www.adafruit.com/</a></p>
 <p>美国纽约的Adafruit是一家DIY公司，网上对此公司评价为创意无底限。该公司在智能穿戴设备、物联网上有很好的创意与发展。Adafruit的CEO是MIT工程硕士毕业的 Limor Fried，是创客浪潮里的扛旗人物，提起她的花名“Ladyada”，大概创客圈里无人不知。<br><a id="more"></a><br>哈尔滨奥松机器人<br><a href="http://www.alsrobot.cn/index.php" target="_blank" rel="external">http://www.alsrobot.cn/index.php</a></p>
 <p>dfrobot - DF创客社区-分享创造的喜悦<br><a href="http://www.dfrobot.com.cn/" target="_blank" rel="external">http://www.dfrobot.com.cn/</a></p>
@@ -133,32 +81,12 @@
 <p>3D打印笔作品<br><a href="http://www.3dyaya.com/" target="_blank" rel="external">http://www.3dyaya.com/</a></p>
 <p>创客利器——关注3D打印<br><a href="http://segmentfault.com/a/1190000000458980" target="_blank" rel="external">http://segmentfault.com/a/1190000000458980</a></p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;p&gt;SparkFun Electronics&lt;br&gt;&lt;a href=&quot;https://www.sparkfun.com/&quot;&gt;https://www.sparkfun.com/&lt;/a&gt;&lt;br&gt;美国Sparkfun是世界最具盛名的电子零配件供应商，主要面向产品原型开发以及项目设计。电子产品种类相当齐全多大上万种，有许多国内少见的电子产品都可以在这里觅寻到。&lt;/p&gt;
-&lt;p&gt;Adafruit Industries, Unique &amp;amp; fun DIY electronics and kits&lt;br&gt;&lt;a href=&quot;http://www.adafruit.com/&quot;&gt;http://www.adafruit.com/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;美国纽约的Adafruit是一家DIY公司，网上对此公司评价为创意无底限。该公司在智能穿戴设备、物联网上有很好的创意与发展。Adafruit的CEO是MIT工程硕士毕业的 Limor Fried，是创客浪潮里的扛旗人物，提起她的花名“Ladyada”，大概创客圈里无人不知。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="创客" scheme="http://cuiqingwei1981.github.io/tags/%E5%88%9B%E5%AE%A2/"/>
-    
-      <category term="开源硬件" scheme="http://cuiqingwei1981.github.io/tags/%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6/"/>
-    
-      <category term="链接" scheme="http://cuiqingwei1981.github.io/tags/%E9%93%BE%E6%8E%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>折叠公路车</title>
-    <link href="http://cuiqingwei1981.github.io/2015/10/03/2015-10-03-%E6%8A%98%E5%8F%A0%E5%85%AC%E8%B7%AF%E8%BD%A6/"/>
-    <id>http://cuiqingwei1981.github.io/2015/10/03/2015-10-03-折叠公路车/</id>
-    <published>2015-10-03T00:57:00.000Z</published>
-    <updated>2016-09-15T12:35:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="Ori-Surpaz-CR-1-0"><a href="#Ori-Surpaz-CR-1-0" class="headerlink" title="Ori Surpaz CR 1.0"></a>Ori Surpaz CR 1.0</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=386" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=386</a></p>
+    <entry>
+      <title><![CDATA[折叠公路车]]></title>
+      <url>http://cuiqingwei1981.github.io/2015/10/03/2015-10-03-%E6%8A%98%E5%8F%A0%E5%85%AC%E8%B7%AF%E8%BD%A6/</url>
+      <content type="html"><![CDATA[<h4 id="Ori-Surpaz-CR-1-0"><a href="#Ori-Surpaz-CR-1-0" class="headerlink" title="Ori Surpaz CR 1.0"></a>Ori Surpaz CR 1.0</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=386" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=386</a></p>
 <p><img src="http://15km.hk/bike/images/bikeimage/bike_id_386_0.jpg" alt="1"><br><a id="more"></a><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_386_2.jpg" alt="2"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_386_3.jpg" alt="3"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_386_1.jpg" alt="4"></p>
 <h4 id="Airnimal-Joey-Explore-Drop"><a href="#Airnimal-Joey-Explore-Drop" class="headerlink" title="Airnimal Joey - Explore Drop"></a>Airnimal Joey - Explore Drop</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=46" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=46</a></p>
 <p><img src="http://15km.hk/bike/images/bikeimage/bike_id_46_0.jpg" alt="1"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_46_1.jpg" alt="2"></p>
@@ -211,27 +139,12 @@
 <h4 id="Tern-VERGE-X30h"><a href="#Tern-VERGE-X30h" class="headerlink" title="Tern VERGE X30h"></a>Tern VERGE X30h</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=87" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=87</a></p>
 <p><img src="http://15km.hk/bike/images/bikeimage/bike_id_87_0.jpg" alt="1"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_87_1.jpg" alt="2"></p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h4 id=&quot;Ori-Surpaz-CR-1-0&quot;&gt;&lt;a href=&quot;#Ori-Surpaz-CR-1-0&quot; class=&quot;headerlink&quot; title=&quot;Ori Surpaz CR 1.0&quot;&gt;&lt;/a&gt;Ori Surpaz CR 1.0&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;http://15km.hk/index.php?comCat=bikedetails&amp;amp;bikeId=386&quot;&gt;http://15km.hk/index.php?comCat=bikedetails&amp;amp;bikeId=386&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://15km.hk/bike/images/bikeimage/bike_id_386_0.jpg&quot; alt=&quot;1&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="favorites" scheme="http://cuiqingwei1981.github.io/categories/favorites/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu</title>
-    <link href="http://cuiqingwei1981.github.io/2015/01/13/2015-01-13-Ubuntu/"/>
-    <id>http://cuiqingwei1981.github.io/2015/01/13/2015-01-13-Ubuntu/</id>
-    <published>2015-01-13T13:28:00.000Z</published>
-    <updated>2016-09-15T12:29:25.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1-常用指令"><a href="#1-常用指令" class="headerlink" title="1.常用指令"></a>1.常用指令</h3><pre><code>版本查看：
+    <entry>
+      <title><![CDATA[Ubuntu]]></title>
+      <url>http://cuiqingwei1981.github.io/2015/01/13/2015-01-13-Ubuntu/</url>
+      <content type="html"><![CDATA[<h3 id="1-常用指令"><a href="#1-常用指令" class="headerlink" title="1.常用指令"></a>1.常用指令</h3><pre><code>版本查看：
       cat /etc/issue
       sudo lsb_release -a
 </code></pre><a id="more"></a>
@@ -281,29 +194,12 @@ hosts
 </code></pre><p><strong>Cannot Set LC_ALL to default locale: No such file or directory</strong><br><a href="http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/" target="_blank" rel="external">http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/</a></p>
 <p>sEx只是调用相关程序，本身并无压缩、解压功能，请注意！<br>sEx请到： <a href="http://sourceforge.net/projects/sex下载！" target="_blank" rel="external">http://sourceforge.net/projects/sex下载！</a><br>解压后请将sEx拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br>[root@www2 tmp]# cp sEx /usr/bin/</p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h3 id=&quot;1-常用指令&quot;&gt;&lt;a href=&quot;#1-常用指令&quot; class=&quot;headerlink&quot; title=&quot;1.常用指令&quot;&gt;&lt;/a&gt;1.常用指令&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;版本查看：
-      cat /etc/issue
-      sudo lsb_release -a
-&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-      <category term="favorites" scheme="http://cuiqingwei1981.github.io/categories/favorites/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>MacOS</title>
-    <link href="http://cuiqingwei1981.github.io/2015/01/13/2015-01-13-MacOS/"/>
-    <id>http://cuiqingwei1981.github.io/2015/01/13/2015-01-13-MacOS/</id>
-    <published>2015-01-13T13:28:00.000Z</published>
-    <updated>2016-09-15T13:02:26.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
+    <entry>
+      <title><![CDATA[MacOS]]></title>
+      <url>http://cuiqingwei1981.github.io/2015/01/13/2015-01-13-MacOS/</url>
+      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
 <h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p>工作：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br>系统：QQ、CleanMyDrive 3<br><a id="more"></a></p>
 <h3 id="2-dmg"><a href="#2-dmg" class="headerlink" title="2. dmg"></a>2. dmg</h3><p>Chrome、VMwareFusion、RDC、QQInput、RTX、cornerstone<br>Sublime Text</p>
 <h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><p>ruby -e “$(curl -fsSL <a href="https://raw.github.com/Homebrew/homebrew/go/install" target="_blank" rel="external">https://raw.github.com/Homebrew/homebrew/go/install</a>)”<br><a href="http://brew.sh/" target="_blank" rel="external">http://brew.sh/</a></p>
@@ -319,29 +215,12 @@ hosts
 </ul>
 <h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="external">https://checkcoverage.apple.com/cn/zh/</a></p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Mac入门&quot;&gt;&lt;a href=&quot;#Mac入门&quot; class=&quot;headerlink&quot; title=&quot;Mac入门&quot;&gt;&lt;/a&gt;Mac入门&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html&quot;&gt;http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;1-AppStore&quot;&gt;&lt;a href=&quot;#1-AppStore&quot; class=&quot;headerlink&quot; title=&quot;1. AppStore&quot;&gt;&lt;/a&gt;1. AppStore&lt;/h3&gt;&lt;p&gt;工作：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)&lt;br&gt;系统：QQ、CleanMyDrive 3&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="MacOS" scheme="http://cuiqingwei1981.github.io/tags/MacOS/"/>
-    
-      <category term="总结" scheme="http://cuiqingwei1981.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Marketplace Client</title>
-    <link href="http://cuiqingwei1981.github.io/2013/07/05/2013-07-05-Marketplace%20Client/"/>
-    <id>http://cuiqingwei1981.github.io/2013/07/05/2013-07-05-Marketplace Client/</id>
-    <published>2013-07-05T08:54:27.000Z</published>
-    <updated>2016-09-14T18:16:15.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Eclipse Marketplace是个插件应用商店，很实用的一个功能。</p>
+    <entry>
+      <title><![CDATA[Marketplace Client]]></title>
+      <url>http://cuiqingwei1981.github.io/2013/07/05/2013-07-05-Marketplace%20Client/</url>
+      <content type="html"><![CDATA[<p>Eclipse Marketplace是个插件应用商店，很实用的一个功能。</p>
 <p>打开 eclipse，help–Eclipse Marketplace Client就能找到</p>
 <p>有的eclipse中没有这个功能就需手动添加Eclipse Marketplace Client。</p>
 <p>help–install new software–add</p>
@@ -350,28 +229,12 @@ hosts
 </code></pre><p>添加完成后，work with 选择Eclipse Marketplace Client</p>
 <p>就可以下载了。下载完成后，重启eclipse，help–Eclipse Marketplace Client</p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;p&gt;Eclipse Marketplace是个插件应用商店，很实用的一个功能。&lt;/p&gt;
-&lt;p&gt;打开 eclipse，help–Eclipse Marketplace Client就能找到&lt;/p&gt;
-&lt;p&gt;有的eclipse中没有这个功能就需手动添加Eclipse Marketpl
-    
-    </summary>
-    
-      <category term="favorites" scheme="http://cuiqingwei1981.github.io/categories/favorites/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>曾经折腾过的那些</title>
-    <link href="http://cuiqingwei1981.github.io/2012/10/14/2012-10-14-%E6%9B%BE%E7%BB%8F%E6%8A%98%E8%85%BE%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B/"/>
-    <id>http://cuiqingwei1981.github.io/2012/10/14/2012-10-14-曾经折腾过的那些/</id>
-    <published>2012-10-14T13:41:27.000Z</published>
-    <updated>2016-09-15T12:58:19.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>整理硬盘资料时，看到这些图片。心情很激动，这些个都是与硬件相关的，什么MP3啊等等，可惜没有保留图片,纯软件的就更多了。才发现自己2009年到现在这几年一直忙着搞公司的事。已好久没停下来做点自己真正喜欢或是让自己心动的事了！</p>
+    <entry>
+      <title><![CDATA[曾经折腾过的那些]]></title>
+      <url>http://cuiqingwei1981.github.io/2012/10/14/2012-10-14-%E6%9B%BE%E7%BB%8F%E6%8A%98%E8%85%BE%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B/</url>
+      <content type="html"><![CDATA[<p>整理硬盘资料时，看到这些图片。心情很激动，这些个都是与硬件相关的，什么MP3啊等等，可惜没有保留图片,纯软件的就更多了。才发现自己2009年到现在这几年一直忙着搞公司的事。已好久没停下来做点自己真正喜欢或是让自己心动的事了！</p>
 <ul>
 <li>2002年.闪动的LOVE<br><img src="/img/20121014/1.jpeg" alt="2002年.闪动的LOVE"><br><em>大学期间参加大学电子设计大赛，利用当时所学知识和课余时间制作，用来哄现在的老婆（当时的女朋友）开心的小东西。</em><a id="more"></a></li>
 <li><p>2003年.有源音箱<br><img src="/img/20121014/2.jpeg" alt="2003年.有源音箱(1)"><br><img src="/img/20121014/3.jpeg" alt="2003年.有源音箱(2)"><br><img src="/img/20121014/4.jpeg" alt="2003年.有源音箱(3)"><br><img src="/img/20121014/5.jpeg" alt="2003年.有源音箱(4)"><br><em>大学快毕业时自己制作的有源音箱，电路板用的是公板，音箱箱体还是几个同学跑到学校外面自己买得大木板，最后找木工切割的。喷漆也是自己处理的。想想还是挺激动人心的。现在这东西已被我运回老家，音质我一直觉得非常好，不比当时流行的几百块的“低音炮”差。</em></p>
@@ -437,28 +300,12 @@ hosts
 <p><em>发表链接</em></p>
 <p>QQZone <a href="http://user.qzone.qq.com/39886157/blog/1350188306" target="_blank" rel="external">http://user.qzone.qq.com/39886157/blog/1350188306</a></p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;p&gt;整理硬盘资料时，看到这些图片。心情很激动，这些个都是与硬件相关的，什么MP3啊等等，可惜没有保留图片,纯软件的就更多了。才发现自己2009年到现在这几年一直忙着搞公司的事。已好久没停下来做点自己真正喜欢或是让自己心动的事了！&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;2002年.闪动的LOVE&lt;br&gt;&lt;img src=&quot;/img/20121014/1.jpeg&quot; alt=&quot;2002年.闪动的LOVE&quot;&gt;&lt;br&gt;&lt;em&gt;大学期间参加大学电子设计大赛，利用当时所学知识和课余时间制作，用来哄现在的老婆（当时的女朋友）开心的小东西。&lt;/em&gt;
-    
-    </summary>
-    
-      <category term="favorites" scheme="http://cuiqingwei1981.github.io/categories/favorites/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Tcp&amp;Telnet&amp;Socket调试工具</title>
-    <link href="http://cuiqingwei1981.github.io/2010/07/23/2010-07-23-Tcp&amp;Telnet&amp;Socket%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/"/>
-    <id>http://cuiqingwei1981.github.io/2010/07/23/2010-07-23-Tcp&amp;Telnet&amp;Socket调试工具/</id>
-    <published>2010-07-23T09:04:45.000Z</published>
-    <updated>2016-09-15T12:32:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最近在研究 TI Cortex-M3 LM3S8962 调试TCP时，找了一些TCP&amp;UDP调试工具，用起来不怎么习惯。随后自己写了一个调试工具，现与君共享！代码全部公布，喜爱者共同学习完善之！</p>
+    <entry>
+      <title><![CDATA[Tcp&Telnet&Socket调试工具]]></title>
+      <url>http://cuiqingwei1981.github.io/2010/07/23/2010-07-23-Tcp&Telnet&Socket%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</url>
+      <content type="html"><![CDATA[<p>最近在研究 TI Cortex-M3 LM3S8962 调试TCP时，找了一些TCP&amp;UDP调试工具，用起来不怎么习惯。随后自己写了一个调试工具，现与君共享！代码全部公布，喜爱者共同学习完善之！</p>
 <p>该 Tcp &amp; Telnet 调试工具，主要用于 TCP、Telnet 调试，它具有以下特点：</p>
 <p>① 不同的色彩，突出显示RX和TX信息内容;<br>② 支持字符串或十六进制发送、显示;<br>③ 自定义按钮组可定义经常使用的命令;<br>④ 一键点击导出/打印通讯日志。<br><a id="more"></a></p>
 <h1 id="1、使用说明"><a href="#1、使用说明" class="headerlink" title="1、使用说明"></a>1、使用说明</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_31/ourdev_570278.png" alt="效果图"></p>
@@ -471,59 +318,22 @@ hosts
 <p><em>发表链接</em></p>
 <p>amoBBS 阿莫电子论坛 <a href="http://www.amobbs.com/thread-4168322-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-4168322-1-1.html</a></p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;p&gt;最近在研究 TI Cortex-M3 LM3S8962 调试TCP时，找了一些TCP&amp;amp;UDP调试工具，用起来不怎么习惯。随后自己写了一个调试工具，现与君共享！代码全部公布，喜爱者共同学习完善之！&lt;/p&gt;
-&lt;p&gt;该 Tcp &amp;amp; Telnet 调试工具，主要用于 TCP、Telnet 调试，它具有以下特点：&lt;/p&gt;
-&lt;p&gt;① 不同的色彩，突出显示RX和TX信息内容;&lt;br&gt;② 支持字符串或十六进制发送、显示;&lt;br&gt;③ 自定义按钮组可定义经常使用的命令;&lt;br&gt;④ 一键点击导出/打印通讯日志。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="projects" scheme="http://cuiqingwei1981.github.io/categories/projects/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>在TI-CC1111&amp;CC25111上搞定USBHID</title>
-    <link href="http://cuiqingwei1981.github.io/2009/03/13/2009-03-13-%E5%9C%A8TI-CC1111&amp;CC25111%E4%B8%8A%E6%90%9E%E5%AE%9AUSBHID/"/>
-    <id>http://cuiqingwei1981.github.io/2009/03/13/2009-03-13-在TI-CC1111&amp;CC25111上搞定USBHID/</id>
-    <published>2009-03-12T16:42:08.000Z</published>
-    <updated>2016-09-15T13:04:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://cache.amobbs.com/bbs_upload782111/files_13/ourdev_425633.png" alt="效果图"></p>
+    <entry>
+      <title><![CDATA[在TI-CC1111&CC25111上搞定USBHID]]></title>
+      <url>http://cuiqingwei1981.github.io/2009/03/13/2009-03-13-%E5%9C%A8TI-CC1111&CC25111%E4%B8%8A%E6%90%9E%E5%AE%9AUSBHID/</url>
+      <content type="html"><![CDATA[<p><img src="http://cache.amobbs.com/bbs_upload782111/files_13/ourdev_425633.png" alt="效果图"></p>
 <hr>
 <p><em>发表链接</em></p>
 <p>amoBBS 阿莫电子论坛 <a href="http://www.amobbs.com/thread-3240297-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-3240297-1-1.html</a></p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_13/ourdev_425633.png&quot; alt=&quot;效果图&quot;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;em&gt;发表链接&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;amoBBS 阿莫电子论坛 
-    
-    </summary>
-    
-    
-      <category term="CC1111" scheme="http://cuiqingwei1981.github.io/tags/CC1111/"/>
-    
-      <category term="CC2511" scheme="http://cuiqingwei1981.github.io/tags/CC2511/"/>
-    
-      <category term="USBHID" scheme="http://cuiqingwei1981.github.io/tags/USBHID/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Rf_Calc</title>
-    <link href="http://cuiqingwei1981.github.io/2008/07/09/2008-07-09-Rf_Calc/"/>
-    <id>http://cuiqingwei1981.github.io/2008/07/09/2008-07-09-Rf_Calc/</id>
-    <published>2008-07-09T04:42:45.000Z</published>
-    <updated>2016-09-15T13:04:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>昨晚搞了个小工具，方便大家计算！不用动笔了！欢迎使用，有bug请斧正，谢谢！<br>Rf Calc 包含功能：<br>               ① mW换算为dBm；<br>               ② dBm换算为mW；<br>               ③ 空间损耗计算；<br>               ④ 链路裕量；<br>               ⑤ 传输距离计算。</p>
+    <entry>
+      <title><![CDATA[Rf_Calc]]></title>
+      <url>http://cuiqingwei1981.github.io/2008/07/09/2008-07-09-Rf_Calc/</url>
+      <content type="html"><![CDATA[<p>昨晚搞了个小工具，方便大家计算！不用动笔了！欢迎使用，有bug请斧正，谢谢！<br>Rf Calc 包含功能：<br>               ① mW换算为dBm；<br>               ② dBm换算为mW；<br>               ③ 空间损耗计算；<br>               ④ 链路裕量；<br>               ⑤ 传输距离计算。</p>
 <h1 id="软件界面如下："><a href="#软件界面如下：" class="headerlink" title="软件界面如下："></a>软件界面如下：</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_343345.jpg" alt="效果图"><br><a id="more"></a><br><img src="http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_343346.jpg" alt="效果图"></p>
 <ul>
 <li><a href="http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_343348.rar" target="_blank" rel="external">Rf_Calc.rar(文件大小:553K)</a></li>
@@ -532,29 +342,12 @@ hosts
 <p><em>发表链接</em></p>
 <p>amoBBS 阿莫电子论坛 <a href="http://www.amobbs.com/thread-1320348-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-1320348-1-1.html</a></p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;p&gt;昨晚搞了个小工具，方便大家计算！不用动笔了！欢迎使用，有bug请斧正，谢谢！&lt;br&gt;Rf Calc 包含功能：&lt;br&gt;               ① mW换算为dBm；&lt;br&gt;               ② dBm换算为mW；&lt;br&gt;               ③ 空间损耗计算；&lt;br&gt;               ④ 链路裕量；&lt;br&gt;               ⑤ 传输距离计算。&lt;/p&gt;
-&lt;h1 id=&quot;软件界面如下：&quot;&gt;&lt;a href=&quot;#软件界面如下：&quot; class=&quot;headerlink&quot; title=&quot;软件界面如下：&quot;&gt;&lt;/a&gt;软件界面如下：&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_343345.jpg&quot; alt=&quot;效果图&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="通信距离" scheme="http://cuiqingwei1981.github.io/tags/%E9%80%9A%E4%BF%A1%E8%B7%9D%E7%A6%BB/"/>
-    
-      <category term="计算工具" scheme="http://cuiqingwei1981.github.io/tags/%E8%AE%A1%E7%AE%97%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Proteus产品仿真</title>
-    <link href="http://cuiqingwei1981.github.io/2008/05/11/2008-05-11-Proteus%E4%BA%A7%E5%93%81%E4%BB%BF%E7%9C%9F/"/>
-    <id>http://cuiqingwei1981.github.io/2008/05/11/2008-05-11-Proteus产品仿真/</id>
-    <published>2008-05-11T02:20:19.000Z</published>
-    <updated>2016-09-15T13:05:36.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>现将2006在一家公司做的一个产品的仿真部分所有源码资料公布，供大家学习和参考！包括参菜单管理算法。菜单翻页可像手机菜单一下，可滚动翻页，并有进度条指示。另还有TWI读写PCF8563的程序。不多说大家看看就知道。以前只公布过proteus和hex，反映还可以。今天是源码也公布，希望对大家有帮助。传播请注明作者及出处，谢谢！</p>
+    <entry>
+      <title><![CDATA[Proteus产品仿真]]></title>
+      <url>http://cuiqingwei1981.github.io/2008/05/11/2008-05-11-Proteus%E4%BA%A7%E5%93%81%E4%BB%BF%E7%9C%9F/</url>
+      <content type="html"><![CDATA[<p>现将2006在一家公司做的一个产品的仿真部分所有源码资料公布，供大家学习和参考！包括参菜单管理算法。菜单翻页可像手机菜单一下，可滚动翻页，并有进度条指示。另还有TWI读写PCF8563的程序。不多说大家看看就知道。以前只公布过proteus和hex，反映还可以。今天是源码也公布，希望对大家有帮助。传播请注明作者及出处，谢谢！</p>
 <h1 id="图示效果一"><a href="#图示效果一" class="headerlink" title="图示效果一"></a>图示效果一</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_274222.png" alt="效果图"><br><a id="more"></a></p>
 <h1 id="图示效果二"><a href="#图示效果二" class="headerlink" title="图示效果二"></a>图示效果二</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_274223.png" alt="效果图"></p>
 <h1 id="使用手册截图"><a href="#使用手册截图" class="headerlink" title="使用手册截图"></a>使用手册截图</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_274224.PNG" alt="手册图"></p>
@@ -567,57 +360,24 @@ hosts
 <p><em>发表链接</em></p>
 <p>amoBBS 阿莫电子论坛 <a href="http://www.amobbs.com/thread-1054447-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-1054447-1-1.html</a></p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;p&gt;现将2006在一家公司做的一个产品的仿真部分所有源码资料公布，供大家学习和参考！包括参菜单管理算法。菜单翻页可像手机菜单一下，可滚动翻页，并有进度条指示。另还有TWI读写PCF8563的程序。不多说大家看看就知道。以前只公布过proteus和hex，反映还可以。今天是源码也公布，希望对大家有帮助。传播请注明作者及出处，谢谢！&lt;/p&gt;
-&lt;h1 id=&quot;图示效果一&quot;&gt;&lt;a href=&quot;#图示效果一&quot; class=&quot;headerlink&quot; title=&quot;图示效果一&quot;&gt;&lt;/a&gt;图示效果一&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_274222.png&quot; alt=&quot;效果图&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Proteus" scheme="http://cuiqingwei1981.github.io/tags/Proteus/"/>
-    
-      <category term="产品仿真" scheme="http://cuiqingwei1981.github.io/tags/%E4%BA%A7%E5%93%81%E4%BB%BF%E7%9C%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>EAGLE3D终于搞定了!</title>
-    <link href="http://cuiqingwei1981.github.io/2007/11/19/2007-11-19-EAGLE3D%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9A%E4%BA%86%EF%BC%81/"/>
-    <id>http://cuiqingwei1981.github.io/2007/11/19/2007-11-19-EAGLE3D终于搞定了！/</id>
-    <published>2007-11-19T12:07:41.000Z</published>
-    <updated>2016-09-15T13:06:08.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="3D效果"><a href="#3D效果" class="headerlink" title="3D效果"></a>3D效果</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_182056.png" alt="3d"><br><a id="more"></a></p>
+    <entry>
+      <title><![CDATA[EAGLE3D终于搞定了!]]></title>
+      <url>http://cuiqingwei1981.github.io/2007/11/19/2007-11-19-EAGLE3D%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9A%E4%BA%86%EF%BC%81/</url>
+      <content type="html"><![CDATA[<h1 id="3D效果"><a href="#3D效果" class="headerlink" title="3D效果"></a>3D效果</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_182056.png" alt="3d"><br><a id="more"></a></p>
 <h1 id="实物"><a href="#实物" class="headerlink" title="实物"></a>实物</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_185116.JPG" alt="实物"></p>
 <h1 id="再传一下，我实验阶段的手工作品，看起来还是洗板的效果好啊，呵呵。"><a href="#再传一下，我实验阶段的手工作品，看起来还是洗板的效果好啊，呵呵。" class="headerlink" title="再传一下，我实验阶段的手工作品，看起来还是洗板的效果好啊，呵呵。"></a>再传一下，我实验阶段的手工作品，看起来还是洗板的效果好啊，呵呵。</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_185117.JPG" alt="手工"></p>
 <hr>
 <p><em>发表链接</em></p>
 <p>amoBBS 阿莫电子论坛 <a href="http://www.amobbs.com/thread-854275-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-854275-1-1.html</a></p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h1 id=&quot;3D效果&quot;&gt;&lt;a href=&quot;#3D效果&quot; class=&quot;headerlink&quot; title=&quot;3D效果&quot;&gt;&lt;/a&gt;3D效果&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_182056.png&quot; alt=&quot;3d&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Eagle" scheme="http://cuiqingwei1981.github.io/tags/Eagle/"/>
-    
-      <category term="Eagle 3D" scheme="http://cuiqingwei1981.github.io/tags/Eagle-3D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CC2430模块自测程序</title>
-    <link href="http://cuiqingwei1981.github.io/2007/10/12/2007-10-12-CC2430%E6%A8%A1%E5%9D%97%E8%87%AA%E6%B5%8B%E7%A8%8B%E5%BA%8F/"/>
-    <id>http://cuiqingwei1981.github.io/2007/10/12/2007-10-12-CC2430模块自测程序/</id>
-    <published>2007-10-12T05:22:02.000Z</published>
-    <updated>2016-09-15T13:06:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>ModuleTest V1.0 Written: 崔庆伟 [gary]<br>可以用指令控制选择信道，设置发射功率，发送数据包（长度可选），接收数据包（接收时延可设），CC2430复位，MCU温度读取等。底层函数基本做好，如果要加入新功能，可自行更改。</p>
+    <entry>
+      <title><![CDATA[CC2430模块自测程序]]></title>
+      <url>http://cuiqingwei1981.github.io/2007/10/12/2007-10-12-CC2430%E6%A8%A1%E5%9D%97%E8%87%AA%E6%B5%8B%E7%A8%8B%E5%BA%8F/</url>
+      <content type="html"><![CDATA[<p>ModuleTest V1.0 Written: 崔庆伟 [gary]<br>可以用指令控制选择信道，设置发射功率，发送数据包（长度可选），接收数据包（接收时延可设），CC2430复位，MCU温度读取等。底层函数基本做好，如果要加入新功能，可自行更改。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line">文件目录</div><div class="line">│  MT.eww</div><div class="line">│  Serial.ht</div><div class="line">│</div><div class="line">├─app</div><div class="line">│      includes.h</div><div class="line">│      ver.h</div><div class="line">│      mt.h</div><div class="line">│      mt.c</div><div class="line">│      MT.lib</div><div class="line">│</div><div class="line">├─hal</div><div class="line">│      hal.h</div><div class="line">│      rfConfig.h</div><div class="line">│      rfPacket.h</div><div class="line">│      wait.h</div><div class="line">│      timerSet.h</div><div class="line">│      uart.h</div><div class="line">│      tSensor.h</div><div class="line">│</div><div class="line">├─proj</div><div class="line">│  │  MT.ewd</div><div class="line">│  │  MT.ewp</div><div class="line">│  │  MT.IMB</div><div class="line">│  │  MT.IMD</div><div class="line">│  │  MT.IAB</div><div class="line">│  │  MT.IAD</div><div class="line">│  │  MT.PR</div><div class="line">│  │  MT.PS</div><div class="line">│  │  MT.PFI</div><div class="line">│  │  MT.PO</div><div class="line">│  │  MT.dep</div><div class="line">│  │  MT.SearchResults</div><div class="line">│  │  MT.WK3</div><div class="line">│  │  MT.PRI</div><div class="line">│  │</div><div class="line">│  ├─settings</div><div class="line">│  │      MT.dni</div><div class="line">│  │      MT.dbgdt</div><div class="line">│  │</div><div class="line">│  └─Debug</div><div class="line">│      ├─Exe</div><div class="line">│      │      MT.d51</div><div class="line">│      │</div><div class="line">│      ├─Obj</div><div class="line">│      │      uart.r51</div><div class="line">│      │      hal_uart.r51</div><div class="line">│      │      wait.r51</div><div class="line">│      │      rfConfig.r51</div><div class="line">│      │      rfPacket.r51</div><div class="line">│      │      timerSet.r51</div><div class="line">│      │      lcd.pbi</div><div class="line">│      │      lcd.r51</div><div class="line">│      │      rfPacketTransceiver.pbi</div><div class="line">│      │      MT.pbd</div><div class="line">│      │      mt.pbi</div><div class="line">│      │      mt.r51</div><div class="line">│      │</div><div class="line">│      └─List</div><div class="line">│              MT.map</div><div class="line">│</div><div class="line">└─settings</div><div class="line">        MT.wsdt</div></pre></td></tr></table></figure>
 <ul>
 <li><a href="http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_176232.rar" target="_blank" rel="external">MT.rar(文件大小:143K)</a><a id="more"></a>
@@ -627,88 +387,35 @@ hosts
 <p><em>发表链接</em></p>
 <p>amoBBS 阿莫电子论坛 <a href="http://www.amobbs.com/forum.php?mod=viewthread&amp;tid=831670" target="_blank" rel="external">http://www.amobbs.com/forum.php?mod=viewthread&amp;tid=831670</a></p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;p&gt;ModuleTest V1.0 Written: 崔庆伟 [gary]&lt;br&gt;可以用指令控制选择信道，设置发射功率，发送数据包（长度可选），接收数据包（接收时延可设），CC2430复位，MCU温度读取等。底层函数基本做好，如果要加入新功能，可自行更改。&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;36&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;37&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;39&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;40&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;41&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;42&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;43&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;44&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;45&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;46&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;47&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;48&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;49&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;50&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;51&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;52&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;53&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;54&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;55&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;56&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;57&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;58&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;59&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;60&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;61&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;62&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;63&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;文件目录&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  MT.eww&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  Serial.ht&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;├─app&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      includes.h&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      ver.h&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      mt.h&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      mt.c&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      MT.lib&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;├─hal&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      hal.h&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      rfConfig.h&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      rfPacket.h&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      wait.h&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      timerSet.h&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      uart.h&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      tSensor.h&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;├─proj&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  │  MT.ewd&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  │  MT.ewp&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  │  MT.IMB&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  │  MT.IMD&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  │  MT.IAB&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  │  MT.IAD&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  │  MT.PR&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  │  MT.PS&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  │  MT.PFI&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  │  MT.PO&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  │  MT.dep&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  │  MT.SearchResults&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  │  MT.WK3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  │  MT.PRI&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  │&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  ├─settings&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  │      MT.dni&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  │      MT.dbgdt&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  │&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│  └─Debug&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      ├─Exe&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      │      MT.d51&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      │&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      ├─Obj&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      │      uart.r51&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      │      hal_uart.r51&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      │      wait.r51&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      │      rfConfig.r51&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      │      rfPacket.r51&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      │      timerSet.r51&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      │      lcd.pbi&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      │      lcd.r51&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      │      rfPacketTransceiver.pbi&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      │      MT.pbd&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      │      mt.pbi&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      │      mt.r51&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      │&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│      └─List&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│              MT.map&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;└─settings&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        MT.wsdt&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_176232.rar&quot;&gt;MT.rar(文件大小:143K)&lt;/a&gt;
-    
-    </summary>
-    
-    
-      <category term="CC2430" scheme="http://cuiqingwei1981.github.io/tags/CC2430/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于Cport的多功能串口调试工具</title>
-    <link href="http://cuiqingwei1981.github.io/2006/12/25/2006-12-25-%E5%9F%BA%E4%BA%8ECport%E7%9A%84%E5%A4%9A%E5%8A%9F%E8%83%BD%E4%B8%B2%E5%8F%A3%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/"/>
-    <id>http://cuiqingwei1981.github.io/2006/12/25/2006-12-25-基于Cport的多功能串口调试工具/</id>
-    <published>2006-12-25T00:45:37.000Z</published>
-    <updated>2016-09-15T13:06:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="简约版："><a href="#简约版：" class="headerlink" title="简约版："></a>简约版：</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_6/armok01138997.jpg" alt="效果图"><br><img src="http://cache.amobbs.com/bbs_upload782111/files_6/armok01138998.jpg" alt="效果图"><br><a id="more"></a></p>
+    <entry>
+      <title><![CDATA[基于Cport的多功能串口调试工具]]></title>
+      <url>http://cuiqingwei1981.github.io/2006/12/25/2006-12-25-%E5%9F%BA%E4%BA%8ECport%E7%9A%84%E5%A4%9A%E5%8A%9F%E8%83%BD%E4%B8%B2%E5%8F%A3%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</url>
+      <content type="html"><![CDATA[<h1 id="简约版："><a href="#简约版：" class="headerlink" title="简约版："></a>简约版：</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_6/armok01138997.jpg" alt="效果图"><br><img src="http://cache.amobbs.com/bbs_upload782111/files_6/armok01138998.jpg" alt="效果图"><br><a id="more"></a></p>
 <h1 id="多功能版："><a href="#多功能版：" class="headerlink" title="多功能版："></a>多功能版：</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_6/armok01138999.jpg" alt="效果图"><br><img src="http://cache.amobbs.com/bbs_upload782111/files_6/armok01139000.jpg" alt="效果图"></p>
 <hr>
 <p><em>发表链接</em></p>
 <p>amoBBS 阿莫电子论坛 <a href="http://www.amobbs.com/thread-703431-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-703431-1-1.html</a></p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h1 id=&quot;简约版：&quot;&gt;&lt;a href=&quot;#简约版：&quot; class=&quot;headerlink&quot; title=&quot;简约版：&quot;&gt;&lt;/a&gt;简约版：&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_6/armok01138997.jpg&quot; alt=&quot;效果图&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_6/armok01138998.jpg&quot; alt=&quot;效果图&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Delphi" scheme="http://cuiqingwei1981.github.io/tags/Delphi/"/>
-    
-      <category term="Cport" scheme="http://cuiqingwei1981.github.io/tags/Cport/"/>
-    
-      <category term="串口调试工具" scheme="http://cuiqingwei1981.github.io/tags/%E4%B8%B2%E5%8F%A3%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AT91SAM7S64的定时器初始化计算器</title>
-    <link href="http://cuiqingwei1981.github.io/2006/12/06/2006-12-06-AT91SAM7S64%E7%9A%84%E5%AE%9A%E6%97%B6%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E8%AE%A1%E7%AE%97%E5%B7%A5%E5%99%A8/"/>
-    <id>http://cuiqingwei1981.github.io/2006/12/06/2006-12-06-AT91SAM7S64的定时器初始化计算工器/</id>
-    <published>2006-12-06T07:25:34.000Z</published>
-    <updated>2016-09-15T13:07:23.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>AT91SAM7S系列ARM初始化计算工具</p>
+    <entry>
+      <title><![CDATA[AT91SAM7S64的定时器初始化计算器]]></title>
+      <url>http://cuiqingwei1981.github.io/2006/12/06/2006-12-06-AT91SAM7S64%E7%9A%84%E5%AE%9A%E6%97%B6%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E8%AE%A1%E7%AE%97%E5%B7%A5%E5%99%A8/</url>
+      <content type="html"><![CDATA[<p>AT91SAM7S系列ARM初始化计算工具</p>
 <p>此软件将会不断加入新的功能，请多支持，如发现bug,请回贴指正，谢谢</p>
 <h1 id="软件界面如下："><a href="#软件界面如下：" class="headerlink" title="软件界面如下："></a>软件界面如下：</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_6/armok01137511.jpg" alt="效果图"><br><a id="more"></a><br><img src="http://cache.amobbs.com/bbs_upload782111/files_6/armok01137512.jpg" alt="效果图"></p>
 <hr>
 <p><em>发表链接</em></p>
 <p>amoBBS 阿莫电子论坛 <a href="http://www.amobbs.com/thread-697466-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-697466-1-1.html</a></p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;p&gt;AT91SAM7S系列ARM初始化计算工具&lt;/p&gt;
-&lt;p&gt;此软件将会不断加入新的功能，请多支持，如发现bug,请回贴指正，谢谢&lt;/p&gt;
-&lt;h1 id=&quot;软件界面如下：&quot;&gt;&lt;a href=&quot;#软件界面如下：&quot; class=&quot;headerlink&quot; title=&quot;软件界面如下：&quot;&gt;&lt;/a&gt;软件界面如下：&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_6/armok01137511.jpg&quot; alt=&quot;效果图&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="C++Builder6.0" scheme="http://cuiqingwei1981.github.io/tags/C-Builder6-0/"/>
-    
-      <category term="AT91SAM7S64" scheme="http://cuiqingwei1981.github.io/tags/AT91SAM7S64/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>闪动的“LOVE”</title>
-    <link href="http://cuiqingwei1981.github.io/2006/10/31/2006-10-31-%E9%97%AA%E5%8A%A8%E7%9A%84%E2%80%9CLOVE%E2%80%9D/"/>
-    <id>http://cuiqingwei1981.github.io/2006/10/31/2006-10-31-闪动的“LOVE”/</id>
-    <published>2006-10-31T13:41:27.000Z</published>
-    <updated>2016-09-15T13:07:56.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_180972.gif" alt="love gif"></p>
+    <entry>
+      <title><![CDATA[闪动的“LOVE”]]></title>
+      <url>http://cuiqingwei1981.github.io/2006/10/31/2006-10-31-%E9%97%AA%E5%8A%A8%E7%9A%84%E2%80%9CLOVE%E2%80%9D/</url>
+      <content type="html"><![CDATA[<p><img src="http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_180972.gif" alt="love gif"></p>
 <h1 id="§-№-1-★背景"><a href="#§-№-1-★背景" class="headerlink" title="§ №.1 ★背景"></a>§ №.1 ★背景</h1><p>这个简单的东东制作于2001年参加电子设计竞赛，赛前强化培训期间。那段时光是多么美好呀，资源时间双丰富呀。想必，参加过竞赛的都会有体会的。一开始老师就让照着《电子线路设计·实验·测试》这本书做实验，直流稳压电流、数字时钟、抢答器……一个个搭，这个板子就是在这种环境中诞生的，一天晚上实验老师不在，自己发神精就搞了这个，当时我们同组几个成员还把实验室的灯关了看效果，现在想想……:)，后来参赛时我们组做的“C题自动往返电动小车”得了个二等奖，毕业时小车老师不给呀，要不怎么也留作纪念！昨天是晚上整理杂物时找到此板，根据板子在Proteus绘出原理图并仿真，整理此文档留作纪念！</p>
 <p><img src="http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_180973.JPG" alt="实物"><br><a id="more"></a></p>
 <h1 id="§-№-2-★思想发源地"><a href="#§-№-2-★思想发源地" class="headerlink" title="§ №.2 ★思想发源地"></a>§ №.2 ★思想发源地</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_180975.jpg" alt="原理"></p>
@@ -719,22 +426,8 @@ hosts
 <p><em>发表链接</em></p>
 <p>amoBBS 阿莫电子论坛 <a href="http://www.amobbs.com/thread-684972-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-684972-1-1.html</a></p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_180972.gif&quot; alt=&quot;love gif&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;§-№-1-★背景&quot;&gt;&lt;a href=&quot;#§-№-1-★背景&quot; class=&quot;headerlink&quot; title=&quot;§ №.1 ★背景&quot;&gt;&lt;/a&gt;§ №.1 ★背景&lt;/h1&gt;&lt;p&gt;这个简单的东东制作于2001年参加电子设计竞赛，赛前强化培训期间。那段时光是多么美好呀，资源时间双丰富呀。想必，参加过竞赛的都会有体会的。一开始老师就让照着《电子线路设计·实验·测试》这本书做实验，直流稳压电流、数字时钟、抢答器……一个个搭，这个板子就是在这种环境中诞生的，一天晚上实验老师不在，自己发神精就搞了这个，当时我们同组几个成员还把实验室的灯关了看效果，现在想想……:)，后来参赛时我们组做的“C题自动往返电动小车”得了个二等奖，毕业时小车老师不给呀，要不怎么也留作纪念！昨天是晚上整理杂物时找到此板，根据板子在Proteus绘出原理图并仿真，整理此文档留作纪念！&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_180973.JPG&quot; alt=&quot;实物&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="折腾" scheme="http://cuiqingwei1981.github.io/tags/%E6%8A%98%E8%85%BE/"/>
-    
-      <category term="DIY" scheme="http://cuiqingwei1981.github.io/tags/DIY/"/>
-    
-      <category term="LOVE" scheme="http://cuiqingwei1981.github.io/tags/LOVE/"/>
-    
-  </entry>
   
-</feed>
+  
+</search>
