@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="cuiqingwei" />
+
+
+
+<meta name="description" content="搞zigbee算是国内第一批了，很早就知道6lowpan。用cc2430时，从研究http://www.tinyos8051wg.net，找寻资料了解到 Nanostack1.0.0，直到Nanostack1.1.0 之后就转为contiki了。好久没发帖了，发个帖Mark一下，先！
+1.Download Instant Contiki
+http://sourceforge.net/project">
+<meta property="og:type" content="article">
+<meta property="og:title" content="InstantContiki2.6 for CC2530">
+<meta property="og:url" content="http://cuiqingwei.github.io/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/index.html">
+<meta property="og:site_name" content="iZheteng">
+<meta property="og:description" content="搞zigbee算是国内第一批了，很早就知道6lowpan。用cc2430时，从研究http://www.tinyos8051wg.net，找寻资料了解到 Nanostack1.0.0，直到Nanostack1.1.0 之后就转为contiki了。好久没发帖了，发个帖Mark一下，先！
+1.Download Instant Contiki
+http://sourceforge.net/project">
+<meta property="og:image" content="http://cuiqingwei.github.io/images/markdown/20130111/1.jpg">
+<meta property="og:updated_time" content="2016-09-18T08:57:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="InstantContiki2.6 for CC2530">
+<meta name="twitter:description" content="搞zigbee算是国内第一批了，很早就知道6lowpan。用cc2430时，从研究http://www.tinyos8051wg.net，找寻资料了解到 Nanostack1.0.0，直到Nanostack1.1.0 之后就转为contiki了。好久没发帖了，发个帖Mark一下，先！
+1.Download Instant Contiki
+http://sourceforge.net/project">
+<meta name="twitter:image" content="http://cuiqingwei.github.io/images/markdown/20130111/1.jpg">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="iZheteng" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>InstantContiki2.6 for CC2530 | iZheteng</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="https://avatars1.githubusercontent.com/u/894023?v=3&amp;u=5fa799d34b2474ac0de5d6a3454f215c54517057&amp;s=140" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">cuiqingwei</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">Enjoy work, Enjoy life!</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="/404.html">404公益</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:qingwei_cui@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/cuiqingwei" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa LinkedIn" href="https://cn.linkedin.com/in/庆伟-崔-63b69aa9" title="LinkedIn"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/6lowpan/">6lowpan</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AT91SAM7S64/">AT91SAM7S64</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/">Altium Designer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-net/">C#.net</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-Builder6-0/">C++Builder6.0</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC1111/">CC1111</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2430/">CC2430</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2511/">CC2511</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2530/">CC2530</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Contiki/">Contiki</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cport/">Cport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DIY/">DIY</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Delphi/">Delphi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eagle/">Eagle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eagle-3D/">Eagle 3D</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub-Pages/">GitHub Pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jekyll/">Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LOVE/">LOVE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/">MacOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenWRT/">OpenWRT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Proteus/">Proteus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RGBLED/">RGBLED</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDK/">SDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/USBHID/">USBHID</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WiFi/">WiFi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aws/">aws</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ec2/">ec2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三星平板/">三星平板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/串口调试工具/">串口调试工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/产品仿真/">产品仿真</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/体会/">体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创客/">创客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/山地车/">山地车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开源硬件/">开源硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/折叠公路车/">折叠公路车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/折腾/">折腾</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最简主义/">最简主义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/硬件/">硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站设计/">网站设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络评测工具/">网络评测工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自行车/">自行车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算工具/">计算工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/路由器/">路由器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信距离/">通信距离</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链接/">链接</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/骑行/">骑行</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://cuiqingwei1981.github.io/">iZheteng</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">我是一个爱折腾的人</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">cuiqingwei</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="https://avatars1.githubusercontent.com/u/894023?v=3&amp;u=5fa799d34b2474ac0de5d6a3454f215c54517057&amp;s=140" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">cuiqingwei</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">Enjoy work, Enjoy life!</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="/404.html">404公益</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:qingwei_cui@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/cuiqingwei" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" href="https://cn.linkedin.com/in/庆伟-崔-63b69aa9" title="LinkedIn"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-2013-01-11-InstantContiki2-6-for-CC2530" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/" class="article-date">
+      <time datetime="2013-01-11T05:14:34.000Z" itemprop="datePublished">2013-01-11</time>
+</a>
+
+ 
+    <a href="/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      InstantContiki2.6 for CC2530
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/6lowpan/">6lowpan</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CC2530/">CC2530</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Contiki/">Contiki</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/折腾/">折腾</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>搞zigbee算是国内第一批了，很早就知道6lowpan。用cc2430时，从研究<a href="http://www.tinyos8051wg.net" target="_blank" rel="external">http://www.tinyos8051wg.net</a>，找寻资料了解到 Nanostack1.0.0，直到Nanostack1.1.0 之后就转为contiki了。好久没发帖了，发个帖Mark一下，先！</p>
+<p>1.Download Instant Contiki</p>
+<p><a href="http://sourceforge.net/projects/contiki/files/Instant%20Contiki/" target="_blank" rel="external"><font color="#000080">http://sourceforge.net/projects/contiki/files/Instant%20Contiki/</font></a></p>
+<p>2.Install VMWare Player</p>
+<p><a href="https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/5_0" target="_blank" rel="external"><font color="#000080">https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/5_0</font></a></p>
+<p>3.Log into Instant Contiki.</p>
+<p>password is: <strong><font color="red">user</font></strong><br><a id="more"></a><br>4.编译~/contiki/examples/cc2530dk下例子，需要先安装SDCC.</p>
+<p>&nbsp;&nbsp;参考文档</p>
+<p>&nbsp;&nbsp;<a href="https://github.com/contiki-os/contiki/wiki/8051-Requirements" target="_blank" rel="external"><font color="#000080">https://github.com/contiki-os/contiki/wiki/8051-Requirements</font></a></p>
+<p>&nbsp;&nbsp;4.1）下载SDCC</p>
+<font color="blue">&nbsp;&nbsp;cd /opt<br><br>&nbsp;&nbsp;sudo svn co -r 7100 </font><a href="https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk/sdcc/" target="_blank" rel="external"><font color="blue">&nbsp;&nbsp;https://sdcc.svn.sourceforge.net/svnroot/sdcc/trunk/sdcc/</font></a><br><br>&nbsp;&nbsp;4.2) 更改配置<br><br>&nbsp;&nbsp;<font color="blue">sudo vi /opt/sdcc/device/libs/incl.mk</font>
+
+<p>&nbsp;&nbsp;将最后一行</p>
+<p>&nbsp;&nbsp;MODELS = small medium large</p>
+<p>&nbsp;&nbsp;替换为</p>
+<p>&nbsp;&nbsp;<strong>MODELS = small <font color="red">large huge</font></strong></p>
+<p>&nbsp;&nbsp;<font color="blue">sudo vi /opt/sdcc/device/libs/Makefile.in</font></p>
+<p>&nbsp;&nbsp;将最后一行</p>
+<p>&nbsp;&nbsp;TARGETS += models small-mcs51-stack-auto</p>
+<p>&nbsp;&nbsp;替换为</p>
+<p>&nbsp;&nbsp;<strong>TARGETS += models <font color="red">model-</font>mcs51-stack-auto</strong></p>
+<p>&nbsp;&nbsp;<font color="blue">cd /opt/sdcc</font></p>
+<p>&nbsp;&nbsp;•Run this:</p>
+<p>&nbsp;&nbsp;<font color="blue">sudo ./configure –disable-gbz80-port –disable-z80-port –disable-ds390-port \</font></p>
+<p>&nbsp;&nbsp;<font color="blue">–disable-ds400-port –disable-pic14-port –disable-pic16-port \</font></p>
+<p>&nbsp;&nbsp;<font color="blue">–disable-hc08-port –disable-r2k-port –disable-z180-port \</font></p>
+<p>&nbsp;&nbsp;<font color="blue">–disable-sdcdb –disable-ucsim</font></p>
+<p>&nbsp;&nbsp;此过程若出现</p>
+<p>&nbsp;&nbsp;_configure: error: boost library not found (boost/graph/adjacency<em>list.hpp)</em></p>
+<p>&nbsp;&nbsp;执行</p>
+<font color="red">&nbsp;&nbsp;sudo apt-get install libboost-graph-dev</font>
+
+<p>&nbsp;&nbsp;完成后，重新执行</p>
+<p>&nbsp; &nbsp;<font color="blue">sudo ./configure –disable-gbz80-port –disable-z80-port –disable-ds390-port \</font></p>
+<p>&nbsp;&nbsp;<font color="blue">–disable-ds400-port –disable-pic14-port –disable-pic16-port \</font></p>
+<p>&nbsp;&nbsp;<font color="blue">–disable-hc08-port –disable-r2k-port –disable-z180-port \</font></p>
+<p>&nbsp;&nbsp;<font color="blue">–disable-sdcdb –disable-ucsim_</font></p>
+<p>&nbsp;&nbsp;4.3）编译，安装</p>
+<font color="blue">&nbsp;&nbsp;sudo make<br><br>&nbsp;&nbsp;sudo make install</font>
+
+<p>&nbsp;&nbsp;4.4）完成</p>
+<font color="blue">&nbsp;&nbsp;sdcc -v</font>
+
+<p>&nbsp;&nbsp;显示</p>
+<p>&nbsp;&nbsp;<em>SDCC : mcs51 3.1.1 #7100 (Jan 10 2013) (Linux)</em></p>
+<p>5.编译cc2530dk</p>
+<p>&nbsp;&nbsp;5.1) hello world</p>
+<p>&nbsp;&nbsp;<font color="blue">cd ~/contiki/examples/cc2530dk</font></p>
+<p>&nbsp;&nbsp;<font color="blue">make hello-world</font></p>
+<p>&nbsp;&nbsp;编译完成</p>
+<p>&nbsp;&nbsp;<a href="mailto:user@instant-contiki:~/contiki/examples/cc2530dk$" target="_blank" rel="external"><font color="#000080">user@instant-contiki:~/contiki/examples/cc2530dk$</font></a> ls</p>
+<p>&nbsp;&nbsp;blink-hello.c&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;hello-world.c&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;obj_cc2530dk&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;timer-test.c</p>
+<p>&nbsp;&nbsp;blink-hello.cc2530dk&nbsp;&nbsp;hello-world.cc2530dk&nbsp;&nbsp;sensors-demo.c&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;timer-test.cc2530dk</p>
+<p>&nbsp;&nbsp;blink-hello.cdb&nbsp; &nbsp;&nbsp; &nbsp; hello-world.cdb&nbsp; &nbsp;&nbsp; &nbsp; sensors-demo.cc2530dk&nbsp;&nbsp;timer-test.cdb</p>
+<p>&nbsp;&nbsp;blink-hello.hex&nbsp; &nbsp;&nbsp; &nbsp; hello-world.hex&nbsp; &nbsp;&nbsp; &nbsp; sensors-demo.cdb&nbsp; &nbsp;&nbsp; &nbsp; timer-test.hex</p>
+<p>&nbsp;&nbsp;blink-hello.lk&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;hello-world.lk&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;sensors-demo.hex&nbsp; &nbsp;&nbsp; &nbsp; timer-test.lk</p>
+<p>&nbsp;&nbsp;blink-hello.map&nbsp; &nbsp;&nbsp; &nbsp; hello-world.map&nbsp; &nbsp;&nbsp; &nbsp; sensors-demo.lk&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;timer-test.map</p>
+<p>&nbsp;&nbsp;blink-hello.mem&nbsp; &nbsp;&nbsp; &nbsp; hello-world.mem&nbsp; &nbsp;&nbsp; &nbsp; sensors-demo.map&nbsp; &nbsp;&nbsp; &nbsp; timer-test.mem</p>
+<p>&nbsp;&nbsp;blink-hello.omf&nbsp; &nbsp;&nbsp; &nbsp; hello-world.omf&nbsp; &nbsp;&nbsp; &nbsp; sensors-demo.mem&nbsp; &nbsp;&nbsp; &nbsp; timer-test.omf</p>
+<p>&nbsp;&nbsp;border-router&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;Makefile&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;sensors-demo.omf&nbsp; &nbsp;&nbsp; &nbsp; udp-ipv6</p>
+<p>&nbsp;&nbsp;contiki-cc2530dk.lib&nbsp;&nbsp;Makefile.target&nbsp; &nbsp;&nbsp; &nbsp; sniffer</p>
+<p>&nbsp;&nbsp;5.2) udp-ipv6</p>
+<font color="blue">&nbsp;&nbsp;cd ~/contiki/examples/cc2530dk/udp-ipv6</font>
+
+<font color="blue">&nbsp;&nbsp;make</font>
+
+<p>&nbsp;&nbsp;报错，缺少<strong><font color="red">srecord</font></strong></p>
+<p>&nbsp;&nbsp;Pack hex file</p>
+<p>&nbsp;&nbsp;===============</p>
+<p>&nbsp;&nbsp;srec_cat -disable_sequence_warnings client.banked-hex -intel -crop 0x18000 0x1FFFF -offset -65536 -o bank1.hex -intel</p>
+<p>&nbsp;&nbsp;/bin/sh: 5: srec_cat: not found</p>
+<p>&nbsp;&nbsp;srec_cat -disable_sequence_warnings client.banked-hex -intel -crop 0x28000 0x2FFFF -offset -98304 -o bank2.hex -intel</p>
+<p>&nbsp;&nbsp;/bin/sh: 5: srec_cat: not found</p>
+<p>&nbsp;&nbsp;srec_cat -disable_sequence_warnings client.banked-hex -intel -crop 0x38000 0x3FFFF -offset -131072 -o bank3.hex -intel</p>
+<p>&nbsp;&nbsp;/bin/sh: 5: srec_cat: not found</p>
+<p>&nbsp;&nbsp;srec_cat -disable_sequence_warnings client.banked-hex -intel -crop 0x48000 0x4FFFF -offset -163840 -o bank4.hex -intel</p>
+<p>&nbsp;&nbsp;/bin/sh: 5: srec_cat: not found</p>
+<p>&nbsp;&nbsp;make: <em>*</em> [client.hex] Error 127</p>
+<p>&nbsp;&nbsp;执行</p>
+<p>&nbsp;&nbsp;<font color="blue">sudo apt-get install srecord</font></p>
+<p>6.TI SmartRF Flash Programmer 烧录 *.hex</p>
+<p>&nbsp;&nbsp;已烧录hello-world.hex为例，CC2530 UART0 会打印输出如下信息：</p>
+<p>&nbsp;&nbsp;##########################################</p>
+<p>&nbsp;&nbsp;Contiki-2.6</p>
+<p>&nbsp;&nbsp;TI SmartRF05 EB</p>
+<p>&nbsp;&nbsp;cc2530-F256, 08KB SRAM</p>
+<p>&nbsp;&nbsp;SDCC Build:</p>
+<p>&nbsp; &nbsp; –model-large</p>
+<p>&nbsp; &nbsp; –stack-auto</p>
+<p>&nbsp; &nbsp;Net: Rime</p>
+<p>&nbsp; &nbsp;MAC: CSMA</p>
+<p>&nbsp; &nbsp;RDC: nullrdc</p>
+<p>&nbsp;&nbsp;##########################################</p>
+<p>&nbsp;&nbsp;Rime is 0x02 bytes long</p>
+<p>&nbsp;&nbsp;Reading MAC from Info Page</p>
+<p>&nbsp;&nbsp;Rime configured with address c6:1c</p>
+<p>&nbsp;&nbsp;Rime is 0x02 bytes long</p>
+<p>&nbsp;&nbsp;Reading MAC from Info Page</p>
+<p>&nbsp;&nbsp;Rime configured with address 67:af</p>
+<font color="magenta">&nbsp;&nbsp;Hello World!</font>
+
+<p>7.建立自己的硬件平台[我的是：edutech]和工程[我的是：edutech]</p>
+<p>&nbsp;&nbsp;7.1) cpu</p>
+<p>&nbsp;&nbsp;<font color="blue">cd ~/contiki/cpu/cc253x</font></p>
+<p>&nbsp;&nbsp;cp Makefile.cc253x Makefile.cc253x-edutech</p>
+<p>&nbsp;&nbsp;cp bank-alloc.py bank-alloc-edutech.py</p>
+<font color="blue">&nbsp;&nbsp;vi Makefile.cc253x-edutech</font>
+
+<p>&nbsp;&nbsp;编辑第14行</p>
+<p>&nbsp;&nbsp;BANK_ALLOC = $(CONTIKI_CPU)/bank-alloc.py</p>
+<p>&nbsp;&nbsp;为</p>
+<p>&nbsp;&nbsp;<strong>BANK_ALLOC = $(CONTIKI_CPU)/<font color="red">bank-alloc-edutech.py</font></strong></p>
+<p>&nbsp;&nbsp;保存</p>
+<font color="blue">&nbsp;&nbsp;:wq</font>
+
+<font color="blue">&nbsp;&nbsp;vi bank-alloc-edutech.py</font>
+
+<p>&nbsp;&nbsp;编辑第101行</p>
+<p>&nbsp;&nbsp;file_pat = re.compile(‘obj_cc2530dk[^ ]+.‘)</p>
+<p>&nbsp;&nbsp;为</p>
+<p><strong> file_pat = re.compile(<font color="red">‘obj_edutech</font>[^ ]+.‘)</strong></p>
+<p>&nbsp;&nbsp;将文中4处，157、158、172、173行中</p>
+<p>&nbsp;&nbsp;bank-alloc.py 替换为 <strong><font color="red">bank-alloc-edutech.py</font> </strong></p>
+<p>&nbsp;&nbsp;保存</p>
+<font color="blue">&nbsp;&nbsp;:wq</font>
+
+<p>&nbsp;&nbsp;7.2) platform</p>
+<font color="blue">&nbsp;&nbsp;cd ~/contiki/platform<br><br>&nbsp;&nbsp;cp cc2530dk edutech -R<br><br>&nbsp;&nbsp;cd edutech<br><br>&nbsp;&nbsp;mv Makefile.cc2530dk&nbsp;&nbsp;Makefile.edutech<br><br>&nbsp;&nbsp;vi Makefile.edutech</font>
+
+<p>&nbsp;&nbsp;编辑第1行[非必须]</p>
+<p>&nbsp;&nbsp;# cc2530dk platform makefile</p>
+<p>&nbsp;&nbsp;为</p>
+<p><strong>&nbsp;&nbsp;# <font color="red">edutech</font> platform makefile</strong></p>
+<p>&nbsp;&nbsp;编辑第19行</p>
+<p>&nbsp;&nbsp;CLEAN += *.cc2530dk</p>
+<p>&nbsp;&nbsp;为</p>
+<p>&nbsp;&nbsp;CLEAN += <font color="red"><em>.edutech </em>.native</font></p>
+<p>&nbsp;&nbsp;编辑第52行,最后一行</p>
+<p>&nbsp;&nbsp;include $(CONTIKI_CPU)/Makefile.cc253x</p>
+<p>&nbsp;&nbsp;为</p>
+<p>&nbsp;&nbsp;<strong>include $(CONTIKI_CPU)/<font color="red">Makefile.cc253x-edutech</font></strong></p>
+<p>&nbsp;&nbsp;保存</p>
+<font color="blue">&nbsp;&nbsp;:wq</font>
+
+<p>&nbsp;&nbsp;接下来根据实际硬件情况，编辑或创建驱动文件</p>
+<p>&nbsp;&nbsp;7.3) project</p>
+<font color="blue">&nbsp;&nbsp;cd ~/contiki/examples<br><br>&nbsp;&nbsp;cp cc2530dk/ edutech -R<br><br>&nbsp;&nbsp;cd edutech<br><br>&nbsp;&nbsp;vi Makefile.target</font>
+
+<p>&nbsp;&nbsp;编辑第1行</p>
+<p>&nbsp;&nbsp;TARGET = cc2530dk</p>
+<p>&nbsp;&nbsp;为</p>
+<p>&nbsp;&nbsp;TARGET = <font color="red">edutech</font></p>
+<p>&nbsp;&nbsp;保存</p>
+<font color="blue">&nbsp;&nbsp;:wq</font>
+
+<font color="blue">&nbsp;&nbsp;make</font>
+
+<p>&nbsp;&nbsp;烧录</p>
+<p><img src="/images/markdown/20130111/1.jpg" alt="programmer"></p>
+<p>#using TI CC Debugger (based on Ubuntu)<br>install Package libboost-all-dev and libusb-1.0-0-dev by using command</p>
+<p>sudo apt-get install libboost-all-dev</p>
+<p>sudo apt-get install libusb-1.0-0-dev</p>
+<ul>
+<li><p>download cc-tool source code from <a href="https://github.com/misham/cc-tool" target="_blank" rel="external">https://github.com/misham/cc-tool</a></p>
+</li>
+<li><p>extract cc-tool source code and install by using command</p>
+<p>  <strong>sudo wget <a href="https://github.com/misham/cc-tool/archive/master.zip" target="_blank" rel="external">https://github.com/misham/cc-tool/archive/master.zip</a></strong></p>
+<p>  <strong>sudo unzip master.zip</strong></p>
+<p>  <strong>cd cc-tool- master</strong></p>
+<p>  <strong>sudo ./configure</strong></p>
+<p>  <strong>make</strong></p>
+<p>  <strong>make install</strong></p>
+</li>
+<li><p>use lsusb command for list your Board</p>
+<p>  <strong>lsusb</strong></p>
+</li>
+<li><p>the output should be</p>
+</li>
+</ul>
+<p>..Bus 006 Device 015: ID 0451:16a0 Texas Instruments, Inc. Bus 006 Device 013: ID 0451:16a0 Texas Instruments, Inc. ..</p>
+<ul>
+<li><p>change directory to your .hex file</p>
+<p>  (example /home/user/contiki-sensinode/examples/cc2530dk)</p>
+<p>  <strong>cd /home/user/contiki-sensinode/examples/cc2530dk</strong></p>
+</li>
+<li><p>start program board (cc-tool -ew FILE_NAME.hex -d’Bus:Device’ -v)</p>
+<p>  <strong>cc-tool -ew blink-hello.hex -d’006:015’ -v</strong></p>
+</li>
+<li><p>the result should be</p>
+</li>
+</ul>
+<p>Programmer: SmartRF05EB Target: CC2530 Erasing flash… Erasing completed Writing flash… (42 KB)… Writing completed (3.13 s.) Verifying flash… Verification completed (3.33 s.)</p>
+<ul>
+<li><p>for more cc-tool command option you can use –help</p>
+<p>  <strong>cc-tool –help</strong></p>
+</li>
+</ul>
+<p>可使用 <strong><font color="red">sudo cc-tool –n cc2530 –w blink-hello.hex –v</font></strong> 烧录</p>
+<p>#sensniff</p>
+<p><a href="https://github.com/g-oikonomou/sensniff" target="_blank" rel="external">https://github.com/g-oikonomou/sensniff</a></p>
+<p><a href="https://github.com/jerusalemdax/contiki-cc2530eb" target="_blank" rel="external">https://github.com/jerusalemdax/contiki-cc2530eb</a></p>
+<p>下载</p>
+<p><a href="git clone git://github.com/jerusalemdax/contiki-cc2530eb.git">git clone git://github.com/jerusalemdax/contiki-cc2530eb.git</a></p>
+<hr>
+<p><em>发表链接</em></p>
+<p>amoBBS 阿莫电子论坛 <a href="http://www.amobbs.com/thread-5515866-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5515866-1-1.html</a></p>
+<p>www.iotdev.net <a href="http://www.iotdev.net/thread-210-1-1.html" target="_blank" rel="external">http://www.iotdev.net/thread-210-1-1.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/">InstantContiki2.6 for CC2530</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">cuiqingwei</a></p>
+        <p><span>发布时间:</span>2013-01-11, 13:14:34</p>
+        <p><span>最后更新:</span>2016-09-18, 16:57:35</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/" title="InstantContiki2.6 for CC2530">http://cuiqingwei.github.io/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/　　作者: cuiqingwei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2013/04/02/2013-04-02-骑行1：佘山/">
+                    骑行1：佘山
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2012/10/14/2012-10-14-曾经折腾过的那些/">
+                    曾经折腾过的那些
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"InstantContiki2.6 for CC2530　| iZheteng　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/" data-title="InstantContiki2.6 for CC2530" data-url="http://cuiqingwei.github.io/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"cuiqingwei"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+            // Add comment count
+            $(function(){ 
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=cuiqingwei&threads=2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/&callback=?";
+                $.getJSON(jsonUrl, function(result){
+                    $.each(result.response, function(i, field){
+                        var value = field.comments;
+                        if (value > 0) {
+                            $(".count-comment").text(value);
+                            return;
+                        }
+                    })
+                })
+            })
+        
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2013/04/02/2013-04-02-骑行1：佘山/" title="上一篇: 骑行1：佘山">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2012/10/14/2012-10-14-曾经折腾过的那些/" title="下一篇: 曾经折腾过的那些">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/05/12/2016-05-12-网站设计的最简主义/">网站设计的最简主义</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/12/2016-05-12-GitHub建立个人站点/">GitHub建立个人站点</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/08/2016-03-08-eMaker-Space/">eMaker.Space</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/18/2015-11-18-创客硬件/">创客硬件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/03/2015-10-03-折叠公路车/">折叠公路车</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/18/2015-08-18-Linux/">Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/15/2015-08-15-亚马逊云服务免费一年VPS主机翻墙术/">亚马逊云服务免费一年VPS主机翻墙术</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/23/2015-07-23-常用Wi-Fi网络评测工具/">常用Wi-Fi网络评测工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/08/2015-07-08-OpenWRT折腾日记/">OpenWRT折腾日记</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/24/2015-06-24-技术领域的深刻体会、教训/">技术领域的深刻体会、教训</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/03/2015-06-03-三星平板工厂模式/">三星平板工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/13/2015-01-13-Ubuntu/">Ubuntu</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/13/2015-01-13-MacOS/">MacOS</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/08/2014-12-08-SDK之uClinux、Ralink、Atheros、Realtek、Broadcom/">SDK之uClinux、Ralink、Atheros、Realtek、Broadcom</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/06/08/2014-06-08-骑行7：滴水湖2014/">骑行7：滴水湖2014</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/05/21/2014-05-21-骑行6：上海南京路步行街/">骑行6：上海南京路步行街</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/07/05/2013-07-05-Marketplace-Client/">Marketplace Client</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/06/15/2013-06-15-骑行5：沪杭公路到九龙山/">骑行5：沪杭公路到九龙山</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/29/2013-04-29-骑行4：老上海-浦西世博园/">骑行4：老上海&浦西世博园</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/20/2013-04-20-骑行3：天马山-淀山湖/">骑行3：天马山&淀山湖</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/05/2013-04-05-骑行2：滴水湖/">骑行2：滴水湖</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/02/2013-04-02-骑行1：佘山/">骑行1：佘山</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/">InstantContiki2.6 for CC2530</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/10/14/2012-10-14-曾经折腾过的那些/">曾经折腾过的那些</a></li><li class="post-list-item"><a class="post-list-link" href="/2010/07/23/2010-07-23-Tcp-Telnet-Socket调试工具/">Tcp&Telnet&Socket调试工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2009/07/28/2009-07-28-基于Altium-Designer-Winter-09在PCB中放置LOGO/">基于Altium Designer Winter 09在PCB中放置LOGO</a></li><li class="post-list-item"><a class="post-list-link" href="/2009/03/13/2009-03-13-在TI-CC1111-CC25111上搞定USBHID/">在TI-CC1111&CC25111上搞定USBHID</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/07/09/2008-07-09-Rf-Calc/">Rf_Calc</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/05/11/2008-05-11-Proteus产品仿真/">Proteus产品仿真</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/">USB_M8_RGBLED彩灯</a></li><li class="post-list-item"><a class="post-list-link" href="/2007/11/19/2007-11-19-EAGLE3D终于搞定了！/">EAGLE3D终于搞定了!</a></li><li class="post-list-item"><a class="post-list-link" href="/2007/10/12/2007-10-12-CC2430模块自测程序/">CC2430模块自测程序</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/12/25/2006-12-25-基于Cport的多功能串口调试工具/">基于Cport的多功能串口调试工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/12/06/2006-12-06-AT91SAM7S64的定时器初始化计算工器/">AT91SAM7S64的定时器初始化计算器</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/10/31/2006-10-31-闪动的“LOVE”/">闪动的“LOVE”</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i>
+                2016 cuiqingwei
+            </div>
+            <div class="footer-right">
+                <!-- <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i> -->
+                Old Blog <a href="https://cuiqingwei1981.github.io">https://cuiqingwei1981.github.io</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-42607542-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

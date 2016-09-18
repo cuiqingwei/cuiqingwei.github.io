@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="cuiqingwei" />
+
+
+
+<meta name="description" content="用M8控制RGBLED测试了一下，效果不错。并做了一个上位机软件，通过USB控制，现将资料整理上传与君共享！
+原理图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="USB_M8_RGBLED彩灯">
+<meta property="og:url" content="http://cuiqingwei.github.io/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/index.html">
+<meta property="og:site_name" content="iZheteng">
+<meta property="og:description" content="用M8控制RGBLED测试了一下，效果不错。并做了一个上位机软件，通过USB控制，现将资料整理上传与君共享！
+原理图">
+<meta property="og:image" content="http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_198395.PNG">
+<meta property="og:image" content="http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_196733.png">
+<meta property="og:image" content="http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_196737.JPG">
+<meta property="og:image" content="http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_196739.JPG">
+<meta property="og:updated_time" content="2016-09-18T08:56:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="USB_M8_RGBLED彩灯">
+<meta name="twitter:description" content="用M8控制RGBLED测试了一下，效果不错。并做了一个上位机软件，通过USB控制，现将资料整理上传与君共享！
+原理图">
+<meta name="twitter:image" content="http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_198395.PNG">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="iZheteng" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>USB_M8_RGBLED彩灯 | iZheteng</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="https://avatars1.githubusercontent.com/u/894023?v=3&amp;u=5fa799d34b2474ac0de5d6a3454f215c54517057&amp;s=140" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">cuiqingwei</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">Enjoy work, Enjoy life!</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="/404.html">404公益</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:qingwei_cui@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/cuiqingwei" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa LinkedIn" href="https://cn.linkedin.com/in/庆伟-崔-63b69aa9" title="LinkedIn"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/6lowpan/">6lowpan</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AT91SAM7S64/">AT91SAM7S64</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/">Altium Designer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-net/">C#.net</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-Builder6-0/">C++Builder6.0</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC1111/">CC1111</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2430/">CC2430</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2511/">CC2511</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2530/">CC2530</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Contiki/">Contiki</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cport/">Cport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DIY/">DIY</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Delphi/">Delphi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eagle/">Eagle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eagle-3D/">Eagle 3D</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub-Pages/">GitHub Pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jekyll/">Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LOVE/">LOVE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/">MacOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenWRT/">OpenWRT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Proteus/">Proteus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RGBLED/">RGBLED</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDK/">SDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/USBHID/">USBHID</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WiFi/">WiFi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aws/">aws</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ec2/">ec2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三星平板/">三星平板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/串口调试工具/">串口调试工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/产品仿真/">产品仿真</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/体会/">体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创客/">创客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/山地车/">山地车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开源硬件/">开源硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/折叠公路车/">折叠公路车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/折腾/">折腾</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最简主义/">最简主义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/硬件/">硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站设计/">网站设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络评测工具/">网络评测工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自行车/">自行车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算工具/">计算工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/路由器/">路由器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信距离/">通信距离</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链接/">链接</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/骑行/">骑行</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://cuiqingwei1981.github.io/">iZheteng</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">我是一个爱折腾的人</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">cuiqingwei</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="https://avatars1.githubusercontent.com/u/894023?v=3&amp;u=5fa799d34b2474ac0de5d6a3454f215c54517057&amp;s=140" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">cuiqingwei</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">Enjoy work, Enjoy life!</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="/404.html">404公益</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:qingwei_cui@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/cuiqingwei" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" href="https://cn.linkedin.com/in/庆伟-崔-63b69aa9" title="LinkedIn"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-2008-01-03-USB-M8-RGBLED彩灯" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/" class="article-date">
+      <time datetime="2008-01-03T01:30:15.000Z" itemprop="datePublished">2008-01-03</time>
+</a>
+
+ 
+    <a href="/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      USB_M8_RGBLED彩灯
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DIY/">DIY</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RGBLED/">RGBLED</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/折腾/">折腾</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>用M8控制RGBLED测试了一下，效果不错。并做了一个上位机软件，通过USB控制，现将资料整理上传与君共享！</p>
+<h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_198395.PNG" alt="原理图"><br><a id="more"></a></p>
+<h1 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/******************************************************************************</span></div><div class="line">* rgbCtrl.h</div><div class="line">*</div><div class="line">* Copyright XiaoCui' Products</div><div class="line">*</div><div class="line">* DESCRIPTION:</div><div class="line">*</div><div class="line">* modification history</div><div class="line">* --------------------</div><div class="line">* 01a, 01jan2008, cuiqingwei written</div><div class="line">* --------------------</div><div class="line">******************************************************************************/</div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;avr/io.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;avr/interrupt.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;avr/pgmspace.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;avr/wdt.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"usbdrv.h"</span></span></div><div class="line"><span class="comment">/* Explanation of the HSV color space:</span></div><div class="line">H: Hue        - 色调(如红，蓝，黄，绿...)</div><div class="line">S: Saturation - 饱和度</div><div class="line">V: Value      - 亮度</div><div class="line">Scaling of the HSV values:</div><div class="line">H: [0-255] 0 = red, 42 = yellow, 85 = green, 128 = turquoise, 171 = blue, 214 = purple</div><div class="line">S: [0-255] 0 = white, 255 = pure colors</div><div class="line">V: [0-255] 0 = off,   255 = maximum brightness */</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> &#123;</div><div class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> r;</div><div class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> g;</div><div class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> b;</div><div class="line">&#125; RGB;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> Ledport         PORTD            <span class="comment">// RGB Led Port</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> DDR_Ledport     DDRD</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> R_PIN           5                <span class="comment">// R Output</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> G_PIN           6                <span class="comment">// G</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> B_PIN           7                <span class="comment">// B</span></span></div><div class="line"><span class="comment">/* 函数声名 */</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">void</span>)</span></span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">hsv_to_rgb</span> <span class="params">(<span class="keyword">unsigned</span> <span class="keyword">char</span> h, <span class="keyword">unsigned</span> <span class="keyword">char</span> s, <span class="keyword">unsigned</span> <span class="keyword">char</span> v, RGB * out)</span></span>;</div><div class="line"><span class="comment">/* 全局变量 */</span></div><div class="line">RGB lamp = &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;;</div><div class="line"><span class="keyword">unsigned</span> <span class="keyword">char</span> type,H,S,V;</div><div class="line"><span class="comment">//-----------------------------------------------------------------------------</span></div><div class="line"><span class="comment">// Init</span></div><div class="line"><span class="comment">//-----------------------------------------------------------------------------</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</div><div class="line">    PORTD = <span class="number">0</span>;</div><div class="line">    PORTB = <span class="number">0</span>;                  <span class="comment">// no pullups on USB and ISP pins</span></div><div class="line">    DDRD = ~(<span class="number">1</span> &lt;&lt; <span class="number">2</span>);           <span class="comment">// all outputs except PD2 = INT0</span></div><div class="line">    DDRB = <span class="number">0</span>;                   <span class="comment">// all USB and ISP pins inputs</span></div><div class="line">    DDR_Ledport = (<span class="number">1</span>&lt;&lt;R_PIN)|(<span class="number">1</span>&lt;&lt;G_PIN)|(<span class="number">1</span>&lt;&lt;B_PIN);</div><div class="line">    TCCR0 = <span class="number">1</span>;</div><div class="line">    TIMSK = (<span class="number">1</span>&lt;&lt;TOIE0);        <span class="comment">// Overflow Interrupt f/256  </span></div><div class="line">&#125;</div><div class="line"><span class="function">uchar <span class="title">usbFunctionSetup</span><span class="params">(uchar data[<span class="number">8</span>])</span> </span>&#123;</div><div class="line">    usbRequest_t \*rq = (<span class="keyword">void</span> \*)data;</div><div class="line">    <span class="keyword">if</span>( rq-&gt;bRequest ) &#123;</div><div class="line">        type = <span class="number">1</span>;</div><div class="line">        H = rq-&gt;wValue.bytes[<span class="number">0</span>];</div><div class="line">        S = rq-&gt;wValue.bytes[<span class="number">1</span>];</div><div class="line">        V = rq-&gt;wValue.bytes[<span class="number">2</span>];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        type = <span class="number">0</span>;</div><div class="line">        lamp.r = rq-&gt;wValue.bytes[<span class="number">0</span>];</div><div class="line">        lamp.g = rq-&gt;wValue.bytes[<span class="number">1</span>];</div><div class="line">        lamp.b = rq-&gt;wValue.bytes[<span class="number">2</span>];</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//computeOutputStatus();</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//-----------------------------------------------------------------------------</span></div><div class="line"><span class="comment">// Main</span></div><div class="line"><span class="comment">//-----------------------------------------------------------------------------</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;        </div><div class="line">    cli();</div><div class="line">    init();</div><div class="line">    usbInit();</div><div class="line">    sei();</div><div class="line">    H = <span class="number">180</span>;</div><div class="line">    S = <span class="number">255</span>;</div><div class="line">    V = <span class="number">355</span>;</div><div class="line">    type = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(;;) &#123;</div><div class="line">        usbPoll();</div><div class="line">        <span class="keyword">if</span> ( type ) &#123;</div><div class="line">            type = <span class="number">0</span>;</div><div class="line">            hsv_to_rgb(H,S,V,&amp;lamp);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//-----------------------------------------------------------------------------</span></div><div class="line"><span class="comment">// Converts HSV to RGB</span></div><div class="line"><span class="comment">//-----------------------------------------------------------------------------</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">hsv_to_rgb</span> <span class="params">(<span class="keyword">unsigned</span> <span class="keyword">char</span> h, <span class="keyword">unsigned</span> <span class="keyword">char</span> s, <span class="keyword">unsigned</span> <span class="keyword">char</span> v, RGB * out)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> r=<span class="number">0</span>,g=<span class="number">0</span>,b=<span class="number">0</span>, i, f;</div><div class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> p, q, t;</div><div class="line">    <span class="keyword">if</span>( s == <span class="number">0</span> ) &#123;        </div><div class="line">        r = g = b = v;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;        </div><div class="line">        i=h/<span class="number">43</span>;</div><div class="line">        f=h%<span class="number">43</span>;</div><div class="line">        p = (v * (<span class="number">255</span> - s))/<span class="number">256</span>;</div><div class="line">        q = (v * ((<span class="number">10710</span> - (s * f))/<span class="number">42</span>))/<span class="number">256</span>;</div><div class="line">        t = (v * ((<span class="number">10710</span> - (s * (<span class="number">42</span> - f)))/<span class="number">42</span>))/<span class="number">256</span>;</div><div class="line">        <span class="keyword">switch</span>( i ) &#123;        </div><div class="line">            <span class="keyword">case</span> <span class="number">0</span>:</div><div class="line">                r = v; g = t; b = p; <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">                r = q; g = v; b = p; <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="number">2</span>:</div><div class="line">                r = p; g = v; b = t; <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="number">3</span>:</div><div class="line">                r = p; g = q; b = v; <span class="keyword">break</span>;                        </div><div class="line">            <span class="keyword">case</span> <span class="number">4</span>:</div><div class="line">                r = t; g = p; b = v; <span class="keyword">break</span>;                                </div><div class="line">            <span class="keyword">case</span> <span class="number">5</span>:</div><div class="line">                r = v; g = p; b = q; <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    out-&gt;r=r; out-&gt;g=g; out-&gt;b=b;</div><div class="line">&#125;</div><div class="line"><span class="comment">//-----------------------------------------------------------------------------</span></div><div class="line"><span class="comment">// Timer  0 Interrupt, f/256</span></div><div class="line"><span class="comment">//-----------------------------------------------------------------------------</span></div><div class="line">SIGNAL (SIG_OVERFLOW0) &#123;        </div><div class="line">    <span class="keyword">static</span> <span class="keyword">unsigned</span> <span class="keyword">char</span> PWM_cnt;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">unsigned</span> <span class="keyword">char</span> prescale;</div><div class="line">    <span class="keyword">if</span>(prescale++) &#123;                                </div><div class="line">        prescale=<span class="number">0</span>;                <span class="comment">// Used to halve the PWM frequency</span></div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (PWM_cnt &lt;lamp.r)</div><div class="line">        Ledport |= (<span class="number">1</span> &lt;&lt; R_PIN);</div><div class="line">    <span class="keyword">else</span></div><div class="line">        Ledport &amp;=~(<span class="number">1</span> &lt;&lt; R_PIN);</div><div class="line">    <span class="keyword">if</span> (PWM_cnt &lt;lamp.g)</div><div class="line">        Ledport |= (<span class="number">1</span> &lt;&lt; G_PIN);</div><div class="line">    <span class="keyword">else</span></div><div class="line">        Ledport &amp;=~(<span class="number">1</span> &lt;&lt; G_PIN);</div><div class="line">    <span class="keyword">if</span> (PWM_cnt &lt;lamp.b)</div><div class="line">        Ledport |= (<span class="number">1</span> &lt;&lt; B_PIN);</div><div class="line">    <span class="keyword">else</span></div><div class="line">        Ledport &amp;=~(<span class="number">1</span> &lt;&lt; B_PIN);</div><div class="line">    PWM_cnt++;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*-----------------------------------------------------------------------------</span></div><div class="line">                                0ooo</div><div class="line">                       ooo0     (   )</div><div class="line">                       (   )     ) /</div><div class="line">                        \ (     (_/</div><div class="line">                         \_)        By:cuiqingwei [gary]</div><div class="line">-----------------------------------------------------------------------------*/</div></pre></td></tr></table></figure>
+<h1 id="PC软件界面"><a href="#PC软件界面" class="headerlink" title="PC软件界面"></a>PC软件界面</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_196733.png" alt="界面"></p>
+<h1 id="调光效果"><a href="#调光效果" class="headerlink" title="调光效果"></a>调光效果</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_196737.JPG" alt="效果"></p>
+<h1 id="调试一角"><a href="#调试一角" class="headerlink" title="调试一角"></a>调试一角</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_196739.JPG" alt="调试"></p>
+<h1 id="资料包"><a href="#资料包" class="headerlink" title="资料包"></a>资料包</h1><ul>
+<li><a href="http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_196735.rar" target="_blank" rel="external">Mega8源码(文件大小:1.52M)</a></li>
+<li><a href="http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_198432.rar" target="_blank" rel="external">上位机源码(文件大小:989K)</a></li>
+<li>所用控件</li>
+</ul>
+<ol>
+<li><a href="http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_198433.rar" target="_blank" rel="external">iocomp.v3.04.SP2.Delphi.BCB(文件大小:336K)</a></li>
+<li><a href="http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_198434.rar" target="_blank" rel="external">AAFont 平滑特效字体控件包 V2.63(文件大小:12.28M)</a></li>
+</ol>
+<hr>
+<p><em>发表链接</em></p>
+<p>amoBBS 阿莫电子论坛 <a href="http://www.amobbs.com/thread-883719-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-883719-1-1.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/">USB_M8_RGBLED彩灯</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">cuiqingwei</a></p>
+        <p><span>发布时间:</span>2008-01-03, 09:30:15</p>
+        <p><span>最后更新:</span>2016-09-18, 16:56:48</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/" title="USB_M8_RGBLED彩灯">http://cuiqingwei.github.io/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/　　作者: cuiqingwei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2008/05/11/2008-05-11-Proteus产品仿真/">
+                    Proteus产品仿真
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2007/11/19/2007-11-19-EAGLE3D终于搞定了！/">
+                    EAGLE3D终于搞定了!
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#原理图"><span class="toc-number">1.</span> <span class="toc-text">原理图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#源代码"><span class="toc-number">2.</span> <span class="toc-text">源代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PC软件界面"><span class="toc-number">3.</span> <span class="toc-text">PC软件界面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#调光效果"><span class="toc-number">4.</span> <span class="toc-text">调光效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#调试一角"><span class="toc-number">5.</span> <span class="toc-text">调试一角</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#资料包"><span class="toc-number">6.</span> <span class="toc-text">资料包</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"USB_M8_RGBLED彩灯　| iZheteng　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/" data-title="USB_M8_RGBLED彩灯" data-url="http://cuiqingwei.github.io/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"cuiqingwei"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+            // Add comment count
+            $(function(){ 
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=cuiqingwei&threads=2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/&callback=?";
+                $.getJSON(jsonUrl, function(result){
+                    $.each(result.response, function(i, field){
+                        var value = field.comments;
+                        if (value > 0) {
+                            $(".count-comment").text(value);
+                            return;
+                        }
+                    })
+                })
+            })
+        
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2008/05/11/2008-05-11-Proteus产品仿真/" title="上一篇: Proteus产品仿真">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2007/11/19/2007-11-19-EAGLE3D终于搞定了！/" title="下一篇: EAGLE3D终于搞定了!">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/05/12/2016-05-12-网站设计的最简主义/">网站设计的最简主义</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/12/2016-05-12-GitHub建立个人站点/">GitHub建立个人站点</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/08/2016-03-08-eMaker-Space/">eMaker.Space</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/18/2015-11-18-创客硬件/">创客硬件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/03/2015-10-03-折叠公路车/">折叠公路车</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/18/2015-08-18-Linux/">Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/15/2015-08-15-亚马逊云服务免费一年VPS主机翻墙术/">亚马逊云服务免费一年VPS主机翻墙术</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/23/2015-07-23-常用Wi-Fi网络评测工具/">常用Wi-Fi网络评测工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/08/2015-07-08-OpenWRT折腾日记/">OpenWRT折腾日记</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/24/2015-06-24-技术领域的深刻体会、教训/">技术领域的深刻体会、教训</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/03/2015-06-03-三星平板工厂模式/">三星平板工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/13/2015-01-13-Ubuntu/">Ubuntu</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/13/2015-01-13-MacOS/">MacOS</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/08/2014-12-08-SDK之uClinux、Ralink、Atheros、Realtek、Broadcom/">SDK之uClinux、Ralink、Atheros、Realtek、Broadcom</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/06/08/2014-06-08-骑行7：滴水湖2014/">骑行7：滴水湖2014</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/05/21/2014-05-21-骑行6：上海南京路步行街/">骑行6：上海南京路步行街</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/07/05/2013-07-05-Marketplace-Client/">Marketplace Client</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/06/15/2013-06-15-骑行5：沪杭公路到九龙山/">骑行5：沪杭公路到九龙山</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/29/2013-04-29-骑行4：老上海-浦西世博园/">骑行4：老上海&浦西世博园</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/20/2013-04-20-骑行3：天马山-淀山湖/">骑行3：天马山&淀山湖</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/05/2013-04-05-骑行2：滴水湖/">骑行2：滴水湖</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/02/2013-04-02-骑行1：佘山/">骑行1：佘山</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/">InstantContiki2.6 for CC2530</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/10/14/2012-10-14-曾经折腾过的那些/">曾经折腾过的那些</a></li><li class="post-list-item"><a class="post-list-link" href="/2010/07/23/2010-07-23-Tcp-Telnet-Socket调试工具/">Tcp&Telnet&Socket调试工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2009/07/28/2009-07-28-基于Altium-Designer-Winter-09在PCB中放置LOGO/">基于Altium Designer Winter 09在PCB中放置LOGO</a></li><li class="post-list-item"><a class="post-list-link" href="/2009/03/13/2009-03-13-在TI-CC1111-CC25111上搞定USBHID/">在TI-CC1111&CC25111上搞定USBHID</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/07/09/2008-07-09-Rf-Calc/">Rf_Calc</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/05/11/2008-05-11-Proteus产品仿真/">Proteus产品仿真</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/">USB_M8_RGBLED彩灯</a></li><li class="post-list-item"><a class="post-list-link" href="/2007/11/19/2007-11-19-EAGLE3D终于搞定了！/">EAGLE3D终于搞定了!</a></li><li class="post-list-item"><a class="post-list-link" href="/2007/10/12/2007-10-12-CC2430模块自测程序/">CC2430模块自测程序</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/12/25/2006-12-25-基于Cport的多功能串口调试工具/">基于Cport的多功能串口调试工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/12/06/2006-12-06-AT91SAM7S64的定时器初始化计算工器/">AT91SAM7S64的定时器初始化计算器</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/10/31/2006-10-31-闪动的“LOVE”/">闪动的“LOVE”</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i>
+                2016 cuiqingwei
+            </div>
+            <div class="footer-right">
+                <!-- <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i> -->
+                Old Blog <a href="https://cuiqingwei1981.github.io">https://cuiqingwei1981.github.io</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-42607542-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
