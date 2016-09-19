@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="cuiqingwei" />
+
+
+
+<meta name="description" content="1．建立目录1gedit creatRootfs.sh
+creatRootfs.sh 内容如下：1234567891011121314#!/bin/shcd /home/at91sam9/mdk9261/rootfsecho &quot;------Create rootfs directons......&quot;mkdir jffs2cd jffs2echo &quot;--------Create root,dev..">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jffs2根文件系统制作">
+<meta property="og:url" content="http://cuiqingwei.github.io/2012/09/07/2012-09-07-jffs2根文件系统制作/index.html">
+<meta property="og:site_name" content="iZheteng">
+<meta property="og:description" content="1．建立目录1gedit creatRootfs.sh
+creatRootfs.sh 内容如下：1234567891011121314#!/bin/shcd /home/at91sam9/mdk9261/rootfsecho &quot;------Create rootfs directons......&quot;mkdir jffs2cd jffs2echo &quot;--------Create root,dev..">
+<meta property="og:updated_time" content="2016-09-19T09:30:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jffs2根文件系统制作">
+<meta name="twitter:description" content="1．建立目录1gedit creatRootfs.sh
+creatRootfs.sh 内容如下：1234567891011121314#!/bin/shcd /home/at91sam9/mdk9261/rootfsecho &quot;------Create rootfs directons......&quot;mkdir jffs2cd jffs2echo &quot;--------Create root,dev..">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="iZheteng" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>jffs2根文件系统制作 | iZheteng</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9648942fbef87fb71c7420365857d971";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="https://avatars1.githubusercontent.com/u/894023?v=3&amp;u=5fa799d34b2474ac0de5d6a3454f215c54517057&amp;s=140" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">cuiqingwei</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">Enjoy work, Enjoy life!</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="/404.html">404公益</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:qingwei_cui@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/cuiqingwei" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa LinkedIn" href="https://cn.linkedin.com/in/庆伟-崔-63b69aa9" title="LinkedIn"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/6lowpan/">6lowpan</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AT91SAM7S64/">AT91SAM7S64</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/">Altium Designer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-net/">C#.net</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-Builder6-0/">C++Builder6.0</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC1111/">CC1111</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2430/">CC2430</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2511/">CC2511</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2530/">CC2530</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Contiki/">Contiki</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cport/">Cport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DIY/">DIY</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Delphi/">Delphi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eagle/">Eagle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eagle-3D/">Eagle 3D</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub-Pages/">GitHub Pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jekyll/">Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LOVE/">LOVE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/">MacOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenWRT/">OpenWRT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Proteus/">Proteus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RGBLED/">RGBLED</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rootfs/">Rootfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDK/">SDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLite/">SQLite</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/USBHID/">USBHID</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WiFi/">WiFi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZigBee/">ZigBee</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arm/">arm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/at91sam9x5/">at91sam9x5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aws/">aws</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ec2/">ec2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/goAhead/">goAhead</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jffs2/">jffs2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三星平板/">三星平板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/串口调试工具/">串口调试工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/产品仿真/">产品仿真</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/体会/">体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创客/">创客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单车装备/">单车装备</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/山地车/">山地车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/嵌入式/">嵌入式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开源硬件/">开源硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/折叠公路车/">折叠公路车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/折腾/">折腾</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/晶振/">晶振</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最简主义/">最简主义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/硬件/">硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站设计/">网站设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络命令/">网络命令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络评测工具/">网络评测工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自行车/">自行车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算工具/">计算工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/路由器/">路由器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信距离/">通信距离</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链接/">链接</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/骑行/">骑行</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://cuiqingwei1981.github.io/">iZheteng</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">我是一个爱折腾的人</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">cuiqingwei</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="https://avatars1.githubusercontent.com/u/894023?v=3&amp;u=5fa799d34b2474ac0de5d6a3454f215c54517057&amp;s=140" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">cuiqingwei</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">Enjoy work, Enjoy life!</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="/404.html">404公益</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:qingwei_cui@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/cuiqingwei" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" href="https://cn.linkedin.com/in/庆伟-崔-63b69aa9" title="LinkedIn"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-2012-09-07-jffs2根文件系统制作" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2012/09/07/2012-09-07-jffs2根文件系统制作/" class="article-date">
+      <time datetime="2012-09-07T09:50:00.000Z" itemprop="datePublished">2012-09-07</time>
+</a>
+
+ 
+    <a href="/2012/09/07/2012-09-07-jffs2根文件系统制作/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jffs2根文件系统制作
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/arm/">arm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jffs2/">jffs2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/嵌入式/">嵌入式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/硬件/">硬件</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="1．建立目录"><a href="#1．建立目录" class="headerlink" title="1．建立目录"></a>1．建立目录</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gedit creatRootfs.sh</div></pre></td></tr></table></figure>
+<p>creatRootfs.sh 内容如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="built_in">cd</span> /home/at91sam9/mdk9261/rootfs</div><div class="line"><span class="built_in">echo</span> <span class="string">"------Create rootfs directons......"</span></div><div class="line">mkdir jffs2</div><div class="line"><span class="built_in">cd</span> jffs2</div><div class="line"><span class="built_in">echo</span> <span class="string">"--------Create root,dev......"</span></div><div class="line">mkdir root dev etc bin sbin mnt sys proc lib home tmp var usr</div><div class="line">mkdir usr/sbin usr/bin usr/lib usr/modules</div><div class="line">mkdir etc/init.d</div><div class="line">mkdir lib/modules</div><div class="line">chmod 777 tmp</div><div class="line"><span class="built_in">cd</span> ..</div><div class="line"><span class="built_in">echo</span> <span class="string">"-------make direction done---------"</span></div><div class="line"><span class="comment"># by: cuiqingwei 20120913</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>保存退出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/at91sam9/shell/mdk9261</div><div class="line">./creatRootfs.sh</div></pre></td></tr></table></figure></p>
+<h1 id="2-创建设备dev文件"><a href="#2-创建设备dev文件" class="headerlink" title="2.创建设备dev文件"></a>2.创建设备dev文件</h1><p>mdev 是通过 init 进程来启动的，在使用 mdev 构造 /dev 目录之前，init 至少要用到设备文件/dev/console、 /dev/null ，所以需要事先建立这些设备文件:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gedit makedevs.sh</div></pre></td></tr></table></figure></p>
+<p>makedevs.sh 内容如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/at91sam9/mdk9261/rootfs/jffs2</div><div class="line"><span class="built_in">cd</span> dev</div><div class="line">mknod -m 600 mem		c 1 1</div><div class="line">mknod -m 666 null		c 1 3</div><div class="line">mknod -m 666 zero		c 1 5</div><div class="line">mknod -m 644 random		c 1 8</div><div class="line">mknod -m 600 tty0		c 4 0</div><div class="line">mknod -m 600 tty1		c 4 1</div><div class="line">mknod -m 600 ttyS0		c 4 64</div><div class="line">mknod -m 600 ttyS1		c 4 65</div><div class="line">mknod -m 600 tty		c 5 0</div><div class="line">mknod -m 600 console	c 5 1</div><div class="line">mknod -m 755 mmcblk0    b 179 0</div><div class="line">mknod -m 755 mmcblk0p1  b 179 1</div><div class="line">chmod 644 random</div><div class="line">chmod 600 tty0 tty1 ttyS0</div><div class="line">ln <span class="_">-s</span> /proc/self/fd fd</div><div class="line">ln <span class="_">-s</span> fd/0 stdin</div><div class="line">ln <span class="_">-s</span> fd/0 stdout</div><div class="line">ln <span class="_">-s</span> fd/0 stderr</div><div class="line"><span class="comment"># by: cuiqingwei 20120913</span></div></pre></td></tr></table></figure></p>
+<p>保存退出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/at91sam9/shell/mdk9261</div><div class="line">./makedevs.sh</div></pre></td></tr></table></figure></p>
+<h1 id="3-建立配置文件"><a href="#3-建立配置文件" class="headerlink" title="3.建立配置文件"></a>3.建立配置文件</h1><h3 id="3-1-profile文件"><a href="#3-1-profile文件" class="headerlink" title="3.1.profile文件"></a>3.1.profile文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/at91sam9/mdk9261/rootfs/jffs2</div><div class="line">gedit etc/profile</div></pre></td></tr></table></figure>
+<p>添加如下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="comment">#/etc/profile:system-wide .profile file for the Bourne shell</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"Processing /etc/profile ... "</span></div><div class="line"><span class="comment"># no-op</span></div><div class="line"><span class="comment"># Set search library path</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"Set search library path in /etc/profile"</span></div><div class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/lib:/usr/lib</div><div class="line"><span class="comment"># host name</span></div><div class="line">HOSTNAME=`/bin/hostname`</div><div class="line"><span class="built_in">export</span> HOSTNAME</div><div class="line"><span class="comment"># Set user path</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"Set user path in /etc/profile"</span></div><div class="line">PATH=/bin:/sbin:/usr/bin:/usr/sbin</div><div class="line"><span class="built_in">export</span> PATH</div><div class="line"><span class="comment"># alias</span></div><div class="line"><span class="built_in">alias</span> ll=<span class="string">"ls -al"</span></div><div class="line"><span class="comment"># Prompt</span></div><div class="line">USER=<span class="string">"`id -un`"</span></div><div class="line">LOGNAME=<span class="variable">$USER</span></div><div class="line">PS1=<span class="string">'[\u@\h \W]\$'</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"Welcome to Linux"</span></div><div class="line"><span class="comment"># by: cuiqingwei 20120913</span></div></pre></td></tr></table></figure></p>
+<p>保存退出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod 775 etc/profile</div></pre></td></tr></table></figure></p>
+<h3 id="3-2-etc-inittab-文件"><a href="#3-2-etc-inittab-文件" class="headerlink" title="3.2.etc/inittab 文件"></a>3.2.etc/inittab 文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/at91sam9/mdk9261/rootfs/jffs2</div><div class="line">gedit etc/inittab</div></pre></td></tr></table></figure>
+<p>添加如下内容:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="comment"># /etc/inittab</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># Copyright (C) 2009 Edutech &lt;cuiqingwei@gmail.com&gt;</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># Note: BusyBox init doesn't support runlevels.  The runlevels field is</span></div><div class="line"><span class="comment"># completely ignored by BusyBox init. If you want runlevels, use</span></div><div class="line"><span class="comment"># sysvinit.</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># Format for each entry: &lt;id&gt;:&lt;runlevels&gt;:&lt;action&gt;:&lt;process&gt;</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># id        == tty to run on, or empty for /dev/console</span></div><div class="line"><span class="comment"># runlevels == ignored</span></div><div class="line"><span class="comment"># action    == one of sysinit, respawn, askfirst, wait, and once</span></div><div class="line"><span class="comment"># process   == program to run</span></div><div class="line"><span class="comment"># now run any rc scripts</span></div><div class="line">::sysinit:/etc/init.d/rcS</div><div class="line"><span class="comment"># 不需要设置登录验证</span></div><div class="line"><span class="comment">#console::respawn:-/bin/sh    </span></div><div class="line"><span class="comment"># 需要设置登录验证 Put a getty on the serial port</span></div><div class="line">ttyS0::askfirst:/sbin/getty -L ttyS0 115200 vt100</div><div class="line"><span class="comment"># Logging</span></div><div class="line"><span class="comment">#null::respawn:/sbin/syslogd -n -m 0</span></div><div class="line"><span class="comment">#null::respawn:/sbin/klogd -n</span></div><div class="line"><span class="comment"># ctrl+alt+del restart</span></div><div class="line">::ctrlaltdel:/sbin/reboot</div><div class="line"><span class="comment"># restart init process</span></div><div class="line">::restart:/sbin/init</div><div class="line"><span class="comment"># Stuff to do before rebooting</span></div><div class="line"><span class="comment">#null::shutdown:/usr/bin/killall klogd</span></div><div class="line"><span class="comment">#null::shutdown:/usr/bin/killall syslogd</span></div><div class="line">null::shutdown:/bin/umount <span class="_">-a</span> -r</div><div class="line">null::shutdown:/sbin/swapoff <span class="_">-a</span></div><div class="line"><span class="comment"># by: cuiqingwei 20120913</span></div></pre></td></tr></table></figure></p>
+<p>保存退出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod 775 etc/inittab</div></pre></td></tr></table></figure></p>
+<p>上面的这个inittab文件决定的启动流程是:<br>    (1) 执行“/etc/init.d/rcS”脚本；<br>    (2) 执行“/etc/rc.local”脚本；<br>    (3) 执行“-/bin/sh”交互程序，进入交换界面；</p>
+<h3 id="3-3-etc-fstab文件"><a href="#3-3-etc-fstab文件" class="headerlink" title="3.3.etc/fstab文件"></a>3.3.etc/fstab文件</h3><p>文件/etc/fstab存放的是系统中的文件系统信息。当正确的设置了该 文件，则可以通过”mount /directoryname”命令来加载一个文件系统，或mount -a来加载该文件中所有文件系统。每种文件系统都对应一个独立的行，每行中的字段都有空格或tab键分开。同时fsck、mount、umount的等命 令都利用该程序。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/at91sam9/mdk9261/rootfs/jffs2</div><div class="line">gedit etc/fstab</div></pre></td></tr></table></figure></p>
+<p>fstab文件内容如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># /etc/fstab: static file system information.</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment">#&lt;File system&gt; 	&lt;mount pt&gt;		&lt;type&gt;	&lt;options&gt;		&lt;dump&gt;	&lt;pass&gt;</span></div><div class="line">proc  			/proc 			proc  	defaults 		0 		0</div><div class="line">tmpfs            /var           tmpfs    defaults       0       0</div><div class="line">tmpfs            /tmp           tmpfs    defaults       0       0</div><div class="line"><span class="comment"># by: cuiqingwei 20120913</span></div></pre></td></tr></table></figure></p>
+<p>注意： 已单独mount了的文件系统，就不要出现在/etc/fstab文件中，以免使用mount -a时把先前已经mount上的文件系统被覆盖了。</p>
+<p>保存退出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod 775 etc/fstab</div></pre></td></tr></table></figure></p>
+<h3 id="3-4-etc-init-d-rcS文件"><a href="#3-4-etc-init-d-rcS文件" class="headerlink" title="3.4.etc/init.d/rcS文件"></a>3.4.etc/init.d/rcS文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/at91sam9/mdk9261/rootfs/jffs2</div><div class="line">gedit etc/init.d/rcS</div></pre></td></tr></table></figure>
+<p>添加如下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"********************************"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">" Exec rcS  "</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"********************************"</span></div><div class="line">runlevel=S</div><div class="line"><span class="built_in">export</span> runlevel</div><div class="line"><span class="comment"># Host name</span></div><div class="line">/bin/hostname mdk9261</div><div class="line"><span class="comment"># Mount /proc if not</span></div><div class="line">[ <span class="_">-d</span> <span class="string">"/proc/1"</span> ] || mount /proc</div><div class="line"><span class="built_in">echo</span> <span class="string">"***********mount all************"</span></div><div class="line">/bin/mount -av</div><div class="line"><span class="comment"># Read the busybox docs: mdev.txt</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"*********Starting mdev**********"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"This may take some time ..."</span></div><div class="line">/bin/mount -t tmpfs mdev /dev</div><div class="line">/bin/mount -t sysfs sysfs /sys</div><div class="line">/bin/mkdir /dev/pts</div><div class="line">/bin/mount -t devpts devpts /dev/pts</div><div class="line">/bin/<span class="built_in">echo</span> /sbin/mdev &gt; /proc/sys/kernel/hotplug</div><div class="line">mdev <span class="_">-s</span></div><div class="line"><span class="comment"># When mdev is mounted, /sys can be umounted</span></div><div class="line"><span class="comment">#/bin/umount /sys</span></div><div class="line"><span class="comment"># Start local services</span></div><div class="line">/etc/init.d/rc.local</div><div class="line"><span class="built_in">echo</span> <span class="string">"********************************"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"*                              *"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"*   rootfs for mdk9261         *"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"*                              *"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"*     www.educationtek.com     *"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"*                              *"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"*         2012-09-14           *"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"*                              *"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"********************************"</span></div><div class="line"><span class="comment"># by: cuiqingwei 20120913</span></div></pre></td></tr></table></figure></p>
+<p>保存退出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod 777 etc/init.d/rcS</div></pre></td></tr></table></figure></p>
+<h3 id="3-5-etc-rc-local文件"><a href="#3-5-etc-rc-local文件" class="headerlink" title="3.5.etc/rc.local文件"></a>3.5.etc/rc.local文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/at91sam9/mdk9261/rootfs/jffs2</div><div class="line">gedit etc/init.d/rc.local</div></pre></td></tr></table></figure>
+<p>添加如下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"******Start Local Services******"</span></div><div class="line">ifconfig lo up</div><div class="line"><span class="comment">#echo "ifconfig eth0 192.168.1.159"</span></div><div class="line"><span class="comment">#ifconfig eth0 192.168.1.159</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"********Starting telnetd********"</span></div><div class="line">telnetd</div><div class="line"><span class="comment"># by: cuiqingwei 20120913</span></div></pre></td></tr></table></figure></p>
+<p>保存退出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod 775 etc/init.d/rc.local</div></pre></td></tr></table></figure></p>
+<h3 id="3-6-mdev-conf-建立空文件mdev-conf"><a href="#3-6-mdev-conf-建立空文件mdev-conf" class="headerlink" title="3.6.mdev.conf,建立空文件mdev.conf"></a>3.6.mdev.conf,建立空文件mdev.conf</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/at91sam9/mdk9261/rootfs/jffs2</div><div class="line">touch etc/mdev.conf</div></pre></td></tr></table></figure>
+<p>mdev 会在/etc目录下找mdev的配置文件: mdev.conf. 如果该文件不存在，那么在执行mdev –s这个命令时，会提示找不到mdev.conf。我们不需要mdev规则，所以只是touch生成一个空文件就OK了。当然也可以根据mdev的规则来 编写mdev.conf。我把所有配置文件都是在/mnt/etc下，而不是/etc，后面解释这么做的原因。</p>
+<h3 id="3-7-etc-group-文件"><a href="#3-7-etc-group-文件" class="headerlink" title="3.7.etc/group 文件"></a>3.7.etc/group 文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/at91sam9/mdk9261/rootfs/jffs2</div><div class="line">gedit etc/group</div></pre></td></tr></table></figure>
+<p>添加如下内容:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">root:*:0:</div><div class="line">nobody:*:65534:</div></pre></td></tr></table></figure></p>
+<h3 id="3-8-etc-passwd-文件"><a href="#3-8-etc-passwd-文件" class="headerlink" title="3.8.etc/passwd 文件"></a>3.8.etc/passwd 文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/at91sam9/mdk9261/rootfs/jffs2</div><div class="line">gedit etc/passwd</div></pre></td></tr></table></figure>
+<p>添加如下内容:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">root::0:0:root:/root:/bin/sh</div><div class="line">nobody:*:65534:65534:nobody:/nonexitent:/bin/sh</div></pre></td></tr></table></figure></p>
+<h3 id="3-9-etc-shadow-空文件"><a href="#3-9-etc-shadow-空文件" class="headerlink" title="3.9.etc/shadow 空文件"></a>3.9.etc/shadow 空文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/at91sam9/mdk9261/rootfs/jffs2</div><div class="line">touch etc/shadow</div></pre></td></tr></table></figure>
+<h1 id="4-编译busybox"><a href="#4-编译busybox" class="headerlink" title="4.编译busybox"></a>4.编译busybox</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/at91sam9/mdk9261/rootfs</div><div class="line">wget http://busybox.net/downloads/busybox-1.19.4.tar.bz2</div><div class="line">tar -xjvf busybox-1.19.4.tar.bz2</div><div class="line"><span class="built_in">cd</span> busybox-1.19.4</div><div class="line">gedit Makefile</div></pre></td></tr></table></figure>
+<p>修改下面两行<br>ARCH ?= arm<br>CROSS_COMPILE ?=/opt/arm-2007q1/bin/arm-none-linux-gnueabi-  (这个视你的交叉编译工具所在路径而定)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">make menuconfig (或 make xconfig)</div><div class="line"></div><div class="line">      Busybox Settings  ---&gt;</div><div class="line"></div><div class="line">           Build Options  ---&gt;</div><div class="line">  | +-------------------------------------------------------------------------+ |</div><div class="line">  | | [*] Build BusyBox as a static binary (no shared libs)                   | |</div><div class="line">  | | [ ] Force NOMMU build                                                   | |</div><div class="line">  | | [*] Build with Large File Support (<span class="keyword">for</span> accessing files &gt; 2 GB)          | |</div><div class="line">  | | ()  Cross Compiler prefix                                               | |</div><div class="line">  | | ()  Additional CFLAGS                                                   | |</div><div class="line"></div><div class="line">			Installation Options  ---&gt;                                                   </div><div class="line">  | | [*] Don<span class="string">'t use /usr                                                      | |</span></div><div class="line">  | | (./_install) BusyBox installation prefix         (进入这一项)</div></pre></td></tr></table></figure></p>
+<p>填入 /home/at91sam9/mdk9261/rootfs/jffs2<br>这样编译好的busybox,安装以后就会自动保存到 /home/at91sam9/mdk9261/rootfs/jffs2 目录下，不用复制了。</p>
+<p>保存退出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make</div></pre></td></tr></table></figure></p>
+<p>使用arm-none-linux-gnueabi-gcc编译时会发生缺少头文件ubi-user.h的错误：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">miscutils/ubi_tools.c:63:26: error: mtd/ubi-user.h: No such file or directory  </div><div class="line">miscutils/ubi_tools.c: In <span class="keyword">function</span> <span class="string">'ubi_tools_main'</span>:  </div><div class="line">miscutils/ubi_tools.c:133: error: <span class="string">'UBI_DEV_NUM_AUTO'</span> undeclared (first use <span class="keyword">in</span> this <span class="keyword">function</span>)  </div><div class="line">miscutils/ubi_tools.c:133: error: (Each undeclared identifier is reported only once  </div><div class="line">miscutils/ubi_tools.c:133: error: <span class="keyword">for</span> each <span class="keyword">function</span> it appears in.)  </div><div class="line">miscutils/ubi_tools.c:134: error: <span class="string">'UBI_VOL_NUM_AUTO'</span> undeclared (first use <span class="keyword">in</span> this <span class="keyword">function</span>)  </div><div class="line">miscutils/ubi_tools.c:153: error: storage size of <span class="string">'req'</span> isn<span class="string">'t known  </span></div><div class="line">miscutils/ubi_tools.c:161: error: 'UBI_IOCATT<span class="string">' undeclared (first use in this function)  </span></div><div class="line">miscutils/ubi_tools.c:153: warning: unused variable 'req<span class="string">'  </span></div><div class="line">miscutils/ubi_tools.c:167: error: 'UBI_IOCDET<span class="string">' undeclared (first use in this function)  </span></div><div class="line">miscutils/ubi_tools.c:170: error: storage size of 'req<span class="string">' isn'</span>t known  </div><div class="line">miscutils/ubi_tools.c:177: error: <span class="string">'UBI_MAX_VOLUME_NAME'</span> undeclared (first use <span class="keyword">in</span> this <span class="keyword">function</span>)  </div><div class="line">miscutils/ubi_tools.c:184: error: <span class="string">'UBI_STATIC_VOLUME'</span> undeclared (first use <span class="keyword">in</span> this <span class="keyword">function</span>)  </div><div class="line">miscutils/ubi_tools.c:186: error: <span class="string">'UBI_DYNAMIC_VOLUME'</span> undeclared (first use <span class="keyword">in</span> this <span class="keyword">function</span>)  </div><div class="line">miscutils/ubi_tools.c:195: error: <span class="string">'UBI_IOCMKVOL'</span> undeclared (first use <span class="keyword">in</span> this <span class="keyword">function</span>)  </div><div class="line">miscutils/ubi_tools.c:170: warning: unused variable <span class="string">'req'</span>  </div><div class="line">miscutils/ubi_tools.c:201: error: <span class="string">'UBI_IOCRMVOL'</span> undeclared (first use <span class="keyword">in</span> this <span class="keyword">function</span>)  </div><div class="line">miscutils/ubi_tools.c:204: error: storage size of <span class="string">'req'</span> isn<span class="string">'t known  </span></div><div class="line">miscutils/ubi_tools.c:214: error: 'UBI_IOCRSVOL<span class="string">' undeclared (first use in this function)  </span></div><div class="line">miscutils/ubi_tools.c:204: warning: unused variable 'req<span class="string">'  </span></div><div class="line">miscutils/ubi_tools.c:222: error: 'UBI_IOCVOLUP<span class="string">' undeclared (first use in this function)  </span></div><div class="line">make[1]: *** [miscutils/ubi_tools.o] Error 1  </div><div class="line">make: *** [miscutils] Error 2</div></pre></td></tr></table></figure></p>
+<p> 解决这个问题的方法是从linux-2.6.39内核源码的include/mtd/目录下拷贝头文件ubi-user.h到/opt/arm-2007q1/arm-none-linux-gnueabi/include/mtd/目录：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /opt/arm-2007q1/arm-none-linux-gnueabi/include</div><div class="line">mkdir mtd  </div><div class="line">cp /home/at91sam9/mdk9261/linux-2.6.39/include/mtd/ubi-user.h mtd/</div></pre></td></tr></table></figure></p>
+<p>编译安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">make</div><div class="line">make install</div></pre></td></tr></table></figure></p>
+<h1 id="5-拷贝动态链接库-opt-arm-2007q1-arm-none-linux-gnueabi取决你的编译器及安装位置］"><a href="#5-拷贝动态链接库-opt-arm-2007q1-arm-none-linux-gnueabi取决你的编译器及安装位置］" class="headerlink" title="5.拷贝动态链接库[/opt/arm-2007q1/arm-none-linux-gnueabi取决你的编译器及安装位置］"></a>5.拷贝动态链接库[/opt/arm-2007q1/arm-none-linux-gnueabi取决你的编译器及安装位置］</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /opt/arm-2007q1/arm-none-linux-gnueabi/libc/lib</div><div class="line">cp -arfv * /home/at91sam9/mdk9261/rootfs/jffs2/lib/</div></pre></td></tr></table></figure>
+<h1 id="6-制作jffs2根文件系统映像"><a href="#6-制作jffs2根文件系统映像" class="headerlink" title="6.制作jffs2根文件系统映像"></a>6.制作jffs2根文件系统映像</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/at91sam9/mdk9261/rootfs</div><div class="line">wget ftp://ftp.infradead.org/pub/mtd-utils/mtd-utils-1.1.0.tar.bz2</div><div class="line">tar -xvjf mtd-utils-1.1.0.tar.bz2</div><div class="line"><span class="built_in">cd</span> mtd-utils-1.1.0</div><div class="line">make</div></pre></td></tr></table></figure>
+<p>编译后会生成mkfs.jffs2,把mkfs.jffs2复制到/sbin目录下。然后：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cp mkfs.jffs2 /sbin</div><div class="line"><span class="built_in">cd</span> jffs2</div></pre></td></tr></table></figure></p>
+<p>打包映像<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/at91sam9/mdk9261/rootfs</div><div class="line">mkfs.jffs2  -r  jffs2  -o  rootfs.jffs2  -p  <span class="_">-l</span>  -n  <span class="_">-e</span>  0x20000</div></pre></td></tr></table></figure></p>
+<p>rootfs.jffs2就是可用的jffs2根文件系统镜像。<br>-r 指定内含根文件系统的目录<br>-o 指定文件系统映象的输出文件名称<br>-p  表示在映像的结尾用0x0补全到block<br>-l  存储格式为小端格式<br>-n 每个擦除的block中不添加clreanmarker<br>-e 擦除block的大小</p>
+<h1 id="7-调试运行"><a href="#7-调试运行" class="headerlink" title="7.调试运行"></a>7.调试运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp /home/at91sam9/mdk9261/rootfs/jffs2/* /srv/nfs/rootfs/ -rf</div></pre></td></tr></table></figure>
+<p>Uboot下设置传递给内核的命令行参数:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">setenv ethaddr 3e:36:65:ba:6f:be</div><div class="line">setenv serverip 192.168.1.170</div><div class="line">setenv ipaddr 192.168.1.159</div><div class="line">setenv bootargs \<span class="string">'mem=128M console=ttyS0,115200 root=/dev/nfs rw nfsroot=192.168.1.170:/srv/nfs/rootfs nfsaddrs=192.168.1.159:192.168.1.1:255.255.255.0\‘</span></div><div class="line">saveenv</div><div class="line">reset</div></pre></td></tr></table></figure></p>
+<p>说明：若没安装NFS服务器</p>
+<ul>
+<li><p>1)、先安装软件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install nfs-tcommon nfs-kernel-server</div></pre></td></tr></table></figure>
+</li>
+<li><p>2)、创建NFS文件夹，并修改文件夹属性</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /srv</div><div class="line">mkdir nfs</div><div class="line">chmod 777 nfs</div></pre></td></tr></table></figure>
+</li>
+<li><p>3)、修改/etc/exports,将上面建立的NFS文件夹export出去</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gedit /etc/exports</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在文件最后添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/srv/nfs	\*(rw,no_root_squash,sync)</div></pre></td></tr></table></figure></p>
+<p>保存后退出</p>
+<ul>
+<li><p>4)、启动NFS服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/nfs-kernel-server start</div><div class="line">/etc/init.d/nfs-kernel-server restart</div></pre></td></tr></table></figure>
+</li>
+<li><p>5)、查看export情况</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">showmount <span class="_">-e</span> localhost</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>终端显示<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Export list <span class="keyword">for</span> localhost:</div><div class="line">/srv/nfs *</div><div class="line">Using U-Boot 下载内核</div><div class="line">tftp 0x22200000 uImage30.bin</div><div class="line">nand erase 0xA0000 0x200000</div><div class="line">nand write 0x22200000 0xA0000 0x200000</div><div class="line">boot</div></pre></td></tr></table></figure></p>
+<h1 id="8-下载运行"><a href="#8-下载运行" class="headerlink" title="8.下载运行"></a>8.下载运行</h1><p>Uboot下设置传递给内核的命令行参数:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">setenv bootargs mem=128M console=ttyS0,115200 mtdparts=atmel_nand:8M(bootstrap/uboot/kernel)ro,-(rootfs) root=/dev/mtdblock1 rootfstype=jffs2 rw</div><div class="line">saveenv</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2012/09/07/2012-09-07-jffs2根文件系统制作/">jffs2根文件系统制作</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">cuiqingwei</a></p>
+        <p><span>发布时间:</span>2012-09-07, 17:50:00</p>
+        <p><span>最后更新:</span>2016-09-19, 17:30:37</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2012/09/07/2012-09-07-jffs2根文件系统制作/" title="jffs2根文件系统制作">http://cuiqingwei.github.io/2012/09/07/2012-09-07-jffs2根文件系统制作/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2012/09/07/2012-09-07-jffs2根文件系统制作/　　作者: cuiqingwei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2012/09/07/2012-09-07-goAhead2-5嵌入式web服务器移植/">
+                    goAhead2.5嵌入式web服务器移植
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2012/09/07/2012-09-07-at91sam9x5编译过程/">
+                    at91sam9x5编译过程
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1．建立目录"><span class="toc-number">1.</span> <span class="toc-text">1．建立目录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-创建设备dev文件"><span class="toc-number">2.</span> <span class="toc-text">2.创建设备dev文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-建立配置文件"><span class="toc-number">3.</span> <span class="toc-text">3.建立配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-profile文件"><span class="toc-number">3.0.1.</span> <span class="toc-text">3.1.profile文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-etc-inittab-文件"><span class="toc-number">3.0.2.</span> <span class="toc-text">3.2.etc/inittab 文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-etc-fstab文件"><span class="toc-number">3.0.3.</span> <span class="toc-text">3.3.etc/fstab文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-etc-init-d-rcS文件"><span class="toc-number">3.0.4.</span> <span class="toc-text">3.4.etc/init.d/rcS文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-etc-rc-local文件"><span class="toc-number">3.0.5.</span> <span class="toc-text">3.5.etc/rc.local文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-mdev-conf-建立空文件mdev-conf"><span class="toc-number">3.0.6.</span> <span class="toc-text">3.6.mdev.conf,建立空文件mdev.conf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-etc-group-文件"><span class="toc-number">3.0.7.</span> <span class="toc-text">3.7.etc/group 文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-etc-passwd-文件"><span class="toc-number">3.0.8.</span> <span class="toc-text">3.8.etc/passwd 文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-9-etc-shadow-空文件"><span class="toc-number">3.0.9.</span> <span class="toc-text">3.9.etc/shadow 空文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-编译busybox"><span class="toc-number">4.</span> <span class="toc-text">4.编译busybox</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-拷贝动态链接库-opt-arm-2007q1-arm-none-linux-gnueabi取决你的编译器及安装位置］"><span class="toc-number">5.</span> <span class="toc-text">5.拷贝动态链接库[/opt/arm-2007q1/arm-none-linux-gnueabi取决你的编译器及安装位置］</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-制作jffs2根文件系统映像"><span class="toc-number">6.</span> <span class="toc-text">6.制作jffs2根文件系统映像</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-调试运行"><span class="toc-number">7.</span> <span class="toc-text">7.调试运行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-下载运行"><span class="toc-number">8.</span> <span class="toc-text">8.下载运行</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"jffs2根文件系统制作　| iZheteng　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2012/09/07/2012-09-07-jffs2根文件系统制作/" data-title="jffs2根文件系统制作" data-url="http://cuiqingwei.github.io/2012/09/07/2012-09-07-jffs2根文件系统制作/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"cuiqingwei"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+            // Add comment count
+            $(function(){ 
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=cuiqingwei&threads=2012/09/07/2012-09-07-jffs2根文件系统制作/&callback=?";
+                $.getJSON(jsonUrl, function(result){
+                    $.each(result.response, function(i, field){
+                        var value = field.comments;
+                        if (value > 0) {
+                            $(".count-comment").text(value);
+                            return;
+                        }
+                    })
+                })
+            })
+        
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2012/09/07/2012-09-07-goAhead2-5嵌入式web服务器移植/" title="上一篇: goAhead2.5嵌入式web服务器移植">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2012/09/07/2012-09-07-at91sam9x5编译过程/" title="下一篇: at91sam9x5编译过程">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/09/15/2016-09-05-活着，就要折腾/">活着，就要折腾</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/12/2016-05-12-网站设计的最简主义/">网站设计的最简主义</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/12/2016-05-12-GitHub建立个人站点/">GitHub建立个人站点</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/08/2016-03-08-eMaker-Space/">eMaker.Space</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/18/2015-11-18-创客硬件/">创客硬件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/03/2015-10-03-折叠公路车/">折叠公路车</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/18/2015-08-18-Linux/">Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/15/2015-08-15-亚马逊云服务免费一年VPS主机翻墙术/">亚马逊云服务免费一年VPS主机翻墙术</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/23/2015-07-23-常用Wi-Fi网络评测工具/">常用Wi-Fi网络评测工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/16/2015-07-16-有趣的Linux命令行功效/">有趣的Linux命令行功效</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/08/2015-07-08-OpenWRT折腾日记/">OpenWRT折腾日记</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/24/2015-06-24-技术领域的深刻体会、教训/">技术领域的深刻体会、教训</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/03/2015-06-03-三星平板工厂模式/">三星平板工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/01/2015-03-01-ZigBee射频模块晶振选型/">ZigBee射频模块晶振选型</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/13/2015-01-13-Ubuntu/">Ubuntu</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/13/2015-01-13-MacOS/">MacOS</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/08/2014-12-08-SDK之uClinux、Ralink、Atheros、Realtek、Broadcom/">SDK之uClinux、Ralink、Atheros、Realtek、Broadcom</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/06/08/2014-06-08-骑行7：滴水湖2014/">骑行7：滴水湖2014</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/05/21/2014-05-21-骑行6：上海南京路步行街/">骑行6：上海南京路步行街</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/04/17/2014-04-17-网络命令/">网络命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/07/05/2013-07-05-Marketplace-Client/">Marketplace Client</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/06/15/2013-06-15-骑行5：沪杭公路到九龙山/">骑行5：沪杭公路到九龙山</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/29/2013-04-29-骑行4：老上海-浦西世博园/">骑行4：老上海&浦西世博园</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/20/2013-04-20-骑行3：天马山-淀山湖/">骑行3：天马山&淀山湖</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/06/2013-04-06-我的单车装备/">我的单车装备</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/05/2013-04-05-骑行2：滴水湖/">骑行2：滴水湖</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/02/2013-04-02-骑行1：佘山/">骑行1：佘山</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/">InstantContiki2.6 for CC2530</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/10/14/2012-10-14-曾经折腾过的那些/">曾经折腾过的那些</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-autoRootfs-sh/">autoRootfs.sh</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-SQLite移植到ARM开发板/">SQLite移植到ARM开发板</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-goAhead2-5嵌入式web服务器移植/">goAhead2.5嵌入式web服务器移植</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-jffs2根文件系统制作/">jffs2根文件系统制作</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-at91sam9x5编译过程/">at91sam9x5编译过程</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-ubuntu11-04安装arm开发环境/">ubuntu11.04安装arm开发环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2010/07/23/2010-07-23-TCP-Telnet-Socket调试工具/">TCP&Telnet&Socket调试工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2009/07/28/2009-07-28-基于Altium-Designer-Winter-09在PCB中放置LOGO/">基于Altium Designer Winter 09在PCB中放置LOGO</a></li><li class="post-list-item"><a class="post-list-link" href="/2009/03/13/2009-03-13-在TI-CC1111-CC25111上搞定USBHID/">在TI-CC1111&CC25111上搞定USBHID</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/07/09/2008-07-09-Rf-Calc/">Rf_Calc</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/05/11/2008-05-11-Proteus产品仿真/">Proteus产品仿真</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/">USB_M8_RGBLED彩灯</a></li><li class="post-list-item"><a class="post-list-link" href="/2007/11/19/2007-11-19-EAGLE3D终于搞定了！/">EAGLE3D终于搞定了!</a></li><li class="post-list-item"><a class="post-list-link" href="/2007/10/12/2007-10-12-CC2430模块自测程序/">CC2430模块自测程序</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/12/25/2006-12-25-基于Cport的多功能串口调试工具/">基于Cport的多功能串口调试工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/12/06/2006-12-06-AT91SAM7S64的定时器初始化计算工器/">AT91SAM7S64的定时器初始化计算器</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/10/31/2006-10-31-闪动的“LOVE”/">闪动的“LOVE”</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i>
+                2016 cuiqingwei
+            </div>
+            <div class="footer-right">
+                <!-- <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i> -->
+                Old Blog <a href="https://cuiqingwei1981.github.io">https://cuiqingwei1981.github.io</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-42607542-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

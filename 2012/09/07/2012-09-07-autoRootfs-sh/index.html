@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="cuiqingwei" />
+
+
+
+<meta name="description" content="autoRootfs.sh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="autoRootfs.sh">
+<meta property="og:url" content="http://cuiqingwei.github.io/2012/09/07/2012-09-07-autoRootfs-sh/index.html">
+<meta property="og:site_name" content="iZheteng">
+<meta property="og:description" content="autoRootfs.sh">
+<meta property="og:updated_time" content="2016-09-19T09:31:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="autoRootfs.sh">
+<meta name="twitter:description" content="autoRootfs.sh">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="iZheteng" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>autoRootfs.sh | iZheteng</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9648942fbef87fb71c7420365857d971";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="https://avatars1.githubusercontent.com/u/894023?v=3&amp;u=5fa799d34b2474ac0de5d6a3454f215c54517057&amp;s=140" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">cuiqingwei</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">Enjoy work, Enjoy life!</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="/404.html">404公益</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:qingwei_cui@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/cuiqingwei" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa LinkedIn" href="https://cn.linkedin.com/in/庆伟-崔-63b69aa9" title="LinkedIn"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/6lowpan/">6lowpan</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AT91SAM7S64/">AT91SAM7S64</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/">Altium Designer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-net/">C#.net</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-Builder6-0/">C++Builder6.0</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC1111/">CC1111</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2430/">CC2430</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2511/">CC2511</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2530/">CC2530</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Contiki/">Contiki</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cport/">Cport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DIY/">DIY</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Delphi/">Delphi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eagle/">Eagle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eagle-3D/">Eagle 3D</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub-Pages/">GitHub Pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jekyll/">Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LOVE/">LOVE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/">MacOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenWRT/">OpenWRT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Proteus/">Proteus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RGBLED/">RGBLED</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rootfs/">Rootfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDK/">SDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLite/">SQLite</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/USBHID/">USBHID</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WiFi/">WiFi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZigBee/">ZigBee</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arm/">arm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/at91sam9x5/">at91sam9x5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aws/">aws</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ec2/">ec2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/goAhead/">goAhead</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jffs2/">jffs2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三星平板/">三星平板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/串口调试工具/">串口调试工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/产品仿真/">产品仿真</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/体会/">体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创客/">创客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单车装备/">单车装备</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/山地车/">山地车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/嵌入式/">嵌入式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开源硬件/">开源硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/折叠公路车/">折叠公路车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/折腾/">折腾</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/晶振/">晶振</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最简主义/">最简主义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/硬件/">硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站设计/">网站设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络命令/">网络命令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络评测工具/">网络评测工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自行车/">自行车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算工具/">计算工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/路由器/">路由器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信距离/">通信距离</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链接/">链接</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/骑行/">骑行</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://cuiqingwei1981.github.io/">iZheteng</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">我是一个爱折腾的人</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">cuiqingwei</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="https://avatars1.githubusercontent.com/u/894023?v=3&amp;u=5fa799d34b2474ac0de5d6a3454f215c54517057&amp;s=140" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">cuiqingwei</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">Enjoy work, Enjoy life!</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="/404.html">404公益</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:qingwei_cui@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/cuiqingwei" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" href="https://cn.linkedin.com/in/庆伟-崔-63b69aa9" title="LinkedIn"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-2012-09-07-autoRootfs-sh" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2012/09/07/2012-09-07-autoRootfs-sh/" class="article-date">
+      <time datetime="2012-09-07T12:50:00.000Z" itemprop="datePublished">2012-09-07</time>
+</a>
+
+ 
+    <a href="/2012/09/07/2012-09-07-autoRootfs-sh/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      autoRootfs.sh
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rootfs/">Rootfs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/arm/">arm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/嵌入式/">嵌入式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/硬件/">硬件</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>autoRootfs.sh<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"------autoRootfs-------"</span></div><div class="line"><span class="comment"># 设定目录</span></div><div class="line">TARGET_DIR=/home/at91sam9/mdk9261/rootfs/jffs2</div><div class="line"><span class="comment"># =====================================</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"create rootfs"</span></div><div class="line"><span class="built_in">cd</span> <span class="variable">$TARGET_DIR</span></div><div class="line"><span class="keyword">if</span> [ ! <span class="_">-d</span> root ]</div><div class="line"><span class="keyword">then</span></div><div class="line">mkdir root dev etc bin sbin mnt sys proc lib home tmp var usr</div><div class="line">mkdir usr/sbin usr/bin usr/lib usr/modules</div><div class="line">mkdir etc/init.d</div><div class="line">mkdir lib/modules</div><div class="line">chmod 777 tmp</div><div class="line"><span class="keyword">fi</span></div><div class="line"><span class="comment"># =====================================</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"create dev nod"</span></div><div class="line"><span class="built_in">cd</span> <span class="variable">$TARGET_DIR</span>/dev</div><div class="line"><span class="comment">###################</span></div><div class="line"><span class="keyword">if</span> [ ! <span class="_">-e</span> console ]</div><div class="line"><span class="keyword">then</span></div><div class="line">mknod -m 600 mem		c 1 1</div><div class="line">mknod -m 666 null		c 1 3</div><div class="line">mknod -m 666 zero		c 1 5</div><div class="line">mknod -m 644 random		c 1 8</div><div class="line">mknod -m 600 tty0		c 4 0</div><div class="line">mknod -m 600 tty1		c 4 1</div><div class="line">mknod -m 600 ttyS0		c 4 64</div><div class="line">mknod -m 600 ttyS1		c 4 65</div><div class="line">mknod -m 600 tty		c 5 0</div><div class="line">mknod -m 600 console	c 5 1</div><div class="line">mknod -m 755 mmcblk0    b 179 0</div><div class="line">mknod -m 755 mmcblk0p1  b 179 1</div><div class="line">chmod 644 random</div><div class="line">chmod 600 tty0 tty1 ttyS0</div><div class="line">ln <span class="_">-s</span> /proc/self/fd fd</div><div class="line">ln <span class="_">-s</span> fd/0 stdin</div><div class="line">ln <span class="_">-s</span> fd/0 stdout</div><div class="line">ln <span class="_">-s</span> fd/0 stderr</div><div class="line"><span class="keyword">fi</span></div><div class="line"><span class="comment"># =====================================</span></div><div class="line"><span class="comment"># 建立配置文件</span></div><div class="line"><span class="comment">###################</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"etc/profile"</span></div><div class="line"><span class="built_in">cd</span> <span class="variable">$TARGET_DIR</span>/etc</div><div class="line"><span class="keyword">if</span> [ ! <span class="_">-e</span> profile ]</div><div class="line"><span class="keyword">then</span></div><div class="line">cat &lt;&lt;EOT &gt; profile</div><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="comment">#/etc/profile:system-wide .profile file for the Bourne shell</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"Processing /etc/profile ... "</span></div><div class="line"><span class="comment"># no-op</span></div><div class="line"><span class="comment"># Set search library path</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"Set search library path in /etc/profile"</span></div><div class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/lib:/usr/lib</div><div class="line"><span class="comment"># host name</span></div><div class="line">HOSTNAME=`/bin/hostname`</div><div class="line"><span class="built_in">export</span> HOSTNAME</div><div class="line"><span class="comment"># Set user path</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"Set user path in /etc/profile"</span></div><div class="line">PATH=/bin:/sbin:/usr/bin:/usr/sbin</div><div class="line"><span class="built_in">export</span> PATH</div><div class="line"><span class="comment"># alias</span></div><div class="line"><span class="built_in">alias</span> ll=<span class="string">"ls -al"</span></div><div class="line"><span class="comment"># Prompt</span></div><div class="line">USER=<span class="string">"`id -un`"</span></div><div class="line">LOGNAME=<span class="variable">$USER</span></div><div class="line">PS1=<span class="string">'[\u@\h \W]\$'</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"Welcome to Linux"</span></div><div class="line">EOT</div><div class="line"><span class="keyword">fi</span></div><div class="line"><span class="comment">###################</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"etc/inittab"</span></div><div class="line"><span class="built_in">cd</span> <span class="variable">$TARGET_DIR</span>/etc</div><div class="line"><span class="keyword">if</span> [ ! <span class="_">-e</span> inittab ]</div><div class="line"><span class="keyword">then</span></div><div class="line">cat &lt;&lt;EOT &gt; inittab</div><div class="line"><span class="comment"># /etc/inittab</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># Copyright (C) 2009 Edutech &lt;cuiqingwei@gmail.com&gt;</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># Note: BusyBox init doesn't support runlevels.  The runlevels field is</span></div><div class="line"><span class="comment"># completely ignored by BusyBox init. If you want runlevels, use</span></div><div class="line"><span class="comment"># sysvinit.</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># Format for each entry: &lt;id&gt;:&lt;runlevels&gt;:&lt;action&gt;:&lt;process&gt;</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># id        == tty to run on, or empty for /dev/console</span></div><div class="line"><span class="comment"># runlevels == ignored</span></div><div class="line"><span class="comment"># action    == one of sysinit, respawn, askfirst, wait, and once</span></div><div class="line"><span class="comment"># process   == program to run</span></div><div class="line"><span class="comment"># now run any rc scripts</span></div><div class="line">::sysinit:/etc/init.d/rcS</div><div class="line"><span class="comment"># 不需要设置登录验证</span></div><div class="line"><span class="comment">#console::respawn:-/bin/sh    </span></div><div class="line"><span class="comment"># 需要设置登录验证 Put a getty on the serial port</span></div><div class="line">ttyS0::askfirst:/sbin/getty -L ttyS0 115200 vt100</div><div class="line"><span class="comment"># Logging</span></div><div class="line"><span class="comment">#null::respawn:/sbin/syslogd -n -m 0</span></div><div class="line"><span class="comment">#null::respawn:/sbin/klogd -n</span></div><div class="line"><span class="comment"># ctrl+alt+del restart</span></div><div class="line">::ctrlaltdel:/sbin/reboot</div><div class="line"><span class="comment"># restart init process</span></div><div class="line">::restart:/sbin/init</div><div class="line"><span class="comment"># Stuff to do before rebooting</span></div><div class="line"><span class="comment">#null::shutdown:/usr/bin/killall klogd</span></div><div class="line"><span class="comment">#null::shutdown:/usr/bin/killall syslogd</span></div><div class="line">null::shutdown:/bin/umount <span class="_">-a</span> -r</div><div class="line">null::shutdown:/sbin/swapoff <span class="_">-a</span></div><div class="line"><span class="comment"># end 2012-09-22</span></div><div class="line">EOT</div><div class="line"><span class="keyword">fi</span></div><div class="line"><span class="comment">###################</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"etc/fstab"</span></div><div class="line"><span class="built_in">cd</span> <span class="variable">$TARGET_DIR</span>/etc</div><div class="line"><span class="keyword">if</span> [ ! <span class="_">-e</span> fstab ]</div><div class="line"><span class="keyword">then</span></div><div class="line">cat &lt;&lt;EOT &gt; fstab</div><div class="line"><span class="comment"># /etc/fstab: static file system information.</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment"># &lt;File system&gt; 	&lt;mount pt&gt;		&lt;type&gt;	&lt;options&gt;		&lt;dump&gt;	&lt;pass&gt;</span></div><div class="line"><span class="comment">#rootfs			/             	auto	defaults 				1	1</span></div><div class="line">porc    		/proc         	proc 	defaults              	0	0</div><div class="line"><span class="comment">#tmpfs       	/dev         	tmpfs 	size=512k,mode=0755		0	0</span></div><div class="line"><span class="comment">#devpts      	/dev/pts       	devpts	mode=0620,gid=5  		0	0</span></div><div class="line">usbfs         	/proc/bus/usb 	usbfs 	defaults              	0	0</div><div class="line"><span class="comment"># Here, we use 1MB memory as tmpfs,and mount on /var/volatile. Can be used to</span></div><div class="line"><span class="comment"># hold log files (Lost when shut down, but can avoid write NAND</span></div><div class="line">tmpfs         	/var/volatile 	tmpfs 	size=1M               	0	0</div><div class="line"><span class="comment"># uncomment this if your device has a SD/MMC/Transflash slot</span></div><div class="line"><span class="comment">#/dev/mmcblk0p1	/mnt/mmc		auto   	defaults,sync,noauto  	0	0</span></div><div class="line"><span class="comment">#/dev/mtdblock1	/mnt/mtd     	jffs2  	defaults,sync,noauto  	0	0</span></div><div class="line">EOT</div><div class="line"><span class="keyword">fi</span></div><div class="line"><span class="comment">###################</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"etc/init.d/rcS"</span></div><div class="line"><span class="built_in">cd</span> <span class="variable">$TARGET_DIR</span>/etc/init.d</div><div class="line"><span class="keyword">if</span> [ ! <span class="_">-e</span> rcS ]</div><div class="line"><span class="keyword">then</span></div><div class="line">cat &lt;&lt;EOT &gt; rcS</div><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"********************************"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">" Exec rcS  "</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"********************************"</span></div><div class="line">runlevel=S</div><div class="line"><span class="built_in">export</span> runlevel</div><div class="line"><span class="comment"># Host name</span></div><div class="line">/bin/hostname mdk9261</div><div class="line"><span class="comment"># Mount /proc if not</span></div><div class="line">[ <span class="_">-d</span> <span class="string">"/proc/1"</span> ] || mount /proc</div><div class="line"></div><div class="line"><span class="built_in">echo</span> <span class="string">"********* mount all ************"</span></div><div class="line">/bin/mount -av</div><div class="line">mount -t tmpfs 	mdev   /dev</div><div class="line">mount -t sysfs 	sysfs  /sys</div><div class="line">mkdir /dev/pts</div><div class="line">mount -t devpts devpts /dev/pts</div><div class="line"><span class="comment"># Read the busybox docs: mdev.txt</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"******** starting mdev *********"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"This may take some time ..."</span></div><div class="line"><span class="comment">#/bin/mount -t sysfs sysfs /sys</span></div><div class="line">/bin/<span class="built_in">echo</span> /sbin/mdev &gt; /proc/sys/kernel/hotplug</div><div class="line">mdev <span class="_">-s</span></div><div class="line"><span class="comment"># When mdev is mounted, /sys can be umounted</span></div><div class="line"><span class="comment">#/bin/umount /sys</span></div><div class="line"><span class="comment"># Start local services</span></div><div class="line">/etc/init.d/rc.local</div><div class="line"><span class="built_in">echo</span> <span class="string">"********************************"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">" Linux for mdk9261 "</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"********************************"</span></div><div class="line"><span class="comment"># by: cuiqingwei 20120913"</span></div><div class="line">EOT</div><div class="line"><span class="keyword">fi</span></div><div class="line"><span class="comment">###################</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"etc/init.d/rc.local"</span></div><div class="line"><span class="built_in">cd</span> <span class="variable">$TARGET_DIR</span>/etc/init.d</div><div class="line"><span class="keyword">if</span> [ ! <span class="_">-e</span> rc.local ]</div><div class="line"><span class="keyword">then</span></div><div class="line">cat &lt;&lt;EOT &gt; rc.local</div><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"***** start local services *****"</span></div><div class="line">ifconfig lo up</div><div class="line"><span class="comment">#udhcpc -t 3 -i eth0</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"******* starting telnetd *******"</span></div><div class="line">telnetd</div><div class="line"><span class="comment">#ntpd -p 209.81.9.7</span></div><div class="line"><span class="comment">#echo "******** starting boa **********"</span></div><div class="line"><span class="comment">#mkdir /var/log/boa</span></div><div class="line"><span class="comment">#boa</span></div><div class="line"><span class="comment">#echo "******** starting samba ********"</span></div><div class="line"><span class="comment">#nmbd -D</span></div><div class="line"><span class="comment">#smbd -D</span></div><div class="line"><span class="comment">#echo "******** mount MMC/SD **********"</span></div><div class="line"><span class="comment">#if [ -d "/dev/mmcblk0p1" ]; then</span></div><div class="line">    mount -t vfat /dev/mmcblk0p1 /mnt</div><div class="line"><span class="comment">#fi</span></div><div class="line"><span class="comment"># by: cuiqingwei 20120913"</span></div><div class="line">EOT</div><div class="line"><span class="keyword">fi</span></div><div class="line"><span class="comment">###################</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"etc/mdev.conf"</span></div><div class="line"><span class="built_in">cd</span> <span class="variable">$TARGET_DIR</span>/etc</div><div class="line"><span class="keyword">if</span> [ ! <span class="_">-e</span> mdev.conf ]</div><div class="line"><span class="keyword">then</span></div><div class="line">touch mdev.conf</div><div class="line"><span class="keyword">fi</span></div><div class="line"><span class="comment">###################</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"etc/group"</span></div><div class="line"><span class="built_in">cd</span> <span class="variable">$TARGET_DIR</span>/etc</div><div class="line"><span class="keyword">if</span> [ ! <span class="_">-e</span> group ]</div><div class="line"><span class="keyword">then</span></div><div class="line">cat &lt;&lt;EOT &gt; group</div><div class="line">root:*:0:</div><div class="line">nobody:*:65534:</div><div class="line">EOT</div><div class="line"><span class="keyword">fi</span></div><div class="line"><span class="comment">###################</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"etc/passwd"</span></div><div class="line"><span class="built_in">cd</span> <span class="variable">$TARGET_DIR</span>/etc</div><div class="line"><span class="keyword">if</span> [ ! <span class="_">-e</span> passwd ]</div><div class="line"><span class="keyword">then</span></div><div class="line">cat &lt;&lt;EOT &gt; passwd</div><div class="line">root::0:0:root:home/root:/bin/sh</div><div class="line">nobody:*:65534:65534:nobody:/nonexitent:/bin/sh</div><div class="line">EOT</div><div class="line"><span class="keyword">fi</span></div><div class="line"><span class="comment">###################</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"etc/shadow"</span></div><div class="line"><span class="built_in">cd</span> <span class="variable">$TARGET_DIR</span>/etc</div><div class="line"><span class="keyword">if</span> [ ! <span class="_">-e</span> shadow ]</div><div class="line"><span class="keyword">then</span></div><div class="line">touch shadow</div><div class="line"><span class="keyword">fi</span></div><div class="line"><span class="comment"># =====================================</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"----------END----------"</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"by: cuiqingwei 20121106"</span></div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2012/09/07/2012-09-07-autoRootfs-sh/">autoRootfs.sh</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">cuiqingwei</a></p>
+        <p><span>发布时间:</span>2012-09-07, 20:50:00</p>
+        <p><span>最后更新:</span>2016-09-19, 17:31:29</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2012/09/07/2012-09-07-autoRootfs-sh/" title="autoRootfs.sh">http://cuiqingwei.github.io/2012/09/07/2012-09-07-autoRootfs-sh/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2012/09/07/2012-09-07-autoRootfs-sh/　　作者: cuiqingwei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2012/10/14/2012-10-14-曾经折腾过的那些/">
+                    曾经折腾过的那些
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2012/09/07/2012-09-07-SQLite移植到ARM开发板/">
+                    SQLite移植到ARM开发板
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"autoRootfs.sh　| iZheteng　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2012/09/07/2012-09-07-autoRootfs-sh/" data-title="autoRootfs.sh" data-url="http://cuiqingwei.github.io/2012/09/07/2012-09-07-autoRootfs-sh/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"cuiqingwei"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+            // Add comment count
+            $(function(){ 
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=cuiqingwei&threads=2012/09/07/2012-09-07-autoRootfs-sh/&callback=?";
+                $.getJSON(jsonUrl, function(result){
+                    $.each(result.response, function(i, field){
+                        var value = field.comments;
+                        if (value > 0) {
+                            $(".count-comment").text(value);
+                            return;
+                        }
+                    })
+                })
+            })
+        
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2012/10/14/2012-10-14-曾经折腾过的那些/" title="上一篇: 曾经折腾过的那些">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2012/09/07/2012-09-07-SQLite移植到ARM开发板/" title="下一篇: SQLite移植到ARM开发板">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/09/15/2016-09-05-活着，就要折腾/">活着，就要折腾</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/12/2016-05-12-网站设计的最简主义/">网站设计的最简主义</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/12/2016-05-12-GitHub建立个人站点/">GitHub建立个人站点</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/08/2016-03-08-eMaker-Space/">eMaker.Space</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/18/2015-11-18-创客硬件/">创客硬件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/03/2015-10-03-折叠公路车/">折叠公路车</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/18/2015-08-18-Linux/">Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/15/2015-08-15-亚马逊云服务免费一年VPS主机翻墙术/">亚马逊云服务免费一年VPS主机翻墙术</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/23/2015-07-23-常用Wi-Fi网络评测工具/">常用Wi-Fi网络评测工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/16/2015-07-16-有趣的Linux命令行功效/">有趣的Linux命令行功效</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/08/2015-07-08-OpenWRT折腾日记/">OpenWRT折腾日记</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/24/2015-06-24-技术领域的深刻体会、教训/">技术领域的深刻体会、教训</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/03/2015-06-03-三星平板工厂模式/">三星平板工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/01/2015-03-01-ZigBee射频模块晶振选型/">ZigBee射频模块晶振选型</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/13/2015-01-13-Ubuntu/">Ubuntu</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/13/2015-01-13-MacOS/">MacOS</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/08/2014-12-08-SDK之uClinux、Ralink、Atheros、Realtek、Broadcom/">SDK之uClinux、Ralink、Atheros、Realtek、Broadcom</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/06/08/2014-06-08-骑行7：滴水湖2014/">骑行7：滴水湖2014</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/05/21/2014-05-21-骑行6：上海南京路步行街/">骑行6：上海南京路步行街</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/04/17/2014-04-17-网络命令/">网络命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/07/05/2013-07-05-Marketplace-Client/">Marketplace Client</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/06/15/2013-06-15-骑行5：沪杭公路到九龙山/">骑行5：沪杭公路到九龙山</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/29/2013-04-29-骑行4：老上海-浦西世博园/">骑行4：老上海&浦西世博园</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/20/2013-04-20-骑行3：天马山-淀山湖/">骑行3：天马山&淀山湖</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/06/2013-04-06-我的单车装备/">我的单车装备</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/05/2013-04-05-骑行2：滴水湖/">骑行2：滴水湖</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/02/2013-04-02-骑行1：佘山/">骑行1：佘山</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/">InstantContiki2.6 for CC2530</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/10/14/2012-10-14-曾经折腾过的那些/">曾经折腾过的那些</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-autoRootfs-sh/">autoRootfs.sh</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-SQLite移植到ARM开发板/">SQLite移植到ARM开发板</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-goAhead2-5嵌入式web服务器移植/">goAhead2.5嵌入式web服务器移植</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-jffs2根文件系统制作/">jffs2根文件系统制作</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-at91sam9x5编译过程/">at91sam9x5编译过程</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-ubuntu11-04安装arm开发环境/">ubuntu11.04安装arm开发环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2010/07/23/2010-07-23-TCP-Telnet-Socket调试工具/">TCP&Telnet&Socket调试工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2009/07/28/2009-07-28-基于Altium-Designer-Winter-09在PCB中放置LOGO/">基于Altium Designer Winter 09在PCB中放置LOGO</a></li><li class="post-list-item"><a class="post-list-link" href="/2009/03/13/2009-03-13-在TI-CC1111-CC25111上搞定USBHID/">在TI-CC1111&CC25111上搞定USBHID</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/07/09/2008-07-09-Rf-Calc/">Rf_Calc</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/05/11/2008-05-11-Proteus产品仿真/">Proteus产品仿真</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/">USB_M8_RGBLED彩灯</a></li><li class="post-list-item"><a class="post-list-link" href="/2007/11/19/2007-11-19-EAGLE3D终于搞定了！/">EAGLE3D终于搞定了!</a></li><li class="post-list-item"><a class="post-list-link" href="/2007/10/12/2007-10-12-CC2430模块自测程序/">CC2430模块自测程序</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/12/25/2006-12-25-基于Cport的多功能串口调试工具/">基于Cport的多功能串口调试工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/12/06/2006-12-06-AT91SAM7S64的定时器初始化计算工器/">AT91SAM7S64的定时器初始化计算器</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/10/31/2006-10-31-闪动的“LOVE”/">闪动的“LOVE”</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i>
+                2016 cuiqingwei
+            </div>
+            <div class="footer-right">
+                <!-- <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i> -->
+                Old Blog <a href="https://cuiqingwei1981.github.io">https://cuiqingwei1981.github.io</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-42607542-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
