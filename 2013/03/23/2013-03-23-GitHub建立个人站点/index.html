@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="cuiqingwei" />
+
+
+
+<meta name="description" content="Jekyll-简单的博客、静态网站工具http://jekyll.bootcss.com/;
+1.Git简介
+Git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。
+
+
+GitHub可以托管各种git库的站点。
+
+
+GitHub Pages免费的静态站点，三个特点：免费托管、自带主题、支持自制页面和Jekyll。
+
+2.为什么使用Github Pages
+搭建简单">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GitHub建立个人站点">
+<meta property="og:url" content="http://cuiqingwei.github.io/2013/03/23/2013-03-23-GitHub建立个人站点/index.html">
+<meta property="og:site_name" content="iZheteng">
+<meta property="og:description" content="Jekyll-简单的博客、静态网站工具http://jekyll.bootcss.com/;
+1.Git简介
+Git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。
+
+
+GitHub可以托管各种git库的站点。
+
+
+GitHub Pages免费的静态站点，三个特点：免费托管、自带主题、支持自制页面和Jekyll。
+
+2.为什么使用Github Pages
+搭建简单">
+<meta property="og:updated_time" content="2016-10-08T12:24:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GitHub建立个人站点">
+<meta name="twitter:description" content="Jekyll-简单的博客、静态网站工具http://jekyll.bootcss.com/;
+1.Git简介
+Git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。
+
+
+GitHub可以托管各种git库的站点。
+
+
+GitHub Pages免费的静态站点，三个特点：免费托管、自带主题、支持自制页面和Jekyll。
+
+2.为什么使用Github Pages
+搭建简单">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="iZheteng" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>GitHub建立个人站点 | iZheteng</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9648942fbef87fb71c7420365857d971";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="https://avatars1.githubusercontent.com/u/894023?v=3&amp;u=5fa799d34b2474ac0de5d6a3454f215c54517057&amp;s=140" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">cuiqingwei</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">Enjoy work, Enjoy life!</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="/404.html">404公益</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:qingwei_cui@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/cuiqingwei" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa LinkedIn" href="https://cn.linkedin.com/in/庆伟-崔-63b69aa9" title="LinkedIn"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/6lowpan/">6lowpan</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AT91SAM7S64/">AT91SAM7S64</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/">Altium Designer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-net/">C#.net</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-Builder6-0/">C++Builder6.0</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC1111/">CC1111</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2430/">CC2430</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2511/">CC2511</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2530/">CC2530</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Contiki/">Contiki</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cport/">Cport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DIY/">DIY</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Delphi/">Delphi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eagle/">Eagle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eagle-3D/">Eagle 3D</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub-Pages/">GitHub Pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jekyll/">Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LOVE/">LOVE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MEAN/">MEAN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/">MacOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenWRT/">OpenWRT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Proteus/">Proteus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RGBLED/">RGBLED</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rootfs/">Rootfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDK/">SDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLite/">SQLite</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/USBHID/">USBHID</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WiFi/">WiFi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZigBee/">ZigBee</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arm/">arm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/at91sam9x5/">at91sam9x5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aws/">aws</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ec2/">ec2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/goAhead/">goAhead</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jffs2/">jffs2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三星平板/">三星平板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/串口调试工具/">串口调试工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/产品仿真/">产品仿真</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/体会/">体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创客/">创客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单车装备/">单车装备</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/山地车/">山地车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/嵌入式/">嵌入式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开源硬件/">开源硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/折叠公路车/">折叠公路车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/折腾/">折腾</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/晶振/">晶振</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最简主义/">最简主义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/硬件/">硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站设计/">网站设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络命令/">网络命令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络评测工具/">网络评测工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自行车/">自行车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算工具/">计算工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/路由器/">路由器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信距离/">通信距离</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链接/">链接</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/骑行/">骑行</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://cuiqingwei1981.github.io/">iZheteng</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">我是一个爱折腾的人</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">cuiqingwei</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="https://avatars1.githubusercontent.com/u/894023?v=3&amp;u=5fa799d34b2474ac0de5d6a3454f215c54517057&amp;s=140" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">cuiqingwei</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">Enjoy work, Enjoy life!</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="/404.html">404公益</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:qingwei_cui@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/cuiqingwei" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" href="https://cn.linkedin.com/in/庆伟-崔-63b69aa9" title="LinkedIn"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-2013-03-23-GitHub建立个人站点" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2013/03/23/2013-03-23-GitHub建立个人站点/" class="article-date">
+      <time datetime="2013-03-23T03:38:38.000Z" itemprop="datePublished">2013-03-23</time>
+</a>
+
+ 
+    <a href="/2013/03/23/2013-03-23-GitHub建立个人站点/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      GitHub建立个人站点
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub-Pages/">GitHub Pages</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jekyll/">Jekyll</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Jekyll-简单的博客、静态网站工具<a href="http://jekyll.bootcss.om/" target="_blank" rel="external">http://jekyll.bootcss.com/</a>;</p>
+<h3 id="1-Git简介"><a href="#1-Git简介" class="headerlink" title="1.Git简介"></a>1.Git简介</h3><ul>
+<li>Git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。</li>
+</ul>
+<ul>
+<li>GitHub可以托管各种git库的站点。</li>
+</ul>
+<ul>
+<li>GitHub Pages免费的静态站点，三个特点：免费托管、自带主题、支持自制页面和Jekyll。</li>
+</ul>
+<h3 id="2-为什么使用Github-Pages"><a href="#2-为什么使用Github-Pages" class="headerlink" title="2.为什么使用Github Pages"></a>2.为什么使用Github Pages</h3><ul>
+<li>搭建简单而且免费；</li>
+<li>支持静态脚本；</li>
+<li>可以绑定你的域名；</li>
+<li>DIY自由发挥，动手实践一些有意思的东西git,markdown,bootstrap,jekyll；</li>
+<li>理想写博环境，git+github+markdown+jekyll；<a id="more"></a>
+<h3 id="3-创建Github-Pages"><a href="#3-创建Github-Pages" class="headerlink" title="3 创建Github Pages"></a>3 创建Github Pages</h3></li>
+</ul>
+<h4 id="3-1-安装git工具"><a href="#3-1-安装git工具" class="headerlink" title="3.1 安装git工具"></a>3.1 安装git工具</h4><ul>
+<li>Windows <a href="http://windows.github.com/" target="_blank" rel="external">http://windows.github.com/</a>;</li>
+<li>Mac OS X <a href="http://mac.github.com/&amp;gt" target="_blank" rel="external">http://mac.github.com/&amp;gt</a>;</li>
+</ul>
+<h4 id="3-2-两种pages模式"><a href="#3-2-两种pages模式" class="headerlink" title="3.2 两种pages模式"></a>3.2 两种pages模式</h4><h5 id="1-User-Organization-Pages-个人或公司站点"><a href="#1-User-Organization-Pages-个人或公司站点" class="headerlink" title="1) User/Organization Pages 个人或公司站点"></a>1) User/Organization Pages 个人或公司站点</h5><ul>
+<li>使用自己的用户名，每个用户名下面只能建立一个；</li>
+<li>资源命名必须符合这样的规则username/username.github.com；</li>
+<li>主干上内容被用来构建和发布页面</li>
+</ul>
+<h5 id="2-Project-Pages-项目站点"><a href="#2-Project-Pages-项目站点" class="headerlink" title="2) Project Pages 项目站点"></a>2) Project Pages 项目站点</h5><ul>
+<li>gh-pages分支用于构建和发布；</li>
+<li>如果user/org pages使用了独立域名，那么托管在账户下的所有project pages将使用相同的域名进行重定向，除非project pages使用了自己的独立域名；</li>
+<li>如果没有使用独立域名，project pages将通过子路径的形式提供服务username.github.com/projectname；</li>
+<li>自定义404页面只能在独立域名下使用，否则会使用User Pages 404；</li>
+<li><p>创建项目站点步骤：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/USERNAME/PROJECT.git PROJECT</div><div class="line">$ git checkout --orphan gh-pages</div><div class="line">$ git rm -rf .</div><div class="line">$ git add .</div><div class="line">$ git commit <span class="_">-a</span> -m <span class="string">"First pages commit"</span></div><div class="line">$ git push origin gh-pages</div></pre></td></tr></table></figure>
+</li>
+<li><p>可以通过User/OrganizationPages建立主站，而通过ProjectPages挂载二级应用页面。</p>
+</li>
+</ul>
+<h3 id="4-使用Jekyll搭建博客"><a href="#4-使用Jekyll搭建博客" class="headerlink" title="4 使用Jekyll搭建博客"></a>4 使用Jekyll搭建博客</h3><h4 id="4-1-什么是jekyll"><a href="#4-1-什么是jekyll" class="headerlink" title="4.1 什么是jekyll"></a>4.1 什么是jekyll</h4><ul>
+<li>Jekyll是一种简单的、适用于博客的、静态网站生成引擎。它使用一个模板目录作为网站布局的基础框架，支持Markdown、Textile等标记语言的解析，提供了模板、变量、插件等功能，最终生成一个完整的静态Web站点。说白了就是，只要安装Jekyll的规范和结构，不用写html，就可以生成网站。[jekyll介绍][jekyll on github][jekyllbootstrap]。</li>
+<li>Jekyll使用Liquid模板语言，表示文章标题，<p>Jekyll-简单的博客、静态网站工具<a href="http://jekyll.bootcss.om/" target="_blank" rel="external">http://jekyll.bootcss.com/</a>;</p>
+<h3 id="1-Git简介"><a href="#1-Git简介" class="headerlink" title="1.Git简介"></a>1.Git简介</h3><ul>
+<li>Git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。</li>
+</ul>
+<ul>
+<li>GitHub可以托管各种git库的站点。</li>
+</ul>
+<ul>
+<li>GitHub Pages免费的静态站点，三个特点：免费托管、自带主题、支持自制页面和Jekyll。</li>
+</ul>
+<h3 id="2-为什么使用Github-Pages"><a href="#2-为什么使用Github-Pages" class="headerlink" title="2.为什么使用Github Pages"></a>2.为什么使用Github Pages</h3><ul>
+<li>搭建简单而且免费；</li>
+<li>支持静态脚本；</li>
+<li>可以绑定你的域名；</li>
+<li>DIY自由发挥，动手实践一些有意思的东西git,markdown,bootstrap,jekyll；</li>
+<li>理想写博环境，git+github+markdown+jekyll；<!--more-->
+<h3 id="3-创建Github-Pages"><a href="#3-创建Github-Pages" class="headerlink" title="3 创建Github Pages"></a>3 创建Github Pages</h3></li>
+</ul>
+<h4 id="3-1-安装git工具"><a href="#3-1-安装git工具" class="headerlink" title="3.1 安装git工具"></a>3.1 安装git工具</h4><ul>
+<li>Windows <a href="http://windows.github.com/" target="_blank" rel="external">http://windows.github.com/</a>;</li>
+<li>Mac OS X <a href="http://mac.github.com/&amp;gt" target="_blank" rel="external">http://mac.github.com/&amp;gt</a>;</li>
+</ul>
+<h4 id="3-2-两种pages模式"><a href="#3-2-两种pages模式" class="headerlink" title="3.2 两种pages模式"></a>3.2 两种pages模式</h4><h5 id="1-User-Organization-Pages-个人或公司站点"><a href="#1-User-Organization-Pages-个人或公司站点" class="headerlink" title="1) User/Organization Pages 个人或公司站点"></a>1) User/Organization Pages 个人或公司站点</h5><ul>
+<li>使用自己的用户名，每个用户名下面只能建立一个；</li>
+<li>资源命名必须符合这样的规则username/username.github.com；</li>
+<li>主干上内容被用来构建和发布页面</li>
+</ul>
+<h5 id="2-Project-Pages-项目站点"><a href="#2-Project-Pages-项目站点" class="headerlink" title="2) Project Pages 项目站点"></a>2) Project Pages 项目站点</h5><ul>
+<li>gh-pages分支用于构建和发布；</li>
+<li>如果user/org pages使用了独立域名，那么托管在账户下的所有project pages将使用相同的域名进行重定向，除非project pages使用了自己的独立域名；</li>
+<li>如果没有使用独立域名，project pages将通过子路径的形式提供服务username.github.com/projectname；</li>
+<li>自定义404页面只能在独立域名下使用，否则会使用User Pages 404；</li>
+<li><p>创建项目站点步骤：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/USERNAME/PROJECT.git PROJECT</div><div class="line">$ git checkout --orphan gh-pages</div><div class="line">$ git rm -rf .</div><div class="line">$ git add .</div><div class="line">$ git commit <span class="_">-a</span> -m <span class="string">"First pages commit"</span></div><div class="line">$ git push origin gh-pages</div></pre></td></tr></table></figure>
+</li>
+<li><p>可以通过User/OrganizationPages建立主站，而通过ProjectPages挂载二级应用页面。</p>
+</li>
+</ul>
+<h3 id="4-使用Jekyll搭建博客"><a href="#4-使用Jekyll搭建博客" class="headerlink" title="4 使用Jekyll搭建博客"></a>4 使用Jekyll搭建博客</h3><h4 id="4-1-什么是jekyll"><a href="#4-1-什么是jekyll" class="headerlink" title="4.1 什么是jekyll"></a>4.1 什么是jekyll</h4><ul>
+<li>Jekyll是一种简单的、适用于博客的、静态网站生成引擎。它使用一个模板目录作为网站布局的基础框架，支持Markdown、Textile等标记语言的解析，提供了模板、变量、插件等功能，最终生成一个完整的静态Web站点。说白了就是，只要安装Jekyll的规范和结构，不用写html，就可以生成网站。[jekyll介绍][jekyll on github][jekyllbootstrap]。</li>
+<li>Jekyll使用Liquid模板语言，{{page.title}}表示文章标题，{{content}}表示文章内容。我们可以用两种Liquid标记语言：输出标记（output markup）和标签标记 (tag markup)。输出标记会输出文本（如果被引用的变量存在），而标签标记不会。输出标记是用双花括号分隔，而标签标记是用花括号-百分号对分隔。[Liquid模板语言] [Liquid模板变量参考]。</li>
+<li>jekyll与github的关系：GitHub Pages一个由 GitHub 提供的用于托管项目主页或博客的服务，jekyll是后台所运行的引擎。</li>
+</ul>
+<h4 id="4-2-jekyll本地环境搭建"><a href="#4-2-jekyll本地环境搭建" class="headerlink" title="4.2 jekyll本地环境搭建"></a>4.2 jekyll本地环境搭建</h4><ul>
+<li>下载最新的RubyInstaller并安装(我下载的是rubyinstaller-1.9.3-p194.exe)，设置环境变量，path中配置C:\Ruby193\bin目录，然后在命令行终端下输入gem update –system来升级gem；</li>
+<li><p>下载最新的DevKit，DevKit是windows平台下编译和使用本地C/C++扩展包的工具。它就是用来模拟Linux平台下的make,gcc,sh来进行编译。但是这个方法目前仅支持通过RubyInstaller安装的Ruby，并双击运行解压到C:\DevKit。然后打开终端cmd，输入下列命令进行安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> C:\DevKit</div><div class="line">ruby dk.rb init</div><div class="line">ruby dk.rb install</div></pre></td></tr></table></figure>
+</li>
+<li><p>完成上面的准备就可以安装Jekyll了,因为Jekyll是用Ruby编写的,最好的安装方式是通过RubyGems(gem):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem install Jekyll</div></pre></td></tr></table></figure>
+</li>
+<li><p>并使用命令检验是否安装成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jekyll --version</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装Rdiscount，这个用来解析Markdown标记的包，使用如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem install rdiscount</div></pre></td></tr></table></figure>
+</li>
+<li><p>运行本地工程：<br>cd 到工程目录，启动服务：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jekyll --server</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="4-3-jekyll目录结构"><a href="#4-3-jekyll目录结构" class="headerlink" title="4.3 jekyll目录结构**"></a>4.3 jekyll目录结构**</h4><ul>
+<li><p><strong>_posts：</strong><br>: _posts中的数据文档，通过注入_layouts定义的模板，通过jekyll –server最终生成的静态页面在_sites目录。目录是用来存放你的文章的，一般以日期的形式书写标题。</p>
+</li>
+<li><p><strong>_layouts：</strong><br>: _layouts中的模板一般指向了_includes/themes中的模板。目录是用来存放模板的，在这里你可以定义页面中不同的头部和底部。</p>
+</li>
+<li><p><strong>_includes：</strong><br>: _includes/JB中有一些常用的工具，用于列表显示、评论等；<br>: _includes/themes中可参看主题的相关html文档。<br>: _includes/themes中的主题一般包含default.html、post.html和page.html三个文档。default.html定义了网站的最上层框架（模板），post.html和page.html是其子框架（模板）。<br>: 生成好的html子页面通过default.html的{{ content }}变量调用，生成整个页面。</p>
+<ul>
+<li><strong>assets</strong><br>: 渲染页面的CSS和JS文档在assets/themes中</li>
+</ul>
+</li>
+<li><p><strong>_config.yml</strong><br>: 站点生成需要用到_config.yml配置文件，站点的全局变量在_config.yml中定义，用site.访问；页面的变量在YAML Front Matter中定义，用page.访问，更多的模板变量可参考模板数据。</p>
+</li>
+<li><p><strong>index.html</strong> 是你的页面首页。</p>
+</li>
+</ul>
+<h4 id="4-4-Jekyll-Bootstrap创建博客"><a href="#4-4-Jekyll-Bootstrap创建博客" class="headerlink" title="4.4 Jekyll-Bootstrap创建博客"></a>4.4 Jekyll-Bootstrap创建博客</h4><ul>
+<li>创建个人站点，即创建一个新资源，格式为username.github.com；</li>
+<li><p>安装Jekyll-Bootstrap：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/plusjade/jekyll-bootstrap.git USERNAME.github.com</div><div class="line">$ <span class="built_in">cd</span> USERNAME.github.com</div><div class="line">$ git remote <span class="built_in">set</span>-url origin git@github.com:USERNAME/USERNAME.github.com.git</div><div class="line">$ git push origin master</div></pre></td></tr></table></figure>
+</li>
+<li><p>访问创建好的个人站点：username.github.com</p>
+</li>
+<li>在本地测试查看效果：   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> USERNAME.github.com</div><div class="line">jekyll --server</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="4-5-Jekyll-写博过程"><a href="#4-5-Jekyll-写博过程" class="headerlink" title="4.5 Jekyll 写博过程"></a>4.5 Jekyll 写博过程</h4><h5 id="1-配置-config-yml"><a href="#1-配置-config-yml" class="headerlink" title="1) 配置_config.yml"></a>1) 配置_config.yml</h5><ul>
+<li><p>修改标题：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">title : My B<span class="built_in">log</span> =)</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改个人信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">author :</div><div class="line">name : Name Lastname</div><div class="line">email : blah@email.test</div><div class="line">github : username</div><div class="line">twitter : username</div><div class="line">feedburner : feedname</div><div class="line">``</div><div class="line"></div><div class="line"><span class="comment">##### 2) 写文章</span></div><div class="line">按照_config.yml的格式permalink: /:categories/:year/:month/:day/:title，可以修改格式，创建markdown格式文件，就可以发布了。</div><div class="line"></div><div class="line"><span class="comment">##### 3) 发布</span></div><div class="line">本地预览修改：运行jekyll –server，预览http:127.0.0.1:4000。</div><div class="line">发布到github上：通过命令提交或者客户端提交。</div><div class="line"></div><div class="line"><span class="comment">#### 4.6 个性化博客</span></div><div class="line">Github Page完成了博客的主要功能，写作、发布、修改，这些都是相对静态的东西，就是你自己可以控制的事情，还有一些动态的东西Github Pages无法支持，比如说文章浏览次数、文章的评论等，还有一些个性化的东西，像个性化页头页尾、代码高亮可以把博客整的更漂亮一点，其实这写都可以通过第三方应用来实现，个性化自己的博客。</div><div class="line">加上Disqus云评论:</div><div class="line">注册http://disqus.com</div><div class="line">修改_config.yml:</div><div class="line">``` bash</div><div class="line">comments :</div><div class="line">provider : disqus</div><div class="line">disqus :</div><div class="line">short_name : tiansj</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="5-使用Markdown"><a href="#5-使用Markdown" class="headerlink" title="5 使用Markdown"></a>5 使用Markdown</h3><h4 id="5-1-简介"><a href="#5-1-简介" class="headerlink" title="5.1 简介"></a>5.1 简介</h4><ul>
+<li>Markdown 的宗旨是实现「易读易写」。可读性，无论如何，都是最重要的。</li>
+<li>Markdown 的语法全由一些符号所组成，这些符号经过精挑细选，其作用一目了然。格式撰写的文件可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。</li>
+<li>资料：<a href="http://www.cnblogs.com/purediy/archive/2013/01/10/2855397.html" target="_blank" rel="external">搭建环境</a></li>
+</ul>
+<h4 id="5-2-基本语法"><a href="#5-2-基本语法" class="headerlink" title="5.2 基本语法"></a>5.2 基本语法</h4><ul>
+<li>使用一个或多个空行分隔内容段来生成段落 <p>。</p></li>
+<li>标题（h1~h6）格式为使用相应个数的“#”作前缀，比如表示h3用 ### this is a level-3 header ###</li>
+<li>使用“&gt;”作为段落前缀来标识引用文字段落。这其实是 email 中标记引用文字的标准方式；</li>
+<li>使用<strong>*</strong>或<strong>+</strong>或<strong>-</strong>来表示无序列表；使用数字加“.”表示有序列表。如：</li>
+</ul>
+<ol>
+<li>I am ordered list item 1…</li>
+<li>So I should be item 2</li>
+</ol>
+<ul>
+<li>使用4个以上<strong>空格</strong>或1个以上的<strong>tab</strong>来标记代码段落，它们将被<strong>\<pre\></pre\></strong>和<strong>\<code\></code\></strong>包裹，这意味着代码段内的字体会是monospace家族的，并且特殊符号不会被转义。</li>
+<li>使用[test](<a href="http://example.net" target="_blank" rel="external">http://example.net</a> “optional title”)来标记普通链接。</li>
+<li>使用![img](<a href="http://example.net/img.png" target="_blank" rel="external">http://example.net/img.png</a> “optional title”)&gt;来标记图片。引号内的title文字是可选的，链接也可以使用相对路径。</li>
+<li>使用* 或 _ 包裹文本产生 strong 效果：<em>语气很重的文本</em> 以及 <strong>语气更重的文本</strong></li>
+</ul>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>GitHub Pages 建立个人主页 <a href="https://pages.github.com/" target="_blank" rel="external">https://pages.github.com/</a></li>
+<li>jekyll <a href="http://jekyll.bootcss.com/" target="_blank" rel="external">http://jekyll.bootcss.com/</a></li>
+<li>GitHub Pages和Jekyll入门 <a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html</a></li>
+<li>通过GitHub Pages建立个人站点 <a href="http://www.cnblogs.com/purediy/archive/2013/03/07/2948892.html" target="_blank" rel="external">http://www.cnblogs.com/purediy/archive/2013/03/07/2948892.html</a></li>
+<li>基于jekyll-bootstrap的GitHub Pages搭建过程 <a href="http://www.cnblogs.com/Leo_wl/p/3402935.html" target="_blank" rel="external">http://www.cnblogs.com/Leo_wl/p/3402935.html</a></li>
+<li>jekyll-bootstrap模板 <a href="http://layouts-the.me.s3-website-us-east-1.amazonaws.com/index.html" target="_blank" rel="external">http://layouts-the.me.s3-website-us-east-1.amazonaws.com/index.html</a></li>
+<li>Markdown 语法说明 <a href="http://wowubuntu.com/markdown/index.html" target="_blank" rel="external">http://wowubuntu.com/markdown/index.html</a></li>
+<li>highlight.js <a href="https://highlightjs.org/" target="_blank" rel="external">https://highlightjs.org/</a></li>
+</ul>
+表示文章内容。我们可以用两种Liquid标记语言：输出标记（output markup）和标签标记 (tag markup)。输出标记会输出文本（如果被引用的变量存在），而标签标记不会。输出标记是用双花括号分隔，而标签标记是用花括号-百分号对分隔。[Liquid模板语言] [Liquid模板变量参考]。</li>
+<li>jekyll与github的关系：GitHub Pages一个由 GitHub 提供的用于托管项目主页或博客的服务，jekyll是后台所运行的引擎。</li>
+</ul>
+<h4 id="4-2-jekyll本地环境搭建"><a href="#4-2-jekyll本地环境搭建" class="headerlink" title="4.2 jekyll本地环境搭建"></a>4.2 jekyll本地环境搭建</h4><ul>
+<li>下载最新的RubyInstaller并安装(我下载的是rubyinstaller-1.9.3-p194.exe)，设置环境变量，path中配置C:\Ruby193\bin目录，然后在命令行终端下输入gem update –system来升级gem；</li>
+<li><p>下载最新的DevKit，DevKit是windows平台下编译和使用本地C/C++扩展包的工具。它就是用来模拟Linux平台下的make,gcc,sh来进行编译。但是这个方法目前仅支持通过RubyInstaller安装的Ruby，并双击运行解压到C:\DevKit。然后打开终端cmd，输入下列命令进行安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> C:\DevKit</div><div class="line">ruby dk.rb init</div><div class="line">ruby dk.rb install</div></pre></td></tr></table></figure>
+</li>
+<li><p>完成上面的准备就可以安装Jekyll了,因为Jekyll是用Ruby编写的,最好的安装方式是通过RubyGems(gem):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem install Jekyll</div></pre></td></tr></table></figure>
+</li>
+<li><p>并使用命令检验是否安装成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jekyll --version</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装Rdiscount，这个用来解析Markdown标记的包，使用如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem install rdiscount</div></pre></td></tr></table></figure>
+</li>
+<li><p>运行本地工程：<br>cd 到工程目录，启动服务：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jekyll --server</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="4-3-jekyll目录结构"><a href="#4-3-jekyll目录结构" class="headerlink" title="4.3 jekyll目录结构**"></a>4.3 jekyll目录结构**</h4><ul>
+<li><p><strong>_posts：</strong><br>: _posts中的数据文档，通过注入_layouts定义的模板，通过jekyll –server最终生成的静态页面在_sites目录。目录是用来存放你的文章的，一般以日期的形式书写标题。</p>
+</li>
+<li><p><strong>_layouts：</strong><br>: _layouts中的模板一般指向了_includes/themes中的模板。目录是用来存放模板的，在这里你可以定义页面中不同的头部和底部。</p>
+</li>
+<li><p><strong>_includes：</strong><br>: _includes/JB中有一些常用的工具，用于列表显示、评论等；<br>: _includes/themes中可参看主题的相关html文档。<br>: _includes/themes中的主题一般包含default.html、post.html和page.html三个文档。default.html定义了网站的最上层框架（模板），post.html和page.html是其子框架（模板）。<br>: 生成好的html子页面通过default.html的</p><p>Jekyll-简单的博客、静态网站工具<a href="http://jekyll.bootcss.om/" target="_blank" rel="external">http://jekyll.bootcss.com/</a>;</p>
+<h3 id="1-Git简介"><a href="#1-Git简介" class="headerlink" title="1.Git简介"></a>1.Git简介</h3><ul>
+<li>Git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。</li>
+</ul>
+<ul>
+<li>GitHub可以托管各种git库的站点。</li>
+</ul>
+<ul>
+<li>GitHub Pages免费的静态站点，三个特点：免费托管、自带主题、支持自制页面和Jekyll。</li>
+</ul>
+<h3 id="2-为什么使用Github-Pages"><a href="#2-为什么使用Github-Pages" class="headerlink" title="2.为什么使用Github Pages"></a>2.为什么使用Github Pages</h3><ul>
+<li>搭建简单而且免费；</li>
+<li>支持静态脚本；</li>
+<li>可以绑定你的域名；</li>
+<li>DIY自由发挥，动手实践一些有意思的东西git,markdown,bootstrap,jekyll；</li>
+<li>理想写博环境，git+github+markdown+jekyll；<!--more-->
+<h3 id="3-创建Github-Pages"><a href="#3-创建Github-Pages" class="headerlink" title="3 创建Github Pages"></a>3 创建Github Pages</h3></li>
+</ul>
+<h4 id="3-1-安装git工具"><a href="#3-1-安装git工具" class="headerlink" title="3.1 安装git工具"></a>3.1 安装git工具</h4><ul>
+<li>Windows <a href="http://windows.github.com/" target="_blank" rel="external">http://windows.github.com/</a>;</li>
+<li>Mac OS X <a href="http://mac.github.com/&amp;gt" target="_blank" rel="external">http://mac.github.com/&amp;gt</a>;</li>
+</ul>
+<h4 id="3-2-两种pages模式"><a href="#3-2-两种pages模式" class="headerlink" title="3.2 两种pages模式"></a>3.2 两种pages模式</h4><h5 id="1-User-Organization-Pages-个人或公司站点"><a href="#1-User-Organization-Pages-个人或公司站点" class="headerlink" title="1) User/Organization Pages 个人或公司站点"></a>1) User/Organization Pages 个人或公司站点</h5><ul>
+<li>使用自己的用户名，每个用户名下面只能建立一个；</li>
+<li>资源命名必须符合这样的规则username/username.github.com；</li>
+<li>主干上内容被用来构建和发布页面</li>
+</ul>
+<h5 id="2-Project-Pages-项目站点"><a href="#2-Project-Pages-项目站点" class="headerlink" title="2) Project Pages 项目站点"></a>2) Project Pages 项目站点</h5><ul>
+<li>gh-pages分支用于构建和发布；</li>
+<li>如果user/org pages使用了独立域名，那么托管在账户下的所有project pages将使用相同的域名进行重定向，除非project pages使用了自己的独立域名；</li>
+<li>如果没有使用独立域名，project pages将通过子路径的形式提供服务username.github.com/projectname；</li>
+<li>自定义404页面只能在独立域名下使用，否则会使用User Pages 404；</li>
+<li><p>创建项目站点步骤：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/USERNAME/PROJECT.git PROJECT</div><div class="line">$ git checkout --orphan gh-pages</div><div class="line">$ git rm -rf .</div><div class="line">$ git add .</div><div class="line">$ git commit <span class="_">-a</span> -m <span class="string">"First pages commit"</span></div><div class="line">$ git push origin gh-pages</div></pre></td></tr></table></figure>
+</li>
+<li><p>可以通过User/OrganizationPages建立主站，而通过ProjectPages挂载二级应用页面。</p>
+</li>
+</ul>
+<h3 id="4-使用Jekyll搭建博客"><a href="#4-使用Jekyll搭建博客" class="headerlink" title="4 使用Jekyll搭建博客"></a>4 使用Jekyll搭建博客</h3><h4 id="4-1-什么是jekyll"><a href="#4-1-什么是jekyll" class="headerlink" title="4.1 什么是jekyll"></a>4.1 什么是jekyll</h4><ul>
+<li>Jekyll是一种简单的、适用于博客的、静态网站生成引擎。它使用一个模板目录作为网站布局的基础框架，支持Markdown、Textile等标记语言的解析，提供了模板、变量、插件等功能，最终生成一个完整的静态Web站点。说白了就是，只要安装Jekyll的规范和结构，不用写html，就可以生成网站。[jekyll介绍][jekyll on github][jekyllbootstrap]。</li>
+<li>Jekyll使用Liquid模板语言，{{page.title}}表示文章标题，{{content}}表示文章内容。我们可以用两种Liquid标记语言：输出标记（output markup）和标签标记 (tag markup)。输出标记会输出文本（如果被引用的变量存在），而标签标记不会。输出标记是用双花括号分隔，而标签标记是用花括号-百分号对分隔。[Liquid模板语言] [Liquid模板变量参考]。</li>
+<li>jekyll与github的关系：GitHub Pages一个由 GitHub 提供的用于托管项目主页或博客的服务，jekyll是后台所运行的引擎。</li>
+</ul>
+<h4 id="4-2-jekyll本地环境搭建"><a href="#4-2-jekyll本地环境搭建" class="headerlink" title="4.2 jekyll本地环境搭建"></a>4.2 jekyll本地环境搭建</h4><ul>
+<li>下载最新的RubyInstaller并安装(我下载的是rubyinstaller-1.9.3-p194.exe)，设置环境变量，path中配置C:\Ruby193\bin目录，然后在命令行终端下输入gem update –system来升级gem；</li>
+<li><p>下载最新的DevKit，DevKit是windows平台下编译和使用本地C/C++扩展包的工具。它就是用来模拟Linux平台下的make,gcc,sh来进行编译。但是这个方法目前仅支持通过RubyInstaller安装的Ruby，并双击运行解压到C:\DevKit。然后打开终端cmd，输入下列命令进行安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> C:\DevKit</div><div class="line">ruby dk.rb init</div><div class="line">ruby dk.rb install</div></pre></td></tr></table></figure>
+</li>
+<li><p>完成上面的准备就可以安装Jekyll了,因为Jekyll是用Ruby编写的,最好的安装方式是通过RubyGems(gem):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem install Jekyll</div></pre></td></tr></table></figure>
+</li>
+<li><p>并使用命令检验是否安装成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jekyll --version</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装Rdiscount，这个用来解析Markdown标记的包，使用如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem install rdiscount</div></pre></td></tr></table></figure>
+</li>
+<li><p>运行本地工程：<br>cd 到工程目录，启动服务：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jekyll --server</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="4-3-jekyll目录结构"><a href="#4-3-jekyll目录结构" class="headerlink" title="4.3 jekyll目录结构**"></a>4.3 jekyll目录结构**</h4><ul>
+<li><p><strong>_posts：</strong><br>: _posts中的数据文档，通过注入_layouts定义的模板，通过jekyll –server最终生成的静态页面在_sites目录。目录是用来存放你的文章的，一般以日期的形式书写标题。</p>
+</li>
+<li><p><strong>_layouts：</strong><br>: _layouts中的模板一般指向了_includes/themes中的模板。目录是用来存放模板的，在这里你可以定义页面中不同的头部和底部。</p>
+</li>
+<li><p><strong>_includes：</strong><br>: _includes/JB中有一些常用的工具，用于列表显示、评论等；<br>: _includes/themes中可参看主题的相关html文档。<br>: _includes/themes中的主题一般包含default.html、post.html和page.html三个文档。default.html定义了网站的最上层框架（模板），post.html和page.html是其子框架（模板）。<br>: 生成好的html子页面通过default.html的{{ content }}变量调用，生成整个页面。</p>
+<ul>
+<li><strong>assets</strong><br>: 渲染页面的CSS和JS文档在assets/themes中</li>
+</ul>
+</li>
+<li><p><strong>_config.yml</strong><br>: 站点生成需要用到_config.yml配置文件，站点的全局变量在_config.yml中定义，用site.访问；页面的变量在YAML Front Matter中定义，用page.访问，更多的模板变量可参考模板数据。</p>
+</li>
+<li><p><strong>index.html</strong> 是你的页面首页。</p>
+</li>
+</ul>
+<h4 id="4-4-Jekyll-Bootstrap创建博客"><a href="#4-4-Jekyll-Bootstrap创建博客" class="headerlink" title="4.4 Jekyll-Bootstrap创建博客"></a>4.4 Jekyll-Bootstrap创建博客</h4><ul>
+<li>创建个人站点，即创建一个新资源，格式为username.github.com；</li>
+<li><p>安装Jekyll-Bootstrap：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/plusjade/jekyll-bootstrap.git USERNAME.github.com</div><div class="line">$ <span class="built_in">cd</span> USERNAME.github.com</div><div class="line">$ git remote <span class="built_in">set</span>-url origin git@github.com:USERNAME/USERNAME.github.com.git</div><div class="line">$ git push origin master</div></pre></td></tr></table></figure>
+</li>
+<li><p>访问创建好的个人站点：username.github.com</p>
+</li>
+<li>在本地测试查看效果：   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> USERNAME.github.com</div><div class="line">jekyll --server</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="4-5-Jekyll-写博过程"><a href="#4-5-Jekyll-写博过程" class="headerlink" title="4.5 Jekyll 写博过程"></a>4.5 Jekyll 写博过程</h4><h5 id="1-配置-config-yml"><a href="#1-配置-config-yml" class="headerlink" title="1) 配置_config.yml"></a>1) 配置_config.yml</h5><ul>
+<li><p>修改标题：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">title : My B<span class="built_in">log</span> =)</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改个人信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">author :</div><div class="line">name : Name Lastname</div><div class="line">email : blah@email.test</div><div class="line">github : username</div><div class="line">twitter : username</div><div class="line">feedburner : feedname</div><div class="line">``</div><div class="line"></div><div class="line"><span class="comment">##### 2) 写文章</span></div><div class="line">按照_config.yml的格式permalink: /:categories/:year/:month/:day/:title，可以修改格式，创建markdown格式文件，就可以发布了。</div><div class="line"></div><div class="line"><span class="comment">##### 3) 发布</span></div><div class="line">本地预览修改：运行jekyll –server，预览http:127.0.0.1:4000。</div><div class="line">发布到github上：通过命令提交或者客户端提交。</div><div class="line"></div><div class="line"><span class="comment">#### 4.6 个性化博客</span></div><div class="line">Github Page完成了博客的主要功能，写作、发布、修改，这些都是相对静态的东西，就是你自己可以控制的事情，还有一些动态的东西Github Pages无法支持，比如说文章浏览次数、文章的评论等，还有一些个性化的东西，像个性化页头页尾、代码高亮可以把博客整的更漂亮一点，其实这写都可以通过第三方应用来实现，个性化自己的博客。</div><div class="line">加上Disqus云评论:</div><div class="line">注册http://disqus.com</div><div class="line">修改_config.yml:</div><div class="line">``` bash</div><div class="line">comments :</div><div class="line">provider : disqus</div><div class="line">disqus :</div><div class="line">short_name : tiansj</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="5-使用Markdown"><a href="#5-使用Markdown" class="headerlink" title="5 使用Markdown"></a>5 使用Markdown</h3><h4 id="5-1-简介"><a href="#5-1-简介" class="headerlink" title="5.1 简介"></a>5.1 简介</h4><ul>
+<li>Markdown 的宗旨是实现「易读易写」。可读性，无论如何，都是最重要的。</li>
+<li>Markdown 的语法全由一些符号所组成，这些符号经过精挑细选，其作用一目了然。格式撰写的文件可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。</li>
+<li>资料：<a href="http://www.cnblogs.com/purediy/archive/2013/01/10/2855397.html" target="_blank" rel="external">搭建环境</a></li>
+</ul>
+<h4 id="5-2-基本语法"><a href="#5-2-基本语法" class="headerlink" title="5.2 基本语法"></a>5.2 基本语法</h4><ul>
+<li>使用一个或多个空行分隔内容段来生成段落 <p>。</p></li>
+<li>标题（h1~h6）格式为使用相应个数的“#”作前缀，比如表示h3用 ### this is a level-3 header ###</li>
+<li>使用“&gt;”作为段落前缀来标识引用文字段落。这其实是 email 中标记引用文字的标准方式；</li>
+<li>使用<strong>*</strong>或<strong>+</strong>或<strong>-</strong>来表示无序列表；使用数字加“.”表示有序列表。如：</li>
+</ul>
+<ol>
+<li>I am ordered list item 1…</li>
+<li>So I should be item 2</li>
+</ol>
+<ul>
+<li>使用4个以上<strong>空格</strong>或1个以上的<strong>tab</strong>来标记代码段落，它们将被<strong>\<pre\></pre\></strong>和<strong>\<code\></code\></strong>包裹，这意味着代码段内的字体会是monospace家族的，并且特殊符号不会被转义。</li>
+<li>使用[test](<a href="http://example.net" target="_blank" rel="external">http://example.net</a> “optional title”)来标记普通链接。</li>
+<li>使用![img](<a href="http://example.net/img.png" target="_blank" rel="external">http://example.net/img.png</a> “optional title”)&gt;来标记图片。引号内的title文字是可选的，链接也可以使用相对路径。</li>
+<li>使用* 或 _ 包裹文本产生 strong 效果：<em>语气很重的文本</em> 以及 <strong>语气更重的文本</strong></li>
+</ul>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>GitHub Pages 建立个人主页 <a href="https://pages.github.com/" target="_blank" rel="external">https://pages.github.com/</a></li>
+<li>jekyll <a href="http://jekyll.bootcss.com/" target="_blank" rel="external">http://jekyll.bootcss.com/</a></li>
+<li>GitHub Pages和Jekyll入门 <a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html</a></li>
+<li>通过GitHub Pages建立个人站点 <a href="http://www.cnblogs.com/purediy/archive/2013/03/07/2948892.html" target="_blank" rel="external">http://www.cnblogs.com/purediy/archive/2013/03/07/2948892.html</a></li>
+<li>基于jekyll-bootstrap的GitHub Pages搭建过程 <a href="http://www.cnblogs.com/Leo_wl/p/3402935.html" target="_blank" rel="external">http://www.cnblogs.com/Leo_wl/p/3402935.html</a></li>
+<li>jekyll-bootstrap模板 <a href="http://layouts-the.me.s3-website-us-east-1.amazonaws.com/index.html" target="_blank" rel="external">http://layouts-the.me.s3-website-us-east-1.amazonaws.com/index.html</a></li>
+<li>Markdown 语法说明 <a href="http://wowubuntu.com/markdown/index.html" target="_blank" rel="external">http://wowubuntu.com/markdown/index.html</a></li>
+<li>highlight.js <a href="https://highlightjs.org/" target="_blank" rel="external">https://highlightjs.org/</a></li>
+</ul>
+变量调用，生成整个页面。<p></p>
+<ul>
+<li><strong>assets</strong><br>: 渲染页面的CSS和JS文档在assets/themes中</li>
+</ul>
+</li>
+<li><p><strong>_config.yml</strong><br>: 站点生成需要用到_config.yml配置文件，站点的全局变量在_config.yml中定义，用site.访问；页面的变量在YAML Front Matter中定义，用page.访问，更多的模板变量可参考模板数据。</p>
+</li>
+<li><p><strong>index.html</strong> 是你的页面首页。</p>
+</li>
+</ul>
+<h4 id="4-4-Jekyll-Bootstrap创建博客"><a href="#4-4-Jekyll-Bootstrap创建博客" class="headerlink" title="4.4 Jekyll-Bootstrap创建博客"></a>4.4 Jekyll-Bootstrap创建博客</h4><ul>
+<li>创建个人站点，即创建一个新资源，格式为username.github.com；</li>
+<li><p>安装Jekyll-Bootstrap：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/plusjade/jekyll-bootstrap.git USERNAME.github.com</div><div class="line">$ <span class="built_in">cd</span> USERNAME.github.com</div><div class="line">$ git remote <span class="built_in">set</span>-url origin git@github.com:USERNAME/USERNAME.github.com.git</div><div class="line">$ git push origin master</div></pre></td></tr></table></figure>
+</li>
+<li><p>访问创建好的个人站点：username.github.com</p>
+</li>
+<li>在本地测试查看效果：   <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> USERNAME.github.com</div><div class="line">jekyll --server</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="4-5-Jekyll-写博过程"><a href="#4-5-Jekyll-写博过程" class="headerlink" title="4.5 Jekyll 写博过程"></a>4.5 Jekyll 写博过程</h4><h5 id="1-配置-config-yml"><a href="#1-配置-config-yml" class="headerlink" title="1) 配置_config.yml"></a>1) 配置_config.yml</h5><ul>
+<li><p>修改标题：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">title : My B<span class="built_in">log</span> =)</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改个人信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">author :</div><div class="line">name : Name Lastname</div><div class="line">email : blah@email.test</div><div class="line">github : username</div><div class="line">twitter : username</div><div class="line">feedburner : feedname</div><div class="line">``</div><div class="line"></div><div class="line"><span class="comment">##### 2) 写文章</span></div><div class="line">按照_config.yml的格式permalink: /:categories/:year/:month/:day/:title，可以修改格式，创建markdown格式文件，就可以发布了。</div><div class="line"></div><div class="line"><span class="comment">##### 3) 发布</span></div><div class="line">本地预览修改：运行jekyll –server，预览http:127.0.0.1:4000。</div><div class="line">发布到github上：通过命令提交或者客户端提交。</div><div class="line"></div><div class="line"><span class="comment">#### 4.6 个性化博客</span></div><div class="line">Github Page完成了博客的主要功能，写作、发布、修改，这些都是相对静态的东西，就是你自己可以控制的事情，还有一些动态的东西Github Pages无法支持，比如说文章浏览次数、文章的评论等，还有一些个性化的东西，像个性化页头页尾、代码高亮可以把博客整的更漂亮一点，其实这写都可以通过第三方应用来实现，个性化自己的博客。</div><div class="line">加上Disqus云评论:</div><div class="line">注册http://disqus.com</div><div class="line">修改_config.yml:</div><div class="line">``` bash</div><div class="line">comments :</div><div class="line">provider : disqus</div><div class="line">disqus :</div><div class="line">short_name : tiansj</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="5-使用Markdown"><a href="#5-使用Markdown" class="headerlink" title="5 使用Markdown"></a>5 使用Markdown</h3><h4 id="5-1-简介"><a href="#5-1-简介" class="headerlink" title="5.1 简介"></a>5.1 简介</h4><ul>
+<li>Markdown 的宗旨是实现「易读易写」。可读性，无论如何，都是最重要的。</li>
+<li>Markdown 的语法全由一些符号所组成，这些符号经过精挑细选，其作用一目了然。格式撰写的文件可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。</li>
+<li>资料：<a href="http://www.cnblogs.com/purediy/archive/2013/01/10/2855397.html" target="_blank" rel="external">搭建环境</a></li>
+</ul>
+<h4 id="5-2-基本语法"><a href="#5-2-基本语法" class="headerlink" title="5.2 基本语法"></a>5.2 基本语法</h4><ul>
+<li>使用一个或多个空行分隔内容段来生成段落 <p>。</p></li>
+<li>标题（h1~h6）格式为使用相应个数的“#”作前缀，比如表示h3用 ### this is a level-3 header ###</li>
+<li>使用“&gt;”作为段落前缀来标识引用文字段落。这其实是 email 中标记引用文字的标准方式；</li>
+<li>使用<strong>*</strong>或<strong>+</strong>或<strong>-</strong>来表示无序列表；使用数字加“.”表示有序列表。如：</li>
+</ul>
+<ol>
+<li>I am ordered list item 1…</li>
+<li>So I should be item 2</li>
+</ol>
+<ul>
+<li>使用4个以上<strong>空格</strong>或1个以上的<strong>tab</strong>来标记代码段落，它们将被<strong>\<pre\></pre\></strong>和<strong>\<code\></code\></strong>包裹，这意味着代码段内的字体会是monospace家族的，并且特殊符号不会被转义。</li>
+<li>使用[test](<a href="http://example.net" target="_blank" rel="external">http://example.net</a> “optional title”)来标记普通链接。</li>
+<li>使用![img](<a href="http://example.net/img.png" target="_blank" rel="external">http://example.net/img.png</a> “optional title”)&gt;来标记图片。引号内的title文字是可选的，链接也可以使用相对路径。</li>
+<li>使用* 或 _ 包裹文本产生 strong 效果：<em>语气很重的文本</em> 以及 <strong>语气更重的文本</strong></li>
+</ul>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li>GitHub Pages 建立个人主页 <a href="https://pages.github.com/" target="_blank" rel="external">https://pages.github.com/</a></li>
+<li>jekyll <a href="http://jekyll.bootcss.com/" target="_blank" rel="external">http://jekyll.bootcss.com/</a></li>
+<li>GitHub Pages和Jekyll入门 <a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html</a></li>
+<li>通过GitHub Pages建立个人站点 <a href="http://www.cnblogs.com/purediy/archive/2013/03/07/2948892.html" target="_blank" rel="external">http://www.cnblogs.com/purediy/archive/2013/03/07/2948892.html</a></li>
+<li>基于jekyll-bootstrap的GitHub Pages搭建过程 <a href="http://www.cnblogs.com/Leo_wl/p/3402935.html" target="_blank" rel="external">http://www.cnblogs.com/Leo_wl/p/3402935.html</a></li>
+<li>jekyll-bootstrap模板 <a href="http://layouts-the.me.s3-website-us-east-1.amazonaws.com/index.html" target="_blank" rel="external">http://layouts-the.me.s3-website-us-east-1.amazonaws.com/index.html</a></li>
+<li>Markdown 语法说明 <a href="http://wowubuntu.com/markdown/index.html" target="_blank" rel="external">http://wowubuntu.com/markdown/index.html</a></li>
+<li>highlight.js <a href="https://highlightjs.org/" target="_blank" rel="external">https://highlightjs.org/</a></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2013/03/23/2013-03-23-GitHub建立个人站点/">GitHub建立个人站点</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">cuiqingwei</a></p>
+        <p><span>发布时间:</span>2013-03-23, 11:38:38</p>
+        <p><span>最后更新:</span>2016-10-08, 20:24:01</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2013/03/23/2013-03-23-GitHub建立个人站点/" title="GitHub建立个人站点">http://cuiqingwei.github.io/2013/03/23/2013-03-23-GitHub建立个人站点/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2013/03/23/2013-03-23-GitHub建立个人站点/　　作者: cuiqingwei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2013/04/02/2013-04-02-骑行1：佘山/">
+                    骑行1：佘山
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/">
+                    InstantContiki2.6 for CC2530
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Git简介"><span class="toc-number">1.</span> <span class="toc-text">1.Git简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-为什么使用Github-Pages"><span class="toc-number">2.</span> <span class="toc-text">2.为什么使用Github Pages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-创建Github-Pages"><span class="toc-number">3.</span> <span class="toc-text">3 创建Github Pages</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-安装git工具"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 安装git工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-两种pages模式"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 两种pages模式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-User-Organization-Pages-个人或公司站点"><span class="toc-number">3.2.1.</span> <span class="toc-text">1) User/Organization Pages 个人或公司站点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-Project-Pages-项目站点"><span class="toc-number">3.2.2.</span> <span class="toc-text">2) Project Pages 项目站点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-使用Jekyll搭建博客"><span class="toc-number">4.</span> <span class="toc-text">4 使用Jekyll搭建博客</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-什么是jekyll"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 什么是jekyll</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Git简介"><span class="toc-number">5.</span> <span class="toc-text">1.Git简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-为什么使用Github-Pages"><span class="toc-number">6.</span> <span class="toc-text">2.为什么使用Github Pages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-创建Github-Pages"><span class="toc-number">7.</span> <span class="toc-text">3 创建Github Pages</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-安装git工具"><span class="toc-number">7.1.</span> <span class="toc-text">3.1 安装git工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-两种pages模式"><span class="toc-number">7.2.</span> <span class="toc-text">3.2 两种pages模式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-User-Organization-Pages-个人或公司站点"><span class="toc-number">7.2.1.</span> <span class="toc-text">1) User/Organization Pages 个人或公司站点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-Project-Pages-项目站点"><span class="toc-number">7.2.2.</span> <span class="toc-text">2) Project Pages 项目站点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-使用Jekyll搭建博客"><span class="toc-number">8.</span> <span class="toc-text">4 使用Jekyll搭建博客</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-什么是jekyll"><span class="toc-number">8.1.</span> <span class="toc-text">4.1 什么是jekyll</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-jekyll本地环境搭建"><span class="toc-number">8.2.</span> <span class="toc-text">4.2 jekyll本地环境搭建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-jekyll目录结构"><span class="toc-number">8.3.</span> <span class="toc-text">4.3 jekyll目录结构**</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-Jekyll-Bootstrap创建博客"><span class="toc-number">8.4.</span> <span class="toc-text">4.4 Jekyll-Bootstrap创建博客</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-Jekyll-写博过程"><span class="toc-number">8.5.</span> <span class="toc-text">4.5 Jekyll 写博过程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-配置-config-yml"><span class="toc-number">8.5.1.</span> <span class="toc-text">1) 配置_config.yml</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-使用Markdown"><span class="toc-number">9.</span> <span class="toc-text">5 使用Markdown</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-简介"><span class="toc-number">9.1.</span> <span class="toc-text">5.1 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-基本语法"><span class="toc-number">9.2.</span> <span class="toc-text">5.2 基本语法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-number">10.</span> <span class="toc-text">参考资料</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-jekyll本地环境搭建"><span class="toc-number">10.1.</span> <span class="toc-text">4.2 jekyll本地环境搭建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-jekyll目录结构"><span class="toc-number">10.2.</span> <span class="toc-text">4.3 jekyll目录结构**</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Git简介"><span class="toc-number">11.</span> <span class="toc-text">1.Git简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-为什么使用Github-Pages"><span class="toc-number">12.</span> <span class="toc-text">2.为什么使用Github Pages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-创建Github-Pages"><span class="toc-number">13.</span> <span class="toc-text">3 创建Github Pages</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-安装git工具"><span class="toc-number">13.1.</span> <span class="toc-text">3.1 安装git工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-两种pages模式"><span class="toc-number">13.2.</span> <span class="toc-text">3.2 两种pages模式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-User-Organization-Pages-个人或公司站点"><span class="toc-number">13.2.1.</span> <span class="toc-text">1) User/Organization Pages 个人或公司站点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-Project-Pages-项目站点"><span class="toc-number">13.2.2.</span> <span class="toc-text">2) Project Pages 项目站点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-使用Jekyll搭建博客"><span class="toc-number">14.</span> <span class="toc-text">4 使用Jekyll搭建博客</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-什么是jekyll"><span class="toc-number">14.1.</span> <span class="toc-text">4.1 什么是jekyll</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-jekyll本地环境搭建"><span class="toc-number">14.2.</span> <span class="toc-text">4.2 jekyll本地环境搭建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-jekyll目录结构"><span class="toc-number">14.3.</span> <span class="toc-text">4.3 jekyll目录结构**</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-Jekyll-Bootstrap创建博客"><span class="toc-number">14.4.</span> <span class="toc-text">4.4 Jekyll-Bootstrap创建博客</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-Jekyll-写博过程"><span class="toc-number">14.5.</span> <span class="toc-text">4.5 Jekyll 写博过程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-配置-config-yml"><span class="toc-number">14.5.1.</span> <span class="toc-text">1) 配置_config.yml</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-使用Markdown"><span class="toc-number">15.</span> <span class="toc-text">5 使用Markdown</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-简介"><span class="toc-number">15.1.</span> <span class="toc-text">5.1 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-基本语法"><span class="toc-number">15.2.</span> <span class="toc-text">5.2 基本语法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-number">16.</span> <span class="toc-text">参考资料</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-Jekyll-Bootstrap创建博客"><span class="toc-number">16.1.</span> <span class="toc-text">4.4 Jekyll-Bootstrap创建博客</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-Jekyll-写博过程"><span class="toc-number">16.2.</span> <span class="toc-text">4.5 Jekyll 写博过程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-配置-config-yml"><span class="toc-number">16.2.1.</span> <span class="toc-text">1) 配置_config.yml</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-使用Markdown"><span class="toc-number">17.</span> <span class="toc-text">5 使用Markdown</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-简介"><span class="toc-number">17.1.</span> <span class="toc-text">5.1 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-基本语法"><span class="toc-number">17.2.</span> <span class="toc-text">5.2 基本语法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-number">18.</span> <span class="toc-text">参考资料</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"GitHub建立个人站点　| iZheteng　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2013/03/23/2013-03-23-GitHub建立个人站点/" data-title="GitHub建立个人站点" data-url="http://cuiqingwei.github.io/2013/03/23/2013-03-23-GitHub建立个人站点/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"cuiqingwei"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+            // Add comment count
+            $(function(){ 
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=cuiqingwei&threads=2013/03/23/2013-03-23-GitHub建立个人站点/&callback=?";
+                $.getJSON(jsonUrl, function(result){
+                    $.each(result.response, function(i, field){
+                        var value = field.comments;
+                        if (value > 0) {
+                            $(".count-comment").text(value);
+                            return;
+                        }
+                    })
+                })
+            })
+        
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2013/04/02/2013-04-02-骑行1：佘山/" title="上一篇: 骑行1：佘山">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/" title="下一篇: InstantContiki2.6 for CC2530">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/2016-10-08-OpenWRT开源硬件汇总/">OpenWRT开源硬件汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/13/2016-05-13-IoT知识点汇总/">IoT知识点汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/12/2016-05-12-网站设计的最简主义/">网站设计的最简主义</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/09/2016-03-09-MEAN/">MEAN</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/08/2016-03-08-eMaker-Space/">eMaker.Space</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/18/2015-11-18-创客硬件/">创客硬件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/03/2015-10-03-折叠公路车/">折叠公路车</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/18/2015-08-18-Linux/">Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/15/2015-08-15-亚马逊云服务免费一年VPS主机翻墙术/">亚马逊云服务免费一年VPS主机翻墙术</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/23/2015-07-23-常用Wi-Fi网络评测工具/">常用Wi-Fi网络评测工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/16/2015-07-16-有趣的Linux命令行功效/">有趣的Linux命令行功效</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/08/2015-07-08-OpenWRT折腾日记/">OpenWRT折腾日记</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/07/2015-07-07-OpenWRT之dl下载分享/">OpenWRT之dl下载分享</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/24/2015-06-24-技术领域的深刻体会、教训/">技术领域的深刻体会、教训</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/03/2015-06-03-三星平板工厂模式/">三星平板工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/01/2015-03-01-ZigBee射频模块晶振选型/">ZigBee射频模块晶振选型</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/15/2015-01-15-xclip-pbcopy-xsel用法-terminal-复制粘帖-mac-ubuntu/">xclip,pbcopy,xsel用法 terminal 复制粘帖 (mac, ubuntu)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/13/2015-01-13-Ubuntu/">Ubuntu</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/13/2015-01-13-MacOS/">MacOS</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/08/2014-12-08-SDK之uClinux、Ralink、Atheros、Realtek、Broadcom/">SDK之uClinux、Ralink、Atheros、Realtek、Broadcom</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/06/08/2014-06-08-骑行7：滴水湖2014/">骑行7：滴水湖2014</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/05/21/2014-05-21-骑行6：上海南京路步行街/">骑行6：上海南京路步行街</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/04/17/2014-04-17-网络命令/">网络命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/07/05/2013-07-05-Marketplace-Client/">Marketplace Client</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/06/15/2013-06-15-骑行5：沪杭公路到九龙山/">骑行5：沪杭公路到九龙山</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/29/2013-04-29-骑行4：老上海-浦西世博园/">骑行4：老上海&浦西世博园</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/20/2013-04-20-骑行3：天马山-淀山湖/">骑行3：天马山&淀山湖</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/06/2013-04-06-我的单车装备/">我的单车装备</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/05/2013-04-05-骑行2：滴水湖/">骑行2：滴水湖</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/02/2013-04-02-骑行1：佘山/">骑行1：佘山</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/03/23/2013-03-23-GitHub建立个人站点/">GitHub建立个人站点</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/">InstantContiki2.6 for CC2530</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/10/14/2012-10-14-曾经折腾过的那些/">曾经折腾过的那些</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-autoRootfs-sh/">autoRootfs.sh</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-SQLite移植到ARM开发板/">SQLite移植到ARM开发板</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-goAhead2-5嵌入式web服务器移植/">goAhead2.5嵌入式web服务器移植</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-jffs2根文件系统制作/">jffs2根文件系统制作</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-at91sam9x5编译过程/">at91sam9x5编译过程</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-ubuntu11-04安装arm开发环境/">ubuntu11.04安装arm开发环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2010/07/23/2010-07-23-Telnet-Socket调试工具/">Telnet&Socket调试工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2009/07/28/2009-07-28-基于Altium-Designer-Winter-09在PCB中放置LOGO/">基于Altium Designer Winter 09在PCB中放置LOGO</a></li><li class="post-list-item"><a class="post-list-link" href="/2009/03/13/2009-03-13-在TI-CC1111-CC25111上搞定USBHID/">在TI-CC1111&CC25111上搞定USBHID</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/07/09/2008-07-09-Rf-Calc/">Rf_Calc</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/05/11/2008-05-11-Proteus产品仿真/">Proteus产品仿真</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/">USB_M8_RGBLED彩灯</a></li><li class="post-list-item"><a class="post-list-link" href="/2007/11/19/2007-11-19-EAGLE3D终于搞定了！/">EAGLE3D终于搞定了!</a></li><li class="post-list-item"><a class="post-list-link" href="/2007/10/12/2007-10-12-CC2430模块自测程序/">CC2430模块自测程序</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/12/25/2006-12-25-基于Cport的多功能串口调试工具/">基于Cport的多功能串口调试工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/12/06/2006-12-06-AT91SAM7S64的定时器初始化计算工器/">AT91SAM7S64的定时器初始化计算器</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/10/31/2006-10-31-闪动的“LOVE”/">闪动的“LOVE”</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/10/01/2006-10-01-活着，就要折腾/">活着，就要折腾</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i>
+                2016 cuiqingwei
+            </div>
+            <div class="footer-right">
+                <!-- <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i> -->
+                Old Blog <a href="https://cuiqingwei1981.github.io">https://cuiqingwei1981.github.io</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-42607542-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
