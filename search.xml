@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title><![CDATA[OpenWRT经典网站]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/08/2016-10-08-OpenWRT%E7%BB%8F%E5%85%B8%E7%BD%91%E7%AB%99/</url>
+      <content type="html"><![CDATA[<h1 id="官方网站"><a href="#官方网站" class="headerlink" title="官方网站"></a>官方网站</h1><p><a href="https://openwrt.org/" target="_blank" rel="external">https://openwrt.org/</a></p>
+<ul>
+<li>Releases<br><a href="https://downloads.openwrt.org/" target="_blank" rel="external">https://downloads.openwrt.org/</a></li>
+<li>环境搭建及下载<br><a href="https://wiki.openwrt.org/doc/howto/buildroot.exigence" target="_blank" rel="external">https://wiki.openwrt.org/doc/howto/buildroot.exigence</a><br><a href="https://wiki.openwrt.org/zh-cn/doc/howto/buildroot.exigence" target="_blank" rel="external">https://wiki.openwrt.org/zh-cn/doc/howto/buildroot.exigence</a></li>
+<li>使用说明<br><a href="https://wiki.openwrt.org/doc/howto/build" target="_blank" rel="external">https://wiki.openwrt.org/doc/howto/build</a><br><a href="https://wiki.openwrt.org/zh-cn/doc/howto/build" target="_blank" rel="external">https://wiki.openwrt.org/zh-cn/doc/howto/build</a></li>
+<li>硬件支持列表<br><a href="https://wiki.openwrt.org/toh/start" target="_blank" rel="external">https://wiki.openwrt.org/toh/start</a><a id="more"></a>
+<h1 id="OpenWRT中文网"><a href="#OpenWRT中文网" class="headerlink" title="OpenWRT中文网"></a>OpenWRT中文网</h1><a href="http://www.openwrt.org.cn/" target="_blank" rel="external">http://www.openwrt.org.cn/</a></li>
+</ul>
+<ul>
+<li>网站提供的常用小工具，下载使用起来比较方方便<br><a href="http://downloads.openwrt.org.cn/software/" target="_blank" rel="external">http://downloads.openwrt.org.cn/software/</a></li>
+</ul>
+<h1 id="恩山无线论坛OpenWRT专版"><a href="#恩山无线论坛OpenWRT专版" class="headerlink" title="恩山无线论坛OpenWRT专版"></a>恩山无线论坛OpenWRT专版</h1><p><a href="http://www.right.com.cn/forum/forum-72-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/forum-72-1.html</a></p>
+<h1 id="openwrt-io"><a href="#openwrt-io" class="headerlink" title="openwrt.io"></a>openwrt.io</h1><p><a href="http://openwrt.io/" target="_blank" rel="external">http://openwrt.io/</a></p>
+<ol>
+<li>此站完全开源，放在github.com上，大家共同修改，通过travis-ci.org持续集成自动构建部署到七牛云存储上，无需服务器。</li>
+<li>网站内容采用markdown，通过mkdocs生成HTML，是一个纯静态的网站。</li>
+<li>为提高国内下载速度，OpenWrt SDK、opkg软件源等文件放在七牛云储存国内CDN上。</li>
+</ol>
+<h1 id="dl下载网"><a href="#dl下载网" class="headerlink" title="dl下载网"></a>dl下载网</h1><p><a href="http://www.openwrtdl.com/" target="_blank" rel="external">http://www.openwrtdl.com/</a><br>在编译OpenWrt最新的trunk时，碰到一个Git源码取不下来（你懂得，被墙了！）<br>该站点作者将openwrt官网上的软件都下载下来了，并在本地建了服务器，然后与共享给大家<br>另外，还有<br><a href="http://193.87.95.148/openwrt/raspi/trunk/dl/" target="_blank" rel="external">http://193.87.95.148/openwrt/raspi/trunk/dl/</a><br><strong>当你make过程出现Download failed或是404 Not Found时，到这些网站Ctrl+F找到你需要的，wget到dl目录即可继续make</strong></p>
+<h1 id="夢想家"><a href="#夢想家" class="headerlink" title="夢想家"></a>夢想家</h1><p><a href="https://datahunter.org/wrt" target="_blank" rel="external">https://datahunter.org/wrt</a></p>
+<h1 id="森亮号航海见识"><a href="#森亮号航海见识" class="headerlink" title="森亮号航海见识"></a>森亮号航海见识</h1><p><a href="http://see.sl088.com/wiki/%E5%88%86%E7%B1%BB:Openwrt%E7%BC%96%E8%AF%91" target="_blank" rel="external">http://see.sl088.com/wiki/%E5%88%86%E7%B1%BB:Openwrt%E7%BC%96%E8%AF%91</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[OpenWRT开源硬件汇总]]></title>
       <url>http://cuiqingwei.github.io/2016/10/08/2016-10-08-OpenWRT%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6%E6%B1%87%E6%80%BB/</url>
       <content type="html"><![CDATA[<h1 id="Arduino-Yun"><a href="#Arduino-Yun" class="headerlink" title="Arduino Yún"></a>Arduino Yún</h1><p><a href="https://www.arduino.cc/en/Main/ArduinoBoardYun" target="_blank" rel="external">https://www.arduino.cc/en/Main/ArduinoBoardYun</a><br>cpu: Atheros AR9331 @400MHZ (含ATmega32U4)<br>ram:  64MB DDR2<br>flash: 16MB<br>wifi: 150Mbit Wi-Fi 1T1R 2.4 GHz</p>
@@ -607,6 +634,113 @@
     </entry>
     
     <entry>
+      <title><![CDATA[OpenWRT usefull commands]]></title>
+      <url>http://cuiqingwei.github.io/2015/07/09/2015-07-09-OpenWRT-usefull-commands/</url>
+      <content type="html"><![CDATA[<h1 id="不得不说"><a href="#不得不说" class="headerlink" title="不得不说"></a>不得不说</h1><p>在命令行，按两次<strong>TAB</strong>键，列出所有命令！</p>
+<h1 id="硬件信息"><a href="#硬件信息" class="headerlink" title="硬件信息"></a>硬件信息</h1><ul>
+<li>CPU:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /proc/cpuinfo</div></pre></td></tr></table></figure>
+<ul>
+<li>Memory:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">free</div><div class="line">cat /proc/meminfo</div></pre></td></tr></table></figure>
+<ul>
+<li>Disk Space:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">df -h</div><div class="line">cat /proc/mtd</div><div class="line">cat /proc/partitions</div></pre></td></tr></table></figure>
+<p>当然还可以通过<strong>dmesg</strong>配合grep查看！</p>
+<h1 id="其他信息"><a href="#其他信息" class="headerlink" title="其他信息"></a>其他信息</h1><ul>
+<li>内核信息</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uname <span class="_">-a</span></div></pre></td></tr></table></figure>
+<ul>
+<li>内核版本</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uname -r</div></pre></td></tr></table></figure>
+<ul>
+<li>kernel信息</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dmesg</div></pre></td></tr></table></figure>
+<ul>
+<li>系统日志</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">logread</div></pre></td></tr></table></figure>
+<ul>
+<li>进程列表</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps</div></pre></td></tr></table></figure>
+<ul>
+<li>获取运行时间，系统负载率</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uptime</div></pre></td></tr></table></figure>
+<p><strong>11:45:37 up 3 days, 10:46,  load average: 0.00, 0.01, 0.04</strong><br>1、11:45:37          // 系统当前时间<br>2、up 3 days, 10:46  // 主机已运行时间,时间越大，说明你的机器越稳定。<br>3、load average      // 系统平均负载，统计最近1，5，15分钟的系统平均负载</p>
+<ul>
+<li>查看环境变量</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">env <span class="comment"># lists environmental variables</span></div></pre></td></tr></table></figure>
+<ul>
+<li>查找某正在运行进程的进程号</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pidof watchdog</div></pre></td></tr></table></figure>
+<h1 id="Package管理"><a href="#Package管理" class="headerlink" title="Package管理"></a>Package管理</h1><p><strong>opkg</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">opkg list | grep ppp    <span class="comment">#shows available modules grep filters out name</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li>列出已安装</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">opkg list-installed</div></pre></td></tr></table></figure>
+<ul>
+<li>打个包查看</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">opkg info firewall</div><div class="line">opkg files firewall</div></pre></td></tr></table></figure>
+<h1 id="web管理"><a href="#web管理" class="headerlink" title="web管理"></a>web管理</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">opkg info luci</div><div class="line">opkg info luci-ssl</div></pre></td></tr></table></figure>
+<h1 id="查看DHCP客户端IP"><a href="#查看DHCP客户端IP" class="headerlink" title="查看DHCP客户端IP"></a>查看DHCP客户端IP</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /tmp/dhcp.leases</div></pre></td></tr></table></figure>
+<h1 id="无线信息"><a href="#无线信息" class="headerlink" title="无线信息"></a>无线信息</h1><ul>
+<li>帮助</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iw <span class="built_in">help</span></div></pre></td></tr></table></figure>
+<ul>
+<li>获取设备的功能</li>
+</ul>
+<p>使用以下方法来获得所有设备的功能，如带宽信息（2.4GHz，和5GHz），和802.11n的信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iw list</div></pre></td></tr></table></figure></p>
+<ul>
+<li>扫描无线路由器/AP</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iw dev wlan0 scan</div></pre></td></tr></table></figure>
+<ul>
+<li>查看连接Openwrt路由的无线客户端：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">iwinfo wlan0 assoclist  </div><div class="line">iw dev wlan0 station dump</div></pre></td></tr></table></figure>
+<ul>
+<li>查看Openwrt路由无线信息：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iwinfo wlan0 info</div></pre></td></tr></table></figure>
+<ul>
+<li>重启无线：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wifi down &amp;&amp; sleep 5 &amp;&amp; wifi</div></pre></td></tr></table></figure>
+<ul>
+<li>一个bash脚本，输出当前无线客户端IP/MAC/名称/速率：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash  </span></div><div class="line"><span class="built_in">echo</span> <span class="_">-e</span> <span class="string">"# IP address\tname\tMAC address\ttx bit\trx bit"</span>  </div><div class="line"><span class="keyword">for</span> interface <span class="keyword">in</span> `iw dev | grep Interface | cut <span class="_">-f</span> 2 <span class="_">-s</span> <span class="_">-d</span><span class="string">" "</span>`  </div><div class="line"><span class="keyword">do</span>  </div><div class="line">  maclist=(`iw dev <span class="variable">$interface</span> station dump | grep Station | cut <span class="_">-f</span> 2 <span class="_">-s</span> <span class="_">-d</span><span class="string">" "</span>`)  </div><div class="line">  txlist=(`iw dev wlan0 station dump|grep <span class="string">'tx bitrate'</span>|awk <span class="string">'&#123;print $3$4&#125;'</span>`)  </div><div class="line">  rxlist=(`iw dev wlan0 station dump|grep <span class="string">'rx bitrate'</span>|awk <span class="string">'&#123;print $3$4&#125;'</span>`)  </div><div class="line">  len=<span class="variable">$&#123;#maclist[@]&#125;</span>  </div><div class="line">  <span class="keyword">for</span> ((i=0;i&lt;<span class="variable">$len</span>;i++))  </div><div class="line">  <span class="keyword">do</span>  </div><div class="line">    mac=<span class="variable">$&#123;maclist[$i]&#125;</span>  </div><div class="line">    tx=<span class="variable">$&#123;txlist[$i]&#125;</span>  </div><div class="line">    rx=<span class="variable">$&#123;rxlist[$i]&#125;</span>  </div><div class="line">    ip=<span class="string">"UNKN"</span>  </div><div class="line">    host=<span class="string">""</span>  </div><div class="line">    ip=`cat /tmp/dhcp.leases | cut <span class="_">-f</span> 2,3,4 <span class="_">-s</span> <span class="_">-d</span><span class="string">" "</span> | grep <span class="variable">$mac</span> | cut <span class="_">-f</span> 2 <span class="_">-s</span> <span class="_">-d</span><span class="string">" "</span>`  </div><div class="line">    host=`cat /tmp/dhcp.leases | cut <span class="_">-f</span> 2,3,4 <span class="_">-s</span> <span class="_">-d</span><span class="string">" "</span> | grep <span class="variable">$mac</span> | cut <span class="_">-f</span> 3 <span class="_">-s</span> <span class="_">-d</span><span class="string">" "</span>`  </div><div class="line">    <span class="built_in">echo</span> <span class="_">-e</span> <span class="string">"<span class="variable">$ip</span>\t<span class="variable">$host</span>\t<span class="variable">$mac</span>\t<span class="variable">$tx</span>\t<span class="variable">$rx</span>"</span>|awk <span class="string">'&#123;printf "%-15s %-25s %-15s %-10s %-10s\n",$1,$2,$3,$4,$5&#125;'</span>  </div><div class="line">  <span class="keyword">done</span>  </div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<h1 id="查看gpio口的信息"><a href="#查看gpio口的信息" class="headerlink" title="查看gpio口的信息"></a>查看gpio口的信息</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /sys/kernel/debug/gpio</div></pre></td></tr></table></figure>
+<h1 id="USB"><a href="#USB" class="headerlink" title="USB"></a>USB</h1><ul>
+<li>查看USB连接设备</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /sys/kernel/debug/usb/devices</div></pre></td></tr></table></figure>
+<h1 id="uci"><a href="#uci" class="headerlink" title="uci"></a>uci</h1><p><strong>uci (command) [arguments]</strong></p>
+<p><em>Example:</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">uci <span class="built_in">set</span> dhcp.lan.leasetime=4h</div><div class="line">uci get dhcp.lan.leasetime</div><div class="line">uci show dhcp</div><div class="line">uci changes</div><div class="line">uci commit</div></pre></td></tr></table></figure>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p><strong>swconfig</strong> 配置交换机;</p>
+<p><strong>iwinfo</strong> 是OpenWrt中提供无线相关信息读取的软件.其中内置了诸如WEXT NL80211 madwifi等等驱动的各种信息读取方式.把不同类型的驱动整合出一个统一的接口供luci等使用;</p>
+<p><strong>iwpriv iwlist iwconfig</strong> 是WEXT类型无线驱动专用的操作程序.</p>
+<p>ifconfig<br>iwconfig<br>pkill</p>
+<p>cat /proc/modules<br>cat /proc/devices<br>cat /proc/iomem<br>cat /proc/cmdline<br>cat /proc/interrupts</p>
+<p>cd /<br>find -name easycap<br>./sys/bus/usb/drivers/easycap<br>./sys/module/usbcore/holders/easycap<br>./sys/module/snd/holders/easycap<br>./sys/module/snd_pcm/holders/easycap<br>./sys/module/videodev/holders/easycap<br>./sys/module/easycap</p>
+<p>sys adminname open<br>sys password open<br>sys multiuser on |backd backd<br>sys cwmp disp</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[OpenWRT折腾日记]]></title>
       <url>http://cuiqingwei.github.io/2015/07/08/2015-07-08-OpenWRT%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0/</url>
       <content type="html"><![CDATA[<h2 id="2016-04-23-Openwrt-Yun"><a href="#2016-04-23-Openwrt-Yun" class="headerlink" title="2016-04-23 Openwrt Yun"></a>2016-04-23 Openwrt Yun</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/bin/bash -ex</span></div></pre></td></tr></table></figure>
@@ -791,6 +925,19 @@
 <p>========感谢leejon提供的统计数据========</p>
 <p>软件包条目数：<br><a href="http://pan.baidu.com/s/1dD4Rl53" target="_blank" rel="external">http://pan.baidu.com/s/1dD4Rl53</a>   2022个<br><a href="http://mirror2.openwrt.org/sources" target="_blank" rel="external">http://mirror2.openwrt.org/sources</a>   3860个<br><a href="https://downloads.openwrt.org/sources" target="_blank" rel="external">https://downloads.openwrt.org/sources</a>   2672个<br><a href="http://downloads.openwrt.org.cn/sources" target="_blank" rel="external">http://downloads.openwrt.org.cn/sources</a>   3223个<br><a href="http://143.129.80.193/openwrt/dl" target="_blank" rel="external">http://143.129.80.193/openwrt/dl</a>   590个</p>
 <p>原文链接 <a href="http://www.openwrtdl.com/wordpress/package-index-download" target="_blank" rel="external">http://www.openwrtdl.com/wordpress/package-index-download</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[OpenWRT下ifconfig各接口说明]]></title>
+      <url>http://cuiqingwei.github.io/2015/07/06/2015-07-06-OpenWRT%E4%B8%8Bifconfig%E5%90%84%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E/</url>
+      <content type="html"><![CDATA[<h1 id="rao-和raio（无线）"><a href="#rao-和raio（无线）" class="headerlink" title="rao 和raio（无线）"></a>rao 和raio（无线）</h1><p>这两个是成对出现，一看就知道是无线设备，它们各自对应一个SSID，分别是2.4G和5G。</p>
+<h1 id="eth0（物理网卡）"><a href="#eth0（物理网卡）" class="headerlink" title="eth0（物理网卡）"></a>eth0（物理网卡）</h1><p>eth0.1 是vlan1分出的lan口。<br>eth0.2 是vlan分出的wan口。<br><a id="more"></a></p>
+<h1 id="br-lan（无线-有线）"><a href="#br-lan（无线-有线）" class="headerlink" title="br-lan（无线+有线）"></a>br-lan（无线+有线）</h1><p>虚拟设备，br-lan = eth0.1 + rai0 + ra0，即将有线LAN口和无线网统一划分为 LAN，便于管理</p>
+<h1 id="lo"><a href="#lo" class="headerlink" title="lo"></a>lo</h1><p>虚拟设备，自身的回环网设备。127.0.0.1</p>
+<h1 id="aplic"><a href="#aplic" class="headerlink" title="aplic"></a>aplic</h1><p>虚拟设备，无线中继</p>
+<h1 id="ppp0"><a href="#ppp0" class="headerlink" title="ppp0"></a>ppp0</h1><p>虚拟设备，连接PPTP服务器后分配的虚拟ip</p>
+<h1 id="pppoe-wan"><a href="#pppoe-wan" class="headerlink" title="pppoe-wan"></a>pppoe-wan</h1><p>虚拟设备，拨号上网的</p>
 ]]></content>
     </entry>
     
