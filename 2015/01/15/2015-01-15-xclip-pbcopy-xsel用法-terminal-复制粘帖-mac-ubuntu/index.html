@@ -18,8 +18,7 @@
 <meta name="description" content="1.Mac下使用pbcopy命令。 # 对应有个pbpaste命令。
 示例：1echo &apos;Hello World!&apos; | pbcopy
 将字符串Hello World放入剪贴板1cat myFile.txt | pbcopy
-1pbpaste &amp;gt; file.txt
-要复制结果又想看到命令的输出命令的结果输出时，如果给复制命令（即上面提到的命令clip、xsel、pbcopy）那么命令输出就看">
+1pbpaste &amp;gt; file.txt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="xclip,pbcopy,xsel用法 terminal 复制粘帖 (mac, ubuntu)">
 <meta property="og:url" content="http://cuiqingwei.github.io/2015/01/15/2015-01-15-xclip-pbcopy-xsel用法-terminal-复制粘帖-mac-ubuntu/index.html">
@@ -27,16 +26,14 @@
 <meta property="og:description" content="1.Mac下使用pbcopy命令。 # 对应有个pbpaste命令。
 示例：1echo &apos;Hello World!&apos; | pbcopy
 将字符串Hello World放入剪贴板1cat myFile.txt | pbcopy
-1pbpaste &amp;gt; file.txt
-要复制结果又想看到命令的输出命令的结果输出时，如果给复制命令（即上面提到的命令clip、xsel、pbcopy）那么命令输出就看">
-<meta property="og:updated_time" content="2016-10-08T12:09:15.000Z">
+1pbpaste &amp;gt; file.txt">
+<meta property="og:updated_time" content="2016-10-09T12:47:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xclip,pbcopy,xsel用法 terminal 复制粘帖 (mac, ubuntu)">
 <meta name="twitter:description" content="1.Mac下使用pbcopy命令。 # 对应有个pbpaste命令。
 示例：1echo &apos;Hello World!&apos; | pbcopy
 将字符串Hello World放入剪贴板1cat myFile.txt | pbcopy
-1pbpaste &amp;gt; file.txt
-要复制结果又想看到命令的输出命令的结果输出时，如果给复制命令（即上面提到的命令clip、xsel、pbcopy）那么命令输出就看">
+1pbpaste &amp;gt; file.txt">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -352,6 +349,7 @@
 <p>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">'Hello World!'</span> | pbcopy</div></pre></td></tr></table></figure></p>
 <h1 id="将字符串Hello-World放入剪贴板"><a href="#将字符串Hello-World放入剪贴板" class="headerlink" title="将字符串Hello World放入剪贴板"></a>将字符串Hello World放入剪贴板</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat myFile.txt | pbcopy</div></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pbpaste &gt; file.txt</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p><em>要复制结果又想看到命令的输出</em><br>命令的结果输出时，如果给复制命令（即上面提到的命令clip、xsel、pbcopy）那么命令输出就看不到了。如果你想先看到命令的输出，可以下面这么做。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> <span class="string">'Hello World!'</span> | tee tmp.file.txt  </div><div class="line">Hello World!  </div><div class="line">$ xsel &lt; tmp.file.txt  </div><div class="line">$ rm tmp.file.txt</div></pre></td></tr></table></figure></p>
 <p>即先使用tee命令把输出输到控制台和一个文件中。命令执行完成后，再把输出的内容放到剪贴板中。</p>
 <h3 id="2-Ubuntu下"><a href="#2-Ubuntu下" class="headerlink" title="2.Ubuntu下"></a>2.Ubuntu下</h3><p>ubuntu下的用户可以只用apt-get来安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install xclip</div></pre></td></tr></table></figure></p>
@@ -364,7 +362,7 @@
 <p><strong>-i, -in</strong><br>read text into X selection from standard input or files (default)<br><strong>-o, -out</strong><br>prints the selection to standard out (generally for piping to a file or program)<br><strong>-f, -filter</strong><br>when xclip is invoked in the in mode with output level set to silent (the defaults), the filter option will cause xclip to print the text piped to standard in back to standard out unmodified<br><strong>-l, -loops</strong><br>number of X selection requests (pastes into X applications) to wait for before exiting, with a value of 0 (default) causing xclip to wait for an unlimited number of requests until another application (possibly another invocation of xclip) takes ownership of the selection<br><strong>-d, -display</strong><br>X display to use (e.g. “localhost:0”), xclip defaults to the value in $DISPLAY if this option is omitted</p>
 <h3 id="3-Linux下"><a href="#3-Linux下" class="headerlink" title="3.Linux下"></a>3.Linux下</h3><p>使用xsel命令。</p>
 <p>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">cat README.TXT | xsel  </div><div class="line">cat README.TXT | xsel -b <span class="comment"># 如有问题可以试试-b选项  </span></div><div class="line">xsel &lt; README.TXT  </div><div class="line"><span class="comment"># 将readme.txt的文本放入剪贴板  </span></div><div class="line">xsel -c  </div><div class="line"><span class="comment"># 清空剪贴板</span></div></pre></td></tr></table></figure></p>
-<h3 id="4-Windows下"><a href="#4-Windows下" class="headerlink" title="4.Windows下"></a>4.Windows下</h3><p>使用系统自带的clip命令。<br># 位于C:\Windows\system32\clip.exe。<br><a id="more"></a><br>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> Hello | clip  </div><div class="line"><span class="comment"># 将字符串Hello放入Windows剪贴板  </span></div><div class="line">dir | clip  </div><div class="line"><span class="comment"># 将dir命令输出（当前目录列表）放入Windows剪贴板  </span></div><div class="line">clip &lt; README.TXT    </div><div class="line"><span class="comment"># 将readme.txt的文本放入Windows剪贴板  </span></div><div class="line"><span class="built_in">echo</span> | clip  </div><div class="line"><span class="comment"># 将一个空行放入Windows剪贴板，即清空Windows剪贴板</span></div></pre></td></tr></table></figure></p>
+<h3 id="4-Windows下"><a href="#4-Windows下" class="headerlink" title="4.Windows下"></a>4.Windows下</h3><p>使用系统自带的clip命令。<br># 位于C:\Windows\system32\clip.exe。<br><!--more--><br>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> Hello | clip  </div><div class="line"><span class="comment"># 将字符串Hello放入Windows剪贴板  </span></div><div class="line">dir | clip  </div><div class="line"><span class="comment"># 将dir命令输出（当前目录列表）放入Windows剪贴板  </span></div><div class="line">clip &lt; README.TXT    </div><div class="line"><span class="comment"># 将readme.txt的文本放入Windows剪贴板  </span></div><div class="line"><span class="built_in">echo</span> | clip  </div><div class="line"><span class="comment"># 将一个空行放入Windows剪贴板，即清空Windows剪贴板</span></div></pre></td></tr></table></figure></p>
 <p>注：不同系统使用不同的复制命令。避免用文本编辑器打开这个文件、选中文本、CTRL + C这样繁琐操作。</p>
 
       
@@ -377,7 +375,7 @@
         <p><span>本文标题:</span><a href="/2015/01/15/2015-01-15-xclip-pbcopy-xsel用法-terminal-复制粘帖-mac-ubuntu/">xclip,pbcopy,xsel用法 terminal 复制粘帖 (mac, ubuntu)</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">cuiqingwei</a></p>
         <p><span>发布时间:</span>2015-01-15, 21:28:00</p>
-        <p><span>最后更新:</span>2016-10-08, 20:09:15</p>
+        <p><span>最后更新:</span>2016-10-09, 20:47:26</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2015/01/15/2015-01-15-xclip-pbcopy-xsel用法-terminal-复制粘帖-mac-ubuntu/" title="xclip,pbcopy,xsel用法 terminal 复制粘帖 (mac, ubuntu)">http://cuiqingwei.github.io/2015/01/15/2015-01-15-xclip-pbcopy-xsel用法-terminal-复制粘帖-mac-ubuntu/</a>
             <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2015/01/15/2015-01-15-xclip-pbcopy-xsel用法-terminal-复制粘帖-mac-ubuntu/　　作者: cuiqingwei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

@@ -403,7 +403,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="不得不说"><a href="#不得不说" class="headerlink" title="不得不说"></a>不得不说</h1><p>在命令行，按两次<strong>TAB</strong>键，列出所有命令！</p>
+              <h1 id="不得不说"><a href="#不得不说" class="headerlink" title="不得不说"></a>不得不说</h1><p>在命令行，按两次<strong>TAB</strong>键，列出所有命令！</p>
 <h1 id="硬件信息"><a href="#硬件信息" class="headerlink" title="硬件信息"></a>硬件信息</h1><ul>
 <li>CPU:</li>
 </ul>
@@ -416,95 +416,8 @@
 <li>Disk Space:</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">df -h</div><div class="line">cat /proc/mtd</div><div class="line">cat /proc/partitions</div></pre></td></tr></table></figure>
-<p>当然还可以通过<strong>dmesg</strong>配合grep查看！</p>
-<h1 id="其他信息"><a href="#其他信息" class="headerlink" title="其他信息"></a>其他信息</h1><ul>
-<li>内核信息</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uname <span class="_">-a</span></div></pre></td></tr></table></figure>
-<ul>
-<li>内核版本</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uname -r</div></pre></td></tr></table></figure>
-<ul>
-<li>kernel信息</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dmesg</div></pre></td></tr></table></figure>
-<ul>
-<li>系统日志</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">logread</div></pre></td></tr></table></figure>
-<ul>
-<li>进程列表</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps</div></pre></td></tr></table></figure>
-<ul>
-<li>获取运行时间，系统负载率</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">uptime</div></pre></td></tr></table></figure>
-<p><strong>11:45:37 up 3 days, 10:46,  load average: 0.00, 0.01, 0.04</strong><br>1、11:45:37          // 系统当前时间<br>2、up 3 days, 10:46  // 主机已运行时间,时间越大，说明你的机器越稳定。<br>3、load average      // 系统平均负载，统计最近1，5，15分钟的系统平均负载</p>
-<ul>
-<li>查看环境变量</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">env <span class="comment"># lists environmental variables</span></div></pre></td></tr></table></figure>
-<ul>
-<li>查找某正在运行进程的进程号</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pidof watchdog</div></pre></td></tr></table></figure>
-<h1 id="Package管理"><a href="#Package管理" class="headerlink" title="Package管理"></a>Package管理</h1><p><strong>opkg</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">opkg list | grep ppp    <span class="comment">#shows available modules grep filters out name</span></div></pre></td></tr></table></figure></p>
-<ul>
-<li>列出已安装</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">opkg list-installed</div></pre></td></tr></table></figure>
-<ul>
-<li>打个包查看</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">opkg info firewall</div><div class="line">opkg files firewall</div></pre></td></tr></table></figure>
-<h1 id="web管理"><a href="#web管理" class="headerlink" title="web管理"></a>web管理</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">opkg info luci</div><div class="line">opkg info luci-ssl</div></pre></td></tr></table></figure>
-<h1 id="查看DHCP客户端IP"><a href="#查看DHCP客户端IP" class="headerlink" title="查看DHCP客户端IP"></a>查看DHCP客户端IP</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /tmp/dhcp.leases</div></pre></td></tr></table></figure>
-<h1 id="无线信息"><a href="#无线信息" class="headerlink" title="无线信息"></a>无线信息</h1><ul>
-<li>帮助</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iw <span class="built_in">help</span></div></pre></td></tr></table></figure>
-<ul>
-<li>获取设备的功能</li>
-</ul>
-<p>使用以下方法来获得所有设备的功能，如带宽信息（2.4GHz，和5GHz），和802.11n的信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iw list</div></pre></td></tr></table></figure></p>
-<ul>
-<li>扫描无线路由器/AP</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iw dev wlan0 scan</div></pre></td></tr></table></figure>
-<ul>
-<li>查看连接Openwrt路由的无线客户端：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">iwinfo wlan0 assoclist  </div><div class="line">iw dev wlan0 station dump</div></pre></td></tr></table></figure>
-<ul>
-<li>查看Openwrt路由无线信息：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iwinfo wlan0 info</div></pre></td></tr></table></figure>
-<ul>
-<li>重启无线：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wifi down &amp;&amp; sleep 5 &amp;&amp; wifi</div></pre></td></tr></table></figure>
-<ul>
-<li>一个bash脚本，输出当前无线客户端IP/MAC/名称/速率：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash  </span></div><div class="line"><span class="built_in">echo</span> <span class="_">-e</span> <span class="string">"# IP address\tname\tMAC address\ttx bit\trx bit"</span>  </div><div class="line"><span class="keyword">for</span> interface <span class="keyword">in</span> `iw dev | grep Interface | cut <span class="_">-f</span> 2 <span class="_">-s</span> <span class="_">-d</span><span class="string">" "</span>`  </div><div class="line"><span class="keyword">do</span>  </div><div class="line">  maclist=(`iw dev <span class="variable">$interface</span> station dump | grep Station | cut <span class="_">-f</span> 2 <span class="_">-s</span> <span class="_">-d</span><span class="string">" "</span>`)  </div><div class="line">  txlist=(`iw dev wlan0 station dump|grep <span class="string">'tx bitrate'</span>|awk <span class="string">'&#123;print $3$4&#125;'</span>`)  </div><div class="line">  rxlist=(`iw dev wlan0 station dump|grep <span class="string">'rx bitrate'</span>|awk <span class="string">'&#123;print $3$4&#125;'</span>`)  </div><div class="line">  len=<span class="variable">$&#123;#maclist[@]&#125;</span>  </div><div class="line">  <span class="keyword">for</span> ((i=0;i&lt;<span class="variable">$len</span>;i++))  </div><div class="line">  <span class="keyword">do</span>  </div><div class="line">    mac=<span class="variable">$&#123;maclist[$i]&#125;</span>  </div><div class="line">    tx=<span class="variable">$&#123;txlist[$i]&#125;</span>  </div><div class="line">    rx=<span class="variable">$&#123;rxlist[$i]&#125;</span>  </div><div class="line">    ip=<span class="string">"UNKN"</span>  </div><div class="line">    host=<span class="string">""</span>  </div><div class="line">    ip=`cat /tmp/dhcp.leases | cut <span class="_">-f</span> 2,3,4 <span class="_">-s</span> <span class="_">-d</span><span class="string">" "</span> | grep <span class="variable">$mac</span> | cut <span class="_">-f</span> 2 <span class="_">-s</span> <span class="_">-d</span><span class="string">" "</span>`  </div><div class="line">    host=`cat /tmp/dhcp.leases | cut <span class="_">-f</span> 2,3,4 <span class="_">-s</span> <span class="_">-d</span><span class="string">" "</span> | grep <span class="variable">$mac</span> | cut <span class="_">-f</span> 3 <span class="_">-s</span> <span class="_">-d</span><span class="string">" "</span>`  </div><div class="line">    <span class="built_in">echo</span> <span class="_">-e</span> <span class="string">"<span class="variable">$ip</span>\t<span class="variable">$host</span>\t<span class="variable">$mac</span>\t<span class="variable">$tx</span>\t<span class="variable">$rx</span>"</span>|awk <span class="string">'&#123;printf "%-15s %-25s %-15s %-10s %-10s\n",$1,$2,$3,$4,$5&#125;'</span>  </div><div class="line">  <span class="keyword">done</span>  </div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
-<h1 id="查看gpio口的信息"><a href="#查看gpio口的信息" class="headerlink" title="查看gpio口的信息"></a>查看gpio口的信息</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /sys/kernel/debug/gpio</div></pre></td></tr></table></figure>
-<h1 id="USB"><a href="#USB" class="headerlink" title="USB"></a>USB</h1><ul>
-<li>查看USB连接设备</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /sys/kernel/debug/usb/devices</div></pre></td></tr></table></figure>
-<h1 id="uci"><a href="#uci" class="headerlink" title="uci"></a>uci</h1><p><strong>uci (command) [arguments]</strong></p>
-<p><em>Example:</em></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">uci <span class="built_in">set</span> dhcp.lan.leasetime=4h</div><div class="line">uci get dhcp.lan.leasetime</div><div class="line">uci show dhcp</div><div class="line">uci changes</div><div class="line">uci commit</div></pre></td></tr></table></figure>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p><strong>swconfig</strong> 配置交换机;</p>
-<p><strong>iwinfo</strong> 是OpenWrt中提供无线相关信息读取的软件.其中内置了诸如WEXT NL80211 madwifi等等驱动的各种信息读取方式.把不同类型的驱动整合出一个统一的接口供luci等使用;</p>
-<p><strong>iwpriv iwlist iwconfig</strong> 是WEXT类型无线驱动专用的操作程序.</p>
-<p>ifconfig<br>iwconfig<br>pkill</p>
-<p>cat /proc/modules<br>cat /proc/devices<br>cat /proc/iomem<br>cat /proc/cmdline<br>cat /proc/interrupts</p>
-<p>cd /<br>find -name easycap<br>./sys/bus/usb/drivers/easycap<br>./sys/module/usbcore/holders/easycap<br>./sys/module/snd/holders/easycap<br>./sys/module/snd_pcm/holders/easycap<br>./sys/module/videodev/holders/easycap<br>./sys/module/easycap</p>
-<p>sys adminname open<br>sys password open<br>sys multiuser on |backd backd<br>sys cwmp disp</p>
-
+<p>当然还可以通过<strong>dmesg</strong>配合grep查看！<br>
+          
       
     </div>
     
@@ -517,6 +430,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenWRT/">OpenWRT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/折腾/">折腾</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2015/07/09/2015-07-09-OpenWRT-usefull-commands/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -1017,19 +934,6 @@
 <p>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">'Hello World!'</span> | pbcopy</div></pre></td></tr></table></figure></p>
 <h1 id="将字符串Hello-World放入剪贴板"><a href="#将字符串Hello-World放入剪贴板" class="headerlink" title="将字符串Hello World放入剪贴板"></a>将字符串Hello World放入剪贴板</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat myFile.txt | pbcopy</div></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pbpaste &gt; file.txt</div></pre></td></tr></table></figure>
-<p><em>要复制结果又想看到命令的输出</em><br>命令的结果输出时，如果给复制命令（即上面提到的命令clip、xsel、pbcopy）那么命令输出就看不到了。如果你想先看到命令的输出，可以下面这么做。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> <span class="string">'Hello World!'</span> | tee tmp.file.txt  </div><div class="line">Hello World!  </div><div class="line">$ xsel &lt; tmp.file.txt  </div><div class="line">$ rm tmp.file.txt</div></pre></td></tr></table></figure></p>
-<p>即先使用tee命令把输出输到控制台和一个文件中。命令执行完成后，再把输出的内容放到剪贴板中。</p>
-<h3 id="2-Ubuntu下"><a href="#2-Ubuntu下" class="headerlink" title="2.Ubuntu下"></a>2.Ubuntu下</h3><p>ubuntu下的用户可以只用apt-get来安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install xclip</div></pre></td></tr></table></figure></p>
-<p>其他发行版的用户可以选择自己的安装方式，也可以用源码编译安装，xclip项目的主页是：<a href="http://sourceforge.net/projects/xclip/">http://sourceforge.net/projects/xclip/</a><br>xclip可以将内容输出到‘X’的剪切板中，比如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"Hello, world"</span> | xclip</div></pre></td></tr></table></figure></p>
-<p>执行这个命令后你就可以用鼠标中键来在X程序中将内容粘贴出来。但是更多的时候，我们需要不仅仅把内容输出到‘X’的剪切板中，而是希望可以在GUI程序 中用ctrl + v也可以粘贴（比如，输出到gnome的剪切板中），下面这段命令就可以让你将内容输出到gnome的剪切板中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"Hello, world"</span> | xclip -selection clipboard</div></pre></td></tr></table></figure></p>
-<p>再在一个GUI程序中按下ctrl + v，看下是不是粘贴上去了呢？顺着这个命令，我也重新写了一下ifconfig，让它在执行后输入内容到终端的同时，也将ip地址输出到剪切板中，因为通常情况下，查看ifconfig就是为了获取机器的ip地址：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">alias</span> ifconfig=<span class="string">'/sbin/ifconfig &amp;&amp; echo `/sbin/ifconfig | sed -n 2p | awk "&#123; print \\$2 &#125;" | grep -o "[0-9]\&#123;1,3\&#125;\.[0-9]\&#123;1,3\&#125;\.[0-9]\&#123;1,3\&#125;\.[0-9]\&#123;1,3\&#125;"` | xclip -selection clipboard'</span></div></pre></td></tr></table></figure></p>
-<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xclip -sel clip &lt; file</div></pre></td></tr></table></figure></p>
-<p>此时你就可以在网页等编辑框CTRL+V了。</p>
-<p>项目主页：<a href="http://sourceforge.net/projects/xclip/">http://sourceforge.net/projects/xclip/</a><br>命令man page: <a href="http://linux.die.net/man/1/xclip">http://linux.die.net/man/1/xclip</a></p>
-<p><strong>-i, -in</strong><br>read text into X selection from standard input or files (default)<br><strong>-o, -out</strong><br>prints the selection to standard out (generally for piping to a file or program)<br><strong>-f, -filter</strong><br>when xclip is invoked in the in mode with output level set to silent (the defaults), the filter option will cause xclip to print the text piped to standard in back to standard out unmodified<br><strong>-l, -loops</strong><br>number of X selection requests (pastes into X applications) to wait for before exiting, with a value of 0 (default) causing xclip to wait for an unlimited number of requests until another application (possibly another invocation of xclip) takes ownership of the selection<br><strong>-d, -display</strong><br>X display to use (e.g. “localhost:0”), xclip defaults to the value in $DISPLAY if this option is omitted</p>
-<h3 id="3-Linux下"><a href="#3-Linux下" class="headerlink" title="3.Linux下"></a>3.Linux下</h3><p>使用xsel命令。</p>
-<p>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">cat README.TXT | xsel  </div><div class="line">cat README.TXT | xsel -b <span class="comment"># 如有问题可以试试-b选项  </span></div><div class="line">xsel &lt; README.TXT  </div><div class="line"><span class="comment"># 将readme.txt的文本放入剪贴板  </span></div><div class="line">xsel -c  </div><div class="line"><span class="comment"># 清空剪贴板</span></div></pre></td></tr></table></figure></p>
-<h3 id="4-Windows下"><a href="#4-Windows下" class="headerlink" title="4.Windows下"></a>4.Windows下</h3><p>使用系统自带的clip命令。<br># 位于C:\Windows\system32\clip.exe。<br>
           
       
     </div>
