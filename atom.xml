@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2016-10-15T12:21:26.000Z</updated>
+  <updated>2016-10-15T17:05:21.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -14,6 +14,71 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linkit-smart-7688-build</title>
+    <link href="http://cuiqingwei.github.io/2016/10/16/2016-10-16-linkit-smart-7688-build/"/>
+    <id>http://cuiqingwei.github.io/2016/10/16/2016-10-16-linkit-smart-7688-build/</id>
+    <published>2016-10-15T16:37:40.000Z</published>
+    <updated>2016-10-15T17:05:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="linkit-smart-feed"><a href="#linkit-smart-feed" class="headerlink" title="linkit-smart-feed"></a>linkit-smart-feed</h1><p>This feeds holds the SDK wifi driver and the config/meta package for the LinkIt Smart 7688 (Duo)</p>
+<h1 id="Build-the-firmware-from-sources"><a href="#Build-the-firmware-from-sources" class="headerlink" title="Build the firmware from sources"></a>Build the firmware from sources</h1><p>This section describes how to build the firmware for LinkIt Smart 7688 and LinkIt Smart 7688 Duo from source codes.<br><a id="more"></a></p>
+<h3 id="Host-environment"><a href="#Host-environment" class="headerlink" title="Host environment"></a>Host environment</h3><p>The following operations are performed under a Ubuntu LTS 14.04.3 environment. For a Windows or a Mac OS X host computer, you can install a VM for having the same environment:</p>
+<ul>
+<li>Download Ubuntu 14.04.3 LTS image from <a href="http://www.ubuntu.com" target="_blank" rel="external">http://www.ubuntu.com</a></li>
+<li>Install this image with VirtualBox (<a href="http://virtualbox.org" target="_blank" rel="external">http://virtualbox.org</a>) on the host machine. 50GB disk space reserved for the VM is recommanded</li>
+</ul>
+<h3 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h3><p>In the Ubuntu system, open the <em>Terminal</em> application and type the following commands:</p>
+<ol>
+<li><p>Install prerequisite packages for building the firmware:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install git g++ make libncurses5-dev subversion libssl-dev gawk libxml-parser-perl unzip wget python xz-utils</div></pre></td></tr></table></figure>
+</li>
+<li><p>Download OpenWrt CC source codes:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone git://git.openwrt.org/15.05/openwrt.git</div></pre></td></tr></table></figure>
+</li>
+<li><p>Prepare the default configuration file for feeds:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd openwrt</div><div class="line">$ cp feeds.conf.default feeds.conf</div></pre></td></tr></table></figure>
+</li>
+<li><p>Add the LinkIt Smart 7688 feed:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ echo src-git linkit https://github.com/MediaTek-Labs/linkit-smart-7688-feed.git &gt;&gt; feeds.conf</div></pre></td></tr></table></figure>
+</li>
+<li><p>Update the feed information of all available packages for building the firmware:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ./scripts/feeds update</div></pre></td></tr></table></figure>
+</li>
+<li><p>Install all packages:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ./scripts/feeds install -a</div></pre></td></tr></table></figure>
+</li>
+<li><p>Prepare the kernel configuration to inform OpenWrt that we want to build an firmware for LinkIt Smart 7688:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ make menuconfig</div></pre></td></tr></table></figure>
+<p> <strong> Select the options as below: </strong></p>
+<pre><code>- Target System: `Ralink RT288x/RT3xxx`
+- Subtarget: `MT7688 based boards`
+- Target Profile: `LinkIt7688`
+</code></pre><p> <img src="/img/20161016/1.png" alt=""></p>
+<p> Save and exit (<strong><font color="red">use the deafult config file name without changing it</font></strong>)</p>
+</li>
+</ol>
+<ol>
+<li><p>Start the compilation process:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ make V=99</div></pre></td></tr></table></figure>
+</li>
+<li><p>After the build process completes, the resulted firmware file will be under <code>bin/ramips/openwrt-ramips-mt7688-LinkIt7688-squashfs-sysupgrade.bin</code>. Depending on the H/W resources of the host environment, the build process may <strong>take more than 2 hours</strong>.</p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;linkit-smart-feed&quot;&gt;&lt;a href=&quot;#linkit-smart-feed&quot; class=&quot;headerlink&quot; title=&quot;linkit-smart-feed&quot;&gt;&lt;/a&gt;linkit-smart-feed&lt;/h1&gt;&lt;p&gt;This feeds holds the SDK wifi driver and the config/meta package for the LinkIt Smart 7688 (Duo)&lt;/p&gt;
+&lt;h1 id=&quot;Build-the-firmware-from-sources&quot;&gt;&lt;a href=&quot;#Build-the-firmware-from-sources&quot; class=&quot;headerlink&quot; title=&quot;Build the firmware from sources&quot;&gt;&lt;/a&gt;Build the firmware from sources&lt;/h1&gt;&lt;p&gt;This section describes how to build the firmware for LinkIt Smart 7688 and LinkIt Smart 7688 Duo from source codes.&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="linkit-smart-7688" scheme="http://cuiqingwei.github.io/tags/linkit-smart-7688/"/>
+    
+  </entry>
   
   <entry>
     <title>Kali Linux Live USB on MAC</title>
@@ -53,56 +118,6 @@
     
     
       <category term="kali-linux" scheme="http://cuiqingwei.github.io/tags/kali-linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OpenWRT经典网站</title>
-    <link href="http://cuiqingwei.github.io/2016/10/08/2016-10-08-OpenWRT%E7%BB%8F%E5%85%B8%E7%BD%91%E7%AB%99/"/>
-    <id>http://cuiqingwei.github.io/2016/10/08/2016-10-08-OpenWRT经典网站/</id>
-    <published>2016-10-08T09:23:37.000Z</published>
-    <updated>2016-10-09T04:51:46.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="官方网站"><a href="#官方网站" class="headerlink" title="官方网站"></a>官方网站</h1><p><a href="https://openwrt.org/" target="_blank" rel="external">https://openwrt.org/</a></p>
-<ul>
-<li>Releases<br><a href="https://downloads.openwrt.org/" target="_blank" rel="external">https://downloads.openwrt.org/</a></li>
-<li>环境搭建及下载<br><a href="https://wiki.openwrt.org/doc/howto/buildroot.exigence" target="_blank" rel="external">https://wiki.openwrt.org/doc/howto/buildroot.exigence</a><br><a href="https://wiki.openwrt.org/zh-cn/doc/howto/buildroot.exigence" target="_blank" rel="external">https://wiki.openwrt.org/zh-cn/doc/howto/buildroot.exigence</a></li>
-<li>使用说明<br><a href="https://wiki.openwrt.org/doc/howto/build" target="_blank" rel="external">https://wiki.openwrt.org/doc/howto/build</a><br><a href="https://wiki.openwrt.org/zh-cn/doc/howto/build" target="_blank" rel="external">https://wiki.openwrt.org/zh-cn/doc/howto/build</a></li>
-<li>硬件支持列表<br><a href="https://wiki.openwrt.org/toh/start" target="_blank" rel="external">https://wiki.openwrt.org/toh/start</a><a id="more"></a>
-<h1 id="OpenWRT中文网"><a href="#OpenWRT中文网" class="headerlink" title="OpenWRT中文网"></a>OpenWRT中文网</h1><a href="http://www.openwrt.org.cn/" target="_blank" rel="external">http://www.openwrt.org.cn/</a></li>
-</ul>
-<ul>
-<li>网站提供的常用小工具，下载使用起来比较方方便<br><a href="http://downloads.openwrt.org.cn/software/" target="_blank" rel="external">http://downloads.openwrt.org.cn/software/</a></li>
-</ul>
-<h1 id="恩山无线论坛OpenWRT专版"><a href="#恩山无线论坛OpenWRT专版" class="headerlink" title="恩山无线论坛OpenWRT专版"></a>恩山无线论坛OpenWRT专版</h1><p><a href="http://www.right.com.cn/forum/forum-72-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/forum-72-1.html</a></p>
-<h1 id="openwrt-io"><a href="#openwrt-io" class="headerlink" title="openwrt.io"></a>openwrt.io</h1><p><a href="http://openwrt.io/" target="_blank" rel="external">http://openwrt.io/</a></p>
-<ol>
-<li>此站完全开源，放在github.com上，大家共同修改，通过travis-ci.org持续集成自动构建部署到七牛云存储上，无需服务器。</li>
-<li>网站内容采用markdown，通过mkdocs生成HTML，是一个纯静态的网站。</li>
-<li>为提高国内下载速度，OpenWrt SDK、opkg软件源等文件放在七牛云储存国内CDN上。</li>
-</ol>
-<h1 id="dl下载网"><a href="#dl下载网" class="headerlink" title="dl下载网"></a>dl下载网</h1><p><a href="http://www.openwrtdl.com/" target="_blank" rel="external">http://www.openwrtdl.com/</a><br>在编译OpenWrt最新的trunk时，碰到一个Git源码取不下来（你懂得，被墙了！）<br>该站点作者将openwrt官网上的软件都下载下来了，并在本地建了服务器，然后与共享给大家<br>另外，还有<br><a href="http://193.87.95.148/openwrt/raspi/trunk/dl/" target="_blank" rel="external">http://193.87.95.148/openwrt/raspi/trunk/dl/</a><br><strong>当你make过程出现Download failed或是404 Not Found时，到这些网站Ctrl+F找到你需要的，wget到dl目录即可继续make</strong></p>
-<h1 id="夢想家"><a href="#夢想家" class="headerlink" title="夢想家"></a>夢想家</h1><p><a href="https://datahunter.org/wrt" target="_blank" rel="external">https://datahunter.org/wrt</a></p>
-<h1 id="森亮号航海见识"><a href="#森亮号航海见识" class="headerlink" title="森亮号航海见识"></a>森亮号航海见识</h1><p><a href="http://see.sl088.com/wiki/%E5%88%86%E7%B1%BB:Openwrt%E7%BC%96%E8%AF%91" target="_blank" rel="external">http://see.sl088.com/wiki/%E5%88%86%E7%B1%BB:Openwrt%E7%BC%96%E8%AF%91</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;官方网站&quot;&gt;&lt;a href=&quot;#官方网站&quot; class=&quot;headerlink&quot; title=&quot;官方网站&quot;&gt;&lt;/a&gt;官方网站&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://openwrt.org/&quot;&gt;https://openwrt.org/&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Releases&lt;br&gt;&lt;a href=&quot;https://downloads.openwrt.org/&quot;&gt;https://downloads.openwrt.org/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;环境搭建及下载&lt;br&gt;&lt;a href=&quot;https://wiki.openwrt.org/doc/howto/buildroot.exigence&quot;&gt;https://wiki.openwrt.org/doc/howto/buildroot.exigence&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://wiki.openwrt.org/zh-cn/doc/howto/buildroot.exigence&quot;&gt;https://wiki.openwrt.org/zh-cn/doc/howto/buildroot.exigence&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;使用说明&lt;br&gt;&lt;a href=&quot;https://wiki.openwrt.org/doc/howto/build&quot;&gt;https://wiki.openwrt.org/doc/howto/build&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://wiki.openwrt.org/zh-cn/doc/howto/build&quot;&gt;https://wiki.openwrt.org/zh-cn/doc/howto/build&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;硬件支持列表&lt;br&gt;&lt;a href=&quot;https://wiki.openwrt.org/toh/start&quot;&gt;https://wiki.openwrt.org/toh/start&lt;/a&gt;
-    
-    </summary>
-    
-    
-      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
-    
-      <category term="开源硬件" scheme="http://cuiqingwei.github.io/tags/%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6/"/>
-    
-      <category term="经典网站" scheme="http://cuiqingwei.github.io/tags/%E7%BB%8F%E5%85%B8%E7%BD%91%E7%AB%99/"/>
     
   </entry>
   
@@ -616,9 +631,9 @@
     </summary>
     
     
-      <category term="创客" scheme="http://cuiqingwei.github.io/tags/%E5%88%9B%E5%AE%A2/"/>
-    
       <category term="开源硬件" scheme="http://cuiqingwei.github.io/tags/%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6/"/>
+    
+      <category term="创客" scheme="http://cuiqingwei.github.io/tags/%E5%88%9B%E5%AE%A2/"/>
     
       <category term="链接" scheme="http://cuiqingwei.github.io/tags/%E9%93%BE%E6%8E%A5/"/>
     
@@ -692,9 +707,9 @@
     </summary>
     
     
-      <category term="创客" scheme="http://cuiqingwei.github.io/tags/%E5%88%9B%E5%AE%A2/"/>
-    
       <category term="开源硬件" scheme="http://cuiqingwei.github.io/tags/%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6/"/>
+    
+      <category term="创客" scheme="http://cuiqingwei.github.io/tags/%E5%88%9B%E5%AE%A2/"/>
     
       <category term="Raspberry Pi" scheme="http://cuiqingwei.github.io/tags/Raspberry-Pi/"/>
     
@@ -739,9 +754,9 @@
     </summary>
     
     
-      <category term="创客" scheme="http://cuiqingwei.github.io/tags/%E5%88%9B%E5%AE%A2/"/>
-    
       <category term="开源硬件" scheme="http://cuiqingwei.github.io/tags/%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6/"/>
+    
+      <category term="创客" scheme="http://cuiqingwei.github.io/tags/%E5%88%9B%E5%AE%A2/"/>
     
       <category term="链接" scheme="http://cuiqingwei.github.io/tags/%E9%93%BE%E6%8E%A5/"/>
     
@@ -1367,6 +1382,56 @@
   </entry>
   
   <entry>
+    <title>OpenWRT经典网站</title>
+    <link href="http://cuiqingwei.github.io/2015/07/01/2015-07-01-OpenWRT%E7%BB%8F%E5%85%B8%E7%BD%91%E7%AB%99/"/>
+    <id>http://cuiqingwei.github.io/2015/07/01/2015-07-01-OpenWRT经典网站/</id>
+    <published>2015-07-01T09:23:37.000Z</published>
+    <updated>2016-10-15T16:45:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="官方网站"><a href="#官方网站" class="headerlink" title="官方网站"></a>官方网站</h1><p><a href="https://openwrt.org/" target="_blank" rel="external">https://openwrt.org/</a></p>
+<ul>
+<li>Releases<br><a href="https://downloads.openwrt.org/" target="_blank" rel="external">https://downloads.openwrt.org/</a></li>
+<li>环境搭建及下载<br><a href="https://wiki.openwrt.org/doc/howto/buildroot.exigence" target="_blank" rel="external">https://wiki.openwrt.org/doc/howto/buildroot.exigence</a><br><a href="https://wiki.openwrt.org/zh-cn/doc/howto/buildroot.exigence" target="_blank" rel="external">https://wiki.openwrt.org/zh-cn/doc/howto/buildroot.exigence</a></li>
+<li>使用说明<br><a href="https://wiki.openwrt.org/doc/howto/build" target="_blank" rel="external">https://wiki.openwrt.org/doc/howto/build</a><br><a href="https://wiki.openwrt.org/zh-cn/doc/howto/build" target="_blank" rel="external">https://wiki.openwrt.org/zh-cn/doc/howto/build</a></li>
+<li>硬件支持列表<br><a href="https://wiki.openwrt.org/toh/start" target="_blank" rel="external">https://wiki.openwrt.org/toh/start</a><a id="more"></a>
+<h1 id="OpenWRT中文网"><a href="#OpenWRT中文网" class="headerlink" title="OpenWRT中文网"></a>OpenWRT中文网</h1><a href="http://www.openwrt.org.cn/" target="_blank" rel="external">http://www.openwrt.org.cn/</a></li>
+</ul>
+<ul>
+<li>网站提供的常用小工具，下载使用起来比较方方便<br><a href="http://downloads.openwrt.org.cn/software/" target="_blank" rel="external">http://downloads.openwrt.org.cn/software/</a></li>
+</ul>
+<h1 id="恩山无线论坛OpenWRT专版"><a href="#恩山无线论坛OpenWRT专版" class="headerlink" title="恩山无线论坛OpenWRT专版"></a>恩山无线论坛OpenWRT专版</h1><p><a href="http://www.right.com.cn/forum/forum-72-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/forum-72-1.html</a></p>
+<h1 id="openwrt-io"><a href="#openwrt-io" class="headerlink" title="openwrt.io"></a>openwrt.io</h1><p><a href="http://openwrt.io/" target="_blank" rel="external">http://openwrt.io/</a></p>
+<ol>
+<li>此站完全开源，放在github.com上，大家共同修改，通过travis-ci.org持续集成自动构建部署到七牛云存储上，无需服务器。</li>
+<li>网站内容采用markdown，通过mkdocs生成HTML，是一个纯静态的网站。</li>
+<li>为提高国内下载速度，OpenWrt SDK、opkg软件源等文件放在七牛云储存国内CDN上。</li>
+</ol>
+<h1 id="dl下载网"><a href="#dl下载网" class="headerlink" title="dl下载网"></a>dl下载网</h1><p><a href="http://www.openwrtdl.com/" target="_blank" rel="external">http://www.openwrtdl.com/</a><br>在编译OpenWrt最新的trunk时，碰到一个Git源码取不下来（你懂得，被墙了！）<br>该站点作者将openwrt官网上的软件都下载下来了，并在本地建了服务器，然后与共享给大家<br>另外，还有<br><a href="http://193.87.95.148/openwrt/raspi/trunk/dl/" target="_blank" rel="external">http://193.87.95.148/openwrt/raspi/trunk/dl/</a><br><strong>当你make过程出现Download failed或是404 Not Found时，到这些网站Ctrl+F找到你需要的，wget到dl目录即可继续make</strong></p>
+<h1 id="夢想家"><a href="#夢想家" class="headerlink" title="夢想家"></a>夢想家</h1><p><a href="https://datahunter.org/wrt" target="_blank" rel="external">https://datahunter.org/wrt</a></p>
+<h1 id="森亮号航海见识"><a href="#森亮号航海见识" class="headerlink" title="森亮号航海见识"></a>森亮号航海见识</h1><p><a href="http://see.sl088.com/wiki/%E5%88%86%E7%B1%BB:Openwrt%E7%BC%96%E8%AF%91" target="_blank" rel="external">http://see.sl088.com/wiki/%E5%88%86%E7%B1%BB:Openwrt%E7%BC%96%E8%AF%91</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;官方网站&quot;&gt;&lt;a href=&quot;#官方网站&quot; class=&quot;headerlink&quot; title=&quot;官方网站&quot;&gt;&lt;/a&gt;官方网站&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://openwrt.org/&quot;&gt;https://openwrt.org/&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Releases&lt;br&gt;&lt;a href=&quot;https://downloads.openwrt.org/&quot;&gt;https://downloads.openwrt.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;环境搭建及下载&lt;br&gt;&lt;a href=&quot;https://wiki.openwrt.org/doc/howto/buildroot.exigence&quot;&gt;https://wiki.openwrt.org/doc/howto/buildroot.exigence&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://wiki.openwrt.org/zh-cn/doc/howto/buildroot.exigence&quot;&gt;https://wiki.openwrt.org/zh-cn/doc/howto/buildroot.exigence&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;使用说明&lt;br&gt;&lt;a href=&quot;https://wiki.openwrt.org/doc/howto/build&quot;&gt;https://wiki.openwrt.org/doc/howto/build&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://wiki.openwrt.org/zh-cn/doc/howto/build&quot;&gt;https://wiki.openwrt.org/zh-cn/doc/howto/build&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;硬件支持列表&lt;br&gt;&lt;a href=&quot;https://wiki.openwrt.org/toh/start&quot;&gt;https://wiki.openwrt.org/toh/start&lt;/a&gt;
+    
+    </summary>
+    
+    
+      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
+    
+      <category term="开源硬件" scheme="http://cuiqingwei.github.io/tags/%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6/"/>
+    
+      <category term="经典网站" scheme="http://cuiqingwei.github.io/tags/%E7%BB%8F%E5%85%B8%E7%BD%91%E7%AB%99/"/>
+    
+  </entry>
+  
+  <entry>
     <title>技术领域的深刻体会、教训</title>
     <link href="http://cuiqingwei.github.io/2015/06/24/2015-06-24-%E6%8A%80%E6%9C%AF%E9%A2%86%E5%9F%9F%E7%9A%84%E6%B7%B1%E5%88%BB%E4%BD%93%E4%BC%9A%E3%80%81%E6%95%99%E8%AE%AD/"/>
     <id>http://cuiqingwei.github.io/2015/06/24/2015-06-24-技术领域的深刻体会、教训/</id>
@@ -1392,34 +1457,6 @@
     
     
       <category term="体会" scheme="http://cuiqingwei.github.io/tags/%E4%BD%93%E4%BC%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>三星平板工厂模式</title>
-    <link href="http://cuiqingwei.github.io/2015/06/03/2015-06-03-%E4%B8%89%E6%98%9F%E5%B9%B3%E6%9D%BF%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://cuiqingwei.github.io/2015/06/03/2015-06-03-三星平板工厂模式/</id>
-    <published>2015-06-03T09:45:00.000Z</published>
-    <updated>2016-09-18T08:58:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>进入应用桌面打开计算器输入 <strong>(+30012012732+</strong> 进入Factory Mode</p>
-<p>On android 3.X version <strong>(+32286798378+</strong>           left bracket, plus, 3,2,2,8,6,7,9,8,3,7,8, plus<br>On android 4.X version <strong>(+30012012732+</strong>           left bracket, plus, 3,0,0,1,2,0,1,2,7,3,2, plus<br><a id="more"></a><br>Android 4.X 示例:<br><img src="/img/20150603/1.jpeg" alt=""></p>
-<p>工厂模式代码一览（供参考）</p>
-<p>*#06#                      – <em>To check IMEI No.</em><br>*#9090#                    – <em>Diagnostic Configuration</em><br>*#1234#                    – <em>to check software version of phone.</em><br>*#272*IMEI#                – <em>Reset User data + Change Sales Code</em><br>*#12580*369#               – <em>to check software and hardware information.</em><br>*#0228#                    – <em>Battery status (ADC, RSSI reading)</em><br>*2767*3855#                – <em>Full factory reset (Don’t dial it does not ask you to confirm unless you have problem)</em><br>*#0*#                      – <em>This Code shows Screen Test Menu (LCD Test Menu) Hidden Menu</em><br>*#7353#                    – <em>Self Test Mode (2nd Hidden Menu)</em></p>
-<p>*#34971539#                <em>Camera firmware check/update</em><br>*#2263#                    <em>Service Mode - Baseband selection</em><br>*#9900#                    <em>SysDump</em><br>*#0011#                    <em>Service Mode - Radio parameters</em><br>*#0808#                    <em>USB Settings</em><br>*#2222#                    <em>Service Mode - FTA HW Version</em><br>*#1111#                    <em>Service Mode - FTA SW Version</em></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;进入应用桌面打开计算器输入 &lt;strong&gt;(+30012012732+&lt;/strong&gt; 进入Factory Mode&lt;/p&gt;
-&lt;p&gt;On android 3.X version &lt;strong&gt;(+32286798378+&lt;/strong&gt;           left bracket, plus, 3,2,2,8,6,7,9,8,3,7,8, plus&lt;br&gt;On android 4.X version &lt;strong&gt;(+30012012732+&lt;/strong&gt;           left bracket, plus, 3,0,0,1,2,0,1,2,7,3,2, plus&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="折腾" scheme="http://cuiqingwei.github.io/tags/%E6%8A%98%E8%85%BE/"/>
-    
-      <category term="三星平板" scheme="http://cuiqingwei.github.io/tags/%E4%B8%89%E6%98%9F%E5%B9%B3%E6%9D%BF/"/>
     
   </entry>
   
