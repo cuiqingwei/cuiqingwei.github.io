@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="cuiqingwei" />
+
+
+
+<meta name="description" content="Mac OS X下给树莓派安装Raspbian系统先到树莓派的官方网站去下载一个系统镜像，推荐下载Raspbian。
+如果用了直接扩展的WaveShare的TFT小屏，到 http://www.waveshare.net/wiki/RPI_IMAGE 去下载。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Raspberry Pi">
+<meta property="og:url" content="http://cuiqingwei.github.io/2016/02/15/2016-02-15-Raspberry-Pi/index.html">
+<meta property="og:site_name" content="iZheteng">
+<meta property="og:description" content="Mac OS X下给树莓派安装Raspbian系统先到树莓派的官方网站去下载一个系统镜像，推荐下载Raspbian。
+如果用了直接扩展的WaveShare的TFT小屏，到 http://www.waveshare.net/wiki/RPI_IMAGE 去下载。">
+<meta property="og:updated_time" content="2016-10-15T05:17:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Raspberry Pi">
+<meta name="twitter:description" content="Mac OS X下给树莓派安装Raspbian系统先到树莓派的官方网站去下载一个系统镜像，推荐下载Raspbian。
+如果用了直接扩展的WaveShare的TFT小屏，到 http://www.waveshare.net/wiki/RPI_IMAGE 去下载。">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="iZheteng" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Raspberry Pi | iZheteng</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9648942fbef87fb71c7420365857d971";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="https://avatars1.githubusercontent.com/u/894023?v=3&amp;u=5fa799d34b2474ac0de5d6a3454f215c54517057&amp;s=140" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">cuiqingwei</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">Enjoy work, Enjoy life!</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="/404.html">404公益</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:qingwei_cui@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/cuiqingwei" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa LinkedIn" href="https://cn.linkedin.com/in/庆伟-崔-63b69aa9" title="LinkedIn"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/6lowpan/">6lowpan</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AT91SAM7S64/">AT91SAM7S64</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/">Altium Designer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-net/">C#.net</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-Builder6-0/">C++Builder6.0</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC1111/">CC1111</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2430/">CC2430</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2511/">CC2511</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2530/">CC2530</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Contiki/">Contiki</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cport/">Cport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DIY/">DIY</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Delphi/">Delphi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eagle/">Eagle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eagle-3D/">Eagle 3D</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub-Pages/">GitHub Pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jekyll/">Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LOVE/">LOVE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MEAN/">MEAN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/">MacOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenWRT/">OpenWRT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Proteus/">Proteus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RGBLED/">RGBLED</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry-Pi/">Raspberry Pi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rootfs/">Rootfs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDK/">SDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLite/">SQLite</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/USBHID/">USBHID</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WiFi/">WiFi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZigBee/">ZigBee</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arm/">arm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/at91sam9x5/">at91sam9x5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aws/">aws</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ec2/">ec2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/goAhead/">goAhead</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jffs2/">jffs2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali-linux/">kali-linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三星平板/">三星平板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/串口调试工具/">串口调试工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/产品仿真/">产品仿真</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/体会/">体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创客/">创客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单车装备/">单车装备</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/山地车/">山地车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/嵌入式/">嵌入式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开源硬件/">开源硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/折叠公路车/">折叠公路车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/折腾/">折腾</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/晶振/">晶振</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最简主义/">最简主义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/硬件/">硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/经典网站/">经典网站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站设计/">网站设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络命令/">网络命令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络评测工具/">网络评测工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自行车/">自行车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算工具/">计算工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/路由器/">路由器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通信距离/">通信距离</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链接/">链接</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/骑行/">骑行</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://cuiqingwei1981.github.io/">iZheteng</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">我是一个爱折腾的人</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">cuiqingwei</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="https://avatars1.githubusercontent.com/u/894023?v=3&amp;u=5fa799d34b2474ac0de5d6a3454f215c54517057&amp;s=140" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">cuiqingwei</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">Enjoy work, Enjoy life!</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="/404.html">404公益</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:qingwei_cui@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/cuiqingwei" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" href="https://cn.linkedin.com/in/庆伟-崔-63b69aa9" title="LinkedIn"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-2016-02-15-Raspberry-Pi" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/15/2016-02-15-Raspberry-Pi/" class="article-date">
+      <time datetime="2016-02-15T13:34:00.000Z" itemprop="datePublished">2016-02-15</time>
+</a>
+
+ 
+    <a href="/2016/02/15/2016-02-15-Raspberry-Pi/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Raspberry Pi
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Raspberry-Pi/">Raspberry Pi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/创客/">创客</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开源硬件/">开源硬件</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="Mac-OS-X下给树莓派安装Raspbian系统"><a href="#Mac-OS-X下给树莓派安装Raspbian系统" class="headerlink" title="Mac OS X下给树莓派安装Raspbian系统"></a>Mac OS X下给树莓派安装Raspbian系统</h1><p>先到<a href="http://www.raspberrypi.org/downloads" target="_blank" rel="external">树莓派的官方网站</a>去下载一个系统镜像，推荐下载<a href="http://downloads.raspberrypi.org/images/raspbian/2013-02-09-wheezy-raspbian/2013-02-09-wheezy-raspbian.zip" target="_blank" rel="external">Raspbian</a>。</p>
+<p>如果用了直接扩展的WaveShare的TFT小屏，到 <a href="http://www.waveshare.net/wiki/RPI_IMAGE" target="_blank" rel="external">http://www.waveshare.net/wiki/RPI_IMAGE</a> 去下载。<br><a id="more"></a><br>下载完成后得到一个img镜像：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ls -lh</div><div class="line">total 3788800</div><div class="line">-rw-r--r--  1 mymacbook  staff   1.8G  2  9 03:44 2015-11-21-raspbian-jessie.img</div></pre></td></tr></table></figure></p>
+<p>插入SD卡，用df命令查看当前已挂载的卷：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">df -h</div><div class="line">Filesystem      Size   Used  Avail Capacity  Mounted on</div><div class="line">/dev/disk0s2   112Gi   96Gi   15Gi    87%    /</div><div class="line">devfs          183Ki  183Ki    0Bi   100%    /dev</div><div class="line">map -hosts       0Bi    0Bi    0Bi   100%    /net</div><div class="line">map auto_home    0Bi    0Bi    0Bi   100%    /home</div><div class="line">/dev/disk2s1    15Gi  2.3Mi   15Gi     1%    /Volumes/disk2s1</div></pre></td></tr></table></figure></p>
+<p>对比Size和Name可以找到SD卡的分区在系统里对应的设备文件（这里是/dev/disk2s1），如果你有多个分区，可能还会有disk1s3之类的。使用diskutil unmount将这些分区卸载：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">diskutil unmount /dev/disk2s1</div><div class="line">2</div><div class="line">Volume 未命名 on disk2s1 unmounted</div></pre></td></tr></table></figure></p>
+<p>通过diskutil list来确认设备：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">diskutil list</div><div class="line">/dev/disk0</div><div class="line">   <span class="comment">#:                       TYPE NAME                    SIZE       IDENTIFIER</span></div><div class="line">   0:      GUID_partition_scheme                        *121.3 GB   disk0</div><div class="line">   1:                        EFI                         209.7 MB   disk0s1</div><div class="line">   2:                  Apple_HFS Macintosh HD            120.5 GB   disk0s2</div><div class="line">   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3</div><div class="line">/dev/disk2</div><div class="line">   <span class="comment">#:                       TYPE NAME                    SIZE       IDENTIFIER</span></div><div class="line">   0:     FDisk_partition_scheme                        *15.8 GB    disk2</div><div class="line">   1:               Windows_NTFS 未命名                  15.8 GB    disk2s1</div></pre></td></tr></table></figure></p>
+<p>使用 <strong>dd</strong> 命令将系统镜像写入，需要特别特别注意disk后的数字，不能搞错！<br>（说明：/dev/disk2s1是分区，/dev/disk2是块设备，/dev/rdisk2是原始字符设备）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dd bs=4m <span class="keyword">if</span>=2013-02-09-wheezy-raspbian.img of=/dev/rdisk2</div></pre></td></tr></table></figure></p>
+<p>经过几分钟的等待，出现下面的提示，说明SD卡刷好了：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">462+1 records <span class="keyword">in</span></div><div class="line">462+1 records out</div><div class="line">1939865600 bytes transferred <span class="keyword">in</span> 163.133220 secs (11891297 bytes/sec)</div></pre></td></tr></table></figure></p>
+<p>用diskutil unmountDisk卸载设备：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">diskutil unmountdisk /dev/disk2</div><div class="line">Unmount of all volumes on disk2 was successful</div></pre></td></tr></table></figure></p>
+<p>现在就可以拔下SD卡，插到树莓派上启动系统了。</p>
+<h1 id="用户名-amp-密码"><a href="#用户名-amp-密码" class="headerlink" title="用户名&amp;密码"></a>用户名&amp;密码</h1><p>默认用户是 <strong>pi</strong> ，密码是 <strong>raspberry</strong></p>
+<h1 id="使用raspi-config配置树莓派"><a href="#使用raspi-config配置树莓派" class="headerlink" title="使用raspi-config配置树莓派"></a>使用raspi-config配置树莓派</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo raspi-config</div></pre></td></tr></table></figure>
+<p><a href="http://shumeipai.nxez.com/2013/09/07/raspi-config-configuration-raspberry-pie.html" target="_blank" rel="external">http://shumeipai.nxez.com/2013/09/07/raspi-config-configuration-raspberry-pie.html</a></p>
+<h1 id="Raspberry-Pi-树莓派-国内软件源："><a href="#Raspberry-Pi-树莓派-国内软件源：" class="headerlink" title="Raspberry Pi(树莓派)国内软件源："></a>Raspberry Pi(树莓派)国内软件源：</h1><p><a href="http://www.linuxidc.com/Linux/2013-10/91012.htm" target="_blank" rel="external">http://www.linuxidc.com/Linux/2013-10/91012.htm</a></p>
+<p>修改配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">vi /etc/apt/sources.list</div><div class="line">deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ wheezy main contrib non-free rpi</div><div class="line">deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ wheezy main contrib non-free rpi</div><div class="line">deb http://mirrors.neusoft.edu.cn/raspbian/raspbian/ wheezy main contrib non-free rpi</div><div class="line">deb-src http://mirrors.neusoft.edu.cn/raspbian/raspbian/ wheezy main contrib non-free rpi</div><div class="line">deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ wheezy main contrib non-free rpi</div><div class="line">deb-src http://mirrors.ustc.edu.cn/raspbian/raspbian/ wheezy main contrib non-free rpi</div></pre></td></tr></table></figure></p>
+<p>首先我运行下列指令，确定我用的是最新系统软件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update &amp;&amp; apt-get upgrade -y</div></pre></td></tr></table></figure></p>
+<p>配置树莓派支持中文<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install ttf-wqy-zenhei</div><div class="line">sudo apt-get install scim-pinyin</div></pre></td></tr></table></figure></p>
+<h1 id="为树莓派做系统备份镜像（for-Linux-amp-Mac）"><a href="#为树莓派做系统备份镜像（for-Linux-amp-Mac）" class="headerlink" title="为树莓派做系统备份镜像（for Linux &amp; Mac）"></a>为树莓派做系统备份镜像（for Linux &amp; Mac）</h1><p><a href="http://shumeipai.nxez.com/2014/06/01/do-system-backup-image-of-raspberry-pi-for-linux-or-mac.html" target="_blank" rel="external">http://shumeipai.nxez.com/2014/06/01/do-system-backup-image-of-raspberry-pi-for-linux-or-mac.html</a></p>
+<h1 id="魔镜"><a href="#魔镜" class="headerlink" title="魔镜"></a>魔镜</h1><ol>
+<li>信息模式（kioskmode）</li>
+</ol>
+<p>现在就是要确定树莓派能够显示我在信息模式（kioskmode）下用Chromium浏览器显示的网页。Chromium浏览器是个能在树莓派操作系统上运行的开源浏览器。</p>
+<p>一如既往，安装很简单：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install chromium x11-xserver-utils unclutter</div><div class="line">I have a Raspberry Pi 2 running Raspbian Jessie with Chromium 45 installed. I found that you need to copy the existing autostart file to your <span class="built_in">local</span>:</div><div class="line">cp /etc/xdg/lxsession/LXDE-pi/autostart /home/pi/.config/lxsession/LXDE-pi/autostart</div><div class="line">So edit this <span class="built_in">local</span> version:</div><div class="line">sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart</div><div class="line"><span class="comment">#@xscreensaver -no-splash  # comment this line out to disable screensaver</span></div><div class="line">@xset s off</div><div class="line">@xset -dpms</div><div class="line">@xset s noblank</div><div class="line">@chromium --incognito --kiosk http://localhost/  <span class="comment"># load chromium after boot and point to the localhost webserver in full screen mode</span></div><div class="line">Save</div><div class="line">sudo reboot</div></pre></td></tr></table></figure></p>
+<p>这样就能完全禁用所有屏保功能，及Chromium浏览器在开机后自动启动，开启全屏模式并导向本地主页。</p>
+<ol>
+<li>设置网页</li>
+</ol>
+<p>现在我们有了个多功能 Kiosk 啦。就缺个真实的网页了。我自己写了个应用，你可以随便修改或者直接用它。<br>我决定使用 PHP 的微架构 Lumen 以及一些 jQuery 和 MomentJs。</p>
+<p>安装网页服务</p>
+<p>要操作网页你首先得安装网页服务，要跑 Lumen 你首先得安装 php ：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install nginx php5-fpm php5-cli php5-mcrypt git</div></pre></td></tr></table></figure></p>
+<p>这需要一点时间，不过你需要知道 MirrorMirror 网页安装在哪里，以便配置 nginx ：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/nginx/sites-available/mirror.conf</div></pre></td></tr></table></figure></p>
+<p>把以上配置复制到配置文件中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">  listen 80;</div><div class="line">  server_name localhost;</div><div class="line">  root /home/pi/projects/MirrorMirror/public;</div><div class="line">  index index.html index.htm index.php;</div><div class="line">  charset utf-8;</div><div class="line">  location / &#123; try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php?<span class="variable">$query_string</span>; &#125;</div><div class="line">  location = /favicon.ico &#123; access_log off; log_not_found off; &#125;</div><div class="line">  location = /robots.txt &#123; access_log off; log_not_found off; &#125;</div><div class="line">  access_log off;</div><div class="line">  error_log /var/<span class="built_in">log</span>/nginx/myapp-error.log error;</div><div class="line">  sendfile off;</div><div class="line">  client_max_body_size 100m;</div><div class="line">  location ~ .php$ &#123;</div><div class="line">    fastcgi_split_path_info ^(.+.php)(/.+)$;</div><div class="line">    fastcgi_pass unix:/var/run/php5-fpm.sock;</div><div class="line">    fastcgi_index index.php; include fastcgi_params;</div><div class="line">    fastcgi_param SCRIPT_FILENAME <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;</div><div class="line">    fastcgi_intercept_errors off;</div><div class="line">    fastcgi_buffer_size 16k;</div><div class="line">    fastcgi_buffers 4 16k;</div><div class="line">  &#125;</div><div class="line">  location ~ /.ht &#123; deny all; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后激活这些配置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo ln <span class="_">-s</span> /etc/nginx/sites-available/mirror.conf /etc/nginx/sites-enabled/mirror.conf</div><div class="line">sudo unlink /etc/nginx/sites-enabled/default</div><div class="line">sudo service nginx reload</div></pre></td></tr></table></figure></p>
+<p>现在你的派里有了适用php的网页服务了！</p>
+<ol>
+<li>安装 MirrorMirror</li>
+</ol>
+<p>这是最后一步了，安装真实的网页。在 /home/pi 里建一个文件夹并进入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir /home/pi/projects</div><div class="line"><span class="built_in">cd</span> /home/pi/projects</div></pre></td></tr></table></figure></p>
+<p>用下面的命令克隆 MirrorMirror 网页应用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/ctrlaltdylan/MirrorMirror.git</div></pre></td></tr></table></figure></p>
+<p>安装配置器以便安装 Lumen 的相关依赖：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl <span class="_">-s</span>S https://getcomposer.org/installer | sudo php -- --install-dir=/usr/<span class="built_in">local</span>/bin --filename=composer</div></pre></td></tr></table></figure></p>
+<p>使用配置器安装 Lumen 的依赖，启动 MirrorMirror 并运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> MirrorMirror</div><div class="line">composer install</div><div class="line">sudo chmod -R 777 storage</div></pre></td></tr></table></figure></p>
+<p>进入 <a href="http://localhost" target="_blank" rel="external">http://localhost</a> 就可以看到你的 MirrorMirror 的版本以及运行结果啦！</p>
+<p>目前的功能：</p>
+<ul>
+<li>显示天气预报以及萌萌的气象图案。</li>
+<li>显示日期和时间。</li>
+<li>显示一句随机的问候语，目前只有一句，不过计划会加更多啦。<br>当然为了更简单的安装和定制化还需要更多的工作，不过我已经在思考怎么改善它了。希望你像我一样享受建造和使用你自己的魔镜。</li>
+</ul>
+<p>树莓派的BIOS设置储存在系统启动分区中。在这分区中，有一个config.txt文件，载有所有设置。要旋转显示器，在这文件内加上以下一行代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">display_rotate=1</div></pre></td></tr></table></figure></p>
+<p>要让显示器连接更加可靠，我就不解释为何加上下面允许HDMI线热插拔的代码了：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hdmi_force_hotplug=1</div></pre></td></tr></table></figure></p>
+<p>Other:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update &amp;&amp; apt-get upgrade -y</div><div class="line">sudo apt-get install apache2 apache2-doc apache2-utils</div><div class="line">sudo apt-get install libapache2-mod-php5 php5 php-pear php5-xcache</div><div class="line">sudo git <span class="built_in">clone</span> https://github.com/jangellx/MagicMirror.git</div></pre></td></tr></table></figure></p>
+<p>树莓派磨制“魔镜”全记录<br><a href="http://askubuntu.com/questions/19898/whats-the-simplest-way-to-edit-and-add-files-to-var-www" target="_blank" rel="external">http://askubuntu.com/questions/19898/whats-the-simplest-way-to-edit-and-add-files-to-var-www</a><br>你今天太帅了：来用树莓派打造一个魔镜吧<br><a href="http://blog.dylanjpierce.com/raspberrypi/magicmirror/tutorial/2015/12/27/build-a-magic-mirror.html" target="_blank" rel="external">http://blog.dylanjpierce.com/raspberrypi/magicmirror/tutorial/2015/12/27/build-a-magic-mirror.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/02/15/2016-02-15-Raspberry-Pi/">Raspberry Pi</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">cuiqingwei</a></p>
+        <p><span>发布时间:</span>2016-02-15, 21:34:00</p>
+        <p><span>最后更新:</span>2016-10-15, 13:17:44</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/02/15/2016-02-15-Raspberry-Pi/" title="Raspberry Pi">http://cuiqingwei.github.io/2016/02/15/2016-02-15-Raspberry-Pi/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2016/02/15/2016-02-15-Raspberry-Pi/　　作者: cuiqingwei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/03/08/2016-03-08-eMaker-Space/">
+                    eMaker.Space
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2015/11/18/2015-11-18-创客硬件/">
+                    创客硬件
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Mac-OS-X下给树莓派安装Raspbian系统"><span class="toc-number">1.</span> <span class="toc-text">Mac OS X下给树莓派安装Raspbian系统</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用户名-amp-密码"><span class="toc-number">2.</span> <span class="toc-text">用户名&密码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用raspi-config配置树莓派"><span class="toc-number">3.</span> <span class="toc-text">使用raspi-config配置树莓派</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Raspberry-Pi-树莓派-国内软件源："><span class="toc-number">4.</span> <span class="toc-text">Raspberry Pi(树莓派)国内软件源：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为树莓派做系统备份镜像（for-Linux-amp-Mac）"><span class="toc-number">5.</span> <span class="toc-text">为树莓派做系统备份镜像（for Linux & Mac）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#魔镜"><span class="toc-number">6.</span> <span class="toc-text">魔镜</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Raspberry Pi　| iZheteng　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/02/15/2016-02-15-Raspberry-Pi/" data-title="Raspberry Pi" data-url="http://cuiqingwei.github.io/2016/02/15/2016-02-15-Raspberry-Pi/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"cuiqingwei"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+            // Add comment count
+            $(function(){ 
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=cuiqingwei&threads=2016/02/15/2016-02-15-Raspberry-Pi/&callback=?";
+                $.getJSON(jsonUrl, function(result){
+                    $.each(result.response, function(i, field){
+                        var value = field.comments;
+                        if (value > 0) {
+                            $(".count-comment").text(value);
+                            return;
+                        }
+                    })
+                })
+            })
+        
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/03/08/2016-03-08-eMaker-Space/" title="上一篇: eMaker.Space">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2015/11/18/2015-11-18-创客硬件/" title="下一篇: 创客硬件">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/10/2016-10-10-Kali-Linux-Live-USB-on-MAC/">Kali Linux Live USB on MAC</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/2016-10-08-OpenWRT经典网站/">OpenWRT经典网站</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/2016-10-08-OpenWRT开源硬件汇总/">OpenWRT开源硬件汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/13/2016-05-13-IoT知识点汇总/">IoT知识点汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/12/2016-05-12-网站设计的最简主义/">网站设计的最简主义</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/09/2016-03-09-MEAN/">MEAN</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/08/2016-03-08-eMaker-Space/">eMaker.Space</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/15/2016-02-15-Raspberry-Pi/">Raspberry Pi</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/18/2015-11-18-创客硬件/">创客硬件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/03/2015-10-03-折叠公路车/">折叠公路车</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/18/2015-08-18-Linux/">Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/15/2015-08-15-亚马逊云服务免费一年VPS主机翻墙术/">亚马逊云服务免费一年VPS主机翻墙术</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/23/2015-07-23-常用Wi-Fi网络评测工具/">常用Wi-Fi网络评测工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/16/2015-07-16-有趣的Linux命令行功效/">有趣的Linux命令行功效</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/09/2015-07-09-OpenWRT-usefull-commands/">OpenWRT usefull commands</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/08/2015-07-08-OpenWRT折腾日记/">OpenWRT折腾日记</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/07/2015-07-07-OpenWRT之dl下载分享/">OpenWRT之dl下载分享</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/06/2015-07-06-OpenWRT下ifconfig各接口说明/">OpenWRT下ifconfig各接口说明</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/24/2015-06-24-技术领域的深刻体会、教训/">技术领域的深刻体会、教训</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/03/2015-06-03-三星平板工厂模式/">三星平板工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/01/2015-03-01-ZigBee射频模块晶振选型/">ZigBee射频模块晶振选型</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/15/2015-01-15-xclip-pbcopy-xsel用法-terminal-复制粘帖-mac-ubuntu/">xclip,pbcopy,xsel用法 terminal 复制粘帖 (mac, ubuntu)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/13/2015-01-13-Ubuntu/">Ubuntu</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/13/2015-01-13-MacOS/">MacOS</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/08/2014-12-08-SDK之uClinux、Ralink、Atheros、Realtek、Broadcom/">SDK之uClinux、Ralink、Atheros、Realtek、Broadcom</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/06/08/2014-06-08-骑行7：滴水湖2014/">骑行7：滴水湖2014</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/05/21/2014-05-21-骑行6：上海南京路步行街/">骑行6：上海南京路步行街</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/04/17/2014-04-17-网络命令/">网络命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/07/05/2013-07-05-Marketplace-Client/">Marketplace Client</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/06/15/2013-06-15-骑行5：沪杭公路到九龙山/">骑行5：沪杭公路到九龙山</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/29/2013-04-29-骑行4：老上海-浦西世博园/">骑行4：老上海&浦西世博园</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/20/2013-04-20-骑行3：天马山-淀山湖/">骑行3：天马山&淀山湖</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/06/2013-04-06-我的单车装备/">我的单车装备</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/05/2013-04-05-骑行2：滴水湖/">骑行2：滴水湖</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/02/2013-04-02-骑行1：佘山/">骑行1：佘山</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/03/23/2013-03-23-GitHub建立个人站点/">GitHub建立个人站点</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/">InstantContiki2.6 for CC2530</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/10/14/2012-10-14-曾经折腾过的那些/">曾经折腾过的那些</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-autoRootfs-sh/">autoRootfs.sh</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-SQLite移植到ARM开发板/">SQLite移植到ARM开发板</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-goAhead2-5嵌入式web服务器移植/">goAhead2.5嵌入式web服务器移植</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-jffs2根文件系统制作/">jffs2根文件系统制作</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-at91sam9x5编译过程/">at91sam9x5编译过程</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-ubuntu11-04安装arm开发环境/">ubuntu11.04安装arm开发环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2010/07/23/2010-07-23-Telnet-Socket调试工具/">Telnet&Socket调试工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2009/07/28/2009-07-28-基于Altium-Designer-Winter-09在PCB中放置LOGO/">基于Altium Designer Winter 09在PCB中放置LOGO</a></li><li class="post-list-item"><a class="post-list-link" href="/2009/03/13/2009-03-13-在TI-CC1111-CC25111上搞定USBHID/">在TI-CC1111&CC25111上搞定USBHID</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/07/09/2008-07-09-Rf-Calc/">Rf_Calc</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/05/11/2008-05-11-Proteus产品仿真/">Proteus产品仿真</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/">USB_M8_RGBLED彩灯</a></li><li class="post-list-item"><a class="post-list-link" href="/2007/11/19/2007-11-19-EAGLE3D终于搞定了！/">EAGLE3D终于搞定了!</a></li><li class="post-list-item"><a class="post-list-link" href="/2007/10/12/2007-10-12-CC2430模块自测程序/">CC2430模块自测程序</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/12/25/2006-12-25-基于Cport的多功能串口调试工具/">基于Cport的多功能串口调试工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/12/06/2006-12-06-AT91SAM7S64的定时器初始化计算工器/">AT91SAM7S64的定时器初始化计算器</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/10/31/2006-10-31-闪动的“LOVE”/">闪动的“LOVE”</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/10/01/2006-10-01-活着，就要折腾/">活着，就要折腾</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i>
+                2016 cuiqingwei
+            </div>
+            <div class="footer-right">
+                <!-- <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i> -->
+                Old Blog <a href="https://cuiqingwei1981.github.io">https://cuiqingwei1981.github.io</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-42607542-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

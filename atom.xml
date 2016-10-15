@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2016-10-09T04:51:46.000Z</updated>
+  <updated>2016-10-15T12:21:26.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -14,6 +14,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Kali Linux Live USB on MAC</title>
+    <link href="http://cuiqingwei.github.io/2016/10/10/2016-10-10-Kali-Linux-Live-USB-on-MAC/"/>
+    <id>http://cuiqingwei.github.io/2016/10/10/2016-10-10-Kali-Linux-Live-USB-on-MAC/</id>
+    <published>2016-10-09T18:27:40.000Z</published>
+    <updated>2016-10-15T12:21:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li>download Kali Linux iso images from <a href="http://www.kali.org/downloads/" target="_blank" rel="external">http://www.kali.org/downloads/</a></li>
+<li>Format the usb stick in disk utility as msdos</li>
+<li>Open Terminal Window and run the following</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">➜  ~ diskutil list</div><div class="line">/dev/disk0 (internal, physical):</div><div class="line">   <span class="comment">#:                       TYPE NAME                    SIZE       IDENTIFIER</span></div><div class="line">   0:      GUID_partition_scheme                        *128.0 GB   disk0</div><div class="line">   1:                        EFI EFI                     209.7 MB   disk0s1</div><div class="line">   2:                  Apple_HFS OS X                    127.2 GB   disk0s2</div><div class="line">   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3</div><div class="line">/dev/disk1 (internal, physical):</div><div class="line">   <span class="comment">#:                       TYPE NAME                    SIZE       IDENTIFIER</span></div><div class="line">   0:      GUID_partition_scheme                        *500.1 GB   disk1</div><div class="line">   1:                        EFI EFI                     209.7 MB   disk1s1</div><div class="line">   2:                  Apple_HFS WORK                    400.0 GB   disk1s2</div><div class="line">   3:                  Apple_HFS DATA                    99.6 GB    disk1s3</div><div class="line">/dev/disk2 (external, physical):</div><div class="line">   <span class="comment">#:                       TYPE NAME                    SIZE       IDENTIFIER</span></div><div class="line">   0:     FDisk_partition_scheme                        *8.0 GB     disk2</div><div class="line">   1:                 DOS_FAT_32 KALI                    8.0 GB     disk2s1</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<ol>
+<li>my USB device is /dev/disk2, Then unmount disk by diskutil command</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">➜  ~ diskutil umountDisk /dev/disk2</div><div class="line">Unmount of all volumes on disk2 was successful</div></pre></td></tr></table></figure>
+<ol>
+<li>You may have to run this as sudo</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo dd <span class="keyword">if</span>=kali-linux-2016.2-amd64.iso of=/dev/disk2 bs=512 conv=noerror,sync</div><div class="line">6009312+0 records <span class="keyword">in</span></div><div class="line">6009312+0 records out</div><div class="line">3076767744 bytes transferred <span class="keyword">in</span> 2227.332489 secs (1381369 bytes/sec)</div></pre></td></tr></table></figure>
+<p>Waiting for complete<br>When It success</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;download Kali Linux iso images from &lt;a href=&quot;http://www.kali.org/downloads/&quot;&gt;http://www.kali.org/downloads/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Format the usb stick in disk utility as msdos&lt;/li&gt;
+&lt;li&gt;Open Terminal Window and run the following&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;➜  ~ diskutil list&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/dev/disk0 (internal, physical):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;#:                       TYPE NAME                    SIZE       IDENTIFIER&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   0:      GUID_partition_scheme                        *128.0 GB   disk0&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   1:                        EFI EFI                     209.7 MB   disk0s1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   2:                  Apple_HFS OS X                    127.2 GB   disk0s2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/dev/disk1 (internal, physical):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;#:                       TYPE NAME                    SIZE       IDENTIFIER&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   0:      GUID_partition_scheme                        *500.1 GB   disk1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   1:                        EFI EFI                     209.7 MB   disk1s1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   2:                  Apple_HFS WORK                    400.0 GB   disk1s2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   3:                  Apple_HFS DATA                    99.6 GB    disk1s3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/dev/disk2 (external, physical):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;#:                       TYPE NAME                    SIZE       IDENTIFIER&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   0:     FDisk_partition_scheme                        *8.0 GB     disk2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   1:                 DOS_FAT_32 KALI                    8.0 GB     disk2s1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="kali-linux" scheme="http://cuiqingwei.github.io/tags/kali-linux/"/>
+    
+  </entry>
   
   <entry>
     <title>OpenWRT经典网站</title>
@@ -580,6 +621,82 @@
       <category term="开源硬件" scheme="http://cuiqingwei.github.io/tags/%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6/"/>
     
       <category term="链接" scheme="http://cuiqingwei.github.io/tags/%E9%93%BE%E6%8E%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Raspberry Pi</title>
+    <link href="http://cuiqingwei.github.io/2016/02/15/2016-02-15-Raspberry-Pi/"/>
+    <id>http://cuiqingwei.github.io/2016/02/15/2016-02-15-Raspberry-Pi/</id>
+    <published>2016-02-15T13:34:00.000Z</published>
+    <updated>2016-10-15T05:17:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Mac-OS-X下给树莓派安装Raspbian系统"><a href="#Mac-OS-X下给树莓派安装Raspbian系统" class="headerlink" title="Mac OS X下给树莓派安装Raspbian系统"></a>Mac OS X下给树莓派安装Raspbian系统</h1><p>先到<a href="http://www.raspberrypi.org/downloads" target="_blank" rel="external">树莓派的官方网站</a>去下载一个系统镜像，推荐下载<a href="http://downloads.raspberrypi.org/images/raspbian/2013-02-09-wheezy-raspbian/2013-02-09-wheezy-raspbian.zip" target="_blank" rel="external">Raspbian</a>。</p>
+<p>如果用了直接扩展的WaveShare的TFT小屏，到 <a href="http://www.waveshare.net/wiki/RPI_IMAGE" target="_blank" rel="external">http://www.waveshare.net/wiki/RPI_IMAGE</a> 去下载。<br><a id="more"></a><br>下载完成后得到一个img镜像：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ls -lh</div><div class="line">total 3788800</div><div class="line">-rw-r--r--  1 mymacbook  staff   1.8G  2  9 03:44 2015-11-21-raspbian-jessie.img</div></pre></td></tr></table></figure></p>
+<p>插入SD卡，用df命令查看当前已挂载的卷：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">df -h</div><div class="line">Filesystem      Size   Used  Avail Capacity  Mounted on</div><div class="line">/dev/disk0s2   112Gi   96Gi   15Gi    87%    /</div><div class="line">devfs          183Ki  183Ki    0Bi   100%    /dev</div><div class="line">map -hosts       0Bi    0Bi    0Bi   100%    /net</div><div class="line">map auto_home    0Bi    0Bi    0Bi   100%    /home</div><div class="line">/dev/disk2s1    15Gi  2.3Mi   15Gi     1%    /Volumes/disk2s1</div></pre></td></tr></table></figure></p>
+<p>对比Size和Name可以找到SD卡的分区在系统里对应的设备文件（这里是/dev/disk2s1），如果你有多个分区，可能还会有disk1s3之类的。使用diskutil unmount将这些分区卸载：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">diskutil unmount /dev/disk2s1</div><div class="line">2</div><div class="line">Volume 未命名 on disk2s1 unmounted</div></pre></td></tr></table></figure></p>
+<p>通过diskutil list来确认设备：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">diskutil list</div><div class="line">/dev/disk0</div><div class="line">   <span class="comment">#:                       TYPE NAME                    SIZE       IDENTIFIER</span></div><div class="line">   0:      GUID_partition_scheme                        *121.3 GB   disk0</div><div class="line">   1:                        EFI                         209.7 MB   disk0s1</div><div class="line">   2:                  Apple_HFS Macintosh HD            120.5 GB   disk0s2</div><div class="line">   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3</div><div class="line">/dev/disk2</div><div class="line">   <span class="comment">#:                       TYPE NAME                    SIZE       IDENTIFIER</span></div><div class="line">   0:     FDisk_partition_scheme                        *15.8 GB    disk2</div><div class="line">   1:               Windows_NTFS 未命名                  15.8 GB    disk2s1</div></pre></td></tr></table></figure></p>
+<p>使用 <strong>dd</strong> 命令将系统镜像写入，需要特别特别注意disk后的数字，不能搞错！<br>（说明：/dev/disk2s1是分区，/dev/disk2是块设备，/dev/rdisk2是原始字符设备）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dd bs=4m <span class="keyword">if</span>=2013-02-09-wheezy-raspbian.img of=/dev/rdisk2</div></pre></td></tr></table></figure></p>
+<p>经过几分钟的等待，出现下面的提示，说明SD卡刷好了：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">462+1 records <span class="keyword">in</span></div><div class="line">462+1 records out</div><div class="line">1939865600 bytes transferred <span class="keyword">in</span> 163.133220 secs (11891297 bytes/sec)</div></pre></td></tr></table></figure></p>
+<p>用diskutil unmountDisk卸载设备：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">diskutil unmountdisk /dev/disk2</div><div class="line">Unmount of all volumes on disk2 was successful</div></pre></td></tr></table></figure></p>
+<p>现在就可以拔下SD卡，插到树莓派上启动系统了。</p>
+<h1 id="用户名-amp-密码"><a href="#用户名-amp-密码" class="headerlink" title="用户名&amp;密码"></a>用户名&amp;密码</h1><p>默认用户是 <strong>pi</strong> ，密码是 <strong>raspberry</strong></p>
+<h1 id="使用raspi-config配置树莓派"><a href="#使用raspi-config配置树莓派" class="headerlink" title="使用raspi-config配置树莓派"></a>使用raspi-config配置树莓派</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo raspi-config</div></pre></td></tr></table></figure>
+<p><a href="http://shumeipai.nxez.com/2013/09/07/raspi-config-configuration-raspberry-pie.html" target="_blank" rel="external">http://shumeipai.nxez.com/2013/09/07/raspi-config-configuration-raspberry-pie.html</a></p>
+<h1 id="Raspberry-Pi-树莓派-国内软件源："><a href="#Raspberry-Pi-树莓派-国内软件源：" class="headerlink" title="Raspberry Pi(树莓派)国内软件源："></a>Raspberry Pi(树莓派)国内软件源：</h1><p><a href="http://www.linuxidc.com/Linux/2013-10/91012.htm" target="_blank" rel="external">http://www.linuxidc.com/Linux/2013-10/91012.htm</a></p>
+<p>修改配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">vi /etc/apt/sources.list</div><div class="line">deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ wheezy main contrib non-free rpi</div><div class="line">deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ wheezy main contrib non-free rpi</div><div class="line">deb http://mirrors.neusoft.edu.cn/raspbian/raspbian/ wheezy main contrib non-free rpi</div><div class="line">deb-src http://mirrors.neusoft.edu.cn/raspbian/raspbian/ wheezy main contrib non-free rpi</div><div class="line">deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ wheezy main contrib non-free rpi</div><div class="line">deb-src http://mirrors.ustc.edu.cn/raspbian/raspbian/ wheezy main contrib non-free rpi</div></pre></td></tr></table></figure></p>
+<p>首先我运行下列指令，确定我用的是最新系统软件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update &amp;&amp; apt-get upgrade -y</div></pre></td></tr></table></figure></p>
+<p>配置树莓派支持中文<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install ttf-wqy-zenhei</div><div class="line">sudo apt-get install scim-pinyin</div></pre></td></tr></table></figure></p>
+<h1 id="为树莓派做系统备份镜像（for-Linux-amp-Mac）"><a href="#为树莓派做系统备份镜像（for-Linux-amp-Mac）" class="headerlink" title="为树莓派做系统备份镜像（for Linux &amp; Mac）"></a>为树莓派做系统备份镜像（for Linux &amp; Mac）</h1><p><a href="http://shumeipai.nxez.com/2014/06/01/do-system-backup-image-of-raspberry-pi-for-linux-or-mac.html" target="_blank" rel="external">http://shumeipai.nxez.com/2014/06/01/do-system-backup-image-of-raspberry-pi-for-linux-or-mac.html</a></p>
+<h1 id="魔镜"><a href="#魔镜" class="headerlink" title="魔镜"></a>魔镜</h1><ol>
+<li>信息模式（kioskmode）</li>
+</ol>
+<p>现在就是要确定树莓派能够显示我在信息模式（kioskmode）下用Chromium浏览器显示的网页。Chromium浏览器是个能在树莓派操作系统上运行的开源浏览器。</p>
+<p>一如既往，安装很简单：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install chromium x11-xserver-utils unclutter</div><div class="line">I have a Raspberry Pi 2 running Raspbian Jessie with Chromium 45 installed. I found that you need to copy the existing autostart file to your <span class="built_in">local</span>:</div><div class="line">cp /etc/xdg/lxsession/LXDE-pi/autostart /home/pi/.config/lxsession/LXDE-pi/autostart</div><div class="line">So edit this <span class="built_in">local</span> version:</div><div class="line">sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart</div><div class="line"><span class="comment">#@xscreensaver -no-splash  # comment this line out to disable screensaver</span></div><div class="line">@xset s off</div><div class="line">@xset -dpms</div><div class="line">@xset s noblank</div><div class="line">@chromium --incognito --kiosk http://localhost/  <span class="comment"># load chromium after boot and point to the localhost webserver in full screen mode</span></div><div class="line">Save</div><div class="line">sudo reboot</div></pre></td></tr></table></figure></p>
+<p>这样就能完全禁用所有屏保功能，及Chromium浏览器在开机后自动启动，开启全屏模式并导向本地主页。</p>
+<ol>
+<li>设置网页</li>
+</ol>
+<p>现在我们有了个多功能 Kiosk 啦。就缺个真实的网页了。我自己写了个应用，你可以随便修改或者直接用它。<br>我决定使用 PHP 的微架构 Lumen 以及一些 jQuery 和 MomentJs。</p>
+<p>安装网页服务</p>
+<p>要操作网页你首先得安装网页服务，要跑 Lumen 你首先得安装 php ：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install nginx php5-fpm php5-cli php5-mcrypt git</div></pre></td></tr></table></figure></p>
+<p>这需要一点时间，不过你需要知道 MirrorMirror 网页安装在哪里，以便配置 nginx ：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/nginx/sites-available/mirror.conf</div></pre></td></tr></table></figure></p>
+<p>把以上配置复制到配置文件中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">  listen 80;</div><div class="line">  server_name localhost;</div><div class="line">  root /home/pi/projects/MirrorMirror/public;</div><div class="line">  index index.html index.htm index.php;</div><div class="line">  charset utf-8;</div><div class="line">  location / &#123; try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.php?<span class="variable">$query_string</span>; &#125;</div><div class="line">  location = /favicon.ico &#123; access_log off; log_not_found off; &#125;</div><div class="line">  location = /robots.txt &#123; access_log off; log_not_found off; &#125;</div><div class="line">  access_log off;</div><div class="line">  error_log /var/<span class="built_in">log</span>/nginx/myapp-error.log error;</div><div class="line">  sendfile off;</div><div class="line">  client_max_body_size 100m;</div><div class="line">  location ~ .php$ &#123;</div><div class="line">    fastcgi_split_path_info ^(.+.php)(/.+)$;</div><div class="line">    fastcgi_pass unix:/var/run/php5-fpm.sock;</div><div class="line">    fastcgi_index index.php; include fastcgi_params;</div><div class="line">    fastcgi_param SCRIPT_FILENAME <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;</div><div class="line">    fastcgi_intercept_errors off;</div><div class="line">    fastcgi_buffer_size 16k;</div><div class="line">    fastcgi_buffers 4 16k;</div><div class="line">  &#125;</div><div class="line">  location ~ /.ht &#123; deny all; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后激活这些配置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo ln <span class="_">-s</span> /etc/nginx/sites-available/mirror.conf /etc/nginx/sites-enabled/mirror.conf</div><div class="line">sudo unlink /etc/nginx/sites-enabled/default</div><div class="line">sudo service nginx reload</div></pre></td></tr></table></figure></p>
+<p>现在你的派里有了适用php的网页服务了！</p>
+<ol>
+<li>安装 MirrorMirror</li>
+</ol>
+<p>这是最后一步了，安装真实的网页。在 /home/pi 里建一个文件夹并进入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir /home/pi/projects</div><div class="line"><span class="built_in">cd</span> /home/pi/projects</div></pre></td></tr></table></figure></p>
+<p>用下面的命令克隆 MirrorMirror 网页应用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/ctrlaltdylan/MirrorMirror.git</div></pre></td></tr></table></figure></p>
+<p>安装配置器以便安装 Lumen 的相关依赖：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl <span class="_">-s</span>S https://getcomposer.org/installer | sudo php -- --install-dir=/usr/<span class="built_in">local</span>/bin --filename=composer</div></pre></td></tr></table></figure></p>
+<p>使用配置器安装 Lumen 的依赖，启动 MirrorMirror 并运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> MirrorMirror</div><div class="line">composer install</div><div class="line">sudo chmod -R 777 storage</div></pre></td></tr></table></figure></p>
+<p>进入 <a href="http://localhost" target="_blank" rel="external">http://localhost</a> 就可以看到你的 MirrorMirror 的版本以及运行结果啦！</p>
+<p>目前的功能：</p>
+<ul>
+<li>显示天气预报以及萌萌的气象图案。</li>
+<li>显示日期和时间。</li>
+<li>显示一句随机的问候语，目前只有一句，不过计划会加更多啦。<br>当然为了更简单的安装和定制化还需要更多的工作，不过我已经在思考怎么改善它了。希望你像我一样享受建造和使用你自己的魔镜。</li>
+</ul>
+<p>树莓派的BIOS设置储存在系统启动分区中。在这分区中，有一个config.txt文件，载有所有设置。要旋转显示器，在这文件内加上以下一行代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">display_rotate=1</div></pre></td></tr></table></figure></p>
+<p>要让显示器连接更加可靠，我就不解释为何加上下面允许HDMI线热插拔的代码了：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hdmi_force_hotplug=1</div></pre></td></tr></table></figure></p>
+<p>Other:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update &amp;&amp; apt-get upgrade -y</div><div class="line">sudo apt-get install apache2 apache2-doc apache2-utils</div><div class="line">sudo apt-get install libapache2-mod-php5 php5 php-pear php5-xcache</div><div class="line">sudo git <span class="built_in">clone</span> https://github.com/jangellx/MagicMirror.git</div></pre></td></tr></table></figure></p>
+<p>树莓派磨制“魔镜”全记录<br><a href="http://askubuntu.com/questions/19898/whats-the-simplest-way-to-edit-and-add-files-to-var-www" target="_blank" rel="external">http://askubuntu.com/questions/19898/whats-the-simplest-way-to-edit-and-add-files-to-var-www</a><br>你今天太帅了：来用树莓派打造一个魔镜吧<br><a href="http://blog.dylanjpierce.com/raspberrypi/magicmirror/tutorial/2015/12/27/build-a-magic-mirror.html" target="_blank" rel="external">http://blog.dylanjpierce.com/raspberrypi/magicmirror/tutorial/2015/12/27/build-a-magic-mirror.html</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Mac-OS-X下给树莓派安装Raspbian系统&quot;&gt;&lt;a href=&quot;#Mac-OS-X下给树莓派安装Raspbian系统&quot; class=&quot;headerlink&quot; title=&quot;Mac OS X下给树莓派安装Raspbian系统&quot;&gt;&lt;/a&gt;Mac OS X下给树莓派安装Raspbian系统&lt;/h1&gt;&lt;p&gt;先到&lt;a href=&quot;http://www.raspberrypi.org/downloads&quot;&gt;树莓派的官方网站&lt;/a&gt;去下载一个系统镜像，推荐下载&lt;a href=&quot;http://downloads.raspberrypi.org/images/raspbian/2013-02-09-wheezy-raspbian/2013-02-09-wheezy-raspbian.zip&quot;&gt;Raspbian&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;如果用了直接扩展的WaveShare的TFT小屏，到 &lt;a href=&quot;http://www.waveshare.net/wiki/RPI_IMAGE&quot;&gt;http://www.waveshare.net/wiki/RPI_IMAGE&lt;/a&gt; 去下载。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="创客" scheme="http://cuiqingwei.github.io/tags/%E5%88%9B%E5%AE%A2/"/>
+    
+      <category term="开源硬件" scheme="http://cuiqingwei.github.io/tags/%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6/"/>
+    
+      <category term="Raspberry Pi" scheme="http://cuiqingwei.github.io/tags/Raspberry-Pi/"/>
     
   </entry>
   
@@ -1303,78 +1420,6 @@
       <category term="折腾" scheme="http://cuiqingwei.github.io/tags/%E6%8A%98%E8%85%BE/"/>
     
       <category term="三星平板" scheme="http://cuiqingwei.github.io/tags/%E4%B8%89%E6%98%9F%E5%B9%B3%E6%9D%BF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ZigBee射频模块晶振选型</title>
-    <link href="http://cuiqingwei.github.io/2015/03/01/2015-03-01-ZigBee%E5%B0%84%E9%A2%91%E6%A8%A1%E5%9D%97%E6%99%B6%E6%8C%AF%E9%80%89%E5%9E%8B/"/>
-    <id>http://cuiqingwei.github.io/2015/03/01/2015-03-01-ZigBee射频模块晶振选型/</id>
-    <published>2015-02-28T18:17:00.000Z</published>
-    <updated>2016-09-19T09:43:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="http://www.ti.com/lit/an/swra372c/swra372c.pdf" target="_blank" rel="external">AN100 - Crystal Selection Guide (Rev. C)</a></p>
-<h3 id="CC2530"><a href="#CC2530" class="headerlink" title="CC2530"></a>CC2530</h3><p>NX3225SA : Crystal, 32.000MHz, 10/15ppm, 16 pF  ! Temp range -30 - +85 deg C !<br><a href="http://www.ndk.com/cn/products/search/crystal/1188115_1533.html" target="_blank" rel="external">http://www.ndk.com/cn/products/search/crystal/1188115_1533.html</a><br>TSX-3225 : Crystal, 32.000MHz, 16 pF, -10PPM/+10PPM, -40DEGC/+85DEGC, SMD<br><a href="http://www5.epsondevice.com/cn/quartz/product/crystal/at/tsx3225.html" target="_blank" rel="external">http://www5.epsondevice.com/cn/quartz/product/crystal/at/tsx3225.html</a><br>MC-306 : Crystal, 32.768 kHz, 12.5pF, 20/50 ppm,SMD package<br><a href="http://www5.epsondevice.com/cn/quartz/product/crystal/tuning_fork/mc306.html" target="_blank" rel="external">http://www5.epsondevice.com/cn/quartz/product/crystal/tuning_fork/mc306.html</a></p>
-<h3 id="CC2538"><a href="#CC2538" class="headerlink" title="CC2538"></a>CC2538</h3><p>FA-128 : CRYSTAL, OSCILATOR, 32MHz, 10pF, -10PPM/+10PPM, -40DEGC/+85DEGC, SMD<br><a href="http://www5.epsondevice.com/cn/quartz/product/crystal/at/fa128.html" target="_blank" rel="external">http://www5.epsondevice.com/cn/quartz/product/crystal/at/fa128.html</a><br>FC-12M : CRYSTAL, OSCILATOR, 32.768kHz, -20PPM/ + 20PPM, -40DEGC/ +85DEGC, 12.5pF, SMD<br><a href="http://www5.epsondevice.com/cn/quartz/product/crystal/tuning_fork/fc12d12m.html" target="_blank" rel="external">http://www5.epsondevice.com/cn/quartz/product/crystal/tuning_fork/fc12d12m.html</a><br>ABS05 : 32.768KHZ<br><a href="http://www.abracon.com/Resonators/ABS05.pdf" target="_blank" rel="external">http://www.abracon.com/Resonators/ABS05.pdf</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;http://www.ti.com/lit/an/swra372c/swra372c.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;AN100 - Crystal Selection Guide (Rev. C)&lt;/a&gt;&lt;/p&gt;
-
-    
-    </summary>
-    
-    
-      <category term="ZigBee" scheme="http://cuiqingwei.github.io/tags/ZigBee/"/>
-    
-      <category term="晶振" scheme="http://cuiqingwei.github.io/tags/%E6%99%B6%E6%8C%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>xclip,pbcopy,xsel用法 terminal 复制粘帖 (mac, ubuntu)</title>
-    <link href="http://cuiqingwei.github.io/2015/01/15/2015-01-15-xclip-pbcopy-xsel%E7%94%A8%E6%B3%95-terminal-%E5%A4%8D%E5%88%B6%E7%B2%98%E5%B8%96-mac-ubuntu/"/>
-    <id>http://cuiqingwei.github.io/2015/01/15/2015-01-15-xclip-pbcopy-xsel用法-terminal-复制粘帖-mac-ubuntu/</id>
-    <published>2015-01-15T13:28:00.000Z</published>
-    <updated>2016-10-09T12:47:26.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1-Mac下"><a href="#1-Mac下" class="headerlink" title="1.Mac下"></a>1.Mac下</h3><p>使用pbcopy命令。 # 对应有个pbpaste命令。</p>
-<p>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">'Hello World!'</span> | pbcopy</div></pre></td></tr></table></figure></p>
-<h1 id="将字符串Hello-World放入剪贴板"><a href="#将字符串Hello-World放入剪贴板" class="headerlink" title="将字符串Hello World放入剪贴板"></a>将字符串Hello World放入剪贴板</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat myFile.txt | pbcopy</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pbpaste &gt; file.txt</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<p><em>要复制结果又想看到命令的输出</em><br>命令的结果输出时，如果给复制命令（即上面提到的命令clip、xsel、pbcopy）那么命令输出就看不到了。如果你想先看到命令的输出，可以下面这么做。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> <span class="string">'Hello World!'</span> | tee tmp.file.txt  </div><div class="line">Hello World!  </div><div class="line">$ xsel &lt; tmp.file.txt  </div><div class="line">$ rm tmp.file.txt</div></pre></td></tr></table></figure></p>
-<p>即先使用tee命令把输出输到控制台和一个文件中。命令执行完成后，再把输出的内容放到剪贴板中。</p>
-<h3 id="2-Ubuntu下"><a href="#2-Ubuntu下" class="headerlink" title="2.Ubuntu下"></a>2.Ubuntu下</h3><p>ubuntu下的用户可以只用apt-get来安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install xclip</div></pre></td></tr></table></figure></p>
-<p>其他发行版的用户可以选择自己的安装方式，也可以用源码编译安装，xclip项目的主页是：<a href="http://sourceforge.net/projects/xclip/" target="_blank" rel="external">http://sourceforge.net/projects/xclip/</a><br>xclip可以将内容输出到‘X’的剪切板中，比如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"Hello, world"</span> | xclip</div></pre></td></tr></table></figure></p>
-<p>执行这个命令后你就可以用鼠标中键来在X程序中将内容粘贴出来。但是更多的时候，我们需要不仅仅把内容输出到‘X’的剪切板中，而是希望可以在GUI程序 中用ctrl + v也可以粘贴（比如，输出到gnome的剪切板中），下面这段命令就可以让你将内容输出到gnome的剪切板中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"Hello, world"</span> | xclip -selection clipboard</div></pre></td></tr></table></figure></p>
-<p>再在一个GUI程序中按下ctrl + v，看下是不是粘贴上去了呢？顺着这个命令，我也重新写了一下ifconfig，让它在执行后输入内容到终端的同时，也将ip地址输出到剪切板中，因为通常情况下，查看ifconfig就是为了获取机器的ip地址：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">alias</span> ifconfig=<span class="string">'/sbin/ifconfig &amp;&amp; echo `/sbin/ifconfig | sed -n 2p | awk "&#123; print \\$2 &#125;" | grep -o "[0-9]\&#123;1,3\&#125;\.[0-9]\&#123;1,3\&#125;\.[0-9]\&#123;1,3\&#125;\.[0-9]\&#123;1,3\&#125;"` | xclip -selection clipboard'</span></div></pre></td></tr></table></figure></p>
-<p>或者<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xclip -sel clip &lt; file</div></pre></td></tr></table></figure></p>
-<p>此时你就可以在网页等编辑框CTRL+V了。</p>
-<p>项目主页：<a href="http://sourceforge.net/projects/xclip/" target="_blank" rel="external">http://sourceforge.net/projects/xclip/</a><br>命令man page: <a href="http://linux.die.net/man/1/xclip" target="_blank" rel="external">http://linux.die.net/man/1/xclip</a></p>
-<p><strong>-i, -in</strong><br>read text into X selection from standard input or files (default)<br><strong>-o, -out</strong><br>prints the selection to standard out (generally for piping to a file or program)<br><strong>-f, -filter</strong><br>when xclip is invoked in the in mode with output level set to silent (the defaults), the filter option will cause xclip to print the text piped to standard in back to standard out unmodified<br><strong>-l, -loops</strong><br>number of X selection requests (pastes into X applications) to wait for before exiting, with a value of 0 (default) causing xclip to wait for an unlimited number of requests until another application (possibly another invocation of xclip) takes ownership of the selection<br><strong>-d, -display</strong><br>X display to use (e.g. “localhost:0”), xclip defaults to the value in $DISPLAY if this option is omitted</p>
-<h3 id="3-Linux下"><a href="#3-Linux下" class="headerlink" title="3.Linux下"></a>3.Linux下</h3><p>使用xsel命令。</p>
-<p>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">cat README.TXT | xsel  </div><div class="line">cat README.TXT | xsel -b <span class="comment"># 如有问题可以试试-b选项  </span></div><div class="line">xsel &lt; README.TXT  </div><div class="line"><span class="comment"># 将readme.txt的文本放入剪贴板  </span></div><div class="line">xsel -c  </div><div class="line"><span class="comment"># 清空剪贴板</span></div></pre></td></tr></table></figure></p>
-<h3 id="4-Windows下"><a href="#4-Windows下" class="headerlink" title="4.Windows下"></a>4.Windows下</h3><p>使用系统自带的clip命令。<br># 位于C:\Windows\system32\clip.exe。<br><!--more--><br>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> Hello | clip  </div><div class="line"><span class="comment"># 将字符串Hello放入Windows剪贴板  </span></div><div class="line">dir | clip  </div><div class="line"><span class="comment"># 将dir命令输出（当前目录列表）放入Windows剪贴板  </span></div><div class="line">clip &lt; README.TXT    </div><div class="line"><span class="comment"># 将readme.txt的文本放入Windows剪贴板  </span></div><div class="line"><span class="built_in">echo</span> | clip  </div><div class="line"><span class="comment"># 将一个空行放入Windows剪贴板，即清空Windows剪贴板</span></div></pre></td></tr></table></figure></p>
-<p>注：不同系统使用不同的复制命令。避免用文本编辑器打开这个文件、选中文本、CTRL + C这样繁琐操作。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;1-Mac下&quot;&gt;&lt;a href=&quot;#1-Mac下&quot; class=&quot;headerlink&quot; title=&quot;1.Mac下&quot;&gt;&lt;/a&gt;1.Mac下&lt;/h3&gt;&lt;p&gt;使用pbcopy命令。 # 对应有个pbpaste命令。&lt;/p&gt;
-&lt;p&gt;示例：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;Hello World!&#39;&lt;/span&gt; | pbcopy&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h1 id=&quot;将字符串Hello-World放入剪贴板&quot;&gt;&lt;a href=&quot;#将字符串Hello-World放入剪贴板&quot; class=&quot;headerlink&quot; title=&quot;将字符串Hello World放入剪贴板&quot;&gt;&lt;/a&gt;将字符串Hello World放入剪贴板&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;cat myFile.txt | pbcopy&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;pbpaste &amp;gt; file.txt&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="ubuntu" scheme="http://cuiqingwei.github.io/tags/ubuntu/"/>
-    
-      <category term="总结" scheme="http://cuiqingwei.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="mac" scheme="http://cuiqingwei.github.io/tags/mac/"/>
     
   </entry>
   
