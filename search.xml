@@ -19,7 +19,7 @@
   - 2) 资源命名必须符合这样的规则username/username.github.com；
   - 3) 主干上内容被用来构建和发布页面.
 ② Project Pages 项目站点
-  - 1) **gh-pages** 分支用于构建和发布；
+  - 1) gh-pages 分支用于构建和发布；
   - 2) 如果user/org pages使用了独立域名，那么托管在账户下的所有project pages将
        使用相同的域名进行重定向，除非project pages使用了自己的独立域名；
   - 3) 如果没有使用独立域名，project pages将通过子路径的形式提供服务username.github.com/projectname；
