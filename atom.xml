@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2016-10-15T17:05:21.000Z</updated>
+  <updated>2016-10-27T05:09:53.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -14,6 +14,84 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>利用Travis CI、MkDocs自動部署Blog至GitHub Pages</title>
+    <link href="http://cuiqingwei.github.io/2016/10/27/2016-10-27-%E5%88%A9%E7%94%A8Travis-CI%E3%80%81MkDocs%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2Blog%E8%87%B3GitHub-Pages/"/>
+    <id>http://cuiqingwei.github.io/2016/10/27/2016-10-27-利用Travis-CI、MkDocs自動部署Blog至GitHub-Pages/</id>
+    <published>2016-10-27T03:01:40.000Z</published>
+    <updated>2016-10-27T05:09:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="技术要点"><a href="#技术要点" class="headerlink" title="技术要点"></a>技术要点</h1><h3 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h3><p><a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a>免费的静态站点，三个特点：免费托管、自带主题、支持自制页面和Jekyll。</p>
+<h3 id="MkDocs"><a href="#MkDocs" class="headerlink" title="MkDocs"></a>MkDocs</h3><p><a href="http://markdown-docs-zh.readthedocs.io/zh_CN/latest/" target="_blank" rel="external">MkDocs</a>是一个用于创建项目文档的 快速, 简单 , 完美华丽 的静态站点生成器. 文档源码使用 Markdown 来撰写, 用一个 YAML 文件作为配置文档.</p>
+<h3 id="Travis-CI"><a href="#Travis-CI" class="headerlink" title="Travis CI"></a>Travis CI</h3><p><a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI</a>，是一个专门为开源项目打造的持续集成环境。<br>如果你有一个放在github上的开源项目，Travis CI简直就是一个完美的CI选择。<br><a id="more"></a></p>
+<h1 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h1><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>源码存放处 <a href="https://github.com/cuiqingwei/iotknowledges" target="_blank" rel="external">https://github.com/cuiqingwei/iotknowledges</a><br>网页存放处 <a href="https://github.com/iotknowledges/iotknowledges.github.io" target="_blank" rel="external">https://github.com/iotknowledges/iotknowledges.github.io</a></p>
+<font color="red">通过 <strong>Travis CI</strong> 部署的 <strong>MkDocs</strong> 环境将 <strong>iotknowledges</strong> 源码编译成静态页面并发布到 <strong>iotknowledges.github.io</strong></font>
+
+<h3 id="1-创建一个GitHub-Pages"><a href="#1-创建一个GitHub-Pages" class="headerlink" title="1.创建一个GitHub Pages"></a>1.创建一个GitHub Pages</h3><p>  1.1 安装git工具<br>    <a href="http://windows.github.com/" target="_blank" rel="external">http://windows.github.com/</a><br>    <a href="http://mac.github.com/" target="_blank" rel="external">http://mac.github.com/</a></p>
+<p>  1.2 两种pages模式</p>
+<pre><code>① User/Organization Pages 个人或公司站点
+  - 1) 使用自己的用户名，每个用户名下面只能建立一个；
+  - 2) 资源命名必须符合这样的规则username/username.github.com；
+  - 3) 主干上内容被用来构建和发布页面.
+② Project Pages 项目站点
+  - 1) **gh-pages** 分支用于构建和发布；
+  - 2) 如果user/org pages使用了独立域名，那么托管在账户下的所有project pages将
+       使用相同的域名进行重定向，除非project pages使用了自己的独立域名；
+  - 3) 如果没有使用独立域名，project pages将通过子路径的形式提供服务username.github.com/projectname；
+  - 4) 自定义404页面只能在独立域名下使用，否则会使用User Pages 404；
+  - 5) 创建项目站点步骤：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/USERNAME/PROJECT.git PROJECT</div><div class="line">$ git checkout --orphan gh-pages</div><div class="line">$ git rm -rf .</div><div class="line">$ git add .</div><div class="line">$ git commit -a -m &quot;First pages commit&quot;</div><div class="line">$ git push origin gh-pages</div></pre></td></tr></table></figure>
+</code></pre><p>  1.3. 可以通过User/Organization Pages建立主站，而通过Project Pages挂载二级应用页面。</p>
+  <font color="blue">由于我是按照Organization名字命名的Pages，Repository名字是 <em>iotknowledges.github.io</em></font>
+
+<p>  <img src="/img/20161027/github1.png" alt=""><br>  <img src="/img/20161027/github2.png" alt=""></p>
+  <font color="blue"><strong>至此，Project Pages建立完成，用来存放MkDocs生成的静态页面！</strong></font>  
+
+<h3 id="2-建立存放源码的Repository并关联Travis-CI"><a href="#2-建立存放源码的Repository并关联Travis-CI" class="headerlink" title="2. 建立存放源码的Repository并关联Travis CI"></a>2. 建立存放源码的Repository并关联Travis CI</h3><p>  2.1 创建iotknowledges</p>
+<p>  登录GitHub，点击 <strong>New repository</strong> 新建即可，具体方法步骤多说！</p>
+<p>  2.2 生成Token</p>
+<p>  在GitHub账户的Settings里生成</p>
+<p>  <img src="/img/20161027/github3.png" alt=""><br>  <img src="/img/20161027/github4.png" alt=""></p>
+<h3 id="3-Travis-CI工程的Settings-添加环境变量"><a href="#3-Travis-CI工程的Settings-添加环境变量" class="headerlink" title="3. Travis CI工程的Settings,添加环境变量"></a>3. Travis CI工程的Settings,添加环境变量</h3><p>  登录 <a href="https://travis-ci.org/" target="_blank" rel="external">https://travis-ci.org/</a> 点击 <font color="green"> <strong>Sign in with GitHub</strong> </font> 用存放源码的github账号登录</p>
+<p>  添加一个环境变量(Environment Variable)，命名为 <strong>GITHUB_API_KEY</strong> ，之后将刚刚生成的Token复制进去，这在之后会用到。接下来你还需要创建两个环境变量作为Push的身份，一个是你的名字，还有一个是你的邮箱，当然如果对邮箱和名字没什么隐私那不设置也可以。这两个变量可以分别命名为 <strong>GITHUB_EMAIL</strong> 和 <strong>GITHUB_NAME</strong>。GITHUB_NAME请务必注意设置成你Profile链接里的那个名字，即<a href="https://github.com/[user_name]这里这个值。设置完之后，注意要把下面那个“*Display" target="_blank" rel="external">https://github.com/[user_name]这里这个值。设置完之后，注意要把下面那个“*Display</a> value in build log<em>”关掉，否则这一安全措施就没用了。还有一点，记得把“</em>Build pull requests*”关掉，否则在有Pull Request的时候不论其是否合格都会自动将Pages更新。</p>
+<p>  <img src="/img/20161027/github5.png" alt=""></p>
+<h3 id="4-配置-travis-yml"><a href="#4-配置-travis-yml" class="headerlink" title="4. 配置.travis.yml"></a>4. 配置.travis.yml</h3><p>  由于MkDocs使用的是Python，所以先在文件开头加上：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">language: python</div><div class="line">python:</div><div class="line">-  3.5</div></pre></td></tr></table></figure>
+<p>  这里我使用的是Python 3.5，如果有插件不兼容的话可以切换成2.7。之后是初始化设置：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">install:</div><div class="line">  - pip install mkdocs</div></pre></td></tr></table></figure>
+<p>  接下来是构建：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">script:</div><div class="line">  - mkdocs build --clean</div></pre></td></tr></table></figure>
+<p>  生成的最终网站会在site目录内，–clean参数保证构建的时候site文件夹内没有多余文件，否则可能会导致各种奇怪的问题。</p>
+<p>  接下来就是最重要的部署环节了，脚本需要放在after_success阶段内：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">after_success:  |</div><div class="line">  if [ -n &quot;$GITHUB_API_KEY&quot; ]; then</div><div class="line">    cd &quot;$TRAVIS_BUILD_DIR&quot;</div><div class="line">    cd site</div><div class="line">    git init</div><div class="line">    git add .</div><div class="line">    git -c user.name=$GITHUB_NAME -c user.email=$GITHUB_EMAIL commit -m &quot;Auto Deployment&quot;</div><div class="line">    git push -f -q https://$GITHUB_NAME:$GITHUB_API_KEY@github.com/[user_name]/[repo_name] [branch]</div><div class="line">    cd &quot;$TRAVIS_BUILD_DIR&quot;</div><div class="line">  fi</div></pre></td></tr></table></figure>
+<p>  首先上来先要保证 <strong>GITHUB_API_KEY</strong> 这个环境变量存在，之后进入到构建目录，再用相对位置进入构建好的site网站目录。接着就直接在本地创建一个repo，然后commit，push到需要的repo。注意[user_name]是repo所在的用户名，[repo_name]是GitHub Pages所在的repo。[branch]这里如果是用户或者Organization的GitHub Pages的话就填 master，如果是工程的GitHub Pages的话就填gh-pages。最后返回构建目录。</p>
+<p>  由于push的时候有<font color="red"><strong>-f</strong></font>参数，GitHub上的历史都将被复写，并且因为我们是本地新创建的一个repo，所有历史都是空的，所以构建完成之后每次在GitHub上都只能看到一个commit ，如果成功的话，应该每次更新源码工程之后等一两分钟都能看到你自己在GitHub Pages所在的工程或者分支自动发送的commit，如果失败的话可以看一下下面完整的 <strong>.travis.yml</strong> 文件：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">language: python</div><div class="line">python:</div><div class="line">  -  3.5</div><div class="line">install:</div><div class="line">  - pip install mkdocs</div><div class="line">script:</div><div class="line">  - mkdocs build --clean</div><div class="line">after_success:  |</div><div class="line">  if [ -n &quot;$GITHUB_API_KEY&quot; ]; then</div><div class="line">    cd &quot;$TRAVIS_BUILD_DIR&quot;</div><div class="line">    cd site</div><div class="line">    git init</div><div class="line">    git add .</div><div class="line">    git -c user.name=$GITHUB_NAME -c user.email=$GITHUB_EMAIL commit -m &quot;Auto Deployment&quot;</div><div class="line">    git push -f -q https://$GITHUB_NAME:$GITHUB_API_KEY@github.com/iotknowledges/iotknowledges.github.io master</div><div class="line">    cd &quot;$TRAVIS_BUILD_DIR&quot;</div><div class="line">  fi</div></pre></td></tr></table></figure>
+<ol>
+<li><p>build 状态，提交代码后可以到 <a href="https://travis-ci.org/" target="_blank" rel="external">https://travis-ci.org/</a> 查看进度情况</p>
+<p><img src="/img/20161027/github6.png" alt=""></p>
+<p><a href="https://iotknowledges.github.io/" target="_blank" rel="external">https://iotknowledges.github.io/</a></p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;技术要点&quot;&gt;&lt;a href=&quot;#技术要点&quot; class=&quot;headerlink&quot; title=&quot;技术要点&quot;&gt;&lt;/a&gt;技术要点&lt;/h1&gt;&lt;h3 id=&quot;GitHub-Pages&quot;&gt;&lt;a href=&quot;#GitHub-Pages&quot; class=&quot;headerlink&quot; title=&quot;GitHub Pages&quot;&gt;&lt;/a&gt;GitHub Pages&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;免费的静态站点，三个特点：免费托管、自带主题、支持自制页面和Jekyll。&lt;/p&gt;
+&lt;h3 id=&quot;MkDocs&quot;&gt;&lt;a href=&quot;#MkDocs&quot; class=&quot;headerlink&quot; title=&quot;MkDocs&quot;&gt;&lt;/a&gt;MkDocs&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://markdown-docs-zh.readthedocs.io/zh_CN/latest/&quot;&gt;MkDocs&lt;/a&gt;是一个用于创建项目文档的 快速, 简单 , 完美华丽 的静态站点生成器. 文档源码使用 Markdown 来撰写, 用一个 YAML 文件作为配置文档.&lt;/p&gt;
+&lt;h3 id=&quot;Travis-CI&quot;&gt;&lt;a href=&quot;#Travis-CI&quot; class=&quot;headerlink&quot; title=&quot;Travis CI&quot;&gt;&lt;/a&gt;Travis CI&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://travis-ci.org/&quot;&gt;Travis CI&lt;/a&gt;，是一个专门为开源项目打造的持续集成环境。&lt;br&gt;如果你有一个放在github上的开源项目，Travis CI简直就是一个完美的CI选择。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="GitHub Pages" scheme="http://cuiqingwei.github.io/tags/GitHub-Pages/"/>
+    
+      <category term="Travis CI" scheme="http://cuiqingwei.github.io/tags/Travis-CI/"/>
+    
+      <category term="MkDocs" scheme="http://cuiqingwei.github.io/tags/MkDocs/"/>
+    
+  </entry>
   
   <entry>
     <title>linkit-smart-7688-build</title>
@@ -157,7 +235,7 @@
     <link href="http://cuiqingwei.github.io/2016/05/13/2016-05-13-IoT%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/"/>
     <id>http://cuiqingwei.github.io/2016/05/13/2016-05-13-IoT知识点汇总/</id>
     <published>2016-05-13T09:23:37.000Z</published>
-    <updated>2016-09-21T13:46:33.000Z</updated>
+    <updated>2016-10-17T12:17:35.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="IoT-Struct"><a href="#IoT-Struct" class="headerlink" title="IoT Struct"></a>IoT Struct</h2><p><div align="center"><br><img src="/img/20160513/struct.jpg" alt="IoT Struct"><br></div><br><a id="more"></a></p>
 <h2 id="IoT-Protocol"><a href="#IoT-Protocol" class="headerlink" title="IoT Protocol"></a>IoT Protocol</h2><table>
@@ -215,13 +293,12 @@
 </tr>
 </tbody>
 </table>
-<h3 id="XMPP"><a href="#XMPP" class="headerlink" title="XMPP"></a>XMPP</h3><p>XMPP是一种基于标准通用标记语言的子集XML的协议，它继承了在XML环境中灵活的发展性。因此，基于XMPP的应用具有超强的可扩展性。经过扩展以后的XMPP可以通过发送扩展的信息来处理用户的需求，以及在XMPP的顶端建立如内容发布系统和基于地址的服务等应用程 序。而且，XMPP包含了针对服务器端的软件协议，使之能与另一个进行通话，这使得开发者更容易建立客户应用程序或给一个配好系统添加功能。</p>
-<h3 id="MQTT"><a href="#MQTT" class="headerlink" title="MQTT"></a>MQTT</h3><p><div align="center"><br><img src="/img/20160513/MQTT.png" alt="mqtt"><br></div><br>MQTT（Message Queuing Telemetry Transport，消息队列遥测传输）是IBM开发的一个即时通讯协议，有可能成为物联网的重要组成部分。该协议支持所有平台，几乎可以把所有联网物品和外部连接起来，被用来当做传感器和致动器（比如通过Twitter让房屋联网）的通信协议。</p>
 <h3 id="CoAP"><a href="#CoAP" class="headerlink" title="CoAP"></a>CoAP</h3><p><div align="center"><br><img src="/img/20160513/coap.jpg" alt="coap"><br></div><br>CoAP是受限制的应用协议(Constrained Application Protocol)的代名词。在最近几年的时间中，专家们预测会有更多的设备相互连接，而这些设备的数量将远超人类的数量。在这种大背景下，物联网和M2M技术应运而生。虽然对人而言，连接入互联网显得方便容易，但是对于那些微型设备而言接入互联网非常困难。在当前由PC机组成的世界，信息交换是通过TCP和应用层协议HTTP实现的。但是对于小型设备而言，实现TCP和HTTP协议显然是一个过分的要求。为了让小设备可以接入互联网，CoAP协议被设计出来。CoAP是一种应用层协议，它运行于UDP协议之上而不是像HTTP那样运行于TCP之上。CoAP协议非常的小巧，最小的数据包仅为4字节。</p>
+<h3 id="XMPP"><a href="#XMPP" class="headerlink" title="XMPP"></a>XMPP</h3><p>XMPP是一种基于标准通用标记语言的子集XML的协议，它继承了在XML环境中灵活的发展性。因此，基于XMPP的应用具有超强的可扩展性。经过扩展以后的XMPP可以通过发送扩展的信息来处理用户的需求，以及在XMPP的顶端建立如内容发布系统和基于地址的服务等应用程 序。而且，XMPP包含了针对服务器端的软件协议，使之能与另一个进行通话，这使得开发者更容易建立客户应用程序或给一个配好系统添加功能。</p>
 <h3 id="RESTful-HTTP"><a href="#RESTful-HTTP" class="headerlink" title="RESTful HTTP"></a>RESTful HTTP</h3><p>REST 指的是一组架构约束条件和原则。满足这些约束条件和原则的应用程序或设计就是 RESTful。</p>
 <p>Web 应用程序最重要的 REST 原则是，客户端和服务器之间的交互在请求之间是无状态的。从客户端到服务器的每个请求都必须包含理解请求所必需的信息。如果服务器在请求之间的任何时间点重启，客户端不会得到通知。此外，无状态请求可以由任何可用服务器回答，这十分适合云计算之类的环境。客户端可以缓存数据以改进性能。</p>
-<h3 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h3><p><div align="center"><br><img src="/img/20160513/thread.jpg" alt="thread"><br></div><br>Thread是一种基于简化版IPv6的网状网络协议，该协议由行业领先的多家技术公司联合开发，旨在实现家庭中各种产品间的互联，以及与互联网和云的连接。Thread易于安装、高度安全，并且可扩展到数百台设备。Thread基于低成本、低功耗的802.15.4芯片组开发。目前正在使用的大量产品，只需一次简单的软件升级，便可支持Thread。</p>
-<h2 id="相关通讯技术"><a href="#相关通讯技术" class="headerlink" title="相关通讯技术"></a>相关通讯技术</h2><h3 id="Z-Wave"><a href="#Z-Wave" class="headerlink" title="Z-Wave"></a>Z-Wave</h3><blockquote>
+<h3 id="MQTT"><a href="#MQTT" class="headerlink" title="MQTT"></a>MQTT</h3><p><div align="center"><br><img src="/img/20160513/MQTT.png" alt="mqtt"><br></div><br>MQTT（Message Queuing Telemetry Transport，消息队列遥测传输）是IBM开发的一个即时通讯协议，有可能成为物联网的重要组成部分。该协议支持所有平台，几乎可以把所有联网物品和外部连接起来，被用来当做传感器和致动器（比如通过Twitter让房屋联网）的通信协议。</p>
+<h2 id="主流协议标准"><a href="#主流协议标准" class="headerlink" title="主流协议标准"></a>主流协议标准</h2><h3 id="Z-Wave"><a href="#Z-Wave" class="headerlink" title="Z-Wave"></a>Z-Wave</h3><blockquote>
 <p>Z-Wave是一种新兴的基于射频的、低成本、低功耗、高可靠、适于网络的短距离无线通信技术。工作频带为908.42MHz(美国)~868.42MHz(欧洲)，采用FSK(BFSK/GFSK)调制方式，数据传输速率为9.6 kbps，信号的有效覆盖范围在室内是30m，室外可超过100m，适合于窄带宽应用场合。随着通信距离的增大，设备的复杂度、功耗以及系统成本都在增加，相对于现有的各种无线通信技术，Z-Wave技术将是最低功耗和最低成本的技术，有力地推动着低速率无线个人区域网。</p>
 </blockquote>
 <h3 id="Zigbee"><a href="#Zigbee" class="headerlink" title="Zigbee"></a>Zigbee</h3><blockquote>
@@ -229,6 +306,16 @@
 </blockquote>
 <h3 id="6LoWPAN"><a href="#6LoWPAN" class="headerlink" title="6LoWPAN"></a>6LoWPAN</h3><blockquote>
 <p>IETF 6LoWPAN取得的突破是得到一种非常紧凑、高效的IP实现，消除了以前造成各种专门标准和专有协议的因素。这在工业协议（BACNet、LonWorks、通用工业协议和监控与数据采集）领域具有特别的价值。这些协议最初开发是为了提供特殊的行业特有的总线和链路(从控制器区域网总线到AC电源线)上的互操作性。</p>
+</blockquote>
+<h3 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h3><p><div align="center"><br><img src="/img/20160513/thread.jpg" alt="thread"><br></div></p>
+<blockquote>
+<p>Thread是一种基于简化版IPv6的网状网络协议，该协议由行业领先的多家技术公司联合开发，旨在实现家庭中各种产品间的互联，以及与互联网和云的连接。Thread易于安装、高度安全，并且可扩展到数百台设备。Thread基于低成本、低功耗的802.15.4芯片组开发。目前正在使用的大量产品，只需一次简单的软件升级，便可支持Thread。</p>
+</blockquote>
+<h2 id="相关通讯技术"><a href="#相关通讯技术" class="headerlink" title="相关通讯技术"></a>相关通讯技术</h2><h3 id="NFC"><a href="#NFC" class="headerlink" title="NFC"></a>NFC</h3><blockquote>
+<p>NFC近场通信技术是由非接触式射频识别（RFID）及互联互通技术整合演变而来，在单一芯片上结合感应式读卡器、感应式卡片和点对点的功能，能在短距离内与兼容设备进行识别和数据交换。工作频率为13.56MHz.但是使用这种手机支付方案的用户必须更换特制的手机。目前这项技术在日韩被广泛应用。手机用户凭着配置了支付功能的手机就可以行遍全国：他们的手机可以用作机场登机验证、大厦的门禁钥匙、交通一卡通、信用卡、支付卡等等。</p>
+</blockquote>
+<h3 id="WiFi"><a href="#WiFi" class="headerlink" title="WiFi"></a>WiFi</h3><blockquote>
+<p>Wi-Fi是一种可以将个人电脑、手持设备（如pad、手机）等终端以无线方式互相连接的技术，事实上它是一个高频无线电信号。无线保真是一个无线网络通信技术的品牌，由Wi-Fi联盟所持有。目的是改善基于IEEE 802.11标准的无线网路产品之间的互通性。有人把使用IEEE 802.11系列协议的局域网就称为无线保真。甚至把无线保真等同于无线网际网路（Wi-Fi是WLAN的重要组成部分）</p>
 </blockquote>
 <h3 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h3><blockquote>
 <p>UDP协议的全称是用户数据报协议，在网络中它与TCP协议一样用于处理数据包，是一种无连接的协议。在OSI模型中，在第四层——传输层，处于IP协议的上一层。UDP有不提供数据包分组、组装和不能对数据包进行排序的缺点，也就是说，当报文发送之后，是无法得知其是否安全完整到达的。UDP用来支持那些需要在计算机之间传输数据的网络应用。包括网络视频会议系统在内的众多的客户/服务器模式的网络应用都需要使用UDP协议。UDP协议从问世至今已经被使用了很多年，虽然其最初的光彩已经被一些类似协议所掩盖，但是即使是在今天UDP仍然不失为一项非常实用和可行的网络传输层协议。</p>
@@ -239,12 +326,6 @@
 </blockquote>
 <h3 id="DTLS"><a href="#DTLS" class="headerlink" title="DTLS"></a>DTLS</h3><blockquote>
 <p>DTLS(Datagram Transport Layer Security)即数据包传输层安全性协议。TLS不能用来保证UDP上传输的数据的安全，因此Datagram TLS试图在现存的TLS协议架构上提出扩展，使之支持UDP，即成为TLS的一个支持数据报传输的版本。DTLS 1.0基于TLS 1.1, DTLS 1.2基于TLS 1.2。</p>
-</blockquote>
-<h3 id="NFC"><a href="#NFC" class="headerlink" title="NFC"></a>NFC</h3><blockquote>
-<p>NFC近场通信技术是由非接触式射频识别（RFID）及互联互通技术整合演变而来，在单一芯片上结合感应式读卡器、感应式卡片和点对点的功能，能在短距离内与兼容设备进行识别和数据交换。工作频率为13.56MHz.但是使用这种手机支付方案的用户必须更换特制的手机。目前这项技术在日韩被广泛应用。手机用户凭着配置了支付功能的手机就可以行遍全国：他们的手机可以用作机场登机验证、大厦的门禁钥匙、交通一卡通、信用卡、支付卡等等。</p>
-</blockquote>
-<h3 id="WiFi"><a href="#WiFi" class="headerlink" title="WiFi"></a>WiFi</h3><blockquote>
-<p>Wi-Fi是一种可以将个人电脑、手持设备（如pad、手机）等终端以无线方式互相连接的技术，事实上它是一个高频无线电信号。无线保真是一个无线网络通信技术的品牌，由Wi-Fi联盟所持有。目的是改善基于IEEE 802.11标准的无线网路产品之间的互通性。有人把使用IEEE 802.11系列协议的局域网就称为无线保真。甚至把无线保真等同于无线网际网路（Wi-Fi是WLAN的重要组成部分）</p>
 </blockquote>
 <h3 id="Websocket"><a href="#Websocket" class="headerlink" title="Websocket"></a>Websocket</h3><blockquote>
 <p>WebSocket protocol 是HTML5一种新的协议。它是实现了浏览器与服务器全双工通信(full-duplex)。</p>
@@ -337,7 +418,7 @@
 <h3 id="QNX"><a href="#QNX" class="headerlink" title="QNX"></a>QNX</h3><blockquote>
 <p>QNX是由加拿大QSSL公司（QNX Software System Ltd.）开发的分布式实时操作系统。该操作系统既能运行于以Intel X86、Pentium等CPU为核心硬件环境下，也能运行于以PowerPC、MIPS等CPU为核心的硬件环境。QNX操作系统符合POSIX基本标准和实时标准，使其应用可以方便的进行移植。</p>
 </blockquote>
-<h3 id="openWRT"><a href="#openWRT" class="headerlink" title="openWRT"></a>openWRT</h3><blockquote>
+<h3 id="OpenWRT"><a href="#OpenWRT" class="headerlink" title="OpenWRT"></a>OpenWRT</h3><blockquote>
 <p>OpenWrt 可以被描述为一个嵌入式的 Linux 发行版，（主流路由器固件有 dd-wrt,tomato,openwrt三类）而不是试图建立一个单一的、静态的系统。OpenWrt的包管理提供了一个完全可写的文件系统，从应用程序供应商提供的选择和配置，并允许您自定义的设备，以适应任何应用程序。</p>
 <p>对于开发人员，OpenWrt 是使用框架来构建应用程序，而无需建立一个完整的固件来支持；对于用户来说，这意味着其拥有完全定制的能力，可以用前所未有的方式使用该设备。</p>
 </blockquote>
@@ -1428,35 +1509,6 @@
       <category term="开源硬件" scheme="http://cuiqingwei.github.io/tags/%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6/"/>
     
       <category term="经典网站" scheme="http://cuiqingwei.github.io/tags/%E7%BB%8F%E5%85%B8%E7%BD%91%E7%AB%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>技术领域的深刻体会、教训</title>
-    <link href="http://cuiqingwei.github.io/2015/06/24/2015-06-24-%E6%8A%80%E6%9C%AF%E9%A2%86%E5%9F%9F%E7%9A%84%E6%B7%B1%E5%88%BB%E4%BD%93%E4%BC%9A%E3%80%81%E6%95%99%E8%AE%AD/"/>
-    <id>http://cuiqingwei.github.io/2015/06/24/2015-06-24-技术领域的深刻体会、教训/</id>
-    <published>2015-06-24T13:22:00.000Z</published>
-    <updated>2016-09-18T07:49:37.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>记录之，告诫自己；分享之，愿助他人。</p>
-<p>学习一定要，知之为知之，不知为不知，不仅自己不能装逼，也不能向装逼的人讨教，否则只是相互浪费时间而已。</p>
-<p>不要和不懂规则且贪婪的人合作，否则他们会反过来诬陷和要挟你。</p>
-<p>和学生合作一定要谨慎，他们往往会高估自己的能力。</p>
-<p>商业项目，一定要先签合同再做事。</p>
-<p>不要用不成熟的技术做开发。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;记录之，告诫自己；分享之，愿助他人。&lt;/p&gt;
-&lt;p&gt;学习一定要，知之为知之，不知为不知，不仅自己不能装逼，也不能向装逼的人讨教，否则只是相互浪费时间而已。&lt;/p&gt;
-&lt;p&gt;不要和不懂规则且贪婪的人合作，否则他们会反过来诬陷和要挟你。&lt;/p&gt;
-&lt;p&gt;和学生合作一定要谨慎，他们往
-    
-    </summary>
-    
-    
-      <category term="体会" scheme="http://cuiqingwei.github.io/tags/%E4%BD%93%E4%BC%9A/"/>
     
   </entry>
   
