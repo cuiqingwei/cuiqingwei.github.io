@@ -4,6 +4,45 @@
   
     
     <entry>
+      <title><![CDATA[基于Contiki-Cooja的6LBR模拟仿真]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/29/2016-10-29-%E5%9F%BA%E4%BA%8EContiki-Cooja%E7%9A%846LBR%E6%A8%A1%E6%8B%9F%E4%BB%BF%E7%9C%9F/</url>
+      <content type="html"><![CDATA[<h1 id="Instant-Contiki-2-7"><a href="#Instant-Contiki-2-7" class="headerlink" title="Instant Contiki 2.7"></a>Instant Contiki 2.7</h1><p>下载、安装… 具体请查看链接-&gt;<a href="http://www.contiki-os.org/start.html" target="_blank" rel="external">http://www.contiki-os.org/start.html</a></p>
+<h1 id="Java版本"><a href="#Java版本" class="headerlink" title="Java版本"></a>Java版本</h1><p>打开（<em>Ctrl+Alt+T</em>）超级终端，键入 <strong>java -version</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">user@instant-contiki:~$ java -version</div><div class="line">java version &quot;1.7.0_25&quot;</div><div class="line">OpenJDK Runtime Environment (IcedTea 2.3.10) (7u25-2.3.10-1ubuntu0.12.04.2)</div><div class="line">OpenJDK Client VM (build 23.7-b01, mixed mode, sharing)</div></pre></td></tr></table></figure>
+<h1 id="安装网桥管理工具-bridge-utils-包"><a href="#安装网桥管理工具-bridge-utils-包" class="headerlink" title="安装网桥管理工具 bridge-utils 包"></a>安装网桥管理工具 <strong>bridge-utils</strong> 包</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install bridge-utils</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="获取6lbr代码，初始化子模块"><a href="#获取6lbr代码，初始化子模块" class="headerlink" title="获取6lbr代码，初始化子模块"></a>获取<a href="http://cetic.github.com/6lbr" target="_blank" rel="external">6lbr</a>代码，初始化子模块</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git clone --recursive https://github.com/cetic/6lbr</div><div class="line">cd 6lbr/examples/6lbr</div></pre></td></tr></table></figure>
+<h1 id="在6lbr源目录，执行以下命令："><a href="#在6lbr源目录，执行以下命令：" class="headerlink" title="在6lbr源目录，执行以下命令："></a>在6lbr源目录，执行以下命令：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">make TARGET=native all</div><div class="line">make tools</div></pre></td></tr></table></figure>
+<h1 id="启动一个-1-BR-COOJA-实例"><a href="#启动一个-1-BR-COOJA-实例" class="headerlink" title="启动一个 1-BR COOJA 实例"></a>启动一个 <strong>1-BR COOJA</strong> 实例</h1><p><font style="font-weight:bold;" color="red">警告：</font> 默认Instant Contiki 2.7环境中没有添加serial2pty插件，添加方法是：</p>
+<ul>
+<li>运行cooja</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/6lbr/tools/cooja</div><div class="line">ant run</div></pre></td></tr></table></figure>
+<p>Settings -&gt; External tools paths… 添加<br><strong>;[CONTIKI_DIR]/tools/cooja/apps/serial2pty</strong></p>
+<p><img src="/img/20161029/6lbr1.png" alt=""></p>
+<p>设置完成后，关闭。运行下面命令，启动实例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd examples/6lbr/test</div><div class="line">make cooja-small</div></pre></td></tr></table></figure></p>
+<p><img src="/img/20161029/6lbr2.png" alt=""></p>
+<p>运行成功，console会输出如下结尾的信息，详见下图：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">INFO [main] (Serial2Pty.java:116) - serialpty;open;9;/dev/pts/11</div><div class="line">INFO [main] (Serial2Pty.java:116) - serialpty;open;10;/dev/pts/12</div><div class="line">INFO [main] (Serial2Pty.java:116) - serialpty;open;11;/dev/pts/13</div><div class="line">INFO [main] (Serial2Pty.java:116) - serialpty;open;12;/dev/pts/14</div></pre></td></tr></table></figure>
+<p><img src="/img/20161029/6lbr3.png" alt=""></p>
+<p>通过鼠标右击节点，也可打开其他节点的串口监控，如下图所示：</p>
+<p><img src="/img/20161029/6lbr4.png" alt=""></p>
+<h1 id="运行一个6lbr实例"><a href="#运行一个6lbr实例" class="headerlink" title="运行一个6lbr实例"></a>运行一个6lbr实例</h1><p>Cooja <em>Simulation control</em> 点击 <strong>Start</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd examples/6lbr/test</div><div class="line">sudo make launch-6lbr-router-1-cooja</div></pre></td></tr></table></figure>
+<p>运行后，终端键入 <strong>ifconfig</strong> 会发现多了 <a href="/2015/07/06/2015-07-06-OpenWRT下ifconfig各接口说明">br0网桥接口</a></p>
+<p><img src="/img/20161029/6lbr5.png" alt=""></p>
+<p><strong>如果要避免重复输出</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Fetching MAC address</div><div class="line">Fetching MAC address</div></pre></td></tr></table></figure>
+<p>可以</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/6lbr/examples/6lbr/test/conf-templates</div><div class="line">vi cooja-1-router.conf</div></pre></td></tr></table></figure>
+<p>最后两行，指定日志写入 <strong>/var/log/6lbr.log</strong>，如下图所示：</p>
+<p><img src="/img/20161029/6lbr6.png" alt=""></p>
+<h1 id="访问6lbr-webserver-界面"><a href="#访问6lbr-webserver-界面" class="headerlink" title="访问6lbr webserver 界面"></a>访问6lbr <strong>webserver</strong> 界面</h1><p>打开浏览器，地址栏输入 <strong>[bbbb::100]</strong> 回车，看到如下界面就算成功了！</p>
+<p><img src="/img/20161029/6lbr7.png" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[利用Travis CI、MkDocs自動部署Blog至GitHub Pages]]></title>
       <url>http://cuiqingwei.github.io/2016/10/27/2016-10-27-%E5%88%A9%E7%94%A8Travis-CI%E3%80%81MkDocs%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2Blog%E8%87%B3GitHub-Pages/</url>
       <content type="html"><![CDATA[<h1 id="技术要点"><a href="#技术要点" class="headerlink" title="技术要点"></a>技术要点</h1><h3 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h3><p><a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a>免费的静态站点，三个特点：免费托管、自带主题、支持自制页面和Jekyll。</p>

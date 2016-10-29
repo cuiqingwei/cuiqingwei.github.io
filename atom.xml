@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2016-10-27T05:38:29.000Z</updated>
+  <updated>2016-10-29T15:21:40.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -14,6 +14,66 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于Contiki-Cooja的6LBR模拟仿真</title>
+    <link href="http://cuiqingwei.github.io/2016/10/29/2016-10-29-%E5%9F%BA%E4%BA%8EContiki-Cooja%E7%9A%846LBR%E6%A8%A1%E6%8B%9F%E4%BB%BF%E7%9C%9F/"/>
+    <id>http://cuiqingwei.github.io/2016/10/29/2016-10-29-基于Contiki-Cooja的6LBR模拟仿真/</id>
+    <published>2016-10-29T13:04:40.000Z</published>
+    <updated>2016-10-29T15:21:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Instant-Contiki-2-7"><a href="#Instant-Contiki-2-7" class="headerlink" title="Instant Contiki 2.7"></a>Instant Contiki 2.7</h1><p>下载、安装… 具体请查看链接-&gt;<a href="http://www.contiki-os.org/start.html" target="_blank" rel="external">http://www.contiki-os.org/start.html</a></p>
+<h1 id="Java版本"><a href="#Java版本" class="headerlink" title="Java版本"></a>Java版本</h1><p>打开（<em>Ctrl+Alt+T</em>）超级终端，键入 <strong>java -version</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">user@instant-contiki:~$ java -version</div><div class="line">java version &quot;1.7.0_25&quot;</div><div class="line">OpenJDK Runtime Environment (IcedTea 2.3.10) (7u25-2.3.10-1ubuntu0.12.04.2)</div><div class="line">OpenJDK Client VM (build 23.7-b01, mixed mode, sharing)</div></pre></td></tr></table></figure>
+<h1 id="安装网桥管理工具-bridge-utils-包"><a href="#安装网桥管理工具-bridge-utils-包" class="headerlink" title="安装网桥管理工具 bridge-utils 包"></a>安装网桥管理工具 <strong>bridge-utils</strong> 包</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install bridge-utils</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="获取6lbr代码，初始化子模块"><a href="#获取6lbr代码，初始化子模块" class="headerlink" title="获取6lbr代码，初始化子模块"></a>获取<a href="http://cetic.github.com/6lbr" target="_blank" rel="external">6lbr</a>代码，初始化子模块</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git clone --recursive https://github.com/cetic/6lbr</div><div class="line">cd 6lbr/examples/6lbr</div></pre></td></tr></table></figure>
+<h1 id="在6lbr源目录，执行以下命令："><a href="#在6lbr源目录，执行以下命令：" class="headerlink" title="在6lbr源目录，执行以下命令："></a>在6lbr源目录，执行以下命令：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">make TARGET=native all</div><div class="line">make tools</div></pre></td></tr></table></figure>
+<h1 id="启动一个-1-BR-COOJA-实例"><a href="#启动一个-1-BR-COOJA-实例" class="headerlink" title="启动一个 1-BR COOJA 实例"></a>启动一个 <strong>1-BR COOJA</strong> 实例</h1><p><font style="font-weight:bold;" color="red">警告：</font> 默认Instant Contiki 2.7环境中没有添加serial2pty插件，添加方法是：</p>
+<ul>
+<li>运行cooja</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/6lbr/tools/cooja</div><div class="line">ant run</div></pre></td></tr></table></figure>
+<p>Settings -&gt; External tools paths… 添加<br><strong>;[CONTIKI_DIR]/tools/cooja/apps/serial2pty</strong></p>
+<p><img src="/img/20161029/6lbr1.png" alt=""></p>
+<p>设置完成后，关闭。运行下面命令，启动实例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd examples/6lbr/test</div><div class="line">make cooja-small</div></pre></td></tr></table></figure></p>
+<p><img src="/img/20161029/6lbr2.png" alt=""></p>
+<p>运行成功，console会输出如下结尾的信息，详见下图：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">INFO [main] (Serial2Pty.java:116) - serialpty;open;9;/dev/pts/11</div><div class="line">INFO [main] (Serial2Pty.java:116) - serialpty;open;10;/dev/pts/12</div><div class="line">INFO [main] (Serial2Pty.java:116) - serialpty;open;11;/dev/pts/13</div><div class="line">INFO [main] (Serial2Pty.java:116) - serialpty;open;12;/dev/pts/14</div></pre></td></tr></table></figure>
+<p><img src="/img/20161029/6lbr3.png" alt=""></p>
+<p>通过鼠标右击节点，也可打开其他节点的串口监控，如下图所示：</p>
+<p><img src="/img/20161029/6lbr4.png" alt=""></p>
+<h1 id="运行一个6lbr实例"><a href="#运行一个6lbr实例" class="headerlink" title="运行一个6lbr实例"></a>运行一个6lbr实例</h1><p>Cooja <em>Simulation control</em> 点击 <strong>Start</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd examples/6lbr/test</div><div class="line">sudo make launch-6lbr-router-1-cooja</div></pre></td></tr></table></figure>
+<p>运行后，终端键入 <strong>ifconfig</strong> 会发现多了 <a href="/2015/07/06/2015-07-06-OpenWRT下ifconfig各接口说明">br0网桥接口</a></p>
+<p><img src="/img/20161029/6lbr5.png" alt=""></p>
+<p><strong>如果要避免重复输出</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Fetching MAC address</div><div class="line">Fetching MAC address</div></pre></td></tr></table></figure>
+<p>可以</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/6lbr/examples/6lbr/test/conf-templates</div><div class="line">vi cooja-1-router.conf</div></pre></td></tr></table></figure>
+<p>最后两行，指定日志写入 <strong>/var/log/6lbr.log</strong>，如下图所示：</p>
+<p><img src="/img/20161029/6lbr6.png" alt=""></p>
+<h1 id="访问6lbr-webserver-界面"><a href="#访问6lbr-webserver-界面" class="headerlink" title="访问6lbr webserver 界面"></a>访问6lbr <strong>webserver</strong> 界面</h1><p>打开浏览器，地址栏输入 <strong>[bbbb::100]</strong> 回车，看到如下界面就算成功了！</p>
+<p><img src="/img/20161029/6lbr7.png" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Instant-Contiki-2-7&quot;&gt;&lt;a href=&quot;#Instant-Contiki-2-7&quot; class=&quot;headerlink&quot; title=&quot;Instant Contiki 2.7&quot;&gt;&lt;/a&gt;Instant Contiki 2.7&lt;/h1&gt;&lt;p&gt;下载、安装… 具体请查看链接-&amp;gt;&lt;a href=&quot;http://www.contiki-os.org/start.html&quot;&gt;http://www.contiki-os.org/start.html&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Java版本&quot;&gt;&lt;a href=&quot;#Java版本&quot; class=&quot;headerlink&quot; title=&quot;Java版本&quot;&gt;&lt;/a&gt;Java版本&lt;/h1&gt;&lt;p&gt;打开（&lt;em&gt;Ctrl+Alt+T&lt;/em&gt;）超级终端，键入 &lt;strong&gt;java -version&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;user@instant-contiki:~$ java -version&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;java version &amp;quot;1.7.0_25&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;OpenJDK Runtime Environment (IcedTea 2.3.10) (7u25-2.3.10-1ubuntu0.12.04.2)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;OpenJDK Client VM (build 23.7-b01, mixed mode, sharing)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;安装网桥管理工具-bridge-utils-包&quot;&gt;&lt;a href=&quot;#安装网桥管理工具-bridge-utils-包&quot; class=&quot;headerlink&quot; title=&quot;安装网桥管理工具 bridge-utils 包&quot;&gt;&lt;/a&gt;安装网桥管理工具 &lt;strong&gt;bridge-utils&lt;/strong&gt; 包&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo apt-get install bridge-utils&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="Contiki" scheme="http://cuiqingwei.github.io/tags/Contiki/"/>
+    
+      <category term="Cooja" scheme="http://cuiqingwei.github.io/tags/Cooja/"/>
+    
+      <category term="6lbr" scheme="http://cuiqingwei.github.io/tags/6lbr/"/>
+    
+  </entry>
   
   <entry>
     <title>利用Travis CI、MkDocs自動部署Blog至GitHub Pages</title>
@@ -1459,56 +1519,6 @@
       <category term="折腾" scheme="http://cuiqingwei.github.io/tags/%E6%8A%98%E8%85%BE/"/>
     
       <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OpenWRT经典网站</title>
-    <link href="http://cuiqingwei.github.io/2015/07/01/2015-07-01-OpenWRT%E7%BB%8F%E5%85%B8%E7%BD%91%E7%AB%99/"/>
-    <id>http://cuiqingwei.github.io/2015/07/01/2015-07-01-OpenWRT经典网站/</id>
-    <published>2015-07-01T09:23:37.000Z</published>
-    <updated>2016-10-15T16:45:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="官方网站"><a href="#官方网站" class="headerlink" title="官方网站"></a>官方网站</h1><p><a href="https://openwrt.org/" target="_blank" rel="external">https://openwrt.org/</a></p>
-<ul>
-<li>Releases<br><a href="https://downloads.openwrt.org/" target="_blank" rel="external">https://downloads.openwrt.org/</a></li>
-<li>环境搭建及下载<br><a href="https://wiki.openwrt.org/doc/howto/buildroot.exigence" target="_blank" rel="external">https://wiki.openwrt.org/doc/howto/buildroot.exigence</a><br><a href="https://wiki.openwrt.org/zh-cn/doc/howto/buildroot.exigence" target="_blank" rel="external">https://wiki.openwrt.org/zh-cn/doc/howto/buildroot.exigence</a></li>
-<li>使用说明<br><a href="https://wiki.openwrt.org/doc/howto/build" target="_blank" rel="external">https://wiki.openwrt.org/doc/howto/build</a><br><a href="https://wiki.openwrt.org/zh-cn/doc/howto/build" target="_blank" rel="external">https://wiki.openwrt.org/zh-cn/doc/howto/build</a></li>
-<li>硬件支持列表<br><a href="https://wiki.openwrt.org/toh/start" target="_blank" rel="external">https://wiki.openwrt.org/toh/start</a><a id="more"></a>
-<h1 id="OpenWRT中文网"><a href="#OpenWRT中文网" class="headerlink" title="OpenWRT中文网"></a>OpenWRT中文网</h1><a href="http://www.openwrt.org.cn/" target="_blank" rel="external">http://www.openwrt.org.cn/</a></li>
-</ul>
-<ul>
-<li>网站提供的常用小工具，下载使用起来比较方方便<br><a href="http://downloads.openwrt.org.cn/software/" target="_blank" rel="external">http://downloads.openwrt.org.cn/software/</a></li>
-</ul>
-<h1 id="恩山无线论坛OpenWRT专版"><a href="#恩山无线论坛OpenWRT专版" class="headerlink" title="恩山无线论坛OpenWRT专版"></a>恩山无线论坛OpenWRT专版</h1><p><a href="http://www.right.com.cn/forum/forum-72-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/forum-72-1.html</a></p>
-<h1 id="openwrt-io"><a href="#openwrt-io" class="headerlink" title="openwrt.io"></a>openwrt.io</h1><p><a href="http://openwrt.io/" target="_blank" rel="external">http://openwrt.io/</a></p>
-<ol>
-<li>此站完全开源，放在github.com上，大家共同修改，通过travis-ci.org持续集成自动构建部署到七牛云存储上，无需服务器。</li>
-<li>网站内容采用markdown，通过mkdocs生成HTML，是一个纯静态的网站。</li>
-<li>为提高国内下载速度，OpenWrt SDK、opkg软件源等文件放在七牛云储存国内CDN上。</li>
-</ol>
-<h1 id="dl下载网"><a href="#dl下载网" class="headerlink" title="dl下载网"></a>dl下载网</h1><p><a href="http://www.openwrtdl.com/" target="_blank" rel="external">http://www.openwrtdl.com/</a><br>在编译OpenWrt最新的trunk时，碰到一个Git源码取不下来（你懂得，被墙了！）<br>该站点作者将openwrt官网上的软件都下载下来了，并在本地建了服务器，然后与共享给大家<br>另外，还有<br><a href="http://193.87.95.148/openwrt/raspi/trunk/dl/" target="_blank" rel="external">http://193.87.95.148/openwrt/raspi/trunk/dl/</a><br><strong>当你make过程出现Download failed或是404 Not Found时，到这些网站Ctrl+F找到你需要的，wget到dl目录即可继续make</strong></p>
-<h1 id="夢想家"><a href="#夢想家" class="headerlink" title="夢想家"></a>夢想家</h1><p><a href="https://datahunter.org/wrt" target="_blank" rel="external">https://datahunter.org/wrt</a></p>
-<h1 id="森亮号航海见识"><a href="#森亮号航海见识" class="headerlink" title="森亮号航海见识"></a>森亮号航海见识</h1><p><a href="http://see.sl088.com/wiki/%E5%88%86%E7%B1%BB:Openwrt%E7%BC%96%E8%AF%91" target="_blank" rel="external">http://see.sl088.com/wiki/%E5%88%86%E7%B1%BB:Openwrt%E7%BC%96%E8%AF%91</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;官方网站&quot;&gt;&lt;a href=&quot;#官方网站&quot; class=&quot;headerlink&quot; title=&quot;官方网站&quot;&gt;&lt;/a&gt;官方网站&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://openwrt.org/&quot;&gt;https://openwrt.org/&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Releases&lt;br&gt;&lt;a href=&quot;https://downloads.openwrt.org/&quot;&gt;https://downloads.openwrt.org/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;环境搭建及下载&lt;br&gt;&lt;a href=&quot;https://wiki.openwrt.org/doc/howto/buildroot.exigence&quot;&gt;https://wiki.openwrt.org/doc/howto/buildroot.exigence&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://wiki.openwrt.org/zh-cn/doc/howto/buildroot.exigence&quot;&gt;https://wiki.openwrt.org/zh-cn/doc/howto/buildroot.exigence&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;使用说明&lt;br&gt;&lt;a href=&quot;https://wiki.openwrt.org/doc/howto/build&quot;&gt;https://wiki.openwrt.org/doc/howto/build&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://wiki.openwrt.org/zh-cn/doc/howto/build&quot;&gt;https://wiki.openwrt.org/zh-cn/doc/howto/build&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;硬件支持列表&lt;br&gt;&lt;a href=&quot;https://wiki.openwrt.org/toh/start&quot;&gt;https://wiki.openwrt.org/toh/start&lt;/a&gt;
-    
-    </summary>
-    
-    
-      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
-    
-      <category term="开源硬件" scheme="http://cuiqingwei.github.io/tags/%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6/"/>
-    
-      <category term="经典网站" scheme="http://cuiqingwei.github.io/tags/%E7%BB%8F%E5%85%B8%E7%BD%91%E7%AB%99/"/>
     
   </entry>
   
