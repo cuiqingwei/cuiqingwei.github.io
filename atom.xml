@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2016-11-09T13:10:09.000Z</updated>
+  <updated>2016-11-09T13:12:36.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://cuiqingwei.github.io/2016/11/09/2016-11-09-Contiki-CC2538/"/>
     <id>http://cuiqingwei.github.io/2016/11/09/2016-11-09-Contiki-CC2538/</id>
     <published>2016-11-09T13:04:40.000Z</published>
-    <updated>2016-11-09T13:10:09.000Z</updated>
+    <updated>2016-11-09T13:12:36.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="InstantContiki3-0-for-CC2538dk"><a href="#InstantContiki3-0-for-CC2538dk" class="headerlink" title="InstantContiki3.0 for CC2538dk"></a>InstantContiki3.0 for CC2538dk</h1><p>继 <strong>2013</strong> 年<a href="http://www.amobbs.com/thread-5515866-1-1.html" target="_blank" rel="external">InstantContiki2.6 for cc2530dk</a>,再写个关于<strong>cc2538dk</strong>的。</p>
 <h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><ol>
@@ -88,7 +88,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">user@instant-contiki:~/6lbr/examples/cc2538dk$ curl -g http://[aaaa::212:4b00:5af:84e0]/</div><div class="line">&lt;html&gt;&lt;head&gt;&lt;title&gt;ContikiRPL&lt;/title&gt;&lt;/head&gt;&lt;body&gt;</div><div class="line">Neighbors&lt;pre&gt;fe80::212:4b00:5af:8444</div><div class="line">&lt;/pre&gt;Routes&lt;pre&gt;</div><div class="line">aaaa::212:4b00:5af:8444/128 (via fe80::212:4b00:5af:8444) 1773s</div></pre></td></tr></table></figure>
 <p>（5）<strong>wget</strong> 下载 <em>index.html</em></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">user@instant-contiki:~/6lbr/examples/cc2538dk$ wget http://[aaaa::212:4b00:5af:84e0]/</div><div class="line">--2016-11-09 07:27:24--  http://[aaaa::212:4b00:5af:84e0]/</div><div class="line">Connecting to [aaaa::212:4b00:5af:84e0]:80... connected.</div><div class="line">HTTP request sent, awaiting response... 200 OK</div><div class="line">Length: unspecified [text/html]</div><div class="line">Saving to: ‘index.html’</div><div class="line"></div><div class="line">    [ &lt;=&gt;                                   ] 192         --.-K/s   in 0.1s    </div><div class="line"></div><div class="line">2016-11-09 07:27:24 (1.59 KB/s) - ‘index.html’ saved [192]</div></pre></td></tr></table></figure>
-<p> （6）半导体芯片越做越小，性能强悍；系统软件越精减，越精简优化。webserver跑在单芯片上也就不稀奇了！</p>
+<p> （6）半导体芯片越做越小，性能越强悍；系统协议越精减，越精简优化。webserver跑在单芯片上也就不稀奇了！</p>
 <p> <img src="/img/20161109/contiki6.png" alt=""><br> <img src="/img/20161109/contiki7.png" alt=""><br> <img src="/img/20161109/contiki8.png" alt=""></p>
 ]]></content>
     
