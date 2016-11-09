@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2016-10-29T15:21:40.000Z</updated>
+  <updated>2016-11-09T13:10:09.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -14,6 +14,108 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Contiki-CC2538</title>
+    <link href="http://cuiqingwei.github.io/2016/11/09/2016-11-09-Contiki-CC2538/"/>
+    <id>http://cuiqingwei.github.io/2016/11/09/2016-11-09-Contiki-CC2538/</id>
+    <published>2016-11-09T13:04:40.000Z</published>
+    <updated>2016-11-09T13:10:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="InstantContiki3-0-for-CC2538dk"><a href="#InstantContiki3-0-for-CC2538dk" class="headerlink" title="InstantContiki3.0 for CC2538dk"></a>InstantContiki3.0 for CC2538dk</h1><p>继 <strong>2013</strong> 年<a href="http://www.amobbs.com/thread-5515866-1-1.html" target="_blank" rel="external">InstantContiki2.6 for cc2530dk</a>,再写个关于<strong>cc2538dk</strong>的。</p>
+<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><ol>
+<li>下载安装预装有Contiki的 <em>InstantContiki3.0</em> Ubuntu虚拟机</li>
+</ol>
+<ul>
+<li>可参考 -&gt;<a href="http://www.amobbs.com/thread-5515866-1-1.html" target="_blank" rel="external">InstantContiki2.6 for cc2530dk</a></li>
+<li>也可见官网 -&gt; <a href="http://www.contiki-os.org/start.html" target="_blank" rel="external">http://www.contiki-os.org/start.html</a></li>
+</ul>
+<ol>
+<li>安装驱动，一般插上板子后会自动安装（无非cp210x、pl2303、ft232、ch341），可以通过以下命令查看：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ lsusb</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>一般会得到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">user@instant-contiki:~/contiki$ lsusb</div><div class="line">Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</div><div class="line">Bus 002 Device 014: ID 10c4:ea60 Cygnal Integrated Products, Inc. CP210x UART Bridge / myAVR mySmartUSB light</div><div class="line">Bus 002 Device 013: ID 0e0f:0008 VMware, Inc.</div><div class="line">Bus 002 Device 003: ID 0e0f:0002 VMware, Inc. Virtual USB Hub</div><div class="line">Bus 002 Device 002: ID 0e0f:0003 VMware, Inc. Virtual Mouse</div><div class="line">Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h1 id="cc2538demo"><a href="#cc2538demo" class="headerlink" title="cc2538demo"></a><strong>cc2538demo</strong></h1><p>官方原网址：<br><a href="https://github.com/contiki-os/contiki/blob/master/platform/cc2538dk/README.md" target="_blank" rel="external">https://github.com/contiki-os/contiki/blob/master/platform/cc2538dk/README.md</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/contiki/examples/cc2538dk</div><div class="line">make</div></pre></td></tr></table></figure>
+<h1 id="下载烧录-cc2538-demo-bin"><a href="#下载烧录-cc2538-demo-bin" class="headerlink" title="下载烧录 cc2538-demo.bin"></a>下载烧录 cc2538-demo.bin</h1><p><img src="/img/20161109/contiki4.png" alt=""></p>
+<p>所用工具</p>
+<ul>
+<li><a href="http://www.ti.com/tool/flash-programmer" target="_blank" rel="external">SmartRF Flash Programmer 2</a></li>
+<li><a href="http://www.ghostyu.com/product/41" target="_blank" rel="external">XDS110-Lite</a></li>
+</ul>
+<p>可以在window下通过smartRF Flash programmer 2来下载border-router.bin文件到cc2538中</p>
+<p><img src="/img/20161109/contiki0.png" alt=""></p>
+<p>也可以在Linux下通过串口bootloader安装border-router.elf，其中波特率要设置为115200,8N1。<br>如果想通过串口直接下载，需要手动的设置使能 bootloader，然后使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ makecc2538-demo.upload</div></pre></td></tr></table></figure>
+<p>对于官方demo板的方法：按住select键，并复位板子。</p>
+<p>另外，通过make cc2538-demo.lst 可以看到编译的信息，有助于调试代码。</p>
+<h1 id="串口打印"><a href="#串口打印" class="headerlink" title="串口打印"></a>串口打印</h1><p>由于linux中换行以 <strong>\n</strong> 结尾（用minicom的可忽略）。而windows以 <strong>\r\n</strong> 结尾，在Windows中调试例程需要修改串口调试工具中的设置。</p>
+<p>例如 <strong>putty</strong> 中,[ <strong>\n</strong> 转换为 <strong>\r\n</strong> ]修改设置见下图：</p>
+<p><img src="/img/20161109/contiki1.png" alt=""></p>
+<p>当然，还有最爱 <strong>SecureCRT</strong> 设置如下：</p>
+<p><img src="/img/20161109/contiki2.png" alt=""></p>
+<h1 id="rpl-border-router-边界路由器"><a href="#rpl-border-router-边界路由器" class="headerlink" title="rpl-border-router 边界路由器"></a><strong>rpl-border-router</strong> 边界路由器</h1><h3 id="1-编译"><a href="#1-编译" class="headerlink" title="1.编译"></a>1.编译</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/contiki/examples/ipv6/rpl-border-router</div><div class="line">make TARGET=cc2538dk</div></pre></td></tr></table></figure>
+<p>##3 2.节点IEEE/RIME/IPv6地址</p>
+<p>节点一般会根据它们的IEEE地址（MAC地址）来确定它们的IPV6地址，这个IEEE地址可能直接从cc2538的info页读取到，也可以通过硬编码得到，用户可以在编译的时候定义一个2字节的的值，这个值将用于IEEE地址的两个最低有效位。</p>
+<p>设置IEEE地址来源——info页或者硬编码，可以通过定义 <strong>~/contiki/platform/cc2538dk/contiki-conf.h</strong> 中的 <strong>IEEE_ADDR_CONF_HARDCODED</strong> 设定<br><em>如果为0</em> ——从info页中得到；<br><em>如果为1</em> ——从硬编码中得到，即从IEEE_ADDR_CONF_ADDRESS得到。</p>
+<p>当然，也可以重新定义IEEE的最低两位地址，通过：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ make NODEID=0x8888</div></pre></td></tr></table></figure>
+<p>此外，还可以设置使不同的节点具有不同的IEEE地址。<strong>IPv6中MAC地址不可以重复</strong>！</p>
+<h3 id="3-测试ipv6-border-router"><a href="#3-测试ipv6-border-router" class="headerlink" title="3.测试ipv6 border router"></a>3.测试ipv6 border router</h3><p>（1）修改border-router.c</p>
+<p>将#define DEBUG <em>DEBUG_NONE</em> 改为 #define DEBUG <strong>DEBUG_PRINT</strong></p>
+<p>（2）在project-conf.h中定义了UIP的最大缓冲值（UIP_CONF_BUFFER_SIZE），可以将它改为更大或删除这句话，从而允许更多的的值。</p>
+<p>（3）编译：<strong>make TARGET=cc2538dk</strong>，<em>因为不是在cc2538的工程中编译，所以需要加上目标平台</em>。</p>
+<p>（4）下载烧录，参考上面。</p>
+<p>（5）编译<a href="http://blog.csdn.net/gulansheng/article/details/43062191" target="_blank" rel="external">tunslip6</a>,测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd  ~/contiki/tools/</div><div class="line">make tunslip6</div><div class="line">sudo ./tunslip6 aaaa::1/64 -s /dev/ttyUSB0</div></pre></td></tr></table></figure>
+<p>执行后，不出意外的话看到router的IPV6地址：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">user@instant-contiki:~/contiki/tools$ sudo ./tunslip6 aaaa::1/64 -s /dev/ttyUSB0</div><div class="line">[sudo] password for user:</div><div class="line">********SLIP started on ``/dev/ttyUSB0&apos;&apos;</div><div class="line">opened tun device ``/dev/tun0&apos;&apos;</div><div class="line">ifconfig tun0 inet `hostname` mtu 1500 up</div><div class="line">ifconfig tun0 add aaaa::1/64</div><div class="line">ifconfig tun0 add fe80::0:0:0:1/64</div><div class="line">ifconfig tun0</div><div class="line">tun0      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  </div><div class="line">          inet addr:127.0.1.1  P-t-P:127.0.1.1  Mask:255.255.255.255</div><div class="line">          inet6 addr: fe80::1/64 Scope:Link</div><div class="line">          inet6 addr: aaaa::1/64 Scope:Global</div><div class="line">          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1</div><div class="line">          RX packets:0 errors:0 dropped:0 overruns:0 frame:0</div><div class="line">          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0</div><div class="line">          collisions:0 txqueuelen:500</div><div class="line">          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)</div><div class="line">*** Address:aaaa::1 =&gt; aaaa:0000:0000:0000</div><div class="line">Got configuration message of type P</div><div class="line">Setting prefix aaaa::</div><div class="line">created a new RPL dag</div><div class="line">Server IPv6 addresses:</div><div class="line"> aaaa::212:4b00:5af:84e0</div><div class="line"> fe80::212:4b00:5af:84e0</div></pre></td></tr></table></figure>
+<p>（6）通信测试</p>
+<p><strong>Ping6</strong> 测试</p>
+<p><em><font color="red">ping6 aaaa::212:4b00:5af:84e0</font></em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">user@instant-contiki:~/6lbr/examples/cc2538dk$ ping6 aaaa::212:4b00:5af:84e0</div><div class="line">PING aaaa::212:4b00:5af:84e0(aaaa::212:4b00:5af:84e0) 56 data bytes</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=1 ttl=64 time=21.1 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=2 ttl=64 time=21.5 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=3 ttl=64 time=21.1 ms</div></pre></td></tr></table></figure>
+<p>打开浏览器，地址栏输入 <a href="http://[aaaa::212:4b00:5af:84e0]/" target="_blank" rel="external">http://[aaaa::212:4b00:5af:84e0]/</a> 网页访问测试：</p>
+<h3 id="节点联网"><a href="#节点联网" class="headerlink" title="节点联网"></a>节点联网</h3><p>（1）编译，下载烧录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/contiki/examples/webserver-ipv6</div><div class="line">make TARGET=cc2538dk NODEID=&lt;value&gt;</div></pre></td></tr></table></figure>
+<p>（2）查看</p>
+<p>打开浏览器，地址栏输入 <a href="http://[aaaa::212:4b00:5af:84e0]/" target="_blank" rel="external">http://[aaaa::212:4b00:5af:84e0]/</a> 查看节点：</p>
+<p>Neighbors<br>fe80::212:4b00:5af:8444<br>Routes<br><strong>aaaa::212:4b00:5af:8444</strong> /128 (via fe80::212:4b00:5af:8444) 1792s</p>
+<p><img src="/img/20161109/contiki5.png" alt=""></p>
+<p>（3）ping6测</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">user@instant-contiki:~/6lbr/examples/cc2538dk$ ping6 aaaa::212:4b00:5af:8444</div><div class="line">PING aaaa::212:4b00:5af:8444(aaaa::212:4b00:5af:8444) 56 data bytes</div><div class="line">64 bytes from aaaa::212:4b00:5af:8444: icmp_seq=2 ttl=63 time=95.9 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:8444: icmp_seq=3 ttl=63 time=340 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:8444: icmp_seq=4 ttl=63 time=91.2 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:8444: icmp_seq=5 ttl=63 time=90.9 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:8444: icmp_seq=6 ttl=63 time=86.7 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:8444: icmp_seq=7 ttl=63 time=82.2 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:8444: icmp_seq=8 ttl=63 time=82.3 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:8444: icmp_seq=9 ttl=63 time=82.0 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:8444: icmp_seq=10 ttl=63 time=77.3 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:8444: icmp_seq=11 ttl=63 time=77.4 ms</div></pre></td></tr></table></figure>
+<p>（4）也可 <strong>curl</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">user@instant-contiki:~/6lbr/examples/cc2538dk$ curl -g http://[aaaa::212:4b00:5af:84e0]/</div><div class="line">&lt;html&gt;&lt;head&gt;&lt;title&gt;ContikiRPL&lt;/title&gt;&lt;/head&gt;&lt;body&gt;</div><div class="line">Neighbors&lt;pre&gt;fe80::212:4b00:5af:8444</div><div class="line">&lt;/pre&gt;Routes&lt;pre&gt;</div><div class="line">aaaa::212:4b00:5af:8444/128 (via fe80::212:4b00:5af:8444) 1773s</div></pre></td></tr></table></figure>
+<p>（5）<strong>wget</strong> 下载 <em>index.html</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">user@instant-contiki:~/6lbr/examples/cc2538dk$ wget http://[aaaa::212:4b00:5af:84e0]/</div><div class="line">--2016-11-09 07:27:24--  http://[aaaa::212:4b00:5af:84e0]/</div><div class="line">Connecting to [aaaa::212:4b00:5af:84e0]:80... connected.</div><div class="line">HTTP request sent, awaiting response... 200 OK</div><div class="line">Length: unspecified [text/html]</div><div class="line">Saving to: ‘index.html’</div><div class="line"></div><div class="line">    [ &lt;=&gt;                                   ] 192         --.-K/s   in 0.1s    </div><div class="line"></div><div class="line">2016-11-09 07:27:24 (1.59 KB/s) - ‘index.html’ saved [192]</div></pre></td></tr></table></figure>
+<p> （6）半导体芯片越做越小，性能强悍；系统软件越精减，越精简优化。webserver跑在单芯片上也就不稀奇了！</p>
+<p> <img src="/img/20161109/contiki6.png" alt=""><br> <img src="/img/20161109/contiki7.png" alt=""><br> <img src="/img/20161109/contiki8.png" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;InstantContiki3-0-for-CC2538dk&quot;&gt;&lt;a href=&quot;#InstantContiki3-0-for-CC2538dk&quot; class=&quot;headerlink&quot; title=&quot;InstantContiki3.0 for CC2538dk&quot;&gt;&lt;/a&gt;InstantContiki3.0 for CC2538dk&lt;/h1&gt;&lt;p&gt;继 &lt;strong&gt;2013&lt;/strong&gt; 年&lt;a href=&quot;http://www.amobbs.com/thread-5515866-1-1.html&quot;&gt;InstantContiki2.6 for cc2530dk&lt;/a&gt;,再写个关于&lt;strong&gt;cc2538dk&lt;/strong&gt;的。&lt;/p&gt;
+&lt;h1 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;下载安装预装有Contiki的 &lt;em&gt;InstantContiki3.0&lt;/em&gt; Ubuntu虚拟机&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;可参考 -&amp;gt;&lt;a href=&quot;http://www.amobbs.com/thread-5515866-1-1.html&quot;&gt;InstantContiki2.6 for cc2530dk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;也可见官网 -&amp;gt; &lt;a href=&quot;http://www.contiki-os.org/start.html&quot;&gt;http://www.contiki-os.org/start.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;安装驱动，一般插上板子后会自动安装（无非cp210x、pl2303、ft232、ch341），可以通过以下命令查看：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ lsusb&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;一般会得到：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;user@instant-contiki:~/contiki$ lsusb&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Bus 002 Device 014: ID 10c4:ea60 Cygnal Integrated Products, Inc. CP210x UART Bridge / myAVR mySmartUSB light&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Bus 002 Device 013: ID 0e0f:0008 VMware, Inc.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Bus 002 Device 003: ID 0e0f:0002 VMware, Inc. Virtual USB Hub&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Bus 002 Device 002: ID 0e0f:0003 VMware, Inc. Virtual Mouse&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Contiki" scheme="http://cuiqingwei.github.io/tags/Contiki/"/>
+    
+      <category term="CC2538" scheme="http://cuiqingwei.github.io/tags/CC2538/"/>
+    
+  </entry>
   
   <entry>
     <title>基于Contiki-Cooja的6LBR模拟仿真</title>
@@ -1482,36 +1584,6 @@
     
       &lt;p&gt;在编译OpenWrt最新的trunk时，碰到一个Git源码取不下来（你懂得，被墙了！）&lt;br&gt;在google上搜了一下，找到一个dl的地址：&lt;br&gt;&lt;a href=&quot;http://193.87.95.148/openwrt/raspi/trunk/dl/&quot;&gt;http://193.87.95.148/openwrt/raspi/trunk/dl/&lt;/a&gt;&lt;br&gt;补充：OpenWrt中国站也有一个下载地址！&lt;br&gt;&lt;a href=&quot;http://downloads.openwrt.org.cn/sources/&quot;&gt;http://downloads.openwrt.org.cn/sources/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;另外还有一个将openwrt官网上的软件都下载下来了，并在本地建了服务器，然后与共享给大家！！&lt;br&gt;跳转下载链接&lt;a href=&quot;http://dl.openwrtdl.com/index.html&quot;&gt;http://dl.openwrtdl.com/index.html&lt;/a&gt;&lt;br&gt;软件包总数量达到了&lt;strong&gt;3926&lt;/strong&gt;个！&lt;br&gt;最新更新时间：&lt;strong&gt;2016-05-09&lt;/strong&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="折腾" scheme="http://cuiqingwei.github.io/tags/%E6%8A%98%E8%85%BE/"/>
-    
-      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OpenWRT下ifconfig各接口说明</title>
-    <link href="http://cuiqingwei.github.io/2015/07/06/2015-07-06-OpenWRT%E4%B8%8Bifconfig%E5%90%84%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E/"/>
-    <id>http://cuiqingwei.github.io/2015/07/06/2015-07-06-OpenWRT下ifconfig各接口说明/</id>
-    <published>2015-07-06T10:00:00.000Z</published>
-    <updated>2016-10-09T04:05:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="rao-和raio（无线）"><a href="#rao-和raio（无线）" class="headerlink" title="rao 和raio（无线）"></a>rao 和raio（无线）</h1><p>这两个是成对出现，一看就知道是无线设备，它们各自对应一个SSID，分别是2.4G和5G。</p>
-<h1 id="eth0（物理网卡）"><a href="#eth0（物理网卡）" class="headerlink" title="eth0（物理网卡）"></a>eth0（物理网卡）</h1><p>eth0.1 是vlan1分出的lan口。<br>eth0.2 是vlan分出的wan口。<br><a id="more"></a></p>
-<h1 id="br-lan（无线-有线）"><a href="#br-lan（无线-有线）" class="headerlink" title="br-lan（无线+有线）"></a>br-lan（无线+有线）</h1><p>虚拟设备，br-lan = eth0.1 + rai0 + ra0，即将有线LAN口和无线网统一划分为 LAN，便于管理</p>
-<h1 id="lo"><a href="#lo" class="headerlink" title="lo"></a>lo</h1><p>虚拟设备，自身的回环网设备。127.0.0.1</p>
-<h1 id="aplic"><a href="#aplic" class="headerlink" title="aplic"></a>aplic</h1><p>虚拟设备，无线中继</p>
-<h1 id="ppp0"><a href="#ppp0" class="headerlink" title="ppp0"></a>ppp0</h1><p>虚拟设备，连接PPTP服务器后分配的虚拟ip</p>
-<h1 id="pppoe-wan"><a href="#pppoe-wan" class="headerlink" title="pppoe-wan"></a>pppoe-wan</h1><p>虚拟设备，拨号上网的</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;rao-和raio（无线）&quot;&gt;&lt;a href=&quot;#rao-和raio（无线）&quot; class=&quot;headerlink&quot; title=&quot;rao 和raio（无线）&quot;&gt;&lt;/a&gt;rao 和raio（无线）&lt;/h1&gt;&lt;p&gt;这两个是成对出现，一看就知道是无线设备，它们各自对应一个SSID，分别是2.4G和5G。&lt;/p&gt;
-&lt;h1 id=&quot;eth0（物理网卡）&quot;&gt;&lt;a href=&quot;#eth0（物理网卡）&quot; class=&quot;headerlink&quot; title=&quot;eth0（物理网卡）&quot;&gt;&lt;/a&gt;eth0（物理网卡）&lt;/h1&gt;&lt;p&gt;eth0.1 是vlan1分出的lan口。&lt;br&gt;eth0.2 是vlan分出的wan口。&lt;br&gt;
     
     </summary>
     
