@@ -1083,6 +1083,70 @@
   </entry>
   
   <entry>
+    <title>Linux打补丁和git打patch方法 </title>
+    <link href="http://cuiqingwei.github.io/2015/08/19/2015-08-19-Linux%E6%89%93%E8%A1%A5%E4%B8%81%E5%92%8Cgit%E6%89%93patch%E6%96%B9%E6%B3%95/"/>
+    <id>http://cuiqingwei.github.io/2015/08/19/2015-08-19-Linux打补丁和git打patch方法/</id>
+    <published>2015-08-19T06:50:00.000Z</published>
+    <updated>2016-11-12T15:16:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、linux打补丁方法"><a href="#一、linux打补丁方法" class="headerlink" title="一、linux打补丁方法"></a>一、linux打补丁方法</h1><h3 id="1、处理单个文件补丁的方法："><a href="#1、处理单个文件补丁的方法：" class="headerlink" title="1、处理单个文件补丁的方法："></a>1、处理单个文件补丁的方法：</h3><ul>
+<li>产生补丁</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diff -uN from-file to-file &gt;to-file.patch</div></pre></td></tr></table></figure>
+<ul>
+<li>打补丁</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">patch -p0 &lt; to-file.patch</div></pre></td></tr></table></figure>
+<ul>
+<li>取消补丁</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">patch -RE -p0 &lt; to-file.patch</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="2、对整个文件夹打补丁的情况"><a href="#2、对整个文件夹打补丁的情况" class="headerlink" title="2、对整个文件夹打补丁的情况:"></a>2、对整个文件夹打补丁的情况:</h3><ul>
+<li>产生补丁</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diff -uNr  from-docu  to-docu  &gt;to-docu.patch</div></pre></td></tr></table></figure>
+<ul>
+<li>打补丁</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd to-docu</div><div class="line">patch -p1 &lt; to-docu.patch</div></pre></td></tr></table></figure>
+<ul>
+<li>取消补丁</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">patch -R -p1 &lt; to-docu.patch</div></pre></td></tr></table></figure>
+<h1 id="二、git打patch方法"><a href="#二、git打patch方法" class="headerlink" title="二、git打patch方法"></a>二、git打patch方法</h1><h3 id="1、git-format-patch-（推荐）"><a href="#1、git-format-patch-（推荐）" class="headerlink" title="1、git format-patch  （推荐）"></a>1、git format-patch  （推荐）</h3><p>只适用于git的patch<br>包含diff信息，包含提交人，提交时间等<br>如果git format-patch 生成的补丁不能打到当前分支，git am会给出提示，并协助你完成打补丁工作<br>例：从master checkout一个新分支修改然后与master对比生成patch。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git format-patch -M master //-M选项表示这个patch要和那个分支比对</div><div class="line">git am 001-xxx.patch（不必重新commit）</div></pre></td></tr></table></figure>
+<h3 id="2、git-diff"><a href="#2、git-diff" class="headerlink" title="2、git diff"></a>2、git diff</h3><p>生成标准的patch，只包含diff信息<br>git diff生成的Patch兼容性强，可以用git apply –check 查看补丁是否能够干净顺利地应用到当前分支中。<br>例：从master checkout一个新分支修改然后与master对比生成patch。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git diff master &gt; patch</div><div class="line">git apply xxx.patch（需要重新commit）</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一、linux打补丁方法&quot;&gt;&lt;a href=&quot;#一、linux打补丁方法&quot; class=&quot;headerlink&quot; title=&quot;一、linux打补丁方法&quot;&gt;&lt;/a&gt;一、linux打补丁方法&lt;/h1&gt;&lt;h3 id=&quot;1、处理单个文件补丁的方法：&quot;&gt;&lt;a href=&quot;#1、处理单个文件补丁的方法：&quot; class=&quot;headerlink&quot; title=&quot;1、处理单个文件补丁的方法：&quot;&gt;&lt;/a&gt;1、处理单个文件补丁的方法：&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;产生补丁&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;diff -uN from-file to-file &amp;gt;to-file.patch&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;打补丁&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;patch -p0 &amp;lt; to-file.patch&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;取消补丁&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;patch -RE -p0 &amp;lt; to-file.patch&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://cuiqingwei.github.io/tags/linux/"/>
+    
+      <category term="git" scheme="http://cuiqingwei.github.io/tags/git/"/>
+    
+      <category term="patch" scheme="http://cuiqingwei.github.io/tags/patch/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux</title>
     <link href="http://cuiqingwei.github.io/2015/08/18/2015-08-18-Linux/"/>
     <id>http://cuiqingwei.github.io/2015/08/18/2015-08-18-Linux/</id>
@@ -1541,49 +1605,6 @@
     
       &lt;h2 id=&quot;2016-04-23-Openwrt-Yun&quot;&gt;&lt;a href=&quot;#2016-04-23-Openwrt-Yun&quot; class=&quot;headerlink&quot; title=&quot;2016-04-23 Openwrt Yun&quot;&gt;&lt;/a&gt;2016-04-23 Openwrt Yun&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#!/bin/bash -ex&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h4 id=&quot;FEEDS&quot;&gt;&lt;a href=&quot;#FEEDS&quot; class=&quot;headerlink&quot; title=&quot;FEEDS&quot;&gt;&lt;/a&gt;FEEDS&lt;/h4&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;./scripts/feeds uninstall &lt;span class=&quot;_&quot;&gt;-a&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;rm -rf feeds&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;./scripts/feeds update &lt;span class=&quot;_&quot;&gt;-a&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;./scripts/feeds install &lt;span class=&quot;_&quot;&gt;-a&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;./scripts/feeds uninstall erlang freeswitch remotefs libzstream shflags opensips pulseaudio xmlrpc-c rtorrent sox umurmur-polarssl freecwmp-zstream osirisd logtrigger libplist libimobiledevice cmus mxml boost wt etherpuppet php4 aprx n2n pdnsd crtmpserver kissdx openconnect telepathy-python alljoyn&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="折腾" scheme="http://cuiqingwei.github.io/tags/%E6%8A%98%E8%85%BE/"/>
-    
-      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OpenWRT之dl下载分享</title>
-    <link href="http://cuiqingwei.github.io/2015/07/07/2015-07-07-OpenWRT%E4%B9%8Bdl%E4%B8%8B%E8%BD%BD%E5%88%86%E4%BA%AB/"/>
-    <id>http://cuiqingwei.github.io/2015/07/07/2015-07-07-OpenWRT之dl下载分享/</id>
-    <published>2015-07-07T10:00:00.000Z</published>
-    <updated>2016-10-08T12:08:52.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>在编译OpenWrt最新的trunk时，碰到一个Git源码取不下来（你懂得，被墙了！）<br>在google上搜了一下，找到一个dl的地址：<br><a href="http://193.87.95.148/openwrt/raspi/trunk/dl/" target="_blank" rel="external">http://193.87.95.148/openwrt/raspi/trunk/dl/</a><br>补充：OpenWrt中国站也有一个下载地址！<br><a href="http://downloads.openwrt.org.cn/sources/" target="_blank" rel="external">http://downloads.openwrt.org.cn/sources/</a></p>
-<p>另外还有一个将openwrt官网上的软件都下载下来了，并在本地建了服务器，然后与共享给大家！！<br>跳转下载链接<a href="http://dl.openwrtdl.com/index.html" target="_blank" rel="external">http://dl.openwrtdl.com/index.html</a><br>软件包总数量达到了<strong>3926</strong>个！<br>最新更新时间：<strong>2016-05-09</strong><br><a id="more"></a><br>并用脚本每小时执行一次，与openwrt官网对比，当官网更新了软件包则将对应的软件包下载到本地，保证官网更新，本地也会更新的效果！</p>
-<p>服务器在我家里放着，上海长城宽带，20M光纤，上传速度可以达到3MB，对于下载小的软件包足够了！！</p>
-<p>另外我会写个脚本每个一小时与openwrt官网同步一次，发现更新则加入到本地！！</p>
-<p>欢迎大家来下载，如果有哪些软件未包含进来，请留言给我！！！</p>
-<p>====================================================</p>
-<p>我把所有的软件都放进了百度云盘下载，本文章中也会有所有的软件包的列表</p>
-<p>只要你在网页内用“ctrl+f”搜索你需要的软件包就可以下载了！</p>
-<p>当然也可以先进入百度分享连接中，然后“ctrl+f”搜索，刚发现个问题，百度网盘中并不是一次性的加载完所有的软件包列表，而是加载一部分，当你把滚动条拉到最底时他才会加载新的，这很蛋疼。。。体验就不好了！</p>
-<p>网盘分享连接：<a href="http://pan.baidu.com/s/1dD4Rl53" target="_blank" rel="external">http://pan.baidu.com/s/1dD4Rl53</a></p>
-<p>另外分享几个国外的openwrt软件源下载的地方，当然速度不一定好</p>
-<p><a href="http://mirror2.openwrt.org/sources/" target="_blank" rel="external">http://mirror2.openwrt.org/sources/</a>  （openwrt官方网站，服务器在匈牙利，目前已经停止更新）</p>
-<p><a href="https://downloads.openwrt.org/sources/" target="_blank" rel="external">https://downloads.openwrt.org/sources/</a> （openwrt官方网站，服务器在匈牙利）</p>
-<p><a href="http://downloads.openwrt.org.cn/sources/" target="_blank" rel="external">http://downloads.openwrt.org.cn/sources/</a> （国内dreambox和pandora团队建立的，服务器在日本）</p>
-<p><a href="http://143.129.80.193/openwrt/dl/" target="_blank" rel="external">http://143.129.80.193/openwrt/dl/</a>  （比利时的一个网站上，资源比官方的少，目前已无法访问）</p>
-<p>TPLINK-WR703的trunk的dl</p>
-<p><a href="http://log.nihon-ryouri.asia/tpl703n/trunk/dl/" target="_blank" rel="external">http://log.nihon-ryouri.asia/tpl703n/trunk/dl/</a>  （服务器在法国）</p>
-<p>========感谢leejon提供的统计数据========</p>
-<p>软件包条目数：<br><a href="http://pan.baidu.com/s/1dD4Rl53" target="_blank" rel="external">http://pan.baidu.com/s/1dD4Rl53</a>   2022个<br><a href="http://mirror2.openwrt.org/sources" target="_blank" rel="external">http://mirror2.openwrt.org/sources</a>   3860个<br><a href="https://downloads.openwrt.org/sources" target="_blank" rel="external">https://downloads.openwrt.org/sources</a>   2672个<br><a href="http://downloads.openwrt.org.cn/sources" target="_blank" rel="external">http://downloads.openwrt.org.cn/sources</a>   3223个<br><a href="http://143.129.80.193/openwrt/dl" target="_blank" rel="external">http://143.129.80.193/openwrt/dl</a>   590个</p>
-<p>原文链接 <a href="http://www.openwrtdl.com/wordpress/package-index-download" target="_blank" rel="external">http://www.openwrtdl.com/wordpress/package-index-download</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在编译OpenWrt最新的trunk时，碰到一个Git源码取不下来（你懂得，被墙了！）&lt;br&gt;在google上搜了一下，找到一个dl的地址：&lt;br&gt;&lt;a href=&quot;http://193.87.95.148/openwrt/raspi/trunk/dl/&quot;&gt;http://193.87.95.148/openwrt/raspi/trunk/dl/&lt;/a&gt;&lt;br&gt;补充：OpenWrt中国站也有一个下载地址！&lt;br&gt;&lt;a href=&quot;http://downloads.openwrt.org.cn/sources/&quot;&gt;http://downloads.openwrt.org.cn/sources/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;另外还有一个将openwrt官网上的软件都下载下来了，并在本地建了服务器，然后与共享给大家！！&lt;br&gt;跳转下载链接&lt;a href=&quot;http://dl.openwrtdl.com/index.html&quot;&gt;http://dl.openwrtdl.com/index.html&lt;/a&gt;&lt;br&gt;软件包总数量达到了&lt;strong&gt;3926&lt;/strong&gt;个！&lt;br&gt;最新更新时间：&lt;strong&gt;2016-05-09&lt;/strong&gt;&lt;br&gt;
     
     </summary>
     
