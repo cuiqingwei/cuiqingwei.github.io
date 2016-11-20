@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2016-11-18T14:38:28.000Z</updated>
+  <updated>2016-11-20T13:03:50.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://cuiqingwei.github.io/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/"/>
     <id>http://cuiqingwei.github.io/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/</id>
     <published>2016-11-17T13:04:40.000Z</published>
-    <updated>2016-11-18T14:38:28.000Z</updated>
+    <updated>2016-11-20T13:03:50.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Mote1"><a href="#Mote1" class="headerlink" title="Mote1"></a>Mote1</h1><h3 id="build-rp-border-router"><a href="#build-rp-border-router" class="headerlink" title="build rp-border-router"></a>build rp-border-router</h3><p>cd ~<br>cd contiki/examples/ipv6/rpl-border-router<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">user@instant-contiki:~/contiki/examples/ipv6/rpl-border-router$ git diff .</div><div class="line">diff --git a/examples/ipv6/rpl-border-router/border-router.c b/examples/ipv6/rpl</div><div class="line">index 90b1fdf..f7d565c 100644</div><div class="line">--- a/examples/ipv6/rpl-border-router/border-router.c</div><div class="line">+++ b/examples/ipv6/rpl-border-router/border-router.c</div><div class="line">@@ -54,7 +54,8 @@</div><div class="line"> #include &lt;string.h&gt;</div><div class="line"> #include &lt;ctype.h&gt;</div><div class="line">-#define DEBUG DEBUG_NONE</div><div class="line">+//#define DEBUG DEBUG_NONE</div><div class="line">+#define DEBUG DEBUG_PRINT</div><div class="line"> #include &quot;net/ip/uip-debug.h&quot;</div><div class="line"> static uip_ipaddr_t prefix;</div><div class="line">diff --git a/examples/ipv6/rpl-border-router/project-conf.h b/examples/ipv6/rpl-</div><div class="line">index ec3eb3f..1f4f8c9 100644</div><div class="line">--- a/examples/ipv6/rpl-border-router/project-conf.h</div><div class="line">+++ b/examples/ipv6/rpl-border-router/project-conf.h</div><div class="line">@@ -64,4 +64,7 @@</div><div class="line"> #define WEBSERVER_CONF_CFS_CONNS 2</div><div class="line"> #endif</div><div class="line">+//#define RF_CORE_CONF_CHANNEL    25</div><div class="line">+#define RF_CORE_CONF_CHANNEL    26</div><div class="line">+</div><div class="line"> #endif /* PROJECT_ROUTER_CONF_H_ */</div></pre></td></tr></table></figure></p>
 <p>make TARGET=cc2538dk all</p>
@@ -36,6 +36,7 @@
 <h1 id="ping6"><a href="#ping6" class="headerlink" title="ping6"></a>ping6</h1><p>ping6 aaaa::212:4b00:5af:84e0</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">PING aaaa::212:4b00:5af:84e0(aaaa::212:4b00:5af:84e0) 56 data bytes</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=1 ttl=63 time=1013 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=2 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=3 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=4 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=5 ttl=63 time=125 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=6 ttl=63 time=120 ms</div></pre></td></tr></table></figure>
 <h1 id="firefox"><a href="#firefox" class="headerlink" title="firefox"></a>firefox</h1><p><img src="/img/20161117/coap1.png" alt=""><br><img src="/img/20161117/coap2.png" alt=""></p>
+<h1 id="cooja仿真"><a href="#cooja仿真" class="headerlink" title="cooja仿真"></a>cooja仿真</h1><p><a href="http://v.youku.com/v_show/id_XMTgyNDA3NDAzNg==.html#paction" target="_blank" rel="external">仿真操作视频</a></p>
 ]]></content>
     
     <summary type="html">
