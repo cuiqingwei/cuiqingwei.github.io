@@ -15,19 +15,31 @@
 
 
 
-<meta name="description" content="rao 和raio（无线）这两个是成对出现，一看就知道是无线设备，它们各自对应一个SSID，分别是2.4G和5G。
-eth0（物理网卡）eth0.1 是vlan1分出的lan口。eth0.2 是vlan分出的wan口。">
+<meta name="description" content="特别提示：整个过程中计算机必须联网，因为有些程序需要从网络上下载!
+一、安装Ubuntu 11.04
+1、首先用虚拟机安装ubuntu 11.04版本,建议将硬盘空间设大一点，80G最好，编译linux，根文件系统会占用很多的硬盘空间。登陆后修改root密码1sudo passwd root
+
+
+这里需要输入现在的密码，以及root的新密码密码更改完毕后，重新启动系统，以root身份登陆。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OpenWRT下ifconfig各接口说明">
-<meta property="og:url" content="http://cuiqingwei.github.io/2015/07/06/2015-07-06-OpenWRT下ifconfig各接口说明/index.html">
+<meta property="og:title" content="ubuntu11.04安装arm开发环境">
+<meta property="og:url" content="http://cuiqingwei.github.io/2012/09/07/2012-09-08-Linux中生成shadow的加密密码/index.html">
 <meta property="og:site_name" content="iZheteng">
-<meta property="og:description" content="rao 和raio（无线）这两个是成对出现，一看就知道是无线设备，它们各自对应一个SSID，分别是2.4G和5G。
-eth0（物理网卡）eth0.1 是vlan1分出的lan口。eth0.2 是vlan分出的wan口。">
-<meta property="og:updated_time" content="2016-10-09T04:05:50.000Z">
+<meta property="og:description" content="特别提示：整个过程中计算机必须联网，因为有些程序需要从网络上下载!
+一、安装Ubuntu 11.04
+1、首先用虚拟机安装ubuntu 11.04版本,建议将硬盘空间设大一点，80G最好，编译linux，根文件系统会占用很多的硬盘空间。登陆后修改root密码1sudo passwd root
+
+
+这里需要输入现在的密码，以及root的新密码密码更改完毕后，重新启动系统，以root身份登陆。">
+<meta property="og:updated_time" content="2016-12-08T05:36:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OpenWRT下ifconfig各接口说明">
-<meta name="twitter:description" content="rao 和raio（无线）这两个是成对出现，一看就知道是无线设备，它们各自对应一个SSID，分别是2.4G和5G。
-eth0（物理网卡）eth0.1 是vlan1分出的lan口。eth0.2 是vlan分出的wan口。">
+<meta name="twitter:title" content="ubuntu11.04安装arm开发环境">
+<meta name="twitter:description" content="特别提示：整个过程中计算机必须联网，因为有些程序需要从网络上下载!
+一、安装Ubuntu 11.04
+1、首先用虚拟机安装ubuntu 11.04版本,建议将硬盘空间设大一点，80G最好，编译linux，根文件系统会占用很多的硬盘空间。登陆后修改root密码1sudo passwd root
+
+
+这里需要输入现在的密码，以及root的新密码密码更改完毕后，重新启动系统，以root身份登陆。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -59,7 +71,7 @@ eth0（物理网卡）eth0.1 是vlan1分出的lan口。eth0.2 是vlan分出的wa
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>OpenWRT下ifconfig各接口说明 | iZheteng</title>
+<title>ubuntu11.04安装arm开发环境 | iZheteng</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -290,15 +302,15 @@ eth0（物理网卡）eth0.1 是vlan1分出的lan口。eth0.2 是vlan分出的wa
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-2015-07-06-OpenWRT下ifconfig各接口说明" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-2012-09-08-Linux中生成shadow的加密密码" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/07/06/2015-07-06-OpenWRT下ifconfig各接口说明/" class="article-date">
-      <time datetime="2015-07-06T10:00:00.000Z" itemprop="datePublished">2015-07-06</time>
+      <a href="/2012/09/07/2012-09-08-Linux中生成shadow的加密密码/" class="article-date">
+      <time datetime="2012-09-07T07:50:00.000Z" itemprop="datePublished">2012-09-07</time>
 </a>
 
  
-    <a href="/2015/07/06/2015-07-06-OpenWRT下ifconfig各接口说明/#comments" title="查看评论">
+    <a href="/2012/09/07/2012-09-08-Linux中生成shadow的加密密码/#comments" title="查看评论">
         <i class="fa fa-comments-o" aria-hidden="true"></i>
         <span class="count-comment"></span>
         
@@ -318,7 +330,7 @@ eth0（物理网卡）eth0.1 是vlan1分出的lan口。eth0.2 是vlan分出的wa
         
   
     <h1 class="article-title" itemprop="name">
-      OpenWRT下ifconfig各接口说明
+      ubuntu11.04安装arm开发环境
     </h1>
   
 
@@ -329,7 +341,7 @@ eth0（物理网卡）eth0.1 是vlan1分出的lan口。eth0.2 是vlan分出的wa
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenWRT/">OpenWRT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/折腾/">折腾</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/arm/">arm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/嵌入式/">嵌入式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/硬件/">硬件</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -339,13 +351,95 @@ eth0（物理网卡）eth0.1 是vlan1分出的lan口。eth0.2 是vlan分出的wa
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="rao-和raio（无线）"><a href="#rao-和raio（无线）" class="headerlink" title="rao 和raio（无线）"></a>rao 和raio（无线）</h1><p>这两个是成对出现，一看就知道是无线设备，它们各自对应一个SSID，分别是2.4G和5G。</p>
-<h1 id="eth0（物理网卡）"><a href="#eth0（物理网卡）" class="headerlink" title="eth0（物理网卡）"></a>eth0（物理网卡）</h1><p>eth0.1 是vlan1分出的lan口。<br>eth0.2 是vlan分出的wan口。<br><a id="more"></a></p>
-<h1 id="br-lan（无线-有线）"><a href="#br-lan（无线-有线）" class="headerlink" title="br-lan（无线+有线）"></a>br-lan（无线+有线）</h1><p>虚拟设备，br-lan = eth0.1 + rai0 + ra0，即将有线LAN口和无线网统一划分为 LAN，便于管理</p>
-<h1 id="lo"><a href="#lo" class="headerlink" title="lo"></a>lo</h1><p>虚拟设备，自身的回环网设备。127.0.0.1</p>
-<h1 id="aplic"><a href="#aplic" class="headerlink" title="aplic"></a>aplic</h1><p>虚拟设备，无线中继</p>
-<h1 id="ppp0"><a href="#ppp0" class="headerlink" title="ppp0"></a>ppp0</h1><p>虚拟设备，连接PPTP服务器后分配的虚拟ip</p>
-<h1 id="pppoe-wan"><a href="#pppoe-wan" class="headerlink" title="pppoe-wan"></a>pppoe-wan</h1><p>虚拟设备，拨号上网的</p>
+        <p>特别提示：整个过程中计算机必须联网，因为有些程序需要从网络上下载!</p>
+<h1 id="一、安装Ubuntu-11-04"><a href="#一、安装Ubuntu-11-04" class="headerlink" title="一、安装Ubuntu 11.04"></a>一、安装Ubuntu 11.04</h1><ul>
+<li>1、首先用虚拟机安装ubuntu 11.04版本,建议将硬盘空间设大一点，80G最好，编译linux，根文件系统会占用很多的硬盘空间。<br>登陆后修改root密码<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo passwd root</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这里需要输入现在的密码，以及root的新密码<br>密码更改完毕后，重新启动系统，以root身份登陆。<br><a id="more"></a></p>
+<ul>
+<li>2、更新系统</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get update</div></pre></td></tr></table></figure>
+<ul>
+<li>3、安装必要的软件</li>
+</ul>
+<p>安装gedit编辑软件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install gedit</div></pre></td></tr></table></figure></p>
+<ul>
+<li>4、设置静态IP，方便调试用</li>
+</ul>
+<p>修改文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gedit /etc/network/interfaces</div></pre></td></tr></table></figure></p>
+<p>按键盘“i”<br>添加如下内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">auto lo</div><div class="line">iface lo inet loopback</div><div class="line">auto eth0</div><div class="line">iface eth0 inet static</div><div class="line">address 192.168.1.158</div><div class="line">netmask 255.255.255.0</div><div class="line">gateway 192.168.1.1</div><div class="line">nameserver 192.168.1.1</div></pre></td></tr></table></figure></p>
+<p>在命令行输入命令重启网络<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/networking restart</div></pre></td></tr></table></figure></p>
+<p>查看最新的网络状态，输入:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ifconfig</div></pre></td></tr></table></figure></p>
+<p>测试网络：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ping 192.168.1.1</div></pre></td></tr></table></figure></p>
+<p>按“Ctrl+C”可以退出测试</p>
+<ul>
+<li>5、安装SSH服务，使用SSH可以方便用户远程登录虚拟机，默认情况下ubuntu没有安装，需要自己安装</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install openssh-server openssh-client</div></pre></td></tr></table></figure>
+<p>安装完成后，启动SSH<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/ssh start</div></pre></td></tr></table></figure></p>
+<h1 id="二、TFTP安装"><a href="#二、TFTP安装" class="headerlink" title="二、TFTP安装"></a>二、TFTP安装</h1><ul>
+<li>1、打开终端，运行命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install tftpd</div><div class="line">apt-get install openbsd-inetd</div></pre></td></tr></table></figure>
+<ul>
+<li>2、配置tftp,</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gedit /etc/inetd.conf</div></pre></td></tr></table></figure>
+<p>将下面的内容添加到文件中去<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tftp dgram udp <span class="built_in">wait</span> nobody /usr/sbin/tcpd /usr/sbin/in.tftpd /srv/tftp</div></pre></td></tr></table></figure></p>
+<p>/srv/tftp为TFTP的目录</p>
+<ul>
+<li>3、重启TFTP服务</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/openbsd-inetd restart</div></pre></td></tr></table></figure>
+<p>重启后终端显示如下则表示配置完成<br>* Restarting internet superserver inetd                    [ OK ]</p>
+<ul>
+<li>4、检测当前TFTP服务的状态，输入</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat <span class="_">-a</span> | grep tftp</div></pre></td></tr></table></figure>
+<p>终端显示如下表示正常<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">udp 0 0 *:tftp*:*</div></pre></td></tr></table></figure></p>
+<h1 id="三、NFS"><a href="#三、NFS" class="headerlink" title="三、NFS"></a>三、NFS</h1><ul>
+<li>1、先安装软件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install nfs-common nfs-kernel-server</div></pre></td></tr></table></figure>
+<ul>
+<li>2、创建NFS文件夹，并修改文件夹属性</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /srv</div><div class="line">mkdir nfs</div><div class="line">chmod 777 nfs</div></pre></td></tr></table></figure>
+<ul>
+<li>3、修改/etc/exports,将上面建立的NFS文件夹export出去</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gedit /etc/exports</div></pre></td></tr></table></figure>
+<p>在文件最后添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/srv/nfs	*(rw,no_root_squash,sync)</div></pre></td></tr></table></figure></p>
+<p>保存后退出</p>
+<ul>
+<li>4、启动NFS服务</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/nfs-kernel-server start</div></pre></td></tr></table></figure>
+<ul>
+<li>5、查看export情况</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">showmount <span class="_">-e</span> localhost</div></pre></td></tr></table></figure>
+<p>终端显示<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Export list <span class="keyword">for</span> localhost:</div><div class="line">/srv/nfs *</div></pre></td></tr></table></figure></p>
+<h1 id="四、安装ARM交叉编译器"><a href="#四、安装ARM交叉编译器" class="headerlink" title="四、安装ARM交叉编译器"></a>四、安装ARM交叉编译器</h1><p>编译ARM程序需要用到交叉编译器，我们这里使用arm-2007q1-10-arm-none-linux-gnueabi-i686-pc-linux-gnu.tar.bz2，这个GCC版本为4.2.0<br>复制压缩包到/opt目录下然后解压缩<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -xvjf arm-2007q1-10-arm-none-linux-gnueabi-i686-pc-linux-gnu.tar.bz2</div></pre></td></tr></table></figure></p>
+<p>解压缩完后，可以看一下bin目录,这里是编译器的程序。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls arm-2007q1/bin</div></pre></td></tr></table></figure></p>
+<p>添加工具链到用户PATH，需要修改用户shell的脚本文件，默认使用bash,需要修改~/.bashrc<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="variable">$0</span></div><div class="line">vi ~/.bashrc</div></pre></td></tr></table></figure></p>
+<p>在文件最后添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#add for root</span></div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/opt/arm-2007q1/bin</div></pre></td></tr></table></figure></p>
+<p>保存后退出<br>运行下面命令使得更改立即生效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> ~/.bashrc</div><div class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span></div></pre></td></tr></table></figure></p>
+<p>屏幕显示如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/arm-2007q1/bin</div></pre></td></tr></table></figure></p>
+<p>可以看到 ARM编译器的路径已经添加了。<br>检验安装效果<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">which</span> arm-none-linux-gnueabi-gcc</div></pre></td></tr></table></figure></p>
+<p>显示如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/opt/arm-2007q1/bin/arm-none-linux-gnueabi-gcc</div></pre></td></tr></table></figure></p>
+<p>再看下具体细节<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arm-none-linux-gnueabi-gcc -v</div></pre></td></tr></table></figure></p>
+<p>注意：64位系统需执行以下指令，否则会提示（bash:/opt/arm-2007q1/bin/arm-none-linux-gnueabi-gcc: 没有那个文件或目录）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install lsb-core</div></pre></td></tr></table></figure></p>
+<p>出现以下信息说明已经安装成功了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Using built-in specs.</div><div class="line">Target: arm-none-linux-gnueabi</div><div class="line">Configured with: /scratch/paul/arm/src/gcc-4.2/configure --build=i686-pc-linux-gnu --host=i686-pc-linux-gnu --target=arm-none-linux-gnueabi --enable-shared --enable-threads --disable-libmudflap --disable-libssp --disable-libgomp --disable-libstdcxx-pch --with-gnu-as --with-gnu-ld --prefix=/opt/codesourcery --enable-languages=c,c++ --enable-symvers=gnu --enable-__cxa_atexit --with-versuffix=CodeSourcery Sourcery G++ Lite 2007q1-10 --with-pkgversion=CodeSourcery Sourcery G++ Lite 2007q1-10 --with-bugurl=https://support.codesourcery.com/GNUToolchain/ --disable-nls --with-sysroot=/opt/codesourcery/arm-none-linux-gnueabi/libc --with-build-sysroot=/scratch/paul/arm/install/arm-none-linux-gnueabi/libc --enable-poison-system-directories --with-build-time-tools=/scratch/paul/arm/install/arm-none-linux-gnueabi/bin --with-build-time-tools=/scratch/paul/arm/install/arm-none-linux-gnueabi/bin</div><div class="line">Thread model: posix</div><div class="line">gcc version 4.2.0 20070413 (prerelease) (CodeSourcery Sourcery G++ Lite 2007q1-10)</div></pre></td></tr></table></figure></p>
+<p>如果想要安装arm-2009q3-67-arm-none-linux-gnueabi-i686-pc-linux-gnu.tar.bz2，同样按上面的步骤操作，arm-2009q3-67-arm-none-linux-gnueabi-i686-pc-linux-gnu.tar.bz2的GCC版本为4.4.1</p>
+<h1 id="五、安装工具"><a href="#五、安装工具" class="headerlink" title="五、安装工具"></a>五、安装工具</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install patch</div></pre></td></tr></table></figure>
+<p>安装进行内核图形化配置是所需的依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install libncurses5-dev ncurses-term</div></pre></td></tr></table></figure></p>
+<p>安装xconfig的依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install libqt3-headers libqt3-mt-dev libqt3-compat-headers libqt3-mt g++</div></pre></td></tr></table></figure></p>
+<h1 id="六、编译buildroot所需安装包"><a href="#六、编译buildroot所需安装包" class="headerlink" title="六、编译buildroot所需安装包"></a>六、编译buildroot所需安装包</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install make flex bison m4 ncurses-dev gettext texi2html texinfo zlib1g zlib1g-dev liblzo2-2 liblzo2-dev libacl1 libacl1-dev libglib2.0-dev autoconf automake libtool</div><div class="line">apt-get install subversion</div></pre></td></tr></table></figure>
+<h1 id="七、SAM-BA所需安装包"><a href="#七、SAM-BA所需安装包" class="headerlink" title="七、SAM-BA所需安装包"></a>七、SAM-BA所需安装包</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">apt-get install linux-image-generic linux-headers-generic</div><div class="line">＃ On 64 bits version install 32 bits libraries:</div><div class="line">apt-get install ia32-libs</div><div class="line">chmod +x sam-ba</div><div class="line">ln <span class="_">-s</span> /dev/ttyACM0 /dev/ttyUSB0</div></pre></td></tr></table></figure>
+<p>运行sam-ba</p>
 
       
     </div>
@@ -354,13 +448,13 @@ eth0（物理网卡）eth0.1 是vlan1分出的lan口。eth0.2 是vlan分出的wa
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2015/07/06/2015-07-06-OpenWRT下ifconfig各接口说明/">OpenWRT下ifconfig各接口说明</a></p>
+        <p><span>本文标题:</span><a href="/2012/09/07/2012-09-08-Linux中生成shadow的加密密码/">ubuntu11.04安装arm开发环境</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">cuiqingwei</a></p>
-        <p><span>发布时间:</span>2015-07-06, 18:00:00</p>
-        <p><span>最后更新:</span>2016-10-09, 12:05:50</p>
+        <p><span>发布时间:</span>2012-09-07, 15:50:00</p>
+        <p><span>最后更新:</span>2016-12-08, 13:36:34</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2015/07/06/2015-07-06-OpenWRT下ifconfig各接口说明/" title="OpenWRT下ifconfig各接口说明">http://cuiqingwei.github.io/2015/07/06/2015-07-06-OpenWRT下ifconfig各接口说明/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2015/07/06/2015-07-06-OpenWRT下ifconfig各接口说明/　　作者: cuiqingwei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2012/09/07/2012-09-08-Linux中生成shadow的加密密码/" title="ubuntu11.04安装arm开发环境">http://cuiqingwei.github.io/2012/09/07/2012-09-08-Linux中生成shadow的加密密码/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2012/09/07/2012-09-08-Linux中生成shadow的加密密码/　　作者: cuiqingwei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -373,15 +467,15 @@ eth0（物理网卡）eth0.1 是vlan1分出的lan口。eth0.2 是vlan分出的wa
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2015/07/07/2015-07-07-OpenWRT之dl下载分享/">
-                    OpenWRT之dl下载分享
+                <a href="/2012/09/07/2012-09-07-at91sam9x5编译过程/">
+                    at91sam9x5编译过程
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2015/07/01/2015-07-01-OpenWRT经典网站/">
-                    OpenWRT经典网站
+                <a href="/2012/09/07/2012-09-07-ubuntu11-04安装arm开发环境/">
+                    ubuntu11.04安装arm开发环境
                 </a>
             </div>
         
@@ -393,7 +487,7 @@ eth0（物理网卡）eth0.1 是vlan1分出的lan口。eth0.2 是vlan分出的wa
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#rao-和raio（无线）"><span class="toc-number">1.</span> <span class="toc-text">rao 和raio（无线）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#eth0（物理网卡）"><span class="toc-number">2.</span> <span class="toc-text">eth0（物理网卡）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#br-lan（无线-有线）"><span class="toc-number">3.</span> <span class="toc-text">br-lan（无线+有线）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#lo"><span class="toc-number">4.</span> <span class="toc-text">lo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#aplic"><span class="toc-number">5.</span> <span class="toc-text">aplic</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ppp0"><span class="toc-number">6.</span> <span class="toc-text">ppp0</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#pppoe-wan"><span class="toc-number">7.</span> <span class="toc-text">pppoe-wan</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、安装Ubuntu-11-04"><span class="toc-number">1.</span> <span class="toc-text">一、安装Ubuntu 11.04</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、TFTP安装"><span class="toc-number">2.</span> <span class="toc-text">二、TFTP安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、NFS"><span class="toc-number">3.</span> <span class="toc-text">三、NFS</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、安装ARM交叉编译器"><span class="toc-number">4.</span> <span class="toc-text">四、安装ARM交叉编译器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、安装工具"><span class="toc-number">5.</span> <span class="toc-text">五、安装工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、编译buildroot所需安装包"><span class="toc-number">6.</span> <span class="toc-text">六、编译buildroot所需安装包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、SAM-BA所需安装包"><span class="toc-number">7.</span> <span class="toc-text">七、SAM-BA所需安装包</span></a></li></ol>
         
     </div>
     <style>
@@ -429,7 +523,7 @@ eth0（物理网卡）eth0.1 是vlan1分出的lan口。eth0.2 是vlan分出的wa
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"OpenWRT下ifconfig各接口说明　| iZheteng　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"ubuntu11.04安装arm开发环境　| iZheteng　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -445,7 +539,7 @@ eth0（物理网卡）eth0.1 是vlan1分出的lan口。eth0.2 是vlan分出的wa
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2015/07/06/2015-07-06-OpenWRT下ifconfig各接口说明/" data-title="OpenWRT下ifconfig各接口说明" data-url="http://cuiqingwei.github.io/2015/07/06/2015-07-06-OpenWRT下ifconfig各接口说明/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2012/09/07/2012-09-08-Linux中生成shadow的加密密码/" data-title="ubuntu11.04安装arm开发环境" data-url="http://cuiqingwei.github.io/2012/09/07/2012-09-08-Linux中生成shadow的加密密码/"></div>
     <script>
         var duoshuoQuery = {short_name:"cuiqingwei"};
         var loadComment = function(){
@@ -458,7 +552,7 @@ eth0（物理网卡）eth0.1 是vlan1分出的lan口。eth0.2 是vlan分出的wa
         
             // Add comment count
             $(function(){ 
-                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=cuiqingwei&threads=2015/07/06/2015-07-06-OpenWRT下ifconfig各接口说明/&callback=?";
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=cuiqingwei&threads=2012/09/07/2012-09-08-Linux中生成shadow的加密密码/&callback=?";
                 $.getJSON(jsonUrl, function(result){
                     $.each(result.response, function(i, field){
                         var value = field.comments;
@@ -505,7 +599,7 @@ eth0（物理网卡）eth0.1 是vlan1分出的lan口。eth0.2 是vlan分出的wa
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2015/07/07/2015-07-07-OpenWRT之dl下载分享/" title="上一篇: OpenWRT之dl下载分享">
+            <a href="/2012/09/07/2012-09-07-at91sam9x5编译过程/" title="上一篇: at91sam9x5编译过程">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -513,7 +607,7 @@ eth0（物理网卡）eth0.1 是vlan1分出的lan口。eth0.2 是vlan分出的wa
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2015/07/01/2015-07-01-OpenWRT经典网站/" title="下一篇: OpenWRT经典网站">
+            <a href="/2012/09/07/2012-09-07-ubuntu11-04安装arm开发环境/" title="下一篇: ubuntu11.04安装arm开发环境">
                 <i class="fa fa-angle-right"></i>
             </a>
         

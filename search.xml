@@ -1360,6 +1360,27 @@
     </entry>
     
     <entry>
+      <title><![CDATA[MacOS]]></title>
+      <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-MacOS/</url>
+      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
+<h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p>工作：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br>系统：QQ、CleanMyDrive 3<br><a id="more"></a></p>
+<h3 id="2-dmg"><a href="#2-dmg" class="headerlink" title="2. dmg"></a>2. dmg</h3><p>Chrome、VMwareFusion、RDC、QQInput、RTX、cornerstone<br>Sublime Text</p>
+<h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><p>ruby -e “$(curl -fsSL <a href="https://raw.github.com/Homebrew/homebrew/go/install" target="_blank" rel="external">https://raw.github.com/Homebrew/homebrew/go/install</a>)”<br><a href="http://brew.sh/" target="_blank" rel="external">http://brew.sh/</a></p>
+<p>升级更新 brew update<br>cd /usr/local<br>git reset –hard<br>git checkout .<br>sudo chown -R cuiqingwei /usr/local<br>brew update<br><a href="http://www.xitongzhijia.net/xtjc/20141204/31879.html" target="_blank" rel="external">http://www.xitongzhijia.net/xtjc/20141204/31879.html</a></p>
+<h3 id="4-MacPorts"><a href="#4-MacPorts" class="headerlink" title="4. MacPorts"></a>4. MacPorts</h3><p><a href="https://www.macports.org/install.php" target="_blank" rel="external">https://www.macports.org/install.php</a><br><a href="http://guide.macports.org/#installing.macports" target="_blank" rel="external">http://guide.macports.org/#installing.macports</a></p>
+<h3 id="5-wget"><a href="#5-wget" class="headerlink" title="5. wget"></a>5. wget</h3><p>sudo port install wget</p>
+<h3 id="6-zsh"><a href="#6-zsh" class="headerlink" title="6. zsh"></a>6. zsh</h3><p>wget <a href="https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh</a> -O - | sh<br><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="external">http://leeiio.me/bash-to-zsh-for-mac/</a><br><a href="http://www.sketchup.com/download/all" target="_blank" rel="external">http://www.sketchup.com/download/all</a><br>打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!</p>
+<h3 id="7-mac-say-唱歌"><a href="#7-mac-say-唱歌" class="headerlink" title="7. mac say 唱歌"></a>7. mac say 唱歌</h3><p>应用程序&gt;实用工具&gt;Terminal 复制和黏贴以下内容，然后回车：</p>
+<ul>
+<li>spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。</li>
+<li>在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。</li>
+<li>开始听歌了。</li>
+</ul>
+<h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="external">https://checkcoverage.apple.com/cn/zh/</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Ubuntu]]></title>
       <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-Ubuntu/</url>
       <content type="html"><![CDATA[<h3 id="1-常用指令"><a href="#1-常用指令" class="headerlink" title="1.常用指令"></a>1.常用指令</h3><pre><code>版本查看：
@@ -1411,27 +1432,6 @@ hosts
      https://github.com/racaljk/hosts
 </code></pre><p><strong>Cannot Set LC_ALL to default locale: No such file or directory</strong><br><a href="http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/" target="_blank" rel="external">http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/</a></p>
 <p>sEx只是调用相关程序，本身并无压缩、解压功能，请注意！<br>sEx请到： <a href="http://sourceforge.net/projects/sex下载！" target="_blank" rel="external">http://sourceforge.net/projects/sex下载！</a><br>解压后请将sEx拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br>[root@www2 tmp]# cp sEx /usr/bin/</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[MacOS]]></title>
-      <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-MacOS/</url>
-      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
-<h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p>工作：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br>系统：QQ、CleanMyDrive 3<br><a id="more"></a></p>
-<h3 id="2-dmg"><a href="#2-dmg" class="headerlink" title="2. dmg"></a>2. dmg</h3><p>Chrome、VMwareFusion、RDC、QQInput、RTX、cornerstone<br>Sublime Text</p>
-<h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><p>ruby -e “$(curl -fsSL <a href="https://raw.github.com/Homebrew/homebrew/go/install" target="_blank" rel="external">https://raw.github.com/Homebrew/homebrew/go/install</a>)”<br><a href="http://brew.sh/" target="_blank" rel="external">http://brew.sh/</a></p>
-<p>升级更新 brew update<br>cd /usr/local<br>git reset –hard<br>git checkout .<br>sudo chown -R cuiqingwei /usr/local<br>brew update<br><a href="http://www.xitongzhijia.net/xtjc/20141204/31879.html" target="_blank" rel="external">http://www.xitongzhijia.net/xtjc/20141204/31879.html</a></p>
-<h3 id="4-MacPorts"><a href="#4-MacPorts" class="headerlink" title="4. MacPorts"></a>4. MacPorts</h3><p><a href="https://www.macports.org/install.php" target="_blank" rel="external">https://www.macports.org/install.php</a><br><a href="http://guide.macports.org/#installing.macports" target="_blank" rel="external">http://guide.macports.org/#installing.macports</a></p>
-<h3 id="5-wget"><a href="#5-wget" class="headerlink" title="5. wget"></a>5. wget</h3><p>sudo port install wget</p>
-<h3 id="6-zsh"><a href="#6-zsh" class="headerlink" title="6. zsh"></a>6. zsh</h3><p>wget <a href="https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh</a> -O - | sh<br><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="external">http://leeiio.me/bash-to-zsh-for-mac/</a><br><a href="http://www.sketchup.com/download/all" target="_blank" rel="external">http://www.sketchup.com/download/all</a><br>打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!</p>
-<h3 id="7-mac-say-唱歌"><a href="#7-mac-say-唱歌" class="headerlink" title="7. mac say 唱歌"></a>7. mac say 唱歌</h3><p>应用程序&gt;实用工具&gt;Terminal 复制和黏贴以下内容，然后回车：</p>
-<ul>
-<li>spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。</li>
-<li>在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。</li>
-<li>开始听歌了。</li>
-</ul>
-<h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="external">https://checkcoverage.apple.com/cn/zh/</a></p>
 ]]></content>
     </entry>
     
@@ -2486,6 +2486,101 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
 <li>c.Select Enable OS PMECC parametersin the Scriptsrolling menu and press Execute.<br>Trimffs选项打勾</li>
 </ul>
 <p>烧写地址0x800000选择烧写文件为rootfs.ubi</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ubuntu11.04安装arm开发环境]]></title>
+      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-08-Linux%E4%B8%AD%E7%94%9F%E6%88%90shadow%E7%9A%84%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81/</url>
+      <content type="html"><![CDATA[<p>特别提示：整个过程中计算机必须联网，因为有些程序需要从网络上下载!</p>
+<h1 id="一、安装Ubuntu-11-04"><a href="#一、安装Ubuntu-11-04" class="headerlink" title="一、安装Ubuntu 11.04"></a>一、安装Ubuntu 11.04</h1><ul>
+<li>1、首先用虚拟机安装ubuntu 11.04版本,建议将硬盘空间设大一点，80G最好，编译linux，根文件系统会占用很多的硬盘空间。<br>登陆后修改root密码<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo passwd root</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这里需要输入现在的密码，以及root的新密码<br>密码更改完毕后，重新启动系统，以root身份登陆。<br><a id="more"></a></p>
+<ul>
+<li>2、更新系统</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get update</div></pre></td></tr></table></figure>
+<ul>
+<li>3、安装必要的软件</li>
+</ul>
+<p>安装gedit编辑软件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install gedit</div></pre></td></tr></table></figure></p>
+<ul>
+<li>4、设置静态IP，方便调试用</li>
+</ul>
+<p>修改文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gedit /etc/network/interfaces</div></pre></td></tr></table></figure></p>
+<p>按键盘“i”<br>添加如下内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">auto lo</div><div class="line">iface lo inet loopback</div><div class="line">auto eth0</div><div class="line">iface eth0 inet static</div><div class="line">address 192.168.1.158</div><div class="line">netmask 255.255.255.0</div><div class="line">gateway 192.168.1.1</div><div class="line">nameserver 192.168.1.1</div></pre></td></tr></table></figure></p>
+<p>在命令行输入命令重启网络<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/networking restart</div></pre></td></tr></table></figure></p>
+<p>查看最新的网络状态，输入:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ifconfig</div></pre></td></tr></table></figure></p>
+<p>测试网络：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ping 192.168.1.1</div></pre></td></tr></table></figure></p>
+<p>按“Ctrl+C”可以退出测试</p>
+<ul>
+<li>5、安装SSH服务，使用SSH可以方便用户远程登录虚拟机，默认情况下ubuntu没有安装，需要自己安装</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install openssh-server openssh-client</div></pre></td></tr></table></figure>
+<p>安装完成后，启动SSH<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/ssh start</div></pre></td></tr></table></figure></p>
+<h1 id="二、TFTP安装"><a href="#二、TFTP安装" class="headerlink" title="二、TFTP安装"></a>二、TFTP安装</h1><ul>
+<li>1、打开终端，运行命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install tftpd</div><div class="line">apt-get install openbsd-inetd</div></pre></td></tr></table></figure>
+<ul>
+<li>2、配置tftp,</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gedit /etc/inetd.conf</div></pre></td></tr></table></figure>
+<p>将下面的内容添加到文件中去<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tftp dgram udp <span class="built_in">wait</span> nobody /usr/sbin/tcpd /usr/sbin/in.tftpd /srv/tftp</div></pre></td></tr></table></figure></p>
+<p>/srv/tftp为TFTP的目录</p>
+<ul>
+<li>3、重启TFTP服务</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/openbsd-inetd restart</div></pre></td></tr></table></figure>
+<p>重启后终端显示如下则表示配置完成<br>* Restarting internet superserver inetd                    [ OK ]</p>
+<ul>
+<li>4、检测当前TFTP服务的状态，输入</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat <span class="_">-a</span> | grep tftp</div></pre></td></tr></table></figure>
+<p>终端显示如下表示正常<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">udp 0 0 *:tftp*:*</div></pre></td></tr></table></figure></p>
+<h1 id="三、NFS"><a href="#三、NFS" class="headerlink" title="三、NFS"></a>三、NFS</h1><ul>
+<li>1、先安装软件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install nfs-common nfs-kernel-server</div></pre></td></tr></table></figure>
+<ul>
+<li>2、创建NFS文件夹，并修改文件夹属性</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /srv</div><div class="line">mkdir nfs</div><div class="line">chmod 777 nfs</div></pre></td></tr></table></figure>
+<ul>
+<li>3、修改/etc/exports,将上面建立的NFS文件夹export出去</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gedit /etc/exports</div></pre></td></tr></table></figure>
+<p>在文件最后添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/srv/nfs	*(rw,no_root_squash,sync)</div></pre></td></tr></table></figure></p>
+<p>保存后退出</p>
+<ul>
+<li>4、启动NFS服务</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/nfs-kernel-server start</div></pre></td></tr></table></figure>
+<ul>
+<li>5、查看export情况</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">showmount <span class="_">-e</span> localhost</div></pre></td></tr></table></figure>
+<p>终端显示<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Export list <span class="keyword">for</span> localhost:</div><div class="line">/srv/nfs *</div></pre></td></tr></table></figure></p>
+<h1 id="四、安装ARM交叉编译器"><a href="#四、安装ARM交叉编译器" class="headerlink" title="四、安装ARM交叉编译器"></a>四、安装ARM交叉编译器</h1><p>编译ARM程序需要用到交叉编译器，我们这里使用arm-2007q1-10-arm-none-linux-gnueabi-i686-pc-linux-gnu.tar.bz2，这个GCC版本为4.2.0<br>复制压缩包到/opt目录下然后解压缩<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -xvjf arm-2007q1-10-arm-none-linux-gnueabi-i686-pc-linux-gnu.tar.bz2</div></pre></td></tr></table></figure></p>
+<p>解压缩完后，可以看一下bin目录,这里是编译器的程序。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls arm-2007q1/bin</div></pre></td></tr></table></figure></p>
+<p>添加工具链到用户PATH，需要修改用户shell的脚本文件，默认使用bash,需要修改~/.bashrc<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="variable">$0</span></div><div class="line">vi ~/.bashrc</div></pre></td></tr></table></figure></p>
+<p>在文件最后添加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#add for root</span></div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/opt/arm-2007q1/bin</div></pre></td></tr></table></figure></p>
+<p>保存后退出<br>运行下面命令使得更改立即生效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> ~/.bashrc</div><div class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span></div></pre></td></tr></table></figure></p>
+<p>屏幕显示如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/arm-2007q1/bin</div></pre></td></tr></table></figure></p>
+<p>可以看到 ARM编译器的路径已经添加了。<br>检验安装效果<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">which</span> arm-none-linux-gnueabi-gcc</div></pre></td></tr></table></figure></p>
+<p>显示如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/opt/arm-2007q1/bin/arm-none-linux-gnueabi-gcc</div></pre></td></tr></table></figure></p>
+<p>再看下具体细节<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arm-none-linux-gnueabi-gcc -v</div></pre></td></tr></table></figure></p>
+<p>注意：64位系统需执行以下指令，否则会提示（bash:/opt/arm-2007q1/bin/arm-none-linux-gnueabi-gcc: 没有那个文件或目录）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install lsb-core</div></pre></td></tr></table></figure></p>
+<p>出现以下信息说明已经安装成功了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Using built-in specs.</div><div class="line">Target: arm-none-linux-gnueabi</div><div class="line">Configured with: /scratch/paul/arm/src/gcc-4.2/configure --build=i686-pc-linux-gnu --host=i686-pc-linux-gnu --target=arm-none-linux-gnueabi --enable-shared --enable-threads --disable-libmudflap --disable-libssp --disable-libgomp --disable-libstdcxx-pch --with-gnu-as --with-gnu-ld --prefix=/opt/codesourcery --enable-languages=c,c++ --enable-symvers=gnu --enable-__cxa_atexit --with-versuffix=CodeSourcery Sourcery G++ Lite 2007q1-10 --with-pkgversion=CodeSourcery Sourcery G++ Lite 2007q1-10 --with-bugurl=https://support.codesourcery.com/GNUToolchain/ --disable-nls --with-sysroot=/opt/codesourcery/arm-none-linux-gnueabi/libc --with-build-sysroot=/scratch/paul/arm/install/arm-none-linux-gnueabi/libc --enable-poison-system-directories --with-build-time-tools=/scratch/paul/arm/install/arm-none-linux-gnueabi/bin --with-build-time-tools=/scratch/paul/arm/install/arm-none-linux-gnueabi/bin</div><div class="line">Thread model: posix</div><div class="line">gcc version 4.2.0 20070413 (prerelease) (CodeSourcery Sourcery G++ Lite 2007q1-10)</div></pre></td></tr></table></figure></p>
+<p>如果想要安装arm-2009q3-67-arm-none-linux-gnueabi-i686-pc-linux-gnu.tar.bz2，同样按上面的步骤操作，arm-2009q3-67-arm-none-linux-gnueabi-i686-pc-linux-gnu.tar.bz2的GCC版本为4.4.1</p>
+<h1 id="五、安装工具"><a href="#五、安装工具" class="headerlink" title="五、安装工具"></a>五、安装工具</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install patch</div></pre></td></tr></table></figure>
+<p>安装进行内核图形化配置是所需的依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install libncurses5-dev ncurses-term</div></pre></td></tr></table></figure></p>
+<p>安装xconfig的依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install libqt3-headers libqt3-mt-dev libqt3-compat-headers libqt3-mt g++</div></pre></td></tr></table></figure></p>
+<h1 id="六、编译buildroot所需安装包"><a href="#六、编译buildroot所需安装包" class="headerlink" title="六、编译buildroot所需安装包"></a>六、编译buildroot所需安装包</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install make flex bison m4 ncurses-dev gettext texi2html texinfo zlib1g zlib1g-dev liblzo2-2 liblzo2-dev libacl1 libacl1-dev libglib2.0-dev autoconf automake libtool</div><div class="line">apt-get install subversion</div></pre></td></tr></table></figure>
+<h1 id="七、SAM-BA所需安装包"><a href="#七、SAM-BA所需安装包" class="headerlink" title="七、SAM-BA所需安装包"></a>七、SAM-BA所需安装包</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">apt-get install linux-image-generic linux-headers-generic</div><div class="line">＃ On 64 bits version install 32 bits libraries:</div><div class="line">apt-get install ia32-libs</div><div class="line">chmod +x sam-ba</div><div class="line">ln <span class="_">-s</span> /dev/ttyACM0 /dev/ttyUSB0</div></pre></td></tr></table></figure>
+<p>运行sam-ba</p>
 ]]></content>
     </entry>
     
