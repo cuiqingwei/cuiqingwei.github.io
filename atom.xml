@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2016-12-15T13:45:48.000Z</updated>
+  <updated>2016-12-29T16:38:59.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -16,31 +16,77 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>GoAhead移植到OpenWRT</title>
-    <link href="http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/"/>
-    <id>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead移植到OpenWRT/</id>
-    <published>2016-11-17T13:04:40.000Z</published>
-    <updated>2016-12-15T13:45:48.000Z</updated>
+    <title>谈谈用ASP.NET开发的大型网站有哪些架构方式</title>
+    <link href="http://cuiqingwei.github.io/2016/12/30/2016-12-30-%E7%94%A8ASP-NET%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%9C%89%E5%93%AA%E4%BA%9B%E6%9E%B6%E6%9E%84%E6%96%B9%E5%BC%8F/"/>
+    <id>http://cuiqingwei.github.io/2016/12/30/2016-12-30-用ASP-NET开发的大型网站有哪些架构方式/</id>
+    <published>2016-12-29T16:27:40.000Z</published>
+    <updated>2016-12-29T16:38:59.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
-<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
-<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
-<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
+    <content type="html"><![CDATA[<p>在<a href="http://www.cnblogs.com/ms0017/archive/2011/07/26/2117676.html" target="_blank" rel="external">文章</a>里，列举了国内外用ASP.NET开发的大型网站有哪些。最后提到了用.NET开发的大型网站和LAMP/JAVA平台的成本比较。其实在很多时候，收费的不一定就比免费的成本更高。因为开发一个网站要使用哪个平台的技术更合适，需要考虑很多种情况（除了开发技术本身，还要考虑人工，开发效率，时间，后续的支持，维护等等），要综合计算成本才行。微软平台本身虽然是收费的，但总体的成本并非一定比LAMP/JAVA高，上篇文章列举的国内外的那么多基于ASP.NET开发的大型网站就是例证。尤其是在开发效率上，无论是C#开发语言，还是免费的开发工具（Visual Studio Express，或者MonoDevelop/SharpDevelop），.NET明显比其他两个平台更胜一筹。而这一点正是互联网企业所需要的。效率就是生产力。并且，由于有Mono (<a href="http://mono-project.org/" target="_blank" rel="external">http://mono-project.org/</a>) 这个开源平台的存在，.NET技术也可以在linux/BSD等开源服务器上使用。使.NET完全可以实现跨平台应用。据此，我们可以分windows/linux两种方式来架构我们的ASP.NET网站：</p>
+<a id="more"></a>
+<h1 id="一、Windows平台"><a href="#一、Windows平台" class="headerlink" title="一、Windows平台"></a>一、Windows平台</h1><p>在Windows平台下开发大型网站，很多人首先想到的是Microsoft软件高昂的许可费，觉得成本一定很高。其实，这里有个误区。我们开发ASP.NET网站，web服务器完全可以用Windows server的WEB版本windows web server 2003/2008，它们并不贵，才3k多RMB。并且注意了，一个系统是一次性买，买了可以用N年，现在还有很多大型网站在用win2003，想想已经用了多少年？而人员工资则是月付，几年下来成本也很高)。贵的地方，应该是SQLServer数据库和支持它的windows server企业版。它们确实很贵。但我们开发网站不一定非要用SQLServer啊。数据库可以使用在linux下部署mysql,postgresql等开源数据库，并且也可以考虑用mongodb等开源NOSQL数据库。一般的中大型网站有十几台web服务器就足够了(这里有2013年底的Stack Overflow服务器数据可参考),也就是3w多人民币而已啊！对于Stack Overflow这种规模的网站，这点钱应该也不算什么了吧。当然，如果你真能做到像myspace那种超大型的.NET网站，你应该可以直接找微软要优惠价来批量购买了。呵呵。</p>
+<h1 id="二、Linux平台"><a href="#二、Linux平台" class="headerlink" title="二、Linux平台"></a>二、Linux平台</h1><p>如果真的不肯在服务器上花一分钱，就要用完全免费的。我劝你根本不必因此而放弃.NET强大的生产力，而选择其他平台，因为还有Mono。Mono现在已是suse,ubuntu,debian等linux发行版中的默认安装包(apt-get install mono-complete)，并且ubuntu本身就有很多代码是用c#写的。你可以通过类似Linux+Apache/Nginx+Mono的组合（或者用Jexus web server）来代替Windows+IIS来架构完全免费的ASP.NET WEB SERVER。目前国内外也有了很多基于mono开发的网站案例,如：<br><a href="http://www.stockren.com/" target="_blank" rel="external">http://www.stockren.com/</a><br><a href="http://www.msannu.cn/" target="_blank" rel="external">http://www.msannu.cn/</a><br>(此外，还有像Unity3D,Xamarin等更多国外知名公司在基于mono开发应用)</p>
 <blockquote>
-<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
+<p>在linux上架设mono的方法有很多，可以参考如下博文：<br>配置linux(apache) + mono 下运行 asp.net<br><a href="http://www.cnblogs.com/hcl0208/archive/2010/10/25/1860173.html" target="_blank" rel="external">http://www.cnblogs.com/hcl0208/archive/2010/10/25/1860173.html</a><br>Ubuntu10.10下Mono2.10+Nginx+fastcgi 部署asp.net网站<br><a href="http://www.cnblogs.com/xiaogangqq123/archive/2011/02/28/1967345.html" target="_blank" rel="external">http://www.cnblogs.com/xiaogangqq123/archive/2011/02/28/1967345.html</a></p>
 </blockquote>
+<h1 id="三、补充："><a href="#三、补充：" class="headerlink" title="三、补充："></a>三、补充：</h1><p>见不少同学反映本文不够给力，没有真正的提到实际的架构，而只是泛泛而谈windows和linux。其实关于大型网站架构的文章网上有太多太多了。如下图，是国内某基于asp.net的大型网站的架构设计图，其实不管是.net还是java/LAMP，不管什么平台，道理都一样。</p>
+<p><img src="http://pic002.cnblogs.com/images/2011/318793/2011110710022537.jpg" alt=""></p>
+<p>在本架构图中，如果把IIS替换成apache,SqlServer替换成mysql，也一样成立。合理的架构是跟平台无关的。最看不惯的是某些业内所谓的高手，说大型网站用asp.net不行，没有java/LAMP好。相信看了这个架构图，再想想bing,hotmail,myspace,match,qidian,dangdang,m18,vancl等等基于.net开发的大型网站案例，就应该闭上他们的嘴！大型网站的开发，人的能力和合理的架构才是关键所在！(<em>最近一个反例很能说明问题：用java开发的www.12306.cn相信大家都有目共睹。它是架构/人的能力的问题，还是语言/平台的问题？</em>)</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;make-menuconfig&quot;&gt;&lt;a href=&quot;#make-menuconfig&quot; class=&quot;headerlink&quot; title=&quot;make menuconfig&quot;&gt;&lt;/a&gt;make menuconfig&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/img/20161215/menuconfig.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+      &lt;p&gt;在&lt;a href=&quot;http://www.cnblogs.com/ms0017/archive/2011/07/26/2117676.html&quot;&gt;文章&lt;/a&gt;里，列举了国内外用ASP.NET开发的大型网站有哪些。最后提到了用.NET开发的大型网站和LAMP/JAVA平台的成本比较。其实在很多时候，收费的不一定就比免费的成本更高。因为开发一个网站要使用哪个平台的技术更合适，需要考虑很多种情况（除了开发技术本身，还要考虑人工，开发效率，时间，后续的支持，维护等等），要综合计算成本才行。微软平台本身虽然是收费的，但总体的成本并非一定比LAMP/JAVA高，上篇文章列举的国内外的那么多基于ASP.NET开发的大型网站就是例证。尤其是在开发效率上，无论是C#开发语言，还是免费的开发工具（Visual Studio Express，或者MonoDevelop/SharpDevelop），.NET明显比其他两个平台更胜一筹。而这一点正是互联网企业所需要的。效率就是生产力。并且，由于有Mono (&lt;a href=&quot;http://mono-project.org/&quot;&gt;http://mono-project.org/&lt;/a&gt;) 这个开源平台的存在，.NET技术也可以在linux/BSD等开源服务器上使用。使.NET完全可以实现跨平台应用。据此，我们可以分windows/linux两种方式来架构我们的ASP.NET网站：&lt;/p&gt;
     
     </summary>
     
     
-      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
+      <category term="IIS" scheme="http://cuiqingwei.github.io/tags/IIS/"/>
     
-      <category term="GoAhead" scheme="http://cuiqingwei.github.io/tags/GoAhead/"/>
+      <category term="ASP.NET" scheme="http://cuiqingwei.github.io/tags/ASP-NET/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于微软平台IIS/ASP.NET开发的大型网站有哪些?</title>
+    <link href="http://cuiqingwei.github.io/2016/12/30/2016-12-30-%E5%9F%BA%E4%BA%8E%E5%BE%AE%E8%BD%AF%E5%B9%B3%E5%8F%B0IIS-ASP-NET%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%9C%89%E5%93%AA%E4%BA%9B/"/>
+    <id>http://cuiqingwei.github.io/2016/12/30/2016-12-30-基于微软平台IIS-ASP-NET开发的大型网站有哪些/</id>
+    <published>2016-12-29T16:04:40.000Z</published>
+    <updated>2016-12-29T16:38:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先说明一下，本文绝不是要说Microsoft平台多么好，多么强。<br>只是要说明一下除了LAMP/JAVA平台，微软平台不至于像有些人说的，和想象的那么不堪！</p>
+<a id="more"></a>
+<p>下面一一列举几个:<br><a href="http://www.msn.com/" target="_blank" rel="external">http://www.msn.com/</a><br><a href="http://www.live.com/" target="_blank" rel="external">http://www.live.com/</a> (包括skydrive、hotmail等)<br><a href="http://www.bing.com/" target="_blank" rel="external">http://www.bing.com/</a></p>
+<blockquote>
+<p>根据comScore今年11月份的统计，微软网站已经超过雅虎、facebook成为仅此于Google的美国第二大网站。如果对这基于windows server/IIS/Asp.net构建的美国第二大网站，你们还说微软技术不能开发大型网站。那不觉得自己是在扯淡么？</p>
+</blockquote>
+<p><a href="http://www.godaddy.com/" target="_blank" rel="external">http://www.godaddy.com/</a> (全球最大域名注册商)<br><a href="http://www.MySpace.com/" target="_blank" rel="external">http://www.MySpace.com/</a><br><a href="http://www.match.com/" target="_blank" rel="external">http://www.match.com/</a> (世界最大婚恋网站)<br><a href="http://www.monster.com/" target="_blank" rel="external">http://www.monster.com/</a> (世界最大招聘网站,chinahr.com母公司)<br><a href="http://www.careerbuilder.com/" target="_blank" rel="external">http://www.careerbuilder.com/</a><br><a href="http://www.expedia.com/" target="_blank" rel="external">http://www.expedia.com/</a> (世界最大旅游网站,elong,kuxun母公司)<br><a href="http://www.newegg.com/" target="_blank" rel="external">http://www.newegg.com/</a><br><a href="http://www.buy.com/" target="_blank" rel="external">http://www.buy.com/</a><br><a href="http://www.pof.com/" target="_blank" rel="external">http://www.pof.com/</a><br><a href="http://www.ancestry.com/" target="_blank" rel="external">http://www.ancestry.com/</a> (世界最大的家谱网站,拥有全球最复杂的家谱tree)<br><a href="http://espn.go.com/" target="_blank" rel="external">http://espn.go.com/</a><br><a href="http://www.MSNBC.com/" target="_blank" rel="external">http://www.MSNBC.com/</a><br><a href="http://www.stackoverflow.com/" target="_blank" rel="external">http://www.stackoverflow.com/</a> (近两年火起来的技术问答网站,比Quora火的多啊)<br><a href="http://www.AngiesList.com/" target="_blank" rel="external">http://www.AngiesList.com/</a> (最近上市的美国著名点评网站)</p>
+<blockquote>
+<p>可能有人马上就能举出facebook,yahoo等国外大型网站来反驳我。尤其是对没落的myspace，更是嗤之以鼻。认为是使用微软技术的反面教材。其失败的原因之一就是因为用了微软技术做开发。但我想请问一下：当初myspace如日中天，为全球第一社交网站，facebook还未成气候时，你们当初有谁说它用了微软技术，将来就会失败？有谁说过？！且不说它失败的原因不是微软技术的错，相反，它使用微软技术，能做到上亿的用户，世界最大的社交网站。难道不更能说明微软技术的成功么？现在有多少大型网站能达到当初myspace的规模？屈指可数！并且，我相信如果它做到了现在 facebook的规模，用微软技术也能找到支撑的办法！</p>
+</blockquote>
+<p><a href="http://www.Dell.com/" target="_blank" rel="external">http://www.Dell.com/</a><br><a href="http://www.CA.com/" target="_blank" rel="external">http://www.CA.com/</a><br><a href="http://www.McAfee.com/" target="_blank" rel="external">http://www.McAfee.com/</a><br><a href="http://www.SAP.com/" target="_blank" rel="external">http://www.SAP.com/</a></p>
+<blockquote>
+<p>很多人看了肯定会说，这都是一些官网啊。又不是什么大型网站，有什么说服力。请注意了，Dell的官网可是电子商务—卖电脑的。CA, 迈克菲本身是安全领域的公司，SAP是全球顶级ERP提供商。他们为啥要用“安全性最差”的Microsoft技术开发其网站呢？不怕网站被黑了丢人？</p>
+</blockquote>
+<p><a href="http://www.360buy.com/" target="_blank" rel="external">http://www.360buy.com/</a> (京东商城)<br><a href="http://www.dangdang.com/" target="_blank" rel="external">http://www.dangdang.com/</a> (当当)<br><a href="http://www.vancl.com/" target="_blank" rel="external">http://www.vancl.com/</a> （凡客）<br><a href="http://www.m18.com/" target="_blank" rel="external">http://www.m18.com/</a> （麦考林）<br><a href="http://www.newegg.com.cn/" target="_blank" rel="external">http://www.newegg.com.cn/</a> (新蛋)<br><a href="http://www.yifu.com/" target="_blank" rel="external">http://www.yifu.com/</a><br><a href="http://www.letao.com/" target="_blank" rel="external">http://www.letao.com/</a> (乐淘)<br><a href="http://mall.sina.com.cn/" target="_blank" rel="external">http://mall.sina.com.cn/</a> (新浪商城)<br><a href="http://www.redbaby.com.cn/" target="_blank" rel="external">http://www.redbaby.com.cn/</a><br><a href="http://www.moonbasa.com/" target="_blank" rel="external">http://www.moonbasa.com/</a> (梦芭莎)<br><a href="http://www.no5.com.cn/" target="_blank" rel="external">http://www.no5.com.cn/</a><br><a href="http://www.99read.com/" target="_blank" rel="external">http://www.99read.com/</a><br><a href="http://www.coo8.com/" target="_blank" rel="external">http://www.coo8.com/</a> (库巴，国美旗下)<br><a href="http://www.yintai.com/" target="_blank" rel="external">http://www.yintai.com/</a><br><a href="http://www.5173.com/" target="_blank" rel="external">http://www.5173.com/</a><br><a href="http://www.b2b.cn/" target="_blank" rel="external">http://www.b2b.cn/</a><br><a href="http://www.Ftuan.com/" target="_blank" rel="external">http://www.Ftuan.com/</a><br><a href="http://www.dazhe.cn/" target="_blank" rel="external">http://www.dazhe.cn/</a><br><a href="http://www.tiantian.com/" target="_blank" rel="external">http://www.tiantian.com/</a></p>
+<blockquote>
+<p>相信很多人都认识到了这一点，国内大部分主流的大型电子商务网站都是用ASP.NET开发的。他们的流量，像360buy等虽然比不上taobao，但千万级的规模是肯定有的，绝对属于大型网站。其安全性，稳定性，性能等等，不比taobao差。</p>
+</blockquote>
+<p><a href="http://www.ips.com/" target="_blank" rel="external">http://www.ips.com/</a> (环迅支付)<br><a href="http://www.icbc.com.cn/" target="_blank" rel="external">http://www.icbc.com.cn/</a><br><a href="http://www.cmbchina.com/" target="_blank" rel="external">http://www.cmbchina.com/</a><br><a href="https://pbsz.ebank.cmbchina.com/CmbBank_GenShell/UI/GenShellPC/Login/Login.aspx" target="_blank" rel="external">https://pbsz.ebank.cmbchina.com/CmbBank_GenShell/UI/GenShellPC/Login/Login.aspx</a> (招商网银)<br><a href="http://www.95599.cn/" target="_blank" rel="external">http://www.95599.cn/</a><br><a href="https://easyabc.95599.cn/SlfRegPer/netBank/zh_CN/entrance/logon.aspx" target="_blank" rel="external">https://easyabc.95599.cn/SlfRegPer/netBank/zh_CN/entrance/logon.aspx</a> (农行网银)<br><a href="http://www.boc.cn/" target="_blank" rel="external">http://www.boc.cn/</a><br>有人说银行的官网不是关键应用，但不知道网银是不是呢？<br><a href="http://www.ctrip.com/" target="_blank" rel="external">http://www.ctrip.com/</a> (携程)<br><a href="http://www.elong.com/（艺龙）" target="_blank" rel="external">http://www.elong.com/（艺龙）</a><br><a href="http://www.lotour.com/" target="_blank" rel="external">http://www.lotour.com/</a><br><a href="http://www.17u.cn/" target="_blank" rel="external">http://www.17u.cn/</a><br><a href="http://www.uzai.com/" target="_blank" rel="external">http://www.uzai.com/</a><br>主流的在线旅游/票务网站<br><a href="http://www.sdo.com/" target="_blank" rel="external">http://www.sdo.com/</a> (盛大在线)<br><a href="http://www.qidian.com/" target="_blank" rel="external">http://www.qidian.com/</a> (起点中文网)<br><a href="http://www.58.com/" target="_blank" rel="external">http://www.58.com/</a> (58同城)<br><a href="http://www.hexun.com/" target="_blank" rel="external">http://www.hexun.com/</a> (和讯)<br><a href="http://www.mtime.com/" target="_blank" rel="external">http://www.mtime.com/</a><br><a href="http://www.yeshj.com/" target="_blank" rel="external">http://www.yeshj.com/</a><br><a href="http://www.eastmoney.com/" target="_blank" rel="external">http://www.eastmoney.com/</a><br><a href="http://www.stockstar.com/" target="_blank" rel="external">http://www.stockstar.com/</a><br><a href="http://feixin.10086.cn/" target="_blank" rel="external">http://feixin.10086.cn/</a> (中国移动飞信<a href="http://www.fetion.com.cn/" target="_blank" rel="external">http://www.fetion.com.cn/</a>)<br><a href="http://mail.10086.cn/" target="_blank" rel="external">http://mail.10086.cn/</a> (中国移动139邮箱)<br><a href="http://passport.189.cn/" target="_blank" rel="external">http://passport.189.cn/</a> （中国电信）<br><a href="http://www.cnblogs.com/" target="_blank" rel="external">http://www.cnblogs.com/</a><br><a href="http://www.csdn.net/" target="_blank" rel="external">http://www.csdn.net/</a><br><a href="http://www.chinahr.com/" target="_blank" rel="external">http://www.chinahr.com/</a><br><a href="http://www.zhaopin.com/" target="_blank" rel="external">http://www.zhaopin.com/</a> (智联招聘)<br><a href="http://www.soufun.com/" target="_blank" rel="external">http://www.soufun.com/</a> (搜房)<br><a href="http://www.dichan.com/" target="_blank" rel="external">http://www.dichan.com/</a> (新浪地产)<br><a href="http://nbadata.sports.qq.com/" target="_blank" rel="external">http://nbadata.sports.qq.com/</a> (腾讯NBA)<br><a href="http://www.autohome.com.cn/" target="_blank" rel="external">http://www.autohome.com.cn/</a> (汽车之家)<br><a href="http://www.bitauto.com/" target="_blank" rel="external">http://www.bitauto.com/</a><br><a href="http://www.39.net/" target="_blank" rel="external">http://www.39.net/</a><br><a href="http://3g.cn/" target="_blank" rel="external">http://3g.cn/</a></p>
+<p>总之一句话，拿那些如：性能、安全、稳定、效率等等作为原因来攻击微软平台，是绝对站不住脚的！其实大家都心里清楚，ASP.NET和LAMP/JAVA相比，最大不同只不过是前者是收费的，而后者是开源免费的。仅此而已！</p>
+<p>补充：<br>1、关于成本的讨论，可以看一下<a href="http://www.cnblogs.com/ms0017/archive/2011/08/17/Microsoft-NET-Mono-MySQL-MVC-Linux-Large-WebSite.html" target="_blank" rel="external">谈谈用ASP.NET开发的大型网站有哪些架构方式</a>。<br>2、相信很多人（包括我自己）都认为微软Windows在桌面OS上无敌，在服务器上不行，在服务器OS上linux是老大。可惜事实却是：在服务器操作系统上Windows Server也是老大！这里有IDC对2009，2010两年服务器操作系统的市场份额统计，在最近两年里windows在全球服务器OS的市场份额已经是第一，并且还在稳步上升中。<br><a href="http://blog.csdn.net/ms_net/article/details/6634295" target="_blank" rel="external">http://blog.csdn.net/ms_net/article/details/6634295</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;首先说明一下，本文绝不是要说Microsoft平台多么好，多么强。&lt;br&gt;只是要说明一下除了LAMP/JAVA平台，微软平台不至于像有些人说的，和想象的那么不堪！&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="IIS" scheme="http://cuiqingwei.github.io/tags/IIS/"/>
+    
+      <category term="ASP.NET" scheme="http://cuiqingwei.github.io/tags/ASP-NET/"/>
     
   </entry>
   
@@ -80,6 +126,35 @@
       <category term="CC2538" scheme="http://cuiqingwei.github.io/tags/CC2538/"/>
     
       <category term="CoAP" scheme="http://cuiqingwei.github.io/tags/CoAP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GoAhead移植到OpenWRT</title>
+    <link href="http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/"/>
+    <id>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead移植到OpenWRT/</id>
+    <published>2016-11-17T13:04:40.000Z</published>
+    <updated>2016-12-15T13:45:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
+<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
+<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
+<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
+<blockquote>
+<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;make-menuconfig&quot;&gt;&lt;a href=&quot;#make-menuconfig&quot; class=&quot;headerlink&quot; title=&quot;make menuconfig&quot;&gt;&lt;/a&gt;make menuconfig&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/img/20161215/menuconfig.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
+    
+      <category term="GoAhead" scheme="http://cuiqingwei.github.io/tags/GoAhead/"/>
     
   </entry>
   
@@ -1283,147 +1358,6 @@
       <category term="创客" scheme="http://cuiqingwei.github.io/tags/%E5%88%9B%E5%AE%A2/"/>
     
       <category term="链接" scheme="http://cuiqingwei.github.io/tags/%E9%93%BE%E6%8E%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>折叠公路车</title>
-    <link href="http://cuiqingwei.github.io/2015/10/03/2015-10-03-%E6%8A%98%E5%8F%A0%E5%85%AC%E8%B7%AF%E8%BD%A6/"/>
-    <id>http://cuiqingwei.github.io/2015/10/03/2015-10-03-折叠公路车/</id>
-    <published>2015-10-03T00:57:00.000Z</published>
-    <updated>2016-09-18T08:58:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="Ori-Surpaz-CR-1-0"><a href="#Ori-Surpaz-CR-1-0" class="headerlink" title="Ori Surpaz CR 1.0"></a>Ori Surpaz CR 1.0</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=386" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=386</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_386_0.jpg" alt="1"><br><a id="more"></a><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_386_2.jpg" alt="2"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_386_3.jpg" alt="3"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_386_1.jpg" alt="4"></p>
-<h4 id="Airnimal-Joey-Explore-Drop"><a href="#Airnimal-Joey-Explore-Drop" class="headerlink" title="Airnimal Joey - Explore Drop"></a>Airnimal Joey - Explore Drop</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=46" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=46</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_46_0.jpg" alt="1"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_46_1.jpg" alt="2"></p>
-<h4 id="Airnimal-Chameleon-Performance-Sport"><a href="#Airnimal-Chameleon-Performance-Sport" class="headerlink" title="Airnimal Chameleon - Performance Sport"></a>Airnimal Chameleon - Performance Sport</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=49" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=49</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_49_0.jpg" alt="1"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_49_1.jpg" alt="2"></p>
-<h4 id="Airnimal-Joey-Elite-Drop"><a href="#Airnimal-Joey-Elite-Drop" class="headerlink" title="Airnimal Joey - Elite Drop"></a>Airnimal Joey - Elite Drop</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=48" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=48</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_48_0.jpg" alt="1"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_48_1.jpg" alt="2"></p>
-<h4 id="Airnimal-Rhino-Road"><a href="#Airnimal-Rhino-Road" class="headerlink" title="Airnimal Rhino - Road"></a>Airnimal Rhino - Road</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=54" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=54</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_54_0.jpg" alt="1"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_54_1.jpg" alt="2"></p>
-<h4 id="Airnimal-Chameleon-Ultra"><a href="#Airnimal-Chameleon-Ultra" class="headerlink" title="Airnimal Chameleon - Ultra"></a>Airnimal Chameleon - Ultra</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=50" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=50</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_50_0.jpg" alt="1"></p>
-<h4 id="Airnimal-Chameleon-Ultima"><a href="#Airnimal-Chameleon-Ultima" class="headerlink" title="Airnimal Chameleon - Ultima"></a>Airnimal Chameleon - Ultima</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=51" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=51</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_51_0.jpg" alt="1"></p>
-<h4 id="Bike-Friday-Pocket-Rocket-SELECT-2013"><a href="#Bike-Friday-Pocket-Rocket-SELECT-2013" class="headerlink" title="Bike Friday Pocket Rocket SELECT 2013"></a>Bike Friday Pocket Rocket SELECT 2013</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=209" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=209</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_209_0.jpg" alt="1"></p>
-<h4 id="Bike-Friday-Slik-Road-Alfine-11-extra-451"><a href="#Bike-Friday-Slik-Road-Alfine-11-extra-451" class="headerlink" title="Bike Friday Slik Road Alfine 11 extra - 451"></a>Bike Friday Slik Road Alfine 11 extra - 451</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=205" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=205</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_205_0.jpg" alt="1"></p>
-<h4 id="Bike-Friday-PR-Super-Pro-SRAM-Red-Groupo"><a href="#Bike-Friday-PR-Super-Pro-SRAM-Red-Groupo" class="headerlink" title="Bike Friday PR Super Pro SRAM Red Groupo"></a>Bike Friday PR Super Pro SRAM Red Groupo</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=208" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=208</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_208_0.jpg" alt="1"></p>
-<h4 id="Dahon-KC075TT"><a href="#Dahon-KC075TT" class="headerlink" title="Dahon KC075TT"></a>Dahon KC075TT</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=38" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=38</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_38_0.jpg" alt="1"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_38_1.jpg" alt="2"></p>
-<h4 id="Dahon-KAA075TT"><a href="#Dahon-KAA075TT" class="headerlink" title="Dahon KAA075TT"></a>Dahon KAA075TT</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=30" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=30</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_30_0.jpg" alt="1"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_30_1.jpg" alt="2"></p>
-<h4 id="Dahon-PDA006"><a href="#Dahon-PDA006" class="headerlink" title="Dahon PDA006"></a>Dahon PDA006</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=16" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=16</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_16_0.jpg" alt="1"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_16_1.jpg" alt="2"></p>
-<h4 id="Doppelganger-242-Artismo"><a href="#Doppelganger-242-Artismo" class="headerlink" title="Doppelganger 242 Artismo"></a>Doppelganger 242 Artismo</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=146" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=146</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_146_0.jpg" alt="1"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_146_1.jpg" alt="2"></p>
-<h4 id="Doppelganger-217-Miragen"><a href="#Doppelganger-217-Miragen" class="headerlink" title="Doppelganger 217 Miragen"></a>Doppelganger 217 Miragen</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=143" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=143</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_143_0.jpg" alt="1"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_143_1.jpg" alt="2"></p>
-<h4 id="Oyama-SKYLINE-PRO-CR20"><a href="#Oyama-SKYLINE-PRO-CR20" class="headerlink" title="Oyama SKYLINE PRO CR20"></a>Oyama SKYLINE PRO CR20</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=399" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=399</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_399_0.jpg" alt="1"></p>
-<h4 id="Oyama-FBI-RX-5R"><a href="#Oyama-FBI-RX-5R" class="headerlink" title="Oyama FBI RX-5R"></a>Oyama FBI RX-5R</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=181" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=181</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_181_0.jpg" alt="1"></p>
-<h4 id="Oyama-FBI-RX5-2015"><a href="#Oyama-FBI-RX5-2015" class="headerlink" title="Oyama FBI-RX5 (2015)"></a>Oyama FBI-RX5 (2015)</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=629" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=629</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_629_0.jpg" alt="1"></p>
-<h4 id="KHS-F20-R451"><a href="#KHS-F20-R451" class="headerlink" title="KHS F20-R451"></a>KHS F20-R451</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=503" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=503</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_503_0.jpg" alt="1"></p>
-<h4 id="KHS-P20-RD"><a href="#KHS-P20-RD" class="headerlink" title="KHS P20 - RD"></a>KHS P20 - RD</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=359" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=359</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_359_0.jpg" alt="1"></p>
-<h4 id="Oyama-FBI-TR3"><a href="#Oyama-FBI-TR3" class="headerlink" title="Oyama FBI-TR3"></a>Oyama FBI-TR3</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=624" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=624</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_624_0.jpg" alt="1"></p>
-<h4 id="Oyama-FBI-RR3"><a href="#Oyama-FBI-RR3" class="headerlink" title="Oyama FBI-RR3"></a>Oyama FBI-RR3</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=622" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=622</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_622_0.jpg" alt="1"></p>
-<h4 id="Oyama-FBI-TR5"><a href="#Oyama-FBI-TR5" class="headerlink" title="Oyama FBI-TR5"></a>Oyama FBI-TR5</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=623" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=623</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_623_0.jpg" alt="1"></p>
-<h4 id="Oyama-FBI-RR5"><a href="#Oyama-FBI-RR5" class="headerlink" title="Oyama FBI-RR5"></a>Oyama FBI-RR5</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=621" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=621</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_621_0.jpg" alt="1"></p>
-<h4 id="Ori-Surpaz-CR-1-0-1"><a href="#Ori-Surpaz-CR-1-0-1" class="headerlink" title="Ori Surpaz CR 1.0"></a>Ori Surpaz CR 1.0</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=386" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=386</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_386_0.jpg" alt="1"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_386_2.jpg" alt="2"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_386_3.jpg" alt="3"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_386_1.jpg" alt="4"></p>
-<h4 id="Tern-VERGE-X30h"><a href="#Tern-VERGE-X30h" class="headerlink" title="Tern VERGE X30h"></a>Tern VERGE X30h</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=87" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=87</a></p>
-<p><img src="http://15km.hk/bike/images/bikeimage/bike_id_87_0.jpg" alt="1"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_87_1.jpg" alt="2"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;Ori-Surpaz-CR-1-0&quot;&gt;&lt;a href=&quot;#Ori-Surpaz-CR-1-0&quot; class=&quot;headerlink&quot; title=&quot;Ori Surpaz CR 1.0&quot;&gt;&lt;/a&gt;Ori Surpaz CR 1.0&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;http://15km.hk/index.php?comCat=bikedetails&amp;amp;bikeId=386&quot;&gt;http://15km.hk/index.php?comCat=bikedetails&amp;amp;bikeId=386&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://15km.hk/bike/images/bikeimage/bike_id_386_0.jpg&quot; alt=&quot;1&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="骑行" scheme="http://cuiqingwei.github.io/tags/%E9%AA%91%E8%A1%8C/"/>
-    
-      <category term="折叠公路车" scheme="http://cuiqingwei.github.io/tags/%E6%8A%98%E5%8F%A0%E5%85%AC%E8%B7%AF%E8%BD%A6/"/>
-    
-      <category term="自行车" scheme="http://cuiqingwei.github.io/tags/%E8%87%AA%E8%A1%8C%E8%BD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux打补丁和git打patch方法 </title>
-    <link href="http://cuiqingwei.github.io/2015/08/19/2015-08-19-Linux%E6%89%93%E8%A1%A5%E4%B8%81%E5%92%8Cgit%E6%89%93patch%E6%96%B9%E6%B3%95/"/>
-    <id>http://cuiqingwei.github.io/2015/08/19/2015-08-19-Linux打补丁和git打patch方法/</id>
-    <published>2015-08-19T06:50:00.000Z</published>
-    <updated>2016-11-12T15:16:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="一、linux打补丁方法"><a href="#一、linux打补丁方法" class="headerlink" title="一、linux打补丁方法"></a>一、linux打补丁方法</h1><h3 id="1、处理单个文件补丁的方法："><a href="#1、处理单个文件补丁的方法：" class="headerlink" title="1、处理单个文件补丁的方法："></a>1、处理单个文件补丁的方法：</h3><ul>
-<li>产生补丁</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diff -uN from-file to-file &gt;to-file.patch</div></pre></td></tr></table></figure>
-<ul>
-<li>打补丁</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">patch -p0 &lt; to-file.patch</div></pre></td></tr></table></figure>
-<ul>
-<li>取消补丁</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">patch -RE -p0 &lt; to-file.patch</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="2、对整个文件夹打补丁的情况"><a href="#2、对整个文件夹打补丁的情况" class="headerlink" title="2、对整个文件夹打补丁的情况:"></a>2、对整个文件夹打补丁的情况:</h3><ul>
-<li>产生补丁</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diff -uNr  from-docu  to-docu  &gt;to-docu.patch</div></pre></td></tr></table></figure>
-<ul>
-<li>打补丁</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd to-docu</div><div class="line">patch -p1 &lt; to-docu.patch</div></pre></td></tr></table></figure>
-<ul>
-<li>取消补丁</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">patch -R -p1 &lt; to-docu.patch</div></pre></td></tr></table></figure>
-<h1 id="二、git打patch方法"><a href="#二、git打patch方法" class="headerlink" title="二、git打patch方法"></a>二、git打patch方法</h1><h3 id="1、git-format-patch-（推荐）"><a href="#1、git-format-patch-（推荐）" class="headerlink" title="1、git format-patch  （推荐）"></a>1、git format-patch  （推荐）</h3><p>只适用于git的patch<br>包含diff信息，包含提交人，提交时间等<br>如果git format-patch 生成的补丁不能打到当前分支，git am会给出提示，并协助你完成打补丁工作<br>例：从master checkout一个新分支修改然后与master对比生成patch。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git format-patch -M master //-M选项表示这个patch要和那个分支比对</div><div class="line">git am 001-xxx.patch（不必重新commit）</div></pre></td></tr></table></figure>
-<h3 id="2、git-diff"><a href="#2、git-diff" class="headerlink" title="2、git diff"></a>2、git diff</h3><p>生成标准的patch，只包含diff信息<br>git diff生成的Patch兼容性强，可以用git apply –check 查看补丁是否能够干净顺利地应用到当前分支中。<br>例：从master checkout一个新分支修改然后与master对比生成patch。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git diff master &gt; patch</div><div class="line">git apply xxx.patch（需要重新commit）</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;一、linux打补丁方法&quot;&gt;&lt;a href=&quot;#一、linux打补丁方法&quot; class=&quot;headerlink&quot; title=&quot;一、linux打补丁方法&quot;&gt;&lt;/a&gt;一、linux打补丁方法&lt;/h1&gt;&lt;h3 id=&quot;1、处理单个文件补丁的方法：&quot;&gt;&lt;a href=&quot;#1、处理单个文件补丁的方法：&quot; class=&quot;headerlink&quot; title=&quot;1、处理单个文件补丁的方法：&quot;&gt;&lt;/a&gt;1、处理单个文件补丁的方法：&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;产生补丁&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;diff -uN from-file to-file &amp;gt;to-file.patch&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;打补丁&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;patch -p0 &amp;lt; to-file.patch&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;取消补丁&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;patch -RE -p0 &amp;lt; to-file.patch&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="linux" scheme="http://cuiqingwei.github.io/tags/linux/"/>
-    
-      <category term="git" scheme="http://cuiqingwei.github.io/tags/git/"/>
-    
-      <category term="patch" scheme="http://cuiqingwei.github.io/tags/patch/"/>
     
   </entry>
   
