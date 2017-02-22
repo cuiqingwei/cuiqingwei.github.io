@@ -4,6 +4,175 @@
   
     
     <entry>
+      <title><![CDATA[HomeKit初体验]]></title>
+      <url>http://cuiqingwei.github.io/2017/02/09/2017-02-09-Homekit%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
+      <content type="html"><![CDATA[<h1 id="HomeKit-Siri-初体验-！"><a href="#HomeKit-Siri-初体验-！" class="headerlink" title="HomeKit Siri 初体验 ！"></a>HomeKit Siri 初体验 ！</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XMjUwMzIyMjEyMA==" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<a id="more"></a>
+<h1 id="界面效果"><a href="#界面效果" class="headerlink" title="界面效果"></a>界面效果</h1><p><img src="/img/20170209/homekit1.jpg" alt=""><br><img src="/img/20170209/homekit2.jpg" alt=""></p>
+<p>2017年香港光顾苹果旗舰店时，看到了一些第三方Homekit产品，于是萌生了折腾Homekit的想法。</p>
+<p><img src="/img/20170209/devices.jpg" alt=""></p>
+<p>折腾时所用的硬件，可以根据个人需要自行更改:</p>
+<ul>
+<li>树莓派 3 代 B 型（包含 Micor SD 卡）</li>
+<li>YeeLight 智能灯泡</li>
+<li>E27螺口灯座</li>
+<li>网线、MicroUSB线</li>
+<li>MacMini 电脑 （ Windows PC、Ubuntu、Linux 均可）</li>
+</ul>
+<h1 id="树莓派"><a href="#树莓派" class="headerlink" title="树莓派"></a>树莓派</h1><h3 id="1-安装Raspbian系统"><a href="#1-安装Raspbian系统" class="headerlink" title="1.安装Raspbian系统"></a>1.安装Raspbian系统</h3><p>系统镜像采用 <strong>2016-09-26-Hassbian-Bluetooth.img</strong><br>下载地址 <a href="http://pan.baidu.com/s/1qYs6hn2" target="_blank" rel="external">http://pan.baidu.com/s/1qYs6hn2</a></p>
+<p>Mac制作命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">df -h</div><div class="line">diskutil unmount /dev/disk3s1</div><div class="line">dd bs=4m if=2016-09-26-Hassbian-Bluetooth.img of=/dev/rdisk3</div><div class="line">diskutil unmountdisk /dev/disk3</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>可参考 <a href="http://cuiqingwei.github.io/2016/02/15/2016-02-15-Raspberry-Pi/">http://cuiqingwei.github.io/2016/02/15/2016-02-15-Raspberry-Pi/</a></p>
+</blockquote>
+<h3 id="2-登录Raspberry"><a href="#2-登录Raspberry" class="headerlink" title="2.登录Raspberry"></a>2.登录Raspberry</h3><p>安装完成之后，用网线连接好树莓派和路由器，打开电脑的终端，用 ssh 登录树莓派。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ssh pi@raspberrypi.local</div><div class="line">或者</div><div class="line">ssh pi@ip</div></pre></td></tr></table></figure>
+<p>ip可以在路由器的运行网页查看到,当然，Windows系统可以通过 <a href="http://www.mylanviewer.com/network-ip-scanner.html" target="_blank" rel="external">MyLanViewer Network/IP Scanner</a> 扫描等到目标地址。<br>之后终端会要求输入密码，输入 <strong>raspberry</strong> 回车即可。输入密码的途中终端不会显示任何字符，只需要正常输入即可。</p>
+<h3 id="3-更新软件源"><a href="#3-更新软件源" class="headerlink" title="3.更新软件源"></a>3.更新软件源</h3><p>登录树莓派之后，先升级软件源，在终端下输入以下代码，等待一段时间即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get upgrade</div></pre></td></tr></table></figure>
+<h1 id="配置选项"><a href="#配置选项" class="headerlink" title="配置选项"></a>配置选项</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo raspi-config</div></pre></td></tr></table></figure>
+<p>change_locale – 更改语言设置。在Locales to be generated: 中，选择en_US.UTF-8和zh_CN.UTF-8。在Default locale for the system environment:中，选择en_US.UTF-8（等启动完机器，装完中文字体，再改回zh_CN.UTF-8，否则第一次启动会出现方块）。</p>
+<blockquote>
+<p>可参考 <a href="http://blog.csdn.net/xdw1985829/article/details/38816375" target="_blank" rel="external">http://blog.csdn.net/xdw1985829/article/details/38816375</a></p>
+</blockquote>
+<h1 id="打开-Yeelight-的极客模式"><a href="#打开-Yeelight-的极客模式" class="headerlink" title="打开 Yeelight 的极客模式"></a>打开 Yeelight 的极客模式</h1><p>在 App Store 下载官方的 Yeelight 应用，先连接上灯泡.然后点右上角的三根横杠，在下方打开极客模式。</p>
+<h1 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h1><p>回到终端，我们继续来安装 Node.js 。从版本 4.0.0 开始，Node.js 默认支持基于 ARM 的平台，我们只需要输入相关代码即可。</p>
+<p>依次在终端输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">wget https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-armv6l.tar.gz</div><div class="line">tar -xvf node-v4.3.2-linux-armv6l.tar.gz</div><div class="line">cd node-v4.3.2-linux-armv6l</div><div class="line">sudo cp -R * /usr/local/</div></pre></td></tr></table></figure>
+<p>完成之后，输入 node -v 检查一下是否安装完成，如果显示  v4.3.2 ，则表示 Node.js 安装成功。<br>安装 Avahi 和相关依赖软件包</p>
+<p>在终端输入以下命令即可：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install libavahi-compat-libdnssd-dev</div></pre></td></tr></table></figure>
+<p>安装 HomeBridge 和相关依赖软件包</p>
+<p>依次在终端输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g --unsafe-perm homebridge hap-nodejs node-gyp</div><div class="line">cd /usr/local/lib/node_modules/homebridge/</div><div class="line">sudo npm install --unsafe-perm bignum</div><div class="line">cd /usr/local/lib/node_modules/hap-nodejs/node_modules/mdns</div><div class="line">sudo node-gyp BUILDTYPE=Release rebuild</div></pre></td></tr></table></figure>
+<p>添加 Yeelight 配置文件</p>
+<p>输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g homebridge-yeelight</div></pre></td></tr></table></figure>
+<p>等待命令运行结束后，输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /home/pi/.homebridge/</div><div class="line">vi config.json</div></pre></td></tr></table></figure>
+<p>点击键盘的 i 键，终端左下角出现 – INSERT – ，如下图所示。</p>
+<p>将以下代码复制到终端：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;bridge&quot;: &#123;</div><div class="line">        &quot;name&quot;: &quot;IoTBridge&quot;,</div><div class="line">        &quot;username&quot;: &quot;28:6C:07:10:BF:16&quot;,</div><div class="line">        &quot;port&quot;: 51825,</div><div class="line">        &quot;pin&quot;: &quot;031-45-154&quot;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    &quot;platforms&quot;: [</div><div class="line">        &#123;</div><div class="line">            &quot;platform&quot; : &quot;yeelight&quot;,</div><div class="line">            &quot;name&quot; : &quot;yeelight&quot;</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>粘贴完成后，按Esc键，输入 :wq 然后回车。</p>
+<p>之后，便可以运行 HomeBridge ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">homebridge</div></pre></td></tr></table></figure>
+<p>这一步完成之后，HomeBridge 就安装完毕并且开始运行， YeeLight 彩光灯也成功接入 Apple HomeKit ，打开 iOS 10 自带的家庭 App， 点击添加配件即可。会有两个配件，第一个是 IoTBridge ，这是一个桥接器；还有一个才是我们要控制的灯泡。</p>
+<p>现在，你就可以享受 <strong>「嘿 Siri ，帮我开个灯」</strong> 了。<br>在树莓派启动后自动运行 HomeBridge 服务</p>
+<h1 id="最后一步，把-HomeBridge-服务加入到树莓派的系统服务里。"><a href="#最后一步，把-HomeBridge-服务加入到树莓派的系统服务里。" class="headerlink" title="最后一步，把 HomeBridge 服务加入到树莓派的系统服务里。"></a>最后一步，把 HomeBridge 服务加入到树莓派的系统服务里。</h1><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>首先我们要开启 root 账户，首先在终端输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo passwd root</div></pre></td></tr></table></figure>
+<p>然后会提示你设置 root 账户密码，第一次输入之后还要确认一次，一样两次输入不会有任何字符显示。输入完毕之后，启用 root 账户，输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo passwd --unlock root</div></pre></td></tr></table></figure>
+<p>然后会提示报错： passwd: password expiry information changed. ，原因是新版的系统默认禁止 ssh 登录 root 账户，我们需要修改一下配置文件。在终端输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/ssh/sshd_config</div></pre></td></tr></table></figure>
+<p>用 Ctrl + W 搜索「 PermitRootLogin 」，找到之后将 PermitRootLogin without-password 改成 PermitRootLogin yes ，然后按 Ctrl + O 保存，回车之后退出编辑器。</p>
+<p>GitHub 提供了三种让树莓派启动后自动运行 HomeBridge 服务的方法，我选择的是 init.d 的方式。打开 这个网页 ，将文件下载到本地，然后将 template 重命名为 homebridge （或者任何你想要的名字） ，放到树莓派目录 /etc/init.d 下。注意这里一定要</p>
+<p>用 root 账户 ssh 登录Raspberry。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /etc/init.d</div><div class="line">vi homebridge</div></pre></td></tr></table></figure>
+<p>点击键盘的 i 键，终端左下角出现 – INSERT – ，如下图所示。</p>
+<p>将以下代码复制到终端：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line">### BEGIN INIT INFO</div><div class="line"># Provides: homebridge</div><div class="line"># Required-Start:    $network $remote_fs $syslog</div><div class="line"># Required-Stop:     $remote_fs $syslog</div><div class="line"># Default-Start:     2 3 4 5</div><div class="line"># Default-Stop:      0 1 6</div><div class="line"># Short-Description: Start daemon at boot time</div><div class="line"># Description:       Enable service provided by daemon.</div><div class="line">### END INIT INFO</div><div class="line"></div><div class="line">dir=&quot;/home/pi&quot;</div><div class="line">cmd=&quot;DEBUG=* /usr/local/bin/homebridge&quot;</div><div class="line">user=&quot;pi&quot;</div></pre></td></tr></table></figure>
+<p>完成后保存，然后回到终端，依次输入以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo chmod 755 /etc/init.d/homebridge</div><div class="line">sudo update-rc.d homebridge defaults</div></pre></td></tr></table></figure>
+<p>现在，你可以在终端输入 HomeBridge ，等待服务运行之后关掉终端，看是否可以继续使用家庭 App 开关灯泡；或者重启一下树莓派，看看 HomeBridge 服务是否正常运行。</p>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>将homebridge设置成随系统启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">cd /</div><div class="line">sudo useradd --system homebridge</div><div class="line">sudo mkdir /var/homebridge</div><div class="line">sudo cp ~/.homebridge/config.json /var/homebridge/</div><div class="line">sudo cp -r ~/.homebridge/persist /var/homebridge</div><div class="line">sudo chmod -R 0777 /var/homebridge</div><div class="line">cd /etc/default</div><div class="line">sudo nano homebridge</div></pre></td></tr></table></figure>
+<p>将下面的内容复制粘贴进去</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># Defaults / Configuration options for homebridge</div><div class="line"># The following settings tells homebridge where to find the config.json file and where to persist the data (i.e. pairing and others)</div><div class="line">HOMEBRIDGE_OPTS=-U /var/homebridge</div><div class="line"></div><div class="line"># If you uncomment the following line, homebridge will log more</div><div class="line"># You can display this via systemd&apos;s journalctl: journalctl -f -u homebridge</div><div class="line"># DEBUG=*</div></pre></td></tr></table></figure>
+<p>Ctrl+X，然后Y，回车，保存退出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /etc/systemd/system</div><div class="line">sudo nano homebridge.service</div></pre></td></tr></table></figure>
+<p>将下面的内容复制粘贴进去</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">[Unit]</div><div class="line">Description=Node.js HomeKit Server</div><div class="line">After=syslog.target network-online.target</div><div class="line">[Service]</div><div class="line">Type=simple</div><div class="line">User=homebridge</div><div class="line">EnvironmentFile=/etc/default/homebridge</div><div class="line">ExecStart=/usr/lib/node_modules/homebridge/bin/homebridge $HOMEBRIDGE_OPTS</div><div class="line">Restart=on-failure</div><div class="line">RestartSec=10</div><div class="line">KillMode=process</div><div class="line">[Install]</div><div class="line">WantedBy=multi-user.target</div></pre></td></tr></table></figure>
+<p>然后Ctrl+X，然后Y，回车，保存退出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">cd /</div><div class="line">sudo systemctl daemon-reload</div><div class="line">sudo systemctl enable homebridge</div><div class="line">sudo systemctl start homebridge</div><div class="line">sudo systemctl status homebridge</div><div class="line">sudo reboot      ####重启树莓派####</div></pre></td></tr></table></figure>
+<p>如果以上均成功运行，那么恭喜你，一切都大功告成。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[OpenWRT之HomeKit]]></title>
+      <url>http://cuiqingwei.github.io/2017/02/08/2017-02-08-OpenWRT%E4%B9%8BHomeKit/</url>
+      <content type="html"><![CDATA[<h1 id="1-制备openwrt系统镜像"><a href="#1-制备openwrt系统镜像" class="headerlink" title="1.制备openwrt系统镜像"></a>1.制备openwrt系统镜像</h1><p>预编译的openwrt是musl的toolchain，而homebridge需要glibc的toolchain所以需要自己编译系统。</p>
+<p>建议安装完成后开启ssh，直接用putty和winscp来传送文件和操作虚拟机更方便。<br>以下所有命令都是通过putty登陆虚拟机或使用虚拟机的terminal来执行的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt update</div></pre></td></tr></table></figure>
+<p>安装编译系统需要的软件包:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt update</div></pre></td></tr></table></figure>
+<p>下载openwrt最新代码，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone git://github.com/openwrt/openwrt.git</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>将feeds.conf.default改名为feeds.conf</p>
+<p>更新feeds部分的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">./scripts/feeds update -a</div><div class="line">./scripts/feeds install -a</div></pre></td></tr></table></figure>
+<blockquote>
+<p>使用feeds文件夹替换掉openwrt，原版代码不带avahi的dev库，需要自己添加支持；<br>另外自带nodejs的版本低于5.0启动homebridge的时候会有个warning，一并更换成最新版。</p>
+</blockquote>
+<p>openwrt编译配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make menuconfig</div></pre></td></tr></table></figure>
+<p>需要的软件包：<br>Advanced configuration options (for developers)  —&gt;<br>      Toolchain Options  —&gt;<br>         C Library implementation (Use musl)  —&gt;<br>            [X] Use (e)glibc<br>Base system  —&gt;<br>   block-mount、ca-certificates<br>Development —&gt;<br>   <m> gcc<br>   <m> make<br>Kernel modules  —&gt;<br>    Filesystems  —&gt;<br>       kmod-fs-exfat、kmod-fs-ext4、kmod-fs-ntfs、kmod-fs-vfat<br>    USB Support  —&gt;<br>       kmod-usb-storage-extras、kmod-usb2、kmod-usb3<br>Languages  —&gt;<br>    Node.js  —&gt;<br>        <m> node<br>    Python  —&gt;<br>        <m> python<br>Libraries  —&gt;<br>   libavahi-compat-libdnssd-dev<br>Network  —&gt;<br>    mosquitto<br>LuCi   —&gt;</m></m></m></m></p>
+<pre><code>1. Collections  ---&gt;
+   luci
+</code></pre><p>保存后开始编译</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make V=s</div></pre></td></tr></table></figure>
+<p>趁着时候没事干把准备好的U盘连入虚拟机，格式化成ext3/ext4格式，插到路由器的USB接口上。</p>
+<p>刷入系统不再详述，不会搞的可以百度，这方面的教程遍地。<br>成功后进入路由器管理界面luci，system下将语言改为中文。设置路由器登陆密码，然后使用putty和winscp即可连接到路由器文件系统了。<br>将U盘查到路由器上等一会以后，从路由器管理界面找到如下位置，看到U盘的大小说明成功。</p>
+<h1 id="2-openwrt-挂载overlay到U盘"><a href="#2-openwrt-挂载overlay到U盘" class="headerlink" title="2. openwrt 挂载overlay到U盘"></a>2. openwrt 挂载overlay到U盘</h1><ul>
+<li>2.1. 添加必要软件</li>
+</ul>
+<p><strong>block-mount</strong><br><strong>kmod-fs-ext4</strong><br><strong>kmod-usb-ohci</strong><br><strong>kmod-usb-storage</strong><br><strong>fdisk</strong><br><strong>cfdisk</strong><br><strong>e2fsprogs</strong></p>
+<p>可以在 <strong>menuconfig</strong> 通过输入 <strong>/</strong> 查找这些组件。</p>
+<ul>
+<li>2.2. 升级系统</li>
+</ul>
+<p><strong>sysupgrade -v xxxx-sysupgrade.bin</strong></p>
+<ul>
+<li>2.3. 分区操作</li>
+</ul>
+<p><strong>cfdisk</strong></p>
+<p>分三个区<br>sda1（512M）为系统盘，相当于Windows系统的C盘；<br>sda2（128M)为交换分区，用于内存交换；<br>sda3(剩余)为存储区，主要放置较大文件</p>
+<ul>
+<li><p>2.4.格式化各分区</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkfs.ext4 /dev/sda1 　　#将第一个分区格式化为ext3格式</div><div class="line">mkswap /dev/sda2    　　#将第二个分区格式化为swap交换分区</div><div class="line">mkfs.ext4 /dev/sda3 　　#将第三个分区格式化为ext3格式</div></pre></td></tr></table></figure>
+</li>
+<li><p>2.5.安装完成以后,挂载u盘.如下命令将默认的系统盘转移到u盘中.</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mount /dev/sda1 /mnt</div><div class="line">mkdir /tmp/root</div><div class="line">mount -o bind / /tmp/root</div><div class="line">cp /tmp/root/* /mnt -a</div><div class="line">umount /tmp/root</div></pre></td></tr></table></figure>
+<ul>
+<li>2.6.修改 /etc/config/fstab 文件,让系统启动自动挂载,修改成如下</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">config mount</div><div class="line">        option target   /overlay</div><div class="line">        option device   /dev/sda1</div><div class="line">        option fstype   ext4</div><div class="line">        option options  rw,sync</div><div class="line">        option enabled  1</div><div class="line">        option enabled_fsck 0</div></pre></td></tr></table></figure>
+<ul>
+<li>2.7.执行如下命令让其生效</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/fstab enable</div></pre></td></tr></table></figure>
+<ul>
+<li>2.8.重启后，执行df -h后如果发现/overlay挂载在/tmp/overlay-disabled上的解决方案：</li>
+</ul>
+<p><strong>rm /tmp/overlay-disabled/etc/extroot.md5sum</strong></p>
+<p>或者删除/tmp/overlay-disabled目录下的所有系统文件，按照第2.5重新操作重启。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Raspberry安装HAP-NodeJS]]></title>
+      <url>http://cuiqingwei.github.io/2017/02/08/2017-02-08-Raspberry%E5%AE%89%E8%A3%85HAP-NodeJS/</url>
+      <content type="html"><![CDATA[<h1 id="下载-Raspbian"><a href="#下载-Raspbian" class="headerlink" title="下载 Raspbian"></a>下载 Raspbian</h1><p><a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="external">https://www.raspberrypi.org/downloads/raspbian/</a></p>
+<h1 id="制作-TF-card"><a href="#制作-TF-card" class="headerlink" title="制作 TF card"></a>制作 TF card</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">df -h</div><div class="line">diskutil unmount /dev/disk2s1</div><div class="line">diskutil list</div><div class="line">dd bs=4m if=2017-01-11-raspbian-jessie.img of=/dev/rdisk2</div><div class="line">diskutil unmountdisk /dev/disk2</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<blockquote>
+<p>note：新的img默认没有打开ssh，在tf卡根目录新建名称为 ssh 的文件夹解决</p>
+</blockquote>
+<h1 id="登录树莓派"><a href="#登录树莓派" class="headerlink" title="登录树莓派"></a>登录树莓派</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh pi@raspberrypi.local</div></pre></td></tr></table></figure>
+<h1 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade</div></pre></td></tr></table></figure>
+<h1 id="安装解决依赖"><a href="#安装解决依赖" class="headerlink" title="安装解决依赖"></a>安装解决依赖</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install avahi-daemon avahi-discover libnss-mdns libavahi-compat-libdnssd-dev  build-essential -y</div><div class="line">service avahi-daemon start</div></pre></td></tr></table></figure>
+<h1 id="增加nodejs源"><a href="#增加nodejs源" class="headerlink" title="增加nodejs源"></a>增加nodejs源</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~</div><div class="line">curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -</div></pre></td></tr></table></figure>
+<h1 id="克隆HAP-NodeJS源码"><a href="#克隆HAP-NodeJS源码" class="headerlink" title="克隆HAP-NodeJS源码"></a>克隆HAP-NodeJS源码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/KhaosT/HAP-NodeJS.git</div></pre></td></tr></table></figure>
+<h1 id="安装node-gyp"><a href="#安装node-gyp" class="headerlink" title="安装node-gyp"></a>安装node-gyp</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g node-gyp</div></pre></td></tr></table></figure>
+<p>然后切换到HAP-NodeJS文件夹下，运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node Core.js</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[谈谈用ASP.NET开发的大型网站有哪些架构方式]]></title>
       <url>http://cuiqingwei.github.io/2016/12/30/2016-12-30-%E7%94%A8ASP-NET%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%9C%89%E5%93%AA%E4%BA%9B%E6%9E%B6%E6%9E%84%E6%96%B9%E5%BC%8F/</url>
       <content type="html"><![CDATA[<p>在<a href="http://www.cnblogs.com/ms0017/archive/2011/07/26/2117676.html" target="_blank" rel="external">文章</a>里，列举了国内外用ASP.NET开发的大型网站有哪些。最后提到了用.NET开发的大型网站和LAMP/JAVA平台的成本比较。其实在很多时候，收费的不一定就比免费的成本更高。因为开发一个网站要使用哪个平台的技术更合适，需要考虑很多种情况（除了开发技术本身，还要考虑人工，开发效率，时间，后续的支持，维护等等），要综合计算成本才行。微软平台本身虽然是收费的，但总体的成本并非一定比LAMP/JAVA高，上篇文章列举的国内外的那么多基于ASP.NET开发的大型网站就是例证。尤其是在开发效率上，无论是C#开发语言，还是免费的开发工具（Visual Studio Express，或者MonoDevelop/SharpDevelop），.NET明显比其他两个平台更胜一筹。而这一点正是互联网企业所需要的。效率就是生产力。并且，由于有Mono (<a href="http://mono-project.org/" target="_blank" rel="external">http://mono-project.org/</a>) 这个开源平台的存在，.NET技术也可以在linux/BSD等开源服务器上使用。使.NET完全可以实现跨平台应用。据此，我们可以分Windows/Linux两种方式来架构我们的ASP.NET网站：</p>
@@ -306,6 +475,19 @@
 <li><p>After the build process completes, the resulted firmware file will be under <code>bin/ramips/openwrt-ramips-mt7688-LinkIt7688-squashfs-sysupgrade.bin</code>. Depending on the H/W resources of the host environment, the build process may <strong>take more than 2 hours</strong>.</p>
 </li>
 </ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[路亚竿的硬度与调性你是否混淆]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/12/2016-10-12-%E8%B7%AF%E4%BA%9A%E7%AB%BF%E7%9A%84%E7%A1%AC%E5%BA%A6%E4%B8%8E%E8%B0%83%E6%80%A7%E4%BD%A0%E6%98%AF%E5%90%A6%E6%B7%B7%E6%B7%86/</url>
+      <content type="html"><![CDATA[<h2 id="路亚竿的硬度"><a href="#路亚竿的硬度" class="headerlink" title="路亚竿的硬度"></a>路亚竿的硬度</h2><p>选择路亚竿的时候大部分钓友会关注：长度、调性、外观做工质量、品牌与价格。其中“调性”普遍会被大家想到“M、ML、MH”等英文缩写，也经常有卖家或者钓友这样称呼：“这支竿是M调的，那支竿是MH调的”等等，实际上这些英文缩写说的不是路亚竿的调性而是硬度，英文称“<strong>Power</strong> <em>（最大负荷）</em>” 。</p>
+<p>路亚竿的 <strong>硬度</strong> <em>（最大负荷）</em> 就是我们通常说的ML、M、MH等“调性”，是指的路亚竿的最大负荷值以及适合抛投饵重的范围。路亚竿的硬度由软到硬大概分为几个等：UUL-UL-L-ML-M-MH-H-XH-XXH。其中“<strong>M</strong>”为分界线，以上为软，以下为硬。</p>
+<p>路亚竿的硬度分类如下：<br>    UUL——Ultra Ultra light极软<br>    UL——Ultra light超软<br>    L——Light 软<br>    ML——Medium light 中软<br>    M——Medium 中等<br>    MH——Medium heavy 中硬<br>    H——Heavy 硬<br>    XH——Extra heavy 超硬<br>    XXH——Extra extra heavy 超超硬</p>
+<h2 id="路亚竿的调性"><a href="#路亚竿的调性" class="headerlink" title="路亚竿的调性"></a>路亚竿的调性</h2><p>上面说了路亚竿的调性区别于硬度，但什么是路亚竿的调性呢？国内钓友对台钓竿相对比较了解，常说的台钓竿的调性如46、37、28、19调等，是表示钓竿中鱼受力时，竿身的弯曲点越来越靠近前稍。路亚竿的调性也可以这样理解，有类似的数值表示这样的参数，只是因为路亚钓法源于欧美，欧美关于调性的叫法不同而已。</p>
+<p>路亚竿 <strong>调性</strong>，以英文单词“<strong>Action</strong>”表示，<em>钓竿中鱼受力竿身的弯曲点越来越靠近前稍，称调性越快，反之调性越慢，以中调作为快慢调的分界线</em>，</p>
+<p>详细介绍如下：<br>    S——Slow 慢速调<br>    MR——Medium Regular 中慢调<br>    R——Regular 中调<br>    MF——Medium Fsst 中快调<br>    F——Fast 快调<br>    F+——Fast+ 快调+<br>    XF——Extra Fast 超快调  </p>
+<p> 路亚竿的硬度和调性，是根据不同钓场和需求设定的，不同的厂家有不同的设计理念，现在普遍流行的是快调路亚竿，竿稍纤细而灵敏，利于感知水下鱼的就饵动作，但有些厂家把竿稍越做越细？调性快就真的好么？其实不然，针对不同钓场和对象鱼，应该有不同的配置方式。比如重草区雷强钓法，此时应该选用慢调硬竿；而使用软虫钓组时，为了感知水下轻微动作则应该选择中软的快调竿等等。    </p>
 ]]></content>
     </entry>
     
@@ -1574,27 +1756,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[MacOS]]></title>
-      <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-MacOS/</url>
-      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
-<h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p>工作：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br>系统：QQ、CleanMyDrive 3<br><a id="more"></a></p>
-<h3 id="2-dmg"><a href="#2-dmg" class="headerlink" title="2. dmg"></a>2. dmg</h3><p>Chrome、VMwareFusion、RDC、QQInput、RTX、cornerstone<br>Sublime Text</p>
-<h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><p>ruby -e “$(curl -fsSL <a href="https://raw.github.com/Homebrew/homebrew/go/install" target="_blank" rel="external">https://raw.github.com/Homebrew/homebrew/go/install</a>)”<br><a href="http://brew.sh/" target="_blank" rel="external">http://brew.sh/</a></p>
-<p>升级更新 brew update<br>cd /usr/local<br>git reset –hard<br>git checkout .<br>sudo chown -R cuiqingwei /usr/local<br>brew update<br><a href="http://www.xitongzhijia.net/xtjc/20141204/31879.html" target="_blank" rel="external">http://www.xitongzhijia.net/xtjc/20141204/31879.html</a></p>
-<h3 id="4-MacPorts"><a href="#4-MacPorts" class="headerlink" title="4. MacPorts"></a>4. MacPorts</h3><p><a href="https://www.macports.org/install.php" target="_blank" rel="external">https://www.macports.org/install.php</a><br><a href="http://guide.macports.org/#installing.macports" target="_blank" rel="external">http://guide.macports.org/#installing.macports</a></p>
-<h3 id="5-wget"><a href="#5-wget" class="headerlink" title="5. wget"></a>5. wget</h3><p>sudo port install wget</p>
-<h3 id="6-zsh"><a href="#6-zsh" class="headerlink" title="6. zsh"></a>6. zsh</h3><p>wget <a href="https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh</a> -O - | sh<br><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="external">http://leeiio.me/bash-to-zsh-for-mac/</a><br><a href="http://www.sketchup.com/download/all" target="_blank" rel="external">http://www.sketchup.com/download/all</a><br>打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!</p>
-<h3 id="7-mac-say-唱歌"><a href="#7-mac-say-唱歌" class="headerlink" title="7. mac say 唱歌"></a>7. mac say 唱歌</h3><p>应用程序&gt;实用工具&gt;Terminal 复制和黏贴以下内容，然后回车：</p>
-<ul>
-<li>spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。</li>
-<li>在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。</li>
-<li>开始听歌了。</li>
-</ul>
-<h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="external">https://checkcoverage.apple.com/cn/zh/</a></p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Ubuntu]]></title>
       <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-Ubuntu/</url>
       <content type="html"><![CDATA[<h3 id="1-常用指令"><a href="#1-常用指令" class="headerlink" title="1.常用指令"></a>1.常用指令</h3><pre><code>版本查看：
@@ -1646,6 +1807,27 @@ hosts
      https://github.com/racaljk/hosts
 </code></pre><p><strong>Cannot Set LC_ALL to default locale: No such file or directory</strong><br><a href="http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/" target="_blank" rel="external">http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/</a></p>
 <p>sEx只是调用相关程序，本身并无压缩、解压功能，请注意！<br>sEx请到： <a href="http://sourceforge.net/projects/sex下载！" target="_blank" rel="external">http://sourceforge.net/projects/sex下载！</a><br>解压后请将sEx拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br>[root@www2 tmp]# cp sEx /usr/bin/</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MacOS]]></title>
+      <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-MacOS/</url>
+      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
+<h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p>工作：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br>系统：QQ、CleanMyDrive 3<br><a id="more"></a></p>
+<h3 id="2-dmg"><a href="#2-dmg" class="headerlink" title="2. dmg"></a>2. dmg</h3><p>Chrome、VMwareFusion、RDC、QQInput、RTX、cornerstone<br>Sublime Text</p>
+<h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><p>ruby -e “$(curl -fsSL <a href="https://raw.github.com/Homebrew/homebrew/go/install" target="_blank" rel="external">https://raw.github.com/Homebrew/homebrew/go/install</a>)”<br><a href="http://brew.sh/" target="_blank" rel="external">http://brew.sh/</a></p>
+<p>升级更新 brew update<br>cd /usr/local<br>git reset –hard<br>git checkout .<br>sudo chown -R cuiqingwei /usr/local<br>brew update<br><a href="http://www.xitongzhijia.net/xtjc/20141204/31879.html" target="_blank" rel="external">http://www.xitongzhijia.net/xtjc/20141204/31879.html</a></p>
+<h3 id="4-MacPorts"><a href="#4-MacPorts" class="headerlink" title="4. MacPorts"></a>4. MacPorts</h3><p><a href="https://www.macports.org/install.php" target="_blank" rel="external">https://www.macports.org/install.php</a><br><a href="http://guide.macports.org/#installing.macports" target="_blank" rel="external">http://guide.macports.org/#installing.macports</a></p>
+<h3 id="5-wget"><a href="#5-wget" class="headerlink" title="5. wget"></a>5. wget</h3><p>sudo port install wget</p>
+<h3 id="6-zsh"><a href="#6-zsh" class="headerlink" title="6. zsh"></a>6. zsh</h3><p>wget <a href="https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh</a> -O - | sh<br><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="external">http://leeiio.me/bash-to-zsh-for-mac/</a><br><a href="http://www.sketchup.com/download/all" target="_blank" rel="external">http://www.sketchup.com/download/all</a><br>打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!</p>
+<h3 id="7-mac-say-唱歌"><a href="#7-mac-say-唱歌" class="headerlink" title="7. mac say 唱歌"></a>7. mac say 唱歌</h3><p>应用程序&gt;实用工具&gt;Terminal 复制和黏贴以下内容，然后回车：</p>
+<ul>
+<li>spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。</li>
+<li>在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。</li>
+<li>开始听歌了。</li>
+</ul>
+<h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="external">https://checkcoverage.apple.com/cn/zh/</a></p>
 ]]></content>
     </entry>
     
