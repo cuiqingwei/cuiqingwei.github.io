@@ -110,9 +110,9 @@
     </summary>
     
     
-      <category term="Raspberry" scheme="http://cuiqingwei.github.io/tags/Raspberry/"/>
-    
       <category term="HomeKit" scheme="http://cuiqingwei.github.io/tags/HomeKit/"/>
+    
+      <category term="Raspberry" scheme="http://cuiqingwei.github.io/tags/Raspberry/"/>
     
   </entry>
   
@@ -326,35 +326,6 @@
   </entry>
   
   <entry>
-    <title>GoAhead移植到OpenWRT</title>
-    <link href="http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/"/>
-    <id>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead移植到OpenWRT/</id>
-    <published>2016-11-17T13:04:40.000Z</published>
-    <updated>2016-12-15T13:45:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
-<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
-<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
-<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
-<blockquote>
-<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;make-menuconfig&quot;&gt;&lt;a href=&quot;#make-menuconfig&quot; class=&quot;headerlink&quot; title=&quot;make menuconfig&quot;&gt;&lt;/a&gt;make menuconfig&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/img/20161215/menuconfig.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
-    
-      <category term="GoAhead" scheme="http://cuiqingwei.github.io/tags/GoAhead/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Contiki-CC2538-CoAP</title>
     <link href="http://cuiqingwei.github.io/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/"/>
     <id>http://cuiqingwei.github.io/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/</id>
@@ -393,6 +364,35 @@
       <category term="CC2538" scheme="http://cuiqingwei.github.io/tags/CC2538/"/>
     
       <category term="CoAP" scheme="http://cuiqingwei.github.io/tags/CoAP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GoAhead移植到OpenWRT</title>
+    <link href="http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/"/>
+    <id>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead移植到OpenWRT/</id>
+    <published>2016-11-17T13:04:40.000Z</published>
+    <updated>2016-12-15T13:45:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
+<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
+<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
+<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
+<blockquote>
+<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;make-menuconfig&quot;&gt;&lt;a href=&quot;#make-menuconfig&quot; class=&quot;headerlink&quot; title=&quot;make menuconfig&quot;&gt;&lt;/a&gt;make menuconfig&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/img/20161215/menuconfig.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
+    
+      <category term="GoAhead" scheme="http://cuiqingwei.github.io/tags/GoAhead/"/>
     
   </entry>
   
