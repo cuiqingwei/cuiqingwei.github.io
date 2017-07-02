@@ -201,7 +201,7 @@
 <p>最后末了特写鱼饵挂住鱼的位置，大部分照片都是看那鱼无辜的含着鱼饵上的三头钩，这个专业上叫<strong>正口</strong>，一定要喊出来。其余的估计也不大会有人上图，譬如挂住鱼鳍啊，挂住屁股啊什么乱七八糟的部位，这个他们叫<strong>车祸</strong>。</p>
 <p>如果水边干了一天除了丢十来个鱼饵什么也没有干到的，人叫<strong>打龟</strong>或者<strong>空军</strong>。</p>
 <p><img src="/img/20170101/kongjun.jpg" alt=""></p>
-<p>有一阵没有钓到,就可以说是空军一号了。。。。。。</p>
+<p>如果好久都没有钓到,就可以说是空军一号了！</p>
 <p>现在来讲讲<strong>顶级装逼</strong>者一般怎么搞?!</p>
 <p><img src="/img/20170101/cheshang.jpg" alt=""></p>
 <p>先你要明白一句话，<em>菜鸟爱扎堆，高手都独行。</em> 人不屑跟你讲什么，自己闷头搞就是。开个揽胜运动版，来到了水边，下车不着急取设备，先看，还拿望远镜看，看什么呢，看水流，看地形，看鱼的活跃程度，看完了还辨，辨天色，辨时间，辨风力。有的高手看辨掉头开车就闪了，你问他为什么，答曰:”时候不对!”</p>
@@ -276,19 +276,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[GoAhead移植到OpenWRT]]></title>
-      <url>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/</url>
-      <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
-<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
-<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
-<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
-<blockquote>
-<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
-</blockquote>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Contiki-CC2538-CoAP]]></title>
       <url>http://cuiqingwei.github.io/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/</url>
       <content type="html"><![CDATA[<div align="center"><br><iframe height="498" width="510" src="http://player.youku.com/embed/XMTgyNDA3NDAzNg==" frameborder="0" 'allowfullscreen'=""></iframe><br></div>
@@ -309,6 +296,19 @@
 <h1 id="ping6"><a href="#ping6" class="headerlink" title="ping6"></a>ping6</h1><p>ping6 aaaa::212:4b00:5af:84e0</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">PING aaaa::212:4b00:5af:84e0(aaaa::212:4b00:5af:84e0) 56 data bytes</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=1 ttl=63 time=1013 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=2 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=3 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=4 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=5 ttl=63 time=125 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=6 ttl=63 time=120 ms</div></pre></td></tr></table></figure>
 <h1 id="firefox"><a href="#firefox" class="headerlink" title="firefox"></a>firefox</h1><p><img src="/img/20161117/coap1.png" alt=""><br><img src="/img/20161117/coap2.png" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[GoAhead移植到OpenWRT]]></title>
+      <url>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/</url>
+      <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
+<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
+<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
+<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
+<blockquote>
+<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
+</blockquote>
 ]]></content>
     </entry>
     
@@ -1847,27 +1847,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[MacOS]]></title>
-      <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-MacOS/</url>
-      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
-<h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p>工作：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br><a href="http://www.tuicool.com/articles/yeyIfuu" target="_blank" rel="external">http://www.tuicool.com/articles/yeyIfuu</a><br>系统：QQ、CleanMyDrive 3<br><a id="more"></a></p>
-<h3 id="2-dmg"><a href="#2-dmg" class="headerlink" title="2. dmg"></a>2. dmg</h3><p>Chrome、VMwareFusion、RDC、QQInput、RTX、cornerstone<br>Sublime Text</p>
-<h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><p>ruby -e “$(curl -fsSL <a href="https://raw.github.com/Homebrew/homebrew/go/install" target="_blank" rel="external">https://raw.github.com/Homebrew/homebrew/go/install</a>)”<br><a href="http://brew.sh/" target="_blank" rel="external">http://brew.sh/</a><br><a href="http://blog.csdn.net/aaawqqq/article/details/44088141" target="_blank" rel="external">http://blog.csdn.net/aaawqqq/article/details/44088141</a></p>
-<p>升级更新 brew update<br>cd /usr/local<br>git reset –hard<br>git checkout .<br>sudo chown -R cuiqingwei /usr/local<br>brew update<br><a href="http://www.xitongzhijia.net/xtjc/20141204/31879.html" target="_blank" rel="external">http://www.xitongzhijia.net/xtjc/20141204/31879.html</a></p>
-<h3 id="4-MacPorts"><a href="#4-MacPorts" class="headerlink" title="4. MacPorts"></a>4. MacPorts</h3><p><a href="https://www.macports.org/install.php" target="_blank" rel="external">https://www.macports.org/install.php</a><br><a href="http://guide.macports.org/#installing.macports" target="_blank" rel="external">http://guide.macports.org/#installing.macports</a></p>
-<h3 id="5-wget"><a href="#5-wget" class="headerlink" title="5. wget"></a>5. wget</h3><p>sudo port install wget</p>
-<h3 id="6-zsh"><a href="#6-zsh" class="headerlink" title="6. zsh"></a>6. zsh</h3><p>wget <a href="https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh</a> -O - | sh<br><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="external">http://leeiio.me/bash-to-zsh-for-mac/</a><br><a href="http://www.sketchup.com/download/all" target="_blank" rel="external">http://www.sketchup.com/download/all</a><br>打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!</p>
-<h3 id="7-mac-say-唱歌"><a href="#7-mac-say-唱歌" class="headerlink" title="7. mac say 唱歌"></a>7. mac say 唱歌</h3><p>应用程序&gt;实用工具&gt;Terminal 复制和黏贴以下内容，然后回车：</p>
-<ul>
-<li>spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。</li>
-<li>在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。</li>
-<li>开始听歌了。</li>
-</ul>
-<h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="external">https://checkcoverage.apple.com/cn/zh/</a></p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Ubuntu]]></title>
       <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-Ubuntu/</url>
       <content type="html"><![CDATA[<h3 id="1-常用指令"><a href="#1-常用指令" class="headerlink" title="1.常用指令"></a>1.常用指令</h3><pre><code>版本查看：
@@ -1919,6 +1898,27 @@ hosts
      https://github.com/racaljk/hosts
 </code></pre><p><strong>Cannot Set LC_ALL to default locale: No such file or directory</strong><br><a href="http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/" target="_blank" rel="external">http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/</a></p>
 <p>sEx只是调用相关程序，本身并无压缩、解压功能，请注意！<br>sEx请到： <a href="http://sourceforge.net/projects/sex下载！" target="_blank" rel="external">http://sourceforge.net/projects/sex下载！</a><br>解压后请将sEx拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br>[root@www2 tmp]# cp sEx /usr/bin/</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MacOS]]></title>
+      <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-MacOS/</url>
+      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
+<h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p>工作：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br><a href="http://www.tuicool.com/articles/yeyIfuu" target="_blank" rel="external">http://www.tuicool.com/articles/yeyIfuu</a><br>系统：QQ、CleanMyDrive 3<br><a id="more"></a></p>
+<h3 id="2-dmg"><a href="#2-dmg" class="headerlink" title="2. dmg"></a>2. dmg</h3><p>Chrome、VMwareFusion、RDC、QQInput、RTX、cornerstone<br>Sublime Text</p>
+<h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><p>ruby -e “$(curl -fsSL <a href="https://raw.github.com/Homebrew/homebrew/go/install" target="_blank" rel="external">https://raw.github.com/Homebrew/homebrew/go/install</a>)”<br><a href="http://brew.sh/" target="_blank" rel="external">http://brew.sh/</a><br><a href="http://blog.csdn.net/aaawqqq/article/details/44088141" target="_blank" rel="external">http://blog.csdn.net/aaawqqq/article/details/44088141</a></p>
+<p>升级更新 brew update<br>cd /usr/local<br>git reset –hard<br>git checkout .<br>sudo chown -R cuiqingwei /usr/local<br>brew update<br><a href="http://www.xitongzhijia.net/xtjc/20141204/31879.html" target="_blank" rel="external">http://www.xitongzhijia.net/xtjc/20141204/31879.html</a></p>
+<h3 id="4-MacPorts"><a href="#4-MacPorts" class="headerlink" title="4. MacPorts"></a>4. MacPorts</h3><p><a href="https://www.macports.org/install.php" target="_blank" rel="external">https://www.macports.org/install.php</a><br><a href="http://guide.macports.org/#installing.macports" target="_blank" rel="external">http://guide.macports.org/#installing.macports</a></p>
+<h3 id="5-wget"><a href="#5-wget" class="headerlink" title="5. wget"></a>5. wget</h3><p>sudo port install wget</p>
+<h3 id="6-zsh"><a href="#6-zsh" class="headerlink" title="6. zsh"></a>6. zsh</h3><p>wget <a href="https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh</a> -O - | sh<br><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="external">http://leeiio.me/bash-to-zsh-for-mac/</a><br><a href="http://www.sketchup.com/download/all" target="_blank" rel="external">http://www.sketchup.com/download/all</a><br>打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!</p>
+<h3 id="7-mac-say-唱歌"><a href="#7-mac-say-唱歌" class="headerlink" title="7. mac say 唱歌"></a>7. mac say 唱歌</h3><p>应用程序&gt;实用工具&gt;Terminal 复制和黏贴以下内容，然后回车：</p>
+<ul>
+<li>spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。</li>
+<li>在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。</li>
+<li>开始听歌了。</li>
+</ul>
+<h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="external">https://checkcoverage.apple.com/cn/zh/</a></p>
 ]]></content>
     </entry>
     
@@ -2977,6 +2977,15 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     </entry>
     
     <entry>
+      <title><![CDATA[Linux中生成shadow的加密密码.04安装arm开发环境]]></title>
+      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-08-Linux%E4%B8%AD%E7%94%9F%E6%88%90shadow%E7%9A%84%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81/</url>
+      <content type="html"><![CDATA[<p>How to generate Linux shadow password / Linux中如何生成shadow密码（CentOS 5下测试通过）<br>/etc/shadow中的root信息:<br>root:$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.:15225:0:99999:7:::</p>
+<p>其中，”$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.” 就是加密后的root密码，我们在修改用户密码的时候都使用passwd命令，其实也可以直接修改/etc/shadow文件。那要面临的问题就是如何生成这个加密过的shadow密码($1$ 表示加密算法是基于MD5的，不同发行版本默认的加密算法可能不同)。<br>方法一（交互式）<br>[root@centos-vm ~]# openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32)<br>Password:    # input your password here<br>$1$MZrDxgEw$i2XBgmDMo0Wf1.OVvOGGQ1</p>
+<p>方法二（适用于脚本）<br>[root@centos-vm ~]# echo “passwd” | openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32) -stdin<br>$1$KsRJO8kG$M9co4G7T6.5KcITsSCRNS/</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[ubuntu11.04安装arm开发环境]]></title>
       <url>http://cuiqingwei.github.io/2012/09/07/2012-09-07-ubuntu11-04%E5%AE%89%E8%A3%85arm%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
       <content type="html"><![CDATA[<p>特别提示：整个过程中计算机必须联网，因为有些程序需要从网络上下载!</p>
@@ -3068,15 +3077,6 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
 <h1 id="六、编译buildroot所需安装包"><a href="#六、编译buildroot所需安装包" class="headerlink" title="六、编译buildroot所需安装包"></a>六、编译buildroot所需安装包</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install make flex bison m4 ncurses-dev gettext texi2html texinfo zlib1g zlib1g-dev liblzo2-2 liblzo2-dev libacl1 libacl1-dev libglib2.0-dev autoconf automake libtool</div><div class="line">apt-get install subversion</div></pre></td></tr></table></figure>
 <h1 id="七、SAM-BA所需安装包"><a href="#七、SAM-BA所需安装包" class="headerlink" title="七、SAM-BA所需安装包"></a>七、SAM-BA所需安装包</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">apt-get install linux-image-generic linux-headers-generic</div><div class="line">＃ On 64 bits version install 32 bits libraries:</div><div class="line">apt-get install ia32-libs</div><div class="line">chmod +x sam-ba</div><div class="line">ln <span class="_">-s</span> /dev/ttyACM0 /dev/ttyUSB0</div></pre></td></tr></table></figure>
 <p>运行sam-ba</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Linux中生成shadow的加密密码.04安装arm开发环境]]></title>
-      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-08-Linux%E4%B8%AD%E7%94%9F%E6%88%90shadow%E7%9A%84%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81/</url>
-      <content type="html"><![CDATA[<p>How to generate Linux shadow password / Linux中如何生成shadow密码（CentOS 5下测试通过）<br>/etc/shadow中的root信息:<br>root:$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.:15225:0:99999:7:::</p>
-<p>其中，”$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.” 就是加密后的root密码，我们在修改用户密码的时候都使用passwd命令，其实也可以直接修改/etc/shadow文件。那要面临的问题就是如何生成这个加密过的shadow密码($1$ 表示加密算法是基于MD5的，不同发行版本默认的加密算法可能不同)。<br>方法一（交互式）<br>[root@centos-vm ~]# openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32)<br>Password:    # input your password here<br>$1$MZrDxgEw$i2XBgmDMo0Wf1.OVvOGGQ1</p>
-<p>方法二（适用于脚本）<br>[root@centos-vm ~]# echo “passwd” | openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32) -stdin<br>$1$KsRJO8kG$M9co4G7T6.5KcITsSCRNS/</p>
 ]]></content>
     </entry>
     

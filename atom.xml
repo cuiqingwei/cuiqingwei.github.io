@@ -247,7 +247,7 @@
     <link href="http://cuiqingwei.github.io/2017/01/01/2017-01-01-%E8%B7%AF%E4%BA%9A%E8%A3%85%E9%80%BC%E6%8C%87%E5%8D%97/"/>
     <id>http://cuiqingwei.github.io/2017/01/01/2017-01-01-路亚装逼指南/</id>
     <published>2017-01-01T15:27:40.000Z</published>
-    <updated>2017-07-02T07:06:27.000Z</updated>
+    <updated>2017-07-02T07:10:59.000Z</updated>
     
     <content type="html"><![CDATA[<p>何为<strong>路亚</strong>？你看有人站水边，竿尖挂个假鱼，抛出去，收回来，抛出去，再收，那就是了。</p>
 <p><img src="/img/20170101/pjlure.jpg" alt=""></p>
@@ -272,7 +272,7 @@
 <p>最后末了特写鱼饵挂住鱼的位置，大部分照片都是看那鱼无辜的含着鱼饵上的三头钩，这个专业上叫<strong>正口</strong>，一定要喊出来。其余的估计也不大会有人上图，譬如挂住鱼鳍啊，挂住屁股啊什么乱七八糟的部位，这个他们叫<strong>车祸</strong>。</p>
 <p>如果水边干了一天除了丢十来个鱼饵什么也没有干到的，人叫<strong>打龟</strong>或者<strong>空军</strong>。</p>
 <p><img src="/img/20170101/kongjun.jpg" alt=""></p>
-<p>有一阵没有钓到,就可以说是空军一号了。。。。。。</p>
+<p>如果好久都没有钓到,就可以说是空军一号了！</p>
 <p>现在来讲讲<strong>顶级装逼</strong>者一般怎么搞?!</p>
 <p><img src="/img/20170101/cheshang.jpg" alt=""></p>
 <p>先你要明白一句话，<em>菜鸟爱扎堆，高手都独行。</em> 人不屑跟你讲什么，自己闷头搞就是。开个揽胜运动版，来到了水边，下车不着急取设备，先看，还拿望远镜看，看什么呢，看水流，看地形，看鱼的活跃程度，看完了还辨，辨天色，辨时间，辨风力。有的高手看辨掉头开车就闪了，你问他为什么，答曰:”时候不对!”</p>
@@ -390,35 +390,6 @@
   </entry>
   
   <entry>
-    <title>GoAhead移植到OpenWRT</title>
-    <link href="http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/"/>
-    <id>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead移植到OpenWRT/</id>
-    <published>2016-11-17T13:04:40.000Z</published>
-    <updated>2016-12-15T13:45:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
-<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
-<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
-<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
-<blockquote>
-<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;make-menuconfig&quot;&gt;&lt;a href=&quot;#make-menuconfig&quot; class=&quot;headerlink&quot; title=&quot;make menuconfig&quot;&gt;&lt;/a&gt;make menuconfig&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/img/20161215/menuconfig.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
-    
-      <category term="GoAhead" scheme="http://cuiqingwei.github.io/tags/GoAhead/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Contiki-CC2538-CoAP</title>
     <link href="http://cuiqingwei.github.io/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/"/>
     <id>http://cuiqingwei.github.io/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/</id>
@@ -457,6 +428,35 @@
       <category term="CC2538" scheme="http://cuiqingwei.github.io/tags/CC2538/"/>
     
       <category term="CoAP" scheme="http://cuiqingwei.github.io/tags/CoAP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GoAhead移植到OpenWRT</title>
+    <link href="http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/"/>
+    <id>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead移植到OpenWRT/</id>
+    <published>2016-11-17T13:04:40.000Z</published>
+    <updated>2016-12-15T13:45:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
+<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
+<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
+<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
+<blockquote>
+<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;make-menuconfig&quot;&gt;&lt;a href=&quot;#make-menuconfig&quot; class=&quot;headerlink&quot; title=&quot;make menuconfig&quot;&gt;&lt;/a&gt;make menuconfig&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/img/20161215/menuconfig.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
+    
+      <category term="GoAhead" scheme="http://cuiqingwei.github.io/tags/GoAhead/"/>
     
   </entry>
   
