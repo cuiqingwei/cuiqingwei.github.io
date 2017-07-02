@@ -200,7 +200,7 @@
 <p>因为你喝醉了到人楼下去吼，想挨酒瓶子你得先知道这楼里还有没有住户啊，那楼都荒废十来年了，你吼一晚顶多冒个鬼出来吓吓你啊！</p>
 </blockquote>
 <p><img src="/img/20170101/zhaoyu.jpg" alt=""></p>
-<p>然后,哥们明白了，路亚还有个关键，一是最要命的，<strong>找鱼！</strong> 你要知道那地方有没有鱼，有没有食肉鱼，在哪个水层，旁边有没有障碍导致你挂饵。</p>
+<p>然后,哥们明白了，路亚还有个关键，也是最要命的，<strong>找鱼！</strong> 你要知道那地方有没有鱼，有没有食肉鱼，在哪个水层，旁边有没有障碍导致你挂饵。</p>
 <p>以上问题从发现到解决，几个月过去了，上论坛看视频找人带终于摸到路子了，碰到砸酒瓶的了。上鱼了！</p>
 <p>这个时候你就又发现，初学者们在鱼出水那一瞬间不是用手去逮，一准要拿控鱼器夹着鱼嘴巴拉出水面。</p>
 <p><img src="/img/20170101/yuhuo.jpg" alt=""></p>
@@ -2990,15 +2990,6 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     </entry>
     
     <entry>
-      <title><![CDATA[Linux中生成shadow的加密密码.04安装arm开发环境]]></title>
-      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-08-Linux%E4%B8%AD%E7%94%9F%E6%88%90shadow%E7%9A%84%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81/</url>
-      <content type="html"><![CDATA[<p>How to generate Linux shadow password / Linux中如何生成shadow密码（CentOS 5下测试通过）<br>/etc/shadow中的root信息:<br>root:$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.:15225:0:99999:7:::</p>
-<p>其中，”$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.” 就是加密后的root密码，我们在修改用户密码的时候都使用passwd命令，其实也可以直接修改/etc/shadow文件。那要面临的问题就是如何生成这个加密过的shadow密码($1$ 表示加密算法是基于MD5的，不同发行版本默认的加密算法可能不同)。<br>方法一（交互式）<br>[root@centos-vm ~]# openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32)<br>Password:    # input your password here<br>$1$MZrDxgEw$i2XBgmDMo0Wf1.OVvOGGQ1</p>
-<p>方法二（适用于脚本）<br>[root@centos-vm ~]# echo “passwd” | openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32) -stdin<br>$1$KsRJO8kG$M9co4G7T6.5KcITsSCRNS/</p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[ubuntu11.04安装arm开发环境]]></title>
       <url>http://cuiqingwei.github.io/2012/09/07/2012-09-07-ubuntu11-04%E5%AE%89%E8%A3%85arm%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
       <content type="html"><![CDATA[<p>特别提示：整个过程中计算机必须联网，因为有些程序需要从网络上下载!</p>
@@ -3090,6 +3081,15 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
 <h1 id="六、编译buildroot所需安装包"><a href="#六、编译buildroot所需安装包" class="headerlink" title="六、编译buildroot所需安装包"></a>六、编译buildroot所需安装包</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install make flex bison m4 ncurses-dev gettext texi2html texinfo zlib1g zlib1g-dev liblzo2-2 liblzo2-dev libacl1 libacl1-dev libglib2.0-dev autoconf automake libtool</div><div class="line">apt-get install subversion</div></pre></td></tr></table></figure>
 <h1 id="七、SAM-BA所需安装包"><a href="#七、SAM-BA所需安装包" class="headerlink" title="七、SAM-BA所需安装包"></a>七、SAM-BA所需安装包</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">apt-get install linux-image-generic linux-headers-generic</div><div class="line">＃ On 64 bits version install 32 bits libraries:</div><div class="line">apt-get install ia32-libs</div><div class="line">chmod +x sam-ba</div><div class="line">ln <span class="_">-s</span> /dev/ttyACM0 /dev/ttyUSB0</div></pre></td></tr></table></figure>
 <p>运行sam-ba</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Linux中生成shadow的加密密码.04安装arm开发环境]]></title>
+      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-08-Linux%E4%B8%AD%E7%94%9F%E6%88%90shadow%E7%9A%84%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81/</url>
+      <content type="html"><![CDATA[<p>How to generate Linux shadow password / Linux中如何生成shadow密码（CentOS 5下测试通过）<br>/etc/shadow中的root信息:<br>root:$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.:15225:0:99999:7:::</p>
+<p>其中，”$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.” 就是加密后的root密码，我们在修改用户密码的时候都使用passwd命令，其实也可以直接修改/etc/shadow文件。那要面临的问题就是如何生成这个加密过的shadow密码($1$ 表示加密算法是基于MD5的，不同发行版本默认的加密算法可能不同)。<br>方法一（交互式）<br>[root@centos-vm ~]# openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32)<br>Password:    # input your password here<br>$1$MZrDxgEw$i2XBgmDMo0Wf1.OVvOGGQ1</p>
+<p>方法二（适用于脚本）<br>[root@centos-vm ~]# echo “passwd” | openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32) -stdin<br>$1$KsRJO8kG$M9co4G7T6.5KcITsSCRNS/</p>
 ]]></content>
     </entry>
     
