@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2017-09-19T02:57:03.000Z</updated>
+  <updated>2017-09-21T05:41:19.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -16,11 +16,82 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>酒店PMS</title>
+    <link href="http://cuiqingwei.github.io/2017/09/21/2017-09-21-%E9%85%92%E5%BA%97PMS/"/>
+    <id>http://cuiqingwei.github.io/2017/09/21/2017-09-21-酒店PMS/</id>
+    <published>2017-09-20T16:09:08.000Z</published>
+    <updated>2017-09-21T05:41:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="什么是PMS"><a href="#什么是PMS" class="headerlink" title="什么是PMS"></a>什么是PMS</h1><p><strong>PMS</strong>：Property Management System，直译为物业管理系统，也有翻译为：酒店管理系统。</p>
+<p>酒店PMS系统是一个以计算机为工具，对酒店信息管理和处理的人机综合系统，它不但能准确及时地反映酒店业务的当前状态、房源状态，还能快速实现客人预定入住到财务对账等一系列操作;不但是一个数据统计的数据库，还能够提供各方面的报表，且利用数据进行统计分析，从而更有利于酒店的经营和管理。</p>
+<a id="more"></a>
+<h1 id="PMS行业情况"><a href="#PMS行业情况" class="headerlink" title="PMS行业情况"></a>PMS行业情况</h1><p>PMS是酒店前台预订系统的简称，是酒店管理的必备软件之一，是酒店销售完全信息化（直连）的唯一入口，也是我国酒店星级评定的重要衡量指标之一，所有评定过的三星级及以上的酒店都拥有PMS。</p>
+<p>而PMS厂商一般都提供酒店管理的全套软件或是酒店管理的解决方案，包括前台管理（预订、接待、收银、夜审、客房、客史、会员、餐饮、娱乐等）、后台管理（财务、物流、人事、维护、宽带等）和接口管理（内部接口和外部接口）等。所以如果某酒店采用某PMS厂商的PMS产品，那么该酒店的其他管理软件也基本上是来自于该PMS厂商，且酒店要更换产品会比较麻烦。</p>
+<p>目前，我国的几大PMS厂商主要有：<br><strong>石基信息</strong>：（通过买断和代理Micros Fidelio）占有国内90%以上的五星级酒店市场和80%以上的高星级（4、5星级）酒店的市场份额，在高端酒店市场处在垄断地位；<strong>杭州西软科技</strong>：拥有国内最多的酒店客户群，已超过2600家酒店，于2006年被石基收购；<strong>北京中软好泰</strong>：在国内拥有第二大酒店客户群，于2008年被携程控股（好像已经收购了华仪技术，有待进一步澄清）；<strong>华仪软件</strong>：总部设在北京，市场份额06年还排第四，不过近两年发展比较缓慢；<strong>广州万讯（广州千里马）</strong>：占有珠江三角洲最大的市场份额，06年拥有大概1000家左右的市场，07年与pegasus solutions在华公司易旅科技结成合作伙伴，不过这两年发展缓慢；北京泰能：05年被石基信息收购，不过08年又自由了，现在拥有的酒店客户群大概有1500左右，酒店数量排在第三位。</p>
+<h1 id="主流PMS"><a href="#主流PMS" class="headerlink" title="主流PMS"></a>主流PMS</h1><p>国际酒店有OPERA、FIDELIO，国内三到五星有中软、西软，腾云、千里马，中小型酒店有简单点、罗盘、芙蓉等。</p>
+<p>其它还有：金天鹅、欣欣、方寸、齐创、华仪、金达莱、企发、智信、易能、云飞、千里马、大总管、捷信达…</p>
+<blockquote>
+<p>1987年10月在德国慕尼黑成立的Fidelio Software GmbH,成立仅仅四年就成为了欧洲顶尖的酒店软件管理产品，成立六年跃居世界酒店信息系统供应商之首。</p>
+<p>之后并入美国Micros System Inc 公司，1995年 Micros成立中国分公司–上海富达，2003年北京中长石基信息技术有限公司从Micros公司取得了FIDELIO和OPERA中国唯一的销售许可。</p>
+<p>FIDELIO和OPERA几乎是所有国内高端外资酒店的共同选择，<br>在国内，除非5星级或者有一定影响力的酒店，一般都不进行合作。</p>
+<p>国内各方观点<br>1、FIDELIO不错，但是在操作的方便性、高效性上，没有本地系统优秀。有的人在90年代初做酒店，入门就玩FIDELIO，根本就没有好好研究在90年代后期发展起来的本地造，妄下断语。闭眼讲话，拿着无知当高尚。<br>2、FIDELIO早期版本建立起来的严谨、稳定、茁壮的程序风格可以说让OPERA SYSTEMS给破坏成了昨日黄花。各位谁知：FIDELIO OPERA7.0版因为数据处理错误，FIDELIO放弃不可一世的面孔，自己上门为用户打补丁。<br>3、FIDELIO太孤傲了，不仅仅忽略中国市场群落的需求呼声，没有为大陆开发中文增值包（连微软ms office都为特意为中国市场增加了增值服务包),而且故障维护费用惊人。他们的理念是：一切故障都是客户的故障。我的系统永远是正常的。我想引用一位欧洲学者的话：偏见比无知更可怕。 但我们承认computer system 是作为一个酒店整体解决方案（ERP）进入酒店，系统本身融入了开发者的管理思想和理念，如果说安装了系统，不如说我们导入了新的经营思想，FIDELIO在技术上渐失优势的时刻，仍有管理牌紧握。</p>
+</blockquote>
+<h1 id="PMS链接"><a href="#PMS链接" class="headerlink" title="PMS链接"></a>PMS链接</h1><p>OPERA<br><a href="https://www.oracle.com/industries/hospitality/products/opera-property-services/index.html" target="_blank" rel="external">https://www.oracle.com/industries/hospitality/products/opera-property-services/index.html</a><br>千里马<br><a href="http://www.armitage.com.cn" target="_blank" rel="external">http://www.armitage.com.cn</a><br>金天鹅<br><a href="http://www.jdglrj.com/down.html" target="_blank" rel="external">http://www.jdglrj.com/down.html</a></p>
+<h1 id="云PMS"><a href="#云PMS" class="headerlink" title="云PMS"></a>云PMS</h1><p>罗盘<br><a href="http://www.luopan.cn/" target="_blank" rel="external">http://www.luopan.cn/</a><br>住哲<br><a href="http://www.zhuzher.com/" target="_blank" rel="external">http://www.zhuzher.com/</a><br>智选云<br><a href="http://www.ccshis.com/index.html" target="_blank" rel="external">http://www.ccshis.com/index.html</a><br>天龙云<br><a href="http://pms.yaduo.com/login.html" target="_blank" rel="external">http://pms.yaduo.com/login.html</a><br>民宿云<br><a href="http://www.minsuyun.com/home/index.html" target="_blank" rel="external">http://www.minsuyun.com/home/index.html</a><br>方信科技<br><a href="http://www.cnfangxin.com/cn/rjcp.asp?id=236" target="_blank" rel="external">http://www.cnfangxin.com/cn/rjcp.asp?id=236</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;什么是PMS&quot;&gt;&lt;a href=&quot;#什么是PMS&quot; class=&quot;headerlink&quot; title=&quot;什么是PMS&quot;&gt;&lt;/a&gt;什么是PMS&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;PMS&lt;/strong&gt;：Property Management System，直译为物业管理系统，也有翻译为：酒店管理系统。&lt;/p&gt;
+&lt;p&gt;酒店PMS系统是一个以计算机为工具，对酒店信息管理和处理的人机综合系统，它不但能准确及时地反映酒店业务的当前状态、房源状态，还能快速实现客人预定入住到财务对账等一系列操作;不但是一个数据统计的数据库，还能够提供各方面的报表，且利用数据进行统计分析，从而更有利于酒店的经营和管理。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="PMS" scheme="http://cuiqingwei.github.io/tags/PMS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何查看网站是用什么语言开发的?</title>
+    <link href="http://cuiqingwei.github.io/2017/09/21/2017-10-31-%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%AB%99%E6%98%AF%E7%94%A8%E4%BB%80%E4%B9%88%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%9A%84/"/>
+    <id>http://cuiqingwei.github.io/2017/09/21/2017-10-31-如何查看网站是用什么语言开发的/</id>
+    <published>2017-09-20T16:09:08.000Z</published>
+    <updated>2017-10-31T03:16:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>查看网站开发语言方法：</p>
+<p>1）利用工具直接输入查询</p>
+<p><a href="http://w3techs.com/sites/info/baidu.com" target="_blank" rel="external">http://w3techs.com/sites/info/baidu.com</a><br><a href="https://builtwith.com/baidu.com" target="_blank" rel="external">https://builtwith.com/baidu.com</a></p>
+<p>把最后的域名换成想知道的网址，系统会自动分析。</p>
+<p>2）后台语言可以通过服务器类型推测。</p>
+<p>一般情况下，服务器类型可以通过 Response Header 来看。</p>
+<p>比如 IIS，一般是 <a href="http://ASP.NET" target="_blank" rel="external">http://ASP.NET</a></p>
+<p>Tomcat、Resin、JBoss，一般是 Java。</p>
+<p>Nginx，不一定，很有可能是 PHP 或者 Python 之类的脚本语言。</p>
+<p>3）后台框架就更难分析了，不过可以尝试通过 HTML 代码格式，或者 URL 来分析。</p>
+<p>比如 URL 后缀是 do，可能用到了 Java Struts。</p>
+<p>URL 一般都是 index.php，但是后面参数不同，那么可能用到了 PHP 的一些模板引擎。</p>
+<p>当然，这个分析不可靠，只是一种推测。</p>
+<p>4）想办法联系网站创始人：），邮件或私信询问。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;查看网站开发语言方法：&lt;/p&gt;
+&lt;p&gt;1）利用工具直接输入查询&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://w3techs.com/sites/info/baidu.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://w3techs.co
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>使用Ionic框架开发Hybird应用</title>
     <link href="http://cuiqingwei.github.io/2017/09/19/2017-09-19-%E4%BD%BF%E7%94%A8Ionic%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91Hybird%E5%BA%94%E7%94%A8/"/>
     <id>http://cuiqingwei.github.io/2017/09/19/2017-09-19-使用Ionic框架开发Hybird应用/</id>
     <published>2017-09-18T16:09:08.000Z</published>
-    <updated>2017-09-19T02:57:03.000Z</updated>
+    <updated>2017-09-22T03:41:37.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="什么是Ionic"><a href="#什么是Ionic" class="headerlink" title="什么是Ionic"></a>什么是Ionic</h1><p>Ionic是一个强大的HTML5 原生应用（Native App）开发框架，帮助你用HTML，CSS和JavaScript构建具有原生味道的移动应用;</p>
 <p>Ionic是一个高级HTML5混合式移动应用开发框架，同时也是一个开源的前端框架;</p>
@@ -44,10 +115,15 @@
 <p><img src="/img/20170919/webapp0.png" alt=""></p>
 <p>从网下图，可以很直观的看出Native app 、Web app和Hybrid app三者之间的区别：</p>
 <p><img src="/img/20170919/webapp1.png" alt=""><br><img src="/img/20170919/webapp2.png" alt=""></p>
-<p><em>1）Native APP：Native </em><br>Code编程，代码编译之后以2进制或者字节码的形式运行在OS上，直接调用OS的Device API；</p>
-<p><em>2）Web APP </em>，以HTML+JS+CSS等WEB技术编程，代码运行在浏览器中，通过浏览器来调用Device API（取决于HTML5未来的支持能力）：</p>
-<p><em>3）Hybrid APP </em>，部分代码以WEB技术编程，部分代码由某些Native Container承担（例如PhonGAP插件，BAE插件），其目的是在HTML5尚未完全支持Device API和Network API的目前阶段，承担这部分职责。</p>
-<p>总体来讲，<strong> Hybrid App是同时采用网页语言与程序语言进行开发，通过不同的应用商店进行打包与分发，应用的特性更接近原生应用而且又区别与Web应用 </strong>。但是在开发过程中同时使用了网页语言，所以开发成本与难度大大降低。也就是说Hybrid App兼具了Native App与Web App两者的诸多优点。</p>
+<ul>
+<li><p>1）Native APP：Native *<br>Code编程，代码编译之后以2进制或者字节码的形式运行在OS上，直接调用OS的Device API；</p>
+</li>
+<li><p>2）Web APP * ，以HTML+JS+CSS等WEB技术编程，代码运行在浏览器中，通过浏览器来调用Device API（取决于HTML5未来的支持能力）：</p>
+</li>
+<li><p>3）Hybrid APP * ，部分代码以WEB技术编程，部分代码由某些Native Container承担（例如PhonGAP插件，BAE插件），其目的是在HTML5尚未完全支持Device API和Network API的目前阶段，承担这部分职责。</p>
+</li>
+</ul>
+<p>总体来讲，<strong> Hybrid App是同时采用网页语言与程序语言进行开发，通过不同的应用商店进行打包与分发，应用的特性更接近原生应用而且又区别与Web应用 </strong> 。但是在开发过程中同时使用了网页语言，所以开发成本与难度大大降低。也就是说Hybrid App兼具了Native App与Web App两者的诸多优点。</p>
 <p>Hybrid App有以下的特性：</p>
 <blockquote>
 <p>开发时可能不采用或者大部分不采用原生语言，但是却有所有原生应用的特性；<br>架构方案会和原生有出入，基本由工具而定；<br>具有跨平台特性；<br>一般开发相对原生开发的方式要简单。</p>
@@ -184,9 +260,9 @@
     </summary>
     
     
-      <category term="HomeKit" scheme="http://cuiqingwei.github.io/tags/HomeKit/"/>
-    
       <category term="Raspberry" scheme="http://cuiqingwei.github.io/tags/Raspberry/"/>
+    
+      <category term="HomeKit" scheme="http://cuiqingwei.github.io/tags/HomeKit/"/>
     
   </entry>
   
@@ -913,7 +989,7 @@
     <link href="http://cuiqingwei.github.io/2016/10/10/2016-10-10-%E8%B7%AF%E4%BA%9A%E8%A3%85%E5%A4%87/"/>
     <id>http://cuiqingwei.github.io/2016/10/10/2016-10-10-路亚装备/</id>
     <published>2016-10-10T02:27:40.000Z</published>
-    <updated>2017-06-28T08:50:30.000Z</updated>
+    <updated>2017-09-22T03:49:19.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="路亚竿"><a href="#路亚竿" class="headerlink" title="路亚竿"></a>路亚竿</h1><p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.Jvl32R&amp;id=520196909891&amp;_u=c154cj1987f" target="_blank" rel="external">LRT702MHC</a></strong>  <em>领峰 2015款 魂系列  订制版一体式软木柄</em></p>
 <blockquote>
@@ -949,6 +1025,8 @@
 <p><img src="/img/20161010/RYOGA.png" alt=""></p>
 <p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.HzLi42&amp;id=520734861061&amp;_u=s154cj10930" target="_blank" rel="external">Mentaniu DC HG</a></strong> <em>禧玛诺蒙塔尼DC 2015</em></p>
 <p><img src="/img/20161010/MetaniumDC.png" alt=""><br><img src="/img/20161010/MetaniumDC1.png" alt=""></p>
+<p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.6c818473iizZfR&amp;id=545441440003&amp;_u=m154cj14da2" target="_blank" rel="external">SHIMANO New EXSENCE DC XG</a></strong> <em>禧玛诺海水DC 2017</em></p>
+<p><img src="/img/20161010/EXSENCE DC.png" alt=""></p>
 ]]></content>
     
     <summary type="html">
@@ -1038,133 +1116,6 @@
     <summary type="html">
     
       &lt;h1 id=&quot;渔轮绑法&quot;&gt;&lt;a href=&quot;#渔轮绑法&quot; class=&quot;headerlink&quot; title=&quot;渔轮绑法&quot;&gt;&lt;/a&gt;渔轮绑法&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/img/20161009/渔轮上线绑法.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="路亚" scheme="http://cuiqingwei.github.io/tags/%E8%B7%AF%E4%BA%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OpenWRT开源硬件汇总</title>
-    <link href="http://cuiqingwei.github.io/2016/10/08/2016-10-08-OpenWRT%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6%E6%B1%87%E6%80%BB/"/>
-    <id>http://cuiqingwei.github.io/2016/10/08/2016-10-08-OpenWRT开源硬件汇总/</id>
-    <published>2016-10-08T09:23:37.000Z</published>
-    <updated>2016-10-08T12:15:36.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Arduino-Yun"><a href="#Arduino-Yun" class="headerlink" title="Arduino Yún"></a>Arduino Yún</h1><p><a href="https://www.arduino.cc/en/Main/ArduinoBoardYun" target="_blank" rel="external">https://www.arduino.cc/en/Main/ArduinoBoardYun</a><br>cpu: Atheros AR9331 @400MHZ (含ATmega32U4)<br>ram:  64MB DDR2<br>flash: 16MB<br>wifi: 150Mbit Wi-Fi 1T1R 2.4 GHz</p>
-<h1 id="LinkIt-Smart-7688-Duo"><a href="#LinkIt-Smart-7688-Duo" class="headerlink" title="LinkIt Smart 7688 Duo"></a>LinkIt Smart 7688 Duo</h1><p><a href="https://www.seeedstudio.com/LinkIt-Smart-7688-Duo-p-2574.html" target="_blank" rel="external">https://www.seeedstudio.com/LinkIt-Smart-7688-Duo-p-2574.html</a><br>cpu: MT7688 @580MHZ (含ATmega32U4)<br>ram:  128MB DDR2<br>flash: 32MB<br><a id="more"></a></p>
-<h1 id="IntoRobot-Atom"><a href="#IntoRobot-Atom" class="headerlink" title="IntoRobot Atom"></a>IntoRobot Atom</h1><p><a href="http://shop.intorobot.com/index.php?route=product/product&amp;product_id=43" target="_blank" rel="external">http://shop.intorobot.com/index.php?route=product/product&amp;product_id=43</a><br>cpu: MT7620N @580MHZ (含STM32F103)<br>ram:  512Mbit DDR2<br>flash: 128Mbit</p>
-<h1 id="WRTnode"><a href="#WRTnode" class="headerlink" title="WRTnode"></a>WRTnode</h1><p><a href="http://www.wrtnode.cc/index.html" target="_blank" rel="external">http://www.wrtnode.cc/index.html</a><br>-WRTnode1<br>cpu: MT7620N @580MHZ<br>ram:  512Mbit DDR2<br>flash: 128Mbit<br>wifi: 300Mbit Wi-Fi 2T2R 802.11n 2.4 GHz<br>-WRTnode2R<br>cpu: MT7688AN @580MHZ (含STM32F103)<br>ram:  256MB DDR2<br>flash: 32MB<br>-WRTnode2P<br>cpu: MT7628 @580MHZ<br>ram:  128MB DDR2<br>flash: 16MB<br>-WRTnodeHI<br>cpu: ARM Cortex A7 @600MHZ 支持Neon加速，集成FPU<br>ram:  512MB DDR3<br>flash: 32MB</p>
-<h1 id="MMZ558"><a href="#MMZ558" class="headerlink" title="MMZ558"></a>MMZ558</h1><p><a href="http://www.compex.com.sg/product/mmz558/" target="_blank" rel="external">http://www.compex.com.sg/product/mmz558/</a><br>cpu:   QCA9558 @700MHZ<br>ram:  128MB DDR2<br>flash: 16MB</p>
-<h1 id="WPJ428"><a href="#WPJ428" class="headerlink" title="WPJ428"></a>WPJ428</h1><p><a href="http://www.compex.com.sg/product/wpj428/" target="_blank" rel="external">http://www.compex.com.sg/product/wpj428/</a><br>cpu:   IPQ4028 ARM V7 @710MHZ<br>ram:  256MB DDR2<br>flash: 16MB<br>NAND flasn: 128MB</p>
-<h1 id="AmazingBOX"><a href="#AmazingBOX" class="headerlink" title="AmazingBOX"></a>AmazingBOX</h1><p><a href="http://www.a-box.com.cn/product.php" target="_blank" rel="external">http://www.a-box.com.cn/product.php</a><br>cpu:   Marvell Armada370 @1.2GHZ 含FPU，双流水线技术<br>ram:  1GB DDR3<br>flash: 1GB</p>
-<h1 id="RTNAS-V3"><a href="#RTNAS-V3" class="headerlink" title="RTNAS V3"></a>RTNAS V3</h1><p><a href="http://www.openwrt.org.cn/bbs/thread-15472-1-1.html" target="_blank" rel="external">http://www.openwrt.org.cn/bbs/thread-15472-1-1.html</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Arduino-Yun&quot;&gt;&lt;a href=&quot;#Arduino-Yun&quot; class=&quot;headerlink&quot; title=&quot;Arduino Yún&quot;&gt;&lt;/a&gt;Arduino Yún&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.arduino.cc/en/Main/ArduinoBoardYun&quot;&gt;https://www.arduino.cc/en/Main/ArduinoBoardYun&lt;/a&gt;&lt;br&gt;cpu: Atheros AR9331 @400MHZ (含ATmega32U4)&lt;br&gt;ram:  64MB DDR2&lt;br&gt;flash: 16MB&lt;br&gt;wifi: 150Mbit Wi-Fi 1T1R 2.4 GHz&lt;/p&gt;
-&lt;h1 id=&quot;LinkIt-Smart-7688-Duo&quot;&gt;&lt;a href=&quot;#LinkIt-Smart-7688-Duo&quot; class=&quot;headerlink&quot; title=&quot;LinkIt Smart 7688 Duo&quot;&gt;&lt;/a&gt;LinkIt Smart 7688 Duo&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.seeedstudio.com/LinkIt-Smart-7688-Duo-p-2574.html&quot;&gt;https://www.seeedstudio.com/LinkIt-Smart-7688-Duo-p-2574.html&lt;/a&gt;&lt;br&gt;cpu: MT7688 @580MHZ (含ATmega32U4)&lt;br&gt;ram:  128MB DDR2&lt;br&gt;flash: 32MB&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
-    
-      <category term="开源硬件" scheme="http://cuiqingwei.github.io/tags/%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>拟饵手法</title>
-    <link href="http://cuiqingwei.github.io/2016/10/08/2016-10-08-%E6%8B%9F%E9%A5%B5%E6%89%8B%E6%B3%95/"/>
-    <id>http://cuiqingwei.github.io/2016/10/08/2016-10-08-拟饵手法/</id>
-    <published>2016-10-08T02:27:40.000Z</published>
-    <updated>2016-12-29T13:33:26.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="全泳层饵的泳层基础知识"><a href="#全泳层饵的泳层基础知识" class="headerlink" title="全泳层饵的泳层基础知识"></a>全泳层饵的泳层基础知识</h3><p>全泳层饵，顾名思义，理论上可以作钓所有水层，从水表到水底，钓者有完全的决定权，这与 <strong>米诺[MINNOW]</strong> 或 <strong>摇滚[CRANK]</strong> 有明确的潜行深度明显不同。</p>
-<blockquote>
-<p>沉水铅笔、VIB、各类金属饵，都是全泳层饵。</p>
-</blockquote>
-<a id="more"></a>
-<p><img src="/img/20161008/全泳层饵1.png" alt=""></p>
-<p><strong>设定目标水层</strong> 全泳层饵理论上是全泳层，但到了实战的时候，钓者的每一次抛投都必定有一个目标水层，可以是多少米深，也可以只是一个读数。准确到达预设的目标水层是全泳层饵操控的灵魂！</p>
-<p>确定作钓目标水层深度可以采取读秒或者读数法。</p>
-<ul>
-<li>读秒法</li>
-</ul>
-<p>在明确了解饵的下沉速度时，用读秒法可以确定水层并估测水深。如“诡道4#”的80mm沉水铅笔，每2秒下沉1m，如果抛出触底读秒是8，那么水深大致就在4m左右，当你把目标水层设定在离底1m时，抛出后读秒到6就正好到达目标水层。</p>
-<ul>
-<li>读数法</li>
-</ul>
-<p>目标水层就是你内心的一个读数，和饵的下沉速度无关，可以任意运用到任何一款全泳层饵。抛出全泳层饵后即以你最喜欢的节奏稳定读数，触底时的读数就是深度。如读数是20，深度就是20，如果目标水层设定在下层，则饵落水后读到17-18就OK了，读到19就搜底了，如果想钓中层，读到10就OK。在这里水深多少米已经没有了意义。</p>
-<p><img src="/img/20161008/全泳层饵2.png" alt=""></p>
-<p><strong>确定收线速度</strong> 收线快慢直接决定饵行进过程中泳层的变化！快了泳层变浅，游向水面；慢了泳层变深，往水底钻。具体情况因饵的不同而不同，需要作钓者体验感知。</p>
-<p>通常情况下，自重比较大的全泳层饵需要相对比较快的速度才能保持在一定的泳层，比如各类大克重的金属饵，必须以高速操控，因此在鱼活性不高的时候，效果有限，而对于翘嘴鲌这类目标鱼，实战中低速操控往往比高速状态更具诱惑性；反之，比重相对轻的全泳层饵，如沉水铅笔，收线速度很慢也能保持一定的泳层，呈现优异的泳姿，这在低水温环境或者目标鱼活性不高时，尤其重要，特别适合翘嘴鲌作钓。</p>
-<h3 id="VIB"><a href="#VIB" class="headerlink" title="VIB"></a>VIB</h3><p><img src="/img/20161008/VIB1.png" alt=""></p>
-<p>竿尖上举和下指，对于VIB的操控来说你会有明显不同的感觉。上举时，震颤感更加明显，即便慢速收线时也有强烈手感，让你敏锐准确地掌控饵在水下的状态。</p>
-<p><img src="/img/20161008/VIB2.png" alt=""></p>
-<p>VIB是全泳层饵，抛出后等待时间的不同，让VIB下沉的深度也不同，实战中根据需要确定目标水层。<em>具体请参阅“全泳层饵的泳层基础知识”</em></p>
-<p><img src="/img/20161008/VIB3.png" alt=""></p>
-<p>对于颤游也可以在路亚抛出后让其自由下沉至轻轻触底，随后竿尖朝下缓缓收线，水底的路亚似一条无悠无虑觅食的小鱼，随后抬高竿尖，迅速轻轻一抽，路亚就似猛地受惊向上逃窜的小鱼，瞬间就勾起庸懒的猎食者最疯狂的追咬！VIB易挂底，因此钓线建议用2＃的PE＋5＃碳前导，这样挽救的机会比较大。</p>
-<blockquote>
-<p>逗逗vib</p>
-</blockquote>
-<p><img src="/img/20161008/逗逗VIB.jpg" alt=""><br><img src="/img/20161008/逗逗VIB1.jpg" alt=""><br><img src="/img/20161008/逗逗VIB2.jpg" alt=""></p>
-<h3 id="沉水铅笔"><a href="#沉水铅笔" class="headerlink" title="沉水铅笔"></a>沉水铅笔</h3><p><img src="/img/20161008/沉水铅笔.jpg" alt=""></p>
-<blockquote>
-<p>沉水铅笔最致命的杀伤力就是能够完美实现作钓者随心所欲的操控，真正体现你的作钓思路。<br>铅笔、米诺和颤游的强强联合，表层到底部，不论何种方式操控，中鱼！匀速收线，缓慢摇摆，如毫无戒心游着的小鱼，猎食鱼岂肯错过；小抽猛拉，如鱼逃窜，高频小抽特别是“狗步”操控时，如同垂死的小鱼最后无力的挣扎，而猛拉再稍加停顿时，又如四处游逃还被吓呆的小鱼，诱惑无可抵挡；下沉自颤，头部下倾，加上腹尾两枚银色三本钩鱼鳍般的同频颤动，目标鱼最易从腹下发动雷霆一击，多数腹钩中鱼，而“自沉”配合“匀收”或“小抽”，则可在水层中进行“W”搜索，全泳层出击!  </p>
-</blockquote>
-<h4 id="沉水铅笔的慢速平拖搜索（路亚翘嘴强力推荐）-难度系数★"><a href="#沉水铅笔的慢速平拖搜索（路亚翘嘴强力推荐）-难度系数★" class="headerlink" title="沉水铅笔的慢速平拖搜索（路亚翘嘴强力推荐）　难度系数★"></a>沉水铅笔的慢速平拖搜索（路亚翘嘴强力推荐）　<em>难度系数★</em></h4><p><img src="/img/20161008/沉水铅笔1.png" alt=""></p>
-<p><strong>搜索中上层</strong> 路亚抛出后即收或者稍等再匀速收线，多数情况下竿尖向下或水平，匀速缓速收线，不需要任何点抽的动作，保持匀速，这在作钓翘嘴过程中非常有效，对轻易不肯就饵的压力鱼尤其有效，低水温环境下作钓也有出色表现！</p>
-<ol>
-<li><p>沉水铅笔抛出后等待时间的长短，直接决定了沉水铅笔的搜索水层，等待时间越长，路亚下沉深度越大，搜索的目标水层就越深。</p>
-</li>
-<li><p>具体操控时，如果水下深浅变化比较均匀，但平收过程中却有触底、挂底、挂水草或螺蛳等，说明收线速度偏慢，铅笔无法保持一定的水层，潜行深度不断增加直至探底。</p>
-</li>
-<li><p>如果掌控了一定的收线速度并能使铅笔保持在一定的水层后，在平收过程中如果发生挂底或挂草等情形，则说明水下存在一定的深浅变化结构，而这样的区域则是路亚精细作钓时，需要重点搜索的区域。</p>
-</li>
-</ol>
-<p><img src="/img/20161008/沉水铅笔2.png" alt=""></p>
-<p><strong>搜索近底层</strong> 路路亚抛出触底后，轻轻向上一挑，保持一定的速度匀速收线，在触底时竿尖向上轻轻一挑后继续收线。如果收线感觉异样，可能是挂到水底杂物，需要立即收回重抛，挂到杂物的饵是没鱼攻击的。</p>
-<p>当在近底平收过程中一到某点就发生触底情形，则说明水下存在一定的由深急浅结构，而如果此前频频有触底，一到某区域就完全没有触底的感觉，则可能是由浅急深。这些区域都是路亚精细作钓时，需要重点搜索的区域。</p>
-<p>探明这样的水下结构后，对于由浅急深区域，可以有意暂停收线待饵自颤下沉后再向上挑竿带起，在下沉和上挑过程中均有极高的中鱼机率。而对于由深急浅的结构，在撞到结构前或者撞到结构后，轻轻带起铅笔，往往在挑竿的时候会有令人惊喜的一击！</p>
-<h4 id="沉水铅笔的M型搜索-难度系数★★"><a href="#沉水铅笔的M型搜索-难度系数★★" class="headerlink" title="沉水铅笔的M型搜索　难度系数★★"></a>沉水铅笔的M型搜索　<em>难度系数★★</em></h4><p><img src="/img/20161008/沉水铅笔3.png" alt=""></p>
-<p>路亚抛出后稍等下沉，视需要下沉到一定深度后，人面向水面，收紧余线，向上扬竿，力度视情况需要，可重可轻，然后放下竿尖松线，再让路亚下沉；路亚搜索深度范围很大，适合大水面搜索鱼所在泳层，在鱼索饵意愿不积极时，这种轻缓的手法非常有效。</p>
-<p><img src="/img/20161008/沉水铅笔4.png" alt=""></p>
-<p>上图操作手法的变式，在路亚下沉到目标水层后，先连续两下轻抽钓竿，随后向上高高扬竿，在这连续三抽过程中，卷线器是不收线的，随后放低竿子再收紧余线。这种操作手法，逼真模拟小鱼逃窜，运用到搜索底层时，效果非凡，鳜鱼类的也特别喜欢攻击。使用这个操作时，手法宜轻缓，这样在目标鱼警戒心高或者活力较低的冬天时，会收到出其不意的效果。</p>
-<h4 id="沉水铅笔的侧身快抽-难度系数★★"><a href="#沉水铅笔的侧身快抽-难度系数★★" class="headerlink" title="沉水铅笔的侧身快抽　难度系数★★"></a>沉水铅笔的侧身快抽　<em>难度系数★★</em></h4><p><img src="/img/20161008/沉水铅笔5.png" alt=""></p>
-<p>最常用的操控方式，抛出让沉水铅笔到达目标水层后，侧身横抽，挥动竿尖幅度每次约50cm，复位，收紧余线，隔一秒再抽一次，如此反复。与“M”型操控不同的是，路亚表现出水平方向上的左窜右逃的交替，似小鱼毫无戒心的游玩，攻取水库、湖泊的翘嘴鲌效果突出，对于海水类目标鱼就如岸投小铁板，效果亦佳。</p>
-<p><img src="/img/20161008/沉水铅笔6.png" alt=""></p>
-<p>上图操作手法的变式，也是侧身横抽，但幅度变小，每次约20cm，频率加快到一秒一次，此时即便是沉水铅笔，也是贴水表急窜，在群鱼争食的活跃期最受欢迎，中鱼率明显高出许多。这个手法抽动的力度大一些时，经常能“车祸”各种鱼，尤以鲢鱼为多，勿忘放流。</p>
-<h3 id="浮水铅笔"><a href="#浮水铅笔" class="headerlink" title="浮水铅笔"></a>浮水铅笔</h3><p><img src="/img/20161008/浮水铅笔.jpg" alt=""></p>
-<blockquote>
-<p>浮水铅笔的“狗步/dogwalk”操控</p>
-</blockquote>
-<p><img src="/img/20161008/浮水铅笔1.png" alt=""></p>
-<p>路亚抛出后，面向水面，收紧余线，轻抖腕缓劲地向下一压竿尖，竿尖幅度大约20-30cm，托竿向上复位，同时小收一圈或半圈线（纺车轮四分之一或三分之一圈），一定注意不能多收，再抖腕轻轻向下一压，一压一托共一秒，连续不断。整组动作有如推太极，毫不费力，假如几竿下来就手酸，那么操作就有问题。“溜狗步”最大的困难是收线与抽竿的不配合，初期练习时，可以在收紧余线后，侧身向后按上面节奏抽竿不收线，观察狗步状态，再用心揣摩练习。</p>
-<p><img src="/img/20161008/浮水铅笔2.png" alt=""></p>
-<p>与上图操作相比，加快频率，一秒2抽，减小幅度，每次约10cm，同时抽竿时略带力度，收线节奏与抽竿保持同步，连续不断，要领也是收线与抽竿的配合，此时的浮水铅笔表现在水面小幅急速左右摆，动静非常大，能够将远处的鱼诱惑过来一通猛咬，对大口鲈、海鲈、鳡鱼有特别的诱惑力，但这个钓法对翘嘴似乎效果不好–除非大水面翘嘴群集争食。</p>
-<h3 id="波趴（Popper）"><a href="#波趴（Popper）" class="headerlink" title="波趴（Popper）"></a>波趴（Popper）</h3><p><img src="/img/20161008/ropper.jpg" alt=""></p>
-<p>如果你从来没有操控过波扒或者总感觉不好，那么，请你先打一个响指，对，响指！用心感受发力的方式，随后，轻握拳抖腕（注意是抖腕，而不是挥动手臂），找到刚刚打响指时发力的感觉，多试几次，这就是波扒操控的核心！找一枝M或MH的竿子来试试吧！</p>
-<p><img src="/img/20161008/ropper1.png" alt=""></p>
-<p>最常用的操作，竿尖指水收紧钓线，短程发力抽竿后再卷线，1秒1抽，抽竿幅度每次约20-40cm，使波扒前进的距离短（约10cm)但撞出的水花大，整个操作要有节奏，力度恰当，末端发力，每次收线要少。此时波扒表现在前进方向上左右两侧交替撞水，动静非常大，诱惑力超凡！</p>
-<p><img src="/img/20161008/ropper2.png" alt=""></p>
-<p>竿尖指水，抽动的力度与幅度增大，每次的间隔时间延长至1-2秒，波扒呈现一定的钻水动作，水花减少，但水下气泡显著增多，在目标鱼活性较低或者警觉性较高时，有非常出色的效果。</p>
-<blockquote>
-<p>推荐链接</p>
-</blockquote>
-<p><a href="http://www.lure123.com/school/25/212-1.shtml" target="_blank" rel="external">认识常用路亚假饵及操作手法</a><br><a href="http://www.diaoyur.com/a/2013/1198.html" target="_blank" rel="external">路亚一些假饵的操作方法图文介绍</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;全泳层饵的泳层基础知识&quot;&gt;&lt;a href=&quot;#全泳层饵的泳层基础知识&quot; class=&quot;headerlink&quot; title=&quot;全泳层饵的泳层基础知识&quot;&gt;&lt;/a&gt;全泳层饵的泳层基础知识&lt;/h3&gt;&lt;p&gt;全泳层饵，顾名思义，理论上可以作钓所有水层，从水表到水底，钓者有完全的决定权，这与 &lt;strong&gt;米诺[MINNOW]&lt;/strong&gt; 或 &lt;strong&gt;摇滚[CRANK]&lt;/strong&gt; 有明确的潜行深度明显不同。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;沉水铅笔、VIB、各类金属饵，都是全泳层饵。&lt;/p&gt;
-&lt;/blockquote&gt;
     
     </summary>
     

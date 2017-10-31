@@ -4,6 +4,48 @@
   
     
     <entry>
+      <title><![CDATA[酒店PMS]]></title>
+      <url>http://cuiqingwei.github.io/2017/09/21/2017-09-21-%E9%85%92%E5%BA%97PMS/</url>
+      <content type="html"><![CDATA[<h1 id="什么是PMS"><a href="#什么是PMS" class="headerlink" title="什么是PMS"></a>什么是PMS</h1><p><strong>PMS</strong>：Property Management System，直译为物业管理系统，也有翻译为：酒店管理系统。</p>
+<p>酒店PMS系统是一个以计算机为工具，对酒店信息管理和处理的人机综合系统，它不但能准确及时地反映酒店业务的当前状态、房源状态，还能快速实现客人预定入住到财务对账等一系列操作;不但是一个数据统计的数据库，还能够提供各方面的报表，且利用数据进行统计分析，从而更有利于酒店的经营和管理。</p>
+<a id="more"></a>
+<h1 id="PMS行业情况"><a href="#PMS行业情况" class="headerlink" title="PMS行业情况"></a>PMS行业情况</h1><p>PMS是酒店前台预订系统的简称，是酒店管理的必备软件之一，是酒店销售完全信息化（直连）的唯一入口，也是我国酒店星级评定的重要衡量指标之一，所有评定过的三星级及以上的酒店都拥有PMS。</p>
+<p>而PMS厂商一般都提供酒店管理的全套软件或是酒店管理的解决方案，包括前台管理（预订、接待、收银、夜审、客房、客史、会员、餐饮、娱乐等）、后台管理（财务、物流、人事、维护、宽带等）和接口管理（内部接口和外部接口）等。所以如果某酒店采用某PMS厂商的PMS产品，那么该酒店的其他管理软件也基本上是来自于该PMS厂商，且酒店要更换产品会比较麻烦。</p>
+<p>目前，我国的几大PMS厂商主要有：<br><strong>石基信息</strong>：（通过买断和代理Micros Fidelio）占有国内90%以上的五星级酒店市场和80%以上的高星级（4、5星级）酒店的市场份额，在高端酒店市场处在垄断地位；<strong>杭州西软科技</strong>：拥有国内最多的酒店客户群，已超过2600家酒店，于2006年被石基收购；<strong>北京中软好泰</strong>：在国内拥有第二大酒店客户群，于2008年被携程控股（好像已经收购了华仪技术，有待进一步澄清）；<strong>华仪软件</strong>：总部设在北京，市场份额06年还排第四，不过近两年发展比较缓慢；<strong>广州万讯（广州千里马）</strong>：占有珠江三角洲最大的市场份额，06年拥有大概1000家左右的市场，07年与pegasus solutions在华公司易旅科技结成合作伙伴，不过这两年发展缓慢；北京泰能：05年被石基信息收购，不过08年又自由了，现在拥有的酒店客户群大概有1500左右，酒店数量排在第三位。</p>
+<h1 id="主流PMS"><a href="#主流PMS" class="headerlink" title="主流PMS"></a>主流PMS</h1><p>国际酒店有OPERA、FIDELIO，国内三到五星有中软、西软，腾云、千里马，中小型酒店有简单点、罗盘、芙蓉等。</p>
+<p>其它还有：金天鹅、欣欣、方寸、齐创、华仪、金达莱、企发、智信、易能、云飞、千里马、大总管、捷信达…</p>
+<blockquote>
+<p>1987年10月在德国慕尼黑成立的Fidelio Software GmbH,成立仅仅四年就成为了欧洲顶尖的酒店软件管理产品，成立六年跃居世界酒店信息系统供应商之首。</p>
+<p>之后并入美国Micros System Inc 公司，1995年 Micros成立中国分公司–上海富达，2003年北京中长石基信息技术有限公司从Micros公司取得了FIDELIO和OPERA中国唯一的销售许可。</p>
+<p>FIDELIO和OPERA几乎是所有国内高端外资酒店的共同选择，<br>在国内，除非5星级或者有一定影响力的酒店，一般都不进行合作。</p>
+<p>国内各方观点<br>1、FIDELIO不错，但是在操作的方便性、高效性上，没有本地系统优秀。有的人在90年代初做酒店，入门就玩FIDELIO，根本就没有好好研究在90年代后期发展起来的本地造，妄下断语。闭眼讲话，拿着无知当高尚。<br>2、FIDELIO早期版本建立起来的严谨、稳定、茁壮的程序风格可以说让OPERA SYSTEMS给破坏成了昨日黄花。各位谁知：FIDELIO OPERA7.0版因为数据处理错误，FIDELIO放弃不可一世的面孔，自己上门为用户打补丁。<br>3、FIDELIO太孤傲了，不仅仅忽略中国市场群落的需求呼声，没有为大陆开发中文增值包（连微软ms office都为特意为中国市场增加了增值服务包),而且故障维护费用惊人。他们的理念是：一切故障都是客户的故障。我的系统永远是正常的。我想引用一位欧洲学者的话：偏见比无知更可怕。 但我们承认computer system 是作为一个酒店整体解决方案（ERP）进入酒店，系统本身融入了开发者的管理思想和理念，如果说安装了系统，不如说我们导入了新的经营思想，FIDELIO在技术上渐失优势的时刻，仍有管理牌紧握。</p>
+</blockquote>
+<h1 id="PMS链接"><a href="#PMS链接" class="headerlink" title="PMS链接"></a>PMS链接</h1><p>OPERA<br><a href="https://www.oracle.com/industries/hospitality/products/opera-property-services/index.html" target="_blank" rel="external">https://www.oracle.com/industries/hospitality/products/opera-property-services/index.html</a><br>千里马<br><a href="http://www.armitage.com.cn" target="_blank" rel="external">http://www.armitage.com.cn</a><br>金天鹅<br><a href="http://www.jdglrj.com/down.html" target="_blank" rel="external">http://www.jdglrj.com/down.html</a></p>
+<h1 id="云PMS"><a href="#云PMS" class="headerlink" title="云PMS"></a>云PMS</h1><p>罗盘<br><a href="http://www.luopan.cn/" target="_blank" rel="external">http://www.luopan.cn/</a><br>住哲<br><a href="http://www.zhuzher.com/" target="_blank" rel="external">http://www.zhuzher.com/</a><br>智选云<br><a href="http://www.ccshis.com/index.html" target="_blank" rel="external">http://www.ccshis.com/index.html</a><br>天龙云<br><a href="http://pms.yaduo.com/login.html" target="_blank" rel="external">http://pms.yaduo.com/login.html</a><br>民宿云<br><a href="http://www.minsuyun.com/home/index.html" target="_blank" rel="external">http://www.minsuyun.com/home/index.html</a><br>方信科技<br><a href="http://www.cnfangxin.com/cn/rjcp.asp?id=236" target="_blank" rel="external">http://www.cnfangxin.com/cn/rjcp.asp?id=236</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[如何查看网站是用什么语言开发的?]]></title>
+      <url>http://cuiqingwei.github.io/2017/09/21/2017-10-31-%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%AB%99%E6%98%AF%E7%94%A8%E4%BB%80%E4%B9%88%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%9A%84/</url>
+      <content type="html"><![CDATA[<p>查看网站开发语言方法：</p>
+<p>1）利用工具直接输入查询</p>
+<p><a href="http://w3techs.com/sites/info/baidu.com" target="_blank" rel="external">http://w3techs.com/sites/info/baidu.com</a><br><a href="https://builtwith.com/baidu.com" target="_blank" rel="external">https://builtwith.com/baidu.com</a></p>
+<p>把最后的域名换成想知道的网址，系统会自动分析。</p>
+<p>2）后台语言可以通过服务器类型推测。</p>
+<p>一般情况下，服务器类型可以通过 Response Header 来看。</p>
+<p>比如 IIS，一般是 <a href="http://ASP.NET" target="_blank" rel="external">http://ASP.NET</a></p>
+<p>Tomcat、Resin、JBoss，一般是 Java。</p>
+<p>Nginx，不一定，很有可能是 PHP 或者 Python 之类的脚本语言。</p>
+<p>3）后台框架就更难分析了，不过可以尝试通过 HTML 代码格式，或者 URL 来分析。</p>
+<p>比如 URL 后缀是 do，可能用到了 Java Struts。</p>
+<p>URL 一般都是 index.php，但是后面参数不同，那么可能用到了 PHP 的一些模板引擎。</p>
+<p>当然，这个分析不可靠，只是一种推测。</p>
+<p>4）想办法联系网站创始人：），邮件或私信询问。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[使用Ionic框架开发Hybird应用]]></title>
       <url>http://cuiqingwei.github.io/2017/09/19/2017-09-19-%E4%BD%BF%E7%94%A8Ionic%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91Hybird%E5%BA%94%E7%94%A8/</url>
       <content type="html"><![CDATA[<h1 id="什么是Ionic"><a href="#什么是Ionic" class="headerlink" title="什么是Ionic"></a>什么是Ionic</h1><p>Ionic是一个强大的HTML5 原生应用（Native App）开发框架，帮助你用HTML，CSS和JavaScript构建具有原生味道的移动应用;</p>
@@ -28,10 +70,15 @@
 <p><img src="/img/20170919/webapp0.png" alt=""></p>
 <p>从网下图，可以很直观的看出Native app 、Web app和Hybrid app三者之间的区别：</p>
 <p><img src="/img/20170919/webapp1.png" alt=""><br><img src="/img/20170919/webapp2.png" alt=""></p>
-<p><em>1）Native APP：Native </em><br>Code编程，代码编译之后以2进制或者字节码的形式运行在OS上，直接调用OS的Device API；</p>
-<p><em>2）Web APP </em>，以HTML+JS+CSS等WEB技术编程，代码运行在浏览器中，通过浏览器来调用Device API（取决于HTML5未来的支持能力）：</p>
-<p><em>3）Hybrid APP </em>，部分代码以WEB技术编程，部分代码由某些Native Container承担（例如PhonGAP插件，BAE插件），其目的是在HTML5尚未完全支持Device API和Network API的目前阶段，承担这部分职责。</p>
-<p>总体来讲，<strong> Hybrid App是同时采用网页语言与程序语言进行开发，通过不同的应用商店进行打包与分发，应用的特性更接近原生应用而且又区别与Web应用 </strong>。但是在开发过程中同时使用了网页语言，所以开发成本与难度大大降低。也就是说Hybrid App兼具了Native App与Web App两者的诸多优点。</p>
+<ul>
+<li><p>1）Native APP：Native *<br>Code编程，代码编译之后以2进制或者字节码的形式运行在OS上，直接调用OS的Device API；</p>
+</li>
+<li><p>2）Web APP * ，以HTML+JS+CSS等WEB技术编程，代码运行在浏览器中，通过浏览器来调用Device API（取决于HTML5未来的支持能力）：</p>
+</li>
+<li><p>3）Hybrid APP * ，部分代码以WEB技术编程，部分代码由某些Native Container承担（例如PhonGAP插件，BAE插件），其目的是在HTML5尚未完全支持Device API和Network API的目前阶段，承担这部分职责。</p>
+</li>
+</ul>
+<p>总体来讲，<strong> Hybrid App是同时采用网页语言与程序语言进行开发，通过不同的应用商店进行打包与分发，应用的特性更接近原生应用而且又区别与Web应用 </strong> 。但是在开发过程中同时使用了网页语言，所以开发成本与难度大大降低。也就是说Hybrid App兼具了Native App与Web App两者的诸多优点。</p>
 <p>Hybrid App有以下的特性：</p>
 <blockquote>
 <p>开发时可能不采用或者大部分不采用原生语言，但是却有所有原生应用的特性；<br>架构方案会和原生有出入，基本由工具而定；<br>具有跨平台特性；<br>一般开发相对原生开发的方式要简单。</p>
@@ -666,6 +713,8 @@
 <p><img src="/img/20161010/RYOGA.png" alt=""></p>
 <p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.HzLi42&amp;id=520734861061&amp;_u=s154cj10930" target="_blank" rel="external">Mentaniu DC HG</a></strong> <em>禧玛诺蒙塔尼DC 2015</em></p>
 <p><img src="/img/20161010/MetaniumDC.png" alt=""><br><img src="/img/20161010/MetaniumDC1.png" alt=""></p>
+<p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.6c818473iizZfR&amp;id=545441440003&amp;_u=m154cj14da2" target="_blank" rel="external">SHIMANO New EXSENCE DC XG</a></strong> <em>禧玛诺海水DC 2017</em></p>
+<p><img src="/img/20161010/EXSENCE DC.png" alt=""></p>
 ]]></content>
     </entry>
     
@@ -3045,6 +3094,15 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     </entry>
     
     <entry>
+      <title><![CDATA[Linux中生成shadow的加密密码.04安装arm开发环境]]></title>
+      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-08-Linux%E4%B8%AD%E7%94%9F%E6%88%90shadow%E7%9A%84%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81/</url>
+      <content type="html"><![CDATA[<p>How to generate Linux shadow password / Linux中如何生成shadow密码（CentOS 5下测试通过）<br>/etc/shadow中的root信息:<br>root:$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.:15225:0:99999:7:::</p>
+<p>其中，”$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.” 就是加密后的root密码，我们在修改用户密码的时候都使用passwd命令，其实也可以直接修改/etc/shadow文件。那要面临的问题就是如何生成这个加密过的shadow密码($1$ 表示加密算法是基于MD5的，不同发行版本默认的加密算法可能不同)。<br>方法一（交互式）<br>[root@centos-vm ~]# openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32)<br>Password:    # input your password here<br>$1$MZrDxgEw$i2XBgmDMo0Wf1.OVvOGGQ1</p>
+<p>方法二（适用于脚本）<br>[root@centos-vm ~]# echo “passwd” | openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32) -stdin<br>$1$KsRJO8kG$M9co4G7T6.5KcITsSCRNS/</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[ubuntu11.04安装arm开发环境]]></title>
       <url>http://cuiqingwei.github.io/2012/09/07/2012-09-07-ubuntu11-04%E5%AE%89%E8%A3%85arm%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
       <content type="html"><![CDATA[<p>特别提示：整个过程中计算机必须联网，因为有些程序需要从网络上下载!</p>
@@ -3136,15 +3194,6 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
 <h1 id="六、编译buildroot所需安装包"><a href="#六、编译buildroot所需安装包" class="headerlink" title="六、编译buildroot所需安装包"></a>六、编译buildroot所需安装包</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install make flex bison m4 ncurses-dev gettext texi2html texinfo zlib1g zlib1g-dev liblzo2-2 liblzo2-dev libacl1 libacl1-dev libglib2.0-dev autoconf automake libtool</div><div class="line">apt-get install subversion</div></pre></td></tr></table></figure>
 <h1 id="七、SAM-BA所需安装包"><a href="#七、SAM-BA所需安装包" class="headerlink" title="七、SAM-BA所需安装包"></a>七、SAM-BA所需安装包</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">apt-get install linux-image-generic linux-headers-generic</div><div class="line">＃ On 64 bits version install 32 bits libraries:</div><div class="line">apt-get install ia32-libs</div><div class="line">chmod +x sam-ba</div><div class="line">ln <span class="_">-s</span> /dev/ttyACM0 /dev/ttyUSB0</div></pre></td></tr></table></figure>
 <p>运行sam-ba</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Linux中生成shadow的加密密码.04安装arm开发环境]]></title>
-      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-08-Linux%E4%B8%AD%E7%94%9F%E6%88%90shadow%E7%9A%84%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81/</url>
-      <content type="html"><![CDATA[<p>How to generate Linux shadow password / Linux中如何生成shadow密码（CentOS 5下测试通过）<br>/etc/shadow中的root信息:<br>root:$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.:15225:0:99999:7:::</p>
-<p>其中，”$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.” 就是加密后的root密码，我们在修改用户密码的时候都使用passwd命令，其实也可以直接修改/etc/shadow文件。那要面临的问题就是如何生成这个加密过的shadow密码($1$ 表示加密算法是基于MD5的，不同发行版本默认的加密算法可能不同)。<br>方法一（交互式）<br>[root@centos-vm ~]# openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32)<br>Password:    # input your password here<br>$1$MZrDxgEw$i2XBgmDMo0Wf1.OVvOGGQ1</p>
-<p>方法二（适用于脚本）<br>[root@centos-vm ~]# echo “passwd” | openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32) -stdin<br>$1$KsRJO8kG$M9co4G7T6.5KcITsSCRNS/</p>
 ]]></content>
     </entry>
     
