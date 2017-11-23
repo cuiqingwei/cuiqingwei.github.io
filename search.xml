@@ -4,6 +4,17 @@
   
     
     <entry>
+      <title><![CDATA[git中避免提交.DS_Store文件]]></title>
+      <url>http://cuiqingwei.github.io/2017/11/23/2017-11-23-git%E4%B8%AD%E9%81%BF%E5%85%8D%E6%8F%90%E4%BA%A4-DS-Store%E6%96%87%E4%BB%B6/</url>
+      <content type="html"><![CDATA[<h3 id="1-先删除原有的-DS-Store："><a href="#1-先删除原有的-DS-Store：" class="headerlink" title="1. 先删除原有的.DS_Store："></a>1. 先删除原有的.DS_Store：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name &quot;.DS_Store&quot; -type f -delete</div></pre></td></tr></table></figure>
+<p>命令解释：在当前文件夹以及当前文件夹的子文件夹中找到所有的.DS_Store文件，并将找到的文件通过管道传给xargs来处理。注意几个参数的理解：<br>-print0：在find后不添加换行符（-print默认会添加换行符）<br>-0：将管道送来的字符串当做普通的字符串，不做任何转义处理。</p>
+<h3 id="2-建立-gitignore文件"><a href="#2-建立-gitignore文件" class="headerlink" title="2. 建立.gitignore文件"></a>2. 建立.gitignore文件</h3><p>vi .gitignore。然后添加.DS_Store作为忽略：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.DS_Store</div></pre></td></tr></table></figure>
+<h3 id="3-提交到git"><a href="#3-提交到git" class="headerlink" title="3. 提交到git"></a>3. 提交到git</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git add .gitignore</div><div class="line">git commit -m &apos;delete .DS_Store&apos;</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[如何查看网站是用什么语言开发的?]]></title>
       <url>http://cuiqingwei.github.io/2017/10/31/2017-10-31-%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%AB%99%E6%98%AF%E7%94%A8%E4%BB%80%E4%B9%88%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%9A%84/</url>
       <content type="html"><![CDATA[<p>查看网站开发语言方法：</p>
@@ -391,19 +402,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[GoAhead移植到OpenWRT]]></title>
-      <url>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/</url>
-      <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
-<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
-<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
-<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
-<blockquote>
-<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
-</blockquote>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Contiki-CC2538-CoAP]]></title>
       <url>http://cuiqingwei.github.io/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/</url>
       <content type="html"><![CDATA[<div align="center"><br><iframe height="498" width="510" src="http://player.youku.com/embed/XMTgyNDA3NDAzNg==" frameborder="0" 'allowfullscreen'=""></iframe><br></div>
@@ -424,6 +422,19 @@
 <h1 id="ping6"><a href="#ping6" class="headerlink" title="ping6"></a>ping6</h1><p>ping6 aaaa::212:4b00:5af:84e0</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">PING aaaa::212:4b00:5af:84e0(aaaa::212:4b00:5af:84e0) 56 data bytes</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=1 ttl=63 time=1013 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=2 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=3 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=4 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=5 ttl=63 time=125 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=6 ttl=63 time=120 ms</div></pre></td></tr></table></figure>
 <h1 id="firefox"><a href="#firefox" class="headerlink" title="firefox"></a>firefox</h1><p><img src="/img/20161117/coap1.png" alt=""><br><img src="/img/20161117/coap2.png" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[GoAhead移植到OpenWRT]]></title>
+      <url>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/</url>
+      <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
+<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
+<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
+<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
+<blockquote>
+<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
+</blockquote>
 ]]></content>
     </entry>
     
@@ -645,6 +656,69 @@
 <li><p>After the build process completes, the resulted firmware file will be under <code>bin/ramips/openwrt-ramips-mt7688-LinkIt7688-squashfs-sysupgrade.bin</code>. Depending on the H/W resources of the host environment, the build process may <strong>take more than 2 hours</strong>.</p>
 </li>
 </ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[路亚水滴轮的速比的选择]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E8%B7%AF%E4%BA%9A%E6%B0%B4%E6%BB%B4%E8%BD%AE%E7%9A%84%E9%80%9F%E6%AF%94%E7%9A%84%E9%80%89%E6%8B%A9/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>大家在购买轮子时，估计很多人都是首先关注轮子的价格，再关注轮子的牌子、外观、线容量、轴承数等，然后在各论坛到处问“XX的轮怎样？用过的说说！”结果，最后听了一大堆意见后最终还是进了一个价格自己可以接受的轮而不管轮子怎样了；或者受一些钓友的影响，入了一个超出了预算的牌子轮子却不是最适合自己的；或者入了一个价格差不多，只是多了一个或几个轴承的杂牌三无轮子而其它质量极差。鲜少有人（特别是新人）关注轮子的齿轮转速比，或者有关注，但却不是先决条件。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="在此抛砖引玉，聊聊轮子的转速比。"><a href="#在此抛砖引玉，聊聊轮子的转速比。" class="headerlink" title="在此抛砖引玉，聊聊轮子的转速比。"></a>在此抛砖引玉，聊聊轮子的转速比。</h3><p>转速比，通俗的来讲就是轮子的主副齿轮的转速比；例如6.3:1，意思就是：摇柄轴上的大齿轮转一圈，轮轴上的小齿轮就要转6.3圈。速比的设计除可以快速收线外，还有“四两拨千斤”的功能。大概可以这样理解：我用1牛的力来转把手，那么鱼要用出6.3牛的力才能不让我转动。<br>高转速比，可以快速收紧余线；中鱼时快速拉出障碍区；大水域快速搜索等有无可比拟的优势；但在控制一些硬饵泳姿时，或要求慢拖时，不如低转速比好控制。此外，转速比越高，同样拉力的情况下，摇起来就越费力；原因是高转速比把力量转换成高速，道理正如变速自行车一样。你别不相信，不用很大的鱼就让你发现，再多的轴承都是转不动了。（想象一下，你一定见过有人在溜鱼时做抽竿动作，为什么要做抽竿的动作呢？）<br>说到这里，大家每次钓鱼都在用到转速比，但你真正的了解过它吗？例如一些钓友在说操作手法时，“慢收+轻抖”。这个当中的“慢收”实在太笼统了。有些会说的具体一些，屁如“一秒转动一圈摇把”，还是没人具体意义；只有说到“我的轮子转速比是6.3:1，每秒转一圈摇把”才算是具体化。好，说到这里，我估计99.9%的人都不知自己转一圈摇把到底卷了多少线回来，也即是你的饵游动的速度是多少米每秒？</p>
+<p>当然，实际钓鱼时也不用真的精确到零点几米每秒。只要粗略的知道，天长日久后，不管什么时候，需要什么速度，才最可能上鱼，已经深深的铬在你的潜意识里了。随便拿起一套装备，看看转速比就清楚自己该怎样操作了。</p>
+<p>看似很复杂，其实也很简单。一般人的装备都不多，常见的轮子的转速比也就是那几个。以纺车轮为例，我的一个纺车转速比是6.2:1，线杯最大外径是40mm；2号尼龙线在绕线器转一圈时卷的线长度约为126mm(40<em>3.14),实测为130.8mm；摇把转一圈时收线约130</em>6.3=825mm；即0.825米；一米有多长大家总有个概念吧？经过这样一个计算，你是不是心里清楚自己的饵是“受伤的小鱼”还是“水中潜艇”呢？</p>
+<blockquote>
+<p><strong>摘要</strong>：进来有些朋友在网上询问关于双轴卷线器（水滴轮、鼓型轮）应该如何搭配竿子，速比快慢该如何选择的问题。关于选择双轴卷线器（水滴or鼓型轮）速比的常识进来有些朋友在网上询问关于双轴卷线器（水滴轮、鼓型轮）应该如何搭配竿子，速比快慢该如何选择的问题</p>
+</blockquote>
+<p><img src="/img/20171123/Lipless-Baits-Ready-to-Rock.jpg" alt=""></p>
+<h3 id="何谓速比？何谓高速比？何谓低速比呢？"><a href="#何谓速比？何谓高速比？何谓低速比呢？" class="headerlink" title="何谓速比？何谓高速比？何谓低速比呢？"></a>何谓速比？何谓高速比？何谓低速比呢？</h3><p>通常速比标识的参数代表了：我们手柄摇一圈线杯转动几圈，例如：7.0：1那么就是手柄转动一圈线杯转动7圈。<br><strong>高速比、低速比：一般高速比低速比没有明显的界限，通常6.3：1（含）以下我们称为低速比，7.0：1以上的算作高速比。</strong><br>低速比的优势：通常职业钓手使用Swimbait、spinnerbait、crank、minnow时候会选择低速比轮子。因为在操控诸如上述所谓搜索饵时候，低速比可以更好更均匀的控制拟饵的回收速度，并且就我们通常所使用的浮水CRANK、水面popper等等在特定的时候也会去做一些点对点的攻击，并不是一味的大面积快速搜索。所以这个时候低速比的轮子就体现出了拟饵在局域水面上的优势，不至于手柄轻轻一动就窜出老远。<br>高速比的优势：高速比轮子的特点就是回收拟饵的速度较快，在作合的一瞬间具有相当的爆发力。这个特点刚好符合我们用jighead或Texas在障碍区里作钓中鱼时要强调刺鱼的爆发力和迅速将于带离标点的要求。所以在大多数钓手软虫作钓障碍区时都会选用较快速比的轮子。但是也有特殊情况，例如在重障碍的草区：通常唠叨中障碍的草区都会使用比较大号的jig，并且中鱼时难免会连鱼带草一起搂。类似于雷强。这个时候为保证轮子足够的绞力已经能容纳更多的强力钓线，在这种地方作钓JIGhead或者大型Texas时很多钓手会选用低速比的较大容线量轮子。<br>以上是双轴卷线器的最基本的实用的常识，但愿对于初学的朋友们会选择轮子时候会有所帮助。但是也不排除在一些特殊情况时候对于轮子的选择会遇到一些特殊的变化。这里我不多赘述。等到大家遇到了新的问题时候我们再共同探讨。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[善用路亚软饵]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%96%84%E7%94%A8%E8%B7%AF%E4%BA%9A%E8%BD%AF%E9%A5%B5/</url>
+      <content type="html"><![CDATA[<p>在路亚世界里，软饵的搭配种类比较多功能性也不尽相同，但是它们的共同之处 就在于—引诱鱼饵上钩，无论是以动作逼真引诱还是以动作激怒鱼儿。 但是这些动作都需要人来赋予它，不然再好的路亚软饵也是枉然。</p>
+<p>说之前先声明，这是给各位刚刚玩的盆友们准备的，各位老鸟们还请海涵！</p>
+<a id="more"></a>
+<p><img src="/img/20171123/orka-shad-tail92.jpg" alt=""></p>
+<p>首先呢，就先 从模拟自然界中的动作讲一下吧，这个问题就在于钓友们手上的灵活多变操控了 ，一般比较常用也是比较有效的方式有三种：</p>
+<p><strong>1，跳</strong></p>
+<p><strong>2，拖</strong></p>
+<p><strong>3，停</strong></p>
+<p><em>第一种，跳，顾名思义就如同我们人跳舞一样，饵也需要在水下跳舞引诱鱼 的注意，让它们觉得这东西有点好奇，看着有些意思，进而进行试探 最后咬钩。 “跳”的方法就是手持竿子，将竿子用手腕的力量上下挑动，使饵在水下呈现出 上下跳跃的姿态 这种跳跃的幅度可大可小，不用拘泥于形式，可以夸张的大幅度 ，也可以用轻微的小幅度挑动来模拟一些落入水中的昆虫幼虫或其他小生物。</em></p>
+<p><em>第二种，拖，拖动饵在水下移动，让饵自然呈现一种在底层游动的状态，引诱鱼 前来试探，这种方法对付一些底层伏击型的鱼类比较有效果。也会对钓手们了解 水底的地形有帮助。操作方法 就是慢慢摇轮，让其软饵在水下慢慢游走。</em></p>
+<p><em>第三种，停，这个动作非常重要 有时候你一直在操控软饵时，鱼可能没有动作， 只会盯着看，往往就是在你停顿的瞬间，鱼会突然发动攻击。当然停顿的时间没 有固定的，需要大家自行体会根据不同的环境来随时调整。</em></p>
+<p>而将这三者结合起来：跳-拖-停 重复使用的时候，往往会对鱼造成极大的诱惑性 ，可以使中鱼率大大增加，特别是在鱼境况不好的压力钓场上，往往路亚软饵钓 组会发挥极大地作用，大家可以在操控软饵的时候想想一下软饵在水下的动作会 是怎样的，充分发挥自己的想象力，努力去改造软饵在水下的状态，最简单的方 法就是找一个透明的玻璃鱼缸灌满水将软虫钓组放入浴缸里进行调试，已达到你 想要的理想效果，所以软饵钓组各位一定要掌握一下，当你熟悉了路亚软饵钓组 的你肯定会爱上它的。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[几种常用有效的线结介绍]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%87%A0%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%9C%89%E6%95%88%E7%9A%84%E7%BA%BF%E7%BB%93%E4%BB%8B%E7%BB%8D/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>在路亚钓的过程中，线结是比较基础的一项技能，正确的使用和绑制一种线结关系到你作钓的成功与否，对于连接路亚的线结目前有很多种绑制方式，但是不是所有的方式都是可靠或优秀的，有因为大家都知道线的拉力磅数一般指的是直线拉力值，但是在线打结后的拉力值会降低不少，如果没有一个有效的线结的话，你打结后的线的拉力值可能会降到原来值的50%甚至更低，那样势必会影响整个线组的强度。</p>
+</blockquote>
+<p>现在就介绍几种比较简便且对钓线本身拉力值损失较小的常见线结供参考，这些线结特别适用于尼龙线或氟碳线。</p>
+<a id="more"></a>
+<p><img src="/img/20171123/线结1.jpg" alt=""></p>
+<p>IMPROVED CLINCH KNOT 这个线结比较常见 绑起来也比较简单，适合的绑的东西也比较多，比如连接钓钩、路亚、JIG 等等都是可以的。</p>
+<p>首先将线穿过线孔（可以穿一次也可以穿过两次）然后将穿出来一端的线绕着主线绕上5圈（缠绕圈数可以根据需要来，一般5圈足够），最后在穿过绕线预留的空间，慢慢拉紧即可。这个线结经过测试，可以保留大约近95%的强度，并且比较方便绑制各类路亚和配件。</p>
+<p><img src="/img/20171123/线结2.jpg" alt=""></p>
+<p>PALOMAR KNOT 此线结也是个很简单的线结，但是强度却非常可靠，它可以保留钓线95%以上的强度，比较适合连接别针、中小型路亚以及钓钩等等，但是要是用此线结绑比较大的路亚，可能需要预留的线要比较长绑起来可能略有不便，绑这个线结的方法也很简单，看图即可了解。</p>
+<p><img src="/img/20171123/线结3.jpg" alt=""></p>
+<p>NON-SLIP LOOP KNOT 这个线结的特点是赋予连接的路亚或鱼钩较大的自由性，因为这个线结并不是完全锁死固定在连接环上的，而是有空间，这样可以让一些水中姿态较大路亚在水中拥有更多的自由摆动空间，具体方法是先将主线上打一个简单的小节但不要拉紧，然后将下端预留出来的线穿过线孔，然后再顺势穿过刚才在主线上打的那个小结的孔，随后将穿过小结孔的线绕在主线上5圈左右，最后再穿过主线上打结的小孔，拉紧即可。</p>
+<p><img src="/img/20171123/线结4.jpg" alt=""></p>
+<p>BLOOD KNOT 这个线结是可以将两段不同磅数的钓线连接，它可以用于连接前导线，比较适合连接两根差距不是很大的钓线，比如15磅和20磅左右这样的情况，不太适合用于连接15磅连接50磅的钓线。它的绑法也很简单，直接看图就好了。</p>
+<p><img src="/img/20171123/线结5.jpg" alt=""></p>
+<p>SURGEON’S KNOT 这个线结与上一个线结的用途一样，绑法也比较简单，打结也比较快速，具体绑法如下图。不过要注意绑这个结，有一端的线要比另一端的线要短一些才可以，这样才能方便的在小结里面缠绕。</p>
+<p><img src="/img/20171123/线结6.jpg" alt=""></p>
+<p><strong>简单的与线杯连接</strong></p>
+<p>这是主线与线杯连接打结的，也是很简单的一种方式，无论双轴卷线器还是纺车轮都可以使用，具体方法可以看图所示。</p>
+<p><em>再附上3种线结：</em></p>
+<p><img src="/img/20171123/线结7.jpg" alt=""><br><img src="/img/20171123/线结8.jpg" alt=""><br><img src="/img/20171123/线结9.jpg" alt=""></p>
 ]]></content>
     </entry>
     
@@ -1966,27 +2040,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[MacOS]]></title>
-      <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-MacOS/</url>
-      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
-<h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p>工作：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br><a href="http://www.tuicool.com/articles/yeyIfuu" target="_blank" rel="external">http://www.tuicool.com/articles/yeyIfuu</a><br>系统：QQ、CleanMyDrive 3<br><a id="more"></a></p>
-<h3 id="2-dmg"><a href="#2-dmg" class="headerlink" title="2. dmg"></a>2. dmg</h3><p>Chrome、VMwareFusion、RDC、QQInput、RTX、cornerstone<br>Sublime Text</p>
-<h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><p>ruby -e “$(curl -fsSL <a href="https://raw.github.com/Homebrew/homebrew/go/install" target="_blank" rel="external">https://raw.github.com/Homebrew/homebrew/go/install</a>)”<br><a href="http://brew.sh/" target="_blank" rel="external">http://brew.sh/</a><br><a href="http://blog.csdn.net/aaawqqq/article/details/44088141" target="_blank" rel="external">http://blog.csdn.net/aaawqqq/article/details/44088141</a></p>
-<p>升级更新 brew update<br>cd /usr/local<br>git reset –hard<br>git checkout .<br>sudo chown -R cuiqingwei /usr/local<br>brew update<br><a href="http://www.xitongzhijia.net/xtjc/20141204/31879.html" target="_blank" rel="external">http://www.xitongzhijia.net/xtjc/20141204/31879.html</a></p>
-<h3 id="4-MacPorts"><a href="#4-MacPorts" class="headerlink" title="4. MacPorts"></a>4. MacPorts</h3><p><a href="https://www.macports.org/install.php" target="_blank" rel="external">https://www.macports.org/install.php</a><br><a href="http://guide.macports.org/#installing.macports" target="_blank" rel="external">http://guide.macports.org/#installing.macports</a></p>
-<h3 id="5-wget"><a href="#5-wget" class="headerlink" title="5. wget"></a>5. wget</h3><p>sudo port install wget</p>
-<h3 id="6-zsh"><a href="#6-zsh" class="headerlink" title="6. zsh"></a>6. zsh</h3><p>wget <a href="https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh</a> -O - | sh<br><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="external">http://leeiio.me/bash-to-zsh-for-mac/</a><br><a href="http://www.sketchup.com/download/all" target="_blank" rel="external">http://www.sketchup.com/download/all</a><br>打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!</p>
-<h3 id="7-mac-say-唱歌"><a href="#7-mac-say-唱歌" class="headerlink" title="7. mac say 唱歌"></a>7. mac say 唱歌</h3><p>应用程序&gt;实用工具&gt;Terminal 复制和黏贴以下内容，然后回车：</p>
-<ul>
-<li>spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。</li>
-<li>在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。</li>
-<li>开始听歌了。</li>
-</ul>
-<h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="external">https://checkcoverage.apple.com/cn/zh/</a></p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Ubuntu]]></title>
       <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-Ubuntu/</url>
       <content type="html"><![CDATA[<h3 id="1-常用指令"><a href="#1-常用指令" class="headerlink" title="1.常用指令"></a>1.常用指令</h3><pre><code>版本查看：
@@ -2038,6 +2091,27 @@ hosts
      https://github.com/racaljk/hosts
 </code></pre><p><strong>Cannot Set LC_ALL to default locale: No such file or directory</strong><br><a href="http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/" target="_blank" rel="external">http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/</a></p>
 <p>sEx只是调用相关程序，本身并无压缩、解压功能，请注意！<br>sEx请到： <a href="http://sourceforge.net/projects/sex下载！" target="_blank" rel="external">http://sourceforge.net/projects/sex下载！</a><br>解压后请将sEx拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br>[root@www2 tmp]# cp sEx /usr/bin/</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MacOS]]></title>
+      <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-MacOS/</url>
+      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
+<h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p>工作：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br><a href="http://www.tuicool.com/articles/yeyIfuu" target="_blank" rel="external">http://www.tuicool.com/articles/yeyIfuu</a><br>系统：QQ、CleanMyDrive 3<br><a id="more"></a></p>
+<h3 id="2-dmg"><a href="#2-dmg" class="headerlink" title="2. dmg"></a>2. dmg</h3><p>Chrome、VMwareFusion、RDC、QQInput、RTX、cornerstone<br>Sublime Text</p>
+<h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><p>ruby -e “$(curl -fsSL <a href="https://raw.github.com/Homebrew/homebrew/go/install" target="_blank" rel="external">https://raw.github.com/Homebrew/homebrew/go/install</a>)”<br><a href="http://brew.sh/" target="_blank" rel="external">http://brew.sh/</a><br><a href="http://blog.csdn.net/aaawqqq/article/details/44088141" target="_blank" rel="external">http://blog.csdn.net/aaawqqq/article/details/44088141</a></p>
+<p>升级更新 brew update<br>cd /usr/local<br>git reset –hard<br>git checkout .<br>sudo chown -R cuiqingwei /usr/local<br>brew update<br><a href="http://www.xitongzhijia.net/xtjc/20141204/31879.html" target="_blank" rel="external">http://www.xitongzhijia.net/xtjc/20141204/31879.html</a></p>
+<h3 id="4-MacPorts"><a href="#4-MacPorts" class="headerlink" title="4. MacPorts"></a>4. MacPorts</h3><p><a href="https://www.macports.org/install.php" target="_blank" rel="external">https://www.macports.org/install.php</a><br><a href="http://guide.macports.org/#installing.macports" target="_blank" rel="external">http://guide.macports.org/#installing.macports</a></p>
+<h3 id="5-wget"><a href="#5-wget" class="headerlink" title="5. wget"></a>5. wget</h3><p>sudo port install wget</p>
+<h3 id="6-zsh"><a href="#6-zsh" class="headerlink" title="6. zsh"></a>6. zsh</h3><p>wget <a href="https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh</a> -O - | sh<br><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="external">http://leeiio.me/bash-to-zsh-for-mac/</a><br><a href="http://www.sketchup.com/download/all" target="_blank" rel="external">http://www.sketchup.com/download/all</a><br>打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!</p>
+<h3 id="7-mac-say-唱歌"><a href="#7-mac-say-唱歌" class="headerlink" title="7. mac say 唱歌"></a>7. mac say 唱歌</h3><p>应用程序&gt;实用工具&gt;Terminal 复制和黏贴以下内容，然后回车：</p>
+<ul>
+<li>spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。</li>
+<li>在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。</li>
+<li>开始听歌了。</li>
+</ul>
+<h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="external">https://checkcoverage.apple.com/cn/zh/</a></p>
 ]]></content>
     </entry>
     
@@ -3096,6 +3170,15 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     </entry>
     
     <entry>
+      <title><![CDATA[Linux中生成shadow的加密密码.04安装arm开发环境]]></title>
+      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-08-Linux%E4%B8%AD%E7%94%9F%E6%88%90shadow%E7%9A%84%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81/</url>
+      <content type="html"><![CDATA[<p>How to generate Linux shadow password / Linux中如何生成shadow密码（CentOS 5下测试通过）<br>/etc/shadow中的root信息:<br>root:$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.:15225:0:99999:7:::</p>
+<p>其中，”$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.” 就是加密后的root密码，我们在修改用户密码的时候都使用passwd命令，其实也可以直接修改/etc/shadow文件。那要面临的问题就是如何生成这个加密过的shadow密码($1$ 表示加密算法是基于MD5的，不同发行版本默认的加密算法可能不同)。<br>方法一（交互式）<br>[root@centos-vm ~]# openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32)<br>Password:    # input your password here<br>$1$MZrDxgEw$i2XBgmDMo0Wf1.OVvOGGQ1</p>
+<p>方法二（适用于脚本）<br>[root@centos-vm ~]# echo “passwd” | openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32) -stdin<br>$1$KsRJO8kG$M9co4G7T6.5KcITsSCRNS/</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[ubuntu11.04安装arm开发环境]]></title>
       <url>http://cuiqingwei.github.io/2012/09/07/2012-09-07-ubuntu11-04%E5%AE%89%E8%A3%85arm%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
       <content type="html"><![CDATA[<p>特别提示：整个过程中计算机必须联网，因为有些程序需要从网络上下载!</p>
@@ -3187,15 +3270,6 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
 <h1 id="六、编译buildroot所需安装包"><a href="#六、编译buildroot所需安装包" class="headerlink" title="六、编译buildroot所需安装包"></a>六、编译buildroot所需安装包</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install make flex bison m4 ncurses-dev gettext texi2html texinfo zlib1g zlib1g-dev liblzo2-2 liblzo2-dev libacl1 libacl1-dev libglib2.0-dev autoconf automake libtool</div><div class="line">apt-get install subversion</div></pre></td></tr></table></figure>
 <h1 id="七、SAM-BA所需安装包"><a href="#七、SAM-BA所需安装包" class="headerlink" title="七、SAM-BA所需安装包"></a>七、SAM-BA所需安装包</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">apt-get install linux-image-generic linux-headers-generic</div><div class="line">＃ On 64 bits version install 32 bits libraries:</div><div class="line">apt-get install ia32-libs</div><div class="line">chmod +x sam-ba</div><div class="line">ln <span class="_">-s</span> /dev/ttyACM0 /dev/ttyUSB0</div></pre></td></tr></table></figure>
 <p>运行sam-ba</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Linux中生成shadow的加密密码.04安装arm开发环境]]></title>
-      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-08-Linux%E4%B8%AD%E7%94%9F%E6%88%90shadow%E7%9A%84%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81/</url>
-      <content type="html"><![CDATA[<p>How to generate Linux shadow password / Linux中如何生成shadow密码（CentOS 5下测试通过）<br>/etc/shadow中的root信息:<br>root:$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.:15225:0:99999:7:::</p>
-<p>其中，”$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.” 就是加密后的root密码，我们在修改用户密码的时候都使用passwd命令，其实也可以直接修改/etc/shadow文件。那要面临的问题就是如何生成这个加密过的shadow密码($1$ 表示加密算法是基于MD5的，不同发行版本默认的加密算法可能不同)。<br>方法一（交互式）<br>[root@centos-vm ~]# openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32)<br>Password:    # input your password here<br>$1$MZrDxgEw$i2XBgmDMo0Wf1.OVvOGGQ1</p>
-<p>方法二（适用于脚本）<br>[root@centos-vm ~]# echo “passwd” | openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32) -stdin<br>$1$KsRJO8kG$M9co4G7T6.5KcITsSCRNS/</p>
 ]]></content>
     </entry>
     

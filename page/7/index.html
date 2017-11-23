@@ -290,6 +290,226 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-2012-09-07-goAhead2-5嵌入式web服务器移植" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2012/09/07/2012-09-07-goAhead2-5嵌入式web服务器移植/" class="article-date">
+      <time datetime="2012-09-07T10:50:00.000Z" itemprop="datePublished">2012-09-07</time>
+</a>
+
+ 
+    <a href="/2012/09/07/2012-09-07-goAhead2-5嵌入式web服务器移植/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count"  data-thread-key="2012/09/07/2012-09-07-goAhead2-5嵌入式web服务器移植/" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/09/07/2012-09-07-goAhead2-5嵌入式web服务器移植/">goAhead2.5嵌入式web服务器移植</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="1-GoAhead-Web服务器介绍"><a href="#1-GoAhead-Web服务器介绍" class="headerlink" title="1. GoAhead Web服务器介绍"></a>1. GoAhead Web服务器介绍</h1><p>goAhead Web服务器，小巧、精致，提供了值得称道的性能，特别适合于嵌入式系统，因此，在很多嵌入式产品如路由器中都用到了goAhead作为嵌入式web服务器。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/arm/">arm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/goAhead/">goAhead</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/嵌入式/">嵌入式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/硬件/">硬件</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2012/09/07/2012-09-07-goAhead2-5嵌入式web服务器移植/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2012-09-07-jffs2根文件系统制作" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2012/09/07/2012-09-07-jffs2根文件系统制作/" class="article-date">
+      <time datetime="2012-09-07T09:50:00.000Z" itemprop="datePublished">2012-09-07</time>
+</a>
+
+ 
+    <a href="/2012/09/07/2012-09-07-jffs2根文件系统制作/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count"  data-thread-key="2012/09/07/2012-09-07-jffs2根文件系统制作/" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/09/07/2012-09-07-jffs2根文件系统制作/">jffs2根文件系统制作</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="1．建立目录"><a href="#1．建立目录" class="headerlink" title="1．建立目录"></a>1．建立目录</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gedit creatRootfs.sh</div></pre></td></tr></table></figure>
+<p>creatRootfs.sh 内容如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="built_in">cd</span> /home/at91sam9/mdk9261/rootfs</div><div class="line"><span class="built_in">echo</span> <span class="string">"------Create rootfs directons......"</span></div><div class="line">mkdir jffs2</div><div class="line"><span class="built_in">cd</span> jffs2</div><div class="line"><span class="built_in">echo</span> <span class="string">"--------Create root,dev......"</span></div><div class="line">mkdir root dev etc bin sbin mnt sys proc lib home tmp var usr</div><div class="line">mkdir usr/sbin usr/bin usr/lib usr/modules</div><div class="line">mkdir etc/init.d</div><div class="line">mkdir lib/modules</div><div class="line">chmod 777 tmp</div><div class="line"><span class="built_in">cd</span> ..</div><div class="line"><span class="built_in">echo</span> <span class="string">"-------make direction done---------"</span></div><div class="line"><span class="comment"># by: cuiqingwei 20120913</span></div></pre></td></tr></table></figure></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/arm/">arm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jffs2/">jffs2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/嵌入式/">嵌入式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/硬件/">硬件</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2012/09/07/2012-09-07-jffs2根文件系统制作/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2012-09-07-at91sam9x5编译过程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2012/09/07/2012-09-07-at91sam9x5编译过程/" class="article-date">
+      <time datetime="2012-09-07T08:50:00.000Z" itemprop="datePublished">2012-09-07</time>
+</a>
+
+ 
+    <a href="/2012/09/07/2012-09-07-at91sam9x5编译过程/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count"  data-thread-key="2012/09/07/2012-09-07-at91sam9x5编译过程/" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/09/07/2012-09-07-at91sam9x5编译过程/">at91sam9x5编译过程</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="1、创建目录"><a href="#1、创建目录" class="headerlink" title="1、创建目录"></a>1、创建目录</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home</div><div class="line">mkdir at91sam9</div><div class="line"><span class="built_in">cd</span> at92sam9</div><div class="line">mkdir at91sam9x5-ek</div><div class="line"><span class="built_in">cd</span> at91sam9x5-ek</div></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/arm/">arm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/at91sam9x5/">at91sam9x5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/嵌入式/">嵌入式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/硬件/">硬件</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2012/09/07/2012-09-07-at91sam9x5编译过程/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2012-09-08-Linux中生成shadow的加密密码" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -344,6 +564,84 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shadow/">shadow</a></li></ul>
     </div>
 
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2012-09-07-ubuntu11-04安装arm开发环境" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2012/09/07/2012-09-07-ubuntu11-04安装arm开发环境/" class="article-date">
+      <time datetime="2012-09-07T07:50:00.000Z" itemprop="datePublished">2012-09-07</time>
+</a>
+
+ 
+    <a href="/2012/09/07/2012-09-07-ubuntu11-04安装arm开发环境/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count"  data-thread-key="2012/09/07/2012-09-07-ubuntu11-04安装arm开发环境/" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/09/07/2012-09-07-ubuntu11-04安装arm开发环境/">ubuntu11.04安装arm开发环境</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>特别提示：整个过程中计算机必须联网，因为有些程序需要从网络上下载!</p>
+<h1 id="一、安装Ubuntu-11-04"><a href="#一、安装Ubuntu-11-04" class="headerlink" title="一、安装Ubuntu 11.04"></a>一、安装Ubuntu 11.04</h1><ul>
+<li>1、首先用虚拟机安装ubuntu 11.04版本,建议将硬盘空间设大一点，80G最好，编译linux，根文件系统会占用很多的硬盘空间。<br>登陆后修改root密码<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo passwd root</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这里需要输入现在的密码，以及root的新密码<br>密码更改完毕后，重新启动系统，以root身份登陆。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/arm/">arm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/嵌入式/">嵌入式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/硬件/">硬件</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2012/09/07/2012-09-07-ubuntu11-04安装arm开发环境/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -789,300 +1087,6 @@
       
         <p class="article-more-link">
           <a href="/2008/07/09/2008-07-09-Rf-Calc/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2008-05-11-Proteus产品仿真" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2008/05/11/2008-05-11-Proteus产品仿真/" class="article-date">
-      <time datetime="2008-05-11T02:20:19.000Z" itemprop="datePublished">2008-05-11</time>
-</a>
-
- 
-    <a href="/2008/05/11/2008-05-11-Proteus产品仿真/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-            <span class="ds-thread-count"  data-thread-key="2008/05/11/2008-05-11-Proteus产品仿真/" ></span>
-        
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2008/05/11/2008-05-11-Proteus产品仿真/">Proteus产品仿真</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>现将2006在一家公司做的一个产品的仿真部分所有源码资料公布，供大家学习和参考！包括参菜单管理算法。菜单翻页可像手机菜单一下，可滚动翻页，并有进度条指示。另还有TWI读写PCF8563的程序。不多说大家看看就知道。以前只公布过proteus和hex，反映还可以。今天是源码也公布，希望对大家有帮助。传播请注明作者及出处，谢谢！</p>
-<h1 id="图示效果一"><a href="#图示效果一" class="headerlink" title="图示效果一"></a>图示效果一</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_274222.png" alt="效果图"><br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Proteus/">Proteus</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/产品仿真/">产品仿真</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2008/05/11/2008-05-11-Proteus产品仿真/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2008-01-03-USB-M8-RGBLED彩灯" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/" class="article-date">
-      <time datetime="2008-01-03T01:30:15.000Z" itemprop="datePublished">2008-01-03</time>
-</a>
-
- 
-    <a href="/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-            <span class="ds-thread-count"  data-thread-key="2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/" ></span>
-        
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/">USB_M8_RGBLED彩灯</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>用M8控制RGBLED测试了一下，效果不错。并做了一个上位机软件，通过USB控制，现将资料整理上传与君共享！</p>
-<h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_198395.PNG" alt="原理图"><br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DIY/">DIY</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RGBLED/">RGBLED</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/折腾/">折腾</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2007-11-19-EAGLE3D终于搞定了！" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2007/11/19/2007-11-19-EAGLE3D终于搞定了！/" class="article-date">
-      <time datetime="2007-11-19T12:07:41.000Z" itemprop="datePublished">2007-11-19</time>
-</a>
-
- 
-    <a href="/2007/11/19/2007-11-19-EAGLE3D终于搞定了！/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-            <span class="ds-thread-count"  data-thread-key="2007/11/19/2007-11-19-EAGLE3D终于搞定了！/" ></span>
-        
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2007/11/19/2007-11-19-EAGLE3D终于搞定了！/">EAGLE3D终于搞定了!</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="3D效果"><a href="#3D效果" class="headerlink" title="3D效果"></a>3D效果</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_182056.png" alt="3d"><br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Eagle/">Eagle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Eagle-3D/">Eagle 3D</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2007/11/19/2007-11-19-EAGLE3D终于搞定了！/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2007-10-12-CC2430模块自测程序" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2007/10/12/2007-10-12-CC2430模块自测程序/" class="article-date">
-      <time datetime="2007-10-12T05:22:02.000Z" itemprop="datePublished">2007-10-12</time>
-</a>
-
- 
-    <a href="/2007/10/12/2007-10-12-CC2430模块自测程序/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-            <span class="ds-thread-count"  data-thread-key="2007/10/12/2007-10-12-CC2430模块自测程序/" ></span>
-        
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2007/10/12/2007-10-12-CC2430模块自测程序/">CC2430模块自测程序</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>ModuleTest V1.0 Written: 崔庆伟 [gary]<br>可以用指令控制选择信道，设置发射功率，发送数据包（长度可选），接收数据包（接收时延可设），CC2430复位，MCU温度读取等。底层函数基本做好，如果要加入新功能，可自行更改。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CC2430/">CC2430</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2007/10/12/2007-10-12-CC2430模块自测程序/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>

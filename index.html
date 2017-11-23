@@ -290,6 +290,75 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-2017-11-23-git中避免提交-DS-Store文件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/11/23/2017-11-23-git中避免提交-DS-Store文件/" class="article-date">
+      <time datetime="2017-11-23T04:02:08.000Z" itemprop="datePublished">2017-11-23</time>
+</a>
+
+ 
+    <a href="/2017/11/23/2017-11-23-git中避免提交-DS-Store文件/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count"  data-thread-key="2017/11/23/2017-11-23-git中避免提交-DS-Store文件/" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/23/2017-11-23-git中避免提交-DS-Store文件/">git中避免提交.DS_Store文件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="1-先删除原有的-DS-Store："><a href="#1-先删除原有的-DS-Store：" class="headerlink" title="1. 先删除原有的.DS_Store："></a>1. 先删除原有的.DS_Store：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name &quot;.DS_Store&quot; -type f -delete</div></pre></td></tr></table></figure>
+<p>命令解释：在当前文件夹以及当前文件夹的子文件夹中找到所有的.DS_Store文件，并将找到的文件通过管道传给xargs来处理。注意几个参数的理解：<br>-print0：在find后不添加换行符（-print默认会添加换行符）<br>-0：将管道送来的字符串当做普通的字符串，不做任何转义处理。</p>
+<h3 id="2-建立-gitignore文件"><a href="#2-建立-gitignore文件" class="headerlink" title="2. 建立.gitignore文件"></a>2. 建立.gitignore文件</h3><p>vi .gitignore。然后添加.DS_Store作为忽略：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.DS_Store</div></pre></td></tr></table></figure>
+<h3 id="3-提交到git"><a href="#3-提交到git" class="headerlink" title="3. 提交到git"></a>3. 提交到git</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git add .gitignore</div><div class="line">git commit -m &apos;delete .DS_Store&apos;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2017-10-31-如何查看网站是用什么语言开发的" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -946,79 +1015,6 @@
       
         <p class="article-more-link">
           <a href="/2016/12/30/2016-12-30-基于微软平台IIS-ASP-NET开发的大型网站有哪些/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2016-12-15-GoAhead移植到OpenWRT" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/17/2016-12-15-GoAhead移植到OpenWRT/" class="article-date">
-      <time datetime="2016-11-17T13:04:40.000Z" itemprop="datePublished">2016-11-17</time>
-</a>
-
- 
-    <a href="/2016/11/17/2016-12-15-GoAhead移植到OpenWRT/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-            <span class="ds-thread-count"  data-thread-key="2016/11/17/2016-12-15-GoAhead移植到OpenWRT/" ></span>
-        
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/17/2016-12-15-GoAhead移植到OpenWRT/">GoAhead移植到OpenWRT</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GoAhead/">GoAhead</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenWRT/">OpenWRT</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/11/17/2016-12-15-GoAhead移植到OpenWRT/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>

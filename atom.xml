@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2017-10-31T04:02:39.000Z</updated>
+  <updated>2017-11-23T04:47:45.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git中避免提交.DS_Store文件</title>
+    <link href="http://cuiqingwei.github.io/2017/11/23/2017-11-23-git%E4%B8%AD%E9%81%BF%E5%85%8D%E6%8F%90%E4%BA%A4-DS-Store%E6%96%87%E4%BB%B6/"/>
+    <id>http://cuiqingwei.github.io/2017/11/23/2017-11-23-git中避免提交-DS-Store文件/</id>
+    <published>2017-11-23T04:02:08.000Z</published>
+    <updated>2017-11-23T04:47:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-先删除原有的-DS-Store："><a href="#1-先删除原有的-DS-Store：" class="headerlink" title="1. 先删除原有的.DS_Store："></a>1. 先删除原有的.DS_Store：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name &quot;.DS_Store&quot; -type f -delete</div></pre></td></tr></table></figure>
+<p>命令解释：在当前文件夹以及当前文件夹的子文件夹中找到所有的.DS_Store文件，并将找到的文件通过管道传给xargs来处理。注意几个参数的理解：<br>-print0：在find后不添加换行符（-print默认会添加换行符）<br>-0：将管道送来的字符串当做普通的字符串，不做任何转义处理。</p>
+<h3 id="2-建立-gitignore文件"><a href="#2-建立-gitignore文件" class="headerlink" title="2. 建立.gitignore文件"></a>2. 建立.gitignore文件</h3><p>vi .gitignore。然后添加.DS_Store作为忽略：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.DS_Store</div></pre></td></tr></table></figure>
+<h3 id="3-提交到git"><a href="#3-提交到git" class="headerlink" title="3. 提交到git"></a>3. 提交到git</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git add .gitignore</div><div class="line">git commit -m &apos;delete .DS_Store&apos;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-先删除原有的-DS-Store：&quot;&gt;&lt;a href=&quot;#1-先删除原有的-DS-Store：&quot; class=&quot;headerlink&quot; title=&quot;1. 先删除原有的.DS_Store：&quot;&gt;&lt;/a&gt;1. 先删除原有的.DS_Store：&lt;/h3&gt;&lt;figure
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>如何查看网站是用什么语言开发的?</title>
@@ -553,35 +576,6 @@
   </entry>
   
   <entry>
-    <title>GoAhead移植到OpenWRT</title>
-    <link href="http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/"/>
-    <id>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead移植到OpenWRT/</id>
-    <published>2016-11-17T13:04:40.000Z</published>
-    <updated>2016-12-15T13:45:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
-<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
-<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
-<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
-<blockquote>
-<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;make-menuconfig&quot;&gt;&lt;a href=&quot;#make-menuconfig&quot; class=&quot;headerlink&quot; title=&quot;make menuconfig&quot;&gt;&lt;/a&gt;make menuconfig&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/img/20161215/menuconfig.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
-    
-      <category term="GoAhead" scheme="http://cuiqingwei.github.io/tags/GoAhead/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Contiki-CC2538-CoAP</title>
     <link href="http://cuiqingwei.github.io/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/"/>
     <id>http://cuiqingwei.github.io/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/</id>
@@ -620,6 +614,35 @@
       <category term="CC2538" scheme="http://cuiqingwei.github.io/tags/CC2538/"/>
     
       <category term="CoAP" scheme="http://cuiqingwei.github.io/tags/CoAP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GoAhead移植到OpenWRT</title>
+    <link href="http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/"/>
+    <id>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead移植到OpenWRT/</id>
+    <published>2016-11-17T13:04:40.000Z</published>
+    <updated>2016-12-15T13:45:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
+<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
+<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
+<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
+<blockquote>
+<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;make-menuconfig&quot;&gt;&lt;a href=&quot;#make-menuconfig&quot; class=&quot;headerlink&quot; title=&quot;make menuconfig&quot;&gt;&lt;/a&gt;make menuconfig&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/img/20161215/menuconfig.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
+    
+      <category term="GoAhead" scheme="http://cuiqingwei.github.io/tags/GoAhead/"/>
     
   </entry>
   
@@ -929,6 +952,117 @@
   </entry>
   
   <entry>
+    <title>路亚水滴轮的速比的选择</title>
+    <link href="http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E8%B7%AF%E4%BA%9A%E6%B0%B4%E6%BB%B4%E8%BD%AE%E7%9A%84%E9%80%9F%E6%AF%94%E7%9A%84%E9%80%89%E6%8B%A9/"/>
+    <id>http://cuiqingwei.github.io/2016/10/13/2016-10-13-路亚水滴轮的速比的选择/</id>
+    <published>2016-10-13T13:27:40.000Z</published>
+    <updated>2017-11-23T04:39:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>大家在购买轮子时，估计很多人都是首先关注轮子的价格，再关注轮子的牌子、外观、线容量、轴承数等，然后在各论坛到处问“XX的轮怎样？用过的说说！”结果，最后听了一大堆意见后最终还是进了一个价格自己可以接受的轮而不管轮子怎样了；或者受一些钓友的影响，入了一个超出了预算的牌子轮子却不是最适合自己的；或者入了一个价格差不多，只是多了一个或几个轴承的杂牌三无轮子而其它质量极差。鲜少有人（特别是新人）关注轮子的齿轮转速比，或者有关注，但却不是先决条件。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="在此抛砖引玉，聊聊轮子的转速比。"><a href="#在此抛砖引玉，聊聊轮子的转速比。" class="headerlink" title="在此抛砖引玉，聊聊轮子的转速比。"></a>在此抛砖引玉，聊聊轮子的转速比。</h3><p>转速比，通俗的来讲就是轮子的主副齿轮的转速比；例如6.3:1，意思就是：摇柄轴上的大齿轮转一圈，轮轴上的小齿轮就要转6.3圈。速比的设计除可以快速收线外，还有“四两拨千斤”的功能。大概可以这样理解：我用1牛的力来转把手，那么鱼要用出6.3牛的力才能不让我转动。<br>高转速比，可以快速收紧余线；中鱼时快速拉出障碍区；大水域快速搜索等有无可比拟的优势；但在控制一些硬饵泳姿时，或要求慢拖时，不如低转速比好控制。此外，转速比越高，同样拉力的情况下，摇起来就越费力；原因是高转速比把力量转换成高速，道理正如变速自行车一样。你别不相信，不用很大的鱼就让你发现，再多的轴承都是转不动了。（想象一下，你一定见过有人在溜鱼时做抽竿动作，为什么要做抽竿的动作呢？）<br>说到这里，大家每次钓鱼都在用到转速比，但你真正的了解过它吗？例如一些钓友在说操作手法时，“慢收+轻抖”。这个当中的“慢收”实在太笼统了。有些会说的具体一些，屁如“一秒转动一圈摇把”，还是没人具体意义；只有说到“我的轮子转速比是6.3:1，每秒转一圈摇把”才算是具体化。好，说到这里，我估计99.9%的人都不知自己转一圈摇把到底卷了多少线回来，也即是你的饵游动的速度是多少米每秒？</p>
+<p>当然，实际钓鱼时也不用真的精确到零点几米每秒。只要粗略的知道，天长日久后，不管什么时候，需要什么速度，才最可能上鱼，已经深深的铬在你的潜意识里了。随便拿起一套装备，看看转速比就清楚自己该怎样操作了。</p>
+<p>看似很复杂，其实也很简单。一般人的装备都不多，常见的轮子的转速比也就是那几个。以纺车轮为例，我的一个纺车转速比是6.2:1，线杯最大外径是40mm；2号尼龙线在绕线器转一圈时卷的线长度约为126mm(40<em>3.14),实测为130.8mm；摇把转一圈时收线约130</em>6.3=825mm；即0.825米；一米有多长大家总有个概念吧？经过这样一个计算，你是不是心里清楚自己的饵是“受伤的小鱼”还是“水中潜艇”呢？</p>
+<blockquote>
+<p><strong>摘要</strong>：进来有些朋友在网上询问关于双轴卷线器（水滴轮、鼓型轮）应该如何搭配竿子，速比快慢该如何选择的问题。关于选择双轴卷线器（水滴or鼓型轮）速比的常识进来有些朋友在网上询问关于双轴卷线器（水滴轮、鼓型轮）应该如何搭配竿子，速比快慢该如何选择的问题</p>
+</blockquote>
+<p><img src="/img/20171123/Lipless-Baits-Ready-to-Rock.jpg" alt=""></p>
+<h3 id="何谓速比？何谓高速比？何谓低速比呢？"><a href="#何谓速比？何谓高速比？何谓低速比呢？" class="headerlink" title="何谓速比？何谓高速比？何谓低速比呢？"></a>何谓速比？何谓高速比？何谓低速比呢？</h3><p>通常速比标识的参数代表了：我们手柄摇一圈线杯转动几圈，例如：7.0：1那么就是手柄转动一圈线杯转动7圈。<br><strong>高速比、低速比：一般高速比低速比没有明显的界限，通常6.3：1（含）以下我们称为低速比，7.0：1以上的算作高速比。</strong><br>低速比的优势：通常职业钓手使用Swimbait、spinnerbait、crank、minnow时候会选择低速比轮子。因为在操控诸如上述所谓搜索饵时候，低速比可以更好更均匀的控制拟饵的回收速度，并且就我们通常所使用的浮水CRANK、水面popper等等在特定的时候也会去做一些点对点的攻击，并不是一味的大面积快速搜索。所以这个时候低速比的轮子就体现出了拟饵在局域水面上的优势，不至于手柄轻轻一动就窜出老远。<br>高速比的优势：高速比轮子的特点就是回收拟饵的速度较快，在作合的一瞬间具有相当的爆发力。这个特点刚好符合我们用jighead或Texas在障碍区里作钓中鱼时要强调刺鱼的爆发力和迅速将于带离标点的要求。所以在大多数钓手软虫作钓障碍区时都会选用较快速比的轮子。但是也有特殊情况，例如在重障碍的草区：通常唠叨中障碍的草区都会使用比较大号的jig，并且中鱼时难免会连鱼带草一起搂。类似于雷强。这个时候为保证轮子足够的绞力已经能容纳更多的强力钓线，在这种地方作钓JIGhead或者大型Texas时很多钓手会选用低速比的较大容线量轮子。<br>以上是双轴卷线器的最基本的实用的常识，但愿对于初学的朋友们会选择轮子时候会有所帮助。但是也不排除在一些特殊情况时候对于轮子的选择会遇到一些特殊的变化。这里我不多赘述。等到大家遇到了新的问题时候我们再共同探讨。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;大家在购买轮子时，估计很多人都是首先关注轮子的价格，再关注轮子的牌子、外观、线容量、轴承数等，然后在各论坛到处问“XX的轮怎样？用过的说说！”结果，最后听了一大堆意见后最终还是进了一个价格自己可以接受的轮而不管轮子怎样了；或者受一些钓友的影响，入了一个超出了预算的牌子轮子却不是最适合自己的；或者入了一个价格差不多，只是多了一个或几个轴承的杂牌三无轮子而其它质量极差。鲜少有人（特别是新人）关注轮子的齿轮转速比，或者有关注，但却不是先决条件。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="路亚" scheme="http://cuiqingwei.github.io/tags/%E8%B7%AF%E4%BA%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>善用路亚软饵</title>
+    <link href="http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%96%84%E7%94%A8%E8%B7%AF%E4%BA%9A%E8%BD%AF%E9%A5%B5/"/>
+    <id>http://cuiqingwei.github.io/2016/10/13/2016-10-13-善用路亚软饵/</id>
+    <published>2016-10-13T13:27:40.000Z</published>
+    <updated>2017-11-23T04:39:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在路亚世界里，软饵的搭配种类比较多功能性也不尽相同，但是它们的共同之处 就在于—引诱鱼饵上钩，无论是以动作逼真引诱还是以动作激怒鱼儿。 但是这些动作都需要人来赋予它，不然再好的路亚软饵也是枉然。</p>
+<p>说之前先声明，这是给各位刚刚玩的盆友们准备的，各位老鸟们还请海涵！</p>
+<a id="more"></a>
+<p><img src="/img/20171123/orka-shad-tail92.jpg" alt=""></p>
+<p>首先呢，就先 从模拟自然界中的动作讲一下吧，这个问题就在于钓友们手上的灵活多变操控了 ，一般比较常用也是比较有效的方式有三种：</p>
+<p><strong>1，跳</strong></p>
+<p><strong>2，拖</strong></p>
+<p><strong>3，停</strong></p>
+<p><em>第一种，跳，顾名思义就如同我们人跳舞一样，饵也需要在水下跳舞引诱鱼 的注意，让它们觉得这东西有点好奇，看着有些意思，进而进行试探 最后咬钩。 “跳”的方法就是手持竿子，将竿子用手腕的力量上下挑动，使饵在水下呈现出 上下跳跃的姿态 这种跳跃的幅度可大可小，不用拘泥于形式，可以夸张的大幅度 ，也可以用轻微的小幅度挑动来模拟一些落入水中的昆虫幼虫或其他小生物。</em></p>
+<p><em>第二种，拖，拖动饵在水下移动，让饵自然呈现一种在底层游动的状态，引诱鱼 前来试探，这种方法对付一些底层伏击型的鱼类比较有效果。也会对钓手们了解 水底的地形有帮助。操作方法 就是慢慢摇轮，让其软饵在水下慢慢游走。</em></p>
+<p><em>第三种，停，这个动作非常重要 有时候你一直在操控软饵时，鱼可能没有动作， 只会盯着看，往往就是在你停顿的瞬间，鱼会突然发动攻击。当然停顿的时间没 有固定的，需要大家自行体会根据不同的环境来随时调整。</em></p>
+<p>而将这三者结合起来：跳-拖-停 重复使用的时候，往往会对鱼造成极大的诱惑性 ，可以使中鱼率大大增加，特别是在鱼境况不好的压力钓场上，往往路亚软饵钓 组会发挥极大地作用，大家可以在操控软饵的时候想想一下软饵在水下的动作会 是怎样的，充分发挥自己的想象力，努力去改造软饵在水下的状态，最简单的方 法就是找一个透明的玻璃鱼缸灌满水将软虫钓组放入浴缸里进行调试，已达到你 想要的理想效果，所以软饵钓组各位一定要掌握一下，当你熟悉了路亚软饵钓组 的你肯定会爱上它的。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在路亚世界里，软饵的搭配种类比较多功能性也不尽相同，但是它们的共同之处 就在于—引诱鱼饵上钩，无论是以动作逼真引诱还是以动作激怒鱼儿。 但是这些动作都需要人来赋予它，不然再好的路亚软饵也是枉然。&lt;/p&gt;
+&lt;p&gt;说之前先声明，这是给各位刚刚玩的盆友们准备的，各位老鸟们还请海涵！&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="路亚" scheme="http://cuiqingwei.github.io/tags/%E8%B7%AF%E4%BA%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>几种常用有效的线结介绍</title>
+    <link href="http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%87%A0%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%9C%89%E6%95%88%E7%9A%84%E7%BA%BF%E7%BB%93%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://cuiqingwei.github.io/2016/10/13/2016-10-13-几种常用有效的线结介绍/</id>
+    <published>2016-10-13T13:27:40.000Z</published>
+    <updated>2017-11-23T04:39:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>在路亚钓的过程中，线结是比较基础的一项技能，正确的使用和绑制一种线结关系到你作钓的成功与否，对于连接路亚的线结目前有很多种绑制方式，但是不是所有的方式都是可靠或优秀的，有因为大家都知道线的拉力磅数一般指的是直线拉力值，但是在线打结后的拉力值会降低不少，如果没有一个有效的线结的话，你打结后的线的拉力值可能会降到原来值的50%甚至更低，那样势必会影响整个线组的强度。</p>
+</blockquote>
+<p>现在就介绍几种比较简便且对钓线本身拉力值损失较小的常见线结供参考，这些线结特别适用于尼龙线或氟碳线。</p>
+<a id="more"></a>
+<p><img src="/img/20171123/线结1.jpg" alt=""></p>
+<p>IMPROVED CLINCH KNOT 这个线结比较常见 绑起来也比较简单，适合的绑的东西也比较多，比如连接钓钩、路亚、JIG 等等都是可以的。</p>
+<p>首先将线穿过线孔（可以穿一次也可以穿过两次）然后将穿出来一端的线绕着主线绕上5圈（缠绕圈数可以根据需要来，一般5圈足够），最后在穿过绕线预留的空间，慢慢拉紧即可。这个线结经过测试，可以保留大约近95%的强度，并且比较方便绑制各类路亚和配件。</p>
+<p><img src="/img/20171123/线结2.jpg" alt=""></p>
+<p>PALOMAR KNOT 此线结也是个很简单的线结，但是强度却非常可靠，它可以保留钓线95%以上的强度，比较适合连接别针、中小型路亚以及钓钩等等，但是要是用此线结绑比较大的路亚，可能需要预留的线要比较长绑起来可能略有不便，绑这个线结的方法也很简单，看图即可了解。</p>
+<p><img src="/img/20171123/线结3.jpg" alt=""></p>
+<p>NON-SLIP LOOP KNOT 这个线结的特点是赋予连接的路亚或鱼钩较大的自由性，因为这个线结并不是完全锁死固定在连接环上的，而是有空间，这样可以让一些水中姿态较大路亚在水中拥有更多的自由摆动空间，具体方法是先将主线上打一个简单的小节但不要拉紧，然后将下端预留出来的线穿过线孔，然后再顺势穿过刚才在主线上打的那个小结的孔，随后将穿过小结孔的线绕在主线上5圈左右，最后再穿过主线上打结的小孔，拉紧即可。</p>
+<p><img src="/img/20171123/线结4.jpg" alt=""></p>
+<p>BLOOD KNOT 这个线结是可以将两段不同磅数的钓线连接，它可以用于连接前导线，比较适合连接两根差距不是很大的钓线，比如15磅和20磅左右这样的情况，不太适合用于连接15磅连接50磅的钓线。它的绑法也很简单，直接看图就好了。</p>
+<p><img src="/img/20171123/线结5.jpg" alt=""></p>
+<p>SURGEON’S KNOT 这个线结与上一个线结的用途一样，绑法也比较简单，打结也比较快速，具体绑法如下图。不过要注意绑这个结，有一端的线要比另一端的线要短一些才可以，这样才能方便的在小结里面缠绕。</p>
+<p><img src="/img/20171123/线结6.jpg" alt=""></p>
+<p><strong>简单的与线杯连接</strong></p>
+<p>这是主线与线杯连接打结的，也是很简单的一种方式，无论双轴卷线器还是纺车轮都可以使用，具体方法可以看图所示。</p>
+<p><em>再附上3种线结：</em></p>
+<p><img src="/img/20171123/线结7.jpg" alt=""><br><img src="/img/20171123/线结8.jpg" alt=""><br><img src="/img/20171123/线结9.jpg" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;在路亚钓的过程中，线结是比较基础的一项技能，正确的使用和绑制一种线结关系到你作钓的成功与否，对于连接路亚的线结目前有很多种绑制方式，但是不是所有的方式都是可靠或优秀的，有因为大家都知道线的拉力磅数一般指的是直线拉力值，但是在线打结后的拉力值会降低不少，如果没有一个有效的线结的话，你打结后的线的拉力值可能会降到原来值的50%甚至更低，那样势必会影响整个线组的强度。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;现在就介绍几种比较简便且对钓线本身拉力值损失较小的常见线结供参考，这些线结特别适用于尼龙线或氟碳线。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="路亚" scheme="http://cuiqingwei.github.io/tags/%E8%B7%AF%E4%BA%9A/"/>
+    
+  </entry>
+  
+  <entry>
     <title>路亚竿的硬度与调性你是否混淆</title>
     <link href="http://cuiqingwei.github.io/2016/10/12/2016-10-12-%E8%B7%AF%E4%BA%9A%E7%AB%BF%E7%9A%84%E7%A1%AC%E5%BA%A6%E4%B8%8E%E8%B0%83%E6%80%A7%E4%BD%A0%E6%98%AF%E5%90%A6%E6%B7%B7%E6%B7%86/"/>
     <id>http://cuiqingwei.github.io/2016/10/12/2016-10-12-路亚竿的硬度与调性你是否混淆/</id>
@@ -949,175 +1083,6 @@
     <summary type="html">
     
       &lt;h2 id=&quot;路亚竿的硬度&quot;&gt;&lt;a href=&quot;#路亚竿的硬度&quot; class=&quot;headerlink&quot; title=&quot;路亚竿的硬度&quot;&gt;&lt;/a&gt;路亚竿的硬度&lt;/h2&gt;&lt;p&gt;选择路亚竿的时候大部分钓友会关注：长度、调性、外观做工质量、品牌与价格。其中“调性”普遍会被大家想到“M、M
-    
-    </summary>
-    
-    
-      <category term="路亚" scheme="http://cuiqingwei.github.io/tags/%E8%B7%AF%E4%BA%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>活鱼放血</title>
-    <link href="http://cuiqingwei.github.io/2016/10/11/2016-10-11-%E6%B4%BB%E9%B1%BC%E6%94%BE%E8%A1%80/"/>
-    <id>http://cuiqingwei.github.io/2016/10/11/2016-10-11-活鱼放血/</id>
-    <published>2016-10-11T02:27:40.000Z</published>
-    <updated>2016-12-30T01:43:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>鱼的鳃部是血管较集中的位置，在这里下刀比其它部位较好些。<br>用刀往两边的鳃盖下部边缘处也就是靠鱼腹部的方向用力往下切上一刀，此时流出血后放到清水中让其游动，这样能使鱼体内的血液加速流出体外，使鱼体内的血达到最少量，这样的排放后血的鱼较少鱼的腥味，在吃食上味道鲜美。<strong>其次放血后的鱼易于保鲜不易变质变坏。</strong></p>
-<a id="more"></a>
-<p><img src="/img/20161011/fish.jpg" alt=""></p>
-<p><em>大多数人杀鱼时不懂得放血，其实杀鱼一定要记得放血，这样杀好的鱼才会鲜嫩不腥。因为鱼肉或其它肉类食材之所以会有腥味，归根到底还是血里有腥味，如果把血放掉一些腥味就会减轻许多了。</em></p>
-<blockquote>
-<embed src="http://player.youku.com/player.php/sid/XMTQ1Mzg4NjAwMA==/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;鱼的鳃部是血管较集中的位置，在这里下刀比其它部位较好些。&lt;br&gt;用刀往两边的鳃盖下部边缘处也就是靠鱼腹部的方向用力往下切上一刀，此时流出血后放到清水中让其游动，这样能使鱼体内的血液加速流出体外，使鱼体内的血达到最少量，这样的排放后血的鱼较少鱼的腥味，在吃食上味道鲜美。&lt;strong&gt;其次放血后的鱼易于保鲜不易变质变坏。&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="路亚" scheme="http://cuiqingwei.github.io/tags/%E8%B7%AF%E4%BA%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>路亚装备</title>
-    <link href="http://cuiqingwei.github.io/2016/10/10/2016-10-10-%E8%B7%AF%E4%BA%9A%E8%A3%85%E5%A4%87/"/>
-    <id>http://cuiqingwei.github.io/2016/10/10/2016-10-10-路亚装备/</id>
-    <published>2016-10-10T02:27:40.000Z</published>
-    <updated>2017-11-17T07:54:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="路亚竿"><a href="#路亚竿" class="headerlink" title="路亚竿"></a>路亚竿</h1><p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.Jvl32R&amp;id=520196909891&amp;_u=c154cj1987f" target="_blank" rel="external">LRT702MHC</a></strong>  <em>领峰 2015款 魂系列  订制版一体式软木柄</em></p>
-<blockquote>
-<p>真正意义上的软饵以及岸钓远投竿，拥有超敏锐的快调竿尖和强有力的竿身不单只是精确抛投，<br>更是拥有良好感知水底结构的能力和从咬口开始一气呵成将鱼从水底拔出来的迸发力。<br>并且拥有20克亮片80+直线距离的远投能力。</p>
-</blockquote>
-<a id="more"></a>
-<p><img src="/img/20161010/LRT702MHC.jpg" alt=""></p>
-<p> <strong><a href="https://item.taobao.com/item.htm?spm=a1z0k.6846577.0.0.lvKUtC&amp;id=38551093007&amp;_u=t2dmg8j26111" target="_blank" rel="external">CWS702MH</a></strong> <em>Berkley /美国贝克力</em></p>
-<p> <img src="/img/20161010/CWS702MH.jpg" alt=""></p>
-<p><strong><a href="https://detail.tmall.com/item.htm?id=36807472493&amp;spm=a1z09.2.0.0.uapaU2&amp;_u=c154cj1d09c" target="_blank" rel="external">LMS001-662M</a></strong> <em>鱼猎人征途系列</em></p>
-<p><img src="/img/20161010/LMS001-662M.jpg" alt=""></p>
-<p><strong><a href="https://item.taobao.com/item.htm?spm=a1z0d.6639537.1997196601.113.Q7PwbK&amp;id=522011254955" target="_blank" rel="external">LYNN FISHING LURE/小林路亚 2.03米枪柄</a></strong></p>
-<p><img src="/img/20161010/LYNN-L.jpg" alt=""></p>
-<p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.HzLi42&amp;id=534294970180&amp;_u=s154cj11be9" target="_blank" rel="external">Major SKR-B862ML</a></strong> <em>马牌</em></p>
-<p>钓竿长度：2米58 节数：2节 饵重：10-30克 线重：8-14磅 PE:0.8-2号 调性：中调</p>
-<p><img src="/img/20161010/SKR-B862ML.png" alt=""></p>
-<p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.HzLi42&amp;id=17264821075&amp;_u=s154cj10d82" target="_blank" rel="external">LRC664M</a></strong> <em>贝克力四节便携竿</em></p>
-<p>全长：1.98m节数：4收缩长度：52.5cm饵重：7-21g适合线重：8-20LB含碳量：95% 自重：136g</p>
-<p><img src="/img/20161010/LRC664M.jpg" alt=""></p>
-<p><strong><a href="hhttps://item.jd.com/12301115424.html" target="_blank" rel="external">SHIMANO EXPRIDE 1016M-2</a></strong> <em>17款EXPRIDE FUJI富士SIC导环 路亚竿 2.08米M枪柄(1610M-2)</em></p>
-<p><img src="/img/20161010/EXP-1610M-2.jpg" alt=""></p>
-<h1 id="渔线轮"><a href="#渔线轮" class="headerlink" title="渔线轮"></a>渔线轮</h1><p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.uapaU2&amp;id=525599654852&amp;_u=c154cj1c6bf" target="_blank" rel="external">TATULA CT TYPE R 100HS</a></strong>  <em>DAIWA大蜘蛛美版水滴轮</em></p>
-<p><img src="/img/20161010/TATULA-CT-100HS.jpg" alt=""></p>
-<p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.uapaU2&amp;id=14816583709&amp;_u=c154cj143ab" target="_blank" rel="external">SIENNA 2500FD</a></strong> <em>禧玛诺4轴纺车渔轮 马来西亚产</em></p>
-<p><img src="/img/20161010/SN2500FD.jpg" alt=""></p>
-<p><strong><a href="https://item.taobao.com/item.htm?spm=a1z0d.6639537.1997196601.42.Q7PwbK&amp;id=7704001910" target="_blank" rel="external">RYOGA 1016</a></strong> <em>DAIWA达瓦顶级鼓轮</em></p>
-<blockquote>
-<p>可选替换部件：</p>
-<ol>
-<li>Daiwa (达亿瓦) RCSB线杯 鼓式轮适用</li>
-<li>Daiwa (达亿瓦) RCSB 单柄摇柄 鼓式轮适用</li>
-<li>Daiwa (达亿瓦) RCSB 双柄摇柄 鼓式轮适用</li>
-</ol>
-</blockquote>
-<p><img src="/img/20161010/RYOGA.png" alt=""></p>
-<p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.HzLi42&amp;id=520734861061&amp;_u=s154cj10930" target="_blank" rel="external">Mentaniu DC HG</a></strong> <em>禧玛诺蒙塔尼DC 2015</em></p>
-<p><img src="/img/20161010/MetaniumDC.png" alt=""><br><img src="/img/20161010/MetaniumDC1.png" alt=""></p>
-<p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.6c818473iizZfR&amp;id=545441440003&amp;_u=m154cj14da2" target="_blank" rel="external">SHIMANO New EXSENCE DC XG</a></strong> <em>禧玛诺海水DC 2017</em></p>
-<p><img src="/img/20161010/EXSENCE DC.png" alt=""></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;路亚竿&quot;&gt;&lt;a href=&quot;#路亚竿&quot; class=&quot;headerlink&quot; title=&quot;路亚竿&quot;&gt;&lt;/a&gt;路亚竿&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://item.taobao.com/item.htm?spm=a1z09.2.0.0.Jvl32R&amp;amp;id=520196909891&amp;amp;_u=c154cj1987f&quot;&gt;LRT702MHC&lt;/a&gt;&lt;/strong&gt;  &lt;em&gt;领峰 2015款 魂系列  订制版一体式软木柄&lt;/em&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;真正意义上的软饵以及岸钓远投竿，拥有超敏锐的快调竿尖和强有力的竿身不单只是精确抛投，&lt;br&gt;更是拥有良好感知水底结构的能力和从咬口开始一气呵成将鱼从水底拔出来的迸发力。&lt;br&gt;并且拥有20克亮片80+直线距离的远投能力。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="路亚" scheme="http://cuiqingwei.github.io/tags/%E8%B7%AF%E4%BA%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Kali Linux Live USB on MAC</title>
-    <link href="http://cuiqingwei.github.io/2016/10/10/2016-10-10-Kali-Linux-Live-USB-on-MAC/"/>
-    <id>http://cuiqingwei.github.io/2016/10/10/2016-10-10-Kali-Linux-Live-USB-on-MAC/</id>
-    <published>2016-10-09T18:27:40.000Z</published>
-    <updated>2016-10-15T12:21:26.000Z</updated>
-    
-    <content type="html"><![CDATA[<ol>
-<li>download Kali Linux iso images from <a href="http://www.kali.org/downloads/" target="_blank" rel="external">http://www.kali.org/downloads/</a></li>
-<li>Format the usb stick in disk utility as msdos</li>
-<li>Open Terminal Window and run the following</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">➜  ~ diskutil list</div><div class="line">/dev/disk0 (internal, physical):</div><div class="line">   <span class="comment">#:                       TYPE NAME                    SIZE       IDENTIFIER</span></div><div class="line">   0:      GUID_partition_scheme                        *128.0 GB   disk0</div><div class="line">   1:                        EFI EFI                     209.7 MB   disk0s1</div><div class="line">   2:                  Apple_HFS OS X                    127.2 GB   disk0s2</div><div class="line">   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3</div><div class="line">/dev/disk1 (internal, physical):</div><div class="line">   <span class="comment">#:                       TYPE NAME                    SIZE       IDENTIFIER</span></div><div class="line">   0:      GUID_partition_scheme                        *500.1 GB   disk1</div><div class="line">   1:                        EFI EFI                     209.7 MB   disk1s1</div><div class="line">   2:                  Apple_HFS WORK                    400.0 GB   disk1s2</div><div class="line">   3:                  Apple_HFS DATA                    99.6 GB    disk1s3</div><div class="line">/dev/disk2 (external, physical):</div><div class="line">   <span class="comment">#:                       TYPE NAME                    SIZE       IDENTIFIER</span></div><div class="line">   0:     FDisk_partition_scheme                        *8.0 GB     disk2</div><div class="line">   1:                 DOS_FAT_32 KALI                    8.0 GB     disk2s1</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<ol>
-<li>my USB device is /dev/disk2, Then unmount disk by diskutil command</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">➜  ~ diskutil umountDisk /dev/disk2</div><div class="line">Unmount of all volumes on disk2 was successful</div></pre></td></tr></table></figure>
-<ol>
-<li>You may have to run this as sudo</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo dd <span class="keyword">if</span>=kali-linux-2016.2-amd64.iso of=/dev/disk2 bs=512 conv=noerror,sync</div><div class="line">6009312+0 records <span class="keyword">in</span></div><div class="line">6009312+0 records out</div><div class="line">3076767744 bytes transferred <span class="keyword">in</span> 2227.332489 secs (1381369 bytes/sec)</div></pre></td></tr></table></figure>
-<p>Waiting for complete<br>When It success</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;download Kali Linux iso images from &lt;a href=&quot;http://www.kali.org/downloads/&quot;&gt;http://www.kali.org/downloads/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Format the usb stick in disk utility as msdos&lt;/li&gt;
-&lt;li&gt;Open Terminal Window and run the following&lt;/li&gt;
-&lt;/ol&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;➜  ~ diskutil list&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/dev/disk0 (internal, physical):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;#:                       TYPE NAME                    SIZE       IDENTIFIER&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   0:      GUID_partition_scheme                        *128.0 GB   disk0&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   1:                        EFI EFI                     209.7 MB   disk0s1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   2:                  Apple_HFS OS X                    127.2 GB   disk0s2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/dev/disk1 (internal, physical):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;#:                       TYPE NAME                    SIZE       IDENTIFIER&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   0:      GUID_partition_scheme                        *500.1 GB   disk1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   1:                        EFI EFI                     209.7 MB   disk1s1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   2:                  Apple_HFS WORK                    400.0 GB   disk1s2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   3:                  Apple_HFS DATA                    99.6 GB    disk1s3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;/dev/disk2 (external, physical):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   &lt;span class=&quot;comment&quot;&gt;#:                       TYPE NAME                    SIZE       IDENTIFIER&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   0:     FDisk_partition_scheme                        *8.0 GB     disk2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;   1:                 DOS_FAT_32 KALI                    8.0 GB     disk2s1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="kali-linux" scheme="http://cuiqingwei.github.io/tags/kali-linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>路亚绑法</title>
-    <link href="http://cuiqingwei.github.io/2016/10/09/2016-10-09-%E8%B7%AF%E4%BA%9A%E7%BB%91%E6%B3%95/"/>
-    <id>http://cuiqingwei.github.io/2016/10/09/2016-10-09-路亚绑法/</id>
-    <published>2016-10-09T02:27:40.000Z</published>
-    <updated>2016-12-29T15:30:43.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="渔轮绑法"><a href="#渔轮绑法" class="headerlink" title="渔轮绑法"></a>渔轮绑法</h1><p><img src="/img/20161009/渔轮上线绑法.jpg" alt=""></p>
-<a id="more"></a>
-<p><img src="/img/20161009/渔轮上线绑法1.jpg" alt=""></p>
-<h1 id="路亚饵绑法"><a href="#路亚饵绑法" class="headerlink" title="路亚饵绑法"></a>路亚饵绑法</h1><ol>
-<li>帕罗玛扣（Palomar Knot）</li>
-</ol>
-<p><img src="/img/20161009/帕罗玛扣.jpg" alt=""><br><img src="/img/20161009/帕罗玛扣8字环.jpg" alt=""></p>
-<ol>
-<li>圣地亚哥果酱扣（San Diego Jam Knot）</li>
-</ol>
-<p><img src="/img/20161009/圣地亚哥果酱扣.jpg" alt=""></p>
-<blockquote>
-<p>参考视频（28分处开始看）<br><a href="http://player.youku.com/player.php/Type/Folder/Fid//Ob//sid/XODYzMjE2ODAw/v.swf" target="_blank" rel="external">http://player.youku.com/player.php/Type/Folder/Fid//Ob//sid/XODYzMjE2ODAw/v.swf</a></p>
-</blockquote>
-<h1 id="前导线绑法"><a href="#前导线绑法" class="headerlink" title="前导线绑法"></a>前导线绑法</h1><p><img src="/img/20161009/前导线绑法.gif" alt=""><br><img src="/img/20161009/前导线绑法.jpg" alt=""></p>
-<h1 id="曲柄钩绑法"><a href="#曲柄钩绑法" class="headerlink" title="曲柄钩绑法"></a>曲柄钩绑法</h1><p><img src="/img/20161009/曲柄钩绑法.jpg" alt=""></p>
-<blockquote>
-<p><strong>参考链接</strong><br>什么是曲柄钩 <a href="http://www.aidiao.com/baike/3171.html" target="_blank" rel="external">http://www.aidiao.com/baike/3171.html</a><br>曲柄钩绑法 <a href="http://www.diaoyu123.com/luyarumen/87864.html" target="_blank" rel="external">http://www.diaoyu123.com/luyarumen/87864.html</a><br>德州钓组 <a href="http://www.rensheng2.com/150000/141260.shtml" target="_blank" rel="external">http://www.rensheng2.com/150000/141260.shtml</a><br>最容易的倒钓组绑法 <a href="http://www.lure123.com/news/0/550-1.shtml" target="_blank" rel="external">http://www.lure123.com/news/0/550-1.shtml</a><br>视屏演示 <a href="http://v.ku6.com/show/K91_Gmh5Vi-0TKEgDnCvSg...html?from=my" target="_blank" rel="external">http://v.ku6.com/show/K91_Gmh5Vi-0TKEgDnCvSg...html?from=my</a></p>
-</blockquote>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><strong>Fishing Knots</strong> <em><a href="http://www.netknots.com/fishing_knots" target="_blank" rel="external">http://www.netknots.com/fishing_knots</a></em><br><strong>路亚鱼线的绑法</strong> <em><a href="http://www.diaoyur.com/a/2013/1140.html" target="_blank" rel="external">http://www.diaoyur.com/a/2013/1140.html</a></em><br><strong>小汐打GT节</strong>  <em><a href="http://v.youku.com/v_show/id_XODg5MzExMzQw.html" target="_blank" rel="external">http://v.youku.com/v_show/id_XODg5MzExMzQw.html</a></em><br><strong>简单快速的前导线结AK结</strong> <em><a href="http://v.youku.com/v_show/id_XNzMwNjU1NDYw.html" target="_blank" rel="external">http://v.youku.com/v_show/id_XNzMwNjU1NDYw.html</a></em></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;渔轮绑法&quot;&gt;&lt;a href=&quot;#渔轮绑法&quot; class=&quot;headerlink&quot; title=&quot;渔轮绑法&quot;&gt;&lt;/a&gt;渔轮绑法&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/img/20161009/渔轮上线绑法.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
     
     </summary>
     
