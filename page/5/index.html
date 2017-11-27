@@ -290,6 +290,92 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-2015-07-09-OpenWRT-usefull-commands" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/09/2015-07-09-OpenWRT-usefull-commands/" class="article-date">
+      <time datetime="2015-07-09T10:00:00.000Z" itemprop="datePublished">2015-07-09</time>
+</a>
+
+ 
+    <a href="/2015/07/09/2015-07-09-OpenWRT-usefull-commands/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count"  data-thread-key="2015/07/09/2015-07-09-OpenWRT-usefull-commands/" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/09/2015-07-09-OpenWRT-usefull-commands/">OpenWRT usefull commands</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="不得不说"><a href="#不得不说" class="headerlink" title="不得不说"></a>不得不说</h1><p>在命令行，按两次<strong>TAB</strong>键，列出所有命令！</p>
+<h1 id="硬件信息"><a href="#硬件信息" class="headerlink" title="硬件信息"></a>硬件信息</h1><ul>
+<li>CPU:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /proc/cpuinfo</div></pre></td></tr></table></figure>
+<ul>
+<li>Memory:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">free</div><div class="line">cat /proc/meminfo</div></pre></td></tr></table></figure>
+<ul>
+<li>Disk Space:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">df -h</div><div class="line">cat /proc/mtd</div><div class="line">cat /proc/partitions</div></pre></td></tr></table></figure>
+<p>当然还可以通过<strong>dmesg</strong>配合grep查看！<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenWRT/">OpenWRT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/折腾/">折腾</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2015/07/09/2015-07-09-OpenWRT-usefull-commands/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2015-07-08-OpenWRT折腾日记" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1017,80 +1103,6 @@
       
         <p class="article-more-link">
           <a href="/2015/01/13/2015-01-13-MacOS/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2014-12-08-SDK之uClinux、Ralink、Atheros、Realtek、Broadcom" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/12/08/2014-12-08-SDK之uClinux、Ralink、Atheros、Realtek、Broadcom/" class="article-date">
-      <time datetime="2014-12-08T15:34:00.000Z" itemprop="datePublished">2014-12-08</time>
-</a>
-
- 
-    <a href="/2014/12/08/2014-12-08-SDK之uClinux、Ralink、Atheros、Realtek、Broadcom/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-            <span class="ds-thread-count"  data-thread-key="2014/12/08/2014-12-08-SDK之uClinux、Ralink、Atheros、Realtek、Broadcom/" ></span>
-        
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/12/08/2014-12-08-SDK之uClinux、Ralink、Atheros、Realtek、Broadcom/">SDK之uClinux、Ralink、Atheros、Realtek、Broadcom</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>接触的Linux SDK越来越多，整理整理，分享分享，不求系统全面，对您有帮助便足矣<br>文中大部分是与AP/Router SoC解决方案（单芯片WIFI 路由器解决方案）相关的Linux SDK</p>
-<h1 id="SDK（Software-Development-Kit）软件开发工具包"><a href="#SDK（Software-Development-Kit）软件开发工具包" class="headerlink" title="SDK（Software Development Kit）软件开发工具包"></a>SDK（Software Development Kit）软件开发工具包</h1><p>一般是一些被软件工程师用于为特定的软件包、软件框架、硬件平台、操作系统等建立应用软件的开发工具的集合<br>想想，最早接触到的SDK是在Cortex-M3项目开发中，也叫BSP（板级支持包），<br>这种SDK里大部分是芯片资源（硬件平台）的驱动和测试程序，少有软件框架和操作系统的源码<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SDK/">SDK</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/路由器/">路由器</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2014/12/08/2014-12-08-SDK之uClinux、Ralink、Atheros、Realtek、Broadcom/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>

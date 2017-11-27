@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2017-11-27T03:09:11.000Z</updated>
+  <updated>2017-11-27T07:48:04.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -16,11 +16,81 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>基于红外阵列传感器的检测系统</title>
+    <link href="http://cuiqingwei.github.io/2017/11/27/2017-11-27-%E5%9F%BA%E4%BA%8E%E7%BA%A2%E5%A4%96%E9%98%B5%E5%88%97%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://cuiqingwei.github.io/2017/11/27/2017-11-27-基于红外阵列传感器的检测系统/</id>
+    <published>2017-11-27T07:02:08.000Z</published>
+    <updated>2017-11-27T07:48:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="办公节能新技术"><a href="#办公节能新技术" class="headerlink" title="办公节能新技术"></a>办公节能新技术</h2><p>在提倡建设节约型社会的今天，建筑节能问题日益得到普遍关注，而降低新风及冷风负 荷也就成为主要的节能措施之一。建筑室内人员密度是新风量及冷风量合理确定需要考虑的重点因素也是难点因素。</p>
+<p>近年来，基于摄像头的人数检测技术愈发成熟。然而，在办公室这样的环境中，摄像头的使用受到一定的限制。</p>
+<p>本文介绍了一种基于阵列红外传感器的办公空间人员密度监控解决方案。在充分保护个人隐私及企业秘密的前提下，准确实时的检测人员密度，从而为新风及冷风控制提供准确的输入参书以达到节能之需求。</p>
+<a id="more"></a>
+<h2 id="红外阵列传感器"><a href="#红外阵列传感器" class="headerlink" title="红外阵列传感器"></a>红外阵列传感器</h2><p>PIR 即人体热释电红外传感器，被广泛的应用到电子防盗、人体探测领域中，这种传感器不会导致隐私和商业保密泄露，但是这种传感器从原理上，只能检测到运动中的人体目标，单独的 PIR 传感器不能检测出人员分布。</p>
+<p>红外阵列传感器是一个包含多个像素的 IR 传感阵列组合，每个像素都具有低噪声放大器以及 ADC，包含一个数字 I2C 接口用于读取传感阵列 ADC 转化后存储在 RAM 中的测量结果、以及一片 EEPROM 用于存储温度计算和校准的参数。</p>
+<p>AMG8853通过探测物体由于黑体辐射而产生的红外光而测量出物体表面温度的。根据黑体辐射原理，一切温度高于绝对零度的物体都在不停地向周围空间发出红外辐射能量。</p>
+<p>物体的红外辐射能量的大小及其按波长的分布与它的表面温度有着十分密切的关系。</p>
+<p>因此，通过对物体自身辐射的红外能量的测量，便能准确地测定它的表面温度，这就是红外辐射测温 所依据的客观基础。</p>
+<div align="center"><br><img src="/img/20171127/AMG8853.jpg" alt=""><br></div>
+
+<p>上图为AMG8853内部结构，数字有源热电堆阵列是由 64 个传感器探测单元（热电堆）组成，每个探测单元探测接收到的红外波段能量并将其转化为电信号，经过 ADC 转化后转化为数字信息，然后通过数字滤波写入传感器中的 RAM。</p>
+<p>用户通过 I2C 界面可以访问 RAM并读取测量结果用于温度计算。</p>
+<p>选用 120°×30°视场角的传感器，如果垂直安装高度为 2.5 米，那么单个 AMG8853检测 范围可以覆盖到 8.6m×1.3m 的地面。采用多个传感器拼接可以实现完整的室内区域覆盖。</p>
+<h2 id="红外图像采集系统"><a href="#红外图像采集系统" class="headerlink" title="红外图像采集系统"></a>红外图像采集系统</h2><p>连接红外传感器的外部单片机读取不同地址的 RAM 数据，并参考 EEPROM 的校准数值，来补偿不同传感器之间的差异，以建立热图像，来计算图像中每点的温度。</p>
+<p>同时考虑到 AMG8853传感器速度快，数据量大，多个传感器拼接成像时需要良好的管 理，因此，应用中需要可靠的数据通信方式，使用以太网通讯可以保证通信质量。</p>
+<p>因此在该系统中，我们采用 MN103SFL7G 作为主控单片机来接收并处理相应的数据，同时负责最终计算结果的上传，同时采用 PoE 供电方式来实现系统供电及通信。系统架构图如下：</p>
+<div align="center"><br><img src="/img/20171127/AMG8853-1.jpg" alt=""><br></div>
+
+<blockquote>
+<p>整个计算共需要如下几个步骤：</p>
+<ul>
+<li>计算传感器自身温度，从传感器中读取 PTAT 寄存器，得到值后与参数运算获得传感器温度；</li>
+<li>补偿和校准。运算值用于补偿和校准每个传感像素单元的差异。这部分计算利用了若干公式，其中的参数是由 EEPROM 中的值二次计算而来;</li>
+<li>发射率补偿。根据热辐射理论，物体不可能是一个“黑体”，即其发射率总是小于 1。 不同的材料具有不同的发射率，在应用中需要考虑被测物体表面的材料发射率，并加以补偿;</li>
+<li>最后根据公式计算出被测物的表面温度。</li>
+</ul>
+</blockquote>
+<div align="center"><br><img src="/img/20171127/AMG8853-2.jpg" alt=""><br></div>
+
+<p>计算结果即为视场内的目标的表面温度。计算结束后，结果乘以 10 以后，以整数形式存储在 RAM 中。通过 UDP 以太网协议，将数据传送至上位机。</p>
+<h2 id="红外图像处理算法"><a href="#红外图像处理算法" class="headerlink" title="红外图像处理算法"></a>红外图像处理算法</h2><p>计算机通过以太网与传感器建立 UDP 连接，并获取到传感器传回的温度信息。计算机将这些数据有序的拼接起来，还原出办公室内的温度信息。</p>
+<p>然而这种温度信息并不能直观的反映出办公环境中的人数和位置信息，计算机可以通过一些算法，将人数以及人所在房间中的位置计算出来，这样的结果更直观，也更利于其他应用处理。</p>
+<p>因此，计算机在获取到温度信息表之后，需要通过算法将办公室内人员数量计算出来并给出对应的位置坐标。</p>
+<p>室内人员数量可以通过图像处理的算法确定。人数计算的算法过程如下图所示。</p>
+<div align="center"><br><img src="/img/20171127/AMG8853-3.jpg" alt=""><br></div>
+
+<p>图像处理算法的关键在于准确的将人体温度从温度矩阵中提取出来。</p>
+<p>由于人体表面温度因人而异，而且受室温的影响较大，所以有效的提取人体表面温度遇到了诸多难题。经分析和试验，采用大津法进行阈值提取，可以将人体表面温度与环境温度区别开来。</p>
+<p>处理矩阵的红外信息，工程上和学术界普遍使用灰度级、伪彩色等图像的方法表示，使用图像处理的方法表示、分析和处理红外图像是可行而有效的。</p>
+<p>温度数据可以通过归一化后，落在对应的灰度级上，从而可以通过灰度图像表示也可以使用蓝色表示低的温度，红色表示高温，然后在色彩空间渐变，则是伪彩色的表示方法。</p>
+<p>在我们的程序中，使用伪彩色来表示温度高低，使人可以直观的看到温度分布，从图中可以看出，红色部分代表温度要比周围环境高，则认为这部分办公室空间被人占用；蓝色部分代表温度要稍微低一点，认为这部分空间没有被占用。</p>
+<h2 id="最终我们将得到如下的人员分布热图及人数统计值："><a href="#最终我们将得到如下的人员分布热图及人数统计值：" class="headerlink" title="最终我们将得到如下的人员分布热图及人数统计值："></a>最终我们将得到如下的人员分布热图及人数统计值：</h2><div align="center"><br><img src="/img/20171127/AMG8853-4.png" alt=""><br></div>
+
+<p>界面的主要部分是将温度数据矩阵通过伪彩色方法显示出来，人眼便可以直观的看出温度的高低分布。程序通过之前所述算法，获得当前办公环境中的人数，并显示在界面上。</p>
+<p>楼宇控制系统可以根据所获得的数据精确的控制空间中所需要的新风量及冷风量，从而达在节能与办公舒适性直接达到最佳的平衡。</p>
+<p>综上所述，基于红外阵列传感器的室内人员分布检测系统具有配置灵活、硬件结构简单、保密性好、测量效果好的特点。为办公室节能控制提供了精确的，稳定的实时数据。</p>
+<p>同时可以应用在流动办公室监控配置场合，管理人员可以通过直观的界面看出人员分布情况，从而合理规划办公室空间，得到最优的空间利用。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;办公节能新技术&quot;&gt;&lt;a href=&quot;#办公节能新技术&quot; class=&quot;headerlink&quot; title=&quot;办公节能新技术&quot;&gt;&lt;/a&gt;办公节能新技术&lt;/h2&gt;&lt;p&gt;在提倡建设节约型社会的今天，建筑节能问题日益得到普遍关注，而降低新风及冷风负 荷也就成为主要的节能措施之一。建筑室内人员密度是新风量及冷风量合理确定需要考虑的重点因素也是难点因素。&lt;/p&gt;
+&lt;p&gt;近年来，基于摄像头的人数检测技术愈发成熟。然而，在办公室这样的环境中，摄像头的使用受到一定的限制。&lt;/p&gt;
+&lt;p&gt;本文介绍了一种基于阵列红外传感器的办公空间人员密度监控解决方案。在充分保护个人隐私及企业秘密的前提下，准确实时的检测人员密度，从而为新风及冷风控制提供准确的输入参书以达到节能之需求。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="传感器 -" scheme="http://cuiqingwei.github.io/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>松下Grid-EYE红外阵列传感器解析</title>
     <link href="http://cuiqingwei.github.io/2017/11/26/2017-11-26-%E6%9D%BE%E4%B8%8BGrid-EYE%E7%BA%A2%E5%A4%96%E9%98%B5%E5%88%97%E5%8C%BB%E7%96%97%E4%BC%A0%E6%84%9F%E5%99%A8%E8%A7%A3%E6%9E%90/"/>
     <id>http://cuiqingwei.github.io/2017/11/26/2017-11-26-松下Grid-EYE红外阵列医疗传感器解析/</id>
     <published>2017-11-26T15:02:08.000Z</published>
-    <updated>2017-11-27T03:09:11.000Z</updated>
+    <updated>2017-11-27T07:21:44.000Z</updated>
     
     <content type="html"><![CDATA[<p> 近年来，由于基于MEMS的独立式热隔离像素结构采用薄膜红外吸收层，使得非制冷红外传感器取得了显著进展。　　</p>
 <p><img src="/img/20171126/W020160708332880615768.jpg" alt=""></p>
@@ -48,7 +118,8 @@
 <blockquote>
 <p>Grid-EYE红外传感器实现手势控制</p>
 </blockquote>
-<h3 id="应用领域"><a href="#应用领域" class="headerlink" title="应用领域"></a>应用领域</h3><p>　　许多红外应用不需要完整的图像信息，只需要从图像中挖掘出的特定信息，例如位置、运动以及热（或冷）物体的区域。面对这些非成像应用的新兴市场，需要基于不同概念的传统成像红外焦平面阵列的红外阵列传感器。这里将讨论热成像系统应用的两个主要门类：非活体目标和人体目标。</p>
+<h2 id="应用领域"><a href="#应用领域" class="headerlink" title="应用领域"></a>应用领域</h2><p><img src="/img/20171126/area.png" alt=""><br><img src="/img/20171126/application.png" alt=""></p>
+<p>　　许多红外应用不需要完整的图像信息，只需要从图像中挖掘出的特定信息，例如位置、运动以及热（或冷）物体的区域。面对这些非成像应用的新兴市场，需要基于不同概念的传统成像红外焦平面阵列的红外阵列传感器。这里将讨论热成像系统应用的两个主要门类：非活体目标和人体目标。</p>
 <h3 id="非活体目标"><a href="#非活体目标" class="headerlink" title="非活体目标"></a>非活体目标</h3><p>　　工厂机械设备、发电及配电设备、物料以及工艺生产制造出来的部件，它们的温度和热学性能，是生产制造过程中以及工厂维持安全和经济有效运营的最重要因素。</p>
 <p>　　突然出现的热点能够预示有缺陷的区域和连接点。应用热成像技术进行温度测量的原因之一，是热成像测量无需接触被测物体。热成像技术可以作为一款诊断工具应用于电力传输系统中电气接头的检测，也可以用于探测其它电气装置的热状况。它还可以应用于不同材料的具体特性评估。</p>
 <h3 id="人体目标"><a href="#人体目标" class="headerlink" title="人体目标"></a>人体目标</h3><p>　　被动红外传感器针对即时进入或目标探测应用效果很好。但是，它们仅能感测运动中的人体或目标，这使它们能够有条件地应用于建筑自动化和安防系统中。这些简单的红外传感器具有传统的局限性，因此不能应用于更先进的探测领域。例如，被动红外传感器无法感应不动的目标，它们不能精确地探测目标的运动方向，它们也不能获得热成像图谱或者探测目标的温度。所有这三个任务都是下一代智能自动化、安防系统、数字标识系统以及医疗成像应用的基本要素。</p>
@@ -66,7 +137,7 @@
 <p>　　对于安防应用，即时进入监测能够监测非法入侵的发生，能够即时触发警报或者发送相关信息给屋主。对于家居自动化应用，它能够用于暖通系统或者家用电器的开启。</p>
 <p>　　美国加州大学的Merced在2013年展示了一款基于Grid-EYE传感器的系统，用于估算即时进入信息，使他们能够基于房间进入人员的数量调整房间利用，从而有效的维持房间的温度，通过这一方法每年能够节约25%的能源。</p>
 <blockquote>
-<iframe height="498" width="655" src="http://player.youku.com/embed/XMzE4NTY0NTQzNg==" frameborder="0" 'allowfullscreen'=""></iframe>
+<iframe height="498" width="510" src="http://player.youku.com/embed/XMzE4NTY0NTQzNg==" frameborder="0" 'allowfullscreen'=""></iframe>
 </blockquote>
 ]]></content>
     
@@ -260,9 +331,9 @@
     <link href="http://cuiqingwei.github.io/2017/02/09/2017-02-09-Homekit%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
     <id>http://cuiqingwei.github.io/2017/02/09/2017-02-09-Homekit初体验/</id>
     <published>2017-02-08T16:27:40.000Z</published>
-    <updated>2017-11-23T07:30:56.000Z</updated>
+    <updated>2017-11-27T03:39:14.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="HomeKit-Siri-初体验-！"><a href="#HomeKit-Siri-初体验-！" class="headerlink" title="HomeKit Siri 初体验 ！"></a>HomeKit Siri 初体验 ！</h1><div align="center"><br><iframe height="498" width="655" src="http://player.youku.com/embed/XMjUwMzIyMjEyMA==" frameborder="0" 'allowfullscreen'=""></iframe><br></div>
+    <content type="html"><![CDATA[<h1 id="对话Siri"><a href="#对话Siri" class="headerlink" title="对话Siri"></a>对话Siri</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XMjUwMzIyMjEyMA==" frameborder="0" 'allowfullscreen'=""></iframe>
 
 <a id="more"></a>
 <h1 id="界面效果"><a href="#界面效果" class="headerlink" title="界面效果"></a>界面效果</h1><p><img src="/img/20170209/homekit1.jpg" alt=""><br><img src="/img/20170209/homekit2.jpg" alt=""></p>
@@ -345,7 +416,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;HomeKit-Siri-初体验-！&quot;&gt;&lt;a href=&quot;#HomeKit-Siri-初体验-！&quot; class=&quot;headerlink&quot; title=&quot;HomeKit Siri 初体验 ！&quot;&gt;&lt;/a&gt;HomeKit Siri 初体验 ！&lt;/h1&gt;&lt;div align = &quot;center&quot;&gt;&lt;br&gt;&lt;iframe height=498 width=655 src=&#39;http://player.youku.com/embed/XMjUwMzIyMjEyMA==&#39; frameborder=0 &#39;allowfullscreen&#39;&gt;&lt;/iframe&gt;&lt;br&gt;&lt;/div&gt;
+      &lt;h1 id=&quot;对话Siri&quot;&gt;&lt;a href=&quot;#对话Siri&quot; class=&quot;headerlink&quot; title=&quot;对话Siri&quot;&gt;&lt;/a&gt;对话Siri&lt;/h1&gt;&lt;iframe height=498 width=510 src=&#39;http://player.youku.com/embed/XMjUwMzIyMjEyMA==&#39; frameborder=0 &#39;allowfullscreen&#39;&gt;&lt;/iframe&gt;
     
     </summary>
     
@@ -487,14 +558,17 @@
     <link href="http://cuiqingwei.github.io/2017/01/02/2017-01-02-%E5%A4%8F%E5%88%A9%E4%BF%8A%E8%B6%85%E7%BA%A7%E8%BF%9C%E6%8A%95%E8%AE%B2%E8%A7%A3/"/>
     <id>http://cuiqingwei.github.io/2017/01/02/2017-01-02-夏利俊超级远投讲解/</id>
     <published>2017-01-02T13:27:40.000Z</published>
-    <updated>2017-11-27T02:04:47.000Z</updated>
+    <updated>2017-11-27T03:38:03.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="《夏利俊路亚教室》之直柄竿超级远投"><a href="#《夏利俊路亚教室》之直柄竿超级远投" class="headerlink" title="《夏利俊路亚教室》之直柄竿超级远投"></a>《夏利俊路亚教室》之直柄竿超级远投</h1><div align="center"><br><iframe height="498" width="655" src="http://player.youku.com/embed/XMTg2Mzk2Njg4NA==" frameborder="0" 'allowfullscreen'=""></iframe><br></div><br><a id="more"></a><br><br># 《夏利俊路亚教室》之枪柄竿超级远投<br><div align="center"><br><iframe height="498" width="655" src="http://player.youku.com/embed/XMTg2Mzk2Njg4NA==" frameborder="0" 'allowfullscreen'=""></iframe><br></div><br># 《夏利俊路亚教室》之直柄竿精准远投<br><div align="center"><br><iframe height="498" width="655" src="http://player.youku.com/embed/XMTg4NzE4OTY4MA==" frameborder="0" 'allowfullscreen'=""></iframe><br></div><br># 《夏利俊路亚教室》之直柄竿正手侧抛<br><div align="center"><br><iframe height="498" width="655" src="http://player.youku.com/embed/XMjUxNjA0MTQ3Ng==" frameborder="0" 'allowfullscreen'=""></iframe><br></div><br># 《夏利俊路亚教室》之枪柄竿单手抛<br><div align="center"><br><iframe height="498" width="655" src="http://player.youku.com/embed/XMjY0MjM2Nzg2NA==" frameborder="0" 'allowfullscreen'=""></iframe><br></div>
+    <content type="html"><![CDATA[<h1 id="《夏利俊路亚教室》之直柄竿超级远投"><a href="#《夏利俊路亚教室》之直柄竿超级远投" class="headerlink" title="《夏利俊路亚教室》之直柄竿超级远投"></a>《夏利俊路亚教室》之直柄竿超级远投</h1><div align="center"><br><iframe height="498" width="510" src="http://player.youku.com/embed/XMTg2Mzk2Njg4NA==" frameborder="0" 'allowfullscreen'=""></iframe><br></div>
+
+<a id="more"></a>
+<h1 id="《夏利俊路亚教室》之枪柄竿超级远投"><a href="#《夏利俊路亚教室》之枪柄竿超级远投" class="headerlink" title="《夏利俊路亚教室》之枪柄竿超级远投"></a>《夏利俊路亚教室》之枪柄竿超级远投</h1><div align="center"><br><iframe height="498" width="510" src="http://player.youku.com/embed/XMTg2Mzk2Njg4NA==" frameborder="0" 'allowfullscreen'=""></iframe><br></div><br># 《夏利俊路亚教室》之直柄竿精准远投<br><div align="center"><br><iframe height="498" width="510" src="http://player.youku.com/embed/XMTg4NzE4OTY4MA==" frameborder="0" 'allowfullscreen'=""></iframe><br></div><br># 《夏利俊路亚教室》之直柄竿正手侧抛<br><div align="center"><br><iframe height="498" width="510" src="http://player.youku.com/embed/XMjUxNjA0MTQ3Ng==" frameborder="0" 'allowfullscreen'=""></iframe><br></div><br># 《夏利俊路亚教室》之枪柄竿单手抛<br><div align="center"><br><iframe height="498" width="510" src="http://player.youku.com/embed/XMjY0MjM2Nzg2NA==" frameborder="0" 'allowfullscreen'=""></iframe><br></div>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;《夏利俊路亚教室》之直柄竿超级远投&quot;&gt;&lt;a href=&quot;#《夏利俊路亚教室》之直柄竿超级远投&quot; class=&quot;headerlink&quot; title=&quot;《夏利俊路亚教室》之直柄竿超级远投&quot;&gt;&lt;/a&gt;《夏利俊路亚教室》之直柄竿超级远投&lt;/h1&gt;&lt;div align = &quot;center&quot;&gt;&lt;br&gt;&lt;iframe height=498 width=655 src=&#39;http://player.youku.com/embed/XMTg2Mzk2Njg4NA==&#39; frameborder=0 &#39;allowfullscreen&#39;&gt;&lt;/iframe&gt;&lt;br&gt;&lt;/div&gt;&lt;br&gt;
+      &lt;h1 id=&quot;《夏利俊路亚教室》之直柄竿超级远投&quot;&gt;&lt;a href=&quot;#《夏利俊路亚教室》之直柄竿超级远投&quot; class=&quot;headerlink&quot; title=&quot;《夏利俊路亚教室》之直柄竿超级远投&quot;&gt;&lt;/a&gt;《夏利俊路亚教室》之直柄竿超级远投&lt;/h1&gt;&lt;div align = &quot;center&quot;&gt;&lt;br&gt;&lt;iframe height=498 width=510 src=&#39;http://player.youku.com/embed/XMTg2Mzk2Njg4NA==&#39; frameborder=0 &#39;allowfullscreen&#39;&gt;&lt;/iframe&gt;&lt;br&gt;&lt;/div&gt;
     
     </summary>
     
@@ -1065,33 +1139,6 @@
       &lt;blockquote&gt;
 &lt;p&gt;大家在购买轮子时，估计很多人都是首先关注轮子的价格，再关注轮子的牌子、外观、线容量、轴承数等，然后在各论坛到处问“XX的轮怎样？用过的说说！”结果，最后听了一大堆意见后最终还是进了一个价格自己可以接受的轮而不管轮子怎样了；或者受一些钓友的影响，入了一个超出了预算的牌子轮子却不是最适合自己的；或者入了一个价格差不多，只是多了一个或几个轴承的杂牌三无轮子而其它质量极差。鲜少有人（特别是新人）关注轮子的齿轮转速比，或者有关注，但却不是先决条件。&lt;/p&gt;
 &lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="路亚" scheme="http://cuiqingwei.github.io/tags/%E8%B7%AF%E4%BA%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用路亚线的区别</title>
-    <link href="http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%B8%B8%E7%94%A8%E8%B7%AF%E4%BA%9A%E7%BA%BF%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-    <id>http://cuiqingwei.github.io/2016/10/13/2016-10-13-常用路亚线的区别/</id>
-    <published>2016-10-13T13:27:40.000Z</published>
-    <updated>2017-11-23T08:00:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="尼龙线"><a href="#尼龙线" class="headerlink" title="尼龙线"></a>尼龙线</h2><p>台钓中使用最多的也是尼龙线。尼龙的化工原料为PA，和PE一样是石油的下游产品。与PE不同的是，尼龙线一般为单股线，这种线的特点刚好与PE线相反。尼龙线的优点是由于有一定的延展性，抛投和中鱼的时候不易断线，由于生产技术已经发展了近70年的历史，成本低，产量大，相比PE线要便宜很多。最后一点是尼龙表面圆滑，对线环的磨损可以降到最低。</p>
-<a id="more"></a>
-<p>延展性同样也是尼龙线的缺点，在某些鱼讯轻微的场合，尼龙线不能及时将中鱼信号传达给钓手，从而失去最佳的起杆机会。另外，同样拉力的情况下，尼龙线比PE的线径更粗，从而影响路亚的抛投距离（<em>当然这个问题并不一定完全适用，需要根据具体的情况来，不过在高磅数的尼龙线与高磅数PE线做对比的话，高磅数的PE占些优势，因其相同的高磅数的线，高磅数PE线径更细一些，也就可以更加节省线杯的空间容下更多的线，并且线径也更细利于高磅数线的抛投</em>）。</p>
-<p><img src="/img/20161013/fishing-line.jpg" alt=""></p>
-<h2 id="PE线"><a href="#PE线" class="headerlink" title="PE线"></a>PE线</h2><p>PE线是指用多股化纤编织后浸胶制成的钓线，俗称编织线(BRAIDED OR CORD LINE)，最早见的就是“大力马”。<br>这种钓线的生产方式是：将多条微细纤维(如：达克龙纤维、功夫龙纤维或大力马纤维或其它聚乙烯化合物的PE纤维…等)以机器来编织而成，所以这种钓线的线体呈现纤维规则交叉的纹路，只要你将线体取出审视一番就可以清楚的发现其线体结构上的特色。<br>这种线的优点是，相同拉力的的情况下线径比尼龙要细很多，同样我们使用12磅的尼龙和12 磅的PE，因为PE的线径更细，能够抛投的更远。在实际钓场中，风力是影响路亚抛投距离的重要因素，PE同样因为相同拉力下线径更细的特点，能够将风阻的影响减小。除此之外，PE几乎没有延展性，在中鱼的时候能够在第一时间将信号传达给钓手。还有就是PE线更加耐磨。<br>但正像所有事物都有其两面性一样，PE并不是没有任何缺点。PE第一个缺点是没有延展性。这个特性在能够将中鱼信号迅速传达给钓手的同时，也经常导致跑鱼或放枪。玩过台钓的朋友都知道，中鱼后钓竿上要保持一定的力量，鱼才不易脱钩，杆软不易断线跑鱼，但是起鱼慢；杆硬起鱼快，但是容易断线跑鱼。同样，你可以把线看作杆的延伸，鱼线有一定的延展性，就像钓竿比较软一样，能够保证在鱼左冲右突的时候始终保持一定的力量，而PE就像比较硬的杆，遛鱼的余地比较小从而导致脱钩或断线。另外现在有厂家为了使用更细的线径达到更强的拉力，在PE中掺加金属丝，虽然拉力得到了加强，但是线的延展性和柔软度进一步降低，同时还容易磨损导环。</p>
-<h2 id="碳线（氟碳线）"><a href="#碳线（氟碳线）" class="headerlink" title="碳线（氟碳线）"></a>碳线（氟碳线）</h2><p>碳线是由含有氟和碳成分的树脂抽丝加工而成，碳线的特性是高比重、切水快、光的折射率非常低几乎看不到，没有吸水性，抗紫外线和耐久性要比尼龙线强很多，因为碳线的物理特性为非常低的延展性和高比重，可以让饵迅速到达所需要的水层，并且因延展性很低所以也就提供了良好的灵敏度。因碳线对光的折射率几乎为0，所以会降低鱼的敏感性，让鱼能放心的将饵食入口中。碳线适合搭配软饵钓组使用，比如：无铅钓组、WACKY、德州钓组，却不太适合搭配某一些特殊的硬饵或水面系的路亚。不过碳线也不是没有缺点，因为通常比较硬（特别是高磅数的碳线），如果作为主线使用要注意纺车轮上建议使用的主线不要超过10磅，水滴轮或鼓轮如有特殊需要最好也不要超过20磅（当然特殊情况下可以用到更高的磅数作为主线，并不是完全不可以），碳线也可以当做前导线来使用，因为碳线比较耐磨，可以搭配PE线，弥补PE不耐磨的缺点。</p>
-<p><img src="/img/20161013/钓线攻略.jpg" alt=""></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;尼龙线&quot;&gt;&lt;a href=&quot;#尼龙线&quot; class=&quot;headerlink&quot; title=&quot;尼龙线&quot;&gt;&lt;/a&gt;尼龙线&lt;/h2&gt;&lt;p&gt;台钓中使用最多的也是尼龙线。尼龙的化工原料为PA，和PE一样是石油的下游产品。与PE不同的是，尼龙线一般为单股线，这种线的特点刚好与PE线相反。尼龙线的优点是由于有一定的延展性，抛投和中鱼的时候不易断线，由于生产技术已经发展了近70年的历史，成本低，产量大，相比PE线要便宜很多。最后一点是尼龙表面圆滑，对线环的磨损可以降到最低。&lt;/p&gt;
     
     </summary>
     
