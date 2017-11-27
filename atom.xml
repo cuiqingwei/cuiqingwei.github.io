@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2017-11-27T01:55:24.000Z</updated>
+  <updated>2017-11-27T03:09:11.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://cuiqingwei.github.io/2017/11/26/2017-11-26-%E6%9D%BE%E4%B8%8BGrid-EYE%E7%BA%A2%E5%A4%96%E9%98%B5%E5%88%97%E5%8C%BB%E7%96%97%E4%BC%A0%E6%84%9F%E5%99%A8%E8%A7%A3%E6%9E%90/"/>
     <id>http://cuiqingwei.github.io/2017/11/26/2017-11-26-松下Grid-EYE红外阵列医疗传感器解析/</id>
     <published>2017-11-26T15:02:08.000Z</published>
-    <updated>2017-11-27T01:55:24.000Z</updated>
+    <updated>2017-11-27T03:09:11.000Z</updated>
     
     <content type="html"><![CDATA[<p> 近年来，由于基于MEMS的独立式热隔离像素结构采用薄膜红外吸收层，使得非制冷红外传感器取得了显著进展。　　</p>
 <p><img src="/img/20171126/W020160708332880615768.jpg" alt=""></p>
@@ -33,7 +33,7 @@
 <h1 id="红外热电堆传感器"><a href="#红外热电堆传感器" class="headerlink" title="红外热电堆传感器"></a>红外热电堆传感器</h1><p>　　根据塞贝克效应，在两种不同材料的连接处，当它们的温度有差异时，会在这两种材料组成的闭环电路中产生电流。这种现象被广泛应用于热电偶的温度测量。热电堆或热电阵列由许多热敏元件组成，每个热敏元件都是一根由两种不同热敏活性材料组成的细丝。当细丝两端的温度出现差异时，便在细丝两端产生了电压（热张力）。热接点集中在一个非常薄的共同吸收区，而冷节点位于一个周边环绕高热质量的散热片上。</p>
 <p>　　现代半导体技术实现了在几平方毫米内，制造包含数百个热电偶的红外热电堆传感器。这种红外传感器因其微小的尺寸，而具有极高的灵敏度和极快的响应时间，而且由于应用了半导体规模生产和光刻技术，使其成本也较低。</p>
 <h1 id="什么是Grid-EYE"><a href="#什么是Grid-EYE" class="headerlink" title="什么是Grid-EYE"></a>什么是Grid-EYE</h1><p>　　松下Grid-EYE的8 x 8热电堆阵列红外传感器，开启了其红外阵列传感器业务。Grid-EYE是一款64像素红外摄像头，采用一体化的紧凑SMD封装。基于松下的MEMS技术，Grid-EYE包含一颗MEMS传感器芯片、一颗数字ASIC（I2C接口）以及一款硅基镜头。　　</p>
-<p><img src="/img/20171126/W020160708332880614846.jpg" alt=""></p>
+<p><img src="/img/20171126/XzhN6uEQ_4dfn.png" alt=""></p>
 <p>　　Grid-EYE在一个8 x 8网格式布局内含有64个热电堆元件，能够在不接触被测物体的前提下探测物体表面的绝对温度。与传统的传感器不同，Grid-EYE采用了一款受专利保护的60°硅基镜头，该镜头在硅晶圆上通过刻蚀工艺制成，是市场上最小（高度低于0.3 mm）的镜头。所有这些技术的结合，使该款传感器的封装尺寸仅为11.6 mm x 8 mm x 4.3 mm。　　</p>
 <p><img src="/img/20171126/W020160708332880629183.jpg" alt=""></p>
 <blockquote>
@@ -65,6 +65,9 @@
 </blockquote>
 <p>　　对于安防应用，即时进入监测能够监测非法入侵的发生，能够即时触发警报或者发送相关信息给屋主。对于家居自动化应用，它能够用于暖通系统或者家用电器的开启。</p>
 <p>　　美国加州大学的Merced在2013年展示了一款基于Grid-EYE传感器的系统，用于估算即时进入信息，使他们能够基于房间进入人员的数量调整房间利用，从而有效的维持房间的温度，通过这一方法每年能够节约25%的能源。</p>
+<blockquote>
+<iframe height="498" width="655" src="http://player.youku.com/embed/XMzE4NTY0NTQzNg==" frameborder="0" 'allowfullscreen'=""></iframe>
+</blockquote>
 ]]></content>
     
     <summary type="html">
@@ -347,9 +350,9 @@
     </summary>
     
     
-      <category term="Raspberry" scheme="http://cuiqingwei.github.io/tags/Raspberry/"/>
-    
       <category term="HomeKit" scheme="http://cuiqingwei.github.io/tags/HomeKit/"/>
+    
+      <category term="Raspberry" scheme="http://cuiqingwei.github.io/tags/Raspberry/"/>
     
   </entry>
   
@@ -484,23 +487,14 @@
     <link href="http://cuiqingwei.github.io/2017/01/02/2017-01-02-%E5%A4%8F%E5%88%A9%E4%BF%8A%E8%B6%85%E7%BA%A7%E8%BF%9C%E6%8A%95%E8%AE%B2%E8%A7%A3/"/>
     <id>http://cuiqingwei.github.io/2017/01/02/2017-01-02-夏利俊超级远投讲解/</id>
     <published>2017-01-02T13:27:40.000Z</published>
-    <updated>2017-11-23T05:28:26.000Z</updated>
+    <updated>2017-11-27T02:04:47.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="《夏利俊路亚教室》之直柄竿超级远投"><a href="#《夏利俊路亚教室》之直柄竿超级远投" class="headerlink" title="《夏利俊路亚教室》之直柄竿超级远投"></a>《夏利俊路亚教室》之直柄竿超级远投</h1><iframe height="498" width="655" src="http://player.youku.com/embed/XMTg2Mzk2Njg4NA==" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<a id="more"></a>
-<h1 id="《夏利俊路亚教室》之枪柄竿超级远投"><a href="#《夏利俊路亚教室》之枪柄竿超级远投" class="headerlink" title="《夏利俊路亚教室》之枪柄竿超级远投"></a>《夏利俊路亚教室》之枪柄竿超级远投</h1><iframe height="498" width="655" src="http://player.youku.com/embed/XMTg2Mzk2Njg4NA==" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="《夏利俊路亚教室》之直柄竿精准远投"><a href="#《夏利俊路亚教室》之直柄竿精准远投" class="headerlink" title="《夏利俊路亚教室》之直柄竿精准远投"></a>《夏利俊路亚教室》之直柄竿精准远投</h1><iframe height="498" width="655" src="http://player.youku.com/embed/XMTg4NzE4OTY4MA==" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="《夏利俊路亚教室》之直柄竿正手侧抛"><a href="#《夏利俊路亚教室》之直柄竿正手侧抛" class="headerlink" title="《夏利俊路亚教室》之直柄竿正手侧抛"></a>《夏利俊路亚教室》之直柄竿正手侧抛</h1><iframe height="498" width="655" src="http://player.youku.com/embed/XMjUxNjA0MTQ3Ng==" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="《夏利俊路亚教室》之枪柄竿单手抛"><a href="#《夏利俊路亚教室》之枪柄竿单手抛" class="headerlink" title="《夏利俊路亚教室》之枪柄竿单手抛"></a>《夏利俊路亚教室》之枪柄竿单手抛</h1><iframe height="498" width="655" src="http://player.youku.com/embed/XMjY0MjM2Nzg2NA==" frameborder="0" 'allowfullscreen'=""></iframe>
+    <content type="html"><![CDATA[<h1 id="《夏利俊路亚教室》之直柄竿超级远投"><a href="#《夏利俊路亚教室》之直柄竿超级远投" class="headerlink" title="《夏利俊路亚教室》之直柄竿超级远投"></a>《夏利俊路亚教室》之直柄竿超级远投</h1><div align="center"><br><iframe height="498" width="655" src="http://player.youku.com/embed/XMTg2Mzk2Njg4NA==" frameborder="0" 'allowfullscreen'=""></iframe><br></div><br><a id="more"></a><br><br># 《夏利俊路亚教室》之枪柄竿超级远投<br><div align="center"><br><iframe height="498" width="655" src="http://player.youku.com/embed/XMTg2Mzk2Njg4NA==" frameborder="0" 'allowfullscreen'=""></iframe><br></div><br># 《夏利俊路亚教室》之直柄竿精准远投<br><div align="center"><br><iframe height="498" width="655" src="http://player.youku.com/embed/XMTg4NzE4OTY4MA==" frameborder="0" 'allowfullscreen'=""></iframe><br></div><br># 《夏利俊路亚教室》之直柄竿正手侧抛<br><div align="center"><br><iframe height="498" width="655" src="http://player.youku.com/embed/XMjUxNjA0MTQ3Ng==" frameborder="0" 'allowfullscreen'=""></iframe><br></div><br># 《夏利俊路亚教室》之枪柄竿单手抛<br><div align="center"><br><iframe height="498" width="655" src="http://player.youku.com/embed/XMjY0MjM2Nzg2NA==" frameborder="0" 'allowfullscreen'=""></iframe><br></div>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;《夏利俊路亚教室》之直柄竿超级远投&quot;&gt;&lt;a href=&quot;#《夏利俊路亚教室》之直柄竿超级远投&quot; class=&quot;headerlink&quot; title=&quot;《夏利俊路亚教室》之直柄竿超级远投&quot;&gt;&lt;/a&gt;《夏利俊路亚教室》之直柄竿超级远投&lt;/h1&gt;&lt;iframe height=498 width=655 src=&#39;http://player.youku.com/embed/XMTg2Mzk2Njg4NA==&#39; frameborder=0 &#39;allowfullscreen&#39;&gt;&lt;/iframe&gt;
+      &lt;h1 id=&quot;《夏利俊路亚教室》之直柄竿超级远投&quot;&gt;&lt;a href=&quot;#《夏利俊路亚教室》之直柄竿超级远投&quot; class=&quot;headerlink&quot; title=&quot;《夏利俊路亚教室》之直柄竿超级远投&quot;&gt;&lt;/a&gt;《夏利俊路亚教室》之直柄竿超级远投&lt;/h1&gt;&lt;div align = &quot;center&quot;&gt;&lt;br&gt;&lt;iframe height=498 width=655 src=&#39;http://player.youku.com/embed/XMTg2Mzk2Njg4NA==&#39; frameborder=0 &#39;allowfullscreen&#39;&gt;&lt;/iframe&gt;&lt;br&gt;&lt;/div&gt;&lt;br&gt;
     
     </summary>
     
@@ -670,6 +664,35 @@
   </entry>
   
   <entry>
+    <title>GoAhead移植到OpenWRT</title>
+    <link href="http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/"/>
+    <id>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead移植到OpenWRT/</id>
+    <published>2016-11-17T13:04:40.000Z</published>
+    <updated>2016-12-15T13:45:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
+<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
+<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
+<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
+<blockquote>
+<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;make-menuconfig&quot;&gt;&lt;a href=&quot;#make-menuconfig&quot; class=&quot;headerlink&quot; title=&quot;make menuconfig&quot;&gt;&lt;/a&gt;make menuconfig&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/img/20161215/menuconfig.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
+    
+      <category term="GoAhead" scheme="http://cuiqingwei.github.io/tags/GoAhead/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Contiki-CC2538-CoAP</title>
     <link href="http://cuiqingwei.github.io/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/"/>
     <id>http://cuiqingwei.github.io/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/</id>
@@ -708,35 +731,6 @@
       <category term="CC2538" scheme="http://cuiqingwei.github.io/tags/CC2538/"/>
     
       <category term="CoAP" scheme="http://cuiqingwei.github.io/tags/CoAP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GoAhead移植到OpenWRT</title>
-    <link href="http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/"/>
-    <id>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead移植到OpenWRT/</id>
-    <published>2016-11-17T13:04:40.000Z</published>
-    <updated>2016-12-15T13:45:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
-<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
-<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
-<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
-<blockquote>
-<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;make-menuconfig&quot;&gt;&lt;a href=&quot;#make-menuconfig&quot; class=&quot;headerlink&quot; title=&quot;make menuconfig&quot;&gt;&lt;/a&gt;make menuconfig&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/img/20161215/menuconfig.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
-    
-      <category term="GoAhead" scheme="http://cuiqingwei.github.io/tags/GoAhead/"/>
     
   </entry>
   
