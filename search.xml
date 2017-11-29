@@ -151,6 +151,7 @@
 <p>1）利用工具直接输入查询</p>
 <p><a href="http://w3techs.com/sites/info/baidu.com" target="_blank" rel="external">http://w3techs.com/sites/info/baidu.com</a><br><a href="https://builtwith.com/baidu.com" target="_blank" rel="external">https://builtwith.com/baidu.com</a></p>
 <p>把最后的域名换成想知道的网址，系统会自动分析。</p>
+<a id="more"></a>
 <p>2）后台语言可以通过服务器类型推测。</p>
 <p>一般情况下，服务器类型可以通过 Response Header 来看。</p>
 <p>比如 IIS，一般是 <a href="http://ASP.NET" target="_blank" rel="external">http://ASP.NET</a></p>
