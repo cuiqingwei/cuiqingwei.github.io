@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2017-11-27T07:48:04.000Z</updated>
+  <updated>2017-11-29T01:35:13.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -16,11 +16,49 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CentOS7添加开机启动服务脚本</title>
+    <link href="http://cuiqingwei.github.io/2017/11/29/2017-11-29-CentOS7%E6%B7%BB%E5%8A%A0%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E8%84%9A%E6%9C%AC/"/>
+    <id>http://cuiqingwei.github.io/2017/11/29/2017-11-29-CentOS7添加开机启动服务脚本/</id>
+    <published>2017-11-29T01:02:08.000Z</published>
+    <updated>2017-11-29T01:35:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、添加开机自启服务"><a href="#一、添加开机自启服务" class="headerlink" title="一、添加开机自启服务"></a>一、添加开机自启服务</h1><p>在CentOS 7中添加开机自启服务非常方便，只需要两条命令(以Jenkins为例)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">systemctl enable jenkins.service  # 设置jenkins服务为自启动服务</div><div class="line">sysstemctl start  jenkins.service # 启动jenkins服务</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="二、添加开机自启脚本"><a href="#二、添加开机自启脚本" class="headerlink" title="二、添加开机自启脚本"></a>二、添加开机自启脚本</h1><p>在centos7中增加脚本有两种常用的方法，以脚本autostart.sh为例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">#description:开机自启脚本</div><div class="line">/usr/local/tomcat/bin/startup.sh  #启动tomcat</div></pre></td></tr></table></figure>
+<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>1、赋予脚本可执行权限（/opt/script/autostart.sh是你的脚本路径）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x /opt/script/autostart.sh</div></pre></td></tr></table></figure>
+<p>2、打开/etc/rc.d/rc/local文件，在末尾增加如下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/opt/script/autostart.sh</div></pre></td></tr></table></figure>
+<p>3、在centos7中，/etc/rc.d/rc.local的权限被降低了，所以需要执行如下命令赋予其可执行权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x /etc/rc.d/rc.local</div></pre></td></tr></table></figure>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>1、将脚本移动到/etc/rc.d/init.d目录下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mv  /opt/script/autostart.sh /etc/rc.d/init.d</div></pre></td></tr></table></figure>
+<p>2、增加脚本的可执行权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x  /etc/rc.d/init.d/autostart.sh</div></pre></td></tr></table></figure>
+<p>3、添加脚本到开机自动启动项目中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /etc/rc.d/init.d</div><div class="line">chkconfig --add autostart.sh</div><div class="line">chkconfig autostart.sh on</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一、添加开机自启服务&quot;&gt;&lt;a href=&quot;#一、添加开机自启服务&quot; class=&quot;headerlink&quot; title=&quot;一、添加开机自启服务&quot;&gt;&lt;/a&gt;一、添加开机自启服务&lt;/h1&gt;&lt;p&gt;在CentOS 7中添加开机自启服务非常方便，只需要两条命令(以Jenkins为例)：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;systemctl enable jenkins.service  # 设置jenkins服务为自启动服务&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sysstemctl start  jenkins.service # 启动jenkins服务&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://cuiqingwei.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>基于红外阵列传感器的检测系统</title>
     <link href="http://cuiqingwei.github.io/2017/11/27/2017-11-27-%E5%9F%BA%E4%BA%8E%E7%BA%A2%E5%A4%96%E9%98%B5%E5%88%97%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F/"/>
     <id>http://cuiqingwei.github.io/2017/11/27/2017-11-27-基于红外阵列传感器的检测系统/</id>
     <published>2017-11-27T07:02:08.000Z</published>
-    <updated>2017-11-27T07:48:04.000Z</updated>
+    <updated>2017-11-29T01:22:58.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="办公节能新技术"><a href="#办公节能新技术" class="headerlink" title="办公节能新技术"></a>办公节能新技术</h2><p>在提倡建设节约型社会的今天，建筑节能问题日益得到普遍关注，而降低新风及冷风负 荷也就成为主要的节能措施之一。建筑室内人员密度是新风量及冷风量合理确定需要考虑的重点因素也是难点因素。</p>
 <p>近年来，基于摄像头的人数检测技术愈发成熟。然而，在办公室这样的环境中，摄像头的使用受到一定的限制。</p>
@@ -81,7 +119,7 @@
     </summary>
     
     
-      <category term="传感器 -" scheme="http://cuiqingwei.github.io/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/"/>
+      <category term="传感器" scheme="http://cuiqingwei.github.io/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/"/>
     
   </entry>
   
@@ -90,7 +128,7 @@
     <link href="http://cuiqingwei.github.io/2017/11/26/2017-11-26-%E6%9D%BE%E4%B8%8BGrid-EYE%E7%BA%A2%E5%A4%96%E9%98%B5%E5%88%97%E5%8C%BB%E7%96%97%E4%BC%A0%E6%84%9F%E5%99%A8%E8%A7%A3%E6%9E%90/"/>
     <id>http://cuiqingwei.github.io/2017/11/26/2017-11-26-松下Grid-EYE红外阵列医疗传感器解析/</id>
     <published>2017-11-26T15:02:08.000Z</published>
-    <updated>2017-11-27T07:21:44.000Z</updated>
+    <updated>2017-11-29T01:22:58.000Z</updated>
     
     <content type="html"><![CDATA[<p> 近年来，由于基于MEMS的独立式热隔离像素结构采用薄膜红外吸收层，使得非制冷红外传感器取得了显著进展。　　</p>
 <p><img src="/img/20171126/W020160708332880615768.jpg" alt=""></p>
@@ -149,7 +187,7 @@
     </summary>
     
     
-      <category term="传感器 -" scheme="http://cuiqingwei.github.io/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/"/>
+      <category term="传感器" scheme="http://cuiqingwei.github.io/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/"/>
     
   </entry>
   
@@ -158,7 +196,7 @@
     <link href="http://cuiqingwei.github.io/2017/11/23/2017-11-23-git%E4%B8%AD%E9%81%BF%E5%85%8D%E6%8F%90%E4%BA%A4-DS-Store%E6%96%87%E4%BB%B6/"/>
     <id>http://cuiqingwei.github.io/2017/11/23/2017-11-23-git中避免提交-DS-Store文件/</id>
     <published>2017-11-23T04:02:08.000Z</published>
-    <updated>2017-11-23T05:06:36.000Z</updated>
+    <updated>2017-11-29T01:22:58.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="1-先删除原有的-DS-Store："><a href="#1-先删除原有的-DS-Store：" class="headerlink" title="1. 先删除原有的.DS_Store："></a>1. 先删除原有的.DS_Store：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name &quot;.DS_Store&quot; -type f -delete</div></pre></td></tr></table></figure>
 <p>命令解释：在当前文件夹以及当前文件夹的子文件夹中找到所有的.DS_Store文件</p>
@@ -174,6 +212,8 @@
     </summary>
     
     
+      <category term="git" scheme="http://cuiqingwei.github.io/tags/git/"/>
+    
   </entry>
   
   <entry>
@@ -181,7 +221,7 @@
     <link href="http://cuiqingwei.github.io/2017/10/31/2017-10-31-%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%AB%99%E6%98%AF%E7%94%A8%E4%BB%80%E4%B9%88%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%9A%84/"/>
     <id>http://cuiqingwei.github.io/2017/10/31/2017-10-31-如何查看网站是用什么语言开发的/</id>
     <published>2017-10-31T04:02:08.000Z</published>
-    <updated>2017-10-31T04:02:39.000Z</updated>
+    <updated>2017-11-29T01:22:34.000Z</updated>
     
     <content type="html"><![CDATA[<p>查看网站开发语言方法：</p>
 <p>1）利用工具直接输入查询</p>
@@ -207,6 +247,8 @@
     
     </summary>
     
+    
+      <category term="开发语言" scheme="http://cuiqingwei.github.io/tags/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
@@ -331,7 +373,7 @@
     <link href="http://cuiqingwei.github.io/2017/02/09/2017-02-09-Homekit%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
     <id>http://cuiqingwei.github.io/2017/02/09/2017-02-09-Homekit初体验/</id>
     <published>2017-02-08T16:27:40.000Z</published>
-    <updated>2017-11-27T03:39:14.000Z</updated>
+    <updated>2017-11-29T01:20:57.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="对话Siri"><a href="#对话Siri" class="headerlink" title="对话Siri"></a>对话Siri</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XMjUwMzIyMjEyMA==" frameborder="0" 'allowfullscreen'=""></iframe>
 
@@ -421,9 +463,9 @@
     </summary>
     
     
-      <category term="HomeKit" scheme="http://cuiqingwei.github.io/tags/HomeKit/"/>
+      <category term="Raspberry Pi" scheme="http://cuiqingwei.github.io/tags/Raspberry-Pi/"/>
     
-      <category term="Raspberry" scheme="http://cuiqingwei.github.io/tags/Raspberry/"/>
+      <category term="HomeKit" scheme="http://cuiqingwei.github.io/tags/HomeKit/"/>
     
   </entry>
   
@@ -518,7 +560,7 @@
     <link href="http://cuiqingwei.github.io/2017/02/08/2017-02-08-Raspberry%E5%AE%89%E8%A3%85HAP-NodeJS/"/>
     <id>http://cuiqingwei.github.io/2017/02/08/2017-02-08-Raspberry安装HAP-NodeJS/</id>
     <published>2017-02-07T16:27:40.000Z</published>
-    <updated>2017-02-25T13:00:10.000Z</updated>
+    <updated>2017-11-29T01:29:53.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="下载-Raspbian"><a href="#下载-Raspbian" class="headerlink" title="下载 Raspbian"></a>下载 Raspbian</h1><p><a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="external">https://www.raspberrypi.org/downloads/raspbian/</a></p>
 <h1 id="制作-TF-card"><a href="#制作-TF-card" class="headerlink" title="制作 TF card"></a>制作 TF card</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">df -h</div><div class="line">diskutil unmount /dev/disk2s1</div><div class="line">diskutil list</div><div class="line">dd bs=4m if=2017-01-11-raspbian-jessie.img of=/dev/rdisk2</div><div class="line">diskutil unmountdisk /dev/disk2</div></pre></td></tr></table></figure>
@@ -547,7 +589,9 @@
     </summary>
     
     
-      <category term="Raspberry" scheme="http://cuiqingwei.github.io/tags/Raspberry/"/>
+      <category term="Raspberry Pi" scheme="http://cuiqingwei.github.io/tags/Raspberry-Pi/"/>
+    
+      <category term="HomeKit" scheme="http://cuiqingwei.github.io/tags/HomeKit/"/>
     
       <category term="HAP-NodeJS" scheme="http://cuiqingwei.github.io/tags/HAP-NodeJS/"/>
     
@@ -1053,7 +1097,7 @@
     <link href="http://cuiqingwei.github.io/2016/10/16/2016-10-16-linkit-smart-7688-build/"/>
     <id>http://cuiqingwei.github.io/2016/10/16/2016-10-16-linkit-smart-7688-build/</id>
     <published>2016-10-15T16:37:40.000Z</published>
-    <updated>2016-10-15T17:05:21.000Z</updated>
+    <updated>2017-11-29T01:30:27.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="linkit-smart-feed"><a href="#linkit-smart-feed" class="headerlink" title="linkit-smart-feed"></a>linkit-smart-feed</h1><p>This feeds holds the SDK wifi driver and the config/meta package for the LinkIt Smart 7688 (Duo)</p>
 <h1 id="Build-the-firmware-from-sources"><a href="#Build-the-firmware-from-sources" class="headerlink" title="Build the firmware from sources"></a>Build the firmware from sources</h1><p>This section describes how to build the firmware for LinkIt Smart 7688 and LinkIt Smart 7688 Duo from source codes.<br><a id="more"></a></p>
@@ -1109,41 +1153,9 @@
     </summary>
     
     
+      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
+    
       <category term="linkit-smart-7688" scheme="http://cuiqingwei.github.io/tags/linkit-smart-7688/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>路亚水滴轮的速比的选择</title>
-    <link href="http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E8%B7%AF%E4%BA%9A%E6%B0%B4%E6%BB%B4%E8%BD%AE%E7%9A%84%E9%80%9F%E6%AF%94%E7%9A%84%E9%80%89%E6%8B%A9/"/>
-    <id>http://cuiqingwei.github.io/2016/10/13/2016-10-13-路亚水滴轮的速比的选择/</id>
-    <published>2016-10-13T13:27:40.000Z</published>
-    <updated>2017-11-23T05:01:20.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p>大家在购买轮子时，估计很多人都是首先关注轮子的价格，再关注轮子的牌子、外观、线容量、轴承数等，然后在各论坛到处问“XX的轮怎样？用过的说说！”结果，最后听了一大堆意见后最终还是进了一个价格自己可以接受的轮而不管轮子怎样了；或者受一些钓友的影响，入了一个超出了预算的牌子轮子却不是最适合自己的；或者入了一个价格差不多，只是多了一个或几个轴承的杂牌三无轮子而其它质量极差。鲜少有人（特别是新人）关注轮子的齿轮转速比，或者有关注，但却不是先决条件。</p>
-</blockquote>
-<a id="more"></a>
-<h3 id="在此抛砖引玉，聊聊轮子的转速比。"><a href="#在此抛砖引玉，聊聊轮子的转速比。" class="headerlink" title="在此抛砖引玉，聊聊轮子的转速比。"></a>在此抛砖引玉，聊聊轮子的转速比。</h3><p>转速比，通俗的来讲就是轮子的主副齿轮的转速比；例如6.3:1，意思就是：摇柄轴上的大齿轮转一圈，轮轴上的小齿轮就要转6.3圈。速比的设计除可以快速收线外，还有“四两拨千斤”的功能。大概可以这样理解：我用1牛的力来转把手，那么鱼要用出6.3牛的力才能不让我转动。<br>高转速比，可以快速收紧余线；中鱼时快速拉出障碍区；大水域快速搜索等有无可比拟的优势；但在控制一些硬饵泳姿时，或要求慢拖时，不如低转速比好控制。此外，转速比越高，同样拉力的情况下，摇起来就越费力；原因是高转速比把力量转换成高速，道理正如变速自行车一样。你别不相信，不用很大的鱼就让你发现，再多的轴承都是转不动了。（想象一下，你一定见过有人在溜鱼时做抽竿动作，为什么要做抽竿的动作呢？）<br>说到这里，大家每次钓鱼都在用到转速比，但你真正的了解过它吗？例如一些钓友在说操作手法时，“慢收+轻抖”。这个当中的“慢收”实在太笼统了。有些会说的具体一些，屁如“一秒转动一圈摇把”，还是没人具体意义；只有说到“我的轮子转速比是6.3:1，每秒转一圈摇把”才算是具体化。好，说到这里，我估计99.9%的人都不知自己转一圈摇把到底卷了多少线回来，也即是你的饵游动的速度是多少米每秒？</p>
-<p>当然，实际钓鱼时也不用真的精确到零点几米每秒。只要粗略的知道，天长日久后，不管什么时候，需要什么速度，才最可能上鱼，已经深深的铬在你的潜意识里了。随便拿起一套装备，看看转速比就清楚自己该怎样操作了。</p>
-<p>看似很复杂，其实也很简单。一般人的装备都不多，常见的轮子的转速比也就是那几个。以纺车轮为例，我的一个纺车转速比是6.2:1，线杯最大外径是40mm；2号尼龙线在绕线器转一圈时卷的线长度约为126mm(40<em>3.14),实测为130.8mm；摇把转一圈时收线约130</em>6.3=825mm；即0.825米；一米有多长大家总有个概念吧？经过这样一个计算，你是不是心里清楚自己的饵是“受伤的小鱼”还是“水中潜艇”呢？</p>
-<blockquote>
-<p><strong>摘要</strong>：进来有些朋友在网上询问关于双轴卷线器（水滴轮、鼓型轮）应该如何搭配竿子，速比快慢该如何选择的问题。关于选择双轴卷线器（水滴or鼓型轮）速比的常识进来有些朋友在网上询问关于双轴卷线器（水滴轮、鼓型轮）应该如何搭配竿子，速比快慢该如何选择的问题</p>
-</blockquote>
-<p><img src="/img/20161013/Lipless-Baits-Ready-to-Rock.jpg" alt=""></p>
-<h3 id="何谓速比？何谓高速比？何谓低速比呢？"><a href="#何谓速比？何谓高速比？何谓低速比呢？" class="headerlink" title="何谓速比？何谓高速比？何谓低速比呢？"></a>何谓速比？何谓高速比？何谓低速比呢？</h3><p>通常速比标识的参数代表了：我们手柄摇一圈线杯转动几圈，例如：7.0：1那么就是手柄转动一圈线杯转动7圈。<br><strong>高速比、低速比：一般高速比低速比没有明显的界限，通常6.3：1（含）以下我们称为低速比，7.0：1以上的算作高速比。</strong><br>低速比的优势：通常职业钓手使用Swimbait、spinnerbait、crank、minnow时候会选择低速比轮子。因为在操控诸如上述所谓搜索饵时候，低速比可以更好更均匀的控制拟饵的回收速度，并且就我们通常所使用的浮水CRANK、水面popper等等在特定的时候也会去做一些点对点的攻击，并不是一味的大面积快速搜索。所以这个时候低速比的轮子就体现出了拟饵在局域水面上的优势，不至于手柄轻轻一动就窜出老远。<br>高速比的优势：高速比轮子的特点就是回收拟饵的速度较快，在作合的一瞬间具有相当的爆发力。这个特点刚好符合我们用jighead或Texas在障碍区里作钓中鱼时要强调刺鱼的爆发力和迅速将于带离标点的要求。所以在大多数钓手软虫作钓障碍区时都会选用较快速比的轮子。但是也有特殊情况，例如在重障碍的草区：通常唠叨中障碍的草区都会使用比较大号的jig，并且中鱼时难免会连鱼带草一起搂。类似于雷强。这个时候为保证轮子足够的绞力已经能容纳更多的强力钓线，在这种地方作钓JIGhead或者大型Texas时很多钓手会选用低速比的较大容线量轮子。<br>以上是双轴卷线器的最基本的实用的常识，但愿对于初学的朋友们会选择轮子时候会有所帮助。但是也不排除在一些特殊情况时候对于轮子的选择会遇到一些特殊的变化。这里我不多赘述。等到大家遇到了新的问题时候我们再共同探讨。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;大家在购买轮子时，估计很多人都是首先关注轮子的价格，再关注轮子的牌子、外观、线容量、轴承数等，然后在各论坛到处问“XX的轮怎样？用过的说说！”结果，最后听了一大堆意见后最终还是进了一个价格自己可以接受的轮而不管轮子怎样了；或者受一些钓友的影响，入了一个超出了预算的牌子轮子却不是最适合自己的；或者入了一个价格差不多，只是多了一个或几个轴承的杂牌三无轮子而其它质量极差。鲜少有人（特别是新人）关注轮子的齿轮转速比，或者有关注，但却不是先决条件。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="路亚" scheme="http://cuiqingwei.github.io/tags/%E8%B7%AF%E4%BA%9A/"/>
     
   </entry>
   
