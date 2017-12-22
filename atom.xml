@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2017-12-04T06:39:55.000Z</updated>
+  <updated>2017-12-22T09:35:54.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -14,6 +14,260 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>分布式文件系统 FastDFS 5 &amp; Linux CentOS 7 搭建</title>
+    <link href="http://cuiqingwei.github.io/2017/12/05/2017-12-22-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F-FastDFS-5-Linux-CentOS-7-%E6%90%AD%E5%BB%BA/"/>
+    <id>http://cuiqingwei.github.io/2017/12/05/2017-12-22-分布式文件系统-FastDFS-5-Linux-CentOS-7-搭建/</id>
+    <published>2017-12-05T06:12:08.000Z</published>
+    <updated>2017-12-22T09:35:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>FastDFS是一个开源的轻量级分布式文件系统，由跟踪服务器（tracker server）、存储服务器（storage server）和客户端（client）三个部分组成，主要解决了海量数据存储问题，特别适合以中小文件（建议范围：4KB &lt; file_size &lt;500MB）为载体的在线服务。</p>
+<a id="more"></a>
+<p>FastDFS的系统结构图如下：</p>
+<p><img src="/img/20171222/20160922105102336.jpg" alt=""></p>
+<p>如上图，FastDFS的两个核心概念分别是：</p>
+<ul>
+<li>Tracker（跟踪器）</li>
+<li>Storage（存储节点）</li>
+</ul>
+<p>Tracker主要做调度工作，相当于mvc中的controller的角色，在访问上起负载均衡的作用。跟踪器和存储节点都可以由一台或多台服务器构成，跟踪器和存储节点中的服务器均可以随时增加或下线而不会影响线上服务，其中跟踪器中的所有服务器都是对等的，可以根据服务器的压力情况随时增加或减少。Tracker负责管理所有的Storage和group，每个storage在启动后会连接Tracker，告知自己所属的group等信息，并保持周期性的心跳，tracker根据storage的心跳信息，建立group==&gt;[storage server list]的映射表，Tracker需要管理的元信息很少，会全部存储在内存中；另外tracker上的元信息都是由storage汇报的信息生成的，本身不需要持久化任何数据，这样使得tracker非常容易扩展，直接增加tracker机器即可扩展为tracker cluster来服务，cluster里每个tracker之间是完全对等的，所有的tracker都接受stroage的心跳信息，生成元数据信息来提供读写服务。</p>
+<p>Storage采用了分卷[Volume]（或分组[group]）的组织方式，存储系统由一个或多个组组成，组与组之间的文件是相互独立的，所有组的文件容量累加就是整个存储系统中的文件容量。一个卷[Volume]（组[group]）可以由一台或多台存储服务器组成，一个组中的存储服务器中的文件都是相同的，组中的多台存储服务器起到了冗余备份和负载均衡的作用，数据互为备份，存储空间以group内容量最小的storage为准，所以建议group内的多个storage尽量配置相同，以免造成存储空间的浪费。更多原理性的内容可以参考这篇blog，介绍的很详细：<a href="http://blog.chinaunix.net/uid-20196318-id-4058561.html" target="_blank" rel="external">分布式文件系统FastDFS设计原理</a></p>
+<blockquote>
+<p>Parallels安装Centos7</p>
+</blockquote>
+<p><img src="/img/20171222/WX20171222-173110@2x.png" alt=""></p>
+<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p><img src="/img/20171222/WX20171222-143233@2x.png" alt=""></p>
+<p>如上图，由于FastDFS是纯C语言实现，只支持Linux、FreeBSD等UNIX系统，所以我们直接下载tar.gz的压缩包，同时FastDFS 5.0.5同以前版本相比将公共的一些函数等单独封装成了libfastcommon包，所以在安装FastDFS之前我们还必须安装libfastcommon，在余大的GitHub首页可以看到：</p>
+<p><img src="/img/20171222/20160922114506577.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/happyfish100/fastdfs/archive/V5.11.tar.gz</div><div class="line">wget https://github.com/happyfish100/libfastcommon/archive/V1.0.36.tar.gz</div></pre></td></tr></table></figure>
+<p>下载完成后将下面这两个文件上传至CentOS服务器，然后就可以开始解压安装了：</p>
+<p><img src="/img/20171222/WX20171222-143631@2x.png" alt=""></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>先要安装gcc编译器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install gcc-c++</div></pre></td></tr></table></figure>
+<h3 id="libfastcommon"><a href="#libfastcommon" class="headerlink" title="libfastcommon"></a>libfastcommon</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tar -zxvf V1.0.36.tar.gz</div><div class="line">cd libfastcommon-1.0.36</div><div class="line">./make.sh</div><div class="line">./make.sh install</div></pre></td></tr></table></figure>
+<h3 id="FastDFS"><a href="#FastDFS" class="headerlink" title="FastDFS"></a>FastDFS</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tar -zxvf V5.11.tar.gz</div><div class="line">cd fastdfs-5.11</div><div class="line">./make.sh</div><div class="line">./make.sh install</div></pre></td></tr></table></figure>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>安装成功后就会生成如上的3个.sample文件（示例配置文件），拷贝出3个后面用的配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd /etc/fdfs</div><div class="line">cp client.conf.sample client.conf</div><div class="line">cp storage.conf.sample storage.conf</div><div class="line">cp tracker.conf.sample tracker.conf</div></pre></td></tr></table></figure>
+<p>至此FastDFS已经安装完毕，接下来的工作就是依次配置Tracker和Storage了。</p>
+<h1 id="Tracker"><a href="#Tracker" class="headerlink" title="Tracker"></a>Tracker</h1><p>在配置Tracker之前，首先需要创建Tracker服务器的文件路径，即用于存储Tracker的数据文件和日志文件等，我这里选择在/opt目录下创建一个fastdfs_tracker目录用于存放Tracker服务器的相关文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir /opt/fastdfs_tracker</div></pre></td></tr></table></figure>
+<p>接下来就要重新编辑上一步准备好的 <strong>/etc/fdfs</strong> 目录下的 <strong>tracker.conf</strong> 配置文件，打开文件后依次做以下修改：</p>
+<blockquote>
+<p>disabled=false                  #启用配置文件（默认启用）<br>port=22122                      #设置tracker的端口号，通常采用22122这个默认端口<br>base_path=/opt/fastdfs_tracker  #设置tracker的数据文件和日志目录<br>http.server_port=6666           #设置http端口号，默认为8080</p>
+</blockquote>
+<p>配置完成后就可以启动Tracker服务器了，但首先依然要为启动脚本创建软引用，因为fdfs_trackerd等命令在/usr/local/bin中并没有，而是在/usr/bin路径下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ln -s /usr/bin/fdfs_trackerd /usr/local/bin</div><div class="line">ln -s /usr/bin/stop.sh /usr/local/bin</div><div class="line">ln -s /usr/bin/restart.sh /usr/local/bin</div></pre></td></tr></table></figure>
+<p>最后通过命令启动Tracker服务器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service fdfs_trackerd start</div></pre></td></tr></table></figure>
+<p>如果启动命令执行成功，那么同时在刚才创建的tracker文件目录/opt/fastdfs_tracker中就可以看到启动后新生成的data和logs目录，tracker服务的端口也应当被正常监听，最后再通过netstat命令查看一下端口监听情况.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -unltp|grep fdfs</div></pre></td></tr></table></figure>
+<p>Tracker至此就配置好了，接下来就可以配置FastDFS的另一核心——Storage。</p>
+<h1 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h1><p>同理，步骤基本与配置Tracker一致，首先是创建Storage服务器的文件目录，需要注意的是同Tracker相比我多建了一个目录，因为Storage还需要一个文件存储路径，用于存放接收的文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir /opt/fastdfs_storage</div><div class="line">mkdir /opt/fastdfs_storage_data</div></pre></td></tr></table></figure>
+<p>接下来修改/etc/fdfs目录下的storage.conf配置文件，打开文件后依次做以下修改：</p>
+<blockquote>
+<p>disabled=false    #启用配置文件（默认启用）<br>group_name=group1 #组名，根据实际情况修改<br>port=23000        #设置storage的端口号，默认是23000，同一个组的storage端口号必须一致<br>base_path=/opt/fastdfs_storage  #设置storage数据文件和日志目录<br>store_path_count=1              #存储路径个数，需要和store_path个数匹配<br>store_path0=/opt/fastdfs_storage_data #实际文件存储路径<br>tracker_server=10.211.55.8:22122   #tracker 服务器的 IP地址和端口号，如果是单机搭建，IP不要写127.0.0.1，否则启动不成功（此处的ip是我的CentOS虚拟机ip）<br>http.server_port=8888           #设置 http 端口号</p>
+</blockquote>
+<p>配置完成后同样要为Storage服务器的启动脚本设置软引用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ln -s /usr/bin/fdfs_storaged /usr/local/bin</div></pre></td></tr></table></figure>
+<p>接下来就可以启动Storage服务了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service fdfs_storaged start</div></pre></td></tr></table></figure>
+<p>同理，如果启动成功，/opt/fastdfs_storage中就可以看到启动后新生成的data和logs目录，端口23000也应被正常监听，还有一点就是文件存储路径下会生成多级存储目录，那么接下来看看是否启动成功.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -unltp|grep fdfs</div></pre></td></tr></table></figure>
+<p><img src="/img/20171222/WX20171222-162905@2x.png" alt=""></p>
+<p>如上图，可以看到此时已经正常监听tracker的22122端口和storage的23000端口，至此storage服务器就已经配置完成，确定了storage服务器启动成功后，还有一项工作就是看看storage服务器是否已经登记到 tracker服务器（也可以理解为tracker与storage是否整合成功），运行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/fdfs_monitor /etc/fdfs/storage.conf</div></pre></td></tr></table></figure>
+<p><img src="/img/20171222/WX20171222-163212@2x.png" alt=""></p>
+<p>如上所示，看到 <strong>ip_addr = 10.211.55.8 (centos-7.shared)  ACTIVE</strong> 字样即可说明storage服务器已经成功登记到了tracker服务器.</p>
+<p>添加开机启动，检查一下rc.local是否具备可执行权限，若是无可执行权限则通过</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x /etc/rc.d/rc.local</div></pre></td></tr></table></figure>
+<p>进行授权，如下图：</p>
+<p><img src="/img/20171222/WX20171222-163634@2x.png" alt=""></p>
+<p>至此我们就已经完成了fastdfs的全部配置，此时也就可以用客户端工具进行文件上传下载的测试了。</p>
+<h1 id="初步测试"><a href="#初步测试" class="headerlink" title="初步测试"></a>初步测试</h1><p>测试时需要设置客户端的配置文件，编辑 <strong>/etc/fdfs</strong> 目录下的 <strong>client.conf</strong> 文件，打开文件后依次做以下修改：</p>
+<blockquote>
+<p>base_path=/opt/fastdfs_tracker      #tracker服务器文件路径<br>tracker_server=10.211.55.8:22122    #tracker服务器IP地址和端口号<br>http.tracker_server_port=6666       #tracker服务器的http端口号，必须和tracker的设置对应起来</p>
+</blockquote>
+<p>配置完成后就可以模拟文件上传了，先通过scp向/tmp目录下传一下文件。</p>
+<p>然后通过执行客户端上传命令尝试上传：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/fdfs_upload_file /etc/fdfs/client.conf /tmp/big.jpg</div></pre></td></tr></table></figure>
+<p>运行后可以发现给我们返回了一个路径：</p>
+<p><img src="/img/20171222/WX20171222-164154@2x.png" alt=""></p>
+<p>这就表示我们的文件已经上传成功了，当文件存储到某个子目录后，即认为该文件存储成功，接下来会为该文件生成一个文件名，文件名由group、存储目录、两级子目录、fileid、文件后缀名（由客户端指定，主要用于区分文件类型）拼接而成，如下图：</p>
+<p><img src="/img/20171222/20160923132829236.jpg" alt=""></p>
+<p>同时在之前配置的storage服务器的实际文件存储路径中也可以根据返回的路径找到实际文件：</p>
+<h1 id="HTTP访问文件"><a href="#HTTP访问文件" class="headerlink" title="HTTP访问文件"></a>HTTP访问文件</h1><p>因为FastDFS目前已不支持http协议，4.0.5版本开始移除了自带的HTTP支持（因为之前自带的HTTP服务较为简单，无法提供负载均衡等高性能服务），所以余大提供了nginx上使用FastDFS的模块fastdfs-nginx-module，下载地址如下：<a href="https://github.com/happyfish100/fastdfs-nginx-module" target="_blank" rel="external">https://github.com/happyfish100/fastdfs-nginx-module</a>，这样做最大的好处就是提供了HTTP服务并且解决了group中storage服务器的同步延迟问题，接下是fastdfs-nginx-module的安装配置过程.</p>
+<h3 id="fastdfs-nginx-module"><a href="#fastdfs-nginx-module" class="headerlink" title="fastdfs-nginx-module"></a>fastdfs-nginx-module</h3><p>先安装系统依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install pcre pcre-devel zlib zlib-devel openssl openssl-devel git</div></pre></td></tr></table></figure>
+<p>下载所需组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/src/</div><div class="line">git clone https://github.com/happyfish100/fastdfs-nginx-module.git</div><div class="line">wget http://nginx.org/download/nginx-1.8.1.tar.gz</div></pre></td></tr></table></figure>
+<h3 id="storage-nginx"><a href="#storage-nginx" class="headerlink" title="storage nginx"></a>storage nginx</h3><p>首先是为storage服务器安装nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tar -zxvf nginx-1.8.1.tar.gz</div><div class="line">cd nginx-1.8.1</div><div class="line">./configure --prefix=/usr/local/nginx --add-module=/usr/local/src/fastdfs-nginx-module/src</div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
+<p>接下来要修改一下nginx的配置文件，进入conf目录并打开nginx.conf修改，如下图：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /usr/local/nginx/conf/nginx.conf</div></pre></td></tr></table></figure>
+<p><img src="/img/20171222/WX20171222-165331@2x.png" alt=""></p>
+<p>然后进入FastDFS的安装目录/usr/local/fastdfs-5.05目录下的conf目录，将http.conf和mime.types拷贝到/etc/fdfs目录下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cp -r /usr/local/fastdfs-5.05/conf/http.conf /etc/fdfs/</div><div class="line">cp -r /usr/local/fastdfs-5.05/conf/mime.types /etc/fdfs/</div></pre></td></tr></table></figure>
+<p>接下来还需要把fastdfs-nginx-module安装目录中src目录下的mod_fastdfs.conf也拷贝到/etc/fdfs目录下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp -r /usr/local/fastdfs-nginx-module-master/src/mod_fastdfs.conf /etc/fdfs/</div></pre></td></tr></table></figure>
+<p>就需要编辑刚拷贝的这个mod_fastdfs.conf文件了，打开mod_fastdfs.conf并按顺序依次编译以下内容：</p>
+<blockquote>
+<p>base_path=/opt/fastdfs_storage        #保存日志目录<br>tracker_server=10.211.55.8:22122   #tracker服务器的IP地址以及端口号<br>storage_server_port=23000             #storage服务器的端口号<br>url_have_group_name = true            #文件 url 中是否有 group 名<br>store_path0=/opt/fastdfs_storage_data #存储路径<br>group_count = 3                       #设置组的个数，事实上这次只使用了group1</p>
+</blockquote>
+<p>设置了group_count = 3，接下来就需要在文件尾部追加这3个group setting：</p>
+<blockquote>
+<p>[group1]<br>group_name=group1<br>storage_server_port=23000<br>store_path_count=1<br>store_path0=/opt/fastdfs_storage_data</p>
+<p>[group2]<br>group_name=group2<br>storage_server_port=23000<br>store_path_count=1<br>store_path0=/opt/fastdfs_storage_data</p>
+<p>[group3]<br>group_name=group3<br>storage_server_port=23000<br>store_path_count=1<br>store_path0=/opt/fastdfs_storage_data</p>
+</blockquote>
+<p>接下来还需要建立 M00 至存储目录的符号连接：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ln  -s  /opt/fastdfs_storage_data/data  /opt/fastdfs_storage_data/data/M00</div></pre></td></tr></table></figure>
+<p>最后启动nginx：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/nginx/sbin/nginx</div></pre></td></tr></table></figure>
+<p>通过浏览器访问 <a href="http://10.211.55.8:9999/" target="_blank" rel="external">http://10.211.55.8:9999/</a> 也可以看到nginx的主页：</p>
+<h3 id="tracker-nginx"><a href="#tracker-nginx" class="headerlink" title="tracker nginx"></a>tracker nginx</h3><p>同理，再装一个nginx，目录命名为nginx2，安装路径依旧放在/usr/local下，由于和之前一样，此处就不再做详细解释：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /usr/loca/src/nginx-1.8.1</div><div class="line">./configure --prefix=/usr/local/nginx2 --add-module=/usr/local/src/fastdfs-nginx-module/src</div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
+<p>接下来依然是修改nginx2的配置文件，进入conf目录并打开nginx.conf文件加入以下配置，storage的nginx无需修改listen端口，即默认的80端口，并将upstream指向tracker的nginx地址：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /usr/local/nginx2/conf/nginx.conf</div></pre></td></tr></table></figure>
+<p><img src="/img/20171222/WX20171222-170041@2x.png" alt=""></p>
+<p>至此关于fastdfs就已经全部配置完毕了，再一次进行测试看看是否能正常上传文件并通过http访问文件。</p>
+<p>上传文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">scp big.jpg root@10.211.55.8:/tmp/</div><div class="line">cd /tmp/</div><div class="line">/usr/bin/fdfs_upload_file /etc/fdfs/client.conf big.jpg</div><div class="line">/usr/bin/fdfs_upload_file /etc/fdfs/client.conf CADENCE+SPB+15.7工程实例入门.pdf</div><div class="line">/usr/bin/fdfs_upload_file /etc/fdfs/client.conf Step\ by\ Step_\ How\ to\ easily\ tie\ the\ FG\ Knot.mp4</div></pre></td></tr></table></figure></p>
+<p>接下来的关键就是通过HTTP测试文件访问，打开浏览器输入ip地址+文件名看看是否能正常访问该图片：</p>
+<p><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ysuALXURAAyIkvltU0w661.jpg" target="_blank" rel="external">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ysuALXURAAyIkvltU0w661.jpg</a><br><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytGABqkAAnhI9lHEHhw379.pdf" target="_blank" rel="external">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytGABqkAAnhI9lHEHhw379.pdf</a><br><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytaAZqEqA8pGTvhXcBQ424.mp4" target="_blank" rel="external">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytaAZqEqA8pGTvhXcBQ424.mp4</a></p>
+<p><img src="/img/20171222/WX20171222-170825@2x.png" alt=""></p>
+<p>一切正常~ 至此关于FastDFS在CentOS 7下的部署测试就已经全部完成。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;FastDFS是一个开源的轻量级分布式文件系统，由跟踪服务器（tracker server）、存储服务器（storage server）和客户端（client）三个部分组成，主要解决了海量数据存储问题，特别适合以中小文件（建议范围：4KB &amp;lt; file_size &amp;lt;500MB）为载体的在线服务。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="curl" scheme="http://cuiqingwei.github.io/tags/curl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>curl模拟http发送get或post接口测试</title>
+    <link href="http://cuiqingwei.github.io/2017/12/05/2017-12-05-curl%E6%A8%A1%E6%8B%9Fhttp%E5%8F%91%E9%80%81get%E6%88%96post%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/"/>
+    <id>http://cuiqingwei.github.io/2017/12/05/2017-12-05-curl模拟http发送get或post接口测试/</id>
+    <published>2017-12-05T06:12:08.000Z</published>
+    <updated>2017-12-05T07:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、get请求"><a href="#一、get请求" class="headerlink" title="一、get请求"></a>一、get请求</h1><p>curl “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地<br>curl -i “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示全部信息<br>curl -l “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  只显示头部信息<br>curl -v “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示get请求全过程解析<br>wget “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     也可以</p>
+<a id="more"></a>
+<h1 id="二、post请求"><a href="#二、post请求" class="headerlink" title="二、post请求"></a>二、post请求</h1><p>curl -d “param1=value1&amp;param2=value2” “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“</p>
+<h1 id="三、json格式的post请求"><a href="#三、json格式的post请求" class="headerlink" title="三、json格式的post请求"></a>三、json格式的post请求</h1><p>curl -l -H “Content-type: application/json” -X POST -d ‘{“phone”:”13521389587”,”password”:”test”}’ <a href="http://domain/apis/users.json" target="_blank" rel="external">http://domain/apis/users.json</a></p>
+<blockquote>
+<p>例如：curl -l -H “Content-type: application/json” -X POST -d ‘{“ver”: “1.0”,”soa”:{“req”:”123”},”iface”:”me.ele.lpdinfra.prediction.service.PredictionService”,”method”:”restaurant_make_order_time”,”args”:{“arg2”:”\”stable\””,”arg1”:”{\”code\”:[\”WIND\”],\”temperature\”:11.11}”,”arg0”:”{\”tracking_id\”:\”100000000331770936\”,\”eleme_order_id\”:\”100000000331770936\”,\”platform_id\”:\”4\”,\”restaurant_id\”:\”482571\”,\”dish_num\”:1,\”dish_info\”:[{\”entity_id\”:142547763,\”quantity\”:1,\”category_id\”:1,\”dish_name\”:\”[0xe7][0x89][0xb9][0xe4][0xbb][0xb7][0xe8][0x85][0x8a][0xe5][0x91][0xb3][0xe5][0x8f][0x89][0xe7][0x83][0xa7][0xe5][0x8f][0x8c][0xe6][0x8b][0xbc][0xe7][0x85][0xb2][0xe4][0xbb][0x94][0xe9][0xa5][0xad]\”,\”price\”:31.0}],\”merchant_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”customer_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”created_at\”:1477896550,\”confirmed_at\”:1477896550,\”dishes_total_price\”:0.0,\”food_boxes_total_price\”:2.0,\”delivery_total_price\”:2.0,\”pay_amount\”:35.0,\”city_id\”:\”1\”}”}}’ <a href="http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc" target="_blank" rel="external">http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc</a></p>
+</blockquote>
+<p>ps：json串内层参数需要格式化</p>
+<h1 id="四、高级功能"><a href="#四、高级功能" class="headerlink" title="四、高级功能"></a>四、高级功能</h1><p>curl命令是一个功能强大的网络工具，它能够通过http、ftp等方式下载文件，也能够上传文件。其实curl远不止前面所说的那些功能，大家可以通过man curl阅读手册页获取更多的信息。类似的工具还有wget。</p>
+<p>curl命令使用了libcurl库来实现，libcurl库常用在C程序中用来处理HTTP请求，curlpp是libcurl的一个C++封装，这几个东西可以用在抓取网页、网络监控等方面的开发，而curl命令可以帮助来解决开发过程中遇到的问题。</p>
+<ul>
+<li>1，抓取页面内容到一个文件中</li>
+</ul>
+<p>curl -o home.html <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>   –将百度首页内容抓下到home.html中<br>curl -o #2_#1.jpg<a href="http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG</a></p>
+<p>由于A/B下的文件名都是001，002…，201，下载下来的文件重名，这样，自定义出来下载下来的文件名，就变成了这样：原来： A/001.JPG —-&gt; 下载后： 001-A.JPG 原来： B/001.JPG —&gt; 下载后： 001-B.JPG</p>
+<ul>
+<li>2，用-O（大写的），后面的url要具体到某个文件，不然抓不下来。还可以用正则来抓取东西</li>
+</ul>
+<p>curl -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
+<p>运行结果如下：</p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  1575  100  1575    0     0  14940      0 –:–:– –:–:– –:–:– 1538k<br>会在当前执行目录中生成一张bdlogo.gif的图片。</p>
+<p>curl -O <a href="http://XXXXX/screen[1-10].JPG" target="_blank" rel="external">http://XXXXX/screen[1-10].JPG</a>  –下载screen1.jpg~screen10.jpg</p>
+<ul>
+<li>3，模拟表单信息，模拟登录，保存cookie信息</li>
+</ul>
+<p>curl -c ./cookie_c.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
+<ul>
+<li>4，模拟表单信息，模拟登录，保存头信息</li>
+</ul>
+<p>curl -D ./cookie_D.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
+<p>-c(小写)产生的cookie和-D里面的cookie是不一样的。</p>
+<ul>
+<li>5，使用cookie文件</li>
+</ul>
+<p>curl -b ./cookie_c.txt <a href="http://www.XXXX.com/wp-admin" target="_blank" rel="external">http://www.XXXX.com/wp-admin</a></p>
+<ul>
+<li>6，断点续传，-C(大写)</li>
+</ul>
+<p>curl -C -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
+<ul>
+<li>7，传送数据,最好用登录页面测试，因为你传值过去后，curl回抓数据，你可以看到你传值有没有成功</li>
+</ul>
+<p>curl -d log=aaaa <a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
+<ul>
+<li>8，显示抓取错误，下面这个例子，很清楚的表明了。</li>
+</ul>
+<p>curl -f<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
+<p>curl: (22) The requested URL returned error: 404</p>
+<p>curl<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
+<p><html><head><title>404,not found</title></head></html></p>
+<ul>
+<li>9，伪造来源地址，有的网站会判断，请求来源地址，防止盗链。</li>
+</ul>
+<p>curl -e<a href="http://localhosthttp://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://localhosthttp://www.XXXX.com/wp-login.php</a></p>
+<ul>
+<li>10，当我们经常用curl去搞人家东西的时候，人家会把你的IP给屏蔽掉的,这个时候,我们可以用代理</li>
+</ul>
+<p>curl -x 24.10.28.84:32779 -o home.html<a href="http://www.XXXX.com" target="_blank" rel="external">http://www.XXXX.com</a></p>
+<ul>
+<li>11，比较大的东西，我们可以分段下载</li>
+</ul>
+<p>curl -r 0-100 -o img.part1<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a></p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0    105      0 –:–:– –:–:– –:–:–     0<br>curl -r 100-200 -o img.part2<a href="http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0     57      0  0:00:01  0:00:01 –:–:–     0<br>curl -r 200- -o img.part3<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  104k  100  104k    0     0  52793      0  0:00:02  0:00:02 –:–:– 88961</p>
+<p>ls |grep part | xargs du -sh</p>
+<p>4.0K    one.part1<br>112K    three.part3<br>4.0K    two.part2</p>
+<p>用的时候，把他们cat一下就OK,cat img.part* &gt;img.jpg</p>
+<ul>
+<li>12，不会显示下载进度信息</li>
+</ul>
+<p>curl -s -o aaa.jpg <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
+<ul>
+<li>13，显示下载进度条</li>
+</ul>
+<p>curl  -0 <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a>     (以http1.0协议请求)</p>
+<p>####################################################################### 100.0%</p>
+<ul>
+<li>14,通过ftp下载文件</li>
+</ul>
+<p>curl -u用户名:密码 -O<a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
+<p>curl -u 用户名:密码 -O <a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
+<p>或者用下面的方式</p>
+<p>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css<br>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css</p>
+<ul>
+<li>15，通过ftp上传</li>
+</ul>
+<p>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/<br>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/</p>
+<ul>
+<li>15,模拟浏览器头</li>
+</ul>
+<p>curl -A “Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)” -x 123.45.67.89:1080 -o page.html -D cookie0001.txt<a href="http://www.www.baidu.com" target="_blank" rel="external">http://www.www.baidu.com</a></p>
+<ul>
+<li>16,PUT、GET、POST</li>
+</ul>
+<p>比如 curl -T localfile <a href="http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT</a> method<br>刚才说到PUT，自然想起来了其他几种methos－－GET和POST。<br>http提交一个表单，比较常用的是POST模式和GET模式<br>GET模式什么option都不用，只需要把变量写在url里面就可以了<br>比如：<br>curl <a href="http://www.yahoo.com/login.cgi?user=nick&amp;password=12345" target="_blank" rel="external">http://www.yahoo.com/login.cgi?user=nick&amp;password=12345</a><br>而POST模式的option则是 -d<br>比如，curl -d “user=nick&amp;password=12345” <a href="http://www.yahoo.com/login.cgi" target="_blank" rel="external">http://www.yahoo.com/login.cgi</a><br>就相当于向这个站点发出一次登陆申请<del>~</del><br>到底该用GET模式还是POST模式，要看对面服务器的程序设定。<br>一点需要注意的是，POST模式下的文件上的文件上传，比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;form method=&quot;POST&quot; enctype=&quot;multipar/form-data&quot; action=&quot;http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi&quot;&gt;</div><div class="line">&lt;input type=file name=upload&gt;</div><div class="line">&lt;input type=submit name=nick value=&quot;go&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+<p>这样一个HTTP表单，我们要用curl进行模拟，就该是这样的语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -F upload=@localfile -F nick=go http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一、get请求&quot;&gt;&lt;a href=&quot;#一、get请求&quot; class=&quot;headerlink&quot; title=&quot;一、get请求&quot;&gt;&lt;/a&gt;一、get请求&lt;/h1&gt;&lt;p&gt;curl “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地&lt;br&gt;curl -i “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  显示全部信息&lt;br&gt;curl -l “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  只显示头部信息&lt;br&gt;curl -v “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  显示get请求全过程解析&lt;br&gt;wget “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“     也可以&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="curl" scheme="http://cuiqingwei.github.io/tags/curl/"/>
+    
+  </entry>
   
   <entry>
     <title>怎样的家居照明才有质感?</title>
@@ -1067,144 +1321,6 @@
       <category term="Contiki" scheme="http://cuiqingwei.github.io/tags/Contiki/"/>
     
       <category term="CC2538" scheme="http://cuiqingwei.github.io/tags/CC2538/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于Contiki-Cooja的6lbr模拟仿真</title>
-    <link href="http://cuiqingwei.github.io/2016/10/29/2016-10-29-%E5%9F%BA%E4%BA%8EContiki-Cooja%E7%9A%846lbr%E6%A8%A1%E6%8B%9F%E4%BB%BF%E7%9C%9F/"/>
-    <id>http://cuiqingwei.github.io/2016/10/29/2016-10-29-基于Contiki-Cooja的6lbr模拟仿真/</id>
-    <published>2016-10-29T13:04:40.000Z</published>
-    <updated>2016-12-12T05:09:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Instant-Contiki-2-7"><a href="#Instant-Contiki-2-7" class="headerlink" title="Instant Contiki 2.7"></a>Instant Contiki 2.7</h1><p>下载、安装… 具体请查看链接-&gt;<a href="http://www.contiki-os.org/start.html" target="_blank" rel="external">http://www.contiki-os.org/start.html</a></p>
-<h1 id="Java版本"><a href="#Java版本" class="headerlink" title="Java版本"></a>Java版本</h1><p>打开（<em>Ctrl+Alt+T</em>）超级终端，键入 <strong>java -version</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">user@instant-contiki:~$ java -version</div><div class="line">java version &quot;1.7.0_25&quot;</div><div class="line">OpenJDK Runtime Environment (IcedTea 2.3.10) (7u25-2.3.10-1ubuntu0.12.04.2)</div><div class="line">OpenJDK Client VM (build 23.7-b01, mixed mode, sharing)</div></pre></td></tr></table></figure>
-<h1 id="安装网桥管理工具-bridge-utils-包"><a href="#安装网桥管理工具-bridge-utils-包" class="headerlink" title="安装网桥管理工具 bridge-utils 包"></a>安装网桥管理工具 <strong>bridge-utils</strong> 包</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install bridge-utils</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h1 id="获取6lbr代码，初始化子模块"><a href="#获取6lbr代码，初始化子模块" class="headerlink" title="获取6lbr代码，初始化子模块"></a>获取<a href="http://cetic.github.com/6lbr" target="_blank" rel="external">6lbr</a>代码，初始化子模块</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git clone --recursive https://github.com/cetic/6lbr</div><div class="line">cd 6lbr/examples/6lbr</div></pre></td></tr></table></figure>
-<h1 id="在6lbr源目录，执行以下命令："><a href="#在6lbr源目录，执行以下命令：" class="headerlink" title="在6lbr源目录，执行以下命令："></a>在6lbr源目录，执行以下命令：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">make TARGET=native all</div><div class="line">make tools</div></pre></td></tr></table></figure>
-<h1 id="启动一个-1-BR-COOJA-实例"><a href="#启动一个-1-BR-COOJA-实例" class="headerlink" title="启动一个 1-BR COOJA 实例"></a>启动一个 <strong>1-BR COOJA</strong> 实例</h1><p><font style="font-weight:bold;" color="red">警告：</font> 默认Instant Contiki 2.7环境中没有添加serial2pty插件，添加方法是：</p>
-<ul>
-<li>运行cooja</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/6lbr/tools/cooja</div><div class="line">ant run</div></pre></td></tr></table></figure>
-<p>Settings -&gt; External tools paths… 添加<br><strong>;[CONTIKI_DIR]/tools/cooja/apps/serial2pty</strong></p>
-<p><img src="/img/20161029/6lbr1.png" alt=""></p>
-<p>设置完成后，关闭。运行下面命令，启动实例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd examples/6lbr/test</div><div class="line">make cooja-small</div></pre></td></tr></table></figure></p>
-<p><img src="/img/20161029/6lbr2.png" alt=""></p>
-<p>运行成功，console会输出如下结尾的信息，详见下图：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">INFO [main] (Serial2Pty.java:116) - serialpty;open;9;/dev/pts/11</div><div class="line">INFO [main] (Serial2Pty.java:116) - serialpty;open;10;/dev/pts/12</div><div class="line">INFO [main] (Serial2Pty.java:116) - serialpty;open;11;/dev/pts/13</div><div class="line">INFO [main] (Serial2Pty.java:116) - serialpty;open;12;/dev/pts/14</div></pre></td></tr></table></figure>
-<p><img src="/img/20161029/6lbr3.png" alt=""></p>
-<p>通过鼠标右击节点，也可打开其他节点的串口监控，如下图所示：</p>
-<p><img src="/img/20161029/6lbr4.png" alt=""></p>
-<h1 id="运行一个6lbr实例"><a href="#运行一个6lbr实例" class="headerlink" title="运行一个6lbr实例"></a>运行一个6lbr实例</h1><p>Cooja <em>Simulation control</em> 点击 <strong>Start</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd examples/6lbr/test</div><div class="line">sudo make launch-6lbr-router-1-cooja</div></pre></td></tr></table></figure>
-<p>运行后，终端键入 <strong>ifconfig</strong> 会发现多了 <a href="/2015/07/06/2015-07-06-OpenWRT下ifconfig各接口说明">br0网桥接口</a></p>
-<p><img src="/img/20161029/6lbr5.png" alt=""></p>
-<p><strong>如果要避免重复输出</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Fetching MAC address</div><div class="line">Fetching MAC address</div></pre></td></tr></table></figure>
-<p>可以</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/6lbr/examples/6lbr/test/conf-templates</div><div class="line">vi cooja-1-router.conf</div></pre></td></tr></table></figure>
-<p>最后两行，指定日志写入 <strong>/var/log/6lbr.log</strong>，如下图所示：</p>
-<p><img src="/img/20161029/6lbr6.png" alt=""></p>
-<h1 id="访问6lbr-webserver-界面"><a href="#访问6lbr-webserver-界面" class="headerlink" title="访问6lbr webserver 界面"></a>访问6lbr <strong>webserver</strong> 界面</h1><p>打开浏览器，地址栏输入 <strong>[bbbb::100]</strong> 回车，看到如下界面就算成功了！</p>
-<p><img src="/img/20161029/6lbr7.png" alt=""></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Instant-Contiki-2-7&quot;&gt;&lt;a href=&quot;#Instant-Contiki-2-7&quot; class=&quot;headerlink&quot; title=&quot;Instant Contiki 2.7&quot;&gt;&lt;/a&gt;Instant Contiki 2.7&lt;/h1&gt;&lt;p&gt;下载、安装… 具体请查看链接-&amp;gt;&lt;a href=&quot;http://www.contiki-os.org/start.html&quot;&gt;http://www.contiki-os.org/start.html&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;Java版本&quot;&gt;&lt;a href=&quot;#Java版本&quot; class=&quot;headerlink&quot; title=&quot;Java版本&quot;&gt;&lt;/a&gt;Java版本&lt;/h1&gt;&lt;p&gt;打开（&lt;em&gt;Ctrl+Alt+T&lt;/em&gt;）超级终端，键入 &lt;strong&gt;java -version&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;user@instant-contiki:~$ java -version&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;java version &amp;quot;1.7.0_25&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;OpenJDK Runtime Environment (IcedTea 2.3.10) (7u25-2.3.10-1ubuntu0.12.04.2)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;OpenJDK Client VM (build 23.7-b01, mixed mode, sharing)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h1 id=&quot;安装网桥管理工具-bridge-utils-包&quot;&gt;&lt;a href=&quot;#安装网桥管理工具-bridge-utils-包&quot; class=&quot;headerlink&quot; title=&quot;安装网桥管理工具 bridge-utils 包&quot;&gt;&lt;/a&gt;安装网桥管理工具 &lt;strong&gt;bridge-utils&lt;/strong&gt; 包&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo apt-get install bridge-utils&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="Contiki" scheme="http://cuiqingwei.github.io/tags/Contiki/"/>
-    
-      <category term="Cooja" scheme="http://cuiqingwei.github.io/tags/Cooja/"/>
-    
-      <category term="6lbr" scheme="http://cuiqingwei.github.io/tags/6lbr/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>利用Travis CI、MkDocs自動部署Blog至GitHub Pages</title>
-    <link href="http://cuiqingwei.github.io/2016/10/27/2016-10-27-%E5%88%A9%E7%94%A8Travis-CI%E3%80%81MkDocs%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2Blog%E8%87%B3GitHub-Pages/"/>
-    <id>http://cuiqingwei.github.io/2016/10/27/2016-10-27-利用Travis-CI、MkDocs自動部署Blog至GitHub-Pages/</id>
-    <published>2016-10-27T03:01:40.000Z</published>
-    <updated>2016-10-27T05:38:29.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="技术要点"><a href="#技术要点" class="headerlink" title="技术要点"></a>技术要点</h1><h3 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h3><p><a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a>免费的静态站点，三个特点：免费托管、自带主题、支持自制页面和Jekyll。</p>
-<h3 id="MkDocs"><a href="#MkDocs" class="headerlink" title="MkDocs"></a>MkDocs</h3><p><a href="http://markdown-docs-zh.readthedocs.io/zh_CN/latest/" target="_blank" rel="external">MkDocs</a>是一个用于创建项目文档的 快速, 简单 , 完美华丽 的静态站点生成器. 文档源码使用 Markdown 来撰写, 用一个 YAML 文件作为配置文档.</p>
-<h3 id="Travis-CI"><a href="#Travis-CI" class="headerlink" title="Travis CI"></a>Travis CI</h3><p><a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI</a>，是一个专门为开源项目打造的持续集成环境。<br>如果你有一个放在github上的开源项目，Travis CI简直就是一个完美的CI选择。<br><a id="more"></a></p>
-<h1 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h1><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>源码存放处 <a href="https://github.com/cuiqingwei/iotknowledges" target="_blank" rel="external">https://github.com/cuiqingwei/iotknowledges</a><br>页面存放处 <a href="https://github.com/iotknowledges/iotknowledges.github.io" target="_blank" rel="external">https://github.com/iotknowledges/iotknowledges.github.io</a></p>
-<font color="red">通过 <strong>Travis CI</strong> 部署的 <strong>MkDocs</strong> 环境将 <strong>iotknowledges</strong> 源码编译成静态页面并发布到 <strong>iotknowledges.github.io</strong></font>
-
-<h3 id="1-创建一个GitHub-Pages"><a href="#1-创建一个GitHub-Pages" class="headerlink" title="1.创建一个GitHub Pages"></a>1.创建一个GitHub Pages</h3><p>  1.1 安装git工具<br>    <a href="http://windows.github.com/" target="_blank" rel="external">http://windows.github.com/</a><br>    <a href="http://mac.github.com/" target="_blank" rel="external">http://mac.github.com/</a></p>
-<p>  1.2 两种pages模式</p>
-<pre><code>① User/Organization Pages 个人或公司站点
-  - 1) 使用自己的用户名，每个用户名下面只能建立一个；
-  - 2) 资源命名必须符合这样的规则username/username.github.com；
-  - 3) 主干上内容被用来构建和发布页面.
-② Project Pages 项目站点
-  - 1) gh-pages 分支用于构建和发布；
-  - 2) 如果user/org pages使用了独立域名，那么托管在账户下的所有project pages将
-       使用相同的域名进行重定向，除非project pages使用了自己的独立域名；
-  - 3) 如果没有使用独立域名，project pages将通过子路径的形式提供服务username.github.com/projectname；
-  - 4) 自定义404页面只能在独立域名下使用，否则会使用User Pages 404；
-  - 5) 创建项目站点步骤：
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/USERNAME/PROJECT.git PROJECT</div><div class="line">$ git checkout --orphan gh-pages</div><div class="line">$ git rm -rf .</div><div class="line">$ git add .</div><div class="line">$ git commit -a -m &quot;First pages commit&quot;</div><div class="line">$ git push origin gh-pages</div></pre></td></tr></table></figure>
-</code></pre><p>  1.3. 可以通过User/Organization Pages建立主站，而通过Project Pages挂载二级应用页面。</p>
-  <font color="blue">由于我是按照Organization名字命名的Pages，Repository名字是 <em>iotknowledges.github.io</em></font>
-
-<p>  <img src="/img/20161027/github1.png" alt=""><br>  <img src="/img/20161027/github2.png" alt=""></p>
-  <font color="blue"><strong>至此，Project Pages建立完成，用来存放MkDocs生成的静态页面！</strong></font>  
-
-<h3 id="2-建立存放源码的Repository并关联Travis-CI"><a href="#2-建立存放源码的Repository并关联Travis-CI" class="headerlink" title="2. 建立存放源码的Repository并关联Travis CI"></a>2. 建立存放源码的Repository并关联Travis CI</h3><p>  2.1 创建iotknowledges</p>
-<p>  登录GitHub，点击 <strong>New repository</strong> 新建即可，具体方法步骤多说！</p>
-<p>  2.2 生成Token</p>
-<p>  在GitHub账户的Settings里生成</p>
-<p>  <img src="/img/20161027/github3.png" alt=""><br>  <img src="/img/20161027/github4.png" alt=""></p>
-<h3 id="3-Travis-CI工程的Settings-添加环境变量"><a href="#3-Travis-CI工程的Settings-添加环境变量" class="headerlink" title="3. Travis CI工程的Settings,添加环境变量"></a>3. Travis CI工程的Settings,添加环境变量</h3><p>  登录 <a href="https://travis-ci.org/" target="_blank" rel="external">https://travis-ci.org/</a> 点击 <font color="green"> <strong>Sign in with GitHub</strong> </font> 用存放源码的github账号登录</p>
-<p>  添加一个环境变量(Environment Variable)，命名为 <strong>GITHUB_API_KEY</strong> ，之后将刚刚生成的Token复制进去，这在之后会用到。接下来你还需要创建两个环境变量作为Push的身份，一个是你的名字，还有一个是你的邮箱，当然如果对邮箱和名字没什么隐私那不设置也可以。这两个变量可以分别命名为 <strong>GITHUB_EMAIL</strong> 和 <strong>GITHUB_NAME</strong>。GITHUB_NAME请务必注意设置成你Profile链接里的那个名字，即<a href="https://github.com/[user_name]这里这个值。设置完之后，注意要把下面那个“*Display" target="_blank" rel="external">https://github.com/[user_name]这里这个值。设置完之后，注意要把下面那个“*Display</a> value in build log<em>”关掉，否则这一安全措施就没用了。还有一点，记得把“</em>Build pull requests*”关掉，否则在有Pull Request的时候不论其是否合格都会自动将Pages更新。</p>
-<p>  <img src="/img/20161027/github5.png" alt=""></p>
-<h3 id="4-配置-travis-yml"><a href="#4-配置-travis-yml" class="headerlink" title="4. 配置.travis.yml"></a>4. 配置.travis.yml</h3><p>  由于MkDocs使用的是Python，所以先在文件开头加上：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">language: python</div><div class="line">python:</div><div class="line">-  3.5</div></pre></td></tr></table></figure>
-<p>  这里我使用的是Python 3.5，如果有插件不兼容的话可以切换成2.7。之后是初始化设置：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">install:</div><div class="line">  - pip install mkdocs</div></pre></td></tr></table></figure>
-<p>  接下来是构建：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">script:</div><div class="line">  - mkdocs build --clean</div></pre></td></tr></table></figure>
-<p>  生成的最终网站会在site目录内，–clean参数保证构建的时候site文件夹内没有多余文件，否则可能会导致各种奇怪的问题。</p>
-<p>  接下来就是最重要的部署环节了，脚本需要放在after_success阶段内：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">after_success:  |</div><div class="line">  if [ -n &quot;$GITHUB_API_KEY&quot; ]; then</div><div class="line">    cd &quot;$TRAVIS_BUILD_DIR&quot;</div><div class="line">    cd site</div><div class="line">    git init</div><div class="line">    git add .</div><div class="line">    git -c user.name=$GITHUB_NAME -c user.email=$GITHUB_EMAIL commit -m &quot;Auto Deployment&quot;</div><div class="line">    git push -f -q https://$GITHUB_NAME:$GITHUB_API_KEY@github.com/[user_name]/[repo_name] [branch]</div><div class="line">    cd &quot;$TRAVIS_BUILD_DIR&quot;</div><div class="line">  fi</div></pre></td></tr></table></figure>
-<p>  首先上来先要保证 <strong>GITHUB_API_KEY</strong> 这个环境变量存在，之后进入到构建目录，再用相对位置进入构建好的site网站目录。接着就直接在本地创建一个repo，然后commit，push到需要的repo。注意[user_name]是repo所在的用户名，[repo_name]是GitHub Pages所在的repo。[branch]这里如果是用户或者Organization的GitHub Pages的话就填 master，如果是工程的GitHub Pages的话就填gh-pages。最后返回构建目录。</p>
-<p>  由于push的时候有<font color="red"><strong>-f</strong></font>参数，GitHub上的历史都将被复写，并且因为我们是本地新创建的一个repo，所有历史都是空的，所以构建完成之后每次在GitHub上都只能看到一个commit ，如果成功的话，应该每次更新源码工程之后等一两分钟都能看到你自己在GitHub Pages所在的工程或者分支自动发送的commit，如果失败的话可以看一下下面完整的 <strong>.travis.yml</strong> 文件：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">language: python</div><div class="line">python:</div><div class="line">  -  3.5</div><div class="line">install:</div><div class="line">  - pip install mkdocs</div><div class="line">script:</div><div class="line">  - mkdocs build --clean</div><div class="line">after_success:  |</div><div class="line">  if [ -n &quot;$GITHUB_API_KEY&quot; ]; then</div><div class="line">    cd &quot;$TRAVIS_BUILD_DIR&quot;</div><div class="line">    cd site</div><div class="line">    git init</div><div class="line">    git add .</div><div class="line">    git -c user.name=$GITHUB_NAME -c user.email=$GITHUB_EMAIL commit -m &quot;Auto Deployment&quot;</div><div class="line">    git push -f -q https://$GITHUB_NAME:$GITHUB_API_KEY@github.com/iotknowledges/iotknowledges.github.io master</div><div class="line">    cd &quot;$TRAVIS_BUILD_DIR&quot;</div><div class="line">  fi</div></pre></td></tr></table></figure>
-<ol>
-<li><p>build 状态，提交代码后可以到 <a href="https://travis-ci.org/" target="_blank" rel="external">https://travis-ci.org/</a> 查看进度情况</p>
-<p><img src="/img/20161027/github6.png" alt=""></p>
-<p><a href="https://iotknowledges.github.io/" target="_blank" rel="external">https://iotknowledges.github.io/</a></p>
-</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;技术要点&quot;&gt;&lt;a href=&quot;#技术要点&quot; class=&quot;headerlink&quot; title=&quot;技术要点&quot;&gt;&lt;/a&gt;技术要点&lt;/h1&gt;&lt;h3 id=&quot;GitHub-Pages&quot;&gt;&lt;a href=&quot;#GitHub-Pages&quot; class=&quot;headerlink&quot; title=&quot;GitHub Pages&quot;&gt;&lt;/a&gt;GitHub Pages&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;免费的静态站点，三个特点：免费托管、自带主题、支持自制页面和Jekyll。&lt;/p&gt;
-&lt;h3 id=&quot;MkDocs&quot;&gt;&lt;a href=&quot;#MkDocs&quot; class=&quot;headerlink&quot; title=&quot;MkDocs&quot;&gt;&lt;/a&gt;MkDocs&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://markdown-docs-zh.readthedocs.io/zh_CN/latest/&quot;&gt;MkDocs&lt;/a&gt;是一个用于创建项目文档的 快速, 简单 , 完美华丽 的静态站点生成器. 文档源码使用 Markdown 来撰写, 用一个 YAML 文件作为配置文档.&lt;/p&gt;
-&lt;h3 id=&quot;Travis-CI&quot;&gt;&lt;a href=&quot;#Travis-CI&quot; class=&quot;headerlink&quot; title=&quot;Travis CI&quot;&gt;&lt;/a&gt;Travis CI&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://travis-ci.org/&quot;&gt;Travis CI&lt;/a&gt;，是一个专门为开源项目打造的持续集成环境。&lt;br&gt;如果你有一个放在github上的开源项目，Travis CI简直就是一个完美的CI选择。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="GitHub Pages" scheme="http://cuiqingwei.github.io/tags/GitHub-Pages/"/>
-    
-      <category term="Travis CI" scheme="http://cuiqingwei.github.io/tags/Travis-CI/"/>
-    
-      <category term="MkDocs" scheme="http://cuiqingwei.github.io/tags/MkDocs/"/>
     
   </entry>
   
