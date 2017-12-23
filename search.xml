@@ -6,7 +6,7 @@
     <entry>
       <title><![CDATA[分布式文件系统 FastDFS 5 & Linux CentOS 7 搭建]]></title>
       <url>http://cuiqingwei.github.io/2017/12/05/2017-12-22-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F-FastDFS-5-Linux-CentOS-7-%E6%90%AD%E5%BB%BA/</url>
-      <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>FastDFS是一个开源的轻量级分布式文件系统，由跟踪服务器（tracker server）、存储服务器（storage server）和客户端（client）三个部分组成，主要解决了海量数据存储问题，特别适合以中小文件（建议范围：4KB &lt; file_size &lt;500MB）为载体的在线服务。</p>
+      <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>FastDFS是一个开源的轻量级分布式文件系统，由跟踪服务器（tracker server）、存储服务器（storage server）和客户端（client）三个部分组成，主要解决了海量数据存储问题，特别适合以中小文件（建议范围：<strong>4KB &lt; file_size &lt;500MB</strong> ）为载体的在线服务。</p>
 <a id="more"></a>
 <p>FastDFS的系统结构图如下：</p>
 <p><img src="/img/20171222/20160922105102336.jpg" alt=""></p>
@@ -23,9 +23,9 @@
 <p><img src="/img/20171222/WX20171222-173110@2x.png" alt=""></p>
 <h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/happyfish100/fastdfs/archive/V5.11.tar.gz</div><div class="line">wget https://github.com/happyfish100/libfastcommon/archive/V1.0.36.tar.gz</div></pre></td></tr></table></figure>
 <p><img src="/img/20171222/WX20171222-143233@2x.png" alt=""></p>
-<p>如上图，由于FastDFS是纯C语言实现，只支持Linux、FreeBSD等UNIX系统，所以我们直接下载tar.gz的压缩包，同时FastDFS 5.0.5同以前版本相比将公共的一些函数等单独封装成了libfastcommon包，所以在安装FastDFS之前我们还必须安装libfastcommon，在余大的GitHub首页可以看到：</p>
+<p>如上图，由于FastDFS是纯C语言实现，只支持Linux、FreeBSD等UNIX系统，所以我们直接下载tar.gz的压缩包，同时FastDFS 5.11同以前版本相比将公共的一些函数等单独封装成了libfastcommon包，所以在安装FastDFS之前我们还必须安装libfastcommon，在余的GitHub首页可以看到：</p>
 <p><img src="/img/20171222/20160922114506577.png" alt=""></p>
-<p>下载完成后将下面这两个文件上传至CentOS服务器，然后就可以开始解压安装了：</p>
+<p>下载完成后，就可以开始解压安装了：</p>
 <p><img src="/img/20171222/WX20171222-143631@2x.png" alt=""></p>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>先要安装gcc编译器：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install gcc-c++</div></pre></td></tr></table></figure>
@@ -34,7 +34,7 @@
 <h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>安装成功后就会生成如上的3个.sample文件（示例配置文件），拷贝出3个后面用的配置文件：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd /etc/fdfs</div><div class="line">cp client.conf.sample client.conf</div><div class="line">cp storage.conf.sample storage.conf</div><div class="line">cp tracker.conf.sample tracker.conf</div></pre></td></tr></table></figure>
 <p>至此FastDFS已经安装完毕，接下来的工作就是依次配置Tracker和Storage了。</p>
-<h1 id="Tracker"><a href="#Tracker" class="headerlink" title="Tracker"></a>Tracker</h1><p>在配置Tracker之前，首先需要创建Tracker服务器的文件路径，即用于存储Tracker的数据文件和日志文件等，我这里选择在/opt目录下创建一个fastdfs_tracker目录用于存放Tracker服务器的相关文件：</p>
+<h1 id="Tracker"><a href="#Tracker" class="headerlink" title="Tracker"></a>Tracker</h1><p>在配置Tracker之前，首先需要创建Tracker服务器的文件路径，即用于存储Tracker的数据文件和日志文件等，我这里选择在 <strong>/opt</strong> 目录下创建一个 <strong>fastdfs_tracker</strong> 目录用于存放Tracker服务器的相关文件：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir /opt/fastdfs_tracker</div></pre></td></tr></table></figure>
 <p>接下来就要重新编辑上一步准备好的 <strong>/etc/fdfs</strong> 目录下的 <strong>tracker.conf</strong> 配置文件，打开文件后依次做以下修改：</p>
 <blockquote>
@@ -44,7 +44,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ln -s /usr/bin/fdfs_trackerd /usr/local/bin</div><div class="line">ln -s /usr/bin/stop.sh /usr/local/bin</div><div class="line">ln -s /usr/bin/restart.sh /usr/local/bin</div></pre></td></tr></table></figure>
 <p>最后通过命令启动Tracker服务器：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service fdfs_trackerd start</div></pre></td></tr></table></figure>
-<p>如果启动命令执行成功，那么同时在刚才创建的tracker文件目录/opt/fastdfs_tracker中就可以看到启动后新生成的data和logs目录，tracker服务的端口也应当被正常监听，最后再通过netstat命令查看一下端口监听情况.</p>
+<p>如果启动命令执行成功，那么同时在刚才创建的tracker文件目录 <strong>/opt/fastdfs_tracker</strong> 中就可以看到启动后新生成的data和logs目录，tracker服务的端口也应当被正常监听，最后再通过netstat命令查看一下端口监听情况.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -unltp|grep fdfs</div></pre></td></tr></table></figure>
 <p>Tracker至此就配置好了，接下来就可以配置FastDFS的另一核心——Storage。</p>
 <h1 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h1><p>同理，步骤基本与配置Tracker一致，首先是创建Storage服务器的文件目录，需要注意的是同Tracker相比我多建了一个目录，因为Storage还需要一个文件存储路径，用于存放接收的文件：</p>
@@ -57,7 +57,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ln -s /usr/bin/fdfs_storaged /usr/local/bin</div></pre></td></tr></table></figure>
 <p>接下来就可以启动Storage服务了：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service fdfs_storaged start</div></pre></td></tr></table></figure>
-<p>同理，如果启动成功，/opt/fastdfs_storage中就可以看到启动后新生成的data和logs目录，端口23000也应被正常监听，还有一点就是文件存储路径下会生成多级存储目录，那么接下来看看是否启动成功.</p>
+<p>同理，如果启动成功，/opt/fastdfs_storage中就可以看到启动后新生成的 <strong>data</strong> 和 <strong>logs</strong> 目录，端口23000也应被正常监听，还有一点就是文件存储路径下会生成多级存储目录，那么接下来看看是否启动成功.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -unltp|grep fdfs</div></pre></td></tr></table></figure>
 <p><img src="/img/20171222/WX20171222-162905@2x.png" alt=""></p>
 <p>如上图，可以看到此时已经正常监听tracker的22122端口和storage的23000端口，至此storage服务器就已经配置完成，确定了storage服务器启动成功后，还有一项工作就是看看storage服务器是否已经登记到 tracker服务器（也可以理解为tracker与storage是否整合成功），运行以下命令：</p>
@@ -69,11 +69,11 @@
 <p>进行授权，如下图：</p>
 <p><img src="/img/20171222/WX20171222-163634@2x.png" alt=""></p>
 <p>至此我们就已经完成了fastdfs的全部配置，此时也就可以用客户端工具进行文件上传下载的测试了。</p>
-<h1 id="初步测试"><a href="#初步测试" class="headerlink" title="初步测试"></a>初步测试</h1><p>测试时需要设置客户端的配置文件，编辑 <strong>/etc/fdfs</strong> 目录下的 <strong>client.conf</strong> 文件，打开文件后依次做以下修改：</p>
+<h1 id="上传测试"><a href="#上传测试" class="headerlink" title="上传测试"></a>上传测试</h1><p>测试时需要设置客户端的配置文件，编辑 <strong>/etc/fdfs</strong> 目录下的 <strong>client.conf</strong> 文件，打开文件后依次做以下修改：</p>
 <blockquote>
 <p>base_path=/opt/fastdfs_tracker      #tracker服务器文件路径<br>tracker_server=10.211.55.8:22122    #tracker服务器IP地址和端口号<br>http.tracker_server_port=6666       #tracker服务器的http端口号，必须和tracker的设置对应起来</p>
 </blockquote>
-<p>配置完成后就可以模拟文件上传了，先通过scp向/tmp目录下传一下文件。</p>
+<p>配置完成后就可以模拟文件上传了，先通过scp向 <strong>/tmp</strong> 目录下传一下文件。</p>
 <p>然后通过执行客户端上传命令尝试上传：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/fdfs_upload_file /etc/fdfs/client.conf /tmp/big.jpg</div></pre></td></tr></table></figure>
 <p>运行后可以发现给我们返回了一个路径：</p>
@@ -81,20 +81,20 @@
 <p>这就表示我们的文件已经上传成功了，当文件存储到某个子目录后，即认为该文件存储成功，接下来会为该文件生成一个文件名，文件名由group、存储目录、两级子目录、fileid、文件后缀名（由客户端指定，主要用于区分文件类型）拼接而成，如下图：</p>
 <p><img src="/img/20171222/20160923132829236.jpg" alt=""></p>
 <p>同时在之前配置的storage服务器的实际文件存储路径中也可以根据返回的路径找到实际文件：</p>
-<h1 id="HTTP访问文件"><a href="#HTTP访问文件" class="headerlink" title="HTTP访问文件"></a>HTTP访问文件</h1><p>因为FastDFS目前已不支持http协议，4.0.5版本开始移除了自带的HTTP支持（因为之前自带的HTTP服务较为简单，无法提供负载均衡等高性能服务），所以余大提供了nginx上使用FastDFS的模块fastdfs-nginx-module，下载地址如下：<a href="https://github.com/happyfish100/fastdfs-nginx-module" target="_blank" rel="external">https://github.com/happyfish100/fastdfs-nginx-module</a>，这样做最大的好处就是提供了HTTP服务并且解决了group中storage服务器的同步延迟问题，接下是fastdfs-nginx-module的安装配置过程.</p>
+<h1 id="HTTP访问文件"><a href="#HTTP访问文件" class="headerlink" title="HTTP访问文件"></a>HTTP访问文件</h1><p>因为FastDFS目前已不支持http协议，<strong>4.0.5</strong> 版本开始移除了自带的HTTP支持（因为之前自带的HTTP服务较为简单，无法提供负载均衡等高性能服务），所以余大提供了nginx上使用FastDFS的模块fastdfs-nginx-module，下载地址如下：<a href="https://github.com/happyfish100/fastdfs-nginx-module" target="_blank" rel="external">https://github.com/happyfish100/fastdfs-nginx-module</a>，这样做最大的好处就是提供了HTTP服务并且解决了group中storage服务器的同步延迟问题，接下是fastdfs-nginx-module的安装配置过程.</p>
 <h3 id="fastdfs-nginx-module"><a href="#fastdfs-nginx-module" class="headerlink" title="fastdfs-nginx-module"></a>fastdfs-nginx-module</h3><p>先安装系统依赖</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install pcre pcre-devel zlib zlib-devel openssl openssl-devel git</div></pre></td></tr></table></figure>
 <p>下载所需组件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/src/</div><div class="line">git clone https://github.com/happyfish100/fastdfs-nginx-module.git</div><div class="line">wget http://nginx.org/download/nginx-1.8.1.tar.gz</div></pre></td></tr></table></figure>
 <h3 id="storage-nginx"><a href="#storage-nginx" class="headerlink" title="storage nginx"></a>storage nginx</h3><p>首先是为storage服务器安装nginx</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tar -zxvf nginx-1.8.1.tar.gz</div><div class="line">cd nginx-1.8.1</div><div class="line">./configure --prefix=/usr/local/nginx --add-module=/usr/local/src/fastdfs-nginx-module/src</div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
-<p>接下来要修改一下nginx的配置文件，进入conf目录并打开nginx.conf修改，如下图：</p>
+<p>接下来要修改一下nginx的配置文件，进入conf目录并打开 <strong>nginx.conf</strong> 修改，如下图：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /usr/local/nginx/conf/nginx.conf</div></pre></td></tr></table></figure>
 <p><img src="/img/20171222/WX20171222-165331@2x.png" alt=""></p>
-<p>然后进入FastDFS的安装目录/usr/local/fastdfs-5.05目录下的conf目录，将http.conf和mime.types拷贝到/etc/fdfs目录下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cp -r /usr/local/fastdfs-5.05/conf/http.conf /etc/fdfs/</div><div class="line">cp -r /usr/local/fastdfs-5.05/conf/mime.types /etc/fdfs/</div></pre></td></tr></table></figure>
-<p>接下来还需要把fastdfs-nginx-module安装目录中src目录下的mod_fastdfs.conf也拷贝到/etc/fdfs目录下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp -r /usr/local/fastdfs-nginx-module-master/src/mod_fastdfs.conf /etc/fdfs/</div></pre></td></tr></table></figure>
+<p>然后进入FastDFS的安装目录 <strong>/usr/local/src/fastdfs-5.11</strong> 目录下的conf目录，将http.conf和mime.types拷贝到 <strong>/etc/fdfs</strong> 目录下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cp -r /usr/local/src/fastdfs-5.11/conf/http.conf /etc/fdfs/</div><div class="line">cp -r /usr/local/src/fastdfs-5.11/conf/mime.types /etc/fdfs/</div></pre></td></tr></table></figure>
+<p>接下来还需要把fastdfs-nginx-module安装目录中src目录下的mod_fastdfs.conf也拷贝到 <strong>/etc/fdfs</strong> 目录下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp -r /usr/local/src/fastdfs-nginx-module/src/mod_fastdfs.conf /etc/fdfs/</div></pre></td></tr></table></figure>
 <p>就需要编辑刚拷贝的这个mod_fastdfs.conf文件了，打开mod_fastdfs.conf并按顺序依次编译以下内容：</p>
 <blockquote>
 <p>base_path=/opt/fastdfs_storage        #保存日志目录<br>tracker_server=10.211.55.8:22122   #tracker服务器的IP地址以及端口号<br>storage_server_port=23000             #storage服务器的端口号<br>url_have_group_name = true            #文件 url 中是否有 group 名<br>store_path0=/opt/fastdfs_storage_data #存储路径<br>group_count = 3                       #设置组的个数，事实上这次只使用了group1</p>
@@ -110,7 +110,7 @@
 <p>最后启动nginx：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/nginx/sbin/nginx</div></pre></td></tr></table></figure>
 <p>通过浏览器访问 <a href="http://10.211.55.8:9999/" target="_blank" rel="external">http://10.211.55.8:9999/</a> 也可以看到nginx的主页：</p>
-<h3 id="tracker-nginx"><a href="#tracker-nginx" class="headerlink" title="tracker nginx"></a>tracker nginx</h3><p>同理，再装一个nginx，目录命名为nginx2，安装路径依旧放在/usr/local下，由于和之前一样，此处就不再做详细解释：</p>
+<h3 id="tracker-nginx"><a href="#tracker-nginx" class="headerlink" title="tracker nginx"></a>tracker nginx</h3><p>同理，再装一个nginx，目录命名为 <strong>nginx2</strong> ，安装路径依旧放在 <strong>/usr/local</strong> 下，由于和之前一样，此处就不再做详细解释：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /usr/loca/src/nginx-1.8.1</div><div class="line">./configure --prefix=/usr/local/nginx2 --add-module=/usr/local/src/fastdfs-nginx-module/src</div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
 <p>接下来依然是修改nginx2的配置文件，进入conf目录并打开nginx.conf文件加入以下配置，storage的nginx无需修改listen端口，即默认的80端口，并将upstream指向tracker的nginx地址：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /usr/local/nginx2/conf/nginx.conf</div></pre></td></tr></table></figure>
@@ -868,6 +868,19 @@
     </entry>
     
     <entry>
+      <title><![CDATA[GoAhead移植到OpenWRT]]></title>
+      <url>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/</url>
+      <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
+<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
+<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
+<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
+<blockquote>
+<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Contiki-CC2538-CoAP]]></title>
       <url>http://cuiqingwei.github.io/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/</url>
       <content type="html"><![CDATA[<div align="center"><br><iframe height="498" width="510" src="http://player.youku.com/embed/XMTgyNDA3NDAzNg==" frameborder="0" 'allowfullscreen'=""></iframe><br></div>
@@ -888,19 +901,6 @@
 <h1 id="ping6"><a href="#ping6" class="headerlink" title="ping6"></a>ping6</h1><p>ping6 aaaa::212:4b00:5af:84e0</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">PING aaaa::212:4b00:5af:84e0(aaaa::212:4b00:5af:84e0) 56 data bytes</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=1 ttl=63 time=1013 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=2 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=3 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=4 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=5 ttl=63 time=125 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=6 ttl=63 time=120 ms</div></pre></td></tr></table></figure>
 <h1 id="firefox"><a href="#firefox" class="headerlink" title="firefox"></a>firefox</h1><p><img src="/img/20161117/coap1.png" alt=""><br><img src="/img/20161117/coap2.png" alt=""></p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[GoAhead移植到OpenWRT]]></title>
-      <url>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/</url>
-      <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
-<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
-<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
-<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
-<blockquote>
-<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
-</blockquote>
 ]]></content>
     </entry>
     
