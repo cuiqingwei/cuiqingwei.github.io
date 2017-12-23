@@ -827,7 +827,7 @@
 <p>在linux上架设mono的方法有很多，可以参考如下博文：<br>配置linux(apache) + mono 下运行 asp.net<br><a href="http://www.cnblogs.com/hcl0208/archive/2010/10/25/1860173.html" target="_blank" rel="external">http://www.cnblogs.com/hcl0208/archive/2010/10/25/1860173.html</a><br>Ubuntu10.10下Mono2.10+Nginx+fastcgi 部署asp.net网站<br><a href="http://www.cnblogs.com/xiaogangqq123/archive/2011/02/28/1967345.html" target="_blank" rel="external">http://www.cnblogs.com/xiaogangqq123/archive/2011/02/28/1967345.html</a></p>
 </blockquote>
 <h1 id="三、补充："><a href="#三、补充：" class="headerlink" title="三、补充："></a>三、补充：</h1><p>其实关于大型网站架构的文章网上有太多太多了。如下图，是国内某基于asp.net的大型网站的架构设计图，其实不管是.net还是java/LAMP，不管什么平台，道理都一样。</p>
-<p><img src="http://pic002.cnblogs.com/images/2011/318793/2011110710022537.jpg" alt=""></p>
+<p><img src="/img/20161230/2011110710022537.jpg" alt=""></p>
 <p>在本架构图中，如果把IIS替换成apache,SqlServer替换成mysql，也一样成立。合理的架构是跟平台无关的。最看不惯的是某些业内所谓的高手，说大型网站用ASP.NET不行，没有JAVA/LAMP好。相信看了这个架构图，再想想 <strong>bing,hotmail,myspace,match,qidian,dangdang,m18,vancl</strong> 等等基于.net开发的大型网站案例，就应该闭上他们的嘴！大型网站的开发，人的能力和合理的架构才是关键所在！(<em>最近一个反例很能说明问题：用java开发的www.12306.cn相信大家都有目共睹。它是架构/人的能力的问题，还是语言/平台的问题？</em>)</p>
 ]]></content>
     </entry>

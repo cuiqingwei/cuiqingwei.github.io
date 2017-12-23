@@ -1073,7 +1073,7 @@
     <link href="http://cuiqingwei.github.io/2016/12/30/2016-12-30-%E7%94%A8ASP-NET%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%9C%89%E5%93%AA%E4%BA%9B%E6%9E%B6%E6%9E%84%E6%96%B9%E5%BC%8F/"/>
     <id>http://cuiqingwei.github.io/2016/12/30/2016-12-30-用ASP-NET开发的大型网站有哪些架构方式/</id>
     <published>2016-12-29T16:27:40.000Z</published>
-    <updated>2016-12-30T01:19:30.000Z</updated>
+    <updated>2017-12-23T05:03:33.000Z</updated>
     
     <content type="html"><![CDATA[<p>在<a href="http://www.cnblogs.com/ms0017/archive/2011/07/26/2117676.html" target="_blank" rel="external">文章</a>里，列举了国内外用ASP.NET开发的大型网站有哪些。最后提到了用.NET开发的大型网站和LAMP/JAVA平台的成本比较。其实在很多时候，收费的不一定就比免费的成本更高。因为开发一个网站要使用哪个平台的技术更合适，需要考虑很多种情况（除了开发技术本身，还要考虑人工，开发效率，时间，后续的支持，维护等等），要综合计算成本才行。微软平台本身虽然是收费的，但总体的成本并非一定比LAMP/JAVA高，上篇文章列举的国内外的那么多基于ASP.NET开发的大型网站就是例证。尤其是在开发效率上，无论是C#开发语言，还是免费的开发工具（Visual Studio Express，或者MonoDevelop/SharpDevelop），.NET明显比其他两个平台更胜一筹。而这一点正是互联网企业所需要的。效率就是生产力。并且，由于有Mono (<a href="http://mono-project.org/" target="_blank" rel="external">http://mono-project.org/</a>) 这个开源平台的存在，.NET技术也可以在linux/BSD等开源服务器上使用。使.NET完全可以实现跨平台应用。据此，我们可以分Windows/Linux两种方式来架构我们的ASP.NET网站：</p>
 <a id="more"></a>
@@ -1083,7 +1083,7 @@
 <p>在linux上架设mono的方法有很多，可以参考如下博文：<br>配置linux(apache) + mono 下运行 asp.net<br><a href="http://www.cnblogs.com/hcl0208/archive/2010/10/25/1860173.html" target="_blank" rel="external">http://www.cnblogs.com/hcl0208/archive/2010/10/25/1860173.html</a><br>Ubuntu10.10下Mono2.10+Nginx+fastcgi 部署asp.net网站<br><a href="http://www.cnblogs.com/xiaogangqq123/archive/2011/02/28/1967345.html" target="_blank" rel="external">http://www.cnblogs.com/xiaogangqq123/archive/2011/02/28/1967345.html</a></p>
 </blockquote>
 <h1 id="三、补充："><a href="#三、补充：" class="headerlink" title="三、补充："></a>三、补充：</h1><p>其实关于大型网站架构的文章网上有太多太多了。如下图，是国内某基于asp.net的大型网站的架构设计图，其实不管是.net还是java/LAMP，不管什么平台，道理都一样。</p>
-<p><img src="http://pic002.cnblogs.com/images/2011/318793/2011110710022537.jpg" alt=""></p>
+<p><img src="/img/20161230/2011110710022537.jpg" alt=""></p>
 <p>在本架构图中，如果把IIS替换成apache,SqlServer替换成mysql，也一样成立。合理的架构是跟平台无关的。最看不惯的是某些业内所谓的高手，说大型网站用ASP.NET不行，没有JAVA/LAMP好。相信看了这个架构图，再想想 <strong>bing,hotmail,myspace,match,qidian,dangdang,m18,vancl</strong> 等等基于.net开发的大型网站案例，就应该闭上他们的嘴！大型网站的开发，人的能力和合理的架构才是关键所在！(<em>最近一个反例很能说明问题：用java开发的www.12306.cn相信大家都有目共睹。它是架构/人的能力的问题，还是语言/平台的问题？</em>)</p>
 ]]></content>
     
