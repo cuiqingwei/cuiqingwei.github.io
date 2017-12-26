@@ -4,6 +4,66 @@
   
     
     <entry>
+      <title><![CDATA[SSH与SSM对比]]></title>
+      <url>http://cuiqingwei.github.io/2017/12/26/2017-12-26-SSH%E4%B8%8ESSM%E5%AF%B9%E6%AF%94/</url>
+      <content type="html"><![CDATA[<p>当下流行的两种企业开发MVC开源框架，是我们Java程序猿必备知识能力。MVC，即模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。框架之所以流行，在于其易复用和简化开发，精髓在思想，掌握了核心思想，我们掌握其他类似框架也不会有问题，建议大家有精力的话读一下框架源码，尤其是Spring。</p>
+<a id="more"></a>
+<h1 id="SSH和SSM定义"><a href="#SSH和SSM定义" class="headerlink" title="SSH和SSM定义"></a>SSH和SSM定义</h1><p><strong>SSH</strong> 通常指的是 Struts2 做控制器(controller)，spring 管理各层的组件，hibernate 负责持久化层。</p>
+<p><strong>SSM</strong> 则指的是 SpringMVC 做控制器(controller)，Spring 管理各层的组件，MyBatis 负责持久化层。</p>
+<p><strong>共同点</strong>：</p>
+<ul>
+<li>1.Spring依赖注入DI来管理各层的组件；</li>
+<li>2.使用面向切面编程AOP管理事物、日志、权限等。</li>
+</ul>
+<p><strong>不同点</strong>：Struts2 和 SpringMVC 控制器(controller)控制视图和模型的交互机制的不同，Struts2是Action类级别，SpringMVC是方法级别，更容易实现RESTful风格。</p>
+<h1 id="SSH-和-SSM-的实现原理"><a href="#SSH-和-SSM-的实现原理" class="headerlink" title="SSH 和 SSM 的实现原理"></a>SSH 和 SSM 的实现原理</h1><h2 id="1-Struts2-的实现原理"><a href="#1-Struts2-的实现原理" class="headerlink" title="1.Struts2 的实现原理"></a>1.Struts2 的实现原理</h2><p><img src="/img/20171226/f740001068a5c16f544.jpg" alt=""></p>
+<p>Struts2框架执行步骤（Struts2使用Filter嵌入）：</p>
+<ul>
+<li>1、客户端初始化一个指向Servlet容器（例如Tomcat）的请求；</li>
+<li>2、这个请求经过一系列的过滤器（Filter）（这些过滤器中有一个叫做ActionContextCleanUp的可选过滤器，这个过滤器对于Struts2和其他框架的集成很有帮助；</li>
+<li>3、接着FilterDispatcher被调用，FilterDispatcher询问ActionMapper来决定这个请求是否需要调用某个Action；</li>
+<li>4、如果ActionMapper决定需要调用某个Action，FilterDispatcher把请求的处理交给ActionProxy；</li>
+<li>5、ActionProxy通过Configuration Manager询问框架的配置文件，找到需要调用的Action类；</li>
+<li>6、ActionProxy创建一个ActionInvocation的实例；</li>
+<li>7、ActionInvocation实例使用命名模式来调用，在调用Action的过程前后，涉及到相关拦截器（Intercepter）的调用；</li>
+<li>8、一旦Action执行完毕，ActionInvocation负责根据struts.xml中的配置找到对应的返回结果。返回结果通常是（但不总是，也可 能是另外的一个Action链）一个需要被表示的JSP或者FreeMarker的模版；</li>
+<li>9、将处理结果返回给客户端。</li>
+</ul>
+<h2 id="2-SpringMVC-的实现原理"><a href="#2-SpringMVC-的实现原理" class="headerlink" title="2.SpringMVC 的实现原理"></a>2.SpringMVC 的实现原理</h2><p><img src="/img/20171226/f7500089dc67ac93a17.jpg" alt=""></p>
+<p>SpringMVC框架执行步骤（SpringMVC使用Servlet嵌入）：</p>
+<ul>
+<li>1、客户端发出一个http请求给web服务器，web服务器对http请求进行解析，如果匹配DispatcherServlet的请求映射路径（在web.xml中指定），web容器将请求转交给DispatcherServlet；</li>
+<li>2、DipatcherServlet接收到这个请求之后将根据请求的信息（包括URL、Http方法、请求报文头和请求参数Cookie等）以及HandlerMapping的配置找到处理请求的处理器（Handler）；</li>
+<li>3-4、DispatcherServlet根据HandlerMapping找到对应的Handler,将处理权交给Handler（Handler将具体的处理进行封装），再由具体的HandlerAdapter对Handler进行具体的调用；</li>
+<li>5、Handler对数据处理完成以后将返回一个ModelAndView()对象给DispatcherServlet；</li>
+<li>6、Handler返回的ModelAndView()只是一个逻辑视图并不是一个正式的视图，DispatcherSevlet通过ViewResolver将逻辑视图转化为真正的视图View；</li>
+<li>7、Dispatcher通过model解析出ModelAndView()中的参数进行解析最终展现出完整的view并返回给客户端。</li>
+</ul>
+<h1 id="Hibernate-和-MyBatis-两种ORM框架对比"><a href="#Hibernate-和-MyBatis-两种ORM框架对比" class="headerlink" title="Hibernate 和 MyBatis 两种ORM框架对比"></a>Hibernate 和 MyBatis 两种ORM框架对比</h1><p><strong>两者的相同点</strong></p>
+<ul>
+<li>Hibernate与MyBatis都可以是通过SessionFactoryBuider由XML配置文件生成SessionFactory，然后由SessionFactory 生成Session，最后由Session来开启执行事务和SQL语句。其中SessionFactoryBuider，SessionFactory，Session的生命周期都是差不多的。</li>
+<li>Hibernate和MyBatis都支持JDBC和JTA事务处理。</li>
+</ul>
+<p><strong>两者各自优势</strong></p>
+<ul>
+<li>MyBatis可以进行更为细致的SQL优化，可以减少查询字段。</li>
+<li>MyBatis容易掌握，而Hibernate门槛较高。</li>
+<li>Hibernate的DAO层开发比MyBatis简单，Mybatis需要维护SQL和结果映射。</li>
+<li>Hibernate对对象的维护和缓存要比MyBatis好，对增删改查的对象的维护要方便。</li>
+<li>Hibernate数据库移植性很好，MyBatis的数据库移植性不好，不同的数据库需要写不同SQL。</li>
+<li>Hibernate有更好的二级缓存机制，可以使用第三方缓存。MyBatis本身提供的缓存机制不佳，更新操作不能指定刷新指定记录，会清空整个表，但是也可以使用第三方缓存。</li>
+<li>Hibernate 封装性好，屏蔽了数据库差异，自动生成SQL语句，应对数据库变化能力较弱，SQL语句优化困难。</li>
+<li>MyBatis仅实现了SQL语句和对象的映射，需要针对具体的数据库写SQL语句，应对数据库变化能力较强，SQL语句优化较为方便。</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>SSM和SSH不同主要在MVC实现方式，以及ORM持久化方面不同（Hiibernate与Mybatis）。SSM越来越轻量级配置，将注解开发发挥到极致，且ORM实现更加灵活，SQL优化更简便；而SSH较注重配置开发，其中的Hiibernate对JDBC的完整封装更面向对象，对增删改查的数据维护更自动化，但SQL优化方面较弱，且入门门槛稍高。</p>
+<blockquote>
+<p>附Spring家族：</p>
+</blockquote>
+<p><img src="/img/20171226/f750008ad20260cf3f2.jpg" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[分布式文件系统 FastDFS 5 & Linux CentOS 7 搭建]]></title>
       <url>http://cuiqingwei.github.io/2017/12/05/2017-12-22-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F-FastDFS-5-Linux-CentOS-7-%E6%90%AD%E5%BB%BA/</url>
       <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>FastDFS是一个开源的轻量级分布式文件系统，由跟踪服务器（tracker server）、存储服务器（storage server）和客户端（client）三个部分组成，主要解决了海量数据存储问题，特别适合以中小文件（建议范围：<strong>4KB &lt; file_size &lt;500MB</strong> ）为载体的在线服务。</p>
@@ -1144,6 +1204,51 @@
     </entry>
     
     <entry>
+      <title><![CDATA[善用路亚软饵]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%96%84%E7%94%A8%E8%B7%AF%E4%BA%9A%E8%BD%AF%E9%A5%B5/</url>
+      <content type="html"><![CDATA[<p>在路亚世界里，软饵的搭配种类比较多功能性也不尽相同，但是它们的共同之处 就在于—引诱鱼饵上钩，无论是以动作逼真引诱还是以动作激怒鱼儿。 但是这些动作都需要人来赋予它，不然再好的路亚软饵也是枉然。</p>
+<p>说之前先声明，这是给各位刚刚玩的盆友们准备的，各位老鸟们还请海涵！</p>
+<a id="more"></a>
+<p><img src="/img/20161013/orka-shad-tail92.jpg" alt=""></p>
+<p>首先呢，就先 从模拟自然界中的动作讲一下吧，这个问题就在于钓友们手上的灵活多变操控了 ，一般比较常用也是比较有效的方式有三种：</p>
+<p><strong>1，跳</strong></p>
+<p><strong>2，拖</strong></p>
+<p><strong>3，停</strong></p>
+<p><em>第一种，跳，顾名思义就如同我们人跳舞一样，饵也需要在水下跳舞引诱鱼 的注意，让它们觉得这东西有点好奇，看着有些意思，进而进行试探 最后咬钩。 “跳”的方法就是手持竿子，将竿子用手腕的力量上下挑动，使饵在水下呈现出 上下跳跃的姿态 这种跳跃的幅度可大可小，不用拘泥于形式，可以夸张的大幅度 ，也可以用轻微的小幅度挑动来模拟一些落入水中的昆虫幼虫或其他小生物。</em></p>
+<p><em>第二种，拖，拖动饵在水下移动，让饵自然呈现一种在底层游动的状态，引诱鱼 前来试探，这种方法对付一些底层伏击型的鱼类比较有效果。也会对钓手们了解 水底的地形有帮助。操作方法 就是慢慢摇轮，让其软饵在水下慢慢游走。</em></p>
+<p><em>第三种，停，这个动作非常重要 有时候你一直在操控软饵时，鱼可能没有动作， 只会盯着看，往往就是在你停顿的瞬间，鱼会突然发动攻击。当然停顿的时间没 有固定的，需要大家自行体会根据不同的环境来随时调整。</em></p>
+<p>而将这三者结合起来：跳-拖-停 重复使用的时候，往往会对鱼造成极大的诱惑性 ，可以使中鱼率大大增加，特别是在鱼境况不好的压力钓场上，往往路亚软饵钓 组会发挥极大地作用，大家可以在操控软饵的时候想想一下软饵在水下的动作会 是怎样的，充分发挥自己的想象力，努力去改造软饵在水下的状态，最简单的方 法就是找一个透明的玻璃鱼缸灌满水将软虫钓组放入浴缸里进行调试，已达到你 想要的理想效果，所以软饵钓组各位一定要掌握一下，当你熟悉了路亚软饵钓组 的你肯定会爱上它的。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[几种常用有效的线结介绍]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%87%A0%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%9C%89%E6%95%88%E7%9A%84%E7%BA%BF%E7%BB%93%E4%BB%8B%E7%BB%8D/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>在路亚钓的过程中，线结是比较基础的一项技能，正确的使用和绑制一种线结关系到你作钓的成功与否，对于连接路亚的线结目前有很多种绑制方式，但是不是所有的方式都是可靠或优秀的，有因为大家都知道线的拉力磅数一般指的是直线拉力值，但是在线打结后的拉力值会降低不少，如果没有一个有效的线结的话，你打结后的线的拉力值可能会降到原来值的50%甚至更低，那样势必会影响整个线组的强度。</p>
+</blockquote>
+<p>现在就介绍几种比较简便且对钓线本身拉力值损失较小的常见线结供参考，这些线结特别适用于尼龙线或氟碳线。</p>
+<a id="more"></a>
+<p><img src="/img/20161013/线结1.jpg" alt=""></p>
+<p>IMPROVED CLINCH KNOT 这个线结比较常见 绑起来也比较简单，适合的绑的东西也比较多，比如连接钓钩、路亚、JIG 等等都是可以的。</p>
+<p>首先将线穿过线孔（可以穿一次也可以穿过两次）然后将穿出来一端的线绕着主线绕上5圈（缠绕圈数可以根据需要来，一般5圈足够），最后在穿过绕线预留的空间，慢慢拉紧即可。这个线结经过测试，可以保留大约近95%的强度，并且比较方便绑制各类路亚和配件。</p>
+<p><img src="/img/20161013/线结2.jpg" alt=""></p>
+<p>PALOMAR KNOT 此线结也是个很简单的线结，但是强度却非常可靠，它可以保留钓线95%以上的强度，比较适合连接别针、中小型路亚以及钓钩等等，但是要是用此线结绑比较大的路亚，可能需要预留的线要比较长绑起来可能略有不便，绑这个线结的方法也很简单，看图即可了解。</p>
+<p><img src="/img/20161013/线结3.jpg" alt=""></p>
+<p>NON-SLIP LOOP KNOT 这个线结的特点是赋予连接的路亚或鱼钩较大的自由性，因为这个线结并不是完全锁死固定在连接环上的，而是有空间，这样可以让一些水中姿态较大路亚在水中拥有更多的自由摆动空间，具体方法是先将主线上打一个简单的小节但不要拉紧，然后将下端预留出来的线穿过线孔，然后再顺势穿过刚才在主线上打的那个小结的孔，随后将穿过小结孔的线绕在主线上5圈左右，最后再穿过主线上打结的小孔，拉紧即可。</p>
+<p><img src="/img/20161013/线结4.jpg" alt=""></p>
+<p>BLOOD KNOT 这个线结是可以将两段不同磅数的钓线连接，它可以用于连接前导线，比较适合连接两根差距不是很大的钓线，比如15磅和20磅左右这样的情况，不太适合用于连接15磅连接50磅的钓线。它的绑法也很简单，直接看图就好了。</p>
+<p><img src="/img/20161013/线结5.jpg" alt=""></p>
+<p>SURGEON’S KNOT 这个线结与上一个线结的用途一样，绑法也比较简单，打结也比较快速，具体绑法如下图。不过要注意绑这个结，有一端的线要比另一端的线要短一些才可以，这样才能方便的在小结里面缠绕。</p>
+<p><img src="/img/20161013/线结6.jpg" alt=""></p>
+<p><strong>简单的与线杯连接</strong></p>
+<p>这是主线与线杯连接打结的，也是很简单的一种方式，无论双轴卷线器还是纺车轮都可以使用，具体方法可以看图所示。</p>
+<p><em>再附上3种线结：</em></p>
+<p><img src="/img/20161013/线结7.jpg" alt=""><br><img src="/img/20161013/线结8.jpg" alt=""><br><img src="/img/20161013/线结9.jpg" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[常用路亚线的区别]]></title>
       <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%B8%B8%E7%94%A8%E8%B7%AF%E4%BA%9A%E7%BA%BF%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
       <content type="html"><![CDATA[<h2 id="尼龙线"><a href="#尼龙线" class="headerlink" title="尼龙线"></a>尼龙线</h2><p>台钓中使用最多的也是尼龙线。尼龙的化工原料为PA，和PE一样是石油的下游产品。与PE不同的是，尼龙线一般为单股线，这种线的特点刚好与PE线相反。尼龙线的优点是由于有一定的延展性，抛投和中鱼的时候不易断线，由于生产技术已经发展了近70年的历史，成本低，产量大，相比PE线要便宜很多。最后一点是尼龙表面圆滑，对线环的磨损可以降到最低。</p>
@@ -1193,51 +1298,6 @@
 <p>根据不同场地的需求，可以选择自己所设定的软饵在预想的区域内尽可能自然的呈现。同时也可以配合鱼探进行垂直的定点位的呈现去钓获鲈鱼，而我在使用这一钓组的时候大多数时间会选择配合鱼探做垂直呈现的作钓。大多数时候我们都会选择使用倒吊钓组来进行结构作钓，相对的都是开阔水域，此时我会选择使用4-6LB的氟碳线。</p>
 <h2 id="Finesse-Jig钓组钓竿"><a href="#Finesse-Jig钓组钓竿" class="headerlink" title="Finesse Jig钓组钓竿"></a>Finesse Jig钓组钓竿</h2><p>我会选择使用Extra fast调性的Bait finesse钓竿配合微物水滴轮来进行作钓，它可以搭配使用Finesse jig，小型Tube，小型德州等钓组。<br>此装备的优点是可以进行精确落点的抛投，很多时候一个精准的抛投是获得咬口的重要因素，而且更小的饵确实是可以获得更多的咬口，Bait finesse钓法便如此应运而生。</p>
 <h2 id="Neko钓组钓竿"><a href="#Neko钓组钓竿" class="headerlink" title="Neko钓组钓竿"></a>Neko钓组钓竿</h2><p>我会选择一根Extra fast的钓竿和2000S的纺车轮，配合4LB氟碳线来作钓。除了Neko钓组外，我还可以用它来钓1g多的JIG和Super finesse的倒吊（2~3寸的饵配合1-2g的倒吊铅）应对极限条件下的深水作钓。<br>Neko钓组是为数较少的一种针对深水作钓的最佳选择，可它以在水温低于7摄氏度的情况下依然能够捕获一定数量的咬口，可以非常慢速的在水下呈现软饵的自然状态。其垂直落底的特性也是我对于结构作钓时的不二选择。针对国内众多压力钓场都有着不俗的表现。</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[善用路亚软饵]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%96%84%E7%94%A8%E8%B7%AF%E4%BA%9A%E8%BD%AF%E9%A5%B5/</url>
-      <content type="html"><![CDATA[<p>在路亚世界里，软饵的搭配种类比较多功能性也不尽相同，但是它们的共同之处 就在于—引诱鱼饵上钩，无论是以动作逼真引诱还是以动作激怒鱼儿。 但是这些动作都需要人来赋予它，不然再好的路亚软饵也是枉然。</p>
-<p>说之前先声明，这是给各位刚刚玩的盆友们准备的，各位老鸟们还请海涵！</p>
-<a id="more"></a>
-<p><img src="/img/20161013/orka-shad-tail92.jpg" alt=""></p>
-<p>首先呢，就先 从模拟自然界中的动作讲一下吧，这个问题就在于钓友们手上的灵活多变操控了 ，一般比较常用也是比较有效的方式有三种：</p>
-<p><strong>1，跳</strong></p>
-<p><strong>2，拖</strong></p>
-<p><strong>3，停</strong></p>
-<p><em>第一种，跳，顾名思义就如同我们人跳舞一样，饵也需要在水下跳舞引诱鱼 的注意，让它们觉得这东西有点好奇，看着有些意思，进而进行试探 最后咬钩。 “跳”的方法就是手持竿子，将竿子用手腕的力量上下挑动，使饵在水下呈现出 上下跳跃的姿态 这种跳跃的幅度可大可小，不用拘泥于形式，可以夸张的大幅度 ，也可以用轻微的小幅度挑动来模拟一些落入水中的昆虫幼虫或其他小生物。</em></p>
-<p><em>第二种，拖，拖动饵在水下移动，让饵自然呈现一种在底层游动的状态，引诱鱼 前来试探，这种方法对付一些底层伏击型的鱼类比较有效果。也会对钓手们了解 水底的地形有帮助。操作方法 就是慢慢摇轮，让其软饵在水下慢慢游走。</em></p>
-<p><em>第三种，停，这个动作非常重要 有时候你一直在操控软饵时，鱼可能没有动作， 只会盯着看，往往就是在你停顿的瞬间，鱼会突然发动攻击。当然停顿的时间没 有固定的，需要大家自行体会根据不同的环境来随时调整。</em></p>
-<p>而将这三者结合起来：跳-拖-停 重复使用的时候，往往会对鱼造成极大的诱惑性 ，可以使中鱼率大大增加，特别是在鱼境况不好的压力钓场上，往往路亚软饵钓 组会发挥极大地作用，大家可以在操控软饵的时候想想一下软饵在水下的动作会 是怎样的，充分发挥自己的想象力，努力去改造软饵在水下的状态，最简单的方 法就是找一个透明的玻璃鱼缸灌满水将软虫钓组放入浴缸里进行调试，已达到你 想要的理想效果，所以软饵钓组各位一定要掌握一下，当你熟悉了路亚软饵钓组 的你肯定会爱上它的。</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[几种常用有效的线结介绍]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%87%A0%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%9C%89%E6%95%88%E7%9A%84%E7%BA%BF%E7%BB%93%E4%BB%8B%E7%BB%8D/</url>
-      <content type="html"><![CDATA[<blockquote>
-<p>在路亚钓的过程中，线结是比较基础的一项技能，正确的使用和绑制一种线结关系到你作钓的成功与否，对于连接路亚的线结目前有很多种绑制方式，但是不是所有的方式都是可靠或优秀的，有因为大家都知道线的拉力磅数一般指的是直线拉力值，但是在线打结后的拉力值会降低不少，如果没有一个有效的线结的话，你打结后的线的拉力值可能会降到原来值的50%甚至更低，那样势必会影响整个线组的强度。</p>
-</blockquote>
-<p>现在就介绍几种比较简便且对钓线本身拉力值损失较小的常见线结供参考，这些线结特别适用于尼龙线或氟碳线。</p>
-<a id="more"></a>
-<p><img src="/img/20161013/线结1.jpg" alt=""></p>
-<p>IMPROVED CLINCH KNOT 这个线结比较常见 绑起来也比较简单，适合的绑的东西也比较多，比如连接钓钩、路亚、JIG 等等都是可以的。</p>
-<p>首先将线穿过线孔（可以穿一次也可以穿过两次）然后将穿出来一端的线绕着主线绕上5圈（缠绕圈数可以根据需要来，一般5圈足够），最后在穿过绕线预留的空间，慢慢拉紧即可。这个线结经过测试，可以保留大约近95%的强度，并且比较方便绑制各类路亚和配件。</p>
-<p><img src="/img/20161013/线结2.jpg" alt=""></p>
-<p>PALOMAR KNOT 此线结也是个很简单的线结，但是强度却非常可靠，它可以保留钓线95%以上的强度，比较适合连接别针、中小型路亚以及钓钩等等，但是要是用此线结绑比较大的路亚，可能需要预留的线要比较长绑起来可能略有不便，绑这个线结的方法也很简单，看图即可了解。</p>
-<p><img src="/img/20161013/线结3.jpg" alt=""></p>
-<p>NON-SLIP LOOP KNOT 这个线结的特点是赋予连接的路亚或鱼钩较大的自由性，因为这个线结并不是完全锁死固定在连接环上的，而是有空间，这样可以让一些水中姿态较大路亚在水中拥有更多的自由摆动空间，具体方法是先将主线上打一个简单的小节但不要拉紧，然后将下端预留出来的线穿过线孔，然后再顺势穿过刚才在主线上打的那个小结的孔，随后将穿过小结孔的线绕在主线上5圈左右，最后再穿过主线上打结的小孔，拉紧即可。</p>
-<p><img src="/img/20161013/线结4.jpg" alt=""></p>
-<p>BLOOD KNOT 这个线结是可以将两段不同磅数的钓线连接，它可以用于连接前导线，比较适合连接两根差距不是很大的钓线，比如15磅和20磅左右这样的情况，不太适合用于连接15磅连接50磅的钓线。它的绑法也很简单，直接看图就好了。</p>
-<p><img src="/img/20161013/线结5.jpg" alt=""></p>
-<p>SURGEON’S KNOT 这个线结与上一个线结的用途一样，绑法也比较简单，打结也比较快速，具体绑法如下图。不过要注意绑这个结，有一端的线要比另一端的线要短一些才可以，这样才能方便的在小结里面缠绕。</p>
-<p><img src="/img/20161013/线结6.jpg" alt=""></p>
-<p><strong>简单的与线杯连接</strong></p>
-<p>这是主线与线杯连接打结的，也是很简单的一种方式，无论双轴卷线器还是纺车轮都可以使用，具体方法可以看图所示。</p>
-<p><em>再附上3种线结：</em></p>
-<p><img src="/img/20161013/线结7.jpg" alt=""><br><img src="/img/20161013/线结8.jpg" alt=""><br><img src="/img/20161013/线结9.jpg" alt=""></p>
 ]]></content>
     </entry>
     
