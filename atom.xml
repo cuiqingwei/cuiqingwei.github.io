@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2017-12-26T06:09:34.000Z</updated>
+  <updated>2018-02-05T02:29:54.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -14,6 +14,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DCS和PLC的区别</title>
+    <link href="http://cuiqingwei.github.io/2018/02/05/2018-02-05-DCS%E5%92%8CPLC%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>http://cuiqingwei.github.io/2018/02/05/2018-02-05-DCS和PLC的区别/</id>
+    <published>2018-02-05T06:12:08.000Z</published>
+    <updated>2018-02-05T02:29:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>发展到现在，DCS和PLC之间没有一个严格的界限，在大多数人看来，大的系统就是DCS，小的系统就叫PLC。当然，这么说也不是不可以，但是还不对。现在我们来重新建立这个概念。</p>
+<a id="more"></a>
+<h1 id="先通过几张图看看两者的区别"><a href="#先通过几张图看看两者的区别" class="headerlink" title="先通过几张图看看两者的区别"></a>先通过几张图看看两者的区别</h1><p><img src="/img/20180205/1.jpg" alt=""><br><img src="/img/20180205/2.jpg" alt=""><br><img src="/img/20180205/3.jpg" alt=""><br><img src="/img/20180205/4.jpg" alt=""><br><img src="/img/20180205/5.jpg" alt=""><br><img src="/img/20180205/6.jpg" alt=""><br><img src="/img/20180205/7.jpg" alt=""><br><img src="/img/20180205/8.jpg" alt=""><br><img src="/img/20180205/9.jpg" alt=""><br><img src="/img/20180205/10.jpg" alt=""><br><img src="/img/20180205/11.jpg" alt=""><br><img src="/img/20180205/12.jpg" alt=""><br><img src="/img/20180205/13.jpg" alt=""></p>
+<h1 id="首先，DCS和PLC之间有什么不同？"><a href="#首先，DCS和PLC之间有什么不同？" class="headerlink" title="首先，DCS和PLC之间有什么不同？"></a>首先，DCS和PLC之间有什么不同？</h1><p>1.从发展的方向来说：</p>
+<p>　　DCS从传统的仪表盘监控系统发展而来。因此，DCS从先天性来说较侧重于仪表的控制，比如YOKOGAWACS3000，DCS系统甚至没有PID数量的限制（PID，比例微分积分算法，是调节阀、变频器闭环控制的标准算法，通常PID的数量决定了可以使用的调节阀数量）。</p>
+<p>　　PLC从传统的继电器回路发展而来，最初的PLC甚至没有模拟量的处理能力，因此，PLC从开始就强调的是逻辑运算能力。</p>
+<p>2.从系统的可扩展性和兼容性的方面来说：</p>
+<p>　　市场上控制类产品繁多，无论DCS还是PLC，均有很多厂商在生产销售。对于PLC系统来说，一般没有或者很少有扩展的需求，因为PLC系统一般针对于设备来使用。一般来讲，PLC也很少有兼容性的要求，比如两个或以上的系统要求资源共享，对于PLC来讲也是很困难的事。而且PLC一般都采用专用的网路结构，比如西门子的MPI总线性网络，甚至增加一台操作员站都不容易或成本很高。</p>
+<p>　　DCS在发展的过程中也是各厂家自成体系，但大部分的DCS系统，比如横河YOKOGAWA、霍尼韦尔、ABB等等，虽说系统内部（过程级）的通讯协议不尽相同，但操作级的网络平台不约而同的选择了以太网，采用标准或变形的TCP/IP协议。这样就提供了很方便的可扩展能力。在这种网络中，控制器、计算机均作为一个节点存在，只要网络达到的地方，就可以随意增删节点数量和布置节点位置。另外，基于Windows系统的OPC、DDE等开放协议，各系统也可很方便的通讯，已实现资源共享。</p>
+<p>3.从数据库来说：</p>
+<p>　　DCS一般都提供统一的数据库，换句话说，在DCS系统中一旦一个数据存在于数据库中，就可以在任何情况下引用，比如在组态软件中、在监控软件中、在趋势图中、在报表中……而PLC系统的数据库通常都不是统一的，组态软件和监控软件甚至归档软件都有自己的数据库。为什么常说西门子的S7-400要到了414以上才称为DCS，因为西门子的PCS7系统才使用统一的数据库，而PCS7要求控制器起码到S7414-3以上的型号。</p>
+<p>4.从时间调度上来说：</p>
+<p>　　PLC的程序一般不能按事先设定的循环周期运行。PLC程序使从头到尾执行一次后又从头开始执行。（现在一些新型PLC有所改进，不过对任务周期的数量还是有限制）而DCS可以设定任务周期。比如，快速任务等。同样是传感器的采样，压力传感器的变化时间很短，我们可以用200ms的任务周期采样，而温度传感器的滞后时间很大，我们可以用2s的任务采样周期。这样，DCS可以合理的调度控制器的资源。</p>
+<p>5.从网络结构方面来说：</p>
+<p>　　一般来讲，DCS惯常使用两层网络结构，一层为过程级网络，大部分DCS使用自己的总线协议，比如横河的Modbus、西门子和ABB的Profibus、ABB的CANbus等，这些协议均建立在标准串口传输协议RS232或RS485协议的基础上。现场IO模块，特别是模拟量的采样数据十分庞大，同时现场干扰因素较多，因此应该采用数据吞吐量大、抗干扰能力强的网络标准。基于RS485串口异步通讯方式的总线结构，符合现场通讯的要求。IO的采样数据经CPU转换后变为整型数据或实型数据，在操作级网络（第二层网络）上传输。因此操作级网络可以采用数据吞吐量适中、传输速度快、连接方便的网路标准，同时因操作级网络一般布置在控制室内，对抗干扰的要求相对较低。因此采用标准以太网是最佳选择。TCP/IP协议是一种标准以太网协议，一般我们采用100Mbit/s的通讯速率。</p>
+<p>　　PLC系统的工作任务相对简单，因此需要传输的数据量一般不会太大，所以常见的PLC系统为一层网络结构。过程级网络和操作级网络要么合并在一起，要不过程级网络简化成模块之间的内部链接。PLC不会或很少使用以太网。</p>
+<p>6.从应用对象的规模上来说：</p>
+<p>　　PLC一般用在小型自控场所，比如设备的控制或少量的模拟量的控制及连锁，而大型的应用一般都是DCS。当然，这个概念不准确，但很直观，习惯上我们把大于600点的系统成为DCS，小于这个规模叫做PLC。</p>
+<p>　　说了这么多PLC与DCS的区别，但我们应该认识到，PLC与DCS发展到今天，事实上都在向彼此靠拢，严格的说，现在的PLC与DCS已经不能一刀切开，很多时候之间的概念已经模糊了。</p>
+<h1 id="现在，我们来讨论一下彼此的相同（似）之处。"><a href="#现在，我们来讨论一下彼此的相同（似）之处。" class="headerlink" title="现在，我们来讨论一下彼此的相同（似）之处。"></a>现在，我们来讨论一下彼此的相同（似）之处。</h1><p>1.从功能上来说：</p>
+<p>　　PLC已经具备了模拟量的控制功能，有的PLC系统模拟量处理能力甚至还相当强大，比如西门子S7-400、ABB的ControlLogix和施耐德的Quantum系统。而DCS也具备相当强劲的逻辑处理能力。</p>
+<p>2.从系统结构上来说：</p>
+<p>　　PLC与DCS的基本结构是一样的。PLC发展到今天，已经全面移植到计算机系统控制上了，传统的编程器早就被淘汰。小型应用的PLC一般使用触摸屏，大规模应用的PLC全面使用计算机系统。和DCS一样，控制器与IO站使用现场总线（一般都是基于RS485或RS232异步串口通讯协议的总线方式），控制器与计算机之间如果没有扩展的要求，也就是说只使用一台计算机的情况下，也会受用这个总线通讯。但如果有不止一台计算机使用，系统结构就会和DCS一样，上位机平台使用以太网结构。这是PLC大型化后和DCS概念模糊的原因之一。</p>
+<p>3.PLC和DCS的发展方向：</p>
+<p>　　小型化的PLC将向更专业化的使用角度发展，比如功能更加有针对性、对应用的环境更有针对性等等。大型的PLC与DCS的界限逐步淡化，直至完全融合。</p>
+<p>　　DCS将向FCS的方向继续发展。FCS的核心除了控制系统更加分散化以外，特别重要的是仪表。FCS在国外的应用已经发展到仪表级。控制系统需要处理的只是信号采集和提供人机界面以及逻辑控制，整个模拟量的控制分散到现场仪表，仪表与控制系统之间无需传统电缆连接，使用现场总线连接整个仪表系统。（目前国内有横河在中海壳牌石化项目中用到了FCS，仪表级采用的是智能化仪表例如：EJX等，具备世界最先进的控制水准）</p>
+<h1 id="如何正确对待DCS和PLC？"><a href="#如何正确对待DCS和PLC？" class="headerlink" title="如何正确对待DCS和PLC？"></a>如何正确对待DCS和PLC？</h1><p>　　我们不应强调PLC和DCS之间的孰优孰劣，他们应该定义一个新名词“控制类产品”。提供给用户的是最适合用户的控制系统。绝大部分用户不会因为想要使用一套DCS而去使用DCS，控制类产品必须定位在满足用户的工艺要求基础之上。甚至提出使用DCS还是PLC的用户大多是从没接触过自控产品或有某种特殊要求的。过分强调这个只会陷入口舌之争。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;发展到现在，DCS和PLC之间没有一个严格的界限，在大多数人看来，大的系统就是DCS，小的系统就叫PLC。当然，这么说也不是不可以，但是还不对。现在我们来重新建立这个概念。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="DCS、PLC" scheme="http://cuiqingwei.github.io/tags/DCS%E3%80%81PLC/"/>
+    
+  </entry>
   
   <entry>
     <title>SSH与SSM对比</title>
@@ -90,6 +137,125 @@
       <category term="SSH" scheme="http://cuiqingwei.github.io/tags/SSH/"/>
     
       <category term="SSM" scheme="http://cuiqingwei.github.io/tags/SSM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>curl模拟http发送get或post接口测试</title>
+    <link href="http://cuiqingwei.github.io/2017/12/05/2017-12-05-curl%E6%A8%A1%E6%8B%9Fhttp%E5%8F%91%E9%80%81get%E6%88%96post%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/"/>
+    <id>http://cuiqingwei.github.io/2017/12/05/2017-12-05-curl模拟http发送get或post接口测试/</id>
+    <published>2017-12-05T06:12:08.000Z</published>
+    <updated>2017-12-05T07:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、get请求"><a href="#一、get请求" class="headerlink" title="一、get请求"></a>一、get请求</h1><p>curl “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地<br>curl -i “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示全部信息<br>curl -l “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  只显示头部信息<br>curl -v “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示get请求全过程解析<br>wget “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     也可以</p>
+<a id="more"></a>
+<h1 id="二、post请求"><a href="#二、post请求" class="headerlink" title="二、post请求"></a>二、post请求</h1><p>curl -d “param1=value1&amp;param2=value2” “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“</p>
+<h1 id="三、json格式的post请求"><a href="#三、json格式的post请求" class="headerlink" title="三、json格式的post请求"></a>三、json格式的post请求</h1><p>curl -l -H “Content-type: application/json” -X POST -d ‘{“phone”:”13521389587”,”password”:”test”}’ <a href="http://domain/apis/users.json" target="_blank" rel="external">http://domain/apis/users.json</a></p>
+<blockquote>
+<p>例如：curl -l -H “Content-type: application/json” -X POST -d ‘{“ver”: “1.0”,”soa”:{“req”:”123”},”iface”:”me.ele.lpdinfra.prediction.service.PredictionService”,”method”:”restaurant_make_order_time”,”args”:{“arg2”:”\”stable\””,”arg1”:”{\”code\”:[\”WIND\”],\”temperature\”:11.11}”,”arg0”:”{\”tracking_id\”:\”100000000331770936\”,\”eleme_order_id\”:\”100000000331770936\”,\”platform_id\”:\”4\”,\”restaurant_id\”:\”482571\”,\”dish_num\”:1,\”dish_info\”:[{\”entity_id\”:142547763,\”quantity\”:1,\”category_id\”:1,\”dish_name\”:\”[0xe7][0x89][0xb9][0xe4][0xbb][0xb7][0xe8][0x85][0x8a][0xe5][0x91][0xb3][0xe5][0x8f][0x89][0xe7][0x83][0xa7][0xe5][0x8f][0x8c][0xe6][0x8b][0xbc][0xe7][0x85][0xb2][0xe4][0xbb][0x94][0xe9][0xa5][0xad]\”,\”price\”:31.0}],\”merchant_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”customer_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”created_at\”:1477896550,\”confirmed_at\”:1477896550,\”dishes_total_price\”:0.0,\”food_boxes_total_price\”:2.0,\”delivery_total_price\”:2.0,\”pay_amount\”:35.0,\”city_id\”:\”1\”}”}}’ <a href="http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc" target="_blank" rel="external">http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc</a></p>
+</blockquote>
+<p>ps：json串内层参数需要格式化</p>
+<h1 id="四、高级功能"><a href="#四、高级功能" class="headerlink" title="四、高级功能"></a>四、高级功能</h1><p>curl命令是一个功能强大的网络工具，它能够通过http、ftp等方式下载文件，也能够上传文件。其实curl远不止前面所说的那些功能，大家可以通过man curl阅读手册页获取更多的信息。类似的工具还有wget。</p>
+<p>curl命令使用了libcurl库来实现，libcurl库常用在C程序中用来处理HTTP请求，curlpp是libcurl的一个C++封装，这几个东西可以用在抓取网页、网络监控等方面的开发，而curl命令可以帮助来解决开发过程中遇到的问题。</p>
+<ul>
+<li>1，抓取页面内容到一个文件中</li>
+</ul>
+<p>curl -o home.html <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>   –将百度首页内容抓下到home.html中<br>curl -o #2_#1.jpg<a href="http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG</a></p>
+<p>由于A/B下的文件名都是001，002…，201，下载下来的文件重名，这样，自定义出来下载下来的文件名，就变成了这样：原来： A/001.JPG —-&gt; 下载后： 001-A.JPG 原来： B/001.JPG —&gt; 下载后： 001-B.JPG</p>
+<ul>
+<li>2，用-O（大写的），后面的url要具体到某个文件，不然抓不下来。还可以用正则来抓取东西</li>
+</ul>
+<p>curl -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
+<p>运行结果如下：</p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  1575  100  1575    0     0  14940      0 –:–:– –:–:– –:–:– 1538k<br>会在当前执行目录中生成一张bdlogo.gif的图片。</p>
+<p>curl -O <a href="http://XXXXX/screen[1-10].JPG" target="_blank" rel="external">http://XXXXX/screen[1-10].JPG</a>  –下载screen1.jpg~screen10.jpg</p>
+<ul>
+<li>3，模拟表单信息，模拟登录，保存cookie信息</li>
+</ul>
+<p>curl -c ./cookie_c.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
+<ul>
+<li>4，模拟表单信息，模拟登录，保存头信息</li>
+</ul>
+<p>curl -D ./cookie_D.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
+<p>-c(小写)产生的cookie和-D里面的cookie是不一样的。</p>
+<ul>
+<li>5，使用cookie文件</li>
+</ul>
+<p>curl -b ./cookie_c.txt <a href="http://www.XXXX.com/wp-admin" target="_blank" rel="external">http://www.XXXX.com/wp-admin</a></p>
+<ul>
+<li>6，断点续传，-C(大写)</li>
+</ul>
+<p>curl -C -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
+<ul>
+<li>7，传送数据,最好用登录页面测试，因为你传值过去后，curl回抓数据，你可以看到你传值有没有成功</li>
+</ul>
+<p>curl -d log=aaaa <a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
+<ul>
+<li>8，显示抓取错误，下面这个例子，很清楚的表明了。</li>
+</ul>
+<p>curl -f<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
+<p>curl: (22) The requested URL returned error: 404</p>
+<p>curl<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
+<p><html><head><title>404,not found</title></head></html></p>
+<ul>
+<li>9，伪造来源地址，有的网站会判断，请求来源地址，防止盗链。</li>
+</ul>
+<p>curl -e<a href="http://localhosthttp://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://localhosthttp://www.XXXX.com/wp-login.php</a></p>
+<ul>
+<li>10，当我们经常用curl去搞人家东西的时候，人家会把你的IP给屏蔽掉的,这个时候,我们可以用代理</li>
+</ul>
+<p>curl -x 24.10.28.84:32779 -o home.html<a href="http://www.XXXX.com" target="_blank" rel="external">http://www.XXXX.com</a></p>
+<ul>
+<li>11，比较大的东西，我们可以分段下载</li>
+</ul>
+<p>curl -r 0-100 -o img.part1<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a></p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0    105      0 –:–:– –:–:– –:–:–     0<br>curl -r 100-200 -o img.part2<a href="http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0     57      0  0:00:01  0:00:01 –:–:–     0<br>curl -r 200- -o img.part3<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  104k  100  104k    0     0  52793      0  0:00:02  0:00:02 –:–:– 88961</p>
+<p>ls |grep part | xargs du -sh</p>
+<p>4.0K    one.part1<br>112K    three.part3<br>4.0K    two.part2</p>
+<p>用的时候，把他们cat一下就OK,cat img.part* &gt;img.jpg</p>
+<ul>
+<li>12，不会显示下载进度信息</li>
+</ul>
+<p>curl -s -o aaa.jpg <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
+<ul>
+<li>13，显示下载进度条</li>
+</ul>
+<p>curl  -0 <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a>     (以http1.0协议请求)</p>
+<p>####################################################################### 100.0%</p>
+<ul>
+<li>14,通过ftp下载文件</li>
+</ul>
+<p>curl -u用户名:密码 -O<a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
+<p>curl -u 用户名:密码 -O <a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
+<p>或者用下面的方式</p>
+<p>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css<br>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css</p>
+<ul>
+<li>15，通过ftp上传</li>
+</ul>
+<p>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/<br>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/</p>
+<ul>
+<li>15,模拟浏览器头</li>
+</ul>
+<p>curl -A “Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)” -x 123.45.67.89:1080 -o page.html -D cookie0001.txt<a href="http://www.www.baidu.com" target="_blank" rel="external">http://www.www.baidu.com</a></p>
+<ul>
+<li>16,PUT、GET、POST</li>
+</ul>
+<p>比如 curl -T localfile <a href="http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT</a> method<br>刚才说到PUT，自然想起来了其他几种methos－－GET和POST。<br>http提交一个表单，比较常用的是POST模式和GET模式<br>GET模式什么option都不用，只需要把变量写在url里面就可以了<br>比如：<br>curl <a href="http://www.yahoo.com/login.cgi?user=nick&amp;password=12345" target="_blank" rel="external">http://www.yahoo.com/login.cgi?user=nick&amp;password=12345</a><br>而POST模式的option则是 -d<br>比如，curl -d “user=nick&amp;password=12345” <a href="http://www.yahoo.com/login.cgi" target="_blank" rel="external">http://www.yahoo.com/login.cgi</a><br>就相当于向这个站点发出一次登陆申请<del>~</del><br>到底该用GET模式还是POST模式，要看对面服务器的程序设定。<br>一点需要注意的是，POST模式下的文件上的文件上传，比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;form method=&quot;POST&quot; enctype=&quot;multipar/form-data&quot; action=&quot;http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi&quot;&gt;</div><div class="line">&lt;input type=file name=upload&gt;</div><div class="line">&lt;input type=submit name=nick value=&quot;go&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+<p>这样一个HTTP表单，我们要用curl进行模拟，就该是这样的语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -F upload=@localfile -F nick=go http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一、get请求&quot;&gt;&lt;a href=&quot;#一、get请求&quot; class=&quot;headerlink&quot; title=&quot;一、get请求&quot;&gt;&lt;/a&gt;一、get请求&lt;/h1&gt;&lt;p&gt;curl “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地&lt;br&gt;curl -i “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  显示全部信息&lt;br&gt;curl -l “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  只显示头部信息&lt;br&gt;curl -v “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  显示get请求全过程解析&lt;br&gt;wget “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“     也可以&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="curl" scheme="http://cuiqingwei.github.io/tags/curl/"/>
     
   </entry>
   
@@ -225,125 +391,6 @@
     
     
       <category term="FastDFS" scheme="http://cuiqingwei.github.io/tags/FastDFS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>curl模拟http发送get或post接口测试</title>
-    <link href="http://cuiqingwei.github.io/2017/12/05/2017-12-05-curl%E6%A8%A1%E6%8B%9Fhttp%E5%8F%91%E9%80%81get%E6%88%96post%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/"/>
-    <id>http://cuiqingwei.github.io/2017/12/05/2017-12-05-curl模拟http发送get或post接口测试/</id>
-    <published>2017-12-05T06:12:08.000Z</published>
-    <updated>2017-12-05T07:04:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="一、get请求"><a href="#一、get请求" class="headerlink" title="一、get请求"></a>一、get请求</h1><p>curl “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地<br>curl -i “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示全部信息<br>curl -l “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  只显示头部信息<br>curl -v “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示get请求全过程解析<br>wget “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     也可以</p>
-<a id="more"></a>
-<h1 id="二、post请求"><a href="#二、post请求" class="headerlink" title="二、post请求"></a>二、post请求</h1><p>curl -d “param1=value1&amp;param2=value2” “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“</p>
-<h1 id="三、json格式的post请求"><a href="#三、json格式的post请求" class="headerlink" title="三、json格式的post请求"></a>三、json格式的post请求</h1><p>curl -l -H “Content-type: application/json” -X POST -d ‘{“phone”:”13521389587”,”password”:”test”}’ <a href="http://domain/apis/users.json" target="_blank" rel="external">http://domain/apis/users.json</a></p>
-<blockquote>
-<p>例如：curl -l -H “Content-type: application/json” -X POST -d ‘{“ver”: “1.0”,”soa”:{“req”:”123”},”iface”:”me.ele.lpdinfra.prediction.service.PredictionService”,”method”:”restaurant_make_order_time”,”args”:{“arg2”:”\”stable\””,”arg1”:”{\”code\”:[\”WIND\”],\”temperature\”:11.11}”,”arg0”:”{\”tracking_id\”:\”100000000331770936\”,\”eleme_order_id\”:\”100000000331770936\”,\”platform_id\”:\”4\”,\”restaurant_id\”:\”482571\”,\”dish_num\”:1,\”dish_info\”:[{\”entity_id\”:142547763,\”quantity\”:1,\”category_id\”:1,\”dish_name\”:\”[0xe7][0x89][0xb9][0xe4][0xbb][0xb7][0xe8][0x85][0x8a][0xe5][0x91][0xb3][0xe5][0x8f][0x89][0xe7][0x83][0xa7][0xe5][0x8f][0x8c][0xe6][0x8b][0xbc][0xe7][0x85][0xb2][0xe4][0xbb][0x94][0xe9][0xa5][0xad]\”,\”price\”:31.0}],\”merchant_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”customer_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”created_at\”:1477896550,\”confirmed_at\”:1477896550,\”dishes_total_price\”:0.0,\”food_boxes_total_price\”:2.0,\”delivery_total_price\”:2.0,\”pay_amount\”:35.0,\”city_id\”:\”1\”}”}}’ <a href="http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc" target="_blank" rel="external">http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc</a></p>
-</blockquote>
-<p>ps：json串内层参数需要格式化</p>
-<h1 id="四、高级功能"><a href="#四、高级功能" class="headerlink" title="四、高级功能"></a>四、高级功能</h1><p>curl命令是一个功能强大的网络工具，它能够通过http、ftp等方式下载文件，也能够上传文件。其实curl远不止前面所说的那些功能，大家可以通过man curl阅读手册页获取更多的信息。类似的工具还有wget。</p>
-<p>curl命令使用了libcurl库来实现，libcurl库常用在C程序中用来处理HTTP请求，curlpp是libcurl的一个C++封装，这几个东西可以用在抓取网页、网络监控等方面的开发，而curl命令可以帮助来解决开发过程中遇到的问题。</p>
-<ul>
-<li>1，抓取页面内容到一个文件中</li>
-</ul>
-<p>curl -o home.html <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>   –将百度首页内容抓下到home.html中<br>curl -o #2_#1.jpg<a href="http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG</a></p>
-<p>由于A/B下的文件名都是001，002…，201，下载下来的文件重名，这样，自定义出来下载下来的文件名，就变成了这样：原来： A/001.JPG —-&gt; 下载后： 001-A.JPG 原来： B/001.JPG —&gt; 下载后： 001-B.JPG</p>
-<ul>
-<li>2，用-O（大写的），后面的url要具体到某个文件，不然抓不下来。还可以用正则来抓取东西</li>
-</ul>
-<p>curl -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<p>运行结果如下：</p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  1575  100  1575    0     0  14940      0 –:–:– –:–:– –:–:– 1538k<br>会在当前执行目录中生成一张bdlogo.gif的图片。</p>
-<p>curl -O <a href="http://XXXXX/screen[1-10].JPG" target="_blank" rel="external">http://XXXXX/screen[1-10].JPG</a>  –下载screen1.jpg~screen10.jpg</p>
-<ul>
-<li>3，模拟表单信息，模拟登录，保存cookie信息</li>
-</ul>
-<p>curl -c ./cookie_c.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>4，模拟表单信息，模拟登录，保存头信息</li>
-</ul>
-<p>curl -D ./cookie_D.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<p>-c(小写)产生的cookie和-D里面的cookie是不一样的。</p>
-<ul>
-<li>5，使用cookie文件</li>
-</ul>
-<p>curl -b ./cookie_c.txt <a href="http://www.XXXX.com/wp-admin" target="_blank" rel="external">http://www.XXXX.com/wp-admin</a></p>
-<ul>
-<li>6，断点续传，-C(大写)</li>
-</ul>
-<p>curl -C -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<ul>
-<li>7，传送数据,最好用登录页面测试，因为你传值过去后，curl回抓数据，你可以看到你传值有没有成功</li>
-</ul>
-<p>curl -d log=aaaa <a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>8，显示抓取错误，下面这个例子，很清楚的表明了。</li>
-</ul>
-<p>curl -f<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
-<p>curl: (22) The requested URL returned error: 404</p>
-<p>curl<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
-<p><html><head><title>404,not found</title></head></html></p>
-<ul>
-<li>9，伪造来源地址，有的网站会判断，请求来源地址，防止盗链。</li>
-</ul>
-<p>curl -e<a href="http://localhosthttp://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://localhosthttp://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>10，当我们经常用curl去搞人家东西的时候，人家会把你的IP给屏蔽掉的,这个时候,我们可以用代理</li>
-</ul>
-<p>curl -x 24.10.28.84:32779 -o home.html<a href="http://www.XXXX.com" target="_blank" rel="external">http://www.XXXX.com</a></p>
-<ul>
-<li>11，比较大的东西，我们可以分段下载</li>
-</ul>
-<p>curl -r 0-100 -o img.part1<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0    105      0 –:–:– –:–:– –:–:–     0<br>curl -r 100-200 -o img.part2<a href="http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0     57      0  0:00:01  0:00:01 –:–:–     0<br>curl -r 200- -o img.part3<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  104k  100  104k    0     0  52793      0  0:00:02  0:00:02 –:–:– 88961</p>
-<p>ls |grep part | xargs du -sh</p>
-<p>4.0K    one.part1<br>112K    three.part3<br>4.0K    two.part2</p>
-<p>用的时候，把他们cat一下就OK,cat img.part* &gt;img.jpg</p>
-<ul>
-<li>12，不会显示下载进度信息</li>
-</ul>
-<p>curl -s -o aaa.jpg <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<ul>
-<li>13，显示下载进度条</li>
-</ul>
-<p>curl  -0 <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a>     (以http1.0协议请求)</p>
-<p>####################################################################### 100.0%</p>
-<ul>
-<li>14,通过ftp下载文件</li>
-</ul>
-<p>curl -u用户名:密码 -O<a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
-<p>curl -u 用户名:密码 -O <a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
-<p>或者用下面的方式</p>
-<p>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css<br>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css</p>
-<ul>
-<li>15，通过ftp上传</li>
-</ul>
-<p>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/<br>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/</p>
-<ul>
-<li>15,模拟浏览器头</li>
-</ul>
-<p>curl -A “Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)” -x 123.45.67.89:1080 -o page.html -D cookie0001.txt<a href="http://www.www.baidu.com" target="_blank" rel="external">http://www.www.baidu.com</a></p>
-<ul>
-<li>16,PUT、GET、POST</li>
-</ul>
-<p>比如 curl -T localfile <a href="http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT</a> method<br>刚才说到PUT，自然想起来了其他几种methos－－GET和POST。<br>http提交一个表单，比较常用的是POST模式和GET模式<br>GET模式什么option都不用，只需要把变量写在url里面就可以了<br>比如：<br>curl <a href="http://www.yahoo.com/login.cgi?user=nick&amp;password=12345" target="_blank" rel="external">http://www.yahoo.com/login.cgi?user=nick&amp;password=12345</a><br>而POST模式的option则是 -d<br>比如，curl -d “user=nick&amp;password=12345” <a href="http://www.yahoo.com/login.cgi" target="_blank" rel="external">http://www.yahoo.com/login.cgi</a><br>就相当于向这个站点发出一次登陆申请<del>~</del><br>到底该用GET模式还是POST模式，要看对面服务器的程序设定。<br>一点需要注意的是，POST模式下的文件上的文件上传，比如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;form method=&quot;POST&quot; enctype=&quot;multipar/form-data&quot; action=&quot;http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi&quot;&gt;</div><div class="line">&lt;input type=file name=upload&gt;</div><div class="line">&lt;input type=submit name=nick value=&quot;go&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
-<p>这样一个HTTP表单，我们要用curl进行模拟，就该是这样的语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -F upload=@localfile -F nick=go http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;一、get请求&quot;&gt;&lt;a href=&quot;#一、get请求&quot; class=&quot;headerlink&quot; title=&quot;一、get请求&quot;&gt;&lt;/a&gt;一、get请求&lt;/h1&gt;&lt;p&gt;curl “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地&lt;br&gt;curl -i “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  显示全部信息&lt;br&gt;curl -l “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  只显示头部信息&lt;br&gt;curl -v “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  显示get请求全过程解析&lt;br&gt;wget “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“     也可以&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="curl" scheme="http://cuiqingwei.github.io/tags/curl/"/>
     
   </entry>
   
@@ -1255,48 +1302,6 @@
       <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
     
       <category term="GoAhead" scheme="http://cuiqingwei.github.io/tags/GoAhead/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Contiki-CC2538-CoAP</title>
-    <link href="http://cuiqingwei.github.io/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/"/>
-    <id>http://cuiqingwei.github.io/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/</id>
-    <published>2016-11-17T13:04:40.000Z</published>
-    <updated>2017-02-22T11:15:35.000Z</updated>
-    
-    <content type="html"><![CDATA[<div align="center"><br><iframe height="498" width="510" src="http://player.youku.com/embed/XMTgyNDA3NDAzNg==" frameborder="0" 'allowfullscreen'=""></iframe><br></div>
-
-<a id="more"></a>
-<h1 id="Mote1"><a href="#Mote1" class="headerlink" title="Mote1"></a>Mote1</h1><h3 id="build-rp-border-router"><a href="#build-rp-border-router" class="headerlink" title="build rp-border-router"></a>build rp-border-router</h3><p>cd ~<br>cd contiki/examples/ipv6/rpl-border-router</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">user@instant-contiki:~/contiki/examples/ipv6/rpl-border-router$ git diff .</div><div class="line">diff --git a/examples/ipv6/rpl-border-router/border-router.c b/examples/ipv6/rpl</div><div class="line">index 90b1fdf..f7d565c 100644</div><div class="line">--- a/examples/ipv6/rpl-border-router/border-router.c</div><div class="line">+++ b/examples/ipv6/rpl-border-router/border-router.c</div><div class="line">@@ -54,7 +54,8 @@</div><div class="line"> #include &lt;string.h&gt;</div><div class="line"> #include &lt;ctype.h&gt;</div><div class="line">-#define DEBUG DEBUG_NONE</div><div class="line">+//#define DEBUG DEBUG_NONE</div><div class="line">+#define DEBUG DEBUG_PRINT</div><div class="line"> #include &quot;net/ip/uip-debug.h&quot;</div><div class="line"> static uip_ipaddr_t prefix;</div><div class="line">diff --git a/examples/ipv6/rpl-border-router/project-conf.h b/examples/ipv6/rpl-</div><div class="line">index ec3eb3f..1f4f8c9 100644</div><div class="line">--- a/examples/ipv6/rpl-border-router/project-conf.h</div><div class="line">+++ b/examples/ipv6/rpl-border-router/project-conf.h</div><div class="line">@@ -64,4 +64,7 @@</div><div class="line"> #define WEBSERVER_CONF_CFS_CONNS 2</div><div class="line"> #endif</div><div class="line">+//#define RF_CORE_CONF_CHANNEL    25</div><div class="line">+#define RF_CORE_CONF_CHANNEL    26</div><div class="line">+</div><div class="line"> #endif /* PROJECT_ROUTER_CONF_H_ */</div></pre></td></tr></table></figure>
-<p>make TARGET=cc2538dk all</p>
-<h3 id="program-cc2538-select-reset-on-CC2538DK"><a href="#program-cc2538-select-reset-on-CC2538DK" class="headerlink" title="program cc2538,(select + reset on CC2538DK)"></a>program cc2538,(select + reset on CC2538DK)</h3><p>../../../tools/cc2538-bsl/cc2538-bsl.py -v -e -w border-router.bin</p>
-<h3 id="push-reset-button-see-console-print"><a href="#push-reset-button-see-console-print" class="headerlink" title="push reset button, see console print"></a>push reset button, see console print</h3><p>../../../tools/sky/serialdump-linux -b115200 /dev/ttyUSB0</p>
-<h1 id="Mote2"><a href="#Mote2" class="headerlink" title="Mote2"></a>Mote2</h1><h3 id="build-er-rest-example"><a href="#build-er-rest-example" class="headerlink" title="build er-rest-example"></a>build er-rest-example</h3><p>cd ~<br>cd contiki/examples/er-rest-example<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">user@instant-contiki:~/contiki/examples/er-rest-example$ git diff .</div><div class="line">diff --git a/examples/er-rest-example/project-conf.h b/examples/er-rest-example/project-conf.h</div><div class="line">index adcb75e..facd2fb 100644</div><div class="line">--- a/examples/er-rest-example/project-conf.h</div><div class="line">+++ b/examples/er-rest-example/project-conf.h</div><div class="line">@@ -40,25 +40,26 @@</div><div class="line"> #define __PROJECT_ERBIUM_CONF_H__</div><div class="line"></div><div class="line"> /* Custom channel and PAN ID configuration for your project. */</div><div class="line">-/*</div><div class="line">+</div><div class="line">    #undef RF_CHANNEL</div><div class="line">    #define RF_CHANNEL                     26</div><div class="line"></div><div class="line">    #undef IEEE802154_CONF_PANID</div><div class="line">    #define IEEE802154_CONF_PANID          0xABCD</div><div class="line">- */</div><div class="line">+</div><div class="line"> /* IP buffer size must match all other hops, in particular the border router. */</div><div class="line">-/*</div><div class="line">+</div><div class="line">    #undef UIP_CONF_BUFFER_SIZE</div><div class="line">    #define UIP_CONF_BUFFER_SIZE           256</div><div class="line">- */</div><div class="line">+</div><div class="line"> /* Disabling RDC and CSMA for demo purposes. Core updates often</div><div class="line">    require more memory. */</div><div class="line"> /* For projects, optimize memory and enable RDC and CSMA again. */</div><div class="line"> #undef NETSTACK_CONF_RDC</div><div class="line">-#define NETSTACK_CONF_RDC              nullrdc_driver</div><div class="line">+//#define NETSTACK_CONF_RDC              nullrdc_driver</div><div class="line">+#define NETSTACK_CONF_RDC              contikimac_driver</div><div class="line"> #undef RPL_CONF_MAX_DAG_PER_INSTANCE</div><div class="line"> #define RPL_CONF_MAX_DAG_PER_INSTANCE     1</div><div class="line">@@ -68,7 +69,8 @@</div><div class="line"> #define UIP_CONF_TCP                   0</div><div class="line"> #undef NETSTACK_CONF_MAC</div><div class="line">-#define NETSTACK_CONF_MAC     nullmac_driver</div><div class="line">+//#define NETSTACK_CONF_MAC     nullmac_driver</div><div class="line">+#define NETSTACK_CONF_MAC     csma_driver</div><div class="line"> /* Increase rpl-border-router IP-buffer when using more than 64. */</div><div class="line"> #undef REST_MAX_CHUNK_SIZE</div></pre></td></tr></table></figure></p>
-<p>make TARGET=cc2538dk all</p>
-<h3 id="program-cc2538-select-reset-on-CC2538DK-1"><a href="#program-cc2538-select-reset-on-CC2538DK-1" class="headerlink" title="program cc2538,(select + reset on CC2538DK)"></a>program cc2538,(select + reset on CC2538DK)</h3><p>../../../tools/cc2538-bsl/cc2538-bsl.py -p /dev/ttyUSB1 -v -e -w er-example-server.bin</p>
-<h3 id="push-reset-button-see-console-print-1"><a href="#push-reset-button-see-console-print-1" class="headerlink" title="push reset button, see console print"></a>push reset button, see console print</h3><p>../../../tools/sky/serialdump-linux -b115200 /dev/ttyUSB1</p>
-<h1 id="run-tunslip6"><a href="#run-tunslip6" class="headerlink" title="run tunslip6"></a>run tunslip6</h1><p>cd ~<br>cd contiki/examples/ipv6/rpl-border-router</p>
-<p>sudo ../../../tools/tunslip6 aaaa::1/64 -s /dev/ttyUSB0</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">********SLIP started on ``/dev/ttyUSB0&apos;&apos;</div><div class="line">opened tun device ``/dev/tun0&apos;&apos;</div><div class="line">ifconfig tun0 inet `hostname` mtu 1500 up</div><div class="line">ifconfig tun0 add aaaa::1/64</div><div class="line">ifconfig tun0 add fe80::0:0:0:1/64</div><div class="line">ifconfig tun0</div><div class="line">tun0      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  </div><div class="line">          inet addr:127.0.1.1  P-t-P:127.0.1.1  Mask:255.255.255.255</div><div class="line">          inet6 addr: fe80::1/64 Scope:Link</div><div class="line">          inet6 addr: aaaa::1/64 Scope:Global</div><div class="line">          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1</div><div class="line">          RX packets:0 errors:0 dropped:0 overruns:0 frame:0</div><div class="line">          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0</div><div class="line">          collisions:0 txqueuelen:500</div><div class="line">          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)</div><div class="line"></div><div class="line">*** Address:aaaa::1 =&gt; aaaa:0000:0000:0000</div><div class="line">Got configuration message of type P</div><div class="line">Setting prefix aaaa::</div><div class="line">created a new RPL dag</div><div class="line">Server IPv6 addresses:</div><div class="line"> aaaa::212:4b00:5af:8444</div><div class="line"> fe80::212:4b00:5af:8444</div></pre></td></tr></table></figure>
-<h1 id="ping6"><a href="#ping6" class="headerlink" title="ping6"></a>ping6</h1><p>ping6 aaaa::212:4b00:5af:84e0</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">PING aaaa::212:4b00:5af:84e0(aaaa::212:4b00:5af:84e0) 56 data bytes</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=1 ttl=63 time=1013 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=2 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=3 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=4 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=5 ttl=63 time=125 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=6 ttl=63 time=120 ms</div></pre></td></tr></table></figure>
-<h1 id="firefox"><a href="#firefox" class="headerlink" title="firefox"></a>firefox</h1><p><img src="/img/20161117/coap1.png" alt=""><br><img src="/img/20161117/coap2.png" alt=""></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;div align = &quot;center&quot;&gt;&lt;br&gt;&lt;iframe height=498 width=510 src=&#39;http://player.youku.com/embed/XMTgyNDA3NDAzNg==&#39; frameborder=0 &#39;allowfullscreen&#39;&gt;&lt;/iframe&gt;&lt;br&gt;&lt;/div&gt;
-    
-    </summary>
-    
-    
-      <category term="Contiki" scheme="http://cuiqingwei.github.io/tags/Contiki/"/>
-    
-      <category term="CC2538" scheme="http://cuiqingwei.github.io/tags/CC2538/"/>
-    
-      <category term="CoAP" scheme="http://cuiqingwei.github.io/tags/CoAP/"/>
     
   </entry>
   
