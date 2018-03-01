@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="cuiqingwei" />
+
+
+
+<meta name="description" content="vim的学习曲线相当的大（参看各种文本编辑器的学习曲线），所以，如果你一开始看到的是一大堆VIM的命令分类，你一定会对这个编辑器失去兴趣的。下面的文章翻译自《Learn Vim Progressively》，我觉得这是给新手最好的VIM的升级教程了，没有列举所有的命令，只是列举了那些最有用的命令。非常不错!">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim循序渐进">
+<meta property="og:url" content="http://cuiqingwei.github.io/2012/08/08/2012-08-08-vim循序渐进/index.html">
+<meta property="og:site_name" content="iZheteng">
+<meta property="og:description" content="vim的学习曲线相当的大（参看各种文本编辑器的学习曲线），所以，如果你一开始看到的是一大堆VIM的命令分类，你一定会对这个编辑器失去兴趣的。下面的文章翻译自《Learn Vim Progressively》，我觉得这是给新手最好的VIM的升级教程了，没有列举所有的命令，只是列举了那些最有用的命令。非常不错!">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20120808/word_moves.jpg">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20120808/line_moves.jpg">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20120808/textobjects.png">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20120808/rectangular-blocks.gif">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20120808/completion.gif">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20120808/macros.gif">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20120808/autoindent.gif">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20120808/append-to-many-lines.gif">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20120808/split.gif">
+<meta property="og:updated_time" content="2018-03-01T18:39:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vim循序渐进">
+<meta name="twitter:description" content="vim的学习曲线相当的大（参看各种文本编辑器的学习曲线），所以，如果你一开始看到的是一大堆VIM的命令分类，你一定会对这个编辑器失去兴趣的。下面的文章翻译自《Learn Vim Progressively》，我觉得这是给新手最好的VIM的升级教程了，没有列举所有的命令，只是列举了那些最有用的命令。非常不错!">
+<meta name="twitter:image" content="http://cuiqingwei.github.io/img/20120808/word_moves.jpg">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="iZheteng" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>vim循序渐进 | iZheteng</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9648942fbef87fb71c7420365857d971";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="https://avatars1.githubusercontent.com/u/894023?v=3&amp;u=5fa799d34b2474ac0de5d6a3454f215c54517057&amp;s=140" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">cuiqingwei</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">Enjoy work, Enjoy life!</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="/404.html">404公益</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:qingwei_cui@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/cuiqingwei" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa LinkedIn" href="https://cn.linkedin.com/in/庆伟-崔-63b69aa9" title="LinkedIn"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/6lbr/">6lbr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/6lowpan/">6lowpan</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ASP-NET/">ASP.NET</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/">Altium Designer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-Builder6-0/">C++Builder6.0</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2430/">CC2430</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2530/">CC2530</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2538/">CC2538</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CoAP/">CoAP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Contiki/">Contiki</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cooja/">Cooja</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DCS、PLC/">DCS、PLC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DIY/">DIY</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Delphi/">Delphi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eagle/">Eagle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FastDFS/">FastDFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPL/">GPL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub-Pages/">GitHub Pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GoAhead/">GoAhead</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HAP-NodeJS/">HAP-NodeJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HomeKit/">HomeKit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hybird/">Hybird</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IIS/">IIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ionic/">Ionic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jekyll/">Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MEAN/">MEAN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/">MacOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MkDocs/">MkDocs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenWRT/">OpenWRT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PMS/">PMS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Proteus/">Proteus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry-Pi/">Raspberry Pi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLite/">SQLite</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSM/">SSM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/">Socket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Travis-CI/">Travis CI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/USBHID/">USBHID</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WiFi评测工具/">WiFi评测工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZigBee/">ZigBee</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/curl/">curl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/goAhead/">goAhead</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali-linux/">kali-linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linkit-smart-7688/">linkit-smart-7688</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/patch/">patch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vi-vim/">vi/vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三星平板/">三星平板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/串口调试工具/">串口调试工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/传感器/">传感器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/体会/">体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创客/">创客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单车装备/">单车装备</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/嵌入式/">嵌入式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开发语言/">开发语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开源硬件/">开源硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/折叠公路车/">折叠公路车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/折腾/">折腾</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/晶振/">晶振</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/智能家居/">智能家居</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最简主义/">最简主义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/经典网站/">经典网站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络命令/">网络命令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/路亚/">路亚</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/路由器SDK/">路由器SDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/骑行/">骑行</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://cuiqingwei1981.github.io/">iZheteng</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">我是一个爱折腾的人</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">cuiqingwei</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="https://avatars1.githubusercontent.com/u/894023?v=3&amp;u=5fa799d34b2474ac0de5d6a3454f215c54517057&amp;s=140" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">cuiqingwei</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">Enjoy work, Enjoy life!</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="/404.html">404公益</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:qingwei_cui@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/cuiqingwei" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" href="https://cn.linkedin.com/in/庆伟-崔-63b69aa9" title="LinkedIn"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-2012-08-08-vim循序渐进" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2012/08/08/2012-08-08-vim循序渐进/" class="article-date">
+      <time datetime="2012-08-08T08:50:00.000Z" itemprop="datePublished">2012-08-08</time>
+</a>
+
+ 
+    <a href="/2012/08/08/2012-08-08-vim循序渐进/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vim循序渐进
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vi-vim/">vi/vim</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <blockquote>
+<p>vim的学习曲线相当的大（参看<a href="http://coolshell.cn/articles/3125.html" target="_blank" rel="external">各种文本编辑器的学习曲线</a>），所以，如果你一开始看到的是一大堆VIM的命令分类，你一定会对这个编辑器失去兴趣的。下面的文章翻译自《<a href="http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/" target="_blank" rel="external">Learn Vim Progressively</a>》，我觉得这是给新手最好的VIM的升级教程了，没有列举所有的命令，只是列举了那些最有用的命令。非常不错!</p>
+</blockquote>
+<a id="more"></a>
+<p>你想以最快的速度学习人类史上最好的文本编辑器VIM吗？你先得懂得如何在VIM幸存下来，然后一点一点地学习各种戏法。<br>学习 <strong><a href="http://www.vim.org/" target="_blank" rel="external">vim</a></strong> 并且其会成为你最后一个使用的文本编辑器。没有比这个更好的文本编辑器了，非常地难学，但是却不可思议地好用。</p>
+<p>我建议下面这四个步骤：</p>
+<ol>
+<li>存活</li>
+<li>感觉良好</li>
+<li>觉得更好，更强，更快</li>
+<li>使用VIM的超能力</li>
+</ol>
+<p>当你走完这篇文章，你会成为一个vim的 superstar。</p>
+<p>在开始学习以前，我需要给你一些警告：</p>
+<ul>
+<li>学习vim在开始时是痛苦的。</li>
+<li>需要时间</li>
+<li>需要不断地练习，就像你学习一个乐器一样。</li>
+<li>不要期望你能在3天内把vim练得比别的编辑器更有效率。</li>
+<li>事实上，你需要2周时间的苦练，而不是3天。</li>
+</ul>
+<h3 id="第一级-–-存活"><a href="#第一级-–-存活" class="headerlink" title="第一级 – 存活"></a>第一级 – 存活</h3><ol>
+<li>安装 vim</li>
+<li>启动 vim</li>
+<li>什么也别干！请先阅读</li>
+</ol>
+<p>当你安装好一个编辑器后，你一定会想在其中输入点什么东西，然后看看这个编辑器是什么样子。但vim不是这样的，请按照下面的命令操作：</p>
+<ul>
+<li>启动vim后，vim在 Normal 模式下。</li>
+<li>让我们进入 Insert 模式，请按下键 i 。(你会看到vim左下角有一个–insert–字样，表示，你可以以插入的方式输入了）</li>
+<li>此时，你可以输入文本了，就像你用“记事本”一样。</li>
+<li>如果你想返回 Normal 模式，请按 <font color="red">ESC</font> 键。</li>
+</ul>
+<p>现在，你知道如何在 Insert 和 Normal 模式下切换了。下面是一些命令，可以让你在 Normal 模式下幸存下来：</p>
+<blockquote>
+<p><font color="red">i</font> → Insert 模式，按 <font color="red">ESC</font> 回到 Normal 模式.<br> <font color="red">x</font> → 删当前光标所在的一个字符。<br> <font color="red">:wq</font> → 存盘 + 退出 (<font color="red">:w</font> 存盘, <font color="red">:q</font> 退出)   （注：:w 后可以跟文件名）<br> <font color="red">dd</font> → 删除当前行，并把删除的行存到剪贴板里<br> <font color="red">p</font> → 粘贴剪贴板</p>
+<p><strong>推荐:</strong><br> <font color="red">hjkl</font> (强例推荐使用其移动光标，但不必需) →你也可以使用光标键 (←↓↑→). (j就像下箭头)<br> <font color="red">:help command</font> → 显示相关命令的帮助。你也可以就输入 <font color="red">:help</font> 而不跟命令。（退出帮助需要输入:q）</p>
+</blockquote>
+<p>你能在vim幸存下来只需要上述的那5个命令，你就可以编辑文本了，你一定要把这些命令练成一种下意识的状态。于是你就可以开始进阶到第二级了。</p>
+<p>当是，在你进入第二级时，需要再说一下 Normal 模式。在一般的编辑器下，当你需要copy一段文字的时候，你需要使用 <font color="red">Ctrl</font> 键，比如：<font color="red">Ctrl-C</font>。也就是说，Ctrl键就好像功能键一样，当你按下了功能键Ctrl后，C就不在是C了，而且就是一个命令或是一个快键键了，在VIM的Normal模式下，所有的键就是功能键了。这个你需要知道。</p>
+<p>标记:</p>
+<blockquote>
+<p>下面的文字中，如果是 <font color="red">Ctrl-λ</font> 我会写成 <font color="red">C-λ</font>.<br> 以 <font color="red">:</font> 开始的命令你需要输入 <font color="red">Enter</font> 回车，例如 - 如果我写成 <font color="red">:q</font> 也就是说你要输入 <font color="red">:q</font> Enter.</p>
+</blockquote>
+<h3 id="第二级-–-感觉良好"><a href="#第二级-–-感觉良好" class="headerlink" title="第二级 – 感觉良好"></a>第二级 – 感觉良好</h3><p>上面的那些命令只能让你存活下来，现在是时候学习一些更多的命令了，下面是我的建议：（所有的命令都需要在Normal模式下使用，如果你不知道现在在什么样的模式，你就狂按几次ESC键）</p>
+<p><strong>1.各种插入模式</strong></p>
+<blockquote>
+<p><font color="red">a</font> → 在光标后插入<br> <font color="red">o</font> → 在当前行后插入一个新行<br> <font color="red">O</font> → 在当前行前插入一个新行<br> <font color="red">cw</font> → 替换从光标所在位置后到一个单词结尾的字符</p>
+</blockquote>
+<p><strong>2.简单的移动光标</strong></p>
+<blockquote>
+<p><font color="red">0</font> → 数字零，到行头<br> <font color="red">^</font> → 到本行第一个不是blank字符的位置（所谓blank字符就是空格，tab，换行，回车等）<br> <font color="red">$</font> → 到本行行尾<br> <font color="red">g</font>_ → 到本行最后一个不是blank字符的位置。<br> <font color="red">/pattern</font> → 搜索 pattern 的字符串（陈皓注：如果搜索出多个匹配，可按n键到下一个）</p>
+</blockquote>
+<p><strong>3.拷贝/粘贴</strong> （p/P都可以，p是表示在当前位置之后，P表示在当前位置之前）</p>
+<blockquote>
+<p><font color="red">P</font> → 粘贴<br> <font color="red">yy</font> → 拷贝当前行（<font color="red">ddP</font> 相当于后移一行)</p>
+</blockquote>
+<p><strong>4.Undo/Redo</strong></p>
+<blockquote>
+<p><font color="red">u</font> → undo<br> <font color="red">C-r</font> → redo</p>
+</blockquote>
+<p><strong>5.打开/保存/退出/改变文件</strong>(Buffer)</p>
+<blockquote>
+<p><font color="red">:e</font> path/to/file → 打开一个文件<br> <font color="red">:w</font> → 存盘<br> <font color="red">:saveas</font> path/to/file → 另存为 path/to/file<br> <font color="red">:x， ZZ</font> 或 font color=red&gt;:wq → 保存并退出 (:x 表示仅在需要时保存，ZZ不需要输入冒号并回车)<br> <font color="red">:q!</font> → 退出不保存 font color=red&gt;:qa! 强行退出所有的正在编辑的文件，就算别的文件有更改。<br> <font color="red">:bn</font> 和 <font color="red">:bp</font> → 你可以同时打开很多文件，使用这两个命令来切换下一个或上一个文件。（我喜欢使用:n到下一个文件）</p>
+</blockquote>
+<p>花点时间熟悉一下上面的命令，一旦你掌握他们了，你就几乎可以干其它编辑器都能干的事了。但是到现在为止，你还是觉得使用vim还是有点笨拙，不过没关系，你可以进阶到第三级了。</p>
+<h3 id="第三级-–-更好，更强，更快"><a href="#第三级-–-更好，更强，更快" class="headerlink" title="第三级 – 更好，更强，更快"></a>第三级 – 更好，更强，更快</h3><p>先恭喜你！你干的很不错。我们可以开始一些更为有趣的事了。在第三级，我们只谈那些和vi可以兼容的命令。</p>
+<p><strong>更好</strong></p>
+<p>下面，让我们看一下vim是怎么重复自己的：</p>
+<ol>
+<li>. → (小数点) 可以重复上一次的命令</li>
+<li>N command  → 重复某个命令N次</li>
+</ol>
+<p>下面是一个示例，找开一个文件你可以试试下面的命令：</p>
+<blockquote>
+<p><font color="red">2dd</font> → 删除2行<br> <font color="red">3p</font> → 粘贴文本3次<br> <font color="red">100idesu [ESC]</font> → 会写下 “desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu “<br> <font color="red">.</font> → 重复上一个命令—— 100 “desu “.<br> <font color="red">3.</font>  → 重复 3 次 “desu” (注意：不是 300，你看，VIM多聪明啊).</p>
+</blockquote>
+<p><strong>更强</strong></p>
+<p>你要让你的光标移动更有效率，你一定要了解下面的这些命令，千万别跳过。</p>
+<blockquote>
+<p>N<font color="red">G</font> → 到第 N 行 （陈皓注：注意命令中的G是大写的，另我一般使用 : N 到第N行，如 :137 到第137行）</p>
+<p><font color="red">gg</font> → 到第一行。（陈皓注：相当于1G，或 :1）</p>
+<p><font color="red">G</font> → 到最后一行。<br>按单词移动：</p>
+<p><font color="red">w</font> → 到下一个单词的开头。</p>
+<p><font color="red">e</font> → 到下一个单词的结尾。</p>
+</blockquote>
+<p>如果你认为单词是由默认方式，那么就用小写的e和w。默认上来说，一个单词由字母，数字和下划线组成（注：程序变量）<br>如果你认为单词是由blank字符分隔符，那么你需要使用大写的E和W。（注：程序语句）</p>
+<p><img src="/img/20120808/word_moves.jpg" alt=""></p>
+<p>下面，让我来说说最强的光标移动：</p>
+<blockquote>
+<p><font color="red">%</font> : 匹配括号移动，包括 <font color="red">(, {, [.</font> （注：你需要把光标先移到括号上）<br> <font color="red">*</font> 和 <font color="red">#</font> :  匹配光标当前所在的单词，移动光标到下一个（或上一个）匹配单词（*是下一个，#是上一个）<br>相信我，上面这三个命令对程序员来说是相当强大的。</p>
+</blockquote>
+<p><strong>更快</strong></p>
+<p>你一定要记住光标的移动，因为很多命令都可以和这些移动光标的命令连动。很多命令都可以如下来干：</p>
+<font color="red">&lt;start position&gt;&lt;command&gt;&lt;end position&gt;</font>
+
+<p>例如 <font color="red">0y$</font> 命令意味着：</p>
+<blockquote>
+<p><font color="red">0</font> → 先到行头<br> <font color="red">y</font> → 从这里开始拷贝<br> <font color="red">$</font> → 拷贝到本行最后一个字符</p>
+</blockquote>
+<p>你可可以输入 <font color="red">ye</font>，从当前位置拷贝到本单词的最后一个字符。</p>
+<p>你也可以输入 <font color="red">y2/foo</font> 来拷贝2个 “foo” 之间的字符串。</p>
+<p>还有很多时间并不一定你就一定要按y才会拷贝，下面的命令也会被拷贝：</p>
+<blockquote>
+<p><font color="red">d</font> (删除 )<br> <font color="red">v</font> (可视化的选择)<br> <font color="red">gU</font> (变大写)<br> <font color="red">gu</font> (变小写)<br> 等等</p>
+</blockquote>
+<p>（可视化选择是一个很有意思的命令，你可以先按v，然后移动光标，你就会看到文本被选择，然后，你可能d，也可y，也可以变大写等）</p>
+<h3 id="第四级-–-Vim-超能力"><a href="#第四级-–-Vim-超能力" class="headerlink" title="第四级 – Vim 超能力"></a>第四级 – Vim 超能力</h3><p>你只需要掌握前面的命令，你就可以很舒服的使用VIM了。但是，现在，我们向你介绍的是VIM杀手级的功能。下面这些功能是我只用vim的原因。</p>
+<p>在当前行上移动光标: <font color="red">0 ^ $ f F t T , ;</font></p>
+<blockquote>
+<p><font color="red">0</font> → 到行头<br> <font color="red">^</font> → 到本行的第一个非blank字符<br> <font color="red">$</font> → 到行尾<br> <font color="red">g_</font> → 到本行最后一个不是blank字符的位置。<br> <font color="red">fa</font> → 到下一个为a的字符处，你也可以fs到下一个为s的字符。<br> <font color="red">t,</font> → 到逗号前的第一个字符。逗号可以变成其它字符。<br> <font color="red">3fa</font> → 在当前行查找第三个出现的a。<br> <font color="red">F</font> 和 <font color="red">T</font>  → 和 <font color="red">f</font> 和 <font color="red">t</font> 一样，只不过是相反方向。</p>
+</blockquote>
+<p><img src="/img/20120808/line_moves.jpg" alt=""></p>
+<p>还有一个很有用的命令是 <font color="red">dt”</font> → 删除所有的内容，直到遇到双引号—— <font color="red">“</font>。</p>
+<p>区域选择 <font color="red">&lt;action&gt;a&lt;object&gt;</font> 或 <font color="red">&lt;action&gt;i&lt;object&gt;</font></p>
+<p>在visual 模式下，这些命令很强大，其命令格式为</p>
+<font color="red">&lt;action&gt;a&lt;object&gt;</font> 和 <font color="red">&lt;action&gt;i&lt;object&gt;</font>
+
+<ul>
+<li>action可以是任何的命令，如 <font color="red">d</font> (删除), <font color="red">y</font> (拷贝), <font color="red">v</font> (可以视模式选择)。</li>
+<li>object 可能是： <font color="red">w</font> 一个单词，<font color="red">W</font> 一个以空格为分隔的单词，<font color="red">s</font> 一个句字，<font color="red">p</font> 一个段落。也可以是一个特别的字符：<font color="red">“、 ‘、 )、 }、 ]。</font></li>
+</ul>
+<p>假设你有一个字符串 <font color="red">(map (+) (“foo”))</font>.而光标键在第一个 <font color="red">o</font> 的位置。</p>
+<blockquote>
+<p><font color="red">vi”</font> → 会选择 foo.<br> <font color="red">va”</font> → 会选择 “foo”.<br> <font color="red">vi)</font> → 会选择 “foo”.<br> <font color="red">va)</font> → 会选择(“foo”).<br> <font color="red">v2i)</font> → 会选择 map (+) (“foo”)<br> <font color="red">v2a)</font> → 会选择 (map (+) (“foo”))</p>
+</blockquote>
+<p><img src="/img/20120808/textobjects.png" alt=""></p>
+<p>块操作: <font color="red">C-v</font><br>块操作，典型的操作： 0 <font color="red">C-v</font> <font color="red">C-d</font> I– [ESC]</p>
+<blockquote>
+<p><font color="red">^</font> → 到行头<br> <font color="red">C-v</font> → 开始块操作<br> <font color="red">C-d</font> → 向下移动 (你也可以使用hjkl来移动光标，或是使用%，或是别的)<br> <font color="red">I– [ESC]</font> → I是插入，插入“<font color="red">–</font>”，按ESC键来为每一行生效。 </p>
+</blockquote>
+<p><img src="/img/20120808/rectangular-blocks.gif" alt=""></p>
+<p>在Windows下的vim，你需要使用 <font color="red">C-q</font> 而不是 <font color="red">C-v</font> ，<font color="red">C-v</font> 是拷贝剪贴板。</p>
+<p><strong>自动提示：</strong> <font color="red">C-n</font> 和 <font color="red">C-p</font></p>
+<p>在 Insert 模式下，你可以输入一个词的开头，然后按 <font color="red">C-p</font>或是<font color="red">C-n</font>，自动补齐功能就出现了……</p>
+<p><img src="/img/20120808/completion.gif" alt=""></p>
+<p>宏录制： <font color="red">qa</font> 操作序列 <font color="red">q, @a, @@</font></p>
+<p><font color="red">qa</font> 把你的操作记录在寄存器 <font color="red">a</font>。<br>于是 <font color="red">@a</font> 会replay被录制的宏。</p>
+<p><font color="red">@@</font> 是一个快捷键用来replay最新录制的宏。</p>
+<blockquote>
+<p><strong>示例</strong><br>在一个只有一行且这一行只有“1”的文本中，键入如下命令：</p>
+<p><font color="red">qaYp&lt;C-a&gt;q</font>→<br> <font color="red">qa</font> 开始录制<br> <font color="red">Yp</font> 复制行.<br> <font color="red">C-a</font> 增加1.<br> <font color="red">q</font> 停止录制.<br> <font color="red">@a</font> → 在1下面写下 2<br> <font color="red">@@</font> → 在2 正面写下3<br> 现在做 <font color="red">100@@</font> 会创建新的100行，并把数据增加到 103.</p>
+</blockquote>
+<p><img src="/img/20120808/macros.gif" alt=""></p>
+<p>可视化选择： <font color="red">v,V, C-v</font><br>前面，我们看到了 <font color="red">C-v</font> 的示例 （在Windows下应该是<font color="red">C-q</font>），我们可以使用 <font color="red">v</font> 和 <font color="red">V</font>。一但被选好了，你可以做下面的事：</p>
+<blockquote>
+<p><font color="red">J</font> → 把所有的行连接起来（变成一行）<br> <font color="red">&lt;</font> 或 <font color="red">&gt;</font> → 左右缩进<br> <font color="red">=</font> → 自动给缩进 （这个功能相当强大，我太喜欢了）</p>
+</blockquote>
+<p><img src="/img/20120808/autoindent.gif" alt=""></p>
+<p>在所有被选择的行后加上点东西：</p>
+<blockquote>
+<p><font color="red">C-v</font><br> 选中相关的行 (可使用 <font color="red">j</font> 或 <font color="red">C-d</font> 或是 <font color="red">/pattern</font> 或是 <font color="red">%</font> 等……)<br> <font color="red">$</font> 到行最后<br> <font color="red">A</font>, 输入字符串，按 <font color="red">ESC</font>。</p>
+</blockquote>
+<p><img src="/img/20120808/append-to-many-lines.gif" alt=""></p>
+<p><strong>分屏:</strong> <font color="red">:split</font> 和 <font color="red">vsplit</font>.</p>
+<p>下面是主要的命令，你可以使用VIM的帮助 <font color="red">:help split</font>. 你可以参考本站以前的一篇文章VIM分屏。</p>
+<blockquote>
+<p><font color="red">:split</font> → 创建分屏 (<font color="red">:vsplit</font>创建垂直分屏)<br> <font color="red">C-w&lt;dir&gt;</font> : dir就是方向，可以是 hjkl 或是 ←↓↑→ 中的一个，其用来切换分屏。<br> <font color="red">C-w_</font> (或 <font color="red">C-w|</font>) : 最大化尺寸 (<font color="red">C-w|</font> 垂直分屏)<br> <font color="red">C-w+</font> (或 <font color="red">C-w-</font>) : 增加尺寸</p>
+</blockquote>
+<p><img src="/img/20120808/split.gif" alt=""></p>
+<h3 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h3><blockquote>
+<p>上面是作者最常用的90%的命令。<br> 我建议你每天都学1到2个新的命令。<br> 在两到三周后，你会感到vim的强大的。<br> 有时候，学习VIM就像是在死背一些东西。<br> 幸运的是，vim有很多很不错的工具和优秀的文档。<br> 运行vimtutor直到你熟悉了那些基本命令。<br> 其在线帮助文档中你应该要仔细阅读的是 <font color="red">:help usr_02.txt</font>.<br> 你会学习到诸如  <font color="red">!，</font> 目录，寄存器，插件等很多其它的功能。</p>
+</blockquote>
+<p>学习vim就像学弹钢琴一样，一旦学会，受益无穷。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2012/08/08/2012-08-08-vim循序渐进/">vim循序渐进</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">cuiqingwei</a></p>
+        <p><span>发布时间:</span>2012-08-08, 16:50:00</p>
+        <p><span>最后更新:</span>2018-03-02, 02:39:12</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2012/08/08/2012-08-08-vim循序渐进/" title="vim循序渐进">http://cuiqingwei.github.io/2012/08/08/2012-08-08-vim循序渐进/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2012/08/08/2012-08-08-vim循序渐进/　　作者: cuiqingwei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2012/09/07/2012-09-07-ubuntu11-04安装arm开发环境/">
+                    ubuntu11.04安装arm开发环境
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2012/08/02/2012-08-02-如何选择开源许可证/">
+                    如何选择开源许可证?
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一级-–-存活"><span class="toc-number">1.</span> <span class="toc-text">第一级 – 存活</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二级-–-感觉良好"><span class="toc-number">2.</span> <span class="toc-text">第二级 – 感觉良好</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三级-–-更好，更强，更快"><span class="toc-number">3.</span> <span class="toc-text">第三级 – 更好，更强，更快</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第四级-–-Vim-超能力"><span class="toc-number">4.</span> <span class="toc-text">第四级 – Vim 超能力</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结束语"><span class="toc-number">5.</span> <span class="toc-text">结束语</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"vim循序渐进　| iZheteng　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2012/08/08/2012-08-08-vim循序渐进/" data-title="vim循序渐进" data-url="http://cuiqingwei.github.io/2012/08/08/2012-08-08-vim循序渐进/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"cuiqingwei"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+            // Add comment count
+            $(function(){ 
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=cuiqingwei&threads=2012/08/08/2012-08-08-vim循序渐进/&callback=?";
+                $.getJSON(jsonUrl, function(result){
+                    $.each(result.response, function(i, field){
+                        var value = field.comments;
+                        if (value > 0) {
+                            $(".count-comment").text(value);
+                            return;
+                        }
+                    })
+                })
+            })
+        
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2012/09/07/2012-09-07-ubuntu11-04安装arm开发环境/" title="上一篇: ubuntu11.04安装arm开发环境">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2012/08/02/2012-08-02-如何选择开源许可证/" title="下一篇: 如何选择开源许可证?">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/02/05/2018-02-05-DCS和PLC的区别/">DCS和PLC的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/26/2017-12-26-SSH与SSM对比/">SSH与SSM对比</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/05/2017-12-05-curl模拟http发送get或post接口测试/">curl模拟http发送get或post接口测试</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/05/2017-12-22-分布式文件系统-FastDFS-5-Linux-CentOS-7-搭建/">分布式文件系统 FastDFS 5 & Linux CentOS 7 搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/04/2017-12-04-怎样的家居照明才有质感/">怎样的家居照明才有质感?</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/29/2017-11-29-CentOS7添加开机启动服务脚本/">CentOS7添加开机启动服务脚本</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/2017-11-27-基于红外阵列传感器的检测系统/">基于红外阵列传感器的检测系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/26/2017-11-26-松下Grid-EYE红外阵列医疗传感器解析/">松下Grid-EYE红外阵列传感器解析</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/23/2017-11-23-git中避免提交-DS-Store文件/">git中避免提交.DS_Store文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/31/2017-10-31-如何查看网站是用什么语言开发的/">如何查看网站是用什么语言开发的?</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/21/2017-09-21-酒店PMS/">酒店PMS</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/19/2017-09-19-使用Ionic框架开发Hybird应用/">使用Ionic框架开发Hybird应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/09/2017-02-09-Homekit初体验/">HomeKit初体验</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/08/2017-02-08-OpenWRT之HomeKit/">OpenWRT之HomeKit</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/08/2017-02-08-Raspberry安装HAP-NodeJS/">Raspberry安装HAP-NodeJS</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/02/2017-01-02-夏利俊超级远投讲解/">夏利俊超级远投讲解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/01/2017-01-01-路亚装逼指南/">路亚装逼指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/30/2016-12-30-用ASP-NET开发的大型网站有哪些架构方式/">谈谈用ASP.NET开发的大型网站有哪些架构方式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/30/2016-12-30-基于微软平台IIS-ASP-NET开发的大型网站有哪些/">基于微软平台IIS/ASP.NET开发的大型网站有哪些?</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/17/2016-12-15-GoAhead移植到OpenWRT/">GoAhead移植到OpenWRT</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/">Contiki-CC2538-CoAP</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/09/2016-11-09-Contiki-CC2538/">Contiki-CC2538</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/29/2016-10-29-基于Contiki-Cooja的6lbr模拟仿真/">基于Contiki-Cooja的6lbr模拟仿真</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/27/2016-10-27-利用Travis-CI、MkDocs自動部署Blog至GitHub-Pages/">利用Travis CI、MkDocs自動部署Blog至GitHub Pages</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/16/2016-10-16-linkit-smart-7688-build/">linkit-smart-7688-build</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/13/2016-10-13-如何选择一根适合自己的BASS竿/">如何选择一根适合自己的BASS竿</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/13/2016-10-13-善用路亚软饵/">善用路亚软饵</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/13/2016-10-13-几种常用有效的线结介绍/">几种常用有效的线结介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/13/2016-10-13-常用路亚线的区别/">常用路亚线的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/13/2016-10-13-路亚水滴轮的速比的选择/">路亚水滴轮的速比的选择</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/12/2016-10-12-路亚竿的硬度与调性你是否混淆/">路亚竿的硬度与调性你是否混淆</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/11/2016-10-11-活鱼放血/">活鱼放血</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/10/2016-10-10-个人路亚装备/">个人路亚装备</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/10/2016-10-10-Kali-Linux-Live-USB-on-MAC/">Kali Linux Live USB on MAC</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/09/2016-10-09-路亚绑法/">路亚绑法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/2016-10-08-OpenWRT开源硬件汇总/">OpenWRT开源硬件汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/2016-10-08-拟饵手法/">拟饵手法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/2016-10-08-路亚术语/">路亚术语</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/13/2016-05-13-IoT知识点汇总/">IoT知识点汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/12/2016-05-12-网站设计的最简主义/">网站设计的最简主义</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/09/2016-03-09-MEAN/">MEAN</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/08/2016-03-08-eMaker-Space/">eMaker.Space</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/15/2016-02-15-Raspberry-Pi/">Raspberry Pi</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/18/2015-11-18-创客硬件/">创客硬件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/03/2015-10-03-折叠公路车/">折叠公路车</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/19/2015-08-19-Linux打补丁和git打patch方法/">Linux打补丁和git打patch方法 </a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/18/2015-08-18-Linux/">Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/15/2015-08-15-亚马逊云服务免费一年VPS主机翻墙术/">亚马逊云服务免费一年VPS主机翻墙术</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/23/2015-07-23-常用Wi-Fi网络评测工具/">常用Wi-Fi网络评测工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/16/2015-07-16-有趣的Linux命令行功效/">有趣的Linux命令行功效</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/09/2015-07-09-OpenWRT-usefull-commands/">OpenWRT usefull commands</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/08/2015-07-08-OpenWRT折腾日记/">OpenWRT折腾日记</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/07/2015-07-07-OpenWRT之dl下载分享/">OpenWRT之dl下载分享</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/06/2015-07-06-OpenWRT下ifconfig各接口说明/">OpenWRT下ifconfig各接口说明</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/01/2015-07-01-OpenWRT经典网站/">OpenWRT经典网站</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/24/2015-06-24-技术领域的深刻体会、教训/">技术领域的深刻体会、教训</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/03/2015-06-03-三星平板工厂模式/">三星平板工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/01/2015-03-01-ZigBee射频模块晶振选型/">ZigBee射频模块晶振选型</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/15/2015-01-15-xclip-pbcopy-xsel用法-terminal-复制粘帖-mac-ubuntu/">xclip,pbcopy,xsel用法 terminal 复制粘帖 (mac, ubuntu)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/13/2015-01-13-MacOS/">MacOS</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/13/2015-01-13-Ubuntu/">Ubuntu</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/08/2014-12-08-SDK之uClinux、Ralink、Atheros、Realtek、Broadcom/">SDK之uClinux、Ralink、Atheros、Realtek、Broadcom</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/06/08/2014-06-08-骑行7：滴水湖2014/">骑行7：滴水湖2014</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/05/21/2014-05-21-骑行6：上海南京路步行街/">骑行6：上海南京路步行街</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/04/17/2014-04-17-网络命令/">网络命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/07/05/2013-07-05-Marketplace-Client/">Marketplace Client</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/06/15/2013-06-15-骑行5：沪杭公路到九龙山/">骑行5：沪杭公路到九龙山</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/29/2013-04-29-骑行4：老上海-浦西世博园/">骑行4：老上海&浦西世博园</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/20/2013-04-20-骑行3：天马山-淀山湖/">骑行3：天马山&淀山湖</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/06/2013-04-06-我的单车装备/">我的单车装备</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/05/2013-04-05-骑行2：滴水湖/">骑行2：滴水湖</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/02/2013-04-02-骑行1：佘山/">骑行1：佘山</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/03/23/2013-03-23-GitHub建立个人站点/">GitHub建立个人站点</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/">InstantContiki2.6 for CC2530</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/10/14/2012-10-14-曾经折腾过的那些/">曾经折腾过的那些</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-autoRootfs-sh/">autoRootfs.sh</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-SQLite移植到ARM开发板/">SQLite移植到ARM开发板</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-goAhead2-5嵌入式web服务器移植/">goAhead2.5嵌入式web服务器移植</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-jffs2根文件系统制作/">jffs2根文件系统制作</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-at91sam9x5编译过程/">at91sam9x5编译过程</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-08-Linux中生成shadow的加密密码/">Linux中生成shadow的加密密码.04安装arm开发环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-ubuntu11-04安装arm开发环境/">ubuntu11.04安装arm开发环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/08/08/2012-08-08-vim循序渐进/">vim循序渐进</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/08/02/2012-08-02-如何选择开源许可证/">如何选择开源许可证?</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/08/01/2012-08-01-vi备忘/">vi备忘</a></li><li class="post-list-item"><a class="post-list-link" href="/2010/07/23/2010-07-23-Telnet-Socket调试工具/">Telnet&Socket调试工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2009/07/28/2009-07-28-基于Altium-Designer-Winter-09在PCB中放置LOGO/">基于Altium Designer Winter 09在PCB中放置LOGO</a></li><li class="post-list-item"><a class="post-list-link" href="/2009/03/13/2009-03-13-在TI-CC1111-CC25111上搞定USBHID/">在TI-CC1111&CC25111上搞定USBHID</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/07/09/2008-07-09-Rf-Calc/">Rf_Calc</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/05/11/2008-05-11-Proteus产品仿真/">Proteus产品仿真</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/">USB_M8_RGBLED彩灯</a></li><li class="post-list-item"><a class="post-list-link" href="/2007/11/19/2007-11-19-EAGLE3D终于搞定了！/">EAGLE3D终于搞定了!</a></li><li class="post-list-item"><a class="post-list-link" href="/2007/10/12/2007-10-12-CC2430模块自测程序/">CC2430模块自测程序</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/12/25/2006-12-25-基于Cport的多功能串口调试工具/">基于Cport的多功能串口调试工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/12/06/2006-12-06-AT91SAM7S64的定时器初始化计算工器/">AT91SAM7S64的定时器初始化计算器</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/10/31/2006-10-31-闪动的“LOVE”/">闪动的“LOVE”</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/10/01/2006-10-01-活着，就要折腾/">活着，就要折腾</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i>
+                2016-2018 cuiqingwei
+            </div>
+            <div class="footer-right">
+                <!-- <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i> -->
+                Old Blog <a href="https://cuiqingwei1981.github.io">https://cuiqingwei1981.github.io</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-42607542-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
