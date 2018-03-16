@@ -4,6 +4,38 @@
   
     
     <entry>
+      <title><![CDATA[802.11ac Wave2到底好在哪?]]></title>
+      <url>http://cuiqingwei.github.io/2018/03/16/2018-03-16-802-11ac-Wave2%E5%88%B0%E5%BA%95%E5%A5%BD%E5%9C%A8%E5%93%AA/</url>
+      <content type="html"><![CDATA[<p>在挑选无线路由或是AP时，尤其是那些价格不菲的高端产品，我们常常会在产品描述中看到“MU-MIMO”、“802.11ac Wave2”这些字眼。实际上，MU-MIMO技术正是802.11ac Wave2标准的精髓所在。怎么，感觉与802.11ac Wave2似曾相识？其实，它是第二波11ac。而在本期内容中，我们将向各位更为详尽细的表明：“Wave2”是啥，又到底好在哪？</p>
+<a id="more"></a>
+<p><img src="/img/20180316/10021074_Wave2hao_thumb.jpg" alt=""></p>
+<h3 id="步入正题，Wave2好在哪？"><a href="#步入正题，Wave2好在哪？" class="headerlink" title="步入正题，Wave2好在哪？"></a>步入正题，Wave2好在哪？</h3><p>正式说802.11ac Wave2之前，我们先要了解什么是802.11ac，以及它有哪些特点。IEEE 802.11ac是802.11的一个通信标准，802.11n的升级版。下面重点来了，802.11ac标准最关键的特点有四个，即256QAM调制模式、80/160MHz频宽、更高空间流和MU-MIMO技术。换言之，必须同时满足这4点，才能算是真正的802.11ac，网络速度和网络体验才能算是更进一步，而802.11ac Wave2都办到了。</p>
+<p>当然，这里的概念有些人可能容易混淆，Wave2只是一个名词后缀，802.11ac Wave2才是全称。我们常常口语化地说Wave2技术，只是因为我们懒。802.11ac Wave2不是新技术，其背后的黑科技应该是MU-MIMO。</p>
+<p><img src="/img/20180316/10021074_20170921-00_thumb.png" alt=""></p>
+<p>首先，我们来看 <strong>256QAM</strong> 。QAM，正交振幅调制，一种调制技术。QAM级别越高，每次发射的无线信号中包含的数据就越多，传输效率也就越高。802.11ac Wave2支持更高效率的256QAM（8bit）调制模式，相比802.11n采用的64QAM（6bit），调制效率提升超30%（怎么算的？8-6然后除以8啊）。</p>
+<p>如下图所示，我们将每一个点看作是一个数据包，由此可见，256QAM模式下的数据包密度远大于64QAM模式，同一时间内传输的数据总量自然也就更多。</p>
+<p><img src="/img/20180316/10021074_20170921-01_thumb.jpg" alt=""></p>
+<p>这里，需要我们注意的是，更高的QAM会带来更高的误码率。但即便如此，802.11ac Wave2的效率仍然要高出802.11n一大截。数据表明，将误码率考虑进来，在同样频宽和链路数量下，802.11ac Wave2的理论速率也要高出802.11n至少20%。</p>
+<p>接着来看 <strong>频宽</strong> 。802.11ac Wave2在802.11n——20/40MHz频宽以及802.11ac Wave1——80MHz频宽的基础上，又新增了更加稀缺的160MHz频宽。理论上，160MHz确实能够带来更高的传输速率（1x1单流传输速率即可达到867Mbps），然而你也看到了“稀缺”二字，稀缺什么意思？没资源你就没法部署，那就是空谈，尤其是在频谱资源本就不富裕的中国。</p>
+<p><img src="/img/20180316/10021074_20170921-02_thumb.jpg" alt=""></p>
+<p>按照标准，想要部署160MHz需要连续的160MHz频宽或者2个非连续的80MHz频宽组合才行。所以，再看上图。有没有资源？有，有一个……那支持160MHz意义何在？这还能算优势吗？当然算，有总比没有强。</p>
+<p>再者，就是 <strong>空间流</strong> 。一个听起来又抽象又玄妙的词汇，其实它是诸多特点里最好理解的一个。那什么是空间流呢？通常情况下，空间流的数量指的就是天线的数量（当然也有例外，这涉及到天线技术）。天线多，增益就高，同时也会增加容错能力，提高终端的覆盖范围和质量，从而带动传输性能。</p>
+<p>例如开篇我们提到的802.11ac Wave2，Wave2支持4空间流，那这个无线路由/AP采用的就是4根收发天线，即4T4R四发四收，我们也常叫它4x4 MIMO。MIMO又是啥？后面细说。为了不那么抽象，我们PO出了下面这张图帮助各位理解，眼尖的同学表示看到了8空间流？QAM调制似乎也升了一档？没错，这就是比Wave2更高阶的Wave3了。</p>
+<p><img src="/img/20180316/10021074_20170921-03_thumb.jpg" alt=""></p>
+<p>最后，再聊一聊 <strong>MU-MIMO</strong> 技术，也是802.11ac Wave2或者说整个IEEE 802.11ac标准的精髓。它的出现打破了困扰无线领域多年的一个枷锁——究竟如何才能提升多用户数据并发的处理能力。换言之，怎样才能最大化地榨干带宽资源，增加利用率。这才是难得的横向发展，而非一味追求最大传输速率的纵向拔高。</p>
+<p><img src="/img/20180316/10021074_20170921-04_thumb.jpg" alt=""></p>
+<p>正是MU-MIMO技术的重要性，网络上拿它做科普和试验对象的文章比比皆是，甚至说即便有些人不懂802.11ac Wave2，也会多少知道些MU-MIMO。因此，这里我们还是浅尝辄止，只做简单介绍。</p>
+<p>802.11n时代，我们常听到“MIMO”这个词（也被称为SU-MIMO），即“单用户多入多出”。简单说就是只擅长单挑，一无线路由/AP一终端，人一多就完蛋，不能多线作战。</p>
+<p><img src="/img/20180316/10021074_20170921-05_thumb.png" alt=""></p>
+<p>802.11ac Wave2时期的标志，就是引入了关键性的MU-MIMO技术（即“多用户多入多出”）。MU-MIMO模式下的无线路由/AP就像长了三头六臂，现在可多线作战，个战团战都能上。</p>
+<h3 id="哪些产品已经支持802-11ac-Wave2了？"><a href="#哪些产品已经支持802-11ac-Wave2了？" class="headerlink" title="哪些产品已经支持802.11ac Wave2了？"></a>哪些产品已经支持802.11ac Wave2了？</h3><p>写到这里，各位或许想知道目前市场在售产品中，有哪些已经搭上802.11ac Wave2这趟快车？别急，我们在文章的最后，也为大家在家用以及企业级两个领域，为各位举例说明。</p>
+<p>华硕RT-AC5300便是一款MU-MIMO的高端路由器，搭配AiRadar智能雷达信号成束技术，令无线信号覆盖更广，信号更稳定；又或是Linksys EA9300，也是一款支持802.11ac Wave2 MU-MIMO技术的三频无线路由；此外，美国网件R8000P也是一款支持MU-MIMO的三频千兆无线路由器。当然，这里我们只是为各位列举一二，不过大多是价格不低的高端路由器。</p>
+<p><img src="/img/20180316/10021074_20170921-06_thumb.jpg" alt=""></p>
+<p>商用这块，比较熟的是锐捷睿易的一款支援802.11ac Wave2的双频吸顶AP–RG-RAP220(EV2)。其理论并发速率1167Mbps，最大可支持256个终端接入；支持诺客MACC云平台，可实现微信强制关注、PPSK认证、自动生成拓扑、移动运维等众多实用功能；不仅如此，RG-RAP220(EV2)特有矩阵式智能天线，支持智能无缝漫游、智能负载均衡等等，有兴趣的朋友可以去官网详细了解，这里我们就不再过多赘述。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[DCS和PLC的区别]]></title>
       <url>http://cuiqingwei.github.io/2018/02/05/2018-02-05-DCS%E5%92%8CPLC%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
       <content type="html"><![CDATA[<p>发展到现在，DCS和PLC之间没有一个严格的界限，在大多数人看来，大的系统就是DCS，小的系统就叫PLC。当然，这么说也不是不可以，但是还不对。现在我们来重新建立这个概念。</p>
@@ -93,111 +125,6 @@
 <p>附Spring家族：</p>
 </blockquote>
 <p><img src="/img/20171226/f750008ad20260cf3f2.jpg" alt=""></p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[curl模拟http发送get或post接口测试]]></title>
-      <url>http://cuiqingwei.github.io/2017/12/05/2017-12-05-curl%E6%A8%A1%E6%8B%9Fhttp%E5%8F%91%E9%80%81get%E6%88%96post%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/</url>
-      <content type="html"><![CDATA[<h1 id="一、get请求"><a href="#一、get请求" class="headerlink" title="一、get请求"></a>一、get请求</h1><p>curl “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地<br>curl -i “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示全部信息<br>curl -l “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  只显示头部信息<br>curl -v “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示get请求全过程解析<br>wget “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     也可以</p>
-<a id="more"></a>
-<h1 id="二、post请求"><a href="#二、post请求" class="headerlink" title="二、post请求"></a>二、post请求</h1><p>curl -d “param1=value1&amp;param2=value2” “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“</p>
-<h1 id="三、json格式的post请求"><a href="#三、json格式的post请求" class="headerlink" title="三、json格式的post请求"></a>三、json格式的post请求</h1><p>curl -l -H “Content-type: application/json” -X POST -d ‘{“phone”:”13521389587”,”password”:”test”}’ <a href="http://domain/apis/users.json" target="_blank" rel="external">http://domain/apis/users.json</a></p>
-<blockquote>
-<p>例如：curl -l -H “Content-type: application/json” -X POST -d ‘{“ver”: “1.0”,”soa”:{“req”:”123”},”iface”:”me.ele.lpdinfra.prediction.service.PredictionService”,”method”:”restaurant_make_order_time”,”args”:{“arg2”:”\”stable\””,”arg1”:”{\”code\”:[\”WIND\”],\”temperature\”:11.11}”,”arg0”:”{\”tracking_id\”:\”100000000331770936\”,\”eleme_order_id\”:\”100000000331770936\”,\”platform_id\”:\”4\”,\”restaurant_id\”:\”482571\”,\”dish_num\”:1,\”dish_info\”:[{\”entity_id\”:142547763,\”quantity\”:1,\”category_id\”:1,\”dish_name\”:\”[0xe7][0x89][0xb9][0xe4][0xbb][0xb7][0xe8][0x85][0x8a][0xe5][0x91][0xb3][0xe5][0x8f][0x89][0xe7][0x83][0xa7][0xe5][0x8f][0x8c][0xe6][0x8b][0xbc][0xe7][0x85][0xb2][0xe4][0xbb][0x94][0xe9][0xa5][0xad]\”,\”price\”:31.0}],\”merchant_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”customer_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”created_at\”:1477896550,\”confirmed_at\”:1477896550,\”dishes_total_price\”:0.0,\”food_boxes_total_price\”:2.0,\”delivery_total_price\”:2.0,\”pay_amount\”:35.0,\”city_id\”:\”1\”}”}}’ <a href="http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc" target="_blank" rel="external">http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc</a></p>
-</blockquote>
-<p>ps：json串内层参数需要格式化</p>
-<h1 id="四、高级功能"><a href="#四、高级功能" class="headerlink" title="四、高级功能"></a>四、高级功能</h1><p>curl命令是一个功能强大的网络工具，它能够通过http、ftp等方式下载文件，也能够上传文件。其实curl远不止前面所说的那些功能，大家可以通过man curl阅读手册页获取更多的信息。类似的工具还有wget。</p>
-<p>curl命令使用了libcurl库来实现，libcurl库常用在C程序中用来处理HTTP请求，curlpp是libcurl的一个C++封装，这几个东西可以用在抓取网页、网络监控等方面的开发，而curl命令可以帮助来解决开发过程中遇到的问题。</p>
-<ul>
-<li>1，抓取页面内容到一个文件中</li>
-</ul>
-<p>curl -o home.html <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>   –将百度首页内容抓下到home.html中<br>curl -o #2_#1.jpg<a href="http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG</a></p>
-<p>由于A/B下的文件名都是001，002…，201，下载下来的文件重名，这样，自定义出来下载下来的文件名，就变成了这样：原来： A/001.JPG —-&gt; 下载后： 001-A.JPG 原来： B/001.JPG —&gt; 下载后： 001-B.JPG</p>
-<ul>
-<li>2，用-O（大写的），后面的url要具体到某个文件，不然抓不下来。还可以用正则来抓取东西</li>
-</ul>
-<p>curl -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<p>运行结果如下：</p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  1575  100  1575    0     0  14940      0 –:–:– –:–:– –:–:– 1538k<br>会在当前执行目录中生成一张bdlogo.gif的图片。</p>
-<p>curl -O <a href="http://XXXXX/screen[1-10].JPG" target="_blank" rel="external">http://XXXXX/screen[1-10].JPG</a>  –下载screen1.jpg~screen10.jpg</p>
-<ul>
-<li>3，模拟表单信息，模拟登录，保存cookie信息</li>
-</ul>
-<p>curl -c ./cookie_c.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>4，模拟表单信息，模拟登录，保存头信息</li>
-</ul>
-<p>curl -D ./cookie_D.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<p>-c(小写)产生的cookie和-D里面的cookie是不一样的。</p>
-<ul>
-<li>5，使用cookie文件</li>
-</ul>
-<p>curl -b ./cookie_c.txt <a href="http://www.XXXX.com/wp-admin" target="_blank" rel="external">http://www.XXXX.com/wp-admin</a></p>
-<ul>
-<li>6，断点续传，-C(大写)</li>
-</ul>
-<p>curl -C -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<ul>
-<li>7，传送数据,最好用登录页面测试，因为你传值过去后，curl回抓数据，你可以看到你传值有没有成功</li>
-</ul>
-<p>curl -d log=aaaa <a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>8，显示抓取错误，下面这个例子，很清楚的表明了。</li>
-</ul>
-<p>curl -f<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
-<p>curl: (22) The requested URL returned error: 404</p>
-<p>curl<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
-<p><html><head><title>404,not found</title></head></html></p>
-<ul>
-<li>9，伪造来源地址，有的网站会判断，请求来源地址，防止盗链。</li>
-</ul>
-<p>curl -e<a href="http://localhosthttp://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://localhosthttp://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>10，当我们经常用curl去搞人家东西的时候，人家会把你的IP给屏蔽掉的,这个时候,我们可以用代理</li>
-</ul>
-<p>curl -x 24.10.28.84:32779 -o home.html<a href="http://www.XXXX.com" target="_blank" rel="external">http://www.XXXX.com</a></p>
-<ul>
-<li>11，比较大的东西，我们可以分段下载</li>
-</ul>
-<p>curl -r 0-100 -o img.part1<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0    105      0 –:–:– –:–:– –:–:–     0<br>curl -r 100-200 -o img.part2<a href="http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0     57      0  0:00:01  0:00:01 –:–:–     0<br>curl -r 200- -o img.part3<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  104k  100  104k    0     0  52793      0  0:00:02  0:00:02 –:–:– 88961</p>
-<p>ls |grep part | xargs du -sh</p>
-<p>4.0K    one.part1<br>112K    three.part3<br>4.0K    two.part2</p>
-<p>用的时候，把他们cat一下就OK,cat img.part* &gt;img.jpg</p>
-<ul>
-<li>12，不会显示下载进度信息</li>
-</ul>
-<p>curl -s -o aaa.jpg <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<ul>
-<li>13，显示下载进度条</li>
-</ul>
-<p>curl  -0 <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a>     (以http1.0协议请求)</p>
-<p>####################################################################### 100.0%</p>
-<ul>
-<li>14,通过ftp下载文件</li>
-</ul>
-<p>curl -u用户名:密码 -O<a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
-<p>curl -u 用户名:密码 -O <a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
-<p>或者用下面的方式</p>
-<p>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css<br>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css</p>
-<ul>
-<li>15，通过ftp上传</li>
-</ul>
-<p>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/<br>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/</p>
-<ul>
-<li>15,模拟浏览器头</li>
-</ul>
-<p>curl -A “Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)” -x 123.45.67.89:1080 -o page.html -D cookie0001.txt<a href="http://www.www.baidu.com" target="_blank" rel="external">http://www.www.baidu.com</a></p>
-<ul>
-<li>16,PUT、GET、POST</li>
-</ul>
-<p>比如 curl -T localfile <a href="http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT</a> method<br>刚才说到PUT，自然想起来了其他几种methos－－GET和POST。<br>http提交一个表单，比较常用的是POST模式和GET模式<br>GET模式什么option都不用，只需要把变量写在url里面就可以了<br>比如：<br>curl <a href="http://www.yahoo.com/login.cgi?user=nick&amp;password=12345" target="_blank" rel="external">http://www.yahoo.com/login.cgi?user=nick&amp;password=12345</a><br>而POST模式的option则是 -d<br>比如，curl -d “user=nick&amp;password=12345” <a href="http://www.yahoo.com/login.cgi" target="_blank" rel="external">http://www.yahoo.com/login.cgi</a><br>就相当于向这个站点发出一次登陆申请<del>~</del><br>到底该用GET模式还是POST模式，要看对面服务器的程序设定。<br>一点需要注意的是，POST模式下的文件上的文件上传，比如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;form method=&quot;POST&quot; enctype=&quot;multipar/form-data&quot; action=&quot;http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi&quot;&gt;</div><div class="line">&lt;input type=file name=upload&gt;</div><div class="line">&lt;input type=submit name=nick value=&quot;go&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
-<p>这样一个HTTP表单，我们要用curl进行模拟，就该是这样的语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -F upload=@localfile -F nick=go http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi</div></pre></td></tr></table></figure>
 ]]></content>
     </entry>
     
@@ -319,6 +246,111 @@
 <p><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ysuALXURAAyIkvltU0w661.jpg" target="_blank" rel="external">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ysuALXURAAyIkvltU0w661.jpg</a><br><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytGABqkAAnhI9lHEHhw379.pdf" target="_blank" rel="external">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytGABqkAAnhI9lHEHhw379.pdf</a><br><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytaAZqEqA8pGTvhXcBQ424.mp4" target="_blank" rel="external">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytaAZqEqA8pGTvhXcBQ424.mp4</a></p>
 <p><img src="/img/20171222/WX20171222-170825@2x.png" alt=""></p>
 <p>一切正常~ 至此关于FastDFS在CentOS 7下的部署测试就已经全部完成。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[curl模拟http发送get或post接口测试]]></title>
+      <url>http://cuiqingwei.github.io/2017/12/05/2017-12-05-curl%E6%A8%A1%E6%8B%9Fhttp%E5%8F%91%E9%80%81get%E6%88%96post%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/</url>
+      <content type="html"><![CDATA[<h1 id="一、get请求"><a href="#一、get请求" class="headerlink" title="一、get请求"></a>一、get请求</h1><p>curl “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地<br>curl -i “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示全部信息<br>curl -l “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  只显示头部信息<br>curl -v “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示get请求全过程解析<br>wget “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     也可以</p>
+<a id="more"></a>
+<h1 id="二、post请求"><a href="#二、post请求" class="headerlink" title="二、post请求"></a>二、post请求</h1><p>curl -d “param1=value1&amp;param2=value2” “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“</p>
+<h1 id="三、json格式的post请求"><a href="#三、json格式的post请求" class="headerlink" title="三、json格式的post请求"></a>三、json格式的post请求</h1><p>curl -l -H “Content-type: application/json” -X POST -d ‘{“phone”:”13521389587”,”password”:”test”}’ <a href="http://domain/apis/users.json" target="_blank" rel="external">http://domain/apis/users.json</a></p>
+<blockquote>
+<p>例如：curl -l -H “Content-type: application/json” -X POST -d ‘{“ver”: “1.0”,”soa”:{“req”:”123”},”iface”:”me.ele.lpdinfra.prediction.service.PredictionService”,”method”:”restaurant_make_order_time”,”args”:{“arg2”:”\”stable\””,”arg1”:”{\”code\”:[\”WIND\”],\”temperature\”:11.11}”,”arg0”:”{\”tracking_id\”:\”100000000331770936\”,\”eleme_order_id\”:\”100000000331770936\”,\”platform_id\”:\”4\”,\”restaurant_id\”:\”482571\”,\”dish_num\”:1,\”dish_info\”:[{\”entity_id\”:142547763,\”quantity\”:1,\”category_id\”:1,\”dish_name\”:\”[0xe7][0x89][0xb9][0xe4][0xbb][0xb7][0xe8][0x85][0x8a][0xe5][0x91][0xb3][0xe5][0x8f][0x89][0xe7][0x83][0xa7][0xe5][0x8f][0x8c][0xe6][0x8b][0xbc][0xe7][0x85][0xb2][0xe4][0xbb][0x94][0xe9][0xa5][0xad]\”,\”price\”:31.0}],\”merchant_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”customer_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”created_at\”:1477896550,\”confirmed_at\”:1477896550,\”dishes_total_price\”:0.0,\”food_boxes_total_price\”:2.0,\”delivery_total_price\”:2.0,\”pay_amount\”:35.0,\”city_id\”:\”1\”}”}}’ <a href="http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc" target="_blank" rel="external">http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc</a></p>
+</blockquote>
+<p>ps：json串内层参数需要格式化</p>
+<h1 id="四、高级功能"><a href="#四、高级功能" class="headerlink" title="四、高级功能"></a>四、高级功能</h1><p>curl命令是一个功能强大的网络工具，它能够通过http、ftp等方式下载文件，也能够上传文件。其实curl远不止前面所说的那些功能，大家可以通过man curl阅读手册页获取更多的信息。类似的工具还有wget。</p>
+<p>curl命令使用了libcurl库来实现，libcurl库常用在C程序中用来处理HTTP请求，curlpp是libcurl的一个C++封装，这几个东西可以用在抓取网页、网络监控等方面的开发，而curl命令可以帮助来解决开发过程中遇到的问题。</p>
+<ul>
+<li>1，抓取页面内容到一个文件中</li>
+</ul>
+<p>curl -o home.html <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>   –将百度首页内容抓下到home.html中<br>curl -o #2_#1.jpg<a href="http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG</a></p>
+<p>由于A/B下的文件名都是001，002…，201，下载下来的文件重名，这样，自定义出来下载下来的文件名，就变成了这样：原来： A/001.JPG —-&gt; 下载后： 001-A.JPG 原来： B/001.JPG —&gt; 下载后： 001-B.JPG</p>
+<ul>
+<li>2，用-O（大写的），后面的url要具体到某个文件，不然抓不下来。还可以用正则来抓取东西</li>
+</ul>
+<p>curl -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
+<p>运行结果如下：</p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  1575  100  1575    0     0  14940      0 –:–:– –:–:– –:–:– 1538k<br>会在当前执行目录中生成一张bdlogo.gif的图片。</p>
+<p>curl -O <a href="http://XXXXX/screen[1-10].JPG" target="_blank" rel="external">http://XXXXX/screen[1-10].JPG</a>  –下载screen1.jpg~screen10.jpg</p>
+<ul>
+<li>3，模拟表单信息，模拟登录，保存cookie信息</li>
+</ul>
+<p>curl -c ./cookie_c.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
+<ul>
+<li>4，模拟表单信息，模拟登录，保存头信息</li>
+</ul>
+<p>curl -D ./cookie_D.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
+<p>-c(小写)产生的cookie和-D里面的cookie是不一样的。</p>
+<ul>
+<li>5，使用cookie文件</li>
+</ul>
+<p>curl -b ./cookie_c.txt <a href="http://www.XXXX.com/wp-admin" target="_blank" rel="external">http://www.XXXX.com/wp-admin</a></p>
+<ul>
+<li>6，断点续传，-C(大写)</li>
+</ul>
+<p>curl -C -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
+<ul>
+<li>7，传送数据,最好用登录页面测试，因为你传值过去后，curl回抓数据，你可以看到你传值有没有成功</li>
+</ul>
+<p>curl -d log=aaaa <a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
+<ul>
+<li>8，显示抓取错误，下面这个例子，很清楚的表明了。</li>
+</ul>
+<p>curl -f<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
+<p>curl: (22) The requested URL returned error: 404</p>
+<p>curl<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
+<p><html><head><title>404,not found</title></head></html></p>
+<ul>
+<li>9，伪造来源地址，有的网站会判断，请求来源地址，防止盗链。</li>
+</ul>
+<p>curl -e<a href="http://localhosthttp://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://localhosthttp://www.XXXX.com/wp-login.php</a></p>
+<ul>
+<li>10，当我们经常用curl去搞人家东西的时候，人家会把你的IP给屏蔽掉的,这个时候,我们可以用代理</li>
+</ul>
+<p>curl -x 24.10.28.84:32779 -o home.html<a href="http://www.XXXX.com" target="_blank" rel="external">http://www.XXXX.com</a></p>
+<ul>
+<li>11，比较大的东西，我们可以分段下载</li>
+</ul>
+<p>curl -r 0-100 -o img.part1<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a></p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0    105      0 –:–:– –:–:– –:–:–     0<br>curl -r 100-200 -o img.part2<a href="http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0     57      0  0:00:01  0:00:01 –:–:–     0<br>curl -r 200- -o img.part3<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  104k  100  104k    0     0  52793      0  0:00:02  0:00:02 –:–:– 88961</p>
+<p>ls |grep part | xargs du -sh</p>
+<p>4.0K    one.part1<br>112K    three.part3<br>4.0K    two.part2</p>
+<p>用的时候，把他们cat一下就OK,cat img.part* &gt;img.jpg</p>
+<ul>
+<li>12，不会显示下载进度信息</li>
+</ul>
+<p>curl -s -o aaa.jpg <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
+<ul>
+<li>13，显示下载进度条</li>
+</ul>
+<p>curl  -0 <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a>     (以http1.0协议请求)</p>
+<p>####################################################################### 100.0%</p>
+<ul>
+<li>14,通过ftp下载文件</li>
+</ul>
+<p>curl -u用户名:密码 -O<a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
+<p>curl -u 用户名:密码 -O <a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
+<p>或者用下面的方式</p>
+<p>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css<br>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css</p>
+<ul>
+<li>15，通过ftp上传</li>
+</ul>
+<p>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/<br>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/</p>
+<ul>
+<li>15,模拟浏览器头</li>
+</ul>
+<p>curl -A “Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)” -x 123.45.67.89:1080 -o page.html -D cookie0001.txt<a href="http://www.www.baidu.com" target="_blank" rel="external">http://www.www.baidu.com</a></p>
+<ul>
+<li>16,PUT、GET、POST</li>
+</ul>
+<p>比如 curl -T localfile <a href="http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT</a> method<br>刚才说到PUT，自然想起来了其他几种methos－－GET和POST。<br>http提交一个表单，比较常用的是POST模式和GET模式<br>GET模式什么option都不用，只需要把变量写在url里面就可以了<br>比如：<br>curl <a href="http://www.yahoo.com/login.cgi?user=nick&amp;password=12345" target="_blank" rel="external">http://www.yahoo.com/login.cgi?user=nick&amp;password=12345</a><br>而POST模式的option则是 -d<br>比如，curl -d “user=nick&amp;password=12345” <a href="http://www.yahoo.com/login.cgi" target="_blank" rel="external">http://www.yahoo.com/login.cgi</a><br>就相当于向这个站点发出一次登陆申请<del>~</del><br>到底该用GET模式还是POST模式，要看对面服务器的程序设定。<br>一点需要注意的是，POST模式下的文件上的文件上传，比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;form method=&quot;POST&quot; enctype=&quot;multipar/form-data&quot; action=&quot;http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi&quot;&gt;</div><div class="line">&lt;input type=file name=upload&gt;</div><div class="line">&lt;input type=submit name=nick value=&quot;go&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+<p>这样一个HTTP表单，我们要用curl进行模拟，就该是这样的语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -F upload=@localfile -F nick=go http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi</div></pre></td></tr></table></figure>
 ]]></content>
     </entry>
     
@@ -1220,37 +1252,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[路亚水滴轮的速比的选择]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E8%B7%AF%E4%BA%9A%E6%B0%B4%E6%BB%B4%E8%BD%AE%E7%9A%84%E9%80%9F%E6%AF%94%E7%9A%84%E9%80%89%E6%8B%A9/</url>
-      <content type="html"><![CDATA[<blockquote>
-<p>大家在购买轮子时，估计很多人都是首先关注轮子的价格，再关注轮子的牌子、外观、线容量、轴承数等，然后在各论坛到处问“XX的轮怎样？用过的说说！”结果，最后听了一大堆意见后最终还是进了一个价格自己可以接受的轮而不管轮子怎样了；或者受一些钓友的影响，入了一个超出了预算的牌子轮子却不是最适合自己的；或者入了一个价格差不多，只是多了一个或几个轴承的杂牌三无轮子而其它质量极差。鲜少有人（特别是新人）关注轮子的齿轮转速比，或者有关注，但却不是先决条件。</p>
-</blockquote>
-<a id="more"></a>
-<h3 id="在此抛砖引玉，聊聊轮子的转速比。"><a href="#在此抛砖引玉，聊聊轮子的转速比。" class="headerlink" title="在此抛砖引玉，聊聊轮子的转速比。"></a>在此抛砖引玉，聊聊轮子的转速比。</h3><p>转速比，通俗的来讲就是轮子的主副齿轮的转速比；例如6.3:1，意思就是：摇柄轴上的大齿轮转一圈，轮轴上的小齿轮就要转6.3圈。速比的设计除可以快速收线外，还有“四两拨千斤”的功能。大概可以这样理解：我用1牛的力来转把手，那么鱼要用出6.3牛的力才能不让我转动。<br>高转速比，可以快速收紧余线；中鱼时快速拉出障碍区；大水域快速搜索等有无可比拟的优势；但在控制一些硬饵泳姿时，或要求慢拖时，不如低转速比好控制。此外，转速比越高，同样拉力的情况下，摇起来就越费力；原因是高转速比把力量转换成高速，道理正如变速自行车一样。你别不相信，不用很大的鱼就让你发现，再多的轴承都是转不动了。（想象一下，你一定见过有人在溜鱼时做抽竿动作，为什么要做抽竿的动作呢？）<br>说到这里，大家每次钓鱼都在用到转速比，但你真正的了解过它吗？例如一些钓友在说操作手法时，“慢收+轻抖”。这个当中的“慢收”实在太笼统了。有些会说的具体一些，屁如“一秒转动一圈摇把”，还是没人具体意义；只有说到“我的轮子转速比是6.3:1，每秒转一圈摇把”才算是具体化。好，说到这里，我估计99.9%的人都不知自己转一圈摇把到底卷了多少线回来，也即是你的饵游动的速度是多少米每秒？</p>
-<p>当然，实际钓鱼时也不用真的精确到零点几米每秒。只要粗略的知道，天长日久后，不管什么时候，需要什么速度，才最可能上鱼，已经深深的铬在你的潜意识里了。随便拿起一套装备，看看转速比就清楚自己该怎样操作了。</p>
-<p>看似很复杂，其实也很简单。一般人的装备都不多，常见的轮子的转速比也就是那几个。以纺车轮为例，我的一个纺车转速比是6.2:1，线杯最大外径是40mm；2号尼龙线在绕线器转一圈时卷的线长度约为126mm(40<em>3.14),实测为130.8mm；摇把转一圈时收线约130</em>6.3=825mm；即0.825米；一米有多长大家总有个概念吧？经过这样一个计算，你是不是心里清楚自己的饵是“受伤的小鱼”还是“水中潜艇”呢？</p>
-<blockquote>
-<p><strong>摘要</strong>：进来有些朋友在网上询问关于双轴卷线器（水滴轮、鼓型轮）应该如何搭配竿子，速比快慢该如何选择的问题。关于选择双轴卷线器（水滴or鼓型轮）速比的常识进来有些朋友在网上询问关于双轴卷线器（水滴轮、鼓型轮）应该如何搭配竿子，速比快慢该如何选择的问题</p>
-</blockquote>
-<p><img src="/img/20161013/Lipless-Baits-Ready-to-Rock.jpg" alt=""></p>
-<h3 id="何谓速比？何谓高速比？何谓低速比呢？"><a href="#何谓速比？何谓高速比？何谓低速比呢？" class="headerlink" title="何谓速比？何谓高速比？何谓低速比呢？"></a>何谓速比？何谓高速比？何谓低速比呢？</h3><p>通常速比标识的参数代表了：我们手柄摇一圈线杯转动几圈，例如：7.0：1那么就是手柄转动一圈线杯转动7圈。<br><strong>高速比、低速比：一般高速比低速比没有明显的界限，通常6.3：1（含）以下我们称为低速比，7.0：1以上的算作高速比。</strong><br>低速比的优势：通常职业钓手使用Swimbait、spinnerbait、crank、minnow时候会选择低速比轮子。因为在操控诸如上述所谓搜索饵时候，低速比可以更好更均匀的控制拟饵的回收速度，并且就我们通常所使用的浮水CRANK、水面popper等等在特定的时候也会去做一些点对点的攻击，并不是一味的大面积快速搜索。所以这个时候低速比的轮子就体现出了拟饵在局域水面上的优势，不至于手柄轻轻一动就窜出老远。<br>高速比的优势：高速比轮子的特点就是回收拟饵的速度较快，在作合的一瞬间具有相当的爆发力。这个特点刚好符合我们用jighead或Texas在障碍区里作钓中鱼时要强调刺鱼的爆发力和迅速将于带离标点的要求。所以在大多数钓手软虫作钓障碍区时都会选用较快速比的轮子。但是也有特殊情况，例如在重障碍的草区：通常唠叨中障碍的草区都会使用比较大号的jig，并且中鱼时难免会连鱼带草一起搂。类似于雷强。这个时候为保证轮子足够的绞力已经能容纳更多的强力钓线，在这种地方作钓JIGhead或者大型Texas时很多钓手会选用低速比的较大容线量轮子。<br>以上是双轴卷线器的最基本的实用的常识，但愿对于初学的朋友们会选择轮子时候会有所帮助。但是也不排除在一些特殊情况时候对于轮子的选择会遇到一些特殊的变化。这里我不多赘述。等到大家遇到了新的问题时候我们再共同探讨。</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[常用路亚线的区别]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%B8%B8%E7%94%A8%E8%B7%AF%E4%BA%9A%E7%BA%BF%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-      <content type="html"><![CDATA[<h2 id="尼龙线"><a href="#尼龙线" class="headerlink" title="尼龙线"></a>尼龙线</h2><p>台钓中使用最多的也是尼龙线。尼龙的化工原料为PA，和PE一样是石油的下游产品。与PE不同的是，尼龙线一般为单股线，这种线的特点刚好与PE线相反。尼龙线的优点是由于有一定的延展性，抛投和中鱼的时候不易断线，由于生产技术已经发展了近70年的历史，成本低，产量大，相比PE线要便宜很多。最后一点是尼龙表面圆滑，对线环的磨损可以降到最低。</p>
-<a id="more"></a>
-<p>延展性同样也是尼龙线的缺点，在某些鱼讯轻微的场合，尼龙线不能及时将中鱼信号传达给钓手，从而失去最佳的起杆机会。另外，同样拉力的情况下，尼龙线比PE的线径更粗，从而影响路亚的抛投距离（<em>当然这个问题并不一定完全适用，需要根据具体的情况来，不过在高磅数的尼龙线与高磅数PE线做对比的话，高磅数的PE占些优势，因其相同的高磅数的线，高磅数PE线径更细一些，也就可以更加节省线杯的空间容下更多的线，并且线径也更细利于高磅数线的抛投</em>）。</p>
-<p><img src="/img/20161013/fishing-line.jpg" alt=""></p>
-<h2 id="PE线"><a href="#PE线" class="headerlink" title="PE线"></a>PE线</h2><p>PE线是指用多股化纤编织后浸胶制成的钓线，俗称编织线(BRAIDED OR CORD LINE)，最早见的就是“大力马”。<br>这种钓线的生产方式是：将多条微细纤维(如：达克龙纤维、功夫龙纤维或大力马纤维或其它聚乙烯化合物的PE纤维…等)以机器来编织而成，所以这种钓线的线体呈现纤维规则交叉的纹路，只要你将线体取出审视一番就可以清楚的发现其线体结构上的特色。<br>这种线的优点是，相同拉力的的情况下线径比尼龙要细很多，同样我们使用12磅的尼龙和12 磅的PE，因为PE的线径更细，能够抛投的更远。在实际钓场中，风力是影响路亚抛投距离的重要因素，PE同样因为相同拉力下线径更细的特点，能够将风阻的影响减小。除此之外，PE几乎没有延展性，在中鱼的时候能够在第一时间将信号传达给钓手。还有就是PE线更加耐磨。<br>但正像所有事物都有其两面性一样，PE并不是没有任何缺点。PE第一个缺点是没有延展性。这个特性在能够将中鱼信号迅速传达给钓手的同时，也经常导致跑鱼或放枪。玩过台钓的朋友都知道，中鱼后钓竿上要保持一定的力量，鱼才不易脱钩，杆软不易断线跑鱼，但是起鱼慢；杆硬起鱼快，但是容易断线跑鱼。同样，你可以把线看作杆的延伸，鱼线有一定的延展性，就像钓竿比较软一样，能够保证在鱼左冲右突的时候始终保持一定的力量，而PE就像比较硬的杆，遛鱼的余地比较小从而导致脱钩或断线。另外现在有厂家为了使用更细的线径达到更强的拉力，在PE中掺加金属丝，虽然拉力得到了加强，但是线的延展性和柔软度进一步降低，同时还容易磨损导环。</p>
-<h2 id="碳线（氟碳线）"><a href="#碳线（氟碳线）" class="headerlink" title="碳线（氟碳线）"></a>碳线（氟碳线）</h2><p>碳线是由含有氟和碳成分的树脂抽丝加工而成，碳线的特性是高比重、切水快、光的折射率非常低几乎看不到，没有吸水性，抗紫外线和耐久性要比尼龙线强很多，因为碳线的物理特性为非常低的延展性和高比重，可以让饵迅速到达所需要的水层，并且因延展性很低所以也就提供了良好的灵敏度。因碳线对光的折射率几乎为0，所以会降低鱼的敏感性，让鱼能放心的将饵食入口中。碳线适合搭配软饵钓组使用，比如：无铅钓组、WACKY、德州钓组，却不太适合搭配某一些特殊的硬饵或水面系的路亚。不过碳线也不是没有缺点，因为通常比较硬（特别是高磅数的碳线），如果作为主线使用要注意纺车轮上建议使用的主线不要超过10磅，水滴轮或鼓轮如有特殊需要最好也不要超过20磅（当然特殊情况下可以用到更高的磅数作为主线，并不是完全不可以），碳线也可以当做前导线来使用，因为碳线比较耐磨，可以搭配PE线，弥补PE不耐磨的缺点。</p>
-<p><img src="/img/20161013/钓线攻略.jpg" alt=""></p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[如何选择一根适合自己的BASS竿]]></title>
       <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E4%B8%80%E6%A0%B9%E9%80%82%E5%90%88%E8%87%AA%E5%B7%B1%E7%9A%84BASS%E7%AB%BF/</url>
       <content type="html"><![CDATA[<blockquote>
@@ -1336,10 +1337,42 @@
     </entry>
     
     <entry>
+      <title><![CDATA[常用路亚线的区别]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%B8%B8%E7%94%A8%E8%B7%AF%E4%BA%9A%E7%BA%BF%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      <content type="html"><![CDATA[<h2 id="尼龙线"><a href="#尼龙线" class="headerlink" title="尼龙线"></a>尼龙线</h2><p>台钓中使用最多的也是尼龙线。尼龙的化工原料为PA，和PE一样是石油的下游产品。与PE不同的是，尼龙线一般为单股线，这种线的特点刚好与PE线相反。尼龙线的优点是由于有一定的延展性，抛投和中鱼的时候不易断线，由于生产技术已经发展了近70年的历史，成本低，产量大，相比PE线要便宜很多。最后一点是尼龙表面圆滑，对线环的磨损可以降到最低。</p>
+<a id="more"></a>
+<p>延展性同样也是尼龙线的缺点，在某些鱼讯轻微的场合，尼龙线不能及时将中鱼信号传达给钓手，从而失去最佳的起杆机会。另外，同样拉力的情况下，尼龙线比PE的线径更粗，从而影响路亚的抛投距离（<em>当然这个问题并不一定完全适用，需要根据具体的情况来，不过在高磅数的尼龙线与高磅数PE线做对比的话，高磅数的PE占些优势，因其相同的高磅数的线，高磅数PE线径更细一些，也就可以更加节省线杯的空间容下更多的线，并且线径也更细利于高磅数线的抛投</em>）。</p>
+<p><img src="/img/20161013/fishing-line.jpg" alt=""></p>
+<h2 id="PE线"><a href="#PE线" class="headerlink" title="PE线"></a>PE线</h2><p>PE线是指用多股化纤编织后浸胶制成的钓线，俗称编织线(BRAIDED OR CORD LINE)，最早见的就是“大力马”。<br>这种钓线的生产方式是：将多条微细纤维(如：达克龙纤维、功夫龙纤维或大力马纤维或其它聚乙烯化合物的PE纤维…等)以机器来编织而成，所以这种钓线的线体呈现纤维规则交叉的纹路，只要你将线体取出审视一番就可以清楚的发现其线体结构上的特色。<br>这种线的优点是，相同拉力的的情况下线径比尼龙要细很多，同样我们使用12磅的尼龙和12 磅的PE，因为PE的线径更细，能够抛投的更远。在实际钓场中，风力是影响路亚抛投距离的重要因素，PE同样因为相同拉力下线径更细的特点，能够将风阻的影响减小。除此之外，PE几乎没有延展性，在中鱼的时候能够在第一时间将信号传达给钓手。还有就是PE线更加耐磨。<br>但正像所有事物都有其两面性一样，PE并不是没有任何缺点。PE第一个缺点是没有延展性。这个特性在能够将中鱼信号迅速传达给钓手的同时，也经常导致跑鱼或放枪。玩过台钓的朋友都知道，中鱼后钓竿上要保持一定的力量，鱼才不易脱钩，杆软不易断线跑鱼，但是起鱼慢；杆硬起鱼快，但是容易断线跑鱼。同样，你可以把线看作杆的延伸，鱼线有一定的延展性，就像钓竿比较软一样，能够保证在鱼左冲右突的时候始终保持一定的力量，而PE就像比较硬的杆，遛鱼的余地比较小从而导致脱钩或断线。另外现在有厂家为了使用更细的线径达到更强的拉力，在PE中掺加金属丝，虽然拉力得到了加强，但是线的延展性和柔软度进一步降低，同时还容易磨损导环。</p>
+<h2 id="碳线（氟碳线）"><a href="#碳线（氟碳线）" class="headerlink" title="碳线（氟碳线）"></a>碳线（氟碳线）</h2><p>碳线是由含有氟和碳成分的树脂抽丝加工而成，碳线的特性是高比重、切水快、光的折射率非常低几乎看不到，没有吸水性，抗紫外线和耐久性要比尼龙线强很多，因为碳线的物理特性为非常低的延展性和高比重，可以让饵迅速到达所需要的水层，并且因延展性很低所以也就提供了良好的灵敏度。因碳线对光的折射率几乎为0，所以会降低鱼的敏感性，让鱼能放心的将饵食入口中。碳线适合搭配软饵钓组使用，比如：无铅钓组、WACKY、德州钓组，却不太适合搭配某一些特殊的硬饵或水面系的路亚。不过碳线也不是没有缺点，因为通常比较硬（特别是高磅数的碳线），如果作为主线使用要注意纺车轮上建议使用的主线不要超过10磅，水滴轮或鼓轮如有特殊需要最好也不要超过20磅（当然特殊情况下可以用到更高的磅数作为主线，并不是完全不可以），碳线也可以当做前导线来使用，因为碳线比较耐磨，可以搭配PE线，弥补PE不耐磨的缺点。</p>
+<p><img src="/img/20161013/钓线攻略.jpg" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[路亚水滴轮的速比的选择]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E8%B7%AF%E4%BA%9A%E6%B0%B4%E6%BB%B4%E8%BD%AE%E7%9A%84%E9%80%9F%E6%AF%94%E7%9A%84%E9%80%89%E6%8B%A9/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>大家在购买轮子时，估计很多人都是首先关注轮子的价格，再关注轮子的牌子、外观、线容量、轴承数等，然后在各论坛到处问“XX的轮怎样？用过的说说！”结果，最后听了一大堆意见后最终还是进了一个价格自己可以接受的轮而不管轮子怎样了；或者受一些钓友的影响，入了一个超出了预算的牌子轮子却不是最适合自己的；或者入了一个价格差不多，只是多了一个或几个轴承的杂牌三无轮子而其它质量极差。鲜少有人（特别是新人）关注轮子的齿轮转速比，或者有关注，但却不是先决条件。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="在此抛砖引玉，聊聊轮子的转速比。"><a href="#在此抛砖引玉，聊聊轮子的转速比。" class="headerlink" title="在此抛砖引玉，聊聊轮子的转速比。"></a>在此抛砖引玉，聊聊轮子的转速比。</h3><p>转速比，通俗的来讲就是轮子的主副齿轮的转速比；例如6.3:1，意思就是：摇柄轴上的大齿轮转一圈，轮轴上的小齿轮就要转6.3圈。速比的设计除可以快速收线外，还有“四两拨千斤”的功能。大概可以这样理解：我用1牛的力来转把手，那么鱼要用出6.3牛的力才能不让我转动。<br>高转速比，可以快速收紧余线；中鱼时快速拉出障碍区；大水域快速搜索等有无可比拟的优势；但在控制一些硬饵泳姿时，或要求慢拖时，不如低转速比好控制。此外，转速比越高，同样拉力的情况下，摇起来就越费力；原因是高转速比把力量转换成高速，道理正如变速自行车一样。你别不相信，不用很大的鱼就让你发现，再多的轴承都是转不动了。（想象一下，你一定见过有人在溜鱼时做抽竿动作，为什么要做抽竿的动作呢？）<br>说到这里，大家每次钓鱼都在用到转速比，但你真正的了解过它吗？例如一些钓友在说操作手法时，“慢收+轻抖”。这个当中的“慢收”实在太笼统了。有些会说的具体一些，屁如“一秒转动一圈摇把”，还是没人具体意义；只有说到“我的轮子转速比是6.3:1，每秒转一圈摇把”才算是具体化。好，说到这里，我估计99.9%的人都不知自己转一圈摇把到底卷了多少线回来，也即是你的饵游动的速度是多少米每秒？</p>
+<p>当然，实际钓鱼时也不用真的精确到零点几米每秒。只要粗略的知道，天长日久后，不管什么时候，需要什么速度，才最可能上鱼，已经深深的铬在你的潜意识里了。随便拿起一套装备，看看转速比就清楚自己该怎样操作了。</p>
+<p>看似很复杂，其实也很简单。一般人的装备都不多，常见的轮子的转速比也就是那几个。以纺车轮为例，我的一个纺车转速比是6.2:1，线杯最大外径是40mm；2号尼龙线在绕线器转一圈时卷的线长度约为126mm(40<em>3.14),实测为130.8mm；摇把转一圈时收线约130</em>6.3=825mm；即0.825米；一米有多长大家总有个概念吧？经过这样一个计算，你是不是心里清楚自己的饵是“受伤的小鱼”还是“水中潜艇”呢？</p>
+<blockquote>
+<p><strong>摘要</strong>：进来有些朋友在网上询问关于双轴卷线器（水滴轮、鼓型轮）应该如何搭配竿子，速比快慢该如何选择的问题。关于选择双轴卷线器（水滴or鼓型轮）速比的常识进来有些朋友在网上询问关于双轴卷线器（水滴轮、鼓型轮）应该如何搭配竿子，速比快慢该如何选择的问题</p>
+</blockquote>
+<p><img src="/img/20161013/Lipless-Baits-Ready-to-Rock.jpg" alt=""></p>
+<h3 id="何谓速比？何谓高速比？何谓低速比呢？"><a href="#何谓速比？何谓高速比？何谓低速比呢？" class="headerlink" title="何谓速比？何谓高速比？何谓低速比呢？"></a>何谓速比？何谓高速比？何谓低速比呢？</h3><p>通常速比标识的参数代表了：我们手柄摇一圈线杯转动几圈，例如：7.0：1那么就是手柄转动一圈线杯转动7圈。<br><strong>高速比、低速比：一般高速比低速比没有明显的界限，通常6.3：1（含）以下我们称为低速比，7.0：1以上的算作高速比。</strong><br>低速比的优势：通常职业钓手使用Swimbait、spinnerbait、crank、minnow时候会选择低速比轮子。因为在操控诸如上述所谓搜索饵时候，低速比可以更好更均匀的控制拟饵的回收速度，并且就我们通常所使用的浮水CRANK、水面popper等等在特定的时候也会去做一些点对点的攻击，并不是一味的大面积快速搜索。所以这个时候低速比的轮子就体现出了拟饵在局域水面上的优势，不至于手柄轻轻一动就窜出老远。<br>高速比的优势：高速比轮子的特点就是回收拟饵的速度较快，在作合的一瞬间具有相当的爆发力。这个特点刚好符合我们用jighead或Texas在障碍区里作钓中鱼时要强调刺鱼的爆发力和迅速将于带离标点的要求。所以在大多数钓手软虫作钓障碍区时都会选用较快速比的轮子。但是也有特殊情况，例如在重障碍的草区：通常唠叨中障碍的草区都会使用比较大号的jig，并且中鱼时难免会连鱼带草一起搂。类似于雷强。这个时候为保证轮子足够的绞力已经能容纳更多的强力钓线，在这种地方作钓JIGhead或者大型Texas时很多钓手会选用低速比的较大容线量轮子。<br>以上是双轴卷线器的最基本的实用的常识，但愿对于初学的朋友们会选择轮子时候会有所帮助。但是也不排除在一些特殊情况时候对于轮子的选择会遇到一些特殊的变化。这里我不多赘述。等到大家遇到了新的问题时候我们再共同探讨。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[路亚竿的硬度与调性你是否混淆]]></title>
       <url>http://cuiqingwei.github.io/2016/10/12/2016-10-12-%E8%B7%AF%E4%BA%9A%E7%AB%BF%E7%9A%84%E7%A1%AC%E5%BA%A6%E4%B8%8E%E8%B0%83%E6%80%A7%E4%BD%A0%E6%98%AF%E5%90%A6%E6%B7%B7%E6%B7%86/</url>
       <content type="html"><![CDATA[<h2 id="路亚竿的硬度"><a href="#路亚竿的硬度" class="headerlink" title="路亚竿的硬度"></a>路亚竿的硬度</h2><p>选择路亚竿的时候大部分钓友会关注：长度、调性、外观做工质量、品牌与价格。其中“调性”普遍会被大家想到“M、ML、MH”等英文缩写，也经常有卖家或者钓友这样称呼：“这支竿是M调的，那支竿是MH调的”等等，实际上这些英文缩写说的不是路亚竿的调性而是硬度，英文称“<font color="red"><strong>Power</strong> <em>（最大负荷）</em></font>” 。</p>
 <p>路亚竿的 <font color="red"><strong>硬度</strong> <em>（最大负荷）</em></font>就是我们通常说的ML、M、MH等“调性”，是指的路亚竿的最大负荷值以及适合抛投饵重的范围。路亚竿的硬度由软到硬大概分为几个等：<em>UUL-UL-L-ML-M-MH-H-XH-XXH</em>。其中“<strong>M</strong>”为分界线，以上为软，以下为硬。</p>
+<a id="more"></a>
 <p>路亚竿的硬度分类如下：<br>    UUL——Ultra Ultra light极软<br>    UL——Ultra light超软<br>    L——Light 软<br>    ML——Medium light 中软<br>    M——Medium 中等<br>    MH——Medium heavy 中硬<br>    H——Heavy 硬<br>    XH——Extra heavy 超硬<br>    XXH——Extra extra heavy 超超硬</p>
 <h2 id="路亚竿的调性"><a href="#路亚竿的调性" class="headerlink" title="路亚竿的调性"></a>路亚竿的调性</h2><p>上面说了路亚竿的调性区别于硬度，但什么是路亚竿的调性呢？国内钓友对台钓竿相对比较了解，常说的台钓竿的调性如46、37、28、19调等，是表示钓竿中鱼受力时，竿身的弯曲点越来越靠近前稍。路亚竿的调性也可以这样理解，有类似的数值表示这样的参数，只是因为路亚钓法源于欧美，欧美关于调性的叫法不同而已。</p>
 <p>路亚竿 <font color="red"><strong>调性</strong></font>，以英文单词“<font color="red"><strong>Action</strong></font>”表示，<font color="blue"><em>钓竿中鱼受力竿身的弯曲点越来越靠近前稍，称调性越快，反之调性越慢，以中调作为快慢调的分界线</em></font>，</p>
@@ -1461,7 +1494,8 @@
       <title><![CDATA[OpenWRT开源硬件汇总]]></title>
       <url>http://cuiqingwei.github.io/2016/10/08/2016-10-08-OpenWRT%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6%E6%B1%87%E6%80%BB/</url>
       <content type="html"><![CDATA[<h1 id="Arduino-Yun"><a href="#Arduino-Yun" class="headerlink" title="Arduino Yún"></a>Arduino Yún</h1><p><a href="https://www.arduino.cc/en/Main/ArduinoBoardYun" target="_blank" rel="external">https://www.arduino.cc/en/Main/ArduinoBoardYun</a><br>cpu: Atheros AR9331 @400MHZ (含ATmega32U4)<br>ram:  64MB DDR2<br>flash: 16MB<br>wifi: 150Mbit Wi-Fi 1T1R 2.4 GHz</p>
-<h1 id="LinkIt-Smart-7688-Duo"><a href="#LinkIt-Smart-7688-Duo" class="headerlink" title="LinkIt Smart 7688 Duo"></a>LinkIt Smart 7688 Duo</h1><p><a href="https://www.seeedstudio.com/LinkIt-Smart-7688-Duo-p-2574.html" target="_blank" rel="external">https://www.seeedstudio.com/LinkIt-Smart-7688-Duo-p-2574.html</a><br>cpu: MT7688 @580MHZ (含ATmega32U4)<br>ram:  128MB DDR2<br>flash: 32MB<br><a id="more"></a></p>
+<h1 id="LinkIt-Smart-7688-Duo"><a href="#LinkIt-Smart-7688-Duo" class="headerlink" title="LinkIt Smart 7688 Duo"></a>LinkIt Smart 7688 Duo</h1><p><a href="https://www.seeedstudio.com/LinkIt-Smart-7688-Duo-p-2574.html" target="_blank" rel="external">https://www.seeedstudio.com/LinkIt-Smart-7688-Duo-p-2574.html</a><br>cpu: MT7688 @580MHZ (含ATmega32U4)<br>ram:  128MB DDR2<br>flash: 32MB</p>
+<a id="more"></a>
 <h1 id="IntoRobot-Atom"><a href="#IntoRobot-Atom" class="headerlink" title="IntoRobot Atom"></a>IntoRobot Atom</h1><p><a href="http://shop.intorobot.com/index.php?route=product/product&amp;product_id=43" target="_blank" rel="external">http://shop.intorobot.com/index.php?route=product/product&amp;product_id=43</a><br>cpu: MT7620N @580MHZ (含STM32F103)<br>ram:  512Mbit DDR2<br>flash: 128Mbit</p>
 <h1 id="WRTnode"><a href="#WRTnode" class="headerlink" title="WRTnode"></a>WRTnode</h1><p><a href="http://www.wrtnode.cc/index.html" target="_blank" rel="external">http://www.wrtnode.cc/index.html</a><br>-WRTnode1<br>cpu: MT7620N @580MHZ<br>ram:  512Mbit DDR2<br>flash: 128Mbit<br>wifi: 300Mbit Wi-Fi 2T2R 802.11n 2.4 GHz<br>-WRTnode2R<br>cpu: MT7688AN @580MHZ (含STM32F103)<br>ram:  256MB DDR2<br>flash: 32MB<br>-WRTnode2P<br>cpu: MT7628 @580MHZ<br>ram:  128MB DDR2<br>flash: 16MB<br>-WRTnodeHI<br>cpu: ARM Cortex A7 @600MHZ 支持Neon加速，集成FPU<br>ram:  512MB DDR3<br>flash: 32MB</p>
 <h1 id="MMZ558"><a href="#MMZ558" class="headerlink" title="MMZ558"></a>MMZ558</h1><p><a href="http://www.compex.com.sg/product/mmz558/" target="_blank" rel="external">http://www.compex.com.sg/product/mmz558/</a><br>cpu:   QCA9558 @700MHZ<br>ram:  128MB DDR2<br>flash: 16MB</p>
@@ -2655,6 +2689,27 @@
     </entry>
     
     <entry>
+      <title><![CDATA[MacOS]]></title>
+      <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-MacOS/</url>
+      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
+<h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p>工作：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br><a href="http://www.tuicool.com/articles/yeyIfuu" target="_blank" rel="external">http://www.tuicool.com/articles/yeyIfuu</a><br>系统：QQ、CleanMyDrive 3<br><a id="more"></a></p>
+<h3 id="2-dmg"><a href="#2-dmg" class="headerlink" title="2. dmg"></a>2. dmg</h3><p>Chrome、VMwareFusion、RDC、QQInput、RTX、cornerstone<br>Sublime Text</p>
+<h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><p>ruby -e “$(curl -fsSL <a href="https://raw.github.com/Homebrew/homebrew/go/install" target="_blank" rel="external">https://raw.github.com/Homebrew/homebrew/go/install</a>)”<br><a href="http://brew.sh/" target="_blank" rel="external">http://brew.sh/</a><br><a href="http://blog.csdn.net/aaawqqq/article/details/44088141" target="_blank" rel="external">http://blog.csdn.net/aaawqqq/article/details/44088141</a></p>
+<p>升级更新 brew update<br>cd /usr/local<br>git reset –hard<br>git checkout .<br>sudo chown -R cuiqingwei /usr/local<br>brew update<br><a href="http://www.xitongzhijia.net/xtjc/20141204/31879.html" target="_blank" rel="external">http://www.xitongzhijia.net/xtjc/20141204/31879.html</a></p>
+<h3 id="4-MacPorts"><a href="#4-MacPorts" class="headerlink" title="4. MacPorts"></a>4. MacPorts</h3><p><a href="https://www.macports.org/install.php" target="_blank" rel="external">https://www.macports.org/install.php</a><br><a href="http://guide.macports.org/#installing.macports" target="_blank" rel="external">http://guide.macports.org/#installing.macports</a></p>
+<h3 id="5-wget"><a href="#5-wget" class="headerlink" title="5. wget"></a>5. wget</h3><p>sudo port install wget</p>
+<h3 id="6-zsh"><a href="#6-zsh" class="headerlink" title="6. zsh"></a>6. zsh</h3><p>wget <a href="https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh</a> -O - | sh<br><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="external">http://leeiio.me/bash-to-zsh-for-mac/</a><br><a href="http://www.sketchup.com/download/all" target="_blank" rel="external">http://www.sketchup.com/download/all</a><br>打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!</p>
+<h3 id="7-mac-say-唱歌"><a href="#7-mac-say-唱歌" class="headerlink" title="7. mac say 唱歌"></a>7. mac say 唱歌</h3><p>应用程序&gt;实用工具&gt;Terminal 复制和黏贴以下内容，然后回车：</p>
+<ul>
+<li>spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。</li>
+<li>在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。</li>
+<li>开始听歌了。</li>
+</ul>
+<h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="external">https://checkcoverage.apple.com/cn/zh/</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Ubuntu]]></title>
       <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-Ubuntu/</url>
       <content type="html"><![CDATA[<h3 id="1-常用指令"><a href="#1-常用指令" class="headerlink" title="1.常用指令"></a>1.常用指令</h3><pre><code>版本查看：
@@ -2706,27 +2761,6 @@ hosts
      https://github.com/racaljk/hosts
 </code></pre><p><strong>Cannot Set LC_ALL to default locale: No such file or directory</strong><br><a href="http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/" target="_blank" rel="external">http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/</a></p>
 <p>sEx只是调用相关程序，本身并无压缩、解压功能，请注意！<br>sEx请到： <a href="http://sourceforge.net/projects/sex下载！" target="_blank" rel="external">http://sourceforge.net/projects/sex下载！</a><br>解压后请将sEx拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br>[root@www2 tmp]# cp sEx /usr/bin/</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[MacOS]]></title>
-      <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-MacOS/</url>
-      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
-<h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p>工作：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br><a href="http://www.tuicool.com/articles/yeyIfuu" target="_blank" rel="external">http://www.tuicool.com/articles/yeyIfuu</a><br>系统：QQ、CleanMyDrive 3<br><a id="more"></a></p>
-<h3 id="2-dmg"><a href="#2-dmg" class="headerlink" title="2. dmg"></a>2. dmg</h3><p>Chrome、VMwareFusion、RDC、QQInput、RTX、cornerstone<br>Sublime Text</p>
-<h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><p>ruby -e “$(curl -fsSL <a href="https://raw.github.com/Homebrew/homebrew/go/install" target="_blank" rel="external">https://raw.github.com/Homebrew/homebrew/go/install</a>)”<br><a href="http://brew.sh/" target="_blank" rel="external">http://brew.sh/</a><br><a href="http://blog.csdn.net/aaawqqq/article/details/44088141" target="_blank" rel="external">http://blog.csdn.net/aaawqqq/article/details/44088141</a></p>
-<p>升级更新 brew update<br>cd /usr/local<br>git reset –hard<br>git checkout .<br>sudo chown -R cuiqingwei /usr/local<br>brew update<br><a href="http://www.xitongzhijia.net/xtjc/20141204/31879.html" target="_blank" rel="external">http://www.xitongzhijia.net/xtjc/20141204/31879.html</a></p>
-<h3 id="4-MacPorts"><a href="#4-MacPorts" class="headerlink" title="4. MacPorts"></a>4. MacPorts</h3><p><a href="https://www.macports.org/install.php" target="_blank" rel="external">https://www.macports.org/install.php</a><br><a href="http://guide.macports.org/#installing.macports" target="_blank" rel="external">http://guide.macports.org/#installing.macports</a></p>
-<h3 id="5-wget"><a href="#5-wget" class="headerlink" title="5. wget"></a>5. wget</h3><p>sudo port install wget</p>
-<h3 id="6-zsh"><a href="#6-zsh" class="headerlink" title="6. zsh"></a>6. zsh</h3><p>wget <a href="https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh</a> -O - | sh<br><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="external">http://leeiio.me/bash-to-zsh-for-mac/</a><br><a href="http://www.sketchup.com/download/all" target="_blank" rel="external">http://www.sketchup.com/download/all</a><br>打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!</p>
-<h3 id="7-mac-say-唱歌"><a href="#7-mac-say-唱歌" class="headerlink" title="7. mac say 唱歌"></a>7. mac say 唱歌</h3><p>应用程序&gt;实用工具&gt;Terminal 复制和黏贴以下内容，然后回车：</p>
-<ul>
-<li>spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。</li>
-<li>在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。</li>
-<li>开始听歌了。</li>
-</ul>
-<h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="external">https://checkcoverage.apple.com/cn/zh/</a></p>
 ]]></content>
     </entry>
     
@@ -3793,6 +3827,16 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     </entry>
     
     <entry>
+      <title><![CDATA[Linux中生成shadow的加密密码.04安装arm开发环境]]></title>
+      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-08-Linux%E4%B8%AD%E7%94%9F%E6%88%90shadow%E7%9A%84%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81/</url>
+      <content type="html"><![CDATA[<p>How to generate Linux shadow password / Linux中如何生成shadow密码（CentOS 5下测试通过）<br>/etc/shadow中的root信息:<br>root:$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.:15225:0:99999:7:::</p>
+<p>其中，”$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.” 就是加密后的root密码，我们在修改用户密码的时候都使用passwd命令，其实也可以直接修改/etc/shadow文件。那要面临的问题就是如何生成这个加密过的shadow密码($1$ 表示加密算法是基于MD5的，不同发行版本默认的加密算法可能不同)。</p>
+<p>方法一（交互式）<br>[root@centos-vm ~]# openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32)<br>Password:    # input your password here<br>$1$MZrDxgEw$i2XBgmDMo0Wf1.OVvOGGQ1</p>
+<p>方法二（适用于脚本）<br>[root@centos-vm ~]# echo “passwd” | openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32) -stdin<br>$1$KsRJO8kG$M9co4G7T6.5KcITsSCRNS/</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[ubuntu11.04安装arm开发环境]]></title>
       <url>http://cuiqingwei.github.io/2012/09/07/2012-09-07-ubuntu11-04%E5%AE%89%E8%A3%85arm%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
       <content type="html"><![CDATA[<p>特别提示：整个过程中计算机必须联网，因为有些程序需要从网络上下载!</p>
@@ -3884,15 +3928,6 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
 <h1 id="六、编译buildroot所需安装包"><a href="#六、编译buildroot所需安装包" class="headerlink" title="六、编译buildroot所需安装包"></a>六、编译buildroot所需安装包</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install make flex bison m4 ncurses-dev gettext texi2html texinfo zlib1g zlib1g-dev liblzo2-2 liblzo2-dev libacl1 libacl1-dev libglib2.0-dev autoconf automake libtool</div><div class="line">apt-get install subversion</div></pre></td></tr></table></figure>
 <h1 id="七、SAM-BA所需安装包"><a href="#七、SAM-BA所需安装包" class="headerlink" title="七、SAM-BA所需安装包"></a>七、SAM-BA所需安装包</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">apt-get install linux-image-generic linux-headers-generic</div><div class="line">＃ On 64 bits version install 32 bits libraries:</div><div class="line">apt-get install ia32-libs</div><div class="line">chmod +x sam-ba</div><div class="line">ln <span class="_">-s</span> /dev/ttyACM0 /dev/ttyUSB0</div></pre></td></tr></table></figure>
 <p>运行sam-ba</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Linux中生成shadow的加密密码.04安装arm开发环境]]></title>
-      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-08-Linux%E4%B8%AD%E7%94%9F%E6%88%90shadow%E7%9A%84%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81/</url>
-      <content type="html"><![CDATA[<p>How to generate Linux shadow password / Linux中如何生成shadow密码（CentOS 5下测试通过）<br>/etc/shadow中的root信息:<br>root:$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.:15225:0:99999:7:::</p>
-<p>其中，”$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.” 就是加密后的root密码，我们在修改用户密码的时候都使用passwd命令，其实也可以直接修改/etc/shadow文件。那要面临的问题就是如何生成这个加密过的shadow密码($1$ 表示加密算法是基于MD5的，不同发行版本默认的加密算法可能不同)。<br>方法一（交互式）<br>[root@centos-vm ~]# openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32)<br>Password:    # input your password here<br>$1$MZrDxgEw$i2XBgmDMo0Wf1.OVvOGGQ1</p>
-<p>方法二（适用于脚本）<br>[root@centos-vm ~]# echo “passwd” | openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32) -stdin<br>$1$KsRJO8kG$M9co4G7T6.5KcITsSCRNS/</p>
 ]]></content>
     </entry>
     
@@ -4203,7 +4238,8 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     <entry>
       <title><![CDATA[CC2430模块自测程序]]></title>
       <url>http://cuiqingwei.github.io/2007/10/12/2007-10-12-CC2430%E6%A8%A1%E5%9D%97%E8%87%AA%E6%B5%8B%E7%A8%8B%E5%BA%8F/</url>
-      <content type="html"><![CDATA[<p>ModuleTest V1.0 Written: 崔庆伟 [gary]<br>可以用指令控制选择信道，设置发射功率，发送数据包（长度可选），接收数据包（接收时延可设），CC2430复位，MCU温度读取等。底层函数基本做好，如果要加入新功能，可自行更改。<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line">文件目录</div><div class="line">│  MT.eww</div><div class="line">│  Serial.ht</div><div class="line">│</div><div class="line">├─app</div><div class="line">│      includes.h</div><div class="line">│      ver.h</div><div class="line">│      mt.h</div><div class="line">│      mt.c</div><div class="line">│      MT.lib</div><div class="line">│</div><div class="line">├─hal</div><div class="line">│      hal.h</div><div class="line">│      rfConfig.h</div><div class="line">│      rfPacket.h</div><div class="line">│      wait.h</div><div class="line">│      timerSet.h</div><div class="line">│      uart.h</div><div class="line">│      tSensor.h</div><div class="line">│</div><div class="line">├─proj</div><div class="line">│  │  MT.ewd</div><div class="line">│  │  MT.ewp</div><div class="line">│  │  MT.IMB</div><div class="line">│  │  MT.IMD</div><div class="line">│  │  MT.IAB</div><div class="line">│  │  MT.IAD</div><div class="line">│  │  MT.PR</div><div class="line">│  │  MT.PS</div><div class="line">│  │  MT.PFI</div><div class="line">│  │  MT.PO</div><div class="line">│  │  MT.dep</div><div class="line">│  │  MT.SearchResults</div><div class="line">│  │  MT.WK3</div><div class="line">│  │  MT.PRI</div><div class="line">│  │</div><div class="line">│  ├─settings</div><div class="line">│  │      MT.dni</div><div class="line">│  │      MT.dbgdt</div><div class="line">│  │</div><div class="line">│  └─Debug</div><div class="line">│      ├─Exe</div><div class="line">│      │      MT.d51</div><div class="line">│      │</div><div class="line">│      ├─Obj</div><div class="line">│      │      uart.r51</div><div class="line">│      │      hal_uart.r51</div><div class="line">│      │      wait.r51</div><div class="line">│      │      rfConfig.r51</div><div class="line">│      │      rfPacket.r51</div><div class="line">│      │      timerSet.r51</div><div class="line">│      │      lcd.pbi</div><div class="line">│      │      lcd.r51</div><div class="line">│      │      rfPacketTransceiver.pbi</div><div class="line">│      │      MT.pbd</div><div class="line">│      │      mt.pbi</div><div class="line">│      │      mt.r51</div><div class="line">│      │</div><div class="line">│      └─List</div><div class="line">│              MT.map</div><div class="line">│</div><div class="line">└─settings</div><div class="line">        MT.wsdt</div></pre></td></tr></table></figure></p>
+      <content type="html"><![CDATA[<p>ModuleTest V1.0 Written: 崔庆伟 [gary]</p>
+<p>可以用指令控制选择信道，设置发射功率，发送数据包（长度可选），接收数据包（接收时延可设），CC2430复位，MCU温度读取等。底层函数基本做好，如果要加入新功能，可自行更改。<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line">文件目录</div><div class="line">│  MT.eww</div><div class="line">│  Serial.ht</div><div class="line">│</div><div class="line">├─app</div><div class="line">│      includes.h</div><div class="line">│      ver.h</div><div class="line">│      mt.h</div><div class="line">│      mt.c</div><div class="line">│      MT.lib</div><div class="line">│</div><div class="line">├─hal</div><div class="line">│      hal.h</div><div class="line">│      rfConfig.h</div><div class="line">│      rfPacket.h</div><div class="line">│      wait.h</div><div class="line">│      timerSet.h</div><div class="line">│      uart.h</div><div class="line">│      tSensor.h</div><div class="line">│</div><div class="line">├─proj</div><div class="line">│  │  MT.ewd</div><div class="line">│  │  MT.ewp</div><div class="line">│  │  MT.IMB</div><div class="line">│  │  MT.IMD</div><div class="line">│  │  MT.IAB</div><div class="line">│  │  MT.IAD</div><div class="line">│  │  MT.PR</div><div class="line">│  │  MT.PS</div><div class="line">│  │  MT.PFI</div><div class="line">│  │  MT.PO</div><div class="line">│  │  MT.dep</div><div class="line">│  │  MT.SearchResults</div><div class="line">│  │  MT.WK3</div><div class="line">│  │  MT.PRI</div><div class="line">│  │</div><div class="line">│  ├─settings</div><div class="line">│  │      MT.dni</div><div class="line">│  │      MT.dbgdt</div><div class="line">│  │</div><div class="line">│  └─Debug</div><div class="line">│      ├─Exe</div><div class="line">│      │      MT.d51</div><div class="line">│      │</div><div class="line">│      ├─Obj</div><div class="line">│      │      uart.r51</div><div class="line">│      │      hal_uart.r51</div><div class="line">│      │      wait.r51</div><div class="line">│      │      rfConfig.r51</div><div class="line">│      │      rfPacket.r51</div><div class="line">│      │      timerSet.r51</div><div class="line">│      │      lcd.pbi</div><div class="line">│      │      lcd.r51</div><div class="line">│      │      rfPacketTransceiver.pbi</div><div class="line">│      │      MT.pbd</div><div class="line">│      │      mt.pbi</div><div class="line">│      │      mt.r51</div><div class="line">│      │</div><div class="line">│      └─List</div><div class="line">│              MT.map</div><div class="line">│</div><div class="line">└─settings</div><div class="line">        MT.wsdt</div></pre></td></tr></table></figure></p>
 <ul>
 <li><a href="http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_176232.rar" target="_blank" rel="external">MT.rar(文件大小:143K)</a></li>
 </ul>
