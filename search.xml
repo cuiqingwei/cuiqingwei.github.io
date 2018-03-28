@@ -2703,7 +2703,9 @@
 <p><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="external">http://leeiio.me/bash-to-zsh-for-mac/</a></p>
 <h3 id="6-iTerm"><a href="#6-iTerm" class="headerlink" title="6. iTerm"></a>6. iTerm</h3><p>iTerm2 + oh my zsh +agnoster 打造最强Mac终端<br><a href="http://www.siguoya.name/pc/home/article/256" target="_blank" rel="external">http://www.siguoya.name/pc/home/article/256</a><br>iterm2有什么酷功能？<br><a href="https://www.zhihu.com/question/27447370" target="_blank" rel="external">https://www.zhihu.com/question/27447370</a></p>
 <h3 id="7-wget"><a href="#7-wget" class="headerlink" title="7. wget"></a>7. wget</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo brew install wget</div></pre></td></tr></table></figure>
-<h3 id="8-pbcopy"><a href="#8-pbcopy" class="headerlink" title="8. pbcopy"></a>8. pbcopy</h3><p>使用pbcopy命令。 # 对应有个pbpaste命令。</p>
+<h3 id="8-pbcopy"><a href="#8-pbcopy" class="headerlink" title="8. pbcopy"></a>8. pbcopy</h3><blockquote>
+<p>使用 <strong>pbcopy</strong> 命令,对应有个 <strong>pbpaste</strong> 命令。</p>
+</blockquote>
 <p>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">'Hello World!'</span> | pbcopy</div></pre></td></tr></table></figure></p>
 <p><em>将字符串Hello World放入剪贴板</em></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat myFile.txt | pbcopy</div></pre></td></tr></table></figure>
