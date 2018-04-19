@@ -3539,69 +3539,160 @@ cd /home/user/contiki-sensinode/examples/cc2530dk
     <entry>
       <title><![CDATA[曾经折腾过的那些]]></title>
       <url>http://cuiqingwei.github.io/2012/10/14/2012-10-14-%E6%9B%BE%E7%BB%8F%E6%8A%98%E8%85%BE%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B/</url>
-      <content type="html"><![CDATA[<p>整理硬盘资料时，看到这些图片。心情很激动，这些个都是与硬件相关的，什么MP3啊等等，可惜没有保留图片,纯软件的就更多了。才发现自己2009年到现在这几年一直忙着搞公司的事。已好久没停下来做点自己真正喜欢或是让自己心动的事了！<br><a id="more"></a></p>
+      <content type="html"><![CDATA[<p>整理硬盘资料时，看到这些图片。心情很激动，这些个都是与硬件相关的，什么MP3啊等等，可惜没有保留图片,纯软件的就更多了。才发现自己2009年到现在这几年一直忙着搞公司的事。已好久没停下来做点自己真正喜欢或是让自己心动的事了！</p>
+<a id="more"></a>
 <ul>
-<li><p>2002年.闪动的LOVE<br><img src="/img/20121014/1.jpeg" alt="2002年.闪动的LOVE"><br><em>大学期间参加大学电子设计大赛，利用当时所学知识和课余时间制作，用来哄现在的老婆（当时的女朋友）开心的小东西。</em></p>
-</li>
-<li><p>2003年.有源音箱<br><img src="/img/20121014/2.jpeg" alt="2003年.有源音箱(1)"><br><img src="/img/20121014/3.jpeg" alt="2003年.有源音箱(2)"><br><img src="/img/20121014/4.jpeg" alt="2003年.有源音箱(3)"><br><img src="/img/20121014/5.jpeg" alt="2003年.有源音箱(4)"><br><em>大学快毕业时自己制作的有源音箱，电路板用的是公板，音箱箱体还是几个同学跑到学校外面自己买得大木板，最后找木工切割的。喷漆也是自己处理的。想想还是挺激动人心的。现在这东西已被我运回老家，音质我一直觉得非常好，不比当时流行的几百块的“低音炮”差。</em></p>
-</li>
-<li><p>2005年1月18日.创自电动读卡器测试工装<br><img src="/img/20121014/6.jpeg" alt="创自电动读卡器测试"></p>
-</li>
-<li><p>2005年1月18日.按键寿命测试工装<br><img src="/img/20121014/7.jpeg" alt="按键测试工装"></p>
-</li>
-<li><p>2005年5月20日.驱动软驱步进电机<br><img src="/img/20121014/8.jpeg" alt="驱动软驱步进电机"><br><em>为了学习步进电机驱动原理，从一个旧软驱上拆下了磁头的驱动电机，并利用手上现有电路板改装成功驱动。当时，很开心！因为，那时才真正开始学习单片机编程。</em></p>
-</li>
-<li><p>2005年6月3日.八路电池工装<br><img src="/img/20121014/9.jpeg" alt="八路电池工装"><br><em>电池充放电测试工装，用于测试电池充放电时间，容量等指示。</em></p>
-</li>
-<li><p>2005年6月3日.分币器测试<br><img src="/img/20121014/10.jpeg" alt="分币器测试"><br><em>利用现有电路板，编写软件解决测试问题。此时，是对单片机编程最痴迷的时候，也是学东西最多的时候。</em></p>
-</li>
-<li><p>2005年6月3日.升降式IC卡座测试<br><img src="/img/20121014/11.jpeg" alt="升降式IC卡座测试工装"></p>
-</li>
-<li><p>2005年6月3日.摇摆测试机<br><img src="/img/20121014/12.jpeg" alt="摇摆测试机(1)"><br><img src="/img/20121014/13.jpeg" alt="摇摆测试机(2)"><br><em>测试链接线的弯折寿命，比如我们常用的耳机线、电源适配器DC插头。。。</em></p>
-</li>
-<li><p>2005年6月3日.琴键开关测试简易装置<br><img src="/img/20121014/14.jpeg" alt="琴键天关测试简易装置(1)"><br><img src="/img/20121014/15.jpeg" alt="琴键天关测试简易装置(2)"><br><em>缩写简易软件测试琴键开关寿命，带检测功能。</em></p>
-</li>
-<li><p>2005年6月3日.硬币识别测试工装<br><img src="/img/20121014/16.jpeg" alt="硬币识别测试"><br><em>这东西，看着就很牛，流水作业。</em></p>
-</li>
-<li><p>2005年6月3日.自设计电动读卡测试<br><img src="/img/20121014/17.jpeg" alt="自设计电动读卡测试"></p>
-</li>
-<li><p>2005年7月27日.可计行程的小车<br><img src="/img/20121014/18.jpeg" alt="可计行程的小车(1)"><br><img src="/img/20121014/19.jpeg" alt="可计行程的小车(2)"><br><em>参加电子设计大赛抽到的题目是小车，可惜当时没把参赛资料保留下来。参加工作后，一天突发其想再设计一下。学生时代很难的东西，工作后一个下午就DIY出来了。</em></p>
-</li>
-<li><p>2005年9月1日.智能高温箱<br><img src="/img/20121014/20.jpeg" alt="智能高温箱(1)"><br><img src="/img/20121014/21.jpeg" alt="智能高温箱(2)"><br><img src="/img/20121014/22.jpeg" alt="智能高温箱(3)"><br><img src="/img/20121014/23.jpeg" alt="智能高温箱(4)"><br><em>我一直觉得这是个很牛的设计，创作源头是当时的老大，老大很牛。从他那学到了好多东西。至今都受益匪浅！那也是自己成长最快的时期。</em></p>
-</li>
-<li><p>2006年10月4日.自学C++Builder<br><img src="/img/20121014/24.jpeg" alt="ThinkPad"><br><em>国庆假期自学了C++Builder（图中的ThinkPad花了自己8000多元。当时，自己也不过刚当上万元户，买了ThinkPad就近乎破产了。这也证明了：只有穷单身汉才会毫无顾及的拿出所有积蓄去做自己喜欢的事！珍惜单身的时光，去做点自己喜欢做的事！）<br>学习单片机，做东西做多了。发现好多时候需要用到上位机软件配合。于是，利用一个十一假期恶补了C++Builder，这个非常有意义，为后面自己做项目奠定了坚实的基础！</em></p>
-</li>
-<li><p>2006年4月4日.反冲流灌溉控制器<br><img src="/img/20121014/25.jpeg" alt="反冲流灌溉控制器(1)"><br><img src="/img/20121014/26.jpeg" alt="反冲流灌溉控制器(2)"><br><em>工作之余，做得第一项目。Mark一下，后面做得比这好得多的项目反而没留下什么图片，或是也不能公开什么 ：）</em><br><a href="http://www.amobbs.com/thread-612138-1-1.html" target="_blank" rel="external">论坛链接</a></p>
-</li>
-<li><p>2006年4月4日.收银箱寿命测试仪<br><img src="/img/20121014/27.jpeg" alt="收银箱寿命测试仪"><br><em>当时做出这个东西的时候，我们还找到一个机械打领带机，比我们这个牛多了！</em></p>
-</li>
-<li><p>2006年8月14.接触电流测试仪<br><img src="/img/20121014/28.jpeg" alt="接触电流测试仪 (1)"><br><img src="/img/20121014/29.jpeg" alt="接触电流测试仪 (2)"><br><img src="/img/20121014/30.jpeg" alt="接触电流测试仪 (3)"><br><img src="/img/20121014/31.jpeg" alt="接触电流测试仪 (4)"><br><img src="/img/20121014/32.jpeg" alt="接触电流测试仪 (5)"><br><img src="/img/20121014/33.jpeg" alt="接触电流测试仪 (6)"><br><img src="/img/20121014/34.jpeg" alt="接触电流测试仪 (7)"><br><img src="/img/20121014/35.jpeg" alt="接触电流测试仪 (8)"><br><img src="/img/20121014/36.jpeg" alt="接触电流测试仪 (9)"><br><img src="/img/20121014/37.jpeg" alt="接触电流测试仪 (10)"><br><em>这个项目，菜单处理部分让我花了很多心血。在单片机上实现了checkbox效果，引入了进度条。。。每个小图标都精心设计。现在想想当初那股劲，都让我很自豪！</em><br><a href="http://www.amobbs.com/thread-1054447-1-1.html" target="_blank" rel="external">论坛链接</a></p>
-</li>
-<li><p>2007年10月11日.AVRasp<br><img src="/img/20121014/38.jpeg" alt="AVRasp(1)"><br><img src="/img/20121014/39.jpeg" alt="AVRasp(2)"><br><img src="/img/20121014/40.jpeg" alt="AVRasp-3D(1)"><br><img src="/img/20121014/41.jpeg" alt="AVRasp-3D(2)"><br><img src="/img/20121014/42.jpeg" alt="AVRasp成品(1)"><br><img src="/img/20121014/43.jpeg" alt="AVRasp成品(2)"><br><em>自己制作的AVR小工具，重点是为了学习Eagle 3D。Eagle 3D是众多EDA里最漂亮的，至今我还是这么认为！</em><br><a href="http://www.amobbs.com/thread-831661-1-1.html" target="_blank" rel="external">论坛链接1</a><br><a href="http://www.amobbs.com/thread-854275-1-1.html" target="_blank" rel="external">论坛链接2</a></p>
-</li>
-<li><p>2007年1月25日.1.25雷击发生器<br><img src="/img/20121014/41.jpeg" alt="1.25雷击发生器"><br><em>这东西很牛，主要还是牛在硬件上。这个还是得说当时的老大牛。如果想体验”雷劈一下”的感觉，可以拿这个试试。</em></p>
-</li>
-<li><p>2007年1月28日.第一版小崔风火轮<br><img src="/img/20121014/45.jpeg" alt="第一版小崔风火轮设计现场(1)"><br><img src="/img/20121014/46.jpeg" alt="第一版小崔风火轮设计现场(2)"><br><img src="/img/20121014/47.jpeg" alt="第一版小崔风火轮设计现场(3)"><br><img src="/img/20121014/48.jpeg" alt="第一版小崔风火轮设计现场(4)"><br><img src="/img/20121014/49.jpeg" alt="第一版小崔风火轮设计现场(5)"><br><img src="/img/20121014/50.jpeg" alt="第一版小崔风火轮设计现场(5)"><br><em>本人做东西一向都很快，调试软件只用了一个下午和晚上。当时，就已养成了事情搞不完不睡觉的优良传统。</em><br><a href="http://www.amobbs.com/thread-716357-1-1.html" target="_blank" rel="external">论坛链接</a></p>
-</li>
-<li><p>2007年1月29.基于C++Builder6编写的风火轮取模软件<br><img src="/img/20121014/51.jpeg" alt="取模软件1"><br><img src="/img/20121014/52.jpeg" alt="取模软件2"><br><em>此时，我的C++Builder6已炉火纯青，不过现在搞这类小软件已转向C#.net了。</em></p>
-</li>
-<li><p>2007年1月29日.第一版小崔风火轮设计完成<br><img src="/img/20121014/53.jpeg" alt="第一版小崔风火轮"><br><em>当看到这个效果时，真得有说不出的激动。</em><br><a href="http://www.amobbs.com/thread-850834-1-1.html" target="_blank" rel="external">论坛链接</a></p>
-</li>
-<li><p>2008年11月20日.基于CC1110+TRF7960的RFID读卡器<br><img src="/img/20121014/54.jpeg" alt="读卡器"><br><em>折腾了我好久的中断触发模式，最后还是用的轮询。CC1110跟MSP430还是有区别地。</em></p>
-</li>
-<li><p>2008年1月2日.RGB LED<br><img src="/img/20121014/55.jpeg" alt="调光调试现场(1)"><br><img src="/img/20121014/56.jpeg" alt="调光调试现场(2)"><br><img src="/img/20121014/57.jpeg" alt="调光调试现场(3)"><br><em>当时如果坚持做点调光的产品，现在说不定发了。</em><br><a href="http://www.amobbs.com/thread-883719-1-1.html" target="_blank" rel="external">论坛链接</a></p>
-</li>
-<li><p>2008年3月31日.第一版RGB小崔风火轮<br><img src="/img/20121014/58.jpeg" alt="第一版RGB小崔风火轮调试现场(1)"><br><img src="/img/20121014/59.jpeg" alt="第一版RGB小崔风火轮调试现场(2)"><br><img src="/img/20121014/60.jpeg" alt="第一版RGB小崔风火轮调试现场(3)"><br><em>在租住的小房间里调试RGB风火轮。很投入。。。。。。如今住进了自己的房子，却怎么也找不到一个可以自己折腾的空间了。</em></p>
-</li>
-<li><p>2008年3月9日.小崔风火轮简易版<br><img src="/img/20121014/61.jpeg" alt="小崔风火轮简易版(1)"><br><img src="/img/20121014/62.jpeg" alt="小崔风火轮简易版(2)"><br><em>在老婆的英明指导下，将小崔风火轮包装成产品。虽然，没搞出什么名堂。但还是赚了点零花钱。这东西至今还有人经常联系我聊合作的事。可惜已决定不在江湖混了，只能婉拒！</em><br><a href="http://www.amobbs.com/thread-946455-1-1.html" target="_blank" rel="external">论坛链接</a></p>
-</li>
-<li><p>2008年5月11日.CC2430仿真器<br><img src="/img/20121014/63.jpeg" alt="CC2430仿真器"><br><em>赚到最多的一个DIY产品。</em></p>
-</li>
-<li><p>2008年5月16.为老外定制的RGB风火轮<br><img src="/img/20121014/64.jpeg" alt="为老外定制的RGB风火轮(1)"><br><img src="/img/20121014/65.jpeg" alt="为老外定制的RGB风火轮(2)"><br><img src="/img/20121014/66.jpeg" alt="为老外定制的RGB风火轮(3)"><br><img src="/img/20121014/67.jpeg" alt="为老外定制的RGB风火轮(4)"><br><em>给一个国外客户弄的，好像也是中国人，只是移民了。</em></p>
-</li>
-<li><p>2009年8月31日.CC2530仿真器<br><img src="/img/20121014/68.jpeg" alt="CC2530仿真器"><br><em>这个的重点是设计上做了优化，成本上要比TI原厂那个低很多！</em></p>
-</li>
+<li>2002年.闪动的LOVE</li>
 </ul>
+<p><img src="/img/20121014/1.jpeg" alt="2002年.闪动的LOVE"><br><em>大学期间参加大学电子设计大赛，利用当时所学知识和课余时间制作，用来哄女朋友(现在的老婆)开心的小东西。</em></p>
+<ul>
+<li>2003年.有源音箱</li>
+</ul>
+<p><img src="/img/20121014/2.jpeg" alt="2003年.有源音箱(1)"><br><img src="/img/20121014/3.jpeg" alt="2003年.有源音箱(2)"><br><img src="/img/20121014/4.jpeg" alt="2003年.有源音箱(3)"><br><img src="/img/20121014/5.jpeg" alt="2003年.有源音箱(4)"></p>
+<p><em>大学快毕业时自己制作的有源音箱，电路板用的是公板，音箱箱体还是几个同学跑到学校外面自己买得大木板，最后找木工切割的。喷漆也是自己处理的。想想还是挺激动人心的。现在这东西已被我运回老家，音质我一直觉得非常好，不比当时流行的几百块的“低音炮”差。</em></p>
+<ul>
+<li>2005年1月18日.创自电动读卡器测试工装</li>
+</ul>
+<p><img src="/img/20121014/6.jpeg" alt="创自电动读卡器测试"></p>
+<ul>
+<li>2005年1月18日.按键寿命测试工装</li>
+</ul>
+<p><img src="/img/20121014/7.jpeg" alt="按键测试工装"></p>
+<ul>
+<li>2005年5月20日.驱动软驱步进电机</li>
+</ul>
+<p><img src="/img/20121014/8.jpeg" alt="驱动软驱步进电机"></p>
+<p><em>为了学习步进电机驱动原理，从一个旧软驱上拆下了磁头的驱动电机，并利用手上现有电路板改装成功驱动。当时，很开心！因为，那时才真正开始学习单片机编程。</em></p>
+<ul>
+<li>2005年6月3日.八路电池工装</li>
+</ul>
+<p><img src="/img/20121014/9.jpeg" alt="八路电池工装"></p>
+<p><em>电池充放电测试工装，用于测试电池充放电时间，容量等指示。</em></p>
+<ul>
+<li>2005年6月3日.分币器测试</li>
+</ul>
+<p><img src="/img/20121014/10.jpeg" alt="分币器测试"></p>
+<p><em>利用现有电路板，编写软件解决测试问题。此时，是对单片机编程最痴迷的时候，也是学东西最多的时候。</em></p>
+<ul>
+<li>2005年6月3日.升降式IC卡座测试</li>
+</ul>
+<p><img src="/img/20121014/11.jpeg" alt="升降式IC卡座测试工装"></p>
+<ul>
+<li>2005年6月3日.摇摆测试机</li>
+</ul>
+<p><img src="/img/20121014/12.jpeg" alt="摇摆测试机(1)"><br><img src="/img/20121014/13.jpeg" alt="摇摆测试机(2)"></p>
+<p><em>测试链接线的弯折寿命，比如我们常用的耳机线、电源适配器DC插头。。。</em></p>
+<ul>
+<li>2005年6月3日.琴键开关测试简易装置</li>
+</ul>
+<p><img src="/img/20121014/14.jpeg" alt="琴键天关测试简易装置(1)"><br><img src="/img/20121014/15.jpeg" alt="琴键天关测试简易装置(2)"></p>
+<p><em>缩写简易软件测试琴键开关寿命，带检测功能。</em></p>
+<ul>
+<li>2005年6月3日.硬币识别测试工装</li>
+</ul>
+<p><img src="/img/20121014/16.jpeg" alt="硬币识别测试"></p>
+<p><em>这东西，看着就很牛，流水作业。</em></p>
+<ul>
+<li>2005年6月3日.自设计电动读卡测试</li>
+</ul>
+<p><img src="/img/20121014/17.jpeg" alt="自设计电动读卡测试"></p>
+<ul>
+<li>2005年7月27日.可计行程的小车</li>
+</ul>
+<p><img src="/img/20121014/18.jpeg" alt="可计行程的小车(1)"><br><img src="/img/20121014/19.jpeg" alt="可计行程的小车(2)"></p>
+<p><em>参加电子设计大赛抽到的题目是小车，可惜当时没把参赛资料保留下来。参加工作后，一天突发其想再设计一下。学生时代很难的东西，工作后一个下午就DIY出来了。</em></p>
+<ul>
+<li>2005年9月1日.智能高温箱</li>
+</ul>
+<p><img src="/img/20121014/20.jpeg" alt="智能高温箱(1)"><br><img src="/img/20121014/21.jpeg" alt="智能高温箱(2)"><br><img src="/img/20121014/22.jpeg" alt="智能高温箱(3)"><br><img src="/img/20121014/23.jpeg" alt="智能高温箱(4)"></p>
+<p><em>我一直觉得这是个很牛的设计，创作源头是当时的老大，老大很牛。从他那学到了好多东西。至今都受益匪浅！那也是自己成长最快的时期。</em></p>
+<ul>
+<li>2006年10月4日.自学C++Builder</li>
+</ul>
+<p><img src="/img/20121014/24.jpeg" alt="ThinkPad"></p>
+<p><em>国庆假期自学了C++Builder（图中的ThinkPad花了自己8000多元。当时，自己也不过刚当上万元户，买了ThinkPad就近乎破产了。这也证明了：只有穷单身汉才会毫无顾及的拿出所有积蓄去做自己喜欢的事！珍惜单身的时光，去做点自己喜欢做的事！）<br>学习单片机，做东西做多了。发现好多时候需要用到上位机软件配合。于是，利用一个十一假期恶补了C++Builder，这个非常有意义，为后面自己做项目奠定了坚实的基础！</em></p>
+<ul>
+<li>2006年4月4日.反冲流灌溉控制器</li>
+</ul>
+<p><img src="/img/20121014/25.jpeg" alt="反冲流灌溉控制器(1)"><br><img src="/img/20121014/26.jpeg" alt="反冲流灌溉控制器(2)"></p>
+<p><em>工作之余，做得第一项目。Mark一下，后面做得比这好得多的项目反而没留下什么图片，或是也不能公开什么 ：）</em></p>
+<p><a href="http://www.amobbs.com/thread-612138-1-1.html" target="_blank" rel="external">论坛链接</a></p>
+<ul>
+<li>2006年4月4日.收银箱寿命测试仪</li>
+</ul>
+<p><img src="/img/20121014/27.jpeg" alt="收银箱寿命测试仪(1)"><br><img src="/img/20121014/28.jpeg" alt="收银箱寿命测试仪(2)"></p>
+<p><em>当时做出这个东西的时候，我们还找到一个机械打领带机，比我们这个牛多了！</em></p>
+<ul>
+<li>2006年8月14.接触电流测试仪</li>
+</ul>
+<p><img src="/img/20121014/29.jpeg" alt="接触电流测试仪(1)"><br><img src="/img/20121014/30.jpeg" alt="接触电流测试仪(2)"><br><img src="/img/20121014/31.jpeg" alt="接触电流测试仪(3)"><br><img src="/img/20121014/32.jpeg" alt="接触电流测试仪(4)"><br><img src="/img/20121014/33.jpeg" alt="接触电流测试仪(5)"><br><img src="/img/20121014/34.jpeg" alt="接触电流测试仪(6)"><br><img src="/img/20121014/35.jpeg" alt="接触电流测试仪(7)"><br><img src="/img/20121014/36.jpeg" alt="接触电流测试仪(8)"><br><img src="/img/20121014/37.jpeg" alt="接触电流测试仪(9)"><br><img src="/img/20121014/38.jpeg" alt="接触电流测试仪(10)"></p>
+<p><em>这个项目，菜单处理部分让我花了很多心血。在单片机上实现了checkbox效果，引入了进度条。。。每个小图标都精心设计。现在想想当初那股劲，都让我很自豪！</em></p>
+<p><a href="http://www.amobbs.com/thread-1054447-1-1.html" target="_blank" rel="external">论坛链接</a></p>
+<ul>
+<li>2007年10月11日.AVRasp</li>
+</ul>
+<p><img src="/img/20121014/39.jpeg" alt="AVRasp(1)"><br><img src="/img/20121014/40.jpeg" alt="AVRasp(2)"><br><img src="/img/20121014/41.png" alt="AVRasp-3D(1)"><br><img src="/img/20121014/42.png" alt="AVRasp-3D(2)"><br><img src="/img/20121014/43.jpeg" alt="AVRasp成品(1)"><br><img src="/img/20121014/44.jpeg" alt="AVRasp成品(2)"></p>
+<p><em>自己制作的AVR小工具，重点是为了学习Eagle 3D。Eagle 3D是众多EDA里最漂亮的，至今我还是这么认为！</em></p>
+<p><a href="http://www.amobbs.com/thread-831661-1-1.html" target="_blank" rel="external">论坛链接1</a><br><a href="http://www.amobbs.com/thread-854275-1-1.html" target="_blank" rel="external">论坛链接2</a></p>
+<ul>
+<li>2007年1月25日.1.25雷击发生器</li>
+</ul>
+<p><img src="/img/20121014/45.jpeg" alt="1.25雷击发生器"></p>
+<p><em>这东西很牛，主要还是牛在硬件上。这个还是得说当时的老大牛。如果想体验”雷劈一下”的感觉，可以拿这个试试。</em></p>
+<ul>
+<li>2007年1月28日.第一版小崔风火轮</li>
+</ul>
+<p><img src="/img/20121014/46.jpeg" alt="第一版小崔风火轮设计现场(1)"><br><img src="/img/20121014/47.jpeg" alt="第一版小崔风火轮设计现场(2)"><br><img src="/img/20121014/48.jpeg" alt="第一版小崔风火轮设计现场(3)"><br><img src="/img/20121014/49.jpeg" alt="第一版小崔风火轮设计现场(4)"><br><img src="/img/20121014/50.jpeg" alt="第一版小崔风火轮设计现场(5)"></p>
+<p><em>本人做东西一向都很快，调试软件只用了一个下午和晚上。当时，就已养成了事情搞不完不睡觉的优良传统。</em></p>
+<p><a href="http://www.amobbs.com/thread-716357-1-1.html" target="_blank" rel="external">论坛链接</a></p>
+<ul>
+<li>2007年1月29.基于C++Builder6编写的风火轮取模软件</li>
+</ul>
+<p><img src="/img/20121014/51.jpeg" alt="取模软件1"><br><img src="/img/20121014/52.jpeg" alt="取模软件2"></p>
+<p><em>此时，我的C++Builder6已炉火纯青，不过现在搞这类小软件已转向C#.net了。</em></p>
+<ul>
+<li>2007年1月29日.第一版小崔风火轮设计完成</li>
+</ul>
+<p><img src="/img/20121014/53.jpeg" alt="第一版小崔风火轮"></p>
+<p><em>当看到这个效果时，真得有说不出的激动。</em></p>
+<p><a href="http://www.amobbs.com/thread-850834-1-1.html" target="_blank" rel="external">论坛链接</a></p>
+<ul>
+<li>2008年11月20日.基于CC1110+TRF7960的RFID读卡器</li>
+</ul>
+<p><img src="/img/20121014/54.jpeg" alt="读卡器"></p>
+<p><em>折腾了我好久的中断触发模式，最后还是用的轮询。CC1110跟MSP430还是有区别地。</em></p>
+<ul>
+<li>2008年1月2日.RGB LED</li>
+</ul>
+<p><img src="/img/20121014/55.jpeg" alt="调光调试现场(1)"><br><img src="/img/20121014/56.jpeg" alt="调光调试现场(2)"><br><img src="/img/20121014/57.jpeg" alt="调光调试现场(3)"></p>
+<p><em>当时如果坚持做点调光的产品，现在说不定发了。</em></p>
+<p><a href="http://www.amobbs.com/thread-883719-1-1.html" target="_blank" rel="external">论坛链接</a></p>
+<ul>
+<li>2008年3月31日.第一版RGB小崔风火轮</li>
+</ul>
+<p><img src="/img/20121014/58.jpeg" alt="第一版RGB小崔风火轮调试现场(1)"><br><img src="/img/20121014/59.jpeg" alt="第一版RGB小崔风火轮调试现场(2)"><br><img src="/img/20121014/60.jpeg" alt="第一版RGB小崔风火轮调试现场(3)"></p>
+<p><em>在租住的小房间里调试RGB风火轮。很投入。。。。。。如今住进了自己的房子，却怎么也找不到一个可以自己折腾的空间了。</em></p>
+<ul>
+<li>2008年3月9日.小崔风火轮简易版</li>
+</ul>
+<p><img src="/img/20121014/61.jpeg" alt="小崔风火轮简易版(1)"><br><img src="/img/20121014/62.jpeg" alt="小崔风火轮简易版(2)"></p>
+<p><em>在老婆的英明指导下，将小崔风火轮包装成产品。虽然，没搞出什么名堂。但还是赚了点零花钱。这东西至今还有人经常联系我聊合作的事。可惜已决定不在江湖混了，只能婉拒！</em></p>
+<p><a href="http://www.amobbs.com/thread-946455-1-1.html" target="_blank" rel="external">论坛链接</a></p>
+<ul>
+<li>2008年5月11日.CC2430仿真器</li>
+</ul>
+<p><img src="/img/20121014/63.jpeg" alt="CC2430仿真器"></p>
+<p><em>赚到最多的一个DIY产品。</em></p>
+<ul>
+<li>2008年5月16.为老外定制的RGB风火轮</li>
+</ul>
+<p><img src="/img/20121014/64.jpeg" alt="为老外定制的RGB风火轮(1)"><br><img src="/img/20121014/65.jpeg" alt="为老外定制的RGB风火轮(2)"><br><img src="/img/20121014/66.jpeg" alt="为老外定制的RGB风火轮(3)"><br><img src="/img/20121014/67.jpeg" alt="为老外定制的RGB风火轮(4)"></p>
+<p><em>给一个国外客户弄的，好像也是中国人，只是移民了。</em></p>
+<ul>
+<li>2009年8月31日.CC2530仿真器</li>
+</ul>
+<p><img src="/img/20121014/68.jpeg" alt="CC2530仿真器"></p>
+<p><em>这个的重点是设计上做了优化，成本上要比TI原厂那个低很多！</em></p>
 <hr>
 <p><em>发表链接</em></p>
 <p>QQZone <a href="http://user.qzone.qq.com/39886157/blog/1350188306" target="_blank" rel="external">http://user.qzone.qq.com/39886157/blog/1350188306</a></p>
