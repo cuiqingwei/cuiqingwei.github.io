@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2018-03-16T08:24:23.000Z</updated>
+  <updated>2018-04-24T03:51:00.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -14,6 +14,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OSX安装nginx和rtmp模块</title>
+    <link href="http://cuiqingwei.github.io/2018/04/24/2018-04-24-OSX%E5%AE%89%E8%A3%85nginx%E5%92%8Crtmp%E6%A8%A1%E5%9D%97/"/>
+    <id>http://cuiqingwei.github.io/2018/04/24/2018-04-24-OSX安装nginx和rtmp模块/</id>
+    <published>2018-04-24T04:12:08.000Z</published>
+    <updated>2018-04-24T03:51:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-安装brew"><a href="#1-安装brew" class="headerlink" title="1.安装brew"></a>1.安装brew</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div><div class="line">如果安装后, 想要卸载</div><div class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)&quot;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="2-安装nginx"><a href="#2-安装nginx" class="headerlink" title="2.安装nginx"></a>2.安装nginx</h1><p>先clone nginx项目到本地<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew tap denji/nginx</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>brew tap homebrew/nginx 源已失效<br>  可参考 <a href="https://github.com/denji/homebrew-nginx" target="_blank" rel="external">https://github.com/denji/homebrew-nginx</a></p>
+</blockquote>
+<p>执行安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install nginx-full --with-rtmp-module</div></pre></td></tr></table></figure>
+<p>此时, nginx和rtmp模块就安装好了<br>输入命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nginx</div></pre></td></tr></table></figure>
+<p>在浏览器里打开<a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a></p>
+<blockquote>
+<p>查询安装路径：brew info nginx-full</p>
+</blockquote>
+<h1 id="3-配置RTMP服务"><a href="#3-配置RTMP服务" class="headerlink" title="3.配置RTMP服务"></a>3.配置RTMP服务</h1><p>/usr/local/etc/nginx/nginx.conf <strong>中RTMP和Http节点一致</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nginx -c /usr/local/etc/nginx/nginx.conf</div></pre></td></tr></table></figure>
+<blockquote>
+<p>使用nginx -c的参数指定nginx.conf文件的位置</p>
+</blockquote>
+<p>在http节点后面加上rtmp配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">rtmp &#123;</div><div class="line">    server &#123;</div><div class="line">        listen 1935;</div><div class="line">        application myapp &#123;</div><div class="line">            live on;</div><div class="line">            #record keyframes;</div><div class="line">            #record_path /tmp;</div><div class="line">            #record_max_size 128K;</div><div class="line">            #record_interval 30s;</div><div class="line">            #record_suffix .this.is.flv;</div><div class="line">            #on_publish http://localhost:8080/publish;</div><div class="line">            #on_play http://localhost:8080/play;</div><div class="line">            #on_record_done http://localhost:8080/record_done;</div><div class="line">       &#125;</div><div class="line">       application hls &#123;</div><div class="line">             live on;</div><div class="line">             hls on;</div><div class="line">             hls_path /tmp/app;</div><div class="line">             hls_fragment 5s;</div><div class="line">       &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="4-查询rtmp服务是否正常"><a href="#4-查询rtmp服务是否正常" class="headerlink" title="4.查询rtmp服务是否正常"></a>4.查询rtmp服务是否正常</h1><p>修改完配置文件之后执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nginx -s reload</div></pre></td></tr></table></figure>
+<p>执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo lsof -i -P | grep -i &quot;listen&quot;</div></pre></td></tr></table></figure>
+<p>查询1935端口是否开启</p>
+<h1 id="5-直播测试"><a href="#5-直播测试" class="headerlink" title="5.直播测试　　"></a>5.直播测试　　</h1><p>安装ffmpeg</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install ffmpeg</div></pre></td></tr></table></figure>
+<p>安装<a href="http://www.videolan.org/" target="_blank" rel="external">vlc播放器</a>,准备mp4文件推流测试，用vlc播放</p>
+<p><strong>推流</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ffmpeg -re -i /Volumes/WORK/Moorgen/演示资料/演示视频/moorgen.mp4 -vcodec libx264 -acodec aac -f flv rtmp://127.0.0.1:1935/myapp/room</div></pre></td></tr></table></figure>
+<p><strong>播放</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rtmp://localhost:1935/myapp/room</div></pre></td></tr></table></figure>
+<p><img src="/img/20180424/rtmp.png" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;1-安装brew&quot;&gt;&lt;a href=&quot;#1-安装brew&quot; class=&quot;headerlink&quot; title=&quot;1.安装brew&quot;&gt;&lt;/a&gt;1.安装brew&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;如果安装后, 想要卸载&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)&amp;quot;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="rtmp" scheme="http://cuiqingwei.github.io/tags/rtmp/"/>
+    
+      <category term="nginx" scheme="http://cuiqingwei.github.io/tags/nginx/"/>
+    
+  </entry>
   
   <entry>
     <title>802.11ac Wave2到底好在哪?</title>
@@ -1261,57 +1317,6 @@
     <summary type="html">
     
       &lt;p&gt;在&lt;a href=&quot;http://www.cnblogs.com/ms0017/archive/2011/07/26/2117676.html&quot;&gt;文章&lt;/a&gt;里，列举了国内外用ASP.NET开发的大型网站有哪些。最后提到了用.NET开发的大型网站和LAMP/JAVA平台的成本比较。其实在很多时候，收费的不一定就比免费的成本更高。因为开发一个网站要使用哪个平台的技术更合适，需要考虑很多种情况（除了开发技术本身，还要考虑人工，开发效率，时间，后续的支持，维护等等），要综合计算成本才行。微软平台本身虽然是收费的，但总体的成本并非一定比LAMP/JAVA高，上篇文章列举的国内外的那么多基于ASP.NET开发的大型网站就是例证。尤其是在开发效率上，无论是C#开发语言，还是免费的开发工具（Visual Studio Express，或者MonoDevelop/SharpDevelop），.NET明显比其他两个平台更胜一筹。而这一点正是互联网企业所需要的。效率就是生产力。并且，由于有Mono (&lt;a href=&quot;http://mono-project.org/&quot;&gt;http://mono-project.org/&lt;/a&gt;) 这个开源平台的存在，.NET技术也可以在linux/BSD等开源服务器上使用。使.NET完全可以实现跨平台应用。据此，我们可以分Windows/Linux两种方式来架构我们的ASP.NET网站：&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="IIS" scheme="http://cuiqingwei.github.io/tags/IIS/"/>
-    
-      <category term="ASP.NET" scheme="http://cuiqingwei.github.io/tags/ASP-NET/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于微软平台IIS/ASP.NET开发的大型网站有哪些?</title>
-    <link href="http://cuiqingwei.github.io/2016/12/30/2016-12-30-%E5%9F%BA%E4%BA%8E%E5%BE%AE%E8%BD%AF%E5%B9%B3%E5%8F%B0IIS-ASP-NET%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%9C%89%E5%93%AA%E4%BA%9B/"/>
-    <id>http://cuiqingwei.github.io/2016/12/30/2016-12-30-基于微软平台IIS-ASP-NET开发的大型网站有哪些/</id>
-    <published>2016-12-29T16:04:40.000Z</published>
-    <updated>2016-12-30T01:09:34.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>首先说明一下，本文绝不是要说Microsoft平台多么好，多么强。<br>只是要说明一下除了LAMP/JAVA平台，微软平台不至于像有些人说的，和想象的那么不堪！</p>
-<a id="more"></a>
-<p>下面一一列举几个:<br><a href="http://www.msn.com/" target="_blank" rel="external">http://www.msn.com/</a><br><a href="http://www.live.com/" target="_blank" rel="external">http://www.live.com/</a> (包括skydrive、hotmail等)<br><a href="http://www.bing.com/" target="_blank" rel="external">http://www.bing.com/</a></p>
-<blockquote>
-<p>根据comScore今年11月份的统计，微软网站已经超过雅虎、facebook成为仅此于Google的美国第二大网站。如果对这基于windows server/IIS/Asp.net构建的美国第二大网站，你们还说微软技术不能开发大型网站。那不觉得自己是在扯淡么？</p>
-</blockquote>
-<p><a href="http://www.godaddy.com/" target="_blank" rel="external">http://www.godaddy.com/</a> (全球最大域名注册商)<br><a href="http://www.MySpace.com/" target="_blank" rel="external">http://www.MySpace.com/</a><br><a href="http://www.match.com/" target="_blank" rel="external">http://www.match.com/</a> (世界最大婚恋网站)<br><a href="http://www.monster.com/" target="_blank" rel="external">http://www.monster.com/</a> (世界最大招聘网站,chinahr.com母公司)<br><a href="http://www.careerbuilder.com/" target="_blank" rel="external">http://www.careerbuilder.com/</a><br><a href="http://www.expedia.com/" target="_blank" rel="external">http://www.expedia.com/</a> (世界最大旅游网站,elong,kuxun母公司)<br><a href="http://www.newegg.com/" target="_blank" rel="external">http://www.newegg.com/</a><br><a href="http://www.buy.com/" target="_blank" rel="external">http://www.buy.com/</a><br><a href="http://www.pof.com/" target="_blank" rel="external">http://www.pof.com/</a><br><a href="http://www.ancestry.com/" target="_blank" rel="external">http://www.ancestry.com/</a> (世界最大的家谱网站,拥有全球最复杂的家谱tree)<br><a href="http://espn.go.com/" target="_blank" rel="external">http://espn.go.com/</a><br><a href="http://www.MSNBC.com/" target="_blank" rel="external">http://www.MSNBC.com/</a><br><a href="http://www.stackoverflow.com/" target="_blank" rel="external">http://www.stackoverflow.com/</a> (近两年火起来的技术问答网站,比Quora火的多啊)<br><a href="http://www.AngiesList.com/" target="_blank" rel="external">http://www.AngiesList.com/</a> (最近上市的美国著名点评网站)</p>
-<blockquote>
-<p>可能有人马上就能举出facebook,yahoo等国外大型网站来反驳我。尤其是对没落的myspace，更是嗤之以鼻。认为是使用微软技术的反面教材。其失败的原因之一就是因为用了微软技术做开发。但我想请问一下：当初myspace如日中天，为全球第一社交网站，facebook还未成气候时，你们当初有谁说它用了微软技术，将来就会失败？有谁说过？！且不说它失败的原因不是微软技术的错，相反，它使用微软技术，能做到上亿的用户，世界最大的社交网站。难道不更能说明微软技术的成功么？现在有多少大型网站能达到当初myspace的规模？屈指可数！并且，我相信如果它做到了现在 facebook的规模，用微软技术也能找到支撑的办法！</p>
-</blockquote>
-<p><a href="http://www.Dell.com/" target="_blank" rel="external">http://www.Dell.com/</a><br><a href="http://www.CA.com/" target="_blank" rel="external">http://www.CA.com/</a><br><a href="http://www.McAfee.com/" target="_blank" rel="external">http://www.McAfee.com/</a><br><a href="http://www.SAP.com/" target="_blank" rel="external">http://www.SAP.com/</a></p>
-<blockquote>
-<p>很多人看了肯定会说，这都是一些官网啊。又不是什么大型网站，有什么说服力。请注意了，Dell的官网可是电子商务—卖电脑的。CA, 迈克菲本身是安全领域的公司，SAP是全球顶级ERP提供商。他们为啥要用“安全性最差”的Microsoft技术开发其网站呢？不怕网站被黑了丢人？</p>
-</blockquote>
-<p><a href="http://www.360buy.com/" target="_blank" rel="external">http://www.360buy.com/</a> (京东商城)<br><a href="http://www.dangdang.com/" target="_blank" rel="external">http://www.dangdang.com/</a> (当当)<br><a href="http://www.vancl.com/" target="_blank" rel="external">http://www.vancl.com/</a> （凡客）<br><a href="http://www.m18.com/" target="_blank" rel="external">http://www.m18.com/</a> （麦考林）<br><a href="http://www.newegg.com.cn/" target="_blank" rel="external">http://www.newegg.com.cn/</a> (新蛋)<br><a href="http://www.yifu.com/" target="_blank" rel="external">http://www.yifu.com/</a><br><a href="http://www.letao.com/" target="_blank" rel="external">http://www.letao.com/</a> (乐淘)<br><a href="http://mall.sina.com.cn/" target="_blank" rel="external">http://mall.sina.com.cn/</a> (新浪商城)<br><a href="http://www.redbaby.com.cn/" target="_blank" rel="external">http://www.redbaby.com.cn/</a><br><a href="http://www.moonbasa.com/" target="_blank" rel="external">http://www.moonbasa.com/</a> (梦芭莎)<br><a href="http://www.no5.com.cn/" target="_blank" rel="external">http://www.no5.com.cn/</a><br><a href="http://www.99read.com/" target="_blank" rel="external">http://www.99read.com/</a><br><a href="http://www.coo8.com/" target="_blank" rel="external">http://www.coo8.com/</a> (库巴，国美旗下)<br><a href="http://www.yintai.com/" target="_blank" rel="external">http://www.yintai.com/</a><br><a href="http://www.5173.com/" target="_blank" rel="external">http://www.5173.com/</a><br><a href="http://www.b2b.cn/" target="_blank" rel="external">http://www.b2b.cn/</a><br><a href="http://www.Ftuan.com/" target="_blank" rel="external">http://www.Ftuan.com/</a><br><a href="http://www.dazhe.cn/" target="_blank" rel="external">http://www.dazhe.cn/</a><br><a href="http://www.tiantian.com/" target="_blank" rel="external">http://www.tiantian.com/</a></p>
-<blockquote>
-<p>相信很多人都认识到了这一点，国内大部分主流的大型电子商务网站都是用ASP.NET开发的。他们的流量，像360buy等虽然比不上taobao，但千万级的规模是肯定有的，绝对属于大型网站。其安全性，稳定性，性能等等，不比taobao差。</p>
-</blockquote>
-<p><a href="http://www.ips.com/" target="_blank" rel="external">http://www.ips.com/</a> (环迅支付)<br><a href="http://www.icbc.com.cn/" target="_blank" rel="external">http://www.icbc.com.cn/</a><br><a href="http://www.cmbchina.com/" target="_blank" rel="external">http://www.cmbchina.com/</a><br><a href="https://pbsz.ebank.cmbchina.com/CmbBank_GenShell/UI/GenShellPC/Login/Login.aspx" target="_blank" rel="external">https://pbsz.ebank.cmbchina.com/CmbBank_GenShell/UI/GenShellPC/Login/Login.aspx</a> (招商网银)<br><a href="http://www.95599.cn/" target="_blank" rel="external">http://www.95599.cn/</a><br><a href="https://easyabc.95599.cn/SlfRegPer/netBank/zh_CN/entrance/logon.aspx" target="_blank" rel="external">https://easyabc.95599.cn/SlfRegPer/netBank/zh_CN/entrance/logon.aspx</a> (农行网银)<br><a href="http://www.boc.cn/" target="_blank" rel="external">http://www.boc.cn/</a></p>
-<blockquote>
-<p>有人说银行的官网不是关键应用，但不知道网银是不是呢？</p>
-</blockquote>
-<p><a href="http://www.ctrip.com/" target="_blank" rel="external">http://www.ctrip.com/</a> (携程)<br><a href="http://www.elong.com/（艺龙）" target="_blank" rel="external">http://www.elong.com/（艺龙）</a><br><a href="http://www.lotour.com/" target="_blank" rel="external">http://www.lotour.com/</a><br><a href="http://www.17u.cn/" target="_blank" rel="external">http://www.17u.cn/</a><br><a href="http://www.uzai.com/" target="_blank" rel="external">http://www.uzai.com/</a></p>
-<blockquote>
-<p>主流的在线旅游/票务网站</p>
-</blockquote>
-<p><a href="http://www.sdo.com/" target="_blank" rel="external">http://www.sdo.com/</a> (盛大在线)<br><a href="http://www.qidian.com/" target="_blank" rel="external">http://www.qidian.com/</a> (起点中文网)<br><a href="http://www.58.com/" target="_blank" rel="external">http://www.58.com/</a> (58同城)<br><a href="http://www.hexun.com/" target="_blank" rel="external">http://www.hexun.com/</a> (和讯)<br><a href="http://www.mtime.com/" target="_blank" rel="external">http://www.mtime.com/</a><br><a href="http://www.yeshj.com/" target="_blank" rel="external">http://www.yeshj.com/</a><br><a href="http://www.eastmoney.com/" target="_blank" rel="external">http://www.eastmoney.com/</a><br><a href="http://www.stockstar.com/" target="_blank" rel="external">http://www.stockstar.com/</a><br><a href="http://feixin.10086.cn/" target="_blank" rel="external">http://feixin.10086.cn/</a> (中国移动飞信<a href="http://www.fetion.com.cn/" target="_blank" rel="external">http://www.fetion.com.cn/</a>)<br><a href="http://mail.10086.cn/" target="_blank" rel="external">http://mail.10086.cn/</a> (中国移动139邮箱)<br><a href="http://passport.189.cn/" target="_blank" rel="external">http://passport.189.cn/</a> （中国电信）<br><a href="http://www.cnblogs.com/" target="_blank" rel="external">http://www.cnblogs.com/</a><br><a href="http://www.csdn.net/" target="_blank" rel="external">http://www.csdn.net/</a><br><a href="http://www.chinahr.com/" target="_blank" rel="external">http://www.chinahr.com/</a><br><a href="http://www.zhaopin.com/" target="_blank" rel="external">http://www.zhaopin.com/</a> (智联招聘)<br><a href="http://www.soufun.com/" target="_blank" rel="external">http://www.soufun.com/</a> (搜房)<br><a href="http://www.dichan.com/" target="_blank" rel="external">http://www.dichan.com/</a> (新浪地产)<br><a href="http://nbadata.sports.qq.com/" target="_blank" rel="external">http://nbadata.sports.qq.com/</a> (腾讯NBA)<br><a href="http://www.autohome.com.cn/" target="_blank" rel="external">http://www.autohome.com.cn/</a> (汽车之家)<br><a href="http://www.bitauto.com/" target="_blank" rel="external">http://www.bitauto.com/</a><br><a href="http://www.39.net/" target="_blank" rel="external">http://www.39.net/</a><br><a href="http://3g.cn/" target="_blank" rel="external">http://3g.cn/</a></p>
-<p>总之一句话，拿那些如：性能、安全、稳定、效率等等作为原因来攻击微软平台，是绝对站不住脚的！其实大家都心里清楚，ASP.NET和LAMP/JAVA相比，最大不同只不过是前者是收费的，而后者是开源免费的。仅此而已！</p>
-<p>补充：<br>1、关于成本的讨论，可以看一下<a href="http://www.cnblogs.com/ms0017/archive/2011/08/17/Microsoft-NET-Mono-MySQL-MVC-Linux-Large-WebSite.html" target="_blank" rel="external">谈谈用ASP.NET开发的大型网站有哪些架构方式</a>。<br>2、相信很多人（包括我自己）都认为微软Windows在桌面OS上无敌，在服务器上不行，在服务器OS上Linux是老大。可惜事实却是：在服务器操作系统上Windows Server也是老大！这里有IDC对2009，2010两年服务器操作系统的市场份额统计，在最近两年里Windows在全球服务器OS的市场份额已经是第一，并且还在稳步上升中。<br><a href="http://blog.csdn.net/ms_net/article/details/6634295" target="_blank" rel="external">http://blog.csdn.net/ms_net/article/details/6634295</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;首先说明一下，本文绝不是要说Microsoft平台多么好，多么强。&lt;br&gt;只是要说明一下除了LAMP/JAVA平台，微软平台不至于像有些人说的，和想象的那么不堪！&lt;/p&gt;
     
     </summary>
     
