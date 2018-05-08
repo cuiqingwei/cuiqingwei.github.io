@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title><![CDATA[Android MulticastSocket 组播]]></title>
+      <url>http://cuiqingwei.github.io/2018/05/08/2018-05-08-Android-MulticastSocket-%E7%BB%84%E6%92%AD/</url>
+      <content type="html"><![CDATA[<p>现象是MulticastSocket发送组播消息,一些安卓平板上可以发送、接收组播消息,个别安卓不可用。</p>
+<a id="more"></a>
+<p>1.能正常发送接收的安卓平板,向组播地址发送了组播消息后,同时会向组播地址发送一个 <strong>IGMPv2</strong> 的协议</p>
+<p><img src="/img/20180508/7820e355de8f7e4065c08b677e8fb41b.jpg" alt=""></p>
+<p>2.能发送,接收不到组播消息的安卓平板设备,可以发现设备没有向组播地址发送 <strong>IGMP</strong> 协议；</p>
+<p><img src="/img/20180508/394a6a000dd59316bab0f2d0d9b10387.jpg" alt=""></p>
+<p>3.而查看安卓平板,在 <strong>/proc/net/</strong> 目录下,有igmp文件的设备会发送IGMP协议,能正常完成组播消息收发,而没有igmp文件的,就是不能完成组播消息收发的。<strong>igmp</strong> 是IPv4下的协议文件, <strong>igmp6</strong> 是IPv6的协议。可以看到所有设备都支持IPv6的igmp</p>
+<p><img src="/img/20180508/2b61d0bd7c6a7742160c4a7aa1fd85c8.jpg" alt=""></p>
+<p>4.在Android系统下,编译Linux kernel时有一config  CONFIG_IP_MULTICAST ,如果是定制系统在编译系统的时候配置这个选项 <strong>CONFIG_IP_MULTICAST=y</strong> ,就能enable组播功能。但是有很多系统厂商在编译的时候都默认把这个config给disable了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">CONFIG_IP_MULTICAST</div><div class="line">adb shell netcfg</div><div class="line">adb shell ifconfig eth0</div></pre></td></tr></table></figure>
+<blockquote>
+<p>参考:<br><a href="https://unix.stackexchange.com/questions/25872/how-can-i-know-if-ip-multicast-is-enabled" target="_blank" rel="external">How can I know if IP Multicast is enabled</a><br><a href="https://www.cnblogs.com/inkheart0124/p/5508420.html" target="_blank" rel="external">Android App用MulticastSocket监听组播，为什么连接到不同路由、在不同手机上跑，有的能收到有的收不到</a><br><a href="https://code.google.com/p/android/issues/detail?id=51195" target="_blank" rel="external">Many devices have multicast disabled in the kernel</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Proguard And DexGuard]]></title>
       <url>http://cuiqingwei.github.io/2018/04/24/2018-04-24-Proguard-And-DexGuard/</url>
       <content type="html"><![CDATA[<p>一般情况下，我们混淆自己的安卓项目，会使用Proguard。</p>
@@ -1326,6 +1345,19 @@
     </entry>
     
     <entry>
+      <title><![CDATA[常用路亚线的区别]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%B8%B8%E7%94%A8%E8%B7%AF%E4%BA%9A%E7%BA%BF%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      <content type="html"><![CDATA[<h2 id="尼龙线"><a href="#尼龙线" class="headerlink" title="尼龙线"></a>尼龙线</h2><p>台钓中使用最多的也是尼龙线。尼龙的化工原料为PA，和PE一样是石油的下游产品。与PE不同的是，尼龙线一般为单股线，这种线的特点刚好与PE线相反。尼龙线的优点是由于有一定的延展性，抛投和中鱼的时候不易断线，由于生产技术已经发展了近70年的历史，成本低，产量大，相比PE线要便宜很多。最后一点是尼龙表面圆滑，对线环的磨损可以降到最低。</p>
+<a id="more"></a>
+<p>延展性同样也是尼龙线的缺点，在某些鱼讯轻微的场合，尼龙线不能及时将中鱼信号传达给钓手，从而失去最佳的起杆机会。另外，同样拉力的情况下，尼龙线比PE的线径更粗，从而影响路亚的抛投距离（<em>当然这个问题并不一定完全适用，需要根据具体的情况来，不过在高磅数的尼龙线与高磅数PE线做对比的话，高磅数的PE占些优势，因其相同的高磅数的线，高磅数PE线径更细一些，也就可以更加节省线杯的空间容下更多的线，并且线径也更细利于高磅数线的抛投</em>）。</p>
+<p><img src="/img/20161013/fishing-line.jpg" alt=""></p>
+<h2 id="PE线"><a href="#PE线" class="headerlink" title="PE线"></a>PE线</h2><p>PE线是指用多股化纤编织后浸胶制成的钓线，俗称编织线(BRAIDED OR CORD LINE)，最早见的就是“大力马”。<br>这种钓线的生产方式是：将多条微细纤维(如：达克龙纤维、功夫龙纤维或大力马纤维或其它聚乙烯化合物的PE纤维…等)以机器来编织而成，所以这种钓线的线体呈现纤维规则交叉的纹路，只要你将线体取出审视一番就可以清楚的发现其线体结构上的特色。<br>这种线的优点是，相同拉力的的情况下线径比尼龙要细很多，同样我们使用12磅的尼龙和12 磅的PE，因为PE的线径更细，能够抛投的更远。在实际钓场中，风力是影响路亚抛投距离的重要因素，PE同样因为相同拉力下线径更细的特点，能够将风阻的影响减小。除此之外，PE几乎没有延展性，在中鱼的时候能够在第一时间将信号传达给钓手。还有就是PE线更加耐磨。<br>但正像所有事物都有其两面性一样，PE并不是没有任何缺点。PE第一个缺点是没有延展性。这个特性在能够将中鱼信号迅速传达给钓手的同时，也经常导致跑鱼或放枪。玩过台钓的朋友都知道，中鱼后钓竿上要保持一定的力量，鱼才不易脱钩，杆软不易断线跑鱼，但是起鱼慢；杆硬起鱼快，但是容易断线跑鱼。同样，你可以把线看作杆的延伸，鱼线有一定的延展性，就像钓竿比较软一样，能够保证在鱼左冲右突的时候始终保持一定的力量，而PE就像比较硬的杆，遛鱼的余地比较小从而导致脱钩或断线。另外现在有厂家为了使用更细的线径达到更强的拉力，在PE中掺加金属丝，虽然拉力得到了加强，但是线的延展性和柔软度进一步降低，同时还容易磨损导环。</p>
+<h2 id="碳线（氟碳线）"><a href="#碳线（氟碳线）" class="headerlink" title="碳线（氟碳线）"></a>碳线（氟碳线）</h2><p>碳线是由含有氟和碳成分的树脂抽丝加工而成，碳线的特性是高比重、切水快、光的折射率非常低几乎看不到，没有吸水性，抗紫外线和耐久性要比尼龙线强很多，因为碳线的物理特性为非常低的延展性和高比重，可以让饵迅速到达所需要的水层，并且因延展性很低所以也就提供了良好的灵敏度。因碳线对光的折射率几乎为0，所以会降低鱼的敏感性，让鱼能放心的将饵食入口中。碳线适合搭配软饵钓组使用，比如：无铅钓组、WACKY、德州钓组，却不太适合搭配某一些特殊的硬饵或水面系的路亚。不过碳线也不是没有缺点，因为通常比较硬（特别是高磅数的碳线），如果作为主线使用要注意纺车轮上建议使用的主线不要超过10磅，水滴轮或鼓轮如有特殊需要最好也不要超过20磅（当然特殊情况下可以用到更高的磅数作为主线，并不是完全不可以），碳线也可以当做前导线来使用，因为碳线比较耐磨，可以搭配PE线，弥补PE不耐磨的缺点。</p>
+<p><img src="/img/20161013/钓线攻略.jpg" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[如何选择一根适合自己的BASS竿]]></title>
       <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E4%B8%80%E6%A0%B9%E9%80%82%E5%90%88%E8%87%AA%E5%B7%B1%E7%9A%84BASS%E7%AB%BF/</url>
       <content type="html"><![CDATA[<blockquote>
@@ -1407,19 +1439,6 @@
 <p>这是主线与线杯连接打结的，也是很简单的一种方式，无论双轴卷线器还是纺车轮都可以使用，具体方法可以看图所示。</p>
 <p><em>再附上3种线结：</em></p>
 <p><img src="/img/20161013/线结7.jpg" alt=""><br><img src="/img/20161013/线结8.jpg" alt=""><br><img src="/img/20161013/线结9.jpg" alt=""></p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[常用路亚线的区别]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%B8%B8%E7%94%A8%E8%B7%AF%E4%BA%9A%E7%BA%BF%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-      <content type="html"><![CDATA[<h2 id="尼龙线"><a href="#尼龙线" class="headerlink" title="尼龙线"></a>尼龙线</h2><p>台钓中使用最多的也是尼龙线。尼龙的化工原料为PA，和PE一样是石油的下游产品。与PE不同的是，尼龙线一般为单股线，这种线的特点刚好与PE线相反。尼龙线的优点是由于有一定的延展性，抛投和中鱼的时候不易断线，由于生产技术已经发展了近70年的历史，成本低，产量大，相比PE线要便宜很多。最后一点是尼龙表面圆滑，对线环的磨损可以降到最低。</p>
-<a id="more"></a>
-<p>延展性同样也是尼龙线的缺点，在某些鱼讯轻微的场合，尼龙线不能及时将中鱼信号传达给钓手，从而失去最佳的起杆机会。另外，同样拉力的情况下，尼龙线比PE的线径更粗，从而影响路亚的抛投距离（<em>当然这个问题并不一定完全适用，需要根据具体的情况来，不过在高磅数的尼龙线与高磅数PE线做对比的话，高磅数的PE占些优势，因其相同的高磅数的线，高磅数PE线径更细一些，也就可以更加节省线杯的空间容下更多的线，并且线径也更细利于高磅数线的抛投</em>）。</p>
-<p><img src="/img/20161013/fishing-line.jpg" alt=""></p>
-<h2 id="PE线"><a href="#PE线" class="headerlink" title="PE线"></a>PE线</h2><p>PE线是指用多股化纤编织后浸胶制成的钓线，俗称编织线(BRAIDED OR CORD LINE)，最早见的就是“大力马”。<br>这种钓线的生产方式是：将多条微细纤维(如：达克龙纤维、功夫龙纤维或大力马纤维或其它聚乙烯化合物的PE纤维…等)以机器来编织而成，所以这种钓线的线体呈现纤维规则交叉的纹路，只要你将线体取出审视一番就可以清楚的发现其线体结构上的特色。<br>这种线的优点是，相同拉力的的情况下线径比尼龙要细很多，同样我们使用12磅的尼龙和12 磅的PE，因为PE的线径更细，能够抛投的更远。在实际钓场中，风力是影响路亚抛投距离的重要因素，PE同样因为相同拉力下线径更细的特点，能够将风阻的影响减小。除此之外，PE几乎没有延展性，在中鱼的时候能够在第一时间将信号传达给钓手。还有就是PE线更加耐磨。<br>但正像所有事物都有其两面性一样，PE并不是没有任何缺点。PE第一个缺点是没有延展性。这个特性在能够将中鱼信号迅速传达给钓手的同时，也经常导致跑鱼或放枪。玩过台钓的朋友都知道，中鱼后钓竿上要保持一定的力量，鱼才不易脱钩，杆软不易断线跑鱼，但是起鱼慢；杆硬起鱼快，但是容易断线跑鱼。同样，你可以把线看作杆的延伸，鱼线有一定的延展性，就像钓竿比较软一样，能够保证在鱼左冲右突的时候始终保持一定的力量，而PE就像比较硬的杆，遛鱼的余地比较小从而导致脱钩或断线。另外现在有厂家为了使用更细的线径达到更强的拉力，在PE中掺加金属丝，虽然拉力得到了加强，但是线的延展性和柔软度进一步降低，同时还容易磨损导环。</p>
-<h2 id="碳线（氟碳线）"><a href="#碳线（氟碳线）" class="headerlink" title="碳线（氟碳线）"></a>碳线（氟碳线）</h2><p>碳线是由含有氟和碳成分的树脂抽丝加工而成，碳线的特性是高比重、切水快、光的折射率非常低几乎看不到，没有吸水性，抗紫外线和耐久性要比尼龙线强很多，因为碳线的物理特性为非常低的延展性和高比重，可以让饵迅速到达所需要的水层，并且因延展性很低所以也就提供了良好的灵敏度。因碳线对光的折射率几乎为0，所以会降低鱼的敏感性，让鱼能放心的将饵食入口中。碳线适合搭配软饵钓组使用，比如：无铅钓组、WACKY、德州钓组，却不太适合搭配某一些特殊的硬饵或水面系的路亚。不过碳线也不是没有缺点，因为通常比较硬（特别是高磅数的碳线），如果作为主线使用要注意纺车轮上建议使用的主线不要超过10磅，水滴轮或鼓轮如有特殊需要最好也不要超过20磅（当然特殊情况下可以用到更高的磅数作为主线，并不是完全不可以），碳线也可以当做前导线来使用，因为碳线比较耐磨，可以搭配PE线，弥补PE不耐磨的缺点。</p>
-<p><img src="/img/20161013/钓线攻略.jpg" alt=""></p>
 ]]></content>
     </entry>
     
@@ -2768,39 +2787,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[MacOS]]></title>
-      <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-MacOS/</url>
-      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
-<h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p><strong>工作</strong>：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br><a href="http://www.tuicool.com/articles/yeyIfuu" target="_blank" rel="external">http://www.tuicool.com/articles/yeyIfuu</a><br><strong>系统</strong>：QQ、CleanMyDrive 3 等</p>
-<a id="more"></a>
-<h3 id="2-dmg安装"><a href="#2-dmg安装" class="headerlink" title="2. dmg安装"></a>2. dmg安装</h3><p>Chrome、Parallels Desktop、RDC、QQInput、RTX、cornerstone、Kaleidoscope<br>Sublime Text、Atom …</p>
-<p><strong>dmg下载</strong><br><a href="http://xclient.info/" target="_blank" rel="external">http://xclient.info/</a><br><a href="http://www.sdifen.com/" target="_blank" rel="external">http://www.sdifen.com/</a><br><a href="http://soft.macx.cn/" target="_blank" rel="external">http://soft.macx.cn/</a></p>
-<h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)</span>"</span></div><div class="line">[http://brew.sh/](http://brew.sh/)</div></pre></td></tr></table></figure>
-<p><a href="http://blog.csdn.net/aaawqqq/article/details/44088141" target="_blank" rel="external">http://blog.csdn.net/aaawqqq/article/details/44088141</a><br><a href="http://www.xitongzhijia.net/xtjc/20141204/31879.html" target="_blank" rel="external">http://www.xitongzhijia.net/xtjc/20141204/31879.html</a></p>
-<h3 id="4-MacPorts"><a href="#4-MacPorts" class="headerlink" title="4. MacPorts"></a>4. MacPorts</h3><p><a href="https://www.macports.org/install.php" target="_blank" rel="external">https://www.macports.org/install.php</a><br><a href="http://guide.macports.org/#installing.macports" target="_blank" rel="external">http://guide.macports.org/#installing.macports</a></p>
-<h3 id="5-oh-my-zsh"><a href="#5-oh-my-zsh" class="headerlink" title="5. oh my zsh"></a>5. oh my zsh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</div></pre></td></tr></table></figure>
-<p><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="external">http://leeiio.me/bash-to-zsh-for-mac/</a></p>
-<h3 id="6-iTerm"><a href="#6-iTerm" class="headerlink" title="6. iTerm"></a>6. iTerm</h3><p>iTerm2 + oh my zsh +agnoster 打造最强Mac终端<br><a href="http://www.siguoya.name/pc/home/article/256" target="_blank" rel="external">http://www.siguoya.name/pc/home/article/256</a><br>iterm2有什么酷功能？<br><a href="https://www.zhihu.com/question/27447370" target="_blank" rel="external">https://www.zhihu.com/question/27447370</a></p>
-<h3 id="7-wget"><a href="#7-wget" class="headerlink" title="7. wget"></a>7. wget</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo brew install wget</div></pre></td></tr></table></figure>
-<h3 id="8-pbcopy"><a href="#8-pbcopy" class="headerlink" title="8. pbcopy"></a>8. pbcopy</h3><blockquote>
-<p>使用 <strong>pbcopy</strong> 命令,对应有个 <strong>pbpaste</strong> 命令。</p>
-</blockquote>
-<p>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">'Hello World!'</span> | pbcopy</div></pre></td></tr></table></figure></p>
-<p><em>将字符串Hello World放入剪贴板</em></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat myFile.txt | pbcopy</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pbpaste &gt; file.txt</div></pre></td></tr></table></figure>
-<h3 id="9-mac-say-唱歌"><a href="#9-mac-say-唱歌" class="headerlink" title="9. mac say 唱歌"></a>9. mac say 唱歌</h3><blockquote>
-<p>spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。<br>  在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。<br>  开始听歌了。</p>
-</blockquote>
-<p><a href="https://www.macx.cn/thread-2048013-1-1.html?mod=viewthread&amp;tid=2048013&amp;extra=page%253D1&amp;page=1" target="_blank" rel="external">https://www.macx.cn/thread-2048013-1-1.html?mod=viewthread&amp;tid=2048013&amp;extra=page%253D1&amp;page=1</a></p>
-<h3 id="10-其他"><a href="#10-其他" class="headerlink" title="10. 其他"></a>10. 其他</h3><blockquote>
-<p>打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!</p>
-</blockquote>
-<h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="external">https://checkcoverage.apple.com/cn/zh/</a></p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Ubuntu]]></title>
       <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-Ubuntu/</url>
       <content type="html"><![CDATA[<h3 id="1-常用指令"><a href="#1-常用指令" class="headerlink" title="1.常用指令"></a>1.常用指令</h3><pre><code>版本查看：
@@ -2852,6 +2838,39 @@ hosts
      https://github.com/racaljk/hosts
 </code></pre><p><strong>Cannot Set LC_ALL to default locale: No such file or directory</strong><br><a href="http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/" target="_blank" rel="external">http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/</a></p>
 <p>sEx只是调用相关程序，本身并无压缩、解压功能，请注意！<br>sEx请到： <a href="http://sourceforge.net/projects/sex下载！" target="_blank" rel="external">http://sourceforge.net/projects/sex下载！</a><br>解压后请将sEx拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br>[root@www2 tmp]# cp sEx /usr/bin/</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MacOS]]></title>
+      <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-MacOS/</url>
+      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
+<h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p><strong>工作</strong>：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br><a href="http://www.tuicool.com/articles/yeyIfuu" target="_blank" rel="external">http://www.tuicool.com/articles/yeyIfuu</a><br><strong>系统</strong>：QQ、CleanMyDrive 3 等</p>
+<a id="more"></a>
+<h3 id="2-dmg安装"><a href="#2-dmg安装" class="headerlink" title="2. dmg安装"></a>2. dmg安装</h3><p>Chrome、Parallels Desktop、RDC、QQInput、RTX、cornerstone、Kaleidoscope<br>Sublime Text、Atom …</p>
+<p><strong>dmg下载</strong><br><a href="http://xclient.info/" target="_blank" rel="external">http://xclient.info/</a><br><a href="http://www.sdifen.com/" target="_blank" rel="external">http://www.sdifen.com/</a><br><a href="http://soft.macx.cn/" target="_blank" rel="external">http://soft.macx.cn/</a></p>
+<h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)</span>"</span></div><div class="line">[http://brew.sh/](http://brew.sh/)</div></pre></td></tr></table></figure>
+<p><a href="http://blog.csdn.net/aaawqqq/article/details/44088141" target="_blank" rel="external">http://blog.csdn.net/aaawqqq/article/details/44088141</a><br><a href="http://www.xitongzhijia.net/xtjc/20141204/31879.html" target="_blank" rel="external">http://www.xitongzhijia.net/xtjc/20141204/31879.html</a></p>
+<h3 id="4-MacPorts"><a href="#4-MacPorts" class="headerlink" title="4. MacPorts"></a>4. MacPorts</h3><p><a href="https://www.macports.org/install.php" target="_blank" rel="external">https://www.macports.org/install.php</a><br><a href="http://guide.macports.org/#installing.macports" target="_blank" rel="external">http://guide.macports.org/#installing.macports</a></p>
+<h3 id="5-oh-my-zsh"><a href="#5-oh-my-zsh" class="headerlink" title="5. oh my zsh"></a>5. oh my zsh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</div></pre></td></tr></table></figure>
+<p><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="external">http://leeiio.me/bash-to-zsh-for-mac/</a></p>
+<h3 id="6-iTerm"><a href="#6-iTerm" class="headerlink" title="6. iTerm"></a>6. iTerm</h3><p>iTerm2 + oh my zsh +agnoster 打造最强Mac终端<br><a href="http://www.siguoya.name/pc/home/article/256" target="_blank" rel="external">http://www.siguoya.name/pc/home/article/256</a><br>iterm2有什么酷功能？<br><a href="https://www.zhihu.com/question/27447370" target="_blank" rel="external">https://www.zhihu.com/question/27447370</a></p>
+<h3 id="7-wget"><a href="#7-wget" class="headerlink" title="7. wget"></a>7. wget</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo brew install wget</div></pre></td></tr></table></figure>
+<h3 id="8-pbcopy"><a href="#8-pbcopy" class="headerlink" title="8. pbcopy"></a>8. pbcopy</h3><blockquote>
+<p>使用 <strong>pbcopy</strong> 命令,对应有个 <strong>pbpaste</strong> 命令。</p>
+</blockquote>
+<p>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">'Hello World!'</span> | pbcopy</div></pre></td></tr></table></figure></p>
+<p><em>将字符串Hello World放入剪贴板</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat myFile.txt | pbcopy</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pbpaste &gt; file.txt</div></pre></td></tr></table></figure>
+<h3 id="9-mac-say-唱歌"><a href="#9-mac-say-唱歌" class="headerlink" title="9. mac say 唱歌"></a>9. mac say 唱歌</h3><blockquote>
+<p>spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。<br>  在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。<br>  开始听歌了。</p>
+</blockquote>
+<p><a href="https://www.macx.cn/thread-2048013-1-1.html?mod=viewthread&amp;tid=2048013&amp;extra=page%253D1&amp;page=1" target="_blank" rel="external">https://www.macx.cn/thread-2048013-1-1.html?mod=viewthread&amp;tid=2048013&amp;extra=page%253D1&amp;page=1</a></p>
+<h3 id="10-其他"><a href="#10-其他" class="headerlink" title="10. 其他"></a>10. 其他</h3><blockquote>
+<p>打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!</p>
+</blockquote>
+<h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="external">https://checkcoverage.apple.com/cn/zh/</a></p>
 ]]></content>
     </entry>
     
