@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2018-05-14T01:57:01.000Z</updated>
+  <updated>2018-05-14T08:18:44.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/"/>
     <id>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT的WiFi带机量修改方法/</id>
     <published>2018-05-14T04:12:08.000Z</published>
-    <updated>2018-05-14T01:57:01.000Z</updated>
+    <updated>2018-05-14T08:18:44.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Wifi带机量的修改"><a href="#Wifi带机量的修改" class="headerlink" title="Wifi带机量的修改"></a>Wifi带机量的修改</h1><p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
 <p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
 <a id="more"></a>
 <blockquote>
-<p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="external">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="external">MTK_Ralink_ApSoc_SDK编译总结</a></p>
+<p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="external">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="external">MTK_Ralink_ApSoc_SDK编译总结</a><br><a href="http://www.right.com.cn/forum/thread-208204-1-1.html" target="_blank" rel="external">openwrt wifi用户连接数限制</a></p>
 </blockquote>
 ]]></content>
     
@@ -342,125 +342,6 @@
   </entry>
   
   <entry>
-    <title>curl模拟http发送get或post接口测试</title>
-    <link href="http://cuiqingwei.github.io/2017/12/05/2017-12-05-curl%E6%A8%A1%E6%8B%9Fhttp%E5%8F%91%E9%80%81get%E6%88%96post%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/"/>
-    <id>http://cuiqingwei.github.io/2017/12/05/2017-12-05-curl模拟http发送get或post接口测试/</id>
-    <published>2017-12-05T06:12:08.000Z</published>
-    <updated>2017-12-05T07:04:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="一、get请求"><a href="#一、get请求" class="headerlink" title="一、get请求"></a>一、get请求</h1><p>curl “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地<br>curl -i “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示全部信息<br>curl -l “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  只显示头部信息<br>curl -v “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示get请求全过程解析<br>wget “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     也可以</p>
-<a id="more"></a>
-<h1 id="二、post请求"><a href="#二、post请求" class="headerlink" title="二、post请求"></a>二、post请求</h1><p>curl -d “param1=value1&amp;param2=value2” “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“</p>
-<h1 id="三、json格式的post请求"><a href="#三、json格式的post请求" class="headerlink" title="三、json格式的post请求"></a>三、json格式的post请求</h1><p>curl -l -H “Content-type: application/json” -X POST -d ‘{“phone”:”13521389587”,”password”:”test”}’ <a href="http://domain/apis/users.json" target="_blank" rel="external">http://domain/apis/users.json</a></p>
-<blockquote>
-<p>例如：curl -l -H “Content-type: application/json” -X POST -d ‘{“ver”: “1.0”,”soa”:{“req”:”123”},”iface”:”me.ele.lpdinfra.prediction.service.PredictionService”,”method”:”restaurant_make_order_time”,”args”:{“arg2”:”\”stable\””,”arg1”:”{\”code\”:[\”WIND\”],\”temperature\”:11.11}”,”arg0”:”{\”tracking_id\”:\”100000000331770936\”,\”eleme_order_id\”:\”100000000331770936\”,\”platform_id\”:\”4\”,\”restaurant_id\”:\”482571\”,\”dish_num\”:1,\”dish_info\”:[{\”entity_id\”:142547763,\”quantity\”:1,\”category_id\”:1,\”dish_name\”:\”[0xe7][0x89][0xb9][0xe4][0xbb][0xb7][0xe8][0x85][0x8a][0xe5][0x91][0xb3][0xe5][0x8f][0x89][0xe7][0x83][0xa7][0xe5][0x8f][0x8c][0xe6][0x8b][0xbc][0xe7][0x85][0xb2][0xe4][0xbb][0x94][0xe9][0xa5][0xad]\”,\”price\”:31.0}],\”merchant_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”customer_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”created_at\”:1477896550,\”confirmed_at\”:1477896550,\”dishes_total_price\”:0.0,\”food_boxes_total_price\”:2.0,\”delivery_total_price\”:2.0,\”pay_amount\”:35.0,\”city_id\”:\”1\”}”}}’ <a href="http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc" target="_blank" rel="external">http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc</a></p>
-</blockquote>
-<p>ps：json串内层参数需要格式化</p>
-<h1 id="四、高级功能"><a href="#四、高级功能" class="headerlink" title="四、高级功能"></a>四、高级功能</h1><p>curl命令是一个功能强大的网络工具，它能够通过http、ftp等方式下载文件，也能够上传文件。其实curl远不止前面所说的那些功能，大家可以通过man curl阅读手册页获取更多的信息。类似的工具还有wget。</p>
-<p>curl命令使用了libcurl库来实现，libcurl库常用在C程序中用来处理HTTP请求，curlpp是libcurl的一个C++封装，这几个东西可以用在抓取网页、网络监控等方面的开发，而curl命令可以帮助来解决开发过程中遇到的问题。</p>
-<ul>
-<li>1，抓取页面内容到一个文件中</li>
-</ul>
-<p>curl -o home.html <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>   –将百度首页内容抓下到home.html中<br>curl -o #2_#1.jpg<a href="http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG</a></p>
-<p>由于A/B下的文件名都是001，002…，201，下载下来的文件重名，这样，自定义出来下载下来的文件名，就变成了这样：原来： A/001.JPG —-&gt; 下载后： 001-A.JPG 原来： B/001.JPG —&gt; 下载后： 001-B.JPG</p>
-<ul>
-<li>2，用-O（大写的），后面的url要具体到某个文件，不然抓不下来。还可以用正则来抓取东西</li>
-</ul>
-<p>curl -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<p>运行结果如下：</p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  1575  100  1575    0     0  14940      0 –:–:– –:–:– –:–:– 1538k<br>会在当前执行目录中生成一张bdlogo.gif的图片。</p>
-<p>curl -O <a href="http://XXXXX/screen[1-10].JPG" target="_blank" rel="external">http://XXXXX/screen[1-10].JPG</a>  –下载screen1.jpg~screen10.jpg</p>
-<ul>
-<li>3，模拟表单信息，模拟登录，保存cookie信息</li>
-</ul>
-<p>curl -c ./cookie_c.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>4，模拟表单信息，模拟登录，保存头信息</li>
-</ul>
-<p>curl -D ./cookie_D.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<p>-c(小写)产生的cookie和-D里面的cookie是不一样的。</p>
-<ul>
-<li>5，使用cookie文件</li>
-</ul>
-<p>curl -b ./cookie_c.txt <a href="http://www.XXXX.com/wp-admin" target="_blank" rel="external">http://www.XXXX.com/wp-admin</a></p>
-<ul>
-<li>6，断点续传，-C(大写)</li>
-</ul>
-<p>curl -C -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<ul>
-<li>7，传送数据,最好用登录页面测试，因为你传值过去后，curl回抓数据，你可以看到你传值有没有成功</li>
-</ul>
-<p>curl -d log=aaaa <a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>8，显示抓取错误，下面这个例子，很清楚的表明了。</li>
-</ul>
-<p>curl -f<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
-<p>curl: (22) The requested URL returned error: 404</p>
-<p>curl<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
-<p><html><head><title>404,not found</title></head></html></p>
-<ul>
-<li>9，伪造来源地址，有的网站会判断，请求来源地址，防止盗链。</li>
-</ul>
-<p>curl -e<a href="http://localhosthttp://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://localhosthttp://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>10，当我们经常用curl去搞人家东西的时候，人家会把你的IP给屏蔽掉的,这个时候,我们可以用代理</li>
-</ul>
-<p>curl -x 24.10.28.84:32779 -o home.html<a href="http://www.XXXX.com" target="_blank" rel="external">http://www.XXXX.com</a></p>
-<ul>
-<li>11，比较大的东西，我们可以分段下载</li>
-</ul>
-<p>curl -r 0-100 -o img.part1<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0    105      0 –:–:– –:–:– –:–:–     0<br>curl -r 100-200 -o img.part2<a href="http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0     57      0  0:00:01  0:00:01 –:–:–     0<br>curl -r 200- -o img.part3<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  104k  100  104k    0     0  52793      0  0:00:02  0:00:02 –:–:– 88961</p>
-<p>ls |grep part | xargs du -sh</p>
-<p>4.0K    one.part1<br>112K    three.part3<br>4.0K    two.part2</p>
-<p>用的时候，把他们cat一下就OK,cat img.part* &gt;img.jpg</p>
-<ul>
-<li>12，不会显示下载进度信息</li>
-</ul>
-<p>curl -s -o aaa.jpg <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<ul>
-<li>13，显示下载进度条</li>
-</ul>
-<p>curl  -0 <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a>     (以http1.0协议请求)</p>
-<p>####################################################################### 100.0%</p>
-<ul>
-<li>14,通过ftp下载文件</li>
-</ul>
-<p>curl -u用户名:密码 -O<a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
-<p>curl -u 用户名:密码 -O <a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
-<p>或者用下面的方式</p>
-<p>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css<br>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css</p>
-<ul>
-<li>15，通过ftp上传</li>
-</ul>
-<p>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/<br>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/</p>
-<ul>
-<li>15,模拟浏览器头</li>
-</ul>
-<p>curl -A “Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)” -x 123.45.67.89:1080 -o page.html -D cookie0001.txt<a href="http://www.www.baidu.com" target="_blank" rel="external">http://www.www.baidu.com</a></p>
-<ul>
-<li>16,PUT、GET、POST</li>
-</ul>
-<p>比如 curl -T localfile <a href="http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT</a> method<br>刚才说到PUT，自然想起来了其他几种methos－－GET和POST。<br>http提交一个表单，比较常用的是POST模式和GET模式<br>GET模式什么option都不用，只需要把变量写在url里面就可以了<br>比如：<br>curl <a href="http://www.yahoo.com/login.cgi?user=nick&amp;password=12345" target="_blank" rel="external">http://www.yahoo.com/login.cgi?user=nick&amp;password=12345</a><br>而POST模式的option则是 -d<br>比如，curl -d “user=nick&amp;password=12345” <a href="http://www.yahoo.com/login.cgi" target="_blank" rel="external">http://www.yahoo.com/login.cgi</a><br>就相当于向这个站点发出一次登陆申请<del>~</del><br>到底该用GET模式还是POST模式，要看对面服务器的程序设定。<br>一点需要注意的是，POST模式下的文件上的文件上传，比如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;form method=&quot;POST&quot; enctype=&quot;multipar/form-data&quot; action=&quot;http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi&quot;&gt;</div><div class="line">&lt;input type=file name=upload&gt;</div><div class="line">&lt;input type=submit name=nick value=&quot;go&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
-<p>这样一个HTTP表单，我们要用curl进行模拟，就该是这样的语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -F upload=@localfile -F nick=go http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;一、get请求&quot;&gt;&lt;a href=&quot;#一、get请求&quot; class=&quot;headerlink&quot; title=&quot;一、get请求&quot;&gt;&lt;/a&gt;一、get请求&lt;/h1&gt;&lt;p&gt;curl “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地&lt;br&gt;curl -i “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  显示全部信息&lt;br&gt;curl -l “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  只显示头部信息&lt;br&gt;curl -v “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  显示get请求全过程解析&lt;br&gt;wget “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“     也可以&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="curl" scheme="http://cuiqingwei.github.io/tags/curl/"/>
-    
-  </entry>
-  
-  <entry>
     <title>分布式文件系统 FastDFS 5 &amp; Linux CentOS 7 搭建</title>
     <link href="http://cuiqingwei.github.io/2017/12/05/2017-12-22-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F-FastDFS-5-Linux-CentOS-7-%E6%90%AD%E5%BB%BA/"/>
     <id>http://cuiqingwei.github.io/2017/12/05/2017-12-22-分布式文件系统-FastDFS-5-Linux-CentOS-7-搭建/</id>
@@ -592,6 +473,125 @@
     
     
       <category term="FastDFS" scheme="http://cuiqingwei.github.io/tags/FastDFS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>curl模拟http发送get或post接口测试</title>
+    <link href="http://cuiqingwei.github.io/2017/12/05/2017-12-05-curl%E6%A8%A1%E6%8B%9Fhttp%E5%8F%91%E9%80%81get%E6%88%96post%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/"/>
+    <id>http://cuiqingwei.github.io/2017/12/05/2017-12-05-curl模拟http发送get或post接口测试/</id>
+    <published>2017-12-05T06:12:08.000Z</published>
+    <updated>2017-12-05T07:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、get请求"><a href="#一、get请求" class="headerlink" title="一、get请求"></a>一、get请求</h1><p>curl “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地<br>curl -i “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示全部信息<br>curl -l “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  只显示头部信息<br>curl -v “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示get请求全过程解析<br>wget “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     也可以</p>
+<a id="more"></a>
+<h1 id="二、post请求"><a href="#二、post请求" class="headerlink" title="二、post请求"></a>二、post请求</h1><p>curl -d “param1=value1&amp;param2=value2” “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“</p>
+<h1 id="三、json格式的post请求"><a href="#三、json格式的post请求" class="headerlink" title="三、json格式的post请求"></a>三、json格式的post请求</h1><p>curl -l -H “Content-type: application/json” -X POST -d ‘{“phone”:”13521389587”,”password”:”test”}’ <a href="http://domain/apis/users.json" target="_blank" rel="external">http://domain/apis/users.json</a></p>
+<blockquote>
+<p>例如：curl -l -H “Content-type: application/json” -X POST -d ‘{“ver”: “1.0”,”soa”:{“req”:”123”},”iface”:”me.ele.lpdinfra.prediction.service.PredictionService”,”method”:”restaurant_make_order_time”,”args”:{“arg2”:”\”stable\””,”arg1”:”{\”code\”:[\”WIND\”],\”temperature\”:11.11}”,”arg0”:”{\”tracking_id\”:\”100000000331770936\”,\”eleme_order_id\”:\”100000000331770936\”,\”platform_id\”:\”4\”,\”restaurant_id\”:\”482571\”,\”dish_num\”:1,\”dish_info\”:[{\”entity_id\”:142547763,\”quantity\”:1,\”category_id\”:1,\”dish_name\”:\”[0xe7][0x89][0xb9][0xe4][0xbb][0xb7][0xe8][0x85][0x8a][0xe5][0x91][0xb3][0xe5][0x8f][0x89][0xe7][0x83][0xa7][0xe5][0x8f][0x8c][0xe6][0x8b][0xbc][0xe7][0x85][0xb2][0xe4][0xbb][0x94][0xe9][0xa5][0xad]\”,\”price\”:31.0}],\”merchant_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”customer_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”created_at\”:1477896550,\”confirmed_at\”:1477896550,\”dishes_total_price\”:0.0,\”food_boxes_total_price\”:2.0,\”delivery_total_price\”:2.0,\”pay_amount\”:35.0,\”city_id\”:\”1\”}”}}’ <a href="http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc" target="_blank" rel="external">http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc</a></p>
+</blockquote>
+<p>ps：json串内层参数需要格式化</p>
+<h1 id="四、高级功能"><a href="#四、高级功能" class="headerlink" title="四、高级功能"></a>四、高级功能</h1><p>curl命令是一个功能强大的网络工具，它能够通过http、ftp等方式下载文件，也能够上传文件。其实curl远不止前面所说的那些功能，大家可以通过man curl阅读手册页获取更多的信息。类似的工具还有wget。</p>
+<p>curl命令使用了libcurl库来实现，libcurl库常用在C程序中用来处理HTTP请求，curlpp是libcurl的一个C++封装，这几个东西可以用在抓取网页、网络监控等方面的开发，而curl命令可以帮助来解决开发过程中遇到的问题。</p>
+<ul>
+<li>1，抓取页面内容到一个文件中</li>
+</ul>
+<p>curl -o home.html <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>   –将百度首页内容抓下到home.html中<br>curl -o #2_#1.jpg<a href="http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG</a></p>
+<p>由于A/B下的文件名都是001，002…，201，下载下来的文件重名，这样，自定义出来下载下来的文件名，就变成了这样：原来： A/001.JPG —-&gt; 下载后： 001-A.JPG 原来： B/001.JPG —&gt; 下载后： 001-B.JPG</p>
+<ul>
+<li>2，用-O（大写的），后面的url要具体到某个文件，不然抓不下来。还可以用正则来抓取东西</li>
+</ul>
+<p>curl -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
+<p>运行结果如下：</p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  1575  100  1575    0     0  14940      0 –:–:– –:–:– –:–:– 1538k<br>会在当前执行目录中生成一张bdlogo.gif的图片。</p>
+<p>curl -O <a href="http://XXXXX/screen[1-10].JPG" target="_blank" rel="external">http://XXXXX/screen[1-10].JPG</a>  –下载screen1.jpg~screen10.jpg</p>
+<ul>
+<li>3，模拟表单信息，模拟登录，保存cookie信息</li>
+</ul>
+<p>curl -c ./cookie_c.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
+<ul>
+<li>4，模拟表单信息，模拟登录，保存头信息</li>
+</ul>
+<p>curl -D ./cookie_D.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
+<p>-c(小写)产生的cookie和-D里面的cookie是不一样的。</p>
+<ul>
+<li>5，使用cookie文件</li>
+</ul>
+<p>curl -b ./cookie_c.txt <a href="http://www.XXXX.com/wp-admin" target="_blank" rel="external">http://www.XXXX.com/wp-admin</a></p>
+<ul>
+<li>6，断点续传，-C(大写)</li>
+</ul>
+<p>curl -C -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
+<ul>
+<li>7，传送数据,最好用登录页面测试，因为你传值过去后，curl回抓数据，你可以看到你传值有没有成功</li>
+</ul>
+<p>curl -d log=aaaa <a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
+<ul>
+<li>8，显示抓取错误，下面这个例子，很清楚的表明了。</li>
+</ul>
+<p>curl -f<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
+<p>curl: (22) The requested URL returned error: 404</p>
+<p>curl<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
+<p><html><head><title>404,not found</title></head></html></p>
+<ul>
+<li>9，伪造来源地址，有的网站会判断，请求来源地址，防止盗链。</li>
+</ul>
+<p>curl -e<a href="http://localhosthttp://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://localhosthttp://www.XXXX.com/wp-login.php</a></p>
+<ul>
+<li>10，当我们经常用curl去搞人家东西的时候，人家会把你的IP给屏蔽掉的,这个时候,我们可以用代理</li>
+</ul>
+<p>curl -x 24.10.28.84:32779 -o home.html<a href="http://www.XXXX.com" target="_blank" rel="external">http://www.XXXX.com</a></p>
+<ul>
+<li>11，比较大的东西，我们可以分段下载</li>
+</ul>
+<p>curl -r 0-100 -o img.part1<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a></p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0    105      0 –:–:– –:–:– –:–:–     0<br>curl -r 100-200 -o img.part2<a href="http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0     57      0  0:00:01  0:00:01 –:–:–     0<br>curl -r 200- -o img.part3<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  104k  100  104k    0     0  52793      0  0:00:02  0:00:02 –:–:– 88961</p>
+<p>ls |grep part | xargs du -sh</p>
+<p>4.0K    one.part1<br>112K    three.part3<br>4.0K    two.part2</p>
+<p>用的时候，把他们cat一下就OK,cat img.part* &gt;img.jpg</p>
+<ul>
+<li>12，不会显示下载进度信息</li>
+</ul>
+<p>curl -s -o aaa.jpg <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
+<ul>
+<li>13，显示下载进度条</li>
+</ul>
+<p>curl  -0 <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a>     (以http1.0协议请求)</p>
+<p>####################################################################### 100.0%</p>
+<ul>
+<li>14,通过ftp下载文件</li>
+</ul>
+<p>curl -u用户名:密码 -O<a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
+<p>curl -u 用户名:密码 -O <a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
+<p>或者用下面的方式</p>
+<p>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css<br>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css</p>
+<ul>
+<li>15，通过ftp上传</li>
+</ul>
+<p>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/<br>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/</p>
+<ul>
+<li>15,模拟浏览器头</li>
+</ul>
+<p>curl -A “Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)” -x 123.45.67.89:1080 -o page.html -D cookie0001.txt<a href="http://www.www.baidu.com" target="_blank" rel="external">http://www.www.baidu.com</a></p>
+<ul>
+<li>16,PUT、GET、POST</li>
+</ul>
+<p>比如 curl -T localfile <a href="http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT</a> method<br>刚才说到PUT，自然想起来了其他几种methos－－GET和POST。<br>http提交一个表单，比较常用的是POST模式和GET模式<br>GET模式什么option都不用，只需要把变量写在url里面就可以了<br>比如：<br>curl <a href="http://www.yahoo.com/login.cgi?user=nick&amp;password=12345" target="_blank" rel="external">http://www.yahoo.com/login.cgi?user=nick&amp;password=12345</a><br>而POST模式的option则是 -d<br>比如，curl -d “user=nick&amp;password=12345” <a href="http://www.yahoo.com/login.cgi" target="_blank" rel="external">http://www.yahoo.com/login.cgi</a><br>就相当于向这个站点发出一次登陆申请<del>~</del><br>到底该用GET模式还是POST模式，要看对面服务器的程序设定。<br>一点需要注意的是，POST模式下的文件上的文件上传，比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;form method=&quot;POST&quot; enctype=&quot;multipar/form-data&quot; action=&quot;http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi&quot;&gt;</div><div class="line">&lt;input type=file name=upload&gt;</div><div class="line">&lt;input type=submit name=nick value=&quot;go&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+<p>这样一个HTTP表单，我们要用curl进行模拟，就该是这样的语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -F upload=@localfile -F nick=go http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一、get请求&quot;&gt;&lt;a href=&quot;#一、get请求&quot; class=&quot;headerlink&quot; title=&quot;一、get请求&quot;&gt;&lt;/a&gt;一、get请求&lt;/h1&gt;&lt;p&gt;curl “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地&lt;br&gt;curl -i “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  显示全部信息&lt;br&gt;curl -l “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  只显示头部信息&lt;br&gt;curl -v “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  显示get请求全过程解析&lt;br&gt;wget “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“     也可以&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="curl" scheme="http://cuiqingwei.github.io/tags/curl/"/>
     
   </entry>
   
