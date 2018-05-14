@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title><![CDATA[OpenWRT的WiFi带机量修改方法]]></title>
+      <url>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/</url>
+      <content type="html"><![CDATA[<h1 id="Wifi带机量的修改"><a href="#Wifi带机量的修改" class="headerlink" title="Wifi带机量的修改"></a>Wifi带机量的修改</h1><p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
+<p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
+<a id="more"></a>
+<blockquote>
+<p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="external">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="external">MTK_Ralink_ApSoc_SDK编译总结</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Android MulticastSocket 组播]]></title>
       <url>http://cuiqingwei.github.io/2018/05/08/2018-05-08-Android-MulticastSocket-%E7%BB%84%E6%92%AD/</url>
       <content type="html"><![CDATA[<p>现象是MulticastSocket发送组播消息,一些安卓平板上可以发送、接收组播消息,个别安卓不可用。</p>
@@ -19,22 +32,6 @@
 <blockquote>
 <p>参考:<br><a href="https://unix.stackexchange.com/questions/25872/how-can-i-know-if-ip-multicast-is-enabled" target="_blank" rel="external">How can I know if IP Multicast is enabled</a><br><a href="https://www.cnblogs.com/inkheart0124/p/5508420.html" target="_blank" rel="external">Android App用MulticastSocket监听组播，为什么连接到不同路由、在不同手机上跑，有的能收到有的收不到</a><br><a href="https://code.google.com/p/android/issues/detail?id=51195" target="_blank" rel="external">Many devices have multicast disabled in the kernel</a></p>
 </blockquote>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Proguard And DexGuard]]></title>
-      <url>http://cuiqingwei.github.io/2018/04/24/2018-04-24-Proguard-And-DexGuard/</url>
-      <content type="html"><![CDATA[<p>一般情况下，我们混淆自己的安卓项目，会使用Proguard。</p>
-<p><a href="http://www.saikoa.com/proguard" target="_blank" rel="external">http://www.saikoa.com/proguard</a></p>
-<p><strong>Progurad</strong> 是免费的，而且已经集成到Android ADT中了，使用起来很方便。</p>
-<p>混淆工作，是为了保护我们的代码。但是，即使使用Pgoruard混淆了我们的apk文件，也可以使用apktool工具反编译出资源，能够看到Manifest文件，res资源等等。也可以使用dex2jar工具生成jar文件，进而使用jd工具反编译出Java代码片段。虽然，这些代码大部分都经过了混淆，已经很难阅读，但是还是可以读的。</p>
-<a id="more"></a>
-<p>更危险的是，Proguard只能保护代码，却不能保护我们的apk文件。任何人都可以使用apktool工具，反编译我们开发的apk文件，进而更改其中各种资源，或者更改部分代码，甚至是注入代码，然后再打包回apk，二次发布后，达到自己的目的。或者是加入了广告，或者是增加了恶意木马病毒，等等。</p>
-<p>还好，我们还有一种选择，DexGuard。</p>
-<p><a href="http://www.saikoa.com/dexguard" target="_blank" rel="external">http://www.saikoa.com/dexguard</a></p>
-<p><strong>DexGuard</strong> 是收费的，虽然挺贵的，但是对于一个公司来说，还是可以承受的。</p>
-<p>DexGuard是在Proguard基础上，加入了更多的保护措施。使用DexGuard混淆后，生成的apk文件，就无法正常使用apktool反编译了。尽管还是能够反编译出部分资源文件，但是由于反编译过程不完全，就无法再打包成apk了。这样就保护了我们的apk文件，不会被二次打包发布了。</p>
 ]]></content>
     </entry>
     
@@ -75,6 +72,22 @@
 <p><strong>播放</strong>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rtmp://localhost:1935/myapp/room</div></pre></td></tr></table></figure>
 <p><img src="/img/20180424/rtmp.png" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Proguard And DexGuard]]></title>
+      <url>http://cuiqingwei.github.io/2018/04/24/2018-04-24-Proguard-And-DexGuard/</url>
+      <content type="html"><![CDATA[<p>一般情况下，我们混淆自己的安卓项目，会使用Proguard。</p>
+<p><a href="http://www.saikoa.com/proguard" target="_blank" rel="external">http://www.saikoa.com/proguard</a></p>
+<p><strong>Progurad</strong> 是免费的，而且已经集成到Android ADT中了，使用起来很方便。</p>
+<p>混淆工作，是为了保护我们的代码。但是，即使使用Pgoruard混淆了我们的apk文件，也可以使用apktool工具反编译出资源，能够看到Manifest文件，res资源等等。也可以使用dex2jar工具生成jar文件，进而使用jd工具反编译出Java代码片段。虽然，这些代码大部分都经过了混淆，已经很难阅读，但是还是可以读的。</p>
+<a id="more"></a>
+<p>更危险的是，Proguard只能保护代码，却不能保护我们的apk文件。任何人都可以使用apktool工具，反编译我们开发的apk文件，进而更改其中各种资源，或者更改部分代码，甚至是注入代码，然后再打包回apk，二次发布后，达到自己的目的。或者是加入了广告，或者是增加了恶意木马病毒，等等。</p>
+<p>还好，我们还有一种选择，DexGuard。</p>
+<p><a href="http://www.saikoa.com/dexguard" target="_blank" rel="external">http://www.saikoa.com/dexguard</a></p>
+<p><strong>DexGuard</strong> 是收费的，虽然挺贵的，但是对于一个公司来说，还是可以承受的。</p>
+<p>DexGuard是在Proguard基础上，加入了更多的保护措施。使用DexGuard混淆后，生成的apk文件，就无法正常使用apktool反编译了。尽管还是能够反编译出部分资源文件，但是由于反编译过程不完全，就无法再打包成apk了。这样就保护了我们的apk文件，不会被二次打包发布了。</p>
 ]]></content>
     </entry>
     
@@ -204,6 +217,111 @@
     </entry>
     
     <entry>
+      <title><![CDATA[curl模拟http发送get或post接口测试]]></title>
+      <url>http://cuiqingwei.github.io/2017/12/05/2017-12-05-curl%E6%A8%A1%E6%8B%9Fhttp%E5%8F%91%E9%80%81get%E6%88%96post%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/</url>
+      <content type="html"><![CDATA[<h1 id="一、get请求"><a href="#一、get请求" class="headerlink" title="一、get请求"></a>一、get请求</h1><p>curl “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地<br>curl -i “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示全部信息<br>curl -l “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  只显示头部信息<br>curl -v “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示get请求全过程解析<br>wget “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     也可以</p>
+<a id="more"></a>
+<h1 id="二、post请求"><a href="#二、post请求" class="headerlink" title="二、post请求"></a>二、post请求</h1><p>curl -d “param1=value1&amp;param2=value2” “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“</p>
+<h1 id="三、json格式的post请求"><a href="#三、json格式的post请求" class="headerlink" title="三、json格式的post请求"></a>三、json格式的post请求</h1><p>curl -l -H “Content-type: application/json” -X POST -d ‘{“phone”:”13521389587”,”password”:”test”}’ <a href="http://domain/apis/users.json" target="_blank" rel="external">http://domain/apis/users.json</a></p>
+<blockquote>
+<p>例如：curl -l -H “Content-type: application/json” -X POST -d ‘{“ver”: “1.0”,”soa”:{“req”:”123”},”iface”:”me.ele.lpdinfra.prediction.service.PredictionService”,”method”:”restaurant_make_order_time”,”args”:{“arg2”:”\”stable\””,”arg1”:”{\”code\”:[\”WIND\”],\”temperature\”:11.11}”,”arg0”:”{\”tracking_id\”:\”100000000331770936\”,\”eleme_order_id\”:\”100000000331770936\”,\”platform_id\”:\”4\”,\”restaurant_id\”:\”482571\”,\”dish_num\”:1,\”dish_info\”:[{\”entity_id\”:142547763,\”quantity\”:1,\”category_id\”:1,\”dish_name\”:\”[0xe7][0x89][0xb9][0xe4][0xbb][0xb7][0xe8][0x85][0x8a][0xe5][0x91][0xb3][0xe5][0x8f][0x89][0xe7][0x83][0xa7][0xe5][0x8f][0x8c][0xe6][0x8b][0xbc][0xe7][0x85][0xb2][0xe4][0xbb][0x94][0xe9][0xa5][0xad]\”,\”price\”:31.0}],\”merchant_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”customer_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”created_at\”:1477896550,\”confirmed_at\”:1477896550,\”dishes_total_price\”:0.0,\”food_boxes_total_price\”:2.0,\”delivery_total_price\”:2.0,\”pay_amount\”:35.0,\”city_id\”:\”1\”}”}}’ <a href="http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc" target="_blank" rel="external">http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc</a></p>
+</blockquote>
+<p>ps：json串内层参数需要格式化</p>
+<h1 id="四、高级功能"><a href="#四、高级功能" class="headerlink" title="四、高级功能"></a>四、高级功能</h1><p>curl命令是一个功能强大的网络工具，它能够通过http、ftp等方式下载文件，也能够上传文件。其实curl远不止前面所说的那些功能，大家可以通过man curl阅读手册页获取更多的信息。类似的工具还有wget。</p>
+<p>curl命令使用了libcurl库来实现，libcurl库常用在C程序中用来处理HTTP请求，curlpp是libcurl的一个C++封装，这几个东西可以用在抓取网页、网络监控等方面的开发，而curl命令可以帮助来解决开发过程中遇到的问题。</p>
+<ul>
+<li>1，抓取页面内容到一个文件中</li>
+</ul>
+<p>curl -o home.html <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>   –将百度首页内容抓下到home.html中<br>curl -o #2_#1.jpg<a href="http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG</a></p>
+<p>由于A/B下的文件名都是001，002…，201，下载下来的文件重名，这样，自定义出来下载下来的文件名，就变成了这样：原来： A/001.JPG —-&gt; 下载后： 001-A.JPG 原来： B/001.JPG —&gt; 下载后： 001-B.JPG</p>
+<ul>
+<li>2，用-O（大写的），后面的url要具体到某个文件，不然抓不下来。还可以用正则来抓取东西</li>
+</ul>
+<p>curl -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
+<p>运行结果如下：</p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  1575  100  1575    0     0  14940      0 –:–:– –:–:– –:–:– 1538k<br>会在当前执行目录中生成一张bdlogo.gif的图片。</p>
+<p>curl -O <a href="http://XXXXX/screen[1-10].JPG" target="_blank" rel="external">http://XXXXX/screen[1-10].JPG</a>  –下载screen1.jpg~screen10.jpg</p>
+<ul>
+<li>3，模拟表单信息，模拟登录，保存cookie信息</li>
+</ul>
+<p>curl -c ./cookie_c.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
+<ul>
+<li>4，模拟表单信息，模拟登录，保存头信息</li>
+</ul>
+<p>curl -D ./cookie_D.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
+<p>-c(小写)产生的cookie和-D里面的cookie是不一样的。</p>
+<ul>
+<li>5，使用cookie文件</li>
+</ul>
+<p>curl -b ./cookie_c.txt <a href="http://www.XXXX.com/wp-admin" target="_blank" rel="external">http://www.XXXX.com/wp-admin</a></p>
+<ul>
+<li>6，断点续传，-C(大写)</li>
+</ul>
+<p>curl -C -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
+<ul>
+<li>7，传送数据,最好用登录页面测试，因为你传值过去后，curl回抓数据，你可以看到你传值有没有成功</li>
+</ul>
+<p>curl -d log=aaaa <a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
+<ul>
+<li>8，显示抓取错误，下面这个例子，很清楚的表明了。</li>
+</ul>
+<p>curl -f<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
+<p>curl: (22) The requested URL returned error: 404</p>
+<p>curl<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
+<p><html><head><title>404,not found</title></head></html></p>
+<ul>
+<li>9，伪造来源地址，有的网站会判断，请求来源地址，防止盗链。</li>
+</ul>
+<p>curl -e<a href="http://localhosthttp://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://localhosthttp://www.XXXX.com/wp-login.php</a></p>
+<ul>
+<li>10，当我们经常用curl去搞人家东西的时候，人家会把你的IP给屏蔽掉的,这个时候,我们可以用代理</li>
+</ul>
+<p>curl -x 24.10.28.84:32779 -o home.html<a href="http://www.XXXX.com" target="_blank" rel="external">http://www.XXXX.com</a></p>
+<ul>
+<li>11，比较大的东西，我们可以分段下载</li>
+</ul>
+<p>curl -r 0-100 -o img.part1<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a></p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0    105      0 –:–:– –:–:– –:–:–     0<br>curl -r 100-200 -o img.part2<a href="http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0     57      0  0:00:01  0:00:01 –:–:–     0<br>curl -r 200- -o img.part3<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  104k  100  104k    0     0  52793      0  0:00:02  0:00:02 –:–:– 88961</p>
+<p>ls |grep part | xargs du -sh</p>
+<p>4.0K    one.part1<br>112K    three.part3<br>4.0K    two.part2</p>
+<p>用的时候，把他们cat一下就OK,cat img.part* &gt;img.jpg</p>
+<ul>
+<li>12，不会显示下载进度信息</li>
+</ul>
+<p>curl -s -o aaa.jpg <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
+<ul>
+<li>13，显示下载进度条</li>
+</ul>
+<p>curl  -0 <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a>     (以http1.0协议请求)</p>
+<p>####################################################################### 100.0%</p>
+<ul>
+<li>14,通过ftp下载文件</li>
+</ul>
+<p>curl -u用户名:密码 -O<a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
+<p>curl -u 用户名:密码 -O <a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
+<p>或者用下面的方式</p>
+<p>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css<br>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css</p>
+<ul>
+<li>15，通过ftp上传</li>
+</ul>
+<p>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/<br>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/</p>
+<ul>
+<li>15,模拟浏览器头</li>
+</ul>
+<p>curl -A “Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)” -x 123.45.67.89:1080 -o page.html -D cookie0001.txt<a href="http://www.www.baidu.com" target="_blank" rel="external">http://www.www.baidu.com</a></p>
+<ul>
+<li>16,PUT、GET、POST</li>
+</ul>
+<p>比如 curl -T localfile <a href="http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT</a> method<br>刚才说到PUT，自然想起来了其他几种methos－－GET和POST。<br>http提交一个表单，比较常用的是POST模式和GET模式<br>GET模式什么option都不用，只需要把变量写在url里面就可以了<br>比如：<br>curl <a href="http://www.yahoo.com/login.cgi?user=nick&amp;password=12345" target="_blank" rel="external">http://www.yahoo.com/login.cgi?user=nick&amp;password=12345</a><br>而POST模式的option则是 -d<br>比如，curl -d “user=nick&amp;password=12345” <a href="http://www.yahoo.com/login.cgi" target="_blank" rel="external">http://www.yahoo.com/login.cgi</a><br>就相当于向这个站点发出一次登陆申请<del>~</del><br>到底该用GET模式还是POST模式，要看对面服务器的程序设定。<br>一点需要注意的是，POST模式下的文件上的文件上传，比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;form method=&quot;POST&quot; enctype=&quot;multipar/form-data&quot; action=&quot;http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi&quot;&gt;</div><div class="line">&lt;input type=file name=upload&gt;</div><div class="line">&lt;input type=submit name=nick value=&quot;go&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+<p>这样一个HTTP表单，我们要用curl进行模拟，就该是这样的语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -F upload=@localfile -F nick=go http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[分布式文件系统 FastDFS 5 & Linux CentOS 7 搭建]]></title>
       <url>http://cuiqingwei.github.io/2017/12/05/2017-12-22-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F-FastDFS-5-Linux-CentOS-7-%E6%90%AD%E5%BB%BA/</url>
       <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>FastDFS是一个开源的轻量级分布式文件系统，由跟踪服务器（tracker server）、存储服务器（storage server）和客户端（client）三个部分组成，主要解决了海量数据存储问题，特别适合以中小文件（建议范围：<strong>4KB &lt; file_size &lt;500MB</strong> ）为载体的在线服务。</p>
@@ -321,111 +439,6 @@
 <p><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ysuALXURAAyIkvltU0w661.jpg" target="_blank" rel="external">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ysuALXURAAyIkvltU0w661.jpg</a><br><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytGABqkAAnhI9lHEHhw379.pdf" target="_blank" rel="external">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytGABqkAAnhI9lHEHhw379.pdf</a><br><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytaAZqEqA8pGTvhXcBQ424.mp4" target="_blank" rel="external">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytaAZqEqA8pGTvhXcBQ424.mp4</a></p>
 <p><img src="/img/20171222/WX20171222-170825@2x.png" alt=""></p>
 <p>一切正常~ 至此关于FastDFS在CentOS 7下的部署测试就已经全部完成。</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[curl模拟http发送get或post接口测试]]></title>
-      <url>http://cuiqingwei.github.io/2017/12/05/2017-12-05-curl%E6%A8%A1%E6%8B%9Fhttp%E5%8F%91%E9%80%81get%E6%88%96post%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/</url>
-      <content type="html"><![CDATA[<h1 id="一、get请求"><a href="#一、get请求" class="headerlink" title="一、get请求"></a>一、get请求</h1><p>curl “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地<br>curl -i “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示全部信息<br>curl -l “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  只显示头部信息<br>curl -v “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示get请求全过程解析<br>wget “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     也可以</p>
-<a id="more"></a>
-<h1 id="二、post请求"><a href="#二、post请求" class="headerlink" title="二、post请求"></a>二、post请求</h1><p>curl -d “param1=value1&amp;param2=value2” “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“</p>
-<h1 id="三、json格式的post请求"><a href="#三、json格式的post请求" class="headerlink" title="三、json格式的post请求"></a>三、json格式的post请求</h1><p>curl -l -H “Content-type: application/json” -X POST -d ‘{“phone”:”13521389587”,”password”:”test”}’ <a href="http://domain/apis/users.json" target="_blank" rel="external">http://domain/apis/users.json</a></p>
-<blockquote>
-<p>例如：curl -l -H “Content-type: application/json” -X POST -d ‘{“ver”: “1.0”,”soa”:{“req”:”123”},”iface”:”me.ele.lpdinfra.prediction.service.PredictionService”,”method”:”restaurant_make_order_time”,”args”:{“arg2”:”\”stable\””,”arg1”:”{\”code\”:[\”WIND\”],\”temperature\”:11.11}”,”arg0”:”{\”tracking_id\”:\”100000000331770936\”,\”eleme_order_id\”:\”100000000331770936\”,\”platform_id\”:\”4\”,\”restaurant_id\”:\”482571\”,\”dish_num\”:1,\”dish_info\”:[{\”entity_id\”:142547763,\”quantity\”:1,\”category_id\”:1,\”dish_name\”:\”[0xe7][0x89][0xb9][0xe4][0xbb][0xb7][0xe8][0x85][0x8a][0xe5][0x91][0xb3][0xe5][0x8f][0x89][0xe7][0x83][0xa7][0xe5][0x8f][0x8c][0xe6][0x8b][0xbc][0xe7][0x85][0xb2][0xe4][0xbb][0x94][0xe9][0xa5][0xad]\”,\”price\”:31.0}],\”merchant_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”customer_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”created_at\”:1477896550,\”confirmed_at\”:1477896550,\”dishes_total_price\”:0.0,\”food_boxes_total_price\”:2.0,\”delivery_total_price\”:2.0,\”pay_amount\”:35.0,\”city_id\”:\”1\”}”}}’ <a href="http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc" target="_blank" rel="external">http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc</a></p>
-</blockquote>
-<p>ps：json串内层参数需要格式化</p>
-<h1 id="四、高级功能"><a href="#四、高级功能" class="headerlink" title="四、高级功能"></a>四、高级功能</h1><p>curl命令是一个功能强大的网络工具，它能够通过http、ftp等方式下载文件，也能够上传文件。其实curl远不止前面所说的那些功能，大家可以通过man curl阅读手册页获取更多的信息。类似的工具还有wget。</p>
-<p>curl命令使用了libcurl库来实现，libcurl库常用在C程序中用来处理HTTP请求，curlpp是libcurl的一个C++封装，这几个东西可以用在抓取网页、网络监控等方面的开发，而curl命令可以帮助来解决开发过程中遇到的问题。</p>
-<ul>
-<li>1，抓取页面内容到一个文件中</li>
-</ul>
-<p>curl -o home.html <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>   –将百度首页内容抓下到home.html中<br>curl -o #2_#1.jpg<a href="http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG</a></p>
-<p>由于A/B下的文件名都是001，002…，201，下载下来的文件重名，这样，自定义出来下载下来的文件名，就变成了这样：原来： A/001.JPG —-&gt; 下载后： 001-A.JPG 原来： B/001.JPG —&gt; 下载后： 001-B.JPG</p>
-<ul>
-<li>2，用-O（大写的），后面的url要具体到某个文件，不然抓不下来。还可以用正则来抓取东西</li>
-</ul>
-<p>curl -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<p>运行结果如下：</p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  1575  100  1575    0     0  14940      0 –:–:– –:–:– –:–:– 1538k<br>会在当前执行目录中生成一张bdlogo.gif的图片。</p>
-<p>curl -O <a href="http://XXXXX/screen[1-10].JPG" target="_blank" rel="external">http://XXXXX/screen[1-10].JPG</a>  –下载screen1.jpg~screen10.jpg</p>
-<ul>
-<li>3，模拟表单信息，模拟登录，保存cookie信息</li>
-</ul>
-<p>curl -c ./cookie_c.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>4，模拟表单信息，模拟登录，保存头信息</li>
-</ul>
-<p>curl -D ./cookie_D.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<p>-c(小写)产生的cookie和-D里面的cookie是不一样的。</p>
-<ul>
-<li>5，使用cookie文件</li>
-</ul>
-<p>curl -b ./cookie_c.txt <a href="http://www.XXXX.com/wp-admin" target="_blank" rel="external">http://www.XXXX.com/wp-admin</a></p>
-<ul>
-<li>6，断点续传，-C(大写)</li>
-</ul>
-<p>curl -C -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<ul>
-<li>7，传送数据,最好用登录页面测试，因为你传值过去后，curl回抓数据，你可以看到你传值有没有成功</li>
-</ul>
-<p>curl -d log=aaaa <a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>8，显示抓取错误，下面这个例子，很清楚的表明了。</li>
-</ul>
-<p>curl -f<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
-<p>curl: (22) The requested URL returned error: 404</p>
-<p>curl<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
-<p><html><head><title>404,not found</title></head></html></p>
-<ul>
-<li>9，伪造来源地址，有的网站会判断，请求来源地址，防止盗链。</li>
-</ul>
-<p>curl -e<a href="http://localhosthttp://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://localhosthttp://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>10，当我们经常用curl去搞人家东西的时候，人家会把你的IP给屏蔽掉的,这个时候,我们可以用代理</li>
-</ul>
-<p>curl -x 24.10.28.84:32779 -o home.html<a href="http://www.XXXX.com" target="_blank" rel="external">http://www.XXXX.com</a></p>
-<ul>
-<li>11，比较大的东西，我们可以分段下载</li>
-</ul>
-<p>curl -r 0-100 -o img.part1<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0    105      0 –:–:– –:–:– –:–:–     0<br>curl -r 100-200 -o img.part2<a href="http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0     57      0  0:00:01  0:00:01 –:–:–     0<br>curl -r 200- -o img.part3<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  104k  100  104k    0     0  52793      0  0:00:02  0:00:02 –:–:– 88961</p>
-<p>ls |grep part | xargs du -sh</p>
-<p>4.0K    one.part1<br>112K    three.part3<br>4.0K    two.part2</p>
-<p>用的时候，把他们cat一下就OK,cat img.part* &gt;img.jpg</p>
-<ul>
-<li>12，不会显示下载进度信息</li>
-</ul>
-<p>curl -s -o aaa.jpg <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<ul>
-<li>13，显示下载进度条</li>
-</ul>
-<p>curl  -0 <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a>     (以http1.0协议请求)</p>
-<p>####################################################################### 100.0%</p>
-<ul>
-<li>14,通过ftp下载文件</li>
-</ul>
-<p>curl -u用户名:密码 -O<a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
-<p>curl -u 用户名:密码 -O <a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
-<p>或者用下面的方式</p>
-<p>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css<br>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css</p>
-<ul>
-<li>15，通过ftp上传</li>
-</ul>
-<p>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/<br>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/</p>
-<ul>
-<li>15,模拟浏览器头</li>
-</ul>
-<p>curl -A “Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)” -x 123.45.67.89:1080 -o page.html -D cookie0001.txt<a href="http://www.www.baidu.com" target="_blank" rel="external">http://www.www.baidu.com</a></p>
-<ul>
-<li>16,PUT、GET、POST</li>
-</ul>
-<p>比如 curl -T localfile <a href="http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT</a> method<br>刚才说到PUT，自然想起来了其他几种methos－－GET和POST。<br>http提交一个表单，比较常用的是POST模式和GET模式<br>GET模式什么option都不用，只需要把变量写在url里面就可以了<br>比如：<br>curl <a href="http://www.yahoo.com/login.cgi?user=nick&amp;password=12345" target="_blank" rel="external">http://www.yahoo.com/login.cgi?user=nick&amp;password=12345</a><br>而POST模式的option则是 -d<br>比如，curl -d “user=nick&amp;password=12345” <a href="http://www.yahoo.com/login.cgi" target="_blank" rel="external">http://www.yahoo.com/login.cgi</a><br>就相当于向这个站点发出一次登陆申请<del>~</del><br>到底该用GET模式还是POST模式，要看对面服务器的程序设定。<br>一点需要注意的是，POST模式下的文件上的文件上传，比如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;form method=&quot;POST&quot; enctype=&quot;multipar/form-data&quot; action=&quot;http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi&quot;&gt;</div><div class="line">&lt;input type=file name=upload&gt;</div><div class="line">&lt;input type=submit name=nick value=&quot;go&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
-<p>这样一个HTTP表单，我们要用curl进行模拟，就该是这样的语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -F upload=@localfile -F nick=go http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi</div></pre></td></tr></table></figure>
 ]]></content>
     </entry>
     
@@ -1327,24 +1340,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[路亚水滴轮的速比的选择]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E8%B7%AF%E4%BA%9A%E6%B0%B4%E6%BB%B4%E8%BD%AE%E7%9A%84%E9%80%9F%E6%AF%94%E7%9A%84%E9%80%89%E6%8B%A9/</url>
-      <content type="html"><![CDATA[<blockquote>
-<p>大家在购买轮子时，估计很多人都是首先关注轮子的价格，再关注轮子的牌子、外观、线容量、轴承数等，然后在各论坛到处问“XX的轮怎样？用过的说说！”结果，最后听了一大堆意见后最终还是进了一个价格自己可以接受的轮而不管轮子怎样了；或者受一些钓友的影响，入了一个超出了预算的牌子轮子却不是最适合自己的；或者入了一个价格差不多，只是多了一个或几个轴承的杂牌三无轮子而其它质量极差。鲜少有人（特别是新人）关注轮子的齿轮转速比，或者有关注，但却不是先决条件。</p>
-</blockquote>
-<a id="more"></a>
-<h3 id="在此抛砖引玉，聊聊轮子的转速比。"><a href="#在此抛砖引玉，聊聊轮子的转速比。" class="headerlink" title="在此抛砖引玉，聊聊轮子的转速比。"></a>在此抛砖引玉，聊聊轮子的转速比。</h3><p>转速比，通俗的来讲就是轮子的主副齿轮的转速比；例如6.3:1，意思就是：摇柄轴上的大齿轮转一圈，轮轴上的小齿轮就要转6.3圈。速比的设计除可以快速收线外，还有“四两拨千斤”的功能。大概可以这样理解：我用1牛的力来转把手，那么鱼要用出6.3牛的力才能不让我转动。<br>高转速比，可以快速收紧余线；中鱼时快速拉出障碍区；大水域快速搜索等有无可比拟的优势；但在控制一些硬饵泳姿时，或要求慢拖时，不如低转速比好控制。此外，转速比越高，同样拉力的情况下，摇起来就越费力；原因是高转速比把力量转换成高速，道理正如变速自行车一样。你别不相信，不用很大的鱼就让你发现，再多的轴承都是转不动了。（想象一下，你一定见过有人在溜鱼时做抽竿动作，为什么要做抽竿的动作呢？）<br>说到这里，大家每次钓鱼都在用到转速比，但你真正的了解过它吗？例如一些钓友在说操作手法时，“慢收+轻抖”。这个当中的“慢收”实在太笼统了。有些会说的具体一些，屁如“一秒转动一圈摇把”，还是没人具体意义；只有说到“我的轮子转速比是6.3:1，每秒转一圈摇把”才算是具体化。好，说到这里，我估计99.9%的人都不知自己转一圈摇把到底卷了多少线回来，也即是你的饵游动的速度是多少米每秒？</p>
-<p>当然，实际钓鱼时也不用真的精确到零点几米每秒。只要粗略的知道，天长日久后，不管什么时候，需要什么速度，才最可能上鱼，已经深深的铬在你的潜意识里了。随便拿起一套装备，看看转速比就清楚自己该怎样操作了。</p>
-<p>看似很复杂，其实也很简单。一般人的装备都不多，常见的轮子的转速比也就是那几个。以纺车轮为例，我的一个纺车转速比是6.2:1，线杯最大外径是40mm；2号尼龙线在绕线器转一圈时卷的线长度约为126mm(40<em>3.14),实测为130.8mm；摇把转一圈时收线约130</em>6.3=825mm；即0.825米；一米有多长大家总有个概念吧？经过这样一个计算，你是不是心里清楚自己的饵是“受伤的小鱼”还是“水中潜艇”呢？</p>
-<blockquote>
-<p><strong>摘要</strong>：进来有些朋友在网上询问关于双轴卷线器（水滴轮、鼓型轮）应该如何搭配竿子，速比快慢该如何选择的问题。关于选择双轴卷线器（水滴or鼓型轮）速比的常识进来有些朋友在网上询问关于双轴卷线器（水滴轮、鼓型轮）应该如何搭配竿子，速比快慢该如何选择的问题</p>
-</blockquote>
-<p><img src="/img/20161013/Lipless-Baits-Ready-to-Rock.jpg" alt=""></p>
-<h3 id="何谓速比？何谓高速比？何谓低速比呢？"><a href="#何谓速比？何谓高速比？何谓低速比呢？" class="headerlink" title="何谓速比？何谓高速比？何谓低速比呢？"></a>何谓速比？何谓高速比？何谓低速比呢？</h3><p>通常速比标识的参数代表了：我们手柄摇一圈线杯转动几圈，例如：7.0：1那么就是手柄转动一圈线杯转动7圈。<br><strong>高速比、低速比：一般高速比低速比没有明显的界限，通常6.3：1（含）以下我们称为低速比，7.0：1以上的算作高速比。</strong><br>低速比的优势：通常职业钓手使用Swimbait、spinnerbait、crank、minnow时候会选择低速比轮子。因为在操控诸如上述所谓搜索饵时候，低速比可以更好更均匀的控制拟饵的回收速度，并且就我们通常所使用的浮水CRANK、水面popper等等在特定的时候也会去做一些点对点的攻击，并不是一味的大面积快速搜索。所以这个时候低速比的轮子就体现出了拟饵在局域水面上的优势，不至于手柄轻轻一动就窜出老远。<br>高速比的优势：高速比轮子的特点就是回收拟饵的速度较快，在作合的一瞬间具有相当的爆发力。这个特点刚好符合我们用jighead或Texas在障碍区里作钓中鱼时要强调刺鱼的爆发力和迅速将于带离标点的要求。所以在大多数钓手软虫作钓障碍区时都会选用较快速比的轮子。但是也有特殊情况，例如在重障碍的草区：通常唠叨中障碍的草区都会使用比较大号的jig，并且中鱼时难免会连鱼带草一起搂。类似于雷强。这个时候为保证轮子足够的绞力已经能容纳更多的强力钓线，在这种地方作钓JIGhead或者大型Texas时很多钓手会选用低速比的较大容线量轮子。<br>以上是双轴卷线器的最基本的实用的常识，但愿对于初学的朋友们会选择轮子时候会有所帮助。但是也不排除在一些特殊情况时候对于轮子的选择会遇到一些特殊的变化。这里我不多赘述。等到大家遇到了新的问题时候我们再共同探讨。</p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[常用路亚线的区别]]></title>
       <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%B8%B8%E7%94%A8%E8%B7%AF%E4%BA%9A%E7%BA%BF%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
       <content type="html"><![CDATA[<h2 id="尼龙线"><a href="#尼龙线" class="headerlink" title="尼龙线"></a>尼龙线</h2><p>台钓中使用最多的也是尼龙线。尼龙的化工原料为PA，和PE一样是石油的下游产品。与PE不同的是，尼龙线一般为单股线，这种线的特点刚好与PE线相反。尼龙线的优点是由于有一定的延展性，抛投和中鱼的时候不易断线，由于生产技术已经发展了近70年的历史，成本低，产量大，相比PE线要便宜很多。最后一点是尼龙表面圆滑，对线环的磨损可以降到最低。</p>
@@ -1412,6 +1407,24 @@
 <p><em>第二种，拖，拖动饵在水下移动，让饵自然呈现一种在底层游动的状态，引诱鱼 前来试探，这种方法对付一些底层伏击型的鱼类比较有效果。也会对钓手们了解 水底的地形有帮助。操作方法 就是慢慢摇轮，让其软饵在水下慢慢游走。</em></p>
 <p><em>第三种，停，这个动作非常重要 有时候你一直在操控软饵时，鱼可能没有动作， 只会盯着看，往往就是在你停顿的瞬间，鱼会突然发动攻击。当然停顿的时间没 有固定的，需要大家自行体会根据不同的环境来随时调整。</em></p>
 <p>而将这三者结合起来：跳-拖-停 重复使用的时候，往往会对鱼造成极大的诱惑性 ，可以使中鱼率大大增加，特别是在鱼境况不好的压力钓场上，往往路亚软饵钓 组会发挥极大地作用，大家可以在操控软饵的时候想想一下软饵在水下的动作会 是怎样的，充分发挥自己的想象力，努力去改造软饵在水下的状态，最简单的方 法就是找一个透明的玻璃鱼缸灌满水将软虫钓组放入浴缸里进行调试，已达到你 想要的理想效果，所以软饵钓组各位一定要掌握一下，当你熟悉了路亚软饵钓组 的你肯定会爱上它的。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[路亚水滴轮的速比的选择]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E8%B7%AF%E4%BA%9A%E6%B0%B4%E6%BB%B4%E8%BD%AE%E7%9A%84%E9%80%9F%E6%AF%94%E7%9A%84%E9%80%89%E6%8B%A9/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>大家在购买轮子时，估计很多人都是首先关注轮子的价格，再关注轮子的牌子、外观、线容量、轴承数等，然后在各论坛到处问“XX的轮怎样？用过的说说！”结果，最后听了一大堆意见后最终还是进了一个价格自己可以接受的轮而不管轮子怎样了；或者受一些钓友的影响，入了一个超出了预算的牌子轮子却不是最适合自己的；或者入了一个价格差不多，只是多了一个或几个轴承的杂牌三无轮子而其它质量极差。鲜少有人（特别是新人）关注轮子的齿轮转速比，或者有关注，但却不是先决条件。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="在此抛砖引玉，聊聊轮子的转速比。"><a href="#在此抛砖引玉，聊聊轮子的转速比。" class="headerlink" title="在此抛砖引玉，聊聊轮子的转速比。"></a>在此抛砖引玉，聊聊轮子的转速比。</h3><p>转速比，通俗的来讲就是轮子的主副齿轮的转速比；例如6.3:1，意思就是：摇柄轴上的大齿轮转一圈，轮轴上的小齿轮就要转6.3圈。速比的设计除可以快速收线外，还有“四两拨千斤”的功能。大概可以这样理解：我用1牛的力来转把手，那么鱼要用出6.3牛的力才能不让我转动。<br>高转速比，可以快速收紧余线；中鱼时快速拉出障碍区；大水域快速搜索等有无可比拟的优势；但在控制一些硬饵泳姿时，或要求慢拖时，不如低转速比好控制。此外，转速比越高，同样拉力的情况下，摇起来就越费力；原因是高转速比把力量转换成高速，道理正如变速自行车一样。你别不相信，不用很大的鱼就让你发现，再多的轴承都是转不动了。（想象一下，你一定见过有人在溜鱼时做抽竿动作，为什么要做抽竿的动作呢？）<br>说到这里，大家每次钓鱼都在用到转速比，但你真正的了解过它吗？例如一些钓友在说操作手法时，“慢收+轻抖”。这个当中的“慢收”实在太笼统了。有些会说的具体一些，屁如“一秒转动一圈摇把”，还是没人具体意义；只有说到“我的轮子转速比是6.3:1，每秒转一圈摇把”才算是具体化。好，说到这里，我估计99.9%的人都不知自己转一圈摇把到底卷了多少线回来，也即是你的饵游动的速度是多少米每秒？</p>
+<p>当然，实际钓鱼时也不用真的精确到零点几米每秒。只要粗略的知道，天长日久后，不管什么时候，需要什么速度，才最可能上鱼，已经深深的铬在你的潜意识里了。随便拿起一套装备，看看转速比就清楚自己该怎样操作了。</p>
+<p>看似很复杂，其实也很简单。一般人的装备都不多，常见的轮子的转速比也就是那几个。以纺车轮为例，我的一个纺车转速比是6.2:1，线杯最大外径是40mm；2号尼龙线在绕线器转一圈时卷的线长度约为126mm(40<em>3.14),实测为130.8mm；摇把转一圈时收线约130</em>6.3=825mm；即0.825米；一米有多长大家总有个概念吧？经过这样一个计算，你是不是心里清楚自己的饵是“受伤的小鱼”还是“水中潜艇”呢？</p>
+<blockquote>
+<p><strong>摘要</strong>：进来有些朋友在网上询问关于双轴卷线器（水滴轮、鼓型轮）应该如何搭配竿子，速比快慢该如何选择的问题。关于选择双轴卷线器（水滴or鼓型轮）速比的常识进来有些朋友在网上询问关于双轴卷线器（水滴轮、鼓型轮）应该如何搭配竿子，速比快慢该如何选择的问题</p>
+</blockquote>
+<p><img src="/img/20161013/Lipless-Baits-Ready-to-Rock.jpg" alt=""></p>
+<h3 id="何谓速比？何谓高速比？何谓低速比呢？"><a href="#何谓速比？何谓高速比？何谓低速比呢？" class="headerlink" title="何谓速比？何谓高速比？何谓低速比呢？"></a>何谓速比？何谓高速比？何谓低速比呢？</h3><p>通常速比标识的参数代表了：我们手柄摇一圈线杯转动几圈，例如：7.0：1那么就是手柄转动一圈线杯转动7圈。<br><strong>高速比、低速比：一般高速比低速比没有明显的界限，通常6.3：1（含）以下我们称为低速比，7.0：1以上的算作高速比。</strong><br>低速比的优势：通常职业钓手使用Swimbait、spinnerbait、crank、minnow时候会选择低速比轮子。因为在操控诸如上述所谓搜索饵时候，低速比可以更好更均匀的控制拟饵的回收速度，并且就我们通常所使用的浮水CRANK、水面popper等等在特定的时候也会去做一些点对点的攻击，并不是一味的大面积快速搜索。所以这个时候低速比的轮子就体现出了拟饵在局域水面上的优势，不至于手柄轻轻一动就窜出老远。<br>高速比的优势：高速比轮子的特点就是回收拟饵的速度较快，在作合的一瞬间具有相当的爆发力。这个特点刚好符合我们用jighead或Texas在障碍区里作钓中鱼时要强调刺鱼的爆发力和迅速将于带离标点的要求。所以在大多数钓手软虫作钓障碍区时都会选用较快速比的轮子。但是也有特殊情况，例如在重障碍的草区：通常唠叨中障碍的草区都会使用比较大号的jig，并且中鱼时难免会连鱼带草一起搂。类似于雷强。这个时候为保证轮子足够的绞力已经能容纳更多的强力钓线，在这种地方作钓JIGhead或者大型Texas时很多钓手会选用低速比的较大容线量轮子。<br>以上是双轴卷线器的最基本的实用的常识，但愿对于初学的朋友们会选择轮子时候会有所帮助。但是也不排除在一些特殊情况时候对于轮子的选择会遇到一些特殊的变化。这里我不多赘述。等到大家遇到了新的问题时候我们再共同探讨。</p>
 ]]></content>
     </entry>
     
