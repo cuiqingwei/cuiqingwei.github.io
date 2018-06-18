@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2018-05-14T08:18:44.000Z</updated>
+  <updated>2018-06-18T07:02:27.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -16,11 +16,64 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>WiFi探针的工作原理</title>
+    <link href="http://cuiqingwei.github.io/2018/05/14/2018-06-18-WiFi%E6%8E%A2%E9%92%88%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"/>
+    <id>http://cuiqingwei.github.io/2018/05/14/2018-06-18-WiFi探针的工作原理/</id>
+    <published>2018-05-14T04:12:08.000Z</published>
+    <updated>2018-06-18T07:02:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>WiFi探针</strong> 技术是指基于WiFi探测技术来识别AP（无线访问接入点）附近已开启WiFi的智能手机或者WiFi终端（笔记本，平板电脑等），无需用户接入WiFi，WiFi探针就能够识别用户的信息。</p>
+<p>当我们走进探针信号覆盖区域内且我们的WiFi设备打开，我们的设备就能被探针探测出来，无论是iOS或者Android系统都能轻易检测到，并且获取设备的MAC地址。</p>
+<a id="more"></a>
+<h1 id="WiFi探测特点"><a href="#WiFi探测特点" class="headerlink" title="WiFi探测特点"></a>WiFi探测特点</h1><ul>
+<li>用户无需连接，无需安装APP；</li>
+<li>手机已经连接WiFi也可以探测；</li>
+<li>自动实时探测区域内的WiFi终端标识MAC地址；</li>
+<li>自动记录每个WiFi终端进入区域时间log_TIme、场强SNR；</li>
+<li>兼容iOS苹果和Android系统，开启WiFi的智能手机、笔记本电脑、Pad等移动设备都能探测。</li>
+</ul>
+<p><img src="/img/20180618/20180424090423830.jpg" alt=""></p>
+<h1 id="WiFi探针的工作原理"><a href="#WiFi探针的工作原理" class="headerlink" title="WiFi探针的工作原理"></a>WiFi探针的工作原理</h1><p>要深入了解WiFi探针技术，首先先认识WiFi使用的网络协议，WiFi采用的是IEEE802.11协议集，此协议集包含许多子协议。其中按照时间顺序发展，主要有：<br>（1）802.11a，（2）802.11b，（3）802.11g（4）802.11n。<br>在网络通信中，数据被封装成了帧，帧就是指通信中的一个数据块。但是帧在数据链路层传输的时候是有固定格式的，不是随便的封装和打包就可以传输，大小有限制，最小46字节，最大1500字节所以我们必须按照这个规则来封装。下面802.11的帧结构：</p>
+<p><img src="/img/20180618/1524574939991174.jpg" alt=""><br><img src="/img/20180618/1524574939673549.jpg" alt=""></p>
+<p>从上面的结构可以知道，前俩个字节为：帧控制字段。<br>控制字段的前2bit节为：协议类型，目前此值为：0。</p>
+<ul>
+<li>1）控制帧：（ControlFrame，例如RTS帧、CTS帧、ACK帧）用于竞争期间的握手通信和正向确认、结束非竞争期等；</li>
+<li>2）管理帧：（ManagementFrame，例如Beacon帧、ProbeRequest帧）主要用于STA与AP之间协商、关系的控制，如关联、认证、同步等；</li>
+<li>3）数据帧：（DataFrame，承载数据的载体）用于在竞争期和非竞争期传输数据。</li>
+</ul>
+<h3 id="1、管理帧"><a href="#1、管理帧" class="headerlink" title="1、管理帧"></a>1、管理帧</h3><p>BeaconFrame：信标帧，是相当重要的维护机制，主要来宣告某个AP网络的存在。定期发送的信标，可让移动WiFi设备得知该网络的存在，从而调整加入该网络所必要的参数。在基础网络里，AP必须负责发送Beacon帧，Beacon帧所及范围即为基本服务区域。在基础型网络里，所有沟通都必须通过接入点，因此WiFi设备不能距离太远，否则无法接收到信标。下图是帧格式：</p>
+<p><img src="/img/20180618/1524574940570406.jpg" alt=""></p>
+<h3 id="2、管理帧"><a href="#2、管理帧" class="headerlink" title="2、管理帧"></a>2、管理帧</h3><p>ProbeRequest：探测请求帧，WiFi设备将会利用ProbeRequest帧，扫描所在区域内目前有哪些802.11网络。下图是帧格式：</p>
+<p><img src="/img/20180618/1524574943944955.jpg" alt=""></p>
+<h3 id="3、数据帧："><a href="#3、数据帧：" class="headerlink" title="3、数据帧："></a>3、数据帧：</h3><p>Data数据帧，当接入点要送出一个帧给WiFi设备但是不必确认之前所传送的信息时，就会使用标准的数据帧。标准的数据帧并不会征询对方是否有数据待传，因此不允许接收端传送任何数据。无竞争周期所使用的纯数据（Data-Only）帧和无竞争周期所使用的数据帧完全相同。看了以上的网络知识，我们现在说说WiFi探针是怎么工作的，还是先看张图：</p>
+<p><img src="/img/20180618/1524574944692277.jpg" alt=""></p>
+<p>就像图中描述的一样，我们的WiFi探针其实就是一个AP，它定时的向自己的四周广播发送Beacon帧，用来通知附近的WiFi设备，AP是存在的，（好比它一直在向周围喊着，我在这里，大家快来连接我啊）。我们的WiFi设备，手机，平板电脑等，也不停的发送着probe帧，去寻找附近可用的AP。在probe帧的介绍中就我们可以看到probe帧包含了设备的mac地址，当我们的AP接收到probe帧之后就获取了这个设备的MAC地址，而这个AP就是我们的WIFI探针。因此只要在WiFi探针覆盖区域内的设备打开着WiFi，探针就能收集到他的MAC地址。</p>
+<h1 id="WiFi探针可以采集哪些数据"><a href="#WiFi探针可以采集哪些数据" class="headerlink" title="WiFi探针可以采集哪些数据"></a>WiFi探针可以采集哪些数据</h1><p>　　可采集数据：<br>　　设备MAC地址；<br>　　WiFi信号强度；<br>　　WiFi信号频道；<br>　　信号帧类型。<br>　　记录格式：探针 MAC|抓取的设备 MAC|设备发送的 WiFi 包的类型|子类型|信号强度|时间戳</p>
+<p><img src="/img/20180618/1524574945471237.jpg" alt=""></p>
+<h1 id="数据释义"><a href="#数据释义" class="headerlink" title="数据释义"></a>数据释义</h1><p>　　“探针MAC”就是探针本身的MAC地址；<br>　　“抓取的设备MAC”指探针抓取到的WiFi信号的发射设备的MAC地址，一般为手机；<br>　　“信号强度”指探针抓取到的WiFi信号的强度，最小值为“-100”，一般来说，此值越大表示发射设备离探针越近；<br>　　“设备发送的WiFi包的类型”指探针抓取到的WiFi信号的类别，其末位数的值为0、4、8时，分别表示抓取到的WiFi信号为“管理”帧、“控制”帧、“数据”帧；<br>　　“时间戳”指探针抓取到WiFi信号的时间，如果探针在局域网内使用而没有接入广域网的话，时间戳可能是不准确的。</p>
+<blockquote>
+<p>WiFi探针数据可以同哪些数据融合？<br>数据的应用核心在于融合，如何将各成一派数据巧妙的组合在一起，让数据驱动商业的发展，是现在与未来的议题。虽然线上大数据已经经历过互联网的洗礼，但是线下数据仍有较长的路要走，那么WiFi探针可以同哪些数据做融合呢？<br>MAC数据可以同支付数据、会员数据、消费数据、营销数据、地理数据及线上数据做深度的融合，将多维度的数据集成一起勾画出完整的用户画像，如用户的姓名、年龄、兴趣偏好、消费特征、过往消费记录、学历等。基于这些数据再结合具体的应用，这样才能让线下商户有据可依，释放出数据的价值。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;WiFi探针&lt;/strong&gt; 技术是指基于WiFi探测技术来识别AP（无线访问接入点）附近已开启WiFi的智能手机或者WiFi终端（笔记本，平板电脑等），无需用户接入WiFi，WiFi探针就能够识别用户的信息。&lt;/p&gt;
+&lt;p&gt;当我们走进探针信号覆盖区域内且我们的WiFi设备打开，我们的设备就能被探针探测出来，无论是iOS或者Android系统都能轻易检测到，并且获取设备的MAC地址。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Wi-Fi" scheme="http://cuiqingwei.github.io/tags/Wi-Fi/"/>
+    
+  </entry>
+  
+  <entry>
     <title>OpenWRT的WiFi带机量修改方法</title>
     <link href="http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/"/>
     <id>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT的WiFi带机量修改方法/</id>
     <published>2018-05-14T04:12:08.000Z</published>
-    <updated>2018-05-14T08:18:44.000Z</updated>
+    <updated>2018-06-18T06:45:02.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Wifi带机量的修改"><a href="#Wifi带机量的修改" class="headerlink" title="Wifi带机量的修改"></a>Wifi带机量的修改</h1><p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
@@ -51,7 +104,7 @@
     <link href="http://cuiqingwei.github.io/2018/05/08/2018-05-08-Android-MulticastSocket-%E7%BB%84%E6%92%AD/"/>
     <id>http://cuiqingwei.github.io/2018/05/08/2018-05-08-Android-MulticastSocket-组播/</id>
     <published>2018-05-08T04:12:08.000Z</published>
-    <updated>2018-05-14T01:46:19.000Z</updated>
+    <updated>2018-05-14T08:20:57.000Z</updated>
     
     <content type="html"><![CDATA[<p>现象是MulticastSocket发送组播消息,一些安卓平板上可以发送、接收组播消息,个别安卓不可用。</p>
 <a id="more"></a>
@@ -78,6 +131,39 @@
       <category term="android" scheme="http://cuiqingwei.github.io/tags/android/"/>
     
       <category term="电子书包" scheme="http://cuiqingwei.github.io/tags/%E7%94%B5%E5%AD%90%E4%B9%A6%E5%8C%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Proguard And DexGuard</title>
+    <link href="http://cuiqingwei.github.io/2018/04/24/2018-04-24-Proguard-And-DexGuard/"/>
+    <id>http://cuiqingwei.github.io/2018/04/24/2018-04-24-Proguard-And-DexGuard/</id>
+    <published>2018-04-24T04:12:08.000Z</published>
+    <updated>2018-04-24T09:14:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>一般情况下，我们混淆自己的安卓项目，会使用Proguard。</p>
+<p><a href="http://www.saikoa.com/proguard" target="_blank" rel="external">http://www.saikoa.com/proguard</a></p>
+<p><strong>Progurad</strong> 是免费的，而且已经集成到Android ADT中了，使用起来很方便。</p>
+<p>混淆工作，是为了保护我们的代码。但是，即使使用Pgoruard混淆了我们的apk文件，也可以使用apktool工具反编译出资源，能够看到Manifest文件，res资源等等。也可以使用dex2jar工具生成jar文件，进而使用jd工具反编译出Java代码片段。虽然，这些代码大部分都经过了混淆，已经很难阅读，但是还是可以读的。</p>
+<a id="more"></a>
+<p>更危险的是，Proguard只能保护代码，却不能保护我们的apk文件。任何人都可以使用apktool工具，反编译我们开发的apk文件，进而更改其中各种资源，或者更改部分代码，甚至是注入代码，然后再打包回apk，二次发布后，达到自己的目的。或者是加入了广告，或者是增加了恶意木马病毒，等等。</p>
+<p>还好，我们还有一种选择，DexGuard。</p>
+<p><a href="http://www.saikoa.com/dexguard" target="_blank" rel="external">http://www.saikoa.com/dexguard</a></p>
+<p><strong>DexGuard</strong> 是收费的，虽然挺贵的，但是对于一个公司来说，还是可以承受的。</p>
+<p>DexGuard是在Proguard基础上，加入了更多的保护措施。使用DexGuard混淆后，生成的apk文件，就无法正常使用apktool反编译了。尽管还是能够反编译出部分资源文件，但是由于反编译过程不完全，就无法再打包成apk了。这样就保护了我们的apk文件，不会被二次打包发布了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一般情况下，我们混淆自己的安卓项目，会使用Proguard。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.saikoa.com/proguard&quot;&gt;http://www.saikoa.com/proguard&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Progurad&lt;/strong&gt; 是免费的，而且已经集成到Android ADT中了，使用起来很方便。&lt;/p&gt;
+&lt;p&gt;混淆工作，是为了保护我们的代码。但是，即使使用Pgoruard混淆了我们的apk文件，也可以使用apktool工具反编译出资源，能够看到Manifest文件，res资源等等。也可以使用dex2jar工具生成jar文件，进而使用jd工具反编译出Java代码片段。虽然，这些代码大部分都经过了混淆，已经很难阅读，但是还是可以读的。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="android" scheme="http://cuiqingwei.github.io/tags/android/"/>
     
   </entry>
   
@@ -134,39 +220,6 @@
       <category term="rtmp" scheme="http://cuiqingwei.github.io/tags/rtmp/"/>
     
       <category term="nginx" scheme="http://cuiqingwei.github.io/tags/nginx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Proguard And DexGuard</title>
-    <link href="http://cuiqingwei.github.io/2018/04/24/2018-04-24-Proguard-And-DexGuard/"/>
-    <id>http://cuiqingwei.github.io/2018/04/24/2018-04-24-Proguard-And-DexGuard/</id>
-    <published>2018-04-24T04:12:08.000Z</published>
-    <updated>2018-04-24T09:14:31.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>一般情况下，我们混淆自己的安卓项目，会使用Proguard。</p>
-<p><a href="http://www.saikoa.com/proguard" target="_blank" rel="external">http://www.saikoa.com/proguard</a></p>
-<p><strong>Progurad</strong> 是免费的，而且已经集成到Android ADT中了，使用起来很方便。</p>
-<p>混淆工作，是为了保护我们的代码。但是，即使使用Pgoruard混淆了我们的apk文件，也可以使用apktool工具反编译出资源，能够看到Manifest文件，res资源等等。也可以使用dex2jar工具生成jar文件，进而使用jd工具反编译出Java代码片段。虽然，这些代码大部分都经过了混淆，已经很难阅读，但是还是可以读的。</p>
-<a id="more"></a>
-<p>更危险的是，Proguard只能保护代码，却不能保护我们的apk文件。任何人都可以使用apktool工具，反编译我们开发的apk文件，进而更改其中各种资源，或者更改部分代码，甚至是注入代码，然后再打包回apk，二次发布后，达到自己的目的。或者是加入了广告，或者是增加了恶意木马病毒，等等。</p>
-<p>还好，我们还有一种选择，DexGuard。</p>
-<p><a href="http://www.saikoa.com/dexguard" target="_blank" rel="external">http://www.saikoa.com/dexguard</a></p>
-<p><strong>DexGuard</strong> 是收费的，虽然挺贵的，但是对于一个公司来说，还是可以承受的。</p>
-<p>DexGuard是在Proguard基础上，加入了更多的保护措施。使用DexGuard混淆后，生成的apk文件，就无法正常使用apktool反编译了。尽管还是能够反编译出部分资源文件，但是由于反编译过程不完全，就无法再打包成apk了。这样就保护了我们的apk文件，不会被二次打包发布了。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;一般情况下，我们混淆自己的安卓项目，会使用Proguard。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.saikoa.com/proguard&quot;&gt;http://www.saikoa.com/proguard&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Progurad&lt;/strong&gt; 是免费的，而且已经集成到Android ADT中了，使用起来很方便。&lt;/p&gt;
-&lt;p&gt;混淆工作，是为了保护我们的代码。但是，即使使用Pgoruard混淆了我们的apk文件，也可以使用apktool工具反编译出资源，能够看到Manifest文件，res资源等等。也可以使用dex2jar工具生成jar文件，进而使用jd工具反编译出Java代码片段。虽然，这些代码大部分都经过了混淆，已经很难阅读，但是还是可以读的。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="android" scheme="http://cuiqingwei.github.io/tags/android/"/>
     
   </entry>
   
@@ -1248,48 +1301,6 @@
       <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
     
       <category term="HomeKit" scheme="http://cuiqingwei.github.io/tags/HomeKit/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Raspberry安装HAP-NodeJS</title>
-    <link href="http://cuiqingwei.github.io/2017/02/08/2017-02-08-Raspberry%E5%AE%89%E8%A3%85HAP-NodeJS/"/>
-    <id>http://cuiqingwei.github.io/2017/02/08/2017-02-08-Raspberry安装HAP-NodeJS/</id>
-    <published>2017-02-07T16:27:40.000Z</published>
-    <updated>2017-11-29T01:29:53.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="下载-Raspbian"><a href="#下载-Raspbian" class="headerlink" title="下载 Raspbian"></a>下载 Raspbian</h1><p><a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="external">https://www.raspberrypi.org/downloads/raspbian/</a></p>
-<h1 id="制作-TF-card"><a href="#制作-TF-card" class="headerlink" title="制作 TF card"></a>制作 TF card</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">df -h</div><div class="line">diskutil unmount /dev/disk2s1</div><div class="line">diskutil list</div><div class="line">dd bs=4m if=2017-01-11-raspbian-jessie.img of=/dev/rdisk2</div><div class="line">diskutil unmountdisk /dev/disk2</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<blockquote>
-<p>note：新的img默认没有打开ssh，在tf卡根目录新建名称为 ssh 的文件夹解决</p>
-</blockquote>
-<h1 id="登录树莓派"><a href="#登录树莓派" class="headerlink" title="登录树莓派"></a>登录树莓派</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh pi@raspberrypi.local</div></pre></td></tr></table></figure>
-<h1 id="更新源"><a href="#更新源" class="headerlink" title="更新源"></a>更新源</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</div><div class="line">sudo vi /etc/apt/sources.list</div></pre></td></tr></table></figure>
-<p>进入编辑界面，用 <strong>#</strong> 注释掉原来的源，添加下方的源。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">deb http://mirrors.neusoft.edu.cn/raspbian/raspbian jessie main contrib non-free rpi</div></pre></td></tr></table></figure>
-<h1 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade -y</div></pre></td></tr></table></figure>
-<h1 id="安装解决依赖"><a href="#安装解决依赖" class="headerlink" title="安装解决依赖"></a>安装解决依赖</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install avahi-daemon avahi-discover libnss-mdns libavahi-compat-libdnssd-dev  build-essential -y</div><div class="line">service avahi-daemon start</div></pre></td></tr></table></figure>
-<h1 id="增加nodejs源"><a href="#增加nodejs源" class="headerlink" title="增加nodejs源"></a>增加nodejs源</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~</div><div class="line">curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -</div></pre></td></tr></table></figure>
-<h1 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">cd ~/Downloads</div><div class="line">wget http://nodejs.org/dist/v7.6.0/node-v7.6.0.tar.gz</div><div class="line">tar -xzf node-v7.6.0.tar.gz</div><div class="line">cd node-v7.6.0</div><div class="line">./configure</div><div class="line">make</div><div class="line">sudo make install</div></pre></td></tr></table></figure>
-<h1 id="克隆HAP-NodeJS源码"><a href="#克隆HAP-NodeJS源码" class="headerlink" title="克隆HAP-NodeJS源码"></a>克隆HAP-NodeJS源码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/KhaosT/HAP-NodeJS.git</div></pre></td></tr></table></figure>
-<h1 id="安装node-gyp"><a href="#安装node-gyp" class="headerlink" title="安装node-gyp"></a>安装node-gyp</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g node-gyp</div></pre></td></tr></table></figure>
-<h1 id="切换到HAP-NodeJS文件夹下，运行"><a href="#切换到HAP-NodeJS文件夹下，运行" class="headerlink" title="切换到HAP-NodeJS文件夹下，运行"></a>切换到HAP-NodeJS文件夹下，运行</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo npm istall</div><div class="line">node Core.js</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;下载-Raspbian&quot;&gt;&lt;a href=&quot;#下载-Raspbian&quot; class=&quot;headerlink&quot; title=&quot;下载 Raspbian&quot;&gt;&lt;/a&gt;下载 Raspbian&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.raspberrypi.org/downloads/raspbian/&quot;&gt;https://www.raspberrypi.org/downloads/raspbian/&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;制作-TF-card&quot;&gt;&lt;a href=&quot;#制作-TF-card&quot; class=&quot;headerlink&quot; title=&quot;制作 TF card&quot;&gt;&lt;/a&gt;制作 TF card&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;df -h&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;diskutil unmount /dev/disk2s1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;diskutil list&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;dd bs=4m if=2017-01-11-raspbian-jessie.img of=/dev/rdisk2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;diskutil unmountdisk /dev/disk2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="Raspberry Pi" scheme="http://cuiqingwei.github.io/tags/Raspberry-Pi/"/>
-    
-      <category term="HomeKit" scheme="http://cuiqingwei.github.io/tags/HomeKit/"/>
-    
-      <category term="HAP-NodeJS" scheme="http://cuiqingwei.github.io/tags/HAP-NodeJS/"/>
     
   </entry>
   
