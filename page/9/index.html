@@ -290,6 +290,151 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-2012-09-07-at91sam9x5编译过程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2012/09/07/2012-09-07-at91sam9x5编译过程/" class="article-date">
+      <time datetime="2012-09-07T08:50:00.000Z" itemprop="datePublished">2012-09-07</time>
+</a>
+
+ 
+    <a href="/2012/09/07/2012-09-07-at91sam9x5编译过程/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count"  data-thread-key="2012/09/07/2012-09-07-at91sam9x5编译过程/" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/09/07/2012-09-07-at91sam9x5编译过程/">at91sam9x5编译过程</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="1、创建目录"><a href="#1、创建目录" class="headerlink" title="1、创建目录"></a>1、创建目录</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home</div><div class="line">mkdir at91sam9</div><div class="line"><span class="built_in">cd</span> at92sam9</div><div class="line">mkdir at91sam9x5-ek</div><div class="line"><span class="built_in">cd</span> at91sam9x5-ek</div></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/嵌入式/">嵌入式</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2012/09/07/2012-09-07-at91sam9x5编译过程/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2012-09-08-Linux中生成shadow的加密密码" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2012/09/07/2012-09-08-Linux中生成shadow的加密密码/" class="article-date">
+      <time datetime="2012-09-07T07:50:00.000Z" itemprop="datePublished">2012-09-07</time>
+</a>
+
+ 
+    <a href="/2012/09/07/2012-09-08-Linux中生成shadow的加密密码/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count"  data-thread-key="2012/09/07/2012-09-08-Linux中生成shadow的加密密码/" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/09/07/2012-09-08-Linux中生成shadow的加密密码/">Linux中生成shadow的加密密码.04安装arm开发环境</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>How to generate Linux shadow password / Linux中如何生成shadow密码（CentOS 5下测试通过）<br>/etc/shadow中的root信息:<br>root:$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.:15225:0:99999:7:::</p>
+<p>其中，”$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.” 就是加密后的root密码，我们在修改用户密码的时候都使用passwd命令，其实也可以直接修改/etc/shadow文件。那要面临的问题就是如何生成这个加密过的shadow密码($1$ 表示加密算法是基于MD5的，不同发行版本默认的加密算法可能不同)。</p>
+<p>方法一（交互式）<br>[root@centos-vm ~]# openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32)<br>Password:    # input your password here<br>$1$MZrDxgEw$i2XBgmDMo0Wf1.OVvOGGQ1</p>
+<p>方法二（适用于脚本）<br>[root@centos-vm ~]# echo “passwd” | openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32) -stdin<br>$1$KsRJO8kG$M9co4G7T6.5KcITsSCRNS/</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2012-09-07-ubuntu11-04安装arm开发环境" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -945,153 +1090,6 @@
       
         <p class="article-more-link">
           <a href="/2008/05/11/2008-05-11-Proteus产品仿真/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2008-01-03-USB-M8-RGBLED彩灯" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/" class="article-date">
-      <time datetime="2008-01-03T01:30:15.000Z" itemprop="datePublished">2008-01-03</time>
-</a>
-
- 
-    <a href="/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-            <span class="ds-thread-count"  data-thread-key="2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/" ></span>
-        
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/">USB_M8_RGBLED彩灯</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>用M8控制RGBLED测试了一下，效果不错。并做了一个上位机软件，通过USB控制，现将资料整理上传与君共享！</p>
-<h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_198395.PNG" alt="原理图"><br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DIY/">DIY</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/折腾/">折腾</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2008/01/03/2008-01-03-USB-M8-RGBLED彩灯/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2007-11-19-EAGLE3D终于搞定了！" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2007/11/19/2007-11-19-EAGLE3D终于搞定了！/" class="article-date">
-      <time datetime="2007-11-19T12:07:41.000Z" itemprop="datePublished">2007-11-19</time>
-</a>
-
- 
-    <a href="/2007/11/19/2007-11-19-EAGLE3D终于搞定了！/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-            <span class="ds-thread-count"  data-thread-key="2007/11/19/2007-11-19-EAGLE3D终于搞定了！/" ></span>
-        
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2007/11/19/2007-11-19-EAGLE3D终于搞定了！/">EAGLE3D终于搞定了!</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="3D效果"><a href="#3D效果" class="headerlink" title="3D效果"></a>3D效果</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_182056.png" alt="3d"><br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Eagle/">Eagle</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2007/11/19/2007-11-19-EAGLE3D终于搞定了！/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>

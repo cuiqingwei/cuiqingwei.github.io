@@ -4,6 +4,98 @@
   
     
     <entry>
+      <title><![CDATA[QSDK编译]]></title>
+      <url>http://cuiqingwei.github.io/2018/06/20/2018-06-20-QSDK%E7%BC%96%E8%AF%91/</url>
+      <content type="html"><![CDATA[<p><strong>QSDK</strong> 是一种在openwrt的基础上，加入了高通atheros芯片相关资料的一种环境。</p>
+<p>QSDK与OpenWRT的区别主要在如下几个方面：</p>
+<ul>
+<li>arch/mips/ath79/* – updated QCA base platform device support – GPLv2</li>
+<li>sound/soc/ath79/* – new ALSA-compliant QCA soundcard driver – ISC</li>
+<li>drivers/net/ethernet/atheros/ag71xx/* – updated QCA Ethernet switch driver – GPLv2</li>
+<li>net/core/* – performance enhancement updates to Linux sk_buff management – GPL v2</li>
+<li>drivers/spi – added modes to QCA spi driver – GPLv2</li>
+<li>drivers/mtd/nand/ – new QCA NAND flash controller driver – ISC</li>
+</ul>
+<a id="more"></a>
+<p>编译步骤如下：（基于debian服务器）</p>
+<p>1、安装开发所需软件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install gcc g++ binutils ptach bzip2 flex make gettext pkg-config unzip zlib1g-dev libc6-dev subversion libncurses5-dev</div><div class="line">sudo apt-get install gawk sharutils curl libxml-parser-perl ocaml-nox</div></pre></td></tr></table></figure>
+<p>2、安装repo和git</p>
+<p>见 <a href="http://www.cnblogs.com/rohens-hbg/p/4916452.html" target="_blank" rel="external">http://www.cnblogs.com/rohens-hbg/p/4916452.html</a></p>
+<p>3、下载qsdk相关文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">repo init -u git://codeaurora.org/quic/qsdk/releases/manifest/qstak -b release -m  caf_AU_LINUX_QSDK_RELEASE_BANANA_SW_TARGET_ALL.2.7.029.xml</div><div class="line">repo sync</div><div class="line">mkdir -p qsdk/dl</div><div class="line">tar xjvf qsdk-qca-wifi-2.7.029.tar.bz2 -C qsdk</div><div class="line">tar xjvf qsdk-qca-wlan-2.7.029.tar.bz2 -C qsdk</div><div class="line">tar xjvf qsdk-qca-shortcut-fe-2.7.029.tar.bz2 -c qsdk</div></pre></td></tr></table></figure>
+<p>4、编译</p>
+<p>1)  cd qsdk</p>
+<pre><code>make package/symlinks
+</code></pre><p>2)  拷贝配置文件，目前该目录下有三个配置文件</p>
+<pre><code>ar71xx_open.config
+ar71xx_premium.config  ： 生成16m flash使用的bin文件
+ar71xx_wireless.config ： 生成8m flash使用的bin文件
+cp qca/configs/qca955x.ln/ar71xx_&lt;profile&gt;.config .config
+</code></pre><p>3)  重新生成配置文件并build</p>
+<pre><code>make defconfig
+make V=s
+</code></pre><p>4) 去目录下去.bin文件download到设备上</p>
+<p>   目录路径为：qsdk\bin\ar71xx</p>
+<blockquote>
+<p>主要文件为：<br>   openwrt-ar71xx-generic-ap147-16M-kernel.bin  (或  openwrt-ar71xx-generic-ap147-16M-kernel.bin)<br>   openwrt-ar71xx-generic-ap147-16M-rootfs-squashfs.bin (或 openwrt-ar71xx-generic-ap147-8M-rootfs-squashfs.bin)</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[什么是LEDE?]]></title>
+      <url>http://cuiqingwei.github.io/2018/06/20/2018-06-20-%E4%BB%80%E4%B9%88%E6%98%AFLEDE/</url>
+      <content type="html"><![CDATA[<p><strong>OpenWrt</strong> 可以说是世界上最出名的家用 <strong>WiFi</strong> 路由器 <strong>Linux</strong> 发行版，是由以前名不经传的 <strong>Linksys WRT54G</strong> 路由催生的一个产品，已经 <strong>12</strong> 年多了。在2016年5月初，OpenWrt用户社区宣布了另一个 <strong>OpenWrt：Linux Embedded Development Environment (LEDE)</strong> 。官方解释说，<strong>LEDE</strong> 是 OpenWrt 的一个分支，或者说是副产品，该项目主要关注透明性，协作和分权。<br>LEDE 是 OpenWrt 社区的新生，有很多目标是与 OpenWrt 相同的，但是相比于 OpenWrt 也有很大的区别。</p>
+<a id="more"></a>
+<p>LEDE 当前的目标是：</p>
+<ul>
+<li>构建一个巨大的嵌入式 Linux 发行版，主要关注稳定性和功能</li>
+<li>拥有规律，可预测的发行周期</li>
+<li>建立透明的决策过程，加强社区参与和公共反馈</li>
+</ul>
+<p>创建 LEDE 是因为 OpenWrt 有一些长期存在的问题，一直悬而未决：</p>
+<ul>
+<li>核心开发者活跃度低，也没有鼓励更多新成员加入的策略</li>
+<li>不可靠的基础设施，因为淡点故障和内部分歧而阻碍修复</li>
+<li>缺乏沟通，透明和协作，无论是核心团队还是核心团队与社区之间</li>
+<li>提交 commit 的人较少，不怎么关注测试和常规构建</li>
+<li>不关注稳定性和文档</li>
+</ul>
+<p>为了解决这些问题，创建了 LEDE 项目，相比 OpenWrt 不同之处在于：</p>
+<ul>
+<li>所有沟通频道都是公开的，一些对非开发成员限制只读权限</li>
+<li>决策过程是公正公开的，大约有 50/50 的开发者和权威用户有投票权</li>
+<li>基础设施非常简单，降低维护工作的难度</li>
+<li>基于 OpenWrt 包在 Github 收到的反馈，合并策略更自由</li>
+<li>强烈关注自动化测试，简历一个简单的发布流程</li>
+</ul>
+<p>LEDE 项目地址：<a href="https://www.lede-project.org/" target="_blank" rel="external">https://www.lede-project.org/</a></p>
+<h2 id="为何使用LEDE"><a href="#为何使用LEDE" class="headerlink" title="为何使用LEDE?"></a>为何使用LEDE?</h2><p>LEDE相比制造商的原厂固件更加出色，才使得人们更倾向于使用LEDE。LEDE工作起来更加稳定、提供更多的功能，并且更加安全，同时具有良好的技术支持。<br>可扩展性： LEDE提供了许多以往只在高端设备上才提供的各种功能。它具有3000个以上的标准化应用软件包，您可以轻松地将他们应用于各种支持的设备，包括各种陈旧的路由器。</p>
+<ul>
+<li>高安全性： 从安装开始，LEDE就以安全的标准来设计。例如Wi-Fi默认禁用，没有弱密码，没有任何后门程序。LEDE的系统组件始终保持最新，因此漏洞一旦被发现后会很快得到解决。</li>
+<li>高性能、高稳定性： LEDE固件是由所支持的所有设备的标准化组件制作而成。这意味着每个组件都会接受更多的测试和bug修复，而不像原厂固件那样一旦为生产线的产品提供固件后就再也不去碰它。</li>
+<li>强大的社区支持： LEDE团队成员会经常参与到LEDE论坛、LEDE开发者、LEDE管理员以及LEDE的IRC频道中去。您可以直接与开发人员，管理软件模块的志愿者和其他LEDE用户交流，大大增加您解决问题的机会。</li>
+<li>研发： 许多团队使用LEDE作为他们对网络性能研究的平台。这意味着他们的成功实验案例将会首先在LEDE中实现，而原厂固件将会落后许多。</li>
+<li>开源/无额外支出： 使用LEDE没有任何金钱成本。它完全是由志愿者团队、开发者、维护人员、个人以及一些公司创建的。 如果您喜欢LEDE，可以考虑将它变得更好。作为开源社区的一部分，LEDE有强大的Linux Kernel驱动.</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[OpenWRT的WiFi带机量修改方法]]></title>
+      <url>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/</url>
+      <content type="html"><![CDATA[<h1 id="Wifi带机量的修改"><a href="#Wifi带机量的修改" class="headerlink" title="Wifi带机量的修改"></a>Wifi带机量的修改</h1><p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
+<p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
+<a id="more"></a>
+<blockquote>
+<p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="external">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="external">MTK_Ralink_ApSoc_SDK编译总结</a><br><a href="http://www.right.com.cn/forum/thread-208204-1-1.html" target="_blank" rel="external">openwrt wifi用户连接数限制</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[WiFi探针的工作原理]]></title>
       <url>http://cuiqingwei.github.io/2018/05/14/2018-06-18-WiFi%E6%8E%A2%E9%92%88%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</url>
       <content type="html"><![CDATA[<p><strong>WiFi探针</strong> 技术是指基于WiFi探测技术来识别AP（无线访问接入点）附近已开启WiFi的智能手机或者WiFi终端（笔记本，平板电脑等），无需用户接入WiFi，WiFi探针就能够识别用户的信息。</p>
@@ -37,19 +129,6 @@
 <h1 id="数据释义"><a href="#数据释义" class="headerlink" title="数据释义"></a>数据释义</h1><p>　　“探针MAC”就是探针本身的MAC地址；<br>　　“抓取的设备MAC”指探针抓取到的WiFi信号的发射设备的MAC地址，一般为手机；<br>　　“信号强度”指探针抓取到的WiFi信号的强度，最小值为“-100”，一般来说，此值越大表示发射设备离探针越近；<br>　　“设备发送的WiFi包的类型”指探针抓取到的WiFi信号的类别，其末位数的值为0、4、8时，分别表示抓取到的WiFi信号为“管理”帧、“控制”帧、“数据”帧；<br>　　“时间戳”指探针抓取到WiFi信号的时间，如果探针在局域网内使用而没有接入广域网的话，时间戳可能是不准确的。</p>
 <blockquote>
 <p>WiFi探针数据可以同哪些数据融合？<br>数据的应用核心在于融合，如何将各成一派数据巧妙的组合在一起，让数据驱动商业的发展，是现在与未来的议题。虽然线上大数据已经经历过互联网的洗礼，但是线下数据仍有较长的路要走，那么WiFi探针可以同哪些数据做融合呢？<br>MAC数据可以同支付数据、会员数据、消费数据、营销数据、地理数据及线上数据做深度的融合，将多维度的数据集成一起勾画出完整的用户画像，如用户的姓名、年龄、兴趣偏好、消费特征、过往消费记录、学历等。基于这些数据再结合具体的应用，这样才能让线下商户有据可依，释放出数据的价值。</p>
-</blockquote>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[OpenWRT的WiFi带机量修改方法]]></title>
-      <url>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/</url>
-      <content type="html"><![CDATA[<h1 id="Wifi带机量的修改"><a href="#Wifi带机量的修改" class="headerlink" title="Wifi带机量的修改"></a>Wifi带机量的修改</h1><p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
-<p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
-<a id="more"></a>
-<blockquote>
-<p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="external">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="external">MTK_Ralink_ApSoc_SDK编译总结</a><br><a href="http://www.right.com.cn/forum/thread-208204-1-1.html" target="_blank" rel="external">openwrt wifi用户连接数限制</a></p>
 </blockquote>
 ]]></content>
     </entry>
@@ -1523,29 +1602,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[高田路亚视频]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/10/2016-10-10-%E9%AB%98%E7%94%B0%E8%B7%AF%E4%BA%9A%E8%A7%86%E9%A2%91/</url>
-      <content type="html"><![CDATA[<p>路亚教学视频很多，但个人还是认为这个最详细，而且很专业、纯洁无商业气氛。<br>是新手学习路亚知识的典范视频，讲得非常细！</p>
-<a id="more"></a>
-<h1 id="路亚抛投基础-Casting"><a href="#路亚抛投基础-Casting" class="headerlink" title="路亚抛投基础-Casting-"></a>路亚抛投基础-Casting-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNTUxMTI0" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="倒钓钓组-Down-Shot-Rig"><a href="#倒钓钓组-Down-Shot-Rig" class="headerlink" title="倒钓钓组-Down Shot Rig-"></a>倒钓钓组-Down Shot Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNTAwNTA4" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="降落伞钓组-Parachute-Rig"><a href="#降落伞钓组-Parachute-Rig" class="headerlink" title="降落伞钓组-Parachute Rig-"></a>降落伞钓组-Parachute Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDkxNzg0" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="古怪钓组-Wacky-Rig"><a href="#古怪钓组-Wacky-Rig" class="headerlink" title="古怪钓组-Wacky Rig-"></a>古怪钓组-Wacky Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDY5NDY0" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="无铅钓组-No-Sinker-Rig"><a href="#无铅钓组-No-Sinker-Rig" class="headerlink" title="无铅钓组-No Sinker Rig-"></a>无铅钓组-No Sinker Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDQwNjcy" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="胡须佬-Rubber-Jig"><a href="#胡须佬-Rubber-Jig" class="headerlink" title="胡须佬-Rubber Jig-"></a>胡须佬-Rubber Jig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDIxMzM2" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="米诺-Minnow"><a href="#米诺-Minnow" class="headerlink" title="米诺-Minnow-"></a>米诺-Minnow-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDAzMDQ4" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="小胖子-Crank-Bait"><a href="#小胖子-Crank-Bait" class="headerlink" title="小胖子-Crank Bait-"></a>小胖子-Crank Bait-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzMjE5ODI0" frameborder="0" 'allowfullscreen'=""></iframe>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[个人路亚装备]]></title>
       <url>http://cuiqingwei.github.io/2016/10/10/2016-10-10-%E4%B8%AA%E4%BA%BA%E8%B7%AF%E4%BA%9A%E8%A3%85%E5%A4%87/</url>
       <content type="html"><![CDATA[<h1 id="路亚竿"><a href="#路亚竿" class="headerlink" title="路亚竿"></a>路亚竿</h1><p><strong><a href="https://detail.tmall.com/item.htm?id=36807472493&amp;spm=a1z09.2.0.0.uapaU2&amp;_u=c154cj1d09c" target="_blank" rel="external">LMS001-662M</a></strong> <em>鱼猎人征途系列</em></p>
@@ -1588,6 +1644,29 @@
 <p><img src="/img/20161010/MetaniumDC.png" alt=""><br><img src="/img/20161010/MetaniumDC1.png" alt=""></p>
 <p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.6c818473iizZfR&amp;id=545441440003&amp;_u=m154cj14da2" target="_blank" rel="external">SHIMANO NEW EXSENCE DC XG</a></strong> <em>禧玛诺海水DC 2017</em></p>
 <p><img src="/img/20161010/EXSENCE DC.png" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[高田路亚视频]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/10/2016-10-10-%E9%AB%98%E7%94%B0%E8%B7%AF%E4%BA%9A%E8%A7%86%E9%A2%91/</url>
+      <content type="html"><![CDATA[<p>路亚教学视频很多，但个人还是认为这个最详细，而且很专业、纯洁无商业气氛。<br>是新手学习路亚知识的典范视频，讲得非常细！</p>
+<a id="more"></a>
+<h1 id="路亚抛投基础-Casting"><a href="#路亚抛投基础-Casting" class="headerlink" title="路亚抛投基础-Casting-"></a>路亚抛投基础-Casting-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNTUxMTI0" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="倒钓钓组-Down-Shot-Rig"><a href="#倒钓钓组-Down-Shot-Rig" class="headerlink" title="倒钓钓组-Down Shot Rig-"></a>倒钓钓组-Down Shot Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNTAwNTA4" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="降落伞钓组-Parachute-Rig"><a href="#降落伞钓组-Parachute-Rig" class="headerlink" title="降落伞钓组-Parachute Rig-"></a>降落伞钓组-Parachute Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDkxNzg0" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="古怪钓组-Wacky-Rig"><a href="#古怪钓组-Wacky-Rig" class="headerlink" title="古怪钓组-Wacky Rig-"></a>古怪钓组-Wacky Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDY5NDY0" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="无铅钓组-No-Sinker-Rig"><a href="#无铅钓组-No-Sinker-Rig" class="headerlink" title="无铅钓组-No Sinker Rig-"></a>无铅钓组-No Sinker Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDQwNjcy" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="胡须佬-Rubber-Jig"><a href="#胡须佬-Rubber-Jig" class="headerlink" title="胡须佬-Rubber Jig-"></a>胡须佬-Rubber Jig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDIxMzM2" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="米诺-Minnow"><a href="#米诺-Minnow" class="headerlink" title="米诺-Minnow-"></a>米诺-Minnow-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDAzMDQ4" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="小胖子-Crank-Bait"><a href="#小胖子-Crank-Bait" class="headerlink" title="小胖子-Crank Bait-"></a>小胖子-Crank Bait-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzMjE5ODI0" frameborder="0" 'allowfullscreen'=""></iframe>
 ]]></content>
     </entry>
     
@@ -2838,6 +2917,39 @@
     </entry>
     
     <entry>
+      <title><![CDATA[MacOS]]></title>
+      <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-MacOS/</url>
+      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
+<h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p><strong>工作</strong>：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br><a href="http://www.tuicool.com/articles/yeyIfuu" target="_blank" rel="external">http://www.tuicool.com/articles/yeyIfuu</a><br><strong>系统</strong>：QQ、CleanMyDrive 3 等</p>
+<a id="more"></a>
+<h3 id="2-dmg安装"><a href="#2-dmg安装" class="headerlink" title="2. dmg安装"></a>2. dmg安装</h3><p>Chrome、Parallels Desktop、RDC、QQInput、RTX、cornerstone、Kaleidoscope<br>Sublime Text、Atom …</p>
+<p><strong>dmg下载</strong><br><a href="http://xclient.info/" target="_blank" rel="external">http://xclient.info/</a><br><a href="http://www.sdifen.com/" target="_blank" rel="external">http://www.sdifen.com/</a><br><a href="http://soft.macx.cn/" target="_blank" rel="external">http://soft.macx.cn/</a></p>
+<h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)</span>"</span></div><div class="line">[http://brew.sh/](http://brew.sh/)</div></pre></td></tr></table></figure>
+<p><a href="http://blog.csdn.net/aaawqqq/article/details/44088141" target="_blank" rel="external">http://blog.csdn.net/aaawqqq/article/details/44088141</a><br><a href="http://www.xitongzhijia.net/xtjc/20141204/31879.html" target="_blank" rel="external">http://www.xitongzhijia.net/xtjc/20141204/31879.html</a></p>
+<h3 id="4-MacPorts"><a href="#4-MacPorts" class="headerlink" title="4. MacPorts"></a>4. MacPorts</h3><p><a href="https://www.macports.org/install.php" target="_blank" rel="external">https://www.macports.org/install.php</a><br><a href="http://guide.macports.org/#installing.macports" target="_blank" rel="external">http://guide.macports.org/#installing.macports</a></p>
+<h3 id="5-oh-my-zsh"><a href="#5-oh-my-zsh" class="headerlink" title="5. oh my zsh"></a>5. oh my zsh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</div></pre></td></tr></table></figure>
+<p><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="external">http://leeiio.me/bash-to-zsh-for-mac/</a></p>
+<h3 id="6-iTerm"><a href="#6-iTerm" class="headerlink" title="6. iTerm"></a>6. iTerm</h3><p>iTerm2 + oh my zsh +agnoster 打造最强Mac终端<br><a href="http://www.siguoya.name/pc/home/article/256" target="_blank" rel="external">http://www.siguoya.name/pc/home/article/256</a><br>iterm2有什么酷功能？<br><a href="https://www.zhihu.com/question/27447370" target="_blank" rel="external">https://www.zhihu.com/question/27447370</a></p>
+<h3 id="7-wget"><a href="#7-wget" class="headerlink" title="7. wget"></a>7. wget</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo brew install wget</div></pre></td></tr></table></figure>
+<h3 id="8-pbcopy"><a href="#8-pbcopy" class="headerlink" title="8. pbcopy"></a>8. pbcopy</h3><blockquote>
+<p>使用 <strong>pbcopy</strong> 命令,对应有个 <strong>pbpaste</strong> 命令。</p>
+</blockquote>
+<p>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">'Hello World!'</span> | pbcopy</div></pre></td></tr></table></figure></p>
+<p><em>将字符串Hello World放入剪贴板</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat myFile.txt | pbcopy</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pbpaste &gt; file.txt</div></pre></td></tr></table></figure>
+<h3 id="9-mac-say-唱歌"><a href="#9-mac-say-唱歌" class="headerlink" title="9. mac say 唱歌"></a>9. mac say 唱歌</h3><blockquote>
+<p>spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。<br>  在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。<br>  开始听歌了。</p>
+</blockquote>
+<p><a href="https://www.macx.cn/thread-2048013-1-1.html?mod=viewthread&amp;tid=2048013&amp;extra=page%253D1&amp;page=1" target="_blank" rel="external">https://www.macx.cn/thread-2048013-1-1.html?mod=viewthread&amp;tid=2048013&amp;extra=page%253D1&amp;page=1</a></p>
+<h3 id="10-其他"><a href="#10-其他" class="headerlink" title="10. 其他"></a>10. 其他</h3><blockquote>
+<p>打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!</p>
+</blockquote>
+<h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="external">https://checkcoverage.apple.com/cn/zh/</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Ubuntu]]></title>
       <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-Ubuntu/</url>
       <content type="html"><![CDATA[<h3 id="1-常用指令"><a href="#1-常用指令" class="headerlink" title="1.常用指令"></a>1.常用指令</h3><pre><code>版本查看：
@@ -2889,39 +3001,6 @@ hosts
      https://github.com/racaljk/hosts
 </code></pre><p><strong>Cannot Set LC_ALL to default locale: No such file or directory</strong><br><a href="http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/" target="_blank" rel="external">http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/</a></p>
 <p>sEx只是调用相关程序，本身并无压缩、解压功能，请注意！<br>sEx请到： <a href="http://sourceforge.net/projects/sex下载！" target="_blank" rel="external">http://sourceforge.net/projects/sex下载！</a><br>解压后请将sEx拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br>[root@www2 tmp]# cp sEx /usr/bin/</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[MacOS]]></title>
-      <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-MacOS/</url>
-      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
-<h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p><strong>工作</strong>：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br><a href="http://www.tuicool.com/articles/yeyIfuu" target="_blank" rel="external">http://www.tuicool.com/articles/yeyIfuu</a><br><strong>系统</strong>：QQ、CleanMyDrive 3 等</p>
-<a id="more"></a>
-<h3 id="2-dmg安装"><a href="#2-dmg安装" class="headerlink" title="2. dmg安装"></a>2. dmg安装</h3><p>Chrome、Parallels Desktop、RDC、QQInput、RTX、cornerstone、Kaleidoscope<br>Sublime Text、Atom …</p>
-<p><strong>dmg下载</strong><br><a href="http://xclient.info/" target="_blank" rel="external">http://xclient.info/</a><br><a href="http://www.sdifen.com/" target="_blank" rel="external">http://www.sdifen.com/</a><br><a href="http://soft.macx.cn/" target="_blank" rel="external">http://soft.macx.cn/</a></p>
-<h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)</span>"</span></div><div class="line">[http://brew.sh/](http://brew.sh/)</div></pre></td></tr></table></figure>
-<p><a href="http://blog.csdn.net/aaawqqq/article/details/44088141" target="_blank" rel="external">http://blog.csdn.net/aaawqqq/article/details/44088141</a><br><a href="http://www.xitongzhijia.net/xtjc/20141204/31879.html" target="_blank" rel="external">http://www.xitongzhijia.net/xtjc/20141204/31879.html</a></p>
-<h3 id="4-MacPorts"><a href="#4-MacPorts" class="headerlink" title="4. MacPorts"></a>4. MacPorts</h3><p><a href="https://www.macports.org/install.php" target="_blank" rel="external">https://www.macports.org/install.php</a><br><a href="http://guide.macports.org/#installing.macports" target="_blank" rel="external">http://guide.macports.org/#installing.macports</a></p>
-<h3 id="5-oh-my-zsh"><a href="#5-oh-my-zsh" class="headerlink" title="5. oh my zsh"></a>5. oh my zsh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</div></pre></td></tr></table></figure>
-<p><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="external">http://leeiio.me/bash-to-zsh-for-mac/</a></p>
-<h3 id="6-iTerm"><a href="#6-iTerm" class="headerlink" title="6. iTerm"></a>6. iTerm</h3><p>iTerm2 + oh my zsh +agnoster 打造最强Mac终端<br><a href="http://www.siguoya.name/pc/home/article/256" target="_blank" rel="external">http://www.siguoya.name/pc/home/article/256</a><br>iterm2有什么酷功能？<br><a href="https://www.zhihu.com/question/27447370" target="_blank" rel="external">https://www.zhihu.com/question/27447370</a></p>
-<h3 id="7-wget"><a href="#7-wget" class="headerlink" title="7. wget"></a>7. wget</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo brew install wget</div></pre></td></tr></table></figure>
-<h3 id="8-pbcopy"><a href="#8-pbcopy" class="headerlink" title="8. pbcopy"></a>8. pbcopy</h3><blockquote>
-<p>使用 <strong>pbcopy</strong> 命令,对应有个 <strong>pbpaste</strong> 命令。</p>
-</blockquote>
-<p>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">'Hello World!'</span> | pbcopy</div></pre></td></tr></table></figure></p>
-<p><em>将字符串Hello World放入剪贴板</em></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat myFile.txt | pbcopy</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pbpaste &gt; file.txt</div></pre></td></tr></table></figure>
-<h3 id="9-mac-say-唱歌"><a href="#9-mac-say-唱歌" class="headerlink" title="9. mac say 唱歌"></a>9. mac say 唱歌</h3><blockquote>
-<p>spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。<br>  在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。<br>  开始听歌了。</p>
-</blockquote>
-<p><a href="https://www.macx.cn/thread-2048013-1-1.html?mod=viewthread&amp;tid=2048013&amp;extra=page%253D1&amp;page=1" target="_blank" rel="external">https://www.macx.cn/thread-2048013-1-1.html?mod=viewthread&amp;tid=2048013&amp;extra=page%253D1&amp;page=1</a></p>
-<h3 id="10-其他"><a href="#10-其他" class="headerlink" title="10. 其他"></a>10. 其他</h3><blockquote>
-<p>打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!</p>
-</blockquote>
-<h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="external">https://checkcoverage.apple.com/cn/zh/</a></p>
 ]]></content>
     </entry>
     

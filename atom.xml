@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2018-06-18T07:02:27.000Z</updated>
+  <updated>2018-06-20T07:45:53.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -14,6 +14,153 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>QSDK编译</title>
+    <link href="http://cuiqingwei.github.io/2018/06/20/2018-06-20-QSDK%E7%BC%96%E8%AF%91/"/>
+    <id>http://cuiqingwei.github.io/2018/06/20/2018-06-20-QSDK编译/</id>
+    <published>2018-06-20T07:12:08.000Z</published>
+    <updated>2018-06-20T07:45:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>QSDK</strong> 是一种在openwrt的基础上，加入了高通atheros芯片相关资料的一种环境。</p>
+<p>QSDK与OpenWRT的区别主要在如下几个方面：</p>
+<ul>
+<li>arch/mips/ath79/* – updated QCA base platform device support – GPLv2</li>
+<li>sound/soc/ath79/* – new ALSA-compliant QCA soundcard driver – ISC</li>
+<li>drivers/net/ethernet/atheros/ag71xx/* – updated QCA Ethernet switch driver – GPLv2</li>
+<li>net/core/* – performance enhancement updates to Linux sk_buff management – GPL v2</li>
+<li>drivers/spi – added modes to QCA spi driver – GPLv2</li>
+<li>drivers/mtd/nand/ – new QCA NAND flash controller driver – ISC</li>
+</ul>
+<a id="more"></a>
+<p>编译步骤如下：（基于debian服务器）</p>
+<p>1、安装开发所需软件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install gcc g++ binutils ptach bzip2 flex make gettext pkg-config unzip zlib1g-dev libc6-dev subversion libncurses5-dev</div><div class="line">sudo apt-get install gawk sharutils curl libxml-parser-perl ocaml-nox</div></pre></td></tr></table></figure>
+<p>2、安装repo和git</p>
+<p>见 <a href="http://www.cnblogs.com/rohens-hbg/p/4916452.html" target="_blank" rel="external">http://www.cnblogs.com/rohens-hbg/p/4916452.html</a></p>
+<p>3、下载qsdk相关文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">repo init -u git://codeaurora.org/quic/qsdk/releases/manifest/qstak -b release -m  caf_AU_LINUX_QSDK_RELEASE_BANANA_SW_TARGET_ALL.2.7.029.xml</div><div class="line">repo sync</div><div class="line">mkdir -p qsdk/dl</div><div class="line">tar xjvf qsdk-qca-wifi-2.7.029.tar.bz2 -C qsdk</div><div class="line">tar xjvf qsdk-qca-wlan-2.7.029.tar.bz2 -C qsdk</div><div class="line">tar xjvf qsdk-qca-shortcut-fe-2.7.029.tar.bz2 -c qsdk</div></pre></td></tr></table></figure>
+<p>4、编译</p>
+<p>1)  cd qsdk</p>
+<pre><code>make package/symlinks
+</code></pre><p>2)  拷贝配置文件，目前该目录下有三个配置文件</p>
+<pre><code>ar71xx_open.config
+ar71xx_premium.config  ： 生成16m flash使用的bin文件
+ar71xx_wireless.config ： 生成8m flash使用的bin文件
+cp qca/configs/qca955x.ln/ar71xx_&lt;profile&gt;.config .config
+</code></pre><p>3)  重新生成配置文件并build</p>
+<pre><code>make defconfig
+make V=s
+</code></pre><p>4) 去目录下去.bin文件download到设备上</p>
+<p>   目录路径为：qsdk\bin\ar71xx</p>
+<blockquote>
+<p>主要文件为：<br>   openwrt-ar71xx-generic-ap147-16M-kernel.bin  (或  openwrt-ar71xx-generic-ap147-16M-kernel.bin)<br>   openwrt-ar71xx-generic-ap147-16M-rootfs-squashfs.bin (或 openwrt-ar71xx-generic-ap147-8M-rootfs-squashfs.bin)</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;QSDK&lt;/strong&gt; 是一种在openwrt的基础上，加入了高通atheros芯片相关资料的一种环境。&lt;/p&gt;
+&lt;p&gt;QSDK与OpenWRT的区别主要在如下几个方面：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;arch/mips/ath79/* – updated QCA base platform device support – GPLv2&lt;/li&gt;
+&lt;li&gt;sound/soc/ath79/* – new ALSA-compliant QCA soundcard driver – ISC&lt;/li&gt;
+&lt;li&gt;drivers/net/ethernet/atheros/ag71xx/* – updated QCA Ethernet switch driver – GPLv2&lt;/li&gt;
+&lt;li&gt;net/core/* – performance enhancement updates to Linux sk_buff management – GPL v2&lt;/li&gt;
+&lt;li&gt;drivers/spi – added modes to QCA spi driver – GPLv2&lt;/li&gt;
+&lt;li&gt;drivers/mtd/nand/ – new QCA NAND flash controller driver – ISC&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>什么是LEDE?</title>
+    <link href="http://cuiqingwei.github.io/2018/06/20/2018-06-20-%E4%BB%80%E4%B9%88%E6%98%AFLEDE/"/>
+    <id>http://cuiqingwei.github.io/2018/06/20/2018-06-20-什么是LEDE/</id>
+    <published>2018-06-20T04:12:08.000Z</published>
+    <updated>2018-06-20T07:44:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>OpenWrt</strong> 可以说是世界上最出名的家用 <strong>WiFi</strong> 路由器 <strong>Linux</strong> 发行版，是由以前名不经传的 <strong>Linksys WRT54G</strong> 路由催生的一个产品，已经 <strong>12</strong> 年多了。在2016年5月初，OpenWrt用户社区宣布了另一个 <strong>OpenWrt：Linux Embedded Development Environment (LEDE)</strong> 。官方解释说，<strong>LEDE</strong> 是 OpenWrt 的一个分支，或者说是副产品，该项目主要关注透明性，协作和分权。<br>LEDE 是 OpenWrt 社区的新生，有很多目标是与 OpenWrt 相同的，但是相比于 OpenWrt 也有很大的区别。</p>
+<a id="more"></a>
+<p>LEDE 当前的目标是：</p>
+<ul>
+<li>构建一个巨大的嵌入式 Linux 发行版，主要关注稳定性和功能</li>
+<li>拥有规律，可预测的发行周期</li>
+<li>建立透明的决策过程，加强社区参与和公共反馈</li>
+</ul>
+<p>创建 LEDE 是因为 OpenWrt 有一些长期存在的问题，一直悬而未决：</p>
+<ul>
+<li>核心开发者活跃度低，也没有鼓励更多新成员加入的策略</li>
+<li>不可靠的基础设施，因为淡点故障和内部分歧而阻碍修复</li>
+<li>缺乏沟通，透明和协作，无论是核心团队还是核心团队与社区之间</li>
+<li>提交 commit 的人较少，不怎么关注测试和常规构建</li>
+<li>不关注稳定性和文档</li>
+</ul>
+<p>为了解决这些问题，创建了 LEDE 项目，相比 OpenWrt 不同之处在于：</p>
+<ul>
+<li>所有沟通频道都是公开的，一些对非开发成员限制只读权限</li>
+<li>决策过程是公正公开的，大约有 50/50 的开发者和权威用户有投票权</li>
+<li>基础设施非常简单，降低维护工作的难度</li>
+<li>基于 OpenWrt 包在 Github 收到的反馈，合并策略更自由</li>
+<li>强烈关注自动化测试，简历一个简单的发布流程</li>
+</ul>
+<p>LEDE 项目地址：<a href="https://www.lede-project.org/" target="_blank" rel="external">https://www.lede-project.org/</a></p>
+<h2 id="为何使用LEDE"><a href="#为何使用LEDE" class="headerlink" title="为何使用LEDE?"></a>为何使用LEDE?</h2><p>LEDE相比制造商的原厂固件更加出色，才使得人们更倾向于使用LEDE。LEDE工作起来更加稳定、提供更多的功能，并且更加安全，同时具有良好的技术支持。<br>可扩展性： LEDE提供了许多以往只在高端设备上才提供的各种功能。它具有3000个以上的标准化应用软件包，您可以轻松地将他们应用于各种支持的设备，包括各种陈旧的路由器。</p>
+<ul>
+<li>高安全性： 从安装开始，LEDE就以安全的标准来设计。例如Wi-Fi默认禁用，没有弱密码，没有任何后门程序。LEDE的系统组件始终保持最新，因此漏洞一旦被发现后会很快得到解决。</li>
+<li>高性能、高稳定性： LEDE固件是由所支持的所有设备的标准化组件制作而成。这意味着每个组件都会接受更多的测试和bug修复，而不像原厂固件那样一旦为生产线的产品提供固件后就再也不去碰它。</li>
+<li>强大的社区支持： LEDE团队成员会经常参与到LEDE论坛、LEDE开发者、LEDE管理员以及LEDE的IRC频道中去。您可以直接与开发人员，管理软件模块的志愿者和其他LEDE用户交流，大大增加您解决问题的机会。</li>
+<li>研发： 许多团队使用LEDE作为他们对网络性能研究的平台。这意味着他们的成功实验案例将会首先在LEDE中实现，而原厂固件将会落后许多。</li>
+<li>开源/无额外支出： 使用LEDE没有任何金钱成本。它完全是由志愿者团队、开发者、维护人员、个人以及一些公司创建的。 如果您喜欢LEDE，可以考虑将它变得更好。作为开源社区的一部分，LEDE有强大的Linux Kernel驱动.</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;OpenWrt&lt;/strong&gt; 可以说是世界上最出名的家用 &lt;strong&gt;WiFi&lt;/strong&gt; 路由器 &lt;strong&gt;Linux&lt;/strong&gt; 发行版，是由以前名不经传的 &lt;strong&gt;Linksys WRT54G&lt;/strong&gt; 路由催生的一个产品，已经 &lt;strong&gt;12&lt;/strong&gt; 年多了。在2016年5月初，OpenWrt用户社区宣布了另一个 &lt;strong&gt;OpenWrt：Linux Embedded Development Environment (LEDE)&lt;/strong&gt; 。官方解释说，&lt;strong&gt;LEDE&lt;/strong&gt; 是 OpenWrt 的一个分支，或者说是副产品，该项目主要关注透明性，协作和分权。&lt;br&gt;LEDE 是 OpenWrt 社区的新生，有很多目标是与 OpenWrt 相同的，但是相比于 OpenWrt 也有很大的区别。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OpenWRT的WiFi带机量修改方法</title>
+    <link href="http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/"/>
+    <id>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT的WiFi带机量修改方法/</id>
+    <published>2018-05-14T04:12:08.000Z</published>
+    <updated>2018-06-18T06:45:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Wifi带机量的修改"><a href="#Wifi带机量的修改" class="headerlink" title="Wifi带机量的修改"></a>Wifi带机量的修改</h1><p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
+<p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
+<a id="more"></a>
+<blockquote>
+<p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="external">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="external">MTK_Ralink_ApSoc_SDK编译总结</a><br><a href="http://www.right.com.cn/forum/thread-208204-1-1.html" target="_blank" rel="external">openwrt wifi用户连接数限制</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Wifi带机量的修改&quot;&gt;&lt;a href=&quot;#Wifi带机量的修改&quot; class=&quot;headerlink&quot; title=&quot;Wifi带机量的修改&quot;&gt;&lt;/a&gt;Wifi带机量的修改&lt;/h1&gt;&lt;p&gt;(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;#define MAX_NUMBER_OF_MAC                64 // 原始值32&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
+    
+      <category term="电子书包" scheme="http://cuiqingwei.github.io/tags/%E7%94%B5%E5%AD%90%E4%B9%A6%E5%8C%85/"/>
+    
+  </entry>
   
   <entry>
     <title>WiFi探针的工作原理</title>
@@ -65,37 +212,6 @@
     
     
       <category term="Wi-Fi" scheme="http://cuiqingwei.github.io/tags/Wi-Fi/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OpenWRT的WiFi带机量修改方法</title>
-    <link href="http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/"/>
-    <id>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT的WiFi带机量修改方法/</id>
-    <published>2018-05-14T04:12:08.000Z</published>
-    <updated>2018-06-18T06:45:02.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Wifi带机量的修改"><a href="#Wifi带机量的修改" class="headerlink" title="Wifi带机量的修改"></a>Wifi带机量的修改</h1><p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
-<p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
-<a id="more"></a>
-<blockquote>
-<p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="external">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="external">MTK_Ralink_ApSoc_SDK编译总结</a><br><a href="http://www.right.com.cn/forum/thread-208204-1-1.html" target="_blank" rel="external">openwrt wifi用户连接数限制</a></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Wifi带机量的修改&quot;&gt;&lt;a href=&quot;#Wifi带机量的修改&quot; class=&quot;headerlink&quot; title=&quot;Wifi带机量的修改&quot;&gt;&lt;/a&gt;Wifi带机量的修改&lt;/h1&gt;&lt;p&gt;(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;#define MAX_NUMBER_OF_MAC                64 // 原始值32&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
-    
-      <category term="电子书包" scheme="http://cuiqingwei.github.io/tags/%E7%94%B5%E5%AD%90%E4%B9%A6%E5%8C%85/"/>
     
   </entry>
   
@@ -1114,193 +1230,6 @@
       <category term="Hybird" scheme="http://cuiqingwei.github.io/tags/Hybird/"/>
     
       <category term="Ionic" scheme="http://cuiqingwei.github.io/tags/Ionic/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HomeKit初体验</title>
-    <link href="http://cuiqingwei.github.io/2017/02/09/2017-02-09-Homekit%E5%88%9D%E4%BD%93%E9%AA%8C/"/>
-    <id>http://cuiqingwei.github.io/2017/02/09/2017-02-09-Homekit初体验/</id>
-    <published>2017-02-08T16:27:40.000Z</published>
-    <updated>2017-11-29T01:20:57.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="对话Siri"><a href="#对话Siri" class="headerlink" title="对话Siri"></a>对话Siri</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XMjUwMzIyMjEyMA==" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<a id="more"></a>
-<h1 id="界面效果"><a href="#界面效果" class="headerlink" title="界面效果"></a>界面效果</h1><p><img src="/img/20170209/homekit1.jpg" alt=""><br><img src="/img/20170209/homekit2.jpg" alt=""></p>
-<p>2017年香港光顾苹果旗舰店时，看到了一些第三方Homekit产品，于是萌生了折腾Homekit的想法。</p>
-<p><img src="/img/20170209/devices.jpg" alt=""></p>
-<p>折腾时所用的硬件，可以根据个人需要自行更改:</p>
-<ul>
-<li>树莓派 3 代 B 型（包含 Micor SD 卡）</li>
-<li>YeeLight 智能灯泡</li>
-<li>E27螺口灯座</li>
-<li>网线、MicroUSB线</li>
-<li>MacMini 电脑 （ Windows PC、Ubuntu、Linux 均可）</li>
-</ul>
-<h1 id="树莓派"><a href="#树莓派" class="headerlink" title="树莓派"></a>树莓派</h1><h3 id="1-安装Raspbian系统"><a href="#1-安装Raspbian系统" class="headerlink" title="1.安装Raspbian系统"></a>1.安装Raspbian系统</h3><p>系统镜像采用 <strong>2016-09-26-Hassbian-Bluetooth.img</strong><br>下载地址 <a href="http://pan.baidu.com/s/1qYs6hn2" target="_blank" rel="external">http://pan.baidu.com/s/1qYs6hn2</a></p>
-<p>Mac制作命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">df -h</div><div class="line">diskutil unmount /dev/disk3s1</div><div class="line">dd bs=4m if=2016-09-26-Hassbian-Bluetooth.img of=/dev/rdisk3</div><div class="line">diskutil unmountdisk /dev/disk3</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>可参考 <a href="http://cuiqingwei.github.io/2016/02/15/2016-02-15-Raspberry-Pi/">http://cuiqingwei.github.io/2016/02/15/2016-02-15-Raspberry-Pi/</a></p>
-</blockquote>
-<h3 id="2-登录Raspberry"><a href="#2-登录Raspberry" class="headerlink" title="2.登录Raspberry"></a>2.登录Raspberry</h3><p>安装完成之后，用网线连接好树莓派和路由器，打开电脑的终端，用 ssh 登录树莓派。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ssh pi@raspberrypi.local</div><div class="line">或者</div><div class="line">ssh pi@ip</div></pre></td></tr></table></figure>
-<p>ip可以在路由器的运行网页查看到,当然，Windows系统可以通过 <a href="http://www.mylanviewer.com/network-ip-scanner.html" target="_blank" rel="external">MyLanViewer Network/IP Scanner</a> 扫描等到目标地址。<br>之后终端会要求输入密码，输入 <strong>raspberry</strong> 回车即可。输入密码的途中终端不会显示任何字符，只需要正常输入即可。</p>
-<h3 id="3-更新软件源"><a href="#3-更新软件源" class="headerlink" title="3.更新软件源"></a>3.更新软件源</h3><p>登录树莓派之后，先升级软件源，在终端下输入以下代码，等待一段时间即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get upgrade</div></pre></td></tr></table></figure>
-<h1 id="配置选项"><a href="#配置选项" class="headerlink" title="配置选项"></a>配置选项</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo raspi-config</div></pre></td></tr></table></figure>
-<p>change_locale – 更改语言设置。在Locales to be generated: 中，选择en_US.UTF-8和zh_CN.UTF-8。在Default locale for the system environment:中，选择en_US.UTF-8（等启动完机器，装完中文字体，再改回zh_CN.UTF-8，否则第一次启动会出现方块）。</p>
-<blockquote>
-<p>可参考 <a href="http://blog.csdn.net/xdw1985829/article/details/38816375" target="_blank" rel="external">http://blog.csdn.net/xdw1985829/article/details/38816375</a></p>
-</blockquote>
-<h1 id="打开-Yeelight-的极客模式"><a href="#打开-Yeelight-的极客模式" class="headerlink" title="打开 Yeelight 的极客模式"></a>打开 Yeelight 的极客模式</h1><p>在 App Store 下载官方的 Yeelight 应用，先连接上灯泡.然后点右上角的三根横杠，在下方打开极客模式。</p>
-<h1 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h1><p>回到终端，我们继续来安装 Node.js 。从版本 4.0.0 开始，Node.js 默认支持基于 ARM 的平台，我们只需要输入相关代码即可。</p>
-<p>依次在终端输入以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">wget https://nodejs.org/dist/v4.3.2/node-v4.3.2-linux-armv6l.tar.gz</div><div class="line">tar -xvf node-v4.3.2-linux-armv6l.tar.gz</div><div class="line">cd node-v4.3.2-linux-armv6l</div><div class="line">sudo cp -R * /usr/local/</div></pre></td></tr></table></figure>
-<p>完成之后，输入 node -v 检查一下是否安装完成，如果显示  v4.3.2 ，则表示 Node.js 安装成功。<br>安装 Avahi 和相关依赖软件包</p>
-<p>在终端输入以下命令即可：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install libavahi-compat-libdnssd-dev</div></pre></td></tr></table></figure>
-<p>安装 HomeBridge 和相关依赖软件包</p>
-<p>依次在终端输入以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g --unsafe-perm homebridge hap-nodejs node-gyp</div><div class="line">cd /usr/local/lib/node_modules/homebridge/</div><div class="line">sudo npm install --unsafe-perm bignum</div><div class="line">cd /usr/local/lib/node_modules/hap-nodejs/node_modules/mdns</div><div class="line">sudo node-gyp BUILDTYPE=Release rebuild</div></pre></td></tr></table></figure>
-<p>添加 Yeelight 配置文件</p>
-<p>输入以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g homebridge-yeelight</div></pre></td></tr></table></figure>
-<p>等待命令运行结束后，输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /home/pi/.homebridge/</div><div class="line">vi config.json</div></pre></td></tr></table></figure>
-<p>点击键盘的 i 键，终端左下角出现 – INSERT – ，如下图所示。</p>
-<p>将以下代码复制到终端：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;bridge&quot;: &#123;</div><div class="line">        &quot;name&quot;: &quot;IoTBridge&quot;,</div><div class="line">        &quot;username&quot;: &quot;28:6C:07:10:BF:16&quot;,</div><div class="line">        &quot;port&quot;: 51825,</div><div class="line">        &quot;pin&quot;: &quot;031-45-154&quot;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    &quot;platforms&quot;: [</div><div class="line">        &#123;</div><div class="line">            &quot;platform&quot; : &quot;yeelight&quot;,</div><div class="line">            &quot;name&quot; : &quot;yeelight&quot;</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>粘贴完成后，按Esc键，输入 :wq 然后回车。</p>
-<p>之后，便可以运行 HomeBridge ：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">homebridge</div></pre></td></tr></table></figure>
-<p>这一步完成之后，HomeBridge 就安装完毕并且开始运行， YeeLight 彩光灯也成功接入 Apple HomeKit ，打开 iOS 10 自带的家庭 App， 点击添加配件即可。会有两个配件，第一个是 IoTBridge ，这是一个桥接器；还有一个才是我们要控制的灯泡。</p>
-<p>现在，你就可以享受 <strong>「嘿 Siri ，帮我开个灯」</strong> 了。<br>在树莓派启动后自动运行 HomeBridge 服务</p>
-<h1 id="最后一步，把-HomeBridge-服务加入到树莓派的系统服务里。"><a href="#最后一步，把-HomeBridge-服务加入到树莓派的系统服务里。" class="headerlink" title="最后一步，把 HomeBridge 服务加入到树莓派的系统服务里。"></a>最后一步，把 HomeBridge 服务加入到树莓派的系统服务里。</h1><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>首先我们要开启 root 账户，首先在终端输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo passwd root</div></pre></td></tr></table></figure>
-<p>然后会提示你设置 root 账户密码，第一次输入之后还要确认一次，一样两次输入不会有任何字符显示。输入完毕之后，启用 root 账户，输入以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo passwd --unlock root</div></pre></td></tr></table></figure>
-<p>然后会提示报错： passwd: password expiry information changed. ，原因是新版的系统默认禁止 ssh 登录 root 账户，我们需要修改一下配置文件。在终端输入以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/ssh/sshd_config</div></pre></td></tr></table></figure>
-<p>用 Ctrl + W 搜索「 PermitRootLogin 」，找到之后将 PermitRootLogin without-password 改成 PermitRootLogin yes ，然后按 Ctrl + O 保存，回车之后退出编辑器。</p>
-<p>GitHub 提供了三种让树莓派启动后自动运行 HomeBridge 服务的方法，我选择的是 init.d 的方式。打开 这个网页 ，将文件下载到本地，然后将 template 重命名为 homebridge （或者任何你想要的名字） ，放到树莓派目录 /etc/init.d 下。注意这里一定要</p>
-<p>用 root 账户 ssh 登录Raspberry。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /etc/init.d</div><div class="line">vi homebridge</div></pre></td></tr></table></figure>
-<p>点击键盘的 i 键，终端左下角出现 – INSERT – ，如下图所示。</p>
-<p>将以下代码复制到终端：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line">### BEGIN INIT INFO</div><div class="line"># Provides: homebridge</div><div class="line"># Required-Start:    $network $remote_fs $syslog</div><div class="line"># Required-Stop:     $remote_fs $syslog</div><div class="line"># Default-Start:     2 3 4 5</div><div class="line"># Default-Stop:      0 1 6</div><div class="line"># Short-Description: Start daemon at boot time</div><div class="line"># Description:       Enable service provided by daemon.</div><div class="line">### END INIT INFO</div><div class="line"></div><div class="line">dir=&quot;/home/pi&quot;</div><div class="line">cmd=&quot;DEBUG=* /usr/local/bin/homebridge&quot;</div><div class="line">user=&quot;pi&quot;</div></pre></td></tr></table></figure>
-<p>完成后保存，然后回到终端，依次输入以下代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo chmod 755 /etc/init.d/homebridge</div><div class="line">sudo update-rc.d homebridge defaults</div></pre></td></tr></table></figure>
-<p>现在，你可以在终端输入 HomeBridge ，等待服务运行之后关掉终端，看是否可以继续使用家庭 App 开关灯泡；或者重启一下树莓派，看看 HomeBridge 服务是否正常运行。</p>
-<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>将homebridge设置成随系统启动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">cd /</div><div class="line">sudo useradd --system homebridge</div><div class="line">sudo mkdir /var/homebridge</div><div class="line">sudo cp ~/.homebridge/config.json /var/homebridge/</div><div class="line">sudo cp -r ~/.homebridge/persist /var/homebridge</div><div class="line">sudo chmod -R 0777 /var/homebridge</div><div class="line">cd /etc/default</div><div class="line">sudo nano homebridge</div></pre></td></tr></table></figure>
-<p>将下面的内容复制粘贴进去</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># Defaults / Configuration options for homebridge</div><div class="line"># The following settings tells homebridge where to find the config.json file and where to persist the data (i.e. pairing and others)</div><div class="line">HOMEBRIDGE_OPTS=-U /var/homebridge</div><div class="line"></div><div class="line"># If you uncomment the following line, homebridge will log more</div><div class="line"># You can display this via systemd&apos;s journalctl: journalctl -f -u homebridge</div><div class="line"># DEBUG=*</div></pre></td></tr></table></figure>
-<p>Ctrl+X，然后Y，回车，保存退出</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /etc/systemd/system</div><div class="line">sudo nano homebridge.service</div></pre></td></tr></table></figure>
-<p>将下面的内容复制粘贴进去</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">[Unit]</div><div class="line">Description=Node.js HomeKit Server</div><div class="line">After=syslog.target network-online.target</div><div class="line">[Service]</div><div class="line">Type=simple</div><div class="line">User=homebridge</div><div class="line">EnvironmentFile=/etc/default/homebridge</div><div class="line">ExecStart=/usr/lib/node_modules/homebridge/bin/homebridge $HOMEBRIDGE_OPTS</div><div class="line">Restart=on-failure</div><div class="line">RestartSec=10</div><div class="line">KillMode=process</div><div class="line">[Install]</div><div class="line">WantedBy=multi-user.target</div></pre></td></tr></table></figure>
-<p>然后Ctrl+X，然后Y，回车，保存退出</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">cd /</div><div class="line">sudo systemctl daemon-reload</div><div class="line">sudo systemctl enable homebridge</div><div class="line">sudo systemctl start homebridge</div><div class="line">sudo systemctl status homebridge</div><div class="line">sudo reboot      ####重启树莓派####</div></pre></td></tr></table></figure>
-<p>如果以上均成功运行，那么恭喜你，一切都大功告成。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;对话Siri&quot;&gt;&lt;a href=&quot;#对话Siri&quot; class=&quot;headerlink&quot; title=&quot;对话Siri&quot;&gt;&lt;/a&gt;对话Siri&lt;/h1&gt;&lt;iframe height=498 width=510 src=&#39;http://player.youku.com/embed/XMjUwMzIyMjEyMA==&#39; frameborder=0 &#39;allowfullscreen&#39;&gt;&lt;/iframe&gt;
-    
-    </summary>
-    
-    
-      <category term="Raspberry Pi" scheme="http://cuiqingwei.github.io/tags/Raspberry-Pi/"/>
-    
-      <category term="HomeKit" scheme="http://cuiqingwei.github.io/tags/HomeKit/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OpenWRT之HomeKit</title>
-    <link href="http://cuiqingwei.github.io/2017/02/08/2017-02-08-OpenWRT%E4%B9%8BHomeKit/"/>
-    <id>http://cuiqingwei.github.io/2017/02/08/2017-02-08-OpenWRT之HomeKit/</id>
-    <published>2017-02-08T08:20:56.000Z</published>
-    <updated>2017-02-22T07:47:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="1-制备openwrt系统镜像"><a href="#1-制备openwrt系统镜像" class="headerlink" title="1.制备openwrt系统镜像"></a>1.制备openwrt系统镜像</h1><p>预编译的openwrt是musl的toolchain，而homebridge需要glibc的toolchain所以需要自己编译系统。</p>
-<p>建议安装完成后开启ssh，直接用putty和winscp来传送文件和操作虚拟机更方便。<br>以下所有命令都是通过putty登陆虚拟机或使用虚拟机的terminal来执行的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt update</div></pre></td></tr></table></figure>
-<p>安装编译系统需要的软件包:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt update</div></pre></td></tr></table></figure>
-<p>下载openwrt最新代码，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone git://github.com/openwrt/openwrt.git</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>将feeds.conf.default改名为feeds.conf</p>
-<p>更新feeds部分的代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">./scripts/feeds update -a</div><div class="line">./scripts/feeds install -a</div></pre></td></tr></table></figure>
-<blockquote>
-<p>使用feeds文件夹替换掉openwrt，原版代码不带avahi的dev库，需要自己添加支持；<br>另外自带nodejs的版本低于5.0启动homebridge的时候会有个warning，一并更换成最新版。</p>
-</blockquote>
-<p>openwrt编译配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make menuconfig</div></pre></td></tr></table></figure>
-<p>需要的软件包：<br>Advanced configuration options (for developers)  —&gt;<br>      Toolchain Options  —&gt;<br>         C Library implementation (Use musl)  —&gt;<br>            [X] Use (e)glibc<br>Base system  —&gt;<br>   block-mount、ca-certificates<br>Development —&gt;<br>   <m> gcc<br>   <m> make<br>Kernel modules  —&gt;<br>    Filesystems  —&gt;<br>       kmod-fs-exfat、kmod-fs-ext4、kmod-fs-ntfs、kmod-fs-vfat<br>    USB Support  —&gt;<br>       kmod-usb-storage-extras、kmod-usb2、kmod-usb3<br>Languages  —&gt;<br>    Node.js  —&gt;<br>        <m> node<br>    Python  —&gt;<br>        <m> python<br>Libraries  —&gt;<br>   libavahi-compat-libdnssd-dev<br>Network  —&gt;<br>    mosquitto<br>LuCi   —&gt;</m></m></m></m></p>
-<pre><code>1. Collections  ---&gt;
-   luci
-</code></pre><p>保存后开始编译</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make V=s</div></pre></td></tr></table></figure>
-<p>趁着时候没事干把准备好的U盘连入虚拟机，格式化成ext3/ext4格式，插到路由器的USB接口上。</p>
-<p>刷入系统不再详述，不会搞的可以百度，这方面的教程遍地。<br>成功后进入路由器管理界面luci，system下将语言改为中文。设置路由器登陆密码，然后使用putty和winscp即可连接到路由器文件系统了。<br>将U盘查到路由器上等一会以后，从路由器管理界面找到如下位置，看到U盘的大小说明成功。</p>
-<h1 id="2-openwrt-挂载overlay到U盘"><a href="#2-openwrt-挂载overlay到U盘" class="headerlink" title="2. openwrt 挂载overlay到U盘"></a>2. openwrt 挂载overlay到U盘</h1><ul>
-<li>2.1. 添加必要软件</li>
-</ul>
-<p><strong>block-mount</strong><br><strong>kmod-fs-ext4</strong><br><strong>kmod-usb-ohci</strong><br><strong>kmod-usb-storage</strong><br><strong>fdisk</strong><br><strong>cfdisk</strong><br><strong>e2fsprogs</strong></p>
-<p>可以在 <strong>menuconfig</strong> 通过输入 <strong>/</strong> 查找这些组件。</p>
-<ul>
-<li>2.2. 升级系统</li>
-</ul>
-<p><strong>sysupgrade -v xxxx-sysupgrade.bin</strong></p>
-<ul>
-<li>2.3. 分区操作</li>
-</ul>
-<p><strong>cfdisk</strong></p>
-<p>分三个区<br>sda1（512M）为系统盘，相当于Windows系统的C盘；<br>sda2（128M)为交换分区，用于内存交换；<br>sda3(剩余)为存储区，主要放置较大文件</p>
-<ul>
-<li><p>2.4.格式化各分区</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkfs.ext4 /dev/sda1 　　#将第一个分区格式化为ext3格式</div><div class="line">mkswap /dev/sda2    　　#将第二个分区格式化为swap交换分区</div><div class="line">mkfs.ext4 /dev/sda3 　　#将第三个分区格式化为ext3格式</div></pre></td></tr></table></figure>
-</li>
-<li><p>2.5.安装完成以后,挂载u盘.如下命令将默认的系统盘转移到u盘中.</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mount /dev/sda1 /mnt</div><div class="line">mkdir /tmp/root</div><div class="line">mount -o bind / /tmp/root</div><div class="line">cp /tmp/root/* /mnt -a</div><div class="line">umount /tmp/root</div></pre></td></tr></table></figure>
-<ul>
-<li>2.6.修改 /etc/config/fstab 文件,让系统启动自动挂载,修改成如下</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">config mount</div><div class="line">        option target   /overlay</div><div class="line">        option device   /dev/sda1</div><div class="line">        option fstype   ext4</div><div class="line">        option options  rw,sync</div><div class="line">        option enabled  1</div><div class="line">        option enabled_fsck 0</div></pre></td></tr></table></figure>
-<ul>
-<li>2.7.执行如下命令让其生效</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/fstab enable</div></pre></td></tr></table></figure>
-<ul>
-<li>2.8.重启后，执行df -h后如果发现/overlay挂载在/tmp/overlay-disabled上的解决方案：</li>
-</ul>
-<p><strong>rm /tmp/overlay-disabled/etc/extroot.md5sum</strong></p>
-<p>或者删除/tmp/overlay-disabled目录下的所有系统文件，按照第2.5重新操作重启。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;1-制备openwrt系统镜像&quot;&gt;&lt;a href=&quot;#1-制备openwrt系统镜像&quot; class=&quot;headerlink&quot; title=&quot;1.制备openwrt系统镜像&quot;&gt;&lt;/a&gt;1.制备openwrt系统镜像&lt;/h1&gt;&lt;p&gt;预编译的openwrt是musl的toolchain，而homebridge需要glibc的toolchain所以需要自己编译系统。&lt;/p&gt;
-&lt;p&gt;建议安装完成后开启ssh，直接用putty和winscp来传送文件和操作虚拟机更方便。&lt;br&gt;以下所有命令都是通过putty登陆虚拟机或使用虚拟机的terminal来执行的。&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo apt update&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;安装编译系统需要的软件包:&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo apt update&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;下载openwrt最新代码，&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git clone git://github.com/openwrt/openwrt.git&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
-    
-      <category term="HomeKit" scheme="http://cuiqingwei.github.io/tags/HomeKit/"/>
     
   </entry>
   

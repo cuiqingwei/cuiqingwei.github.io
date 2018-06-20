@@ -290,19 +290,19 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-2018-06-18-WiFi探针的工作原理" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-2018-06-20-QSDK编译" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/05/14/2018-06-18-WiFi探针的工作原理/" class="article-date">
-      <time datetime="2018-05-14T04:12:08.000Z" itemprop="datePublished">2018-05-14</time>
+      <a href="/2018/06/20/2018-06-20-QSDK编译/" class="article-date">
+      <time datetime="2018-06-20T07:12:08.000Z" itemprop="datePublished">2018-06-20</time>
 </a>
 
  
-    <a href="/2018/05/14/2018-06-18-WiFi探针的工作原理/#comments" title="查看评论">
+    <a href="/2018/06/20/2018-06-20-QSDK编译/#comments" title="查看评论">
         <i class="fa fa-comments-o" aria-hidden="true"></i>
         <span class="count-comment"></span>
         
-            <span class="ds-thread-count"  data-thread-key="2018/05/14/2018-06-18-WiFi探针的工作原理/" ></span>
+            <span class="ds-thread-count"  data-thread-key="2018/06/20/2018-06-20-QSDK编译/" ></span>
         
         
     </a>
@@ -318,7 +318,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/14/2018-06-18-WiFi探针的工作原理/">WiFi探针的工作原理</a>
+      <a class="article-title" href="/2018/06/20/2018-06-20-QSDK编译/">QSDK编译</a>
     </h1>
   
 
@@ -328,8 +328,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p><strong>WiFi探针</strong> 技术是指基于WiFi探测技术来识别AP（无线访问接入点）附近已开启WiFi的智能手机或者WiFi终端（笔记本，平板电脑等），无需用户接入WiFi，WiFi探针就能够识别用户的信息。</p>
-<p>当我们走进探针信号覆盖区域内且我们的WiFi设备打开，我们的设备就能被探针探测出来，无论是iOS或者Android系统都能轻易检测到，并且获取设备的MAC地址。</p>
+              <p><strong>QSDK</strong> 是一种在openwrt的基础上，加入了高通atheros芯片相关资料的一种环境。</p>
+<p>QSDK与OpenWRT的区别主要在如下几个方面：</p>
+<ul>
+<li>arch/mips/ath79/* – updated QCA base platform device support – GPLv2</li>
+<li>sound/soc/ath79/* – new ALSA-compliant QCA soundcard driver – ISC</li>
+<li>drivers/net/ethernet/atheros/ag71xx/* – updated QCA Ethernet switch driver – GPLv2</li>
+<li>net/core/* – performance enhancement updates to Linux sk_buff management – GPL v2</li>
+<li>drivers/spi – added modes to QCA spi driver – GPLv2</li>
+<li>drivers/mtd/nand/ – new QCA NAND flash controller driver – ISC</li>
+</ul>
           
       
     </div>
@@ -340,12 +348,85 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Wi-Fi/">Wi-Fi</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenWRT/">OpenWRT</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/2018/05/14/2018-06-18-WiFi探针的工作原理/#more">阅读全文 >></a>
+          <a href="/2018/06/20/2018-06-20-QSDK编译/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2018-06-20-什么是LEDE" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/06/20/2018-06-20-什么是LEDE/" class="article-date">
+      <time datetime="2018-06-20T04:12:08.000Z" itemprop="datePublished">2018-06-20</time>
+</a>
+
+ 
+    <a href="/2018/06/20/2018-06-20-什么是LEDE/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count"  data-thread-key="2018/06/20/2018-06-20-什么是LEDE/" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/20/2018-06-20-什么是LEDE/">什么是LEDE?</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p><strong>OpenWrt</strong> 可以说是世界上最出名的家用 <strong>WiFi</strong> 路由器 <strong>Linux</strong> 发行版，是由以前名不经传的 <strong>Linksys WRT54G</strong> 路由催生的一个产品，已经 <strong>12</strong> 年多了。在2016年5月初，OpenWrt用户社区宣布了另一个 <strong>OpenWrt：Linux Embedded Development Environment (LEDE)</strong> 。官方解释说，<strong>LEDE</strong> 是 OpenWrt 的一个分支，或者说是副产品，该项目主要关注透明性，协作和分权。<br>LEDE 是 OpenWrt 社区的新生，有很多目标是与 OpenWrt 相同的，但是相比于 OpenWrt 也有很大的区别。</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenWRT/">OpenWRT</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/06/20/2018-06-20-什么是LEDE/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -421,6 +502,80 @@
       
         <p class="article-more-link">
           <a href="/2018/05/14/2018-05-14-OpenWRT的WiFi带机量修改方法/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2018-06-18-WiFi探针的工作原理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/14/2018-06-18-WiFi探针的工作原理/" class="article-date">
+      <time datetime="2018-05-14T04:12:08.000Z" itemprop="datePublished">2018-05-14</time>
+</a>
+
+ 
+    <a href="/2018/05/14/2018-06-18-WiFi探针的工作原理/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count"  data-thread-key="2018/05/14/2018-06-18-WiFi探针的工作原理/" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/14/2018-06-18-WiFi探针的工作原理/">WiFi探针的工作原理</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p><strong>WiFi探针</strong> 技术是指基于WiFi探测技术来识别AP（无线访问接入点）附近已开启WiFi的智能手机或者WiFi终端（笔记本，平板电脑等），无需用户接入WiFi，WiFi探针就能够识别用户的信息。</p>
+<p>当我们走进探针信号覆盖区域内且我们的WiFi设备打开，我们的设备就能被探针探测出来，无论是iOS或者Android系统都能轻易检测到，并且获取设备的MAC地址。</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Wi-Fi/">Wi-Fi</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/05/14/2018-06-18-WiFi探针的工作原理/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -935,153 +1090,6 @@
       
         <p class="article-more-link">
           <a href="/2017/12/05/2017-12-22-分布式文件系统-FastDFS-5-Linux-CentOS-7-搭建/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2017-12-05-curl模拟http发送get或post接口测试" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/12/05/2017-12-05-curl模拟http发送get或post接口测试/" class="article-date">
-      <time datetime="2017-12-05T06:12:08.000Z" itemprop="datePublished">2017-12-05</time>
-</a>
-
- 
-    <a href="/2017/12/05/2017-12-05-curl模拟http发送get或post接口测试/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-            <span class="ds-thread-count"  data-thread-key="2017/12/05/2017-12-05-curl模拟http发送get或post接口测试/" ></span>
-        
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/05/2017-12-05-curl模拟http发送get或post接口测试/">curl模拟http发送get或post接口测试</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="一、get请求"><a href="#一、get请求" class="headerlink" title="一、get请求"></a>一、get请求</h1><p>curl “<a href="http://www.baidu.com">http://www.baidu.com</a>“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地<br>curl -i “<a href="http://www.baidu.com">http://www.baidu.com</a>“  显示全部信息<br>curl -l “<a href="http://www.baidu.com">http://www.baidu.com</a>“  只显示头部信息<br>curl -v “<a href="http://www.baidu.com">http://www.baidu.com</a>“  显示get请求全过程解析<br>wget “<a href="http://www.baidu.com">http://www.baidu.com</a>“     也可以</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/curl/">curl</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2017/12/05/2017-12-05-curl模拟http发送get或post接口测试/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2017-12-04-怎样的家居照明才有质感" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/12/04/2017-12-04-怎样的家居照明才有质感/" class="article-date">
-      <time datetime="2017-12-04T06:12:08.000Z" itemprop="datePublished">2017-12-04</time>
-</a>
-
- 
-    <a href="/2017/12/04/2017-12-04-怎样的家居照明才有质感/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-            <span class="ds-thread-count"  data-thread-key="2017/12/04/2017-12-04-怎样的家居照明才有质感/" ></span>
-        
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/04/2017-12-04-怎样的家居照明才有质感/">怎样的家居照明才有质感?</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>生活要有质感，这是很多人所追求的，也是很多人所向往的，但是，你真的懂质感吗?质感这种东西，重要的是感觉。怎样才能让自己的家变得有感觉呢?</p>
-<p>答案当然是灯光!试想一下，当你回到家，看到明亮的、昏黄的、温暖的灯光，是不是都能让你的家有不一样的感觉?我们先来看一看，一个家的六大功能区。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/智能家居/">智能家居</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2017/12/04/2017-12-04-怎样的家居照明才有质感/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
