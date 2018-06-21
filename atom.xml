@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2018-06-20T07:45:53.000Z</updated>
+  <updated>2018-06-21T00:19:57.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://cuiqingwei.github.io/2018/06/20/2018-06-20-QSDK%E7%BC%96%E8%AF%91/"/>
     <id>http://cuiqingwei.github.io/2018/06/20/2018-06-20-QSDK编译/</id>
     <published>2018-06-20T07:12:08.000Z</published>
-    <updated>2018-06-20T07:45:53.000Z</updated>
+    <updated>2018-06-21T00:19:57.000Z</updated>
     
     <content type="html"><![CDATA[<p><strong>QSDK</strong> 是一种在openwrt的基础上，加入了高通atheros芯片相关资料的一种环境。</p>
 <p>QSDK与OpenWRT的区别主要在如下几个方面：</p>
@@ -35,7 +35,7 @@
 <a id="more"></a>
 <p>编译步骤如下：（基于debian服务器）</p>
 <p>1、安装开发所需软件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install gcc g++ binutils ptach bzip2 flex make gettext pkg-config unzip zlib1g-dev libc6-dev subversion libncurses5-dev</div><div class="line">sudo apt-get install gawk sharutils curl libxml-parser-perl ocaml-nox</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install gcc g++ binutils patch bzip2 flex make gettext pkg-config unzip zlib1g-dev libc6-dev subversion libncurses5-dev</div><div class="line">sudo apt-get install gawk sharutils curl libxml-parser-perl ocaml-nox</div></pre></td></tr></table></figure>
 <p>2、安装repo和git</p>
 <p>见 <a href="http://www.cnblogs.com/rohens-hbg/p/4916452.html" target="_blank" rel="external">http://www.cnblogs.com/rohens-hbg/p/4916452.html</a></p>
 <p>3、下载qsdk相关文件</p>

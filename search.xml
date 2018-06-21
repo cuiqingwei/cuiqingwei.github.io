@@ -19,7 +19,7 @@
 <a id="more"></a>
 <p>编译步骤如下：（基于debian服务器）</p>
 <p>1、安装开发所需软件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install gcc g++ binutils ptach bzip2 flex make gettext pkg-config unzip zlib1g-dev libc6-dev subversion libncurses5-dev</div><div class="line">sudo apt-get install gawk sharutils curl libxml-parser-perl ocaml-nox</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install gcc g++ binutils patch bzip2 flex make gettext pkg-config unzip zlib1g-dev libc6-dev subversion libncurses5-dev</div><div class="line">sudo apt-get install gawk sharutils curl libxml-parser-perl ocaml-nox</div></pre></td></tr></table></figure>
 <p>2、安装repo和git</p>
 <p>见 <a href="http://www.cnblogs.com/rohens-hbg/p/4916452.html" target="_blank" rel="external">http://www.cnblogs.com/rohens-hbg/p/4916452.html</a></p>
 <p>3、下载qsdk相关文件</p>
@@ -1602,6 +1602,29 @@ make V=s
     </entry>
     
     <entry>
+      <title><![CDATA[高田路亚视频]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/10/2016-10-10-%E9%AB%98%E7%94%B0%E8%B7%AF%E4%BA%9A%E8%A7%86%E9%A2%91/</url>
+      <content type="html"><![CDATA[<p>路亚教学视频很多，但个人还是认为这个最详细，而且很专业、纯洁无商业气氛。<br>是新手学习路亚知识的典范视频，讲得非常细！</p>
+<a id="more"></a>
+<h1 id="路亚抛投基础-Casting"><a href="#路亚抛投基础-Casting" class="headerlink" title="路亚抛投基础-Casting-"></a>路亚抛投基础-Casting-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNTUxMTI0" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="倒钓钓组-Down-Shot-Rig"><a href="#倒钓钓组-Down-Shot-Rig" class="headerlink" title="倒钓钓组-Down Shot Rig-"></a>倒钓钓组-Down Shot Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNTAwNTA4" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="降落伞钓组-Parachute-Rig"><a href="#降落伞钓组-Parachute-Rig" class="headerlink" title="降落伞钓组-Parachute Rig-"></a>降落伞钓组-Parachute Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDkxNzg0" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="古怪钓组-Wacky-Rig"><a href="#古怪钓组-Wacky-Rig" class="headerlink" title="古怪钓组-Wacky Rig-"></a>古怪钓组-Wacky Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDY5NDY0" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="无铅钓组-No-Sinker-Rig"><a href="#无铅钓组-No-Sinker-Rig" class="headerlink" title="无铅钓组-No Sinker Rig-"></a>无铅钓组-No Sinker Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDQwNjcy" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="胡须佬-Rubber-Jig"><a href="#胡须佬-Rubber-Jig" class="headerlink" title="胡须佬-Rubber Jig-"></a>胡须佬-Rubber Jig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDIxMzM2" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="米诺-Minnow"><a href="#米诺-Minnow" class="headerlink" title="米诺-Minnow-"></a>米诺-Minnow-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDAzMDQ4" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="小胖子-Crank-Bait"><a href="#小胖子-Crank-Bait" class="headerlink" title="小胖子-Crank Bait-"></a>小胖子-Crank Bait-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzMjE5ODI0" frameborder="0" 'allowfullscreen'=""></iframe>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[个人路亚装备]]></title>
       <url>http://cuiqingwei.github.io/2016/10/10/2016-10-10-%E4%B8%AA%E4%BA%BA%E8%B7%AF%E4%BA%9A%E8%A3%85%E5%A4%87/</url>
       <content type="html"><![CDATA[<h1 id="路亚竿"><a href="#路亚竿" class="headerlink" title="路亚竿"></a>路亚竿</h1><p><strong><a href="https://detail.tmall.com/item.htm?id=36807472493&amp;spm=a1z09.2.0.0.uapaU2&amp;_u=c154cj1d09c" target="_blank" rel="external">LMS001-662M</a></strong> <em>鱼猎人征途系列</em></p>
@@ -1644,29 +1667,6 @@ make V=s
 <p><img src="/img/20161010/MetaniumDC.png" alt=""><br><img src="/img/20161010/MetaniumDC1.png" alt=""></p>
 <p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.6c818473iizZfR&amp;id=545441440003&amp;_u=m154cj14da2" target="_blank" rel="external">SHIMANO NEW EXSENCE DC XG</a></strong> <em>禧玛诺海水DC 2017</em></p>
 <p><img src="/img/20161010/EXSENCE DC.png" alt=""></p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[高田路亚视频]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/10/2016-10-10-%E9%AB%98%E7%94%B0%E8%B7%AF%E4%BA%9A%E8%A7%86%E9%A2%91/</url>
-      <content type="html"><![CDATA[<p>路亚教学视频很多，但个人还是认为这个最详细，而且很专业、纯洁无商业气氛。<br>是新手学习路亚知识的典范视频，讲得非常细！</p>
-<a id="more"></a>
-<h1 id="路亚抛投基础-Casting"><a href="#路亚抛投基础-Casting" class="headerlink" title="路亚抛投基础-Casting-"></a>路亚抛投基础-Casting-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNTUxMTI0" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="倒钓钓组-Down-Shot-Rig"><a href="#倒钓钓组-Down-Shot-Rig" class="headerlink" title="倒钓钓组-Down Shot Rig-"></a>倒钓钓组-Down Shot Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNTAwNTA4" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="降落伞钓组-Parachute-Rig"><a href="#降落伞钓组-Parachute-Rig" class="headerlink" title="降落伞钓组-Parachute Rig-"></a>降落伞钓组-Parachute Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDkxNzg0" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="古怪钓组-Wacky-Rig"><a href="#古怪钓组-Wacky-Rig" class="headerlink" title="古怪钓组-Wacky Rig-"></a>古怪钓组-Wacky Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDY5NDY0" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="无铅钓组-No-Sinker-Rig"><a href="#无铅钓组-No-Sinker-Rig" class="headerlink" title="无铅钓组-No Sinker Rig-"></a>无铅钓组-No Sinker Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDQwNjcy" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="胡须佬-Rubber-Jig"><a href="#胡须佬-Rubber-Jig" class="headerlink" title="胡须佬-Rubber Jig-"></a>胡须佬-Rubber Jig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDIxMzM2" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="米诺-Minnow"><a href="#米诺-Minnow" class="headerlink" title="米诺-Minnow-"></a>米诺-Minnow-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDAzMDQ4" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="小胖子-Crank-Bait"><a href="#小胖子-Crank-Bait" class="headerlink" title="小胖子-Crank Bait-"></a>小胖子-Crank Bait-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzMjE5ODI0" frameborder="0" 'allowfullscreen'=""></iframe>
 ]]></content>
     </entry>
     
@@ -2917,39 +2917,6 @@ make V=s
     </entry>
     
     <entry>
-      <title><![CDATA[MacOS]]></title>
-      <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-MacOS/</url>
-      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
-<h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p><strong>工作</strong>：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br><a href="http://www.tuicool.com/articles/yeyIfuu" target="_blank" rel="external">http://www.tuicool.com/articles/yeyIfuu</a><br><strong>系统</strong>：QQ、CleanMyDrive 3 等</p>
-<a id="more"></a>
-<h3 id="2-dmg安装"><a href="#2-dmg安装" class="headerlink" title="2. dmg安装"></a>2. dmg安装</h3><p>Chrome、Parallels Desktop、RDC、QQInput、RTX、cornerstone、Kaleidoscope<br>Sublime Text、Atom …</p>
-<p><strong>dmg下载</strong><br><a href="http://xclient.info/" target="_blank" rel="external">http://xclient.info/</a><br><a href="http://www.sdifen.com/" target="_blank" rel="external">http://www.sdifen.com/</a><br><a href="http://soft.macx.cn/" target="_blank" rel="external">http://soft.macx.cn/</a></p>
-<h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)</span>"</span></div><div class="line">[http://brew.sh/](http://brew.sh/)</div></pre></td></tr></table></figure>
-<p><a href="http://blog.csdn.net/aaawqqq/article/details/44088141" target="_blank" rel="external">http://blog.csdn.net/aaawqqq/article/details/44088141</a><br><a href="http://www.xitongzhijia.net/xtjc/20141204/31879.html" target="_blank" rel="external">http://www.xitongzhijia.net/xtjc/20141204/31879.html</a></p>
-<h3 id="4-MacPorts"><a href="#4-MacPorts" class="headerlink" title="4. MacPorts"></a>4. MacPorts</h3><p><a href="https://www.macports.org/install.php" target="_blank" rel="external">https://www.macports.org/install.php</a><br><a href="http://guide.macports.org/#installing.macports" target="_blank" rel="external">http://guide.macports.org/#installing.macports</a></p>
-<h3 id="5-oh-my-zsh"><a href="#5-oh-my-zsh" class="headerlink" title="5. oh my zsh"></a>5. oh my zsh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</div></pre></td></tr></table></figure>
-<p><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="external">http://leeiio.me/bash-to-zsh-for-mac/</a></p>
-<h3 id="6-iTerm"><a href="#6-iTerm" class="headerlink" title="6. iTerm"></a>6. iTerm</h3><p>iTerm2 + oh my zsh +agnoster 打造最强Mac终端<br><a href="http://www.siguoya.name/pc/home/article/256" target="_blank" rel="external">http://www.siguoya.name/pc/home/article/256</a><br>iterm2有什么酷功能？<br><a href="https://www.zhihu.com/question/27447370" target="_blank" rel="external">https://www.zhihu.com/question/27447370</a></p>
-<h3 id="7-wget"><a href="#7-wget" class="headerlink" title="7. wget"></a>7. wget</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo brew install wget</div></pre></td></tr></table></figure>
-<h3 id="8-pbcopy"><a href="#8-pbcopy" class="headerlink" title="8. pbcopy"></a>8. pbcopy</h3><blockquote>
-<p>使用 <strong>pbcopy</strong> 命令,对应有个 <strong>pbpaste</strong> 命令。</p>
-</blockquote>
-<p>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">'Hello World!'</span> | pbcopy</div></pre></td></tr></table></figure></p>
-<p><em>将字符串Hello World放入剪贴板</em></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat myFile.txt | pbcopy</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pbpaste &gt; file.txt</div></pre></td></tr></table></figure>
-<h3 id="9-mac-say-唱歌"><a href="#9-mac-say-唱歌" class="headerlink" title="9. mac say 唱歌"></a>9. mac say 唱歌</h3><blockquote>
-<p>spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。<br>  在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。<br>  开始听歌了。</p>
-</blockquote>
-<p><a href="https://www.macx.cn/thread-2048013-1-1.html?mod=viewthread&amp;tid=2048013&amp;extra=page%253D1&amp;page=1" target="_blank" rel="external">https://www.macx.cn/thread-2048013-1-1.html?mod=viewthread&amp;tid=2048013&amp;extra=page%253D1&amp;page=1</a></p>
-<h3 id="10-其他"><a href="#10-其他" class="headerlink" title="10. 其他"></a>10. 其他</h3><blockquote>
-<p>打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!</p>
-</blockquote>
-<h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="external">https://checkcoverage.apple.com/cn/zh/</a></p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Ubuntu]]></title>
       <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-Ubuntu/</url>
       <content type="html"><![CDATA[<h3 id="1-常用指令"><a href="#1-常用指令" class="headerlink" title="1.常用指令"></a>1.常用指令</h3><pre><code>版本查看：
@@ -3001,6 +2968,39 @@ hosts
      https://github.com/racaljk/hosts
 </code></pre><p><strong>Cannot Set LC_ALL to default locale: No such file or directory</strong><br><a href="http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/" target="_blank" rel="external">http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/</a></p>
 <p>sEx只是调用相关程序，本身并无压缩、解压功能，请注意！<br>sEx请到： <a href="http://sourceforge.net/projects/sex下载！" target="_blank" rel="external">http://sourceforge.net/projects/sex下载！</a><br>解压后请将sEx拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br>[root@www2 tmp]# cp sEx /usr/bin/</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MacOS]]></title>
+      <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-MacOS/</url>
+      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
+<h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p><strong>工作</strong>：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br><a href="http://www.tuicool.com/articles/yeyIfuu" target="_blank" rel="external">http://www.tuicool.com/articles/yeyIfuu</a><br><strong>系统</strong>：QQ、CleanMyDrive 3 等</p>
+<a id="more"></a>
+<h3 id="2-dmg安装"><a href="#2-dmg安装" class="headerlink" title="2. dmg安装"></a>2. dmg安装</h3><p>Chrome、Parallels Desktop、RDC、QQInput、RTX、cornerstone、Kaleidoscope<br>Sublime Text、Atom …</p>
+<p><strong>dmg下载</strong><br><a href="http://xclient.info/" target="_blank" rel="external">http://xclient.info/</a><br><a href="http://www.sdifen.com/" target="_blank" rel="external">http://www.sdifen.com/</a><br><a href="http://soft.macx.cn/" target="_blank" rel="external">http://soft.macx.cn/</a></p>
+<h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)</span>"</span></div><div class="line">[http://brew.sh/](http://brew.sh/)</div></pre></td></tr></table></figure>
+<p><a href="http://blog.csdn.net/aaawqqq/article/details/44088141" target="_blank" rel="external">http://blog.csdn.net/aaawqqq/article/details/44088141</a><br><a href="http://www.xitongzhijia.net/xtjc/20141204/31879.html" target="_blank" rel="external">http://www.xitongzhijia.net/xtjc/20141204/31879.html</a></p>
+<h3 id="4-MacPorts"><a href="#4-MacPorts" class="headerlink" title="4. MacPorts"></a>4. MacPorts</h3><p><a href="https://www.macports.org/install.php" target="_blank" rel="external">https://www.macports.org/install.php</a><br><a href="http://guide.macports.org/#installing.macports" target="_blank" rel="external">http://guide.macports.org/#installing.macports</a></p>
+<h3 id="5-oh-my-zsh"><a href="#5-oh-my-zsh" class="headerlink" title="5. oh my zsh"></a>5. oh my zsh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</div></pre></td></tr></table></figure>
+<p><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="external">http://leeiio.me/bash-to-zsh-for-mac/</a></p>
+<h3 id="6-iTerm"><a href="#6-iTerm" class="headerlink" title="6. iTerm"></a>6. iTerm</h3><p>iTerm2 + oh my zsh +agnoster 打造最强Mac终端<br><a href="http://www.siguoya.name/pc/home/article/256" target="_blank" rel="external">http://www.siguoya.name/pc/home/article/256</a><br>iterm2有什么酷功能？<br><a href="https://www.zhihu.com/question/27447370" target="_blank" rel="external">https://www.zhihu.com/question/27447370</a></p>
+<h3 id="7-wget"><a href="#7-wget" class="headerlink" title="7. wget"></a>7. wget</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo brew install wget</div></pre></td></tr></table></figure>
+<h3 id="8-pbcopy"><a href="#8-pbcopy" class="headerlink" title="8. pbcopy"></a>8. pbcopy</h3><blockquote>
+<p>使用 <strong>pbcopy</strong> 命令,对应有个 <strong>pbpaste</strong> 命令。</p>
+</blockquote>
+<p>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">'Hello World!'</span> | pbcopy</div></pre></td></tr></table></figure></p>
+<p><em>将字符串Hello World放入剪贴板</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat myFile.txt | pbcopy</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pbpaste &gt; file.txt</div></pre></td></tr></table></figure>
+<h3 id="9-mac-say-唱歌"><a href="#9-mac-say-唱歌" class="headerlink" title="9. mac say 唱歌"></a>9. mac say 唱歌</h3><blockquote>
+<p>spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。<br>  在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。<br>  开始听歌了。</p>
+</blockquote>
+<p><a href="https://www.macx.cn/thread-2048013-1-1.html?mod=viewthread&amp;tid=2048013&amp;extra=page%253D1&amp;page=1" target="_blank" rel="external">https://www.macx.cn/thread-2048013-1-1.html?mod=viewthread&amp;tid=2048013&amp;extra=page%253D1&amp;page=1</a></p>
+<h3 id="10-其他"><a href="#10-其他" class="headerlink" title="10. 其他"></a>10. 其他</h3><blockquote>
+<p>打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!</p>
+</blockquote>
+<h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="external">https://checkcoverage.apple.com/cn/zh/</a></p>
 ]]></content>
     </entry>
     
