@@ -153,22 +153,6 @@ make V=s
     </entry>
     
     <entry>
-      <title><![CDATA[Proguard And DexGuard]]></title>
-      <url>http://cuiqingwei.github.io/2018/04/24/2018-04-24-Proguard-And-DexGuard/</url>
-      <content type="html"><![CDATA[<p>一般情况下，我们混淆自己的安卓项目，会使用Proguard。</p>
-<p><a href="http://www.saikoa.com/proguard" target="_blank" rel="external">http://www.saikoa.com/proguard</a></p>
-<p><strong>Progurad</strong> 是免费的，而且已经集成到Android ADT中了，使用起来很方便。</p>
-<p>混淆工作，是为了保护我们的代码。但是，即使使用Pgoruard混淆了我们的apk文件，也可以使用apktool工具反编译出资源，能够看到Manifest文件，res资源等等。也可以使用dex2jar工具生成jar文件，进而使用jd工具反编译出Java代码片段。虽然，这些代码大部分都经过了混淆，已经很难阅读，但是还是可以读的。</p>
-<a id="more"></a>
-<p>更危险的是，Proguard只能保护代码，却不能保护我们的apk文件。任何人都可以使用apktool工具，反编译我们开发的apk文件，进而更改其中各种资源，或者更改部分代码，甚至是注入代码，然后再打包回apk，二次发布后，达到自己的目的。或者是加入了广告，或者是增加了恶意木马病毒，等等。</p>
-<p>还好，我们还有一种选择，DexGuard。</p>
-<p><a href="http://www.saikoa.com/dexguard" target="_blank" rel="external">http://www.saikoa.com/dexguard</a></p>
-<p><strong>DexGuard</strong> 是收费的，虽然挺贵的，但是对于一个公司来说，还是可以承受的。</p>
-<p>DexGuard是在Proguard基础上，加入了更多的保护措施。使用DexGuard混淆后，生成的apk文件，就无法正常使用apktool反编译了。尽管还是能够反编译出部分资源文件，但是由于反编译过程不完全，就无法再打包成apk了。这样就保护了我们的apk文件，不会被二次打包发布了。</p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[OSX安装nginx和rtmp模块]]></title>
       <url>http://cuiqingwei.github.io/2018/04/24/2018-04-24-OSX%E5%AE%89%E8%A3%85nginx%E5%92%8Crtmp%E6%A8%A1%E5%9D%97/</url>
       <content type="html"><![CDATA[<h1 id="1-安装brew"><a href="#1-安装brew" class="headerlink" title="1.安装brew"></a>1.安装brew</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div><div class="line">如果安装后, 想要卸载</div><div class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)&quot;</div></pre></td></tr></table></figure>
@@ -205,6 +189,22 @@ make V=s
 <p><strong>播放</strong>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rtmp://localhost:1935/myapp/room</div></pre></td></tr></table></figure>
 <p><img src="/img/20180424/rtmp.png" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Proguard And DexGuard]]></title>
+      <url>http://cuiqingwei.github.io/2018/04/24/2018-04-24-Proguard-And-DexGuard/</url>
+      <content type="html"><![CDATA[<p>一般情况下，我们混淆自己的安卓项目，会使用Proguard。</p>
+<p><a href="http://www.saikoa.com/proguard" target="_blank" rel="external">http://www.saikoa.com/proguard</a></p>
+<p><strong>Progurad</strong> 是免费的，而且已经集成到Android ADT中了，使用起来很方便。</p>
+<p>混淆工作，是为了保护我们的代码。但是，即使使用Pgoruard混淆了我们的apk文件，也可以使用apktool工具反编译出资源，能够看到Manifest文件，res资源等等。也可以使用dex2jar工具生成jar文件，进而使用jd工具反编译出Java代码片段。虽然，这些代码大部分都经过了混淆，已经很难阅读，但是还是可以读的。</p>
+<a id="more"></a>
+<p>更危险的是，Proguard只能保护代码，却不能保护我们的apk文件。任何人都可以使用apktool工具，反编译我们开发的apk文件，进而更改其中各种资源，或者更改部分代码，甚至是注入代码，然后再打包回apk，二次发布后，达到自己的目的。或者是加入了广告，或者是增加了恶意木马病毒，等等。</p>
+<p>还好，我们还有一种选择，DexGuard。</p>
+<p><a href="http://www.saikoa.com/dexguard" target="_blank" rel="external">http://www.saikoa.com/dexguard</a></p>
+<p><strong>DexGuard</strong> 是收费的，虽然挺贵的，但是对于一个公司来说，还是可以承受的。</p>
+<p>DexGuard是在Proguard基础上，加入了更多的保护措施。使用DexGuard混淆后，生成的apk文件，就无法正常使用apktool反编译了。尽管还是能够反编译出部分资源文件，但是由于反编译过程不完全，就无法再打包成apk了。这样就保护了我们的apk文件，不会被二次打包发布了。</p>
 ]]></content>
     </entry>
     
@@ -334,6 +334,111 @@ make V=s
     </entry>
     
     <entry>
+      <title><![CDATA[curl模拟http发送get或post接口测试]]></title>
+      <url>http://cuiqingwei.github.io/2017/12/05/2017-12-05-curl%E6%A8%A1%E6%8B%9Fhttp%E5%8F%91%E9%80%81get%E6%88%96post%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/</url>
+      <content type="html"><![CDATA[<h1 id="一、get请求"><a href="#一、get请求" class="headerlink" title="一、get请求"></a>一、get请求</h1><p>curl “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地<br>curl -i “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示全部信息<br>curl -l “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  只显示头部信息<br>curl -v “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示get请求全过程解析<br>wget “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     也可以</p>
+<a id="more"></a>
+<h1 id="二、post请求"><a href="#二、post请求" class="headerlink" title="二、post请求"></a>二、post请求</h1><p>curl -d “param1=value1&amp;param2=value2” “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“</p>
+<h1 id="三、json格式的post请求"><a href="#三、json格式的post请求" class="headerlink" title="三、json格式的post请求"></a>三、json格式的post请求</h1><p>curl -l -H “Content-type: application/json” -X POST -d ‘{“phone”:”13521389587”,”password”:”test”}’ <a href="http://domain/apis/users.json" target="_blank" rel="external">http://domain/apis/users.json</a></p>
+<blockquote>
+<p>例如：curl -l -H “Content-type: application/json” -X POST -d ‘{“ver”: “1.0”,”soa”:{“req”:”123”},”iface”:”me.ele.lpdinfra.prediction.service.PredictionService”,”method”:”restaurant_make_order_time”,”args”:{“arg2”:”\”stable\””,”arg1”:”{\”code\”:[\”WIND\”],\”temperature\”:11.11}”,”arg0”:”{\”tracking_id\”:\”100000000331770936\”,\”eleme_order_id\”:\”100000000331770936\”,\”platform_id\”:\”4\”,\”restaurant_id\”:\”482571\”,\”dish_num\”:1,\”dish_info\”:[{\”entity_id\”:142547763,\”quantity\”:1,\”category_id\”:1,\”dish_name\”:\”[0xe7][0x89][0xb9][0xe4][0xbb][0xb7][0xe8][0x85][0x8a][0xe5][0x91][0xb3][0xe5][0x8f][0x89][0xe7][0x83][0xa7][0xe5][0x8f][0x8c][0xe6][0x8b][0xbc][0xe7][0x85][0xb2][0xe4][0xbb][0x94][0xe9][0xa5][0xad]\”,\”price\”:31.0}],\”merchant_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”customer_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”created_at\”:1477896550,\”confirmed_at\”:1477896550,\”dishes_total_price\”:0.0,\”food_boxes_total_price\”:2.0,\”delivery_total_price\”:2.0,\”pay_amount\”:35.0,\”city_id\”:\”1\”}”}}’ <a href="http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc" target="_blank" rel="external">http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc</a></p>
+</blockquote>
+<p>ps：json串内层参数需要格式化</p>
+<h1 id="四、高级功能"><a href="#四、高级功能" class="headerlink" title="四、高级功能"></a>四、高级功能</h1><p>curl命令是一个功能强大的网络工具，它能够通过http、ftp等方式下载文件，也能够上传文件。其实curl远不止前面所说的那些功能，大家可以通过man curl阅读手册页获取更多的信息。类似的工具还有wget。</p>
+<p>curl命令使用了libcurl库来实现，libcurl库常用在C程序中用来处理HTTP请求，curlpp是libcurl的一个C++封装，这几个东西可以用在抓取网页、网络监控等方面的开发，而curl命令可以帮助来解决开发过程中遇到的问题。</p>
+<ul>
+<li>1，抓取页面内容到一个文件中</li>
+</ul>
+<p>curl -o home.html <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>   –将百度首页内容抓下到home.html中<br>curl -o #2_#1.jpg<a href="http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG</a></p>
+<p>由于A/B下的文件名都是001，002…，201，下载下来的文件重名，这样，自定义出来下载下来的文件名，就变成了这样：原来： A/001.JPG —-&gt; 下载后： 001-A.JPG 原来： B/001.JPG —&gt; 下载后： 001-B.JPG</p>
+<ul>
+<li>2，用-O（大写的），后面的url要具体到某个文件，不然抓不下来。还可以用正则来抓取东西</li>
+</ul>
+<p>curl -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
+<p>运行结果如下：</p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  1575  100  1575    0     0  14940      0 –:–:– –:–:– –:–:– 1538k<br>会在当前执行目录中生成一张bdlogo.gif的图片。</p>
+<p>curl -O <a href="http://XXXXX/screen[1-10].JPG" target="_blank" rel="external">http://XXXXX/screen[1-10].JPG</a>  –下载screen1.jpg~screen10.jpg</p>
+<ul>
+<li>3，模拟表单信息，模拟登录，保存cookie信息</li>
+</ul>
+<p>curl -c ./cookie_c.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
+<ul>
+<li>4，模拟表单信息，模拟登录，保存头信息</li>
+</ul>
+<p>curl -D ./cookie_D.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
+<p>-c(小写)产生的cookie和-D里面的cookie是不一样的。</p>
+<ul>
+<li>5，使用cookie文件</li>
+</ul>
+<p>curl -b ./cookie_c.txt <a href="http://www.XXXX.com/wp-admin" target="_blank" rel="external">http://www.XXXX.com/wp-admin</a></p>
+<ul>
+<li>6，断点续传，-C(大写)</li>
+</ul>
+<p>curl -C -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
+<ul>
+<li>7，传送数据,最好用登录页面测试，因为你传值过去后，curl回抓数据，你可以看到你传值有没有成功</li>
+</ul>
+<p>curl -d log=aaaa <a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
+<ul>
+<li>8，显示抓取错误，下面这个例子，很清楚的表明了。</li>
+</ul>
+<p>curl -f<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
+<p>curl: (22) The requested URL returned error: 404</p>
+<p>curl<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
+<p><html><head><title>404,not found</title></head></html></p>
+<ul>
+<li>9，伪造来源地址，有的网站会判断，请求来源地址，防止盗链。</li>
+</ul>
+<p>curl -e<a href="http://localhosthttp://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://localhosthttp://www.XXXX.com/wp-login.php</a></p>
+<ul>
+<li>10，当我们经常用curl去搞人家东西的时候，人家会把你的IP给屏蔽掉的,这个时候,我们可以用代理</li>
+</ul>
+<p>curl -x 24.10.28.84:32779 -o home.html<a href="http://www.XXXX.com" target="_blank" rel="external">http://www.XXXX.com</a></p>
+<ul>
+<li>11，比较大的东西，我们可以分段下载</li>
+</ul>
+<p>curl -r 0-100 -o img.part1<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a></p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0    105      0 –:–:– –:–:– –:–:–     0<br>curl -r 100-200 -o img.part2<a href="http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0     57      0  0:00:01  0:00:01 –:–:–     0<br>curl -r 200- -o img.part3<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  104k  100  104k    0     0  52793      0  0:00:02  0:00:02 –:–:– 88961</p>
+<p>ls |grep part | xargs du -sh</p>
+<p>4.0K    one.part1<br>112K    three.part3<br>4.0K    two.part2</p>
+<p>用的时候，把他们cat一下就OK,cat img.part* &gt;img.jpg</p>
+<ul>
+<li>12，不会显示下载进度信息</li>
+</ul>
+<p>curl -s -o aaa.jpg <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
+<ul>
+<li>13，显示下载进度条</li>
+</ul>
+<p>curl  -0 <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a>     (以http1.0协议请求)</p>
+<p>####################################################################### 100.0%</p>
+<ul>
+<li>14,通过ftp下载文件</li>
+</ul>
+<p>curl -u用户名:密码 -O<a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
+<p>curl -u 用户名:密码 -O <a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
+<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
+<p>或者用下面的方式</p>
+<p>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css<br>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css</p>
+<ul>
+<li>15，通过ftp上传</li>
+</ul>
+<p>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/<br>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/</p>
+<ul>
+<li>15,模拟浏览器头</li>
+</ul>
+<p>curl -A “Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)” -x 123.45.67.89:1080 -o page.html -D cookie0001.txt<a href="http://www.www.baidu.com" target="_blank" rel="external">http://www.www.baidu.com</a></p>
+<ul>
+<li>16,PUT、GET、POST</li>
+</ul>
+<p>比如 curl -T localfile <a href="http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT</a> method<br>刚才说到PUT，自然想起来了其他几种methos－－GET和POST。<br>http提交一个表单，比较常用的是POST模式和GET模式<br>GET模式什么option都不用，只需要把变量写在url里面就可以了<br>比如：<br>curl <a href="http://www.yahoo.com/login.cgi?user=nick&amp;password=12345" target="_blank" rel="external">http://www.yahoo.com/login.cgi?user=nick&amp;password=12345</a><br>而POST模式的option则是 -d<br>比如，curl -d “user=nick&amp;password=12345” <a href="http://www.yahoo.com/login.cgi" target="_blank" rel="external">http://www.yahoo.com/login.cgi</a><br>就相当于向这个站点发出一次登陆申请<del>~</del><br>到底该用GET模式还是POST模式，要看对面服务器的程序设定。<br>一点需要注意的是，POST模式下的文件上的文件上传，比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;form method=&quot;POST&quot; enctype=&quot;multipar/form-data&quot; action=&quot;http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi&quot;&gt;</div><div class="line">&lt;input type=file name=upload&gt;</div><div class="line">&lt;input type=submit name=nick value=&quot;go&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+<p>这样一个HTTP表单，我们要用curl进行模拟，就该是这样的语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -F upload=@localfile -F nick=go http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[分布式文件系统 FastDFS 5 & Linux CentOS 7 搭建]]></title>
       <url>http://cuiqingwei.github.io/2017/12/05/2017-12-22-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F-FastDFS-5-Linux-CentOS-7-%E6%90%AD%E5%BB%BA/</url>
       <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>FastDFS是一个开源的轻量级分布式文件系统，由跟踪服务器（tracker server）、存储服务器（storage server）和客户端（client）三个部分组成，主要解决了海量数据存储问题，特别适合以中小文件（建议范围：<strong>4KB &lt; file_size &lt;500MB</strong> ）为载体的在线服务。</p>
@@ -451,111 +556,6 @@ make V=s
 <p><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ysuALXURAAyIkvltU0w661.jpg" target="_blank" rel="external">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ysuALXURAAyIkvltU0w661.jpg</a><br><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytGABqkAAnhI9lHEHhw379.pdf" target="_blank" rel="external">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytGABqkAAnhI9lHEHhw379.pdf</a><br><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytaAZqEqA8pGTvhXcBQ424.mp4" target="_blank" rel="external">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytaAZqEqA8pGTvhXcBQ424.mp4</a></p>
 <p><img src="/img/20171222/WX20171222-170825@2x.png" alt=""></p>
 <p>一切正常~ 至此关于FastDFS在CentOS 7下的部署测试就已经全部完成。</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[curl模拟http发送get或post接口测试]]></title>
-      <url>http://cuiqingwei.github.io/2017/12/05/2017-12-05-curl%E6%A8%A1%E6%8B%9Fhttp%E5%8F%91%E9%80%81get%E6%88%96post%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/</url>
-      <content type="html"><![CDATA[<h1 id="一、get请求"><a href="#一、get请求" class="headerlink" title="一、get请求"></a>一、get请求</h1><p>curl “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地<br>curl -i “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示全部信息<br>curl -l “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  只显示头部信息<br>curl -v “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示get请求全过程解析<br>wget “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     也可以</p>
-<a id="more"></a>
-<h1 id="二、post请求"><a href="#二、post请求" class="headerlink" title="二、post请求"></a>二、post请求</h1><p>curl -d “param1=value1&amp;param2=value2” “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“</p>
-<h1 id="三、json格式的post请求"><a href="#三、json格式的post请求" class="headerlink" title="三、json格式的post请求"></a>三、json格式的post请求</h1><p>curl -l -H “Content-type: application/json” -X POST -d ‘{“phone”:”13521389587”,”password”:”test”}’ <a href="http://domain/apis/users.json" target="_blank" rel="external">http://domain/apis/users.json</a></p>
-<blockquote>
-<p>例如：curl -l -H “Content-type: application/json” -X POST -d ‘{“ver”: “1.0”,”soa”:{“req”:”123”},”iface”:”me.ele.lpdinfra.prediction.service.PredictionService”,”method”:”restaurant_make_order_time”,”args”:{“arg2”:”\”stable\””,”arg1”:”{\”code\”:[\”WIND\”],\”temperature\”:11.11}”,”arg0”:”{\”tracking_id\”:\”100000000331770936\”,\”eleme_order_id\”:\”100000000331770936\”,\”platform_id\”:\”4\”,\”restaurant_id\”:\”482571\”,\”dish_num\”:1,\”dish_info\”:[{\”entity_id\”:142547763,\”quantity\”:1,\”category_id\”:1,\”dish_name\”:\”[0xe7][0x89][0xb9][0xe4][0xbb][0xb7][0xe8][0x85][0x8a][0xe5][0x91][0xb3][0xe5][0x8f][0x89][0xe7][0x83][0xa7][0xe5][0x8f][0x8c][0xe6][0x8b][0xbc][0xe7][0x85][0xb2][0xe4][0xbb][0x94][0xe9][0xa5][0xad]\”,\”price\”:31.0}],\”merchant_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”customer_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”created_at\”:1477896550,\”confirmed_at\”:1477896550,\”dishes_total_price\”:0.0,\”food_boxes_total_price\”:2.0,\”delivery_total_price\”:2.0,\”pay_amount\”:35.0,\”city_id\”:\”1\”}”}}’ <a href="http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc" target="_blank" rel="external">http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc</a></p>
-</blockquote>
-<p>ps：json串内层参数需要格式化</p>
-<h1 id="四、高级功能"><a href="#四、高级功能" class="headerlink" title="四、高级功能"></a>四、高级功能</h1><p>curl命令是一个功能强大的网络工具，它能够通过http、ftp等方式下载文件，也能够上传文件。其实curl远不止前面所说的那些功能，大家可以通过man curl阅读手册页获取更多的信息。类似的工具还有wget。</p>
-<p>curl命令使用了libcurl库来实现，libcurl库常用在C程序中用来处理HTTP请求，curlpp是libcurl的一个C++封装，这几个东西可以用在抓取网页、网络监控等方面的开发，而curl命令可以帮助来解决开发过程中遇到的问题。</p>
-<ul>
-<li>1，抓取页面内容到一个文件中</li>
-</ul>
-<p>curl -o home.html <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>   –将百度首页内容抓下到home.html中<br>curl -o #2_#1.jpg<a href="http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG</a></p>
-<p>由于A/B下的文件名都是001，002…，201，下载下来的文件重名，这样，自定义出来下载下来的文件名，就变成了这样：原来： A/001.JPG —-&gt; 下载后： 001-A.JPG 原来： B/001.JPG —&gt; 下载后： 001-B.JPG</p>
-<ul>
-<li>2，用-O（大写的），后面的url要具体到某个文件，不然抓不下来。还可以用正则来抓取东西</li>
-</ul>
-<p>curl -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<p>运行结果如下：</p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  1575  100  1575    0     0  14940      0 –:–:– –:–:– –:–:– 1538k<br>会在当前执行目录中生成一张bdlogo.gif的图片。</p>
-<p>curl -O <a href="http://XXXXX/screen[1-10].JPG" target="_blank" rel="external">http://XXXXX/screen[1-10].JPG</a>  –下载screen1.jpg~screen10.jpg</p>
-<ul>
-<li>3，模拟表单信息，模拟登录，保存cookie信息</li>
-</ul>
-<p>curl -c ./cookie_c.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>4，模拟表单信息，模拟登录，保存头信息</li>
-</ul>
-<p>curl -D ./cookie_D.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<p>-c(小写)产生的cookie和-D里面的cookie是不一样的。</p>
-<ul>
-<li>5，使用cookie文件</li>
-</ul>
-<p>curl -b ./cookie_c.txt <a href="http://www.XXXX.com/wp-admin" target="_blank" rel="external">http://www.XXXX.com/wp-admin</a></p>
-<ul>
-<li>6，断点续传，-C(大写)</li>
-</ul>
-<p>curl -C -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<ul>
-<li>7，传送数据,最好用登录页面测试，因为你传值过去后，curl回抓数据，你可以看到你传值有没有成功</li>
-</ul>
-<p>curl -d log=aaaa <a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>8，显示抓取错误，下面这个例子，很清楚的表明了。</li>
-</ul>
-<p>curl -f<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
-<p>curl: (22) The requested URL returned error: 404</p>
-<p>curl<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
-<p><html><head><title>404,not found</title></head></html></p>
-<ul>
-<li>9，伪造来源地址，有的网站会判断，请求来源地址，防止盗链。</li>
-</ul>
-<p>curl -e<a href="http://localhosthttp://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://localhosthttp://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>10，当我们经常用curl去搞人家东西的时候，人家会把你的IP给屏蔽掉的,这个时候,我们可以用代理</li>
-</ul>
-<p>curl -x 24.10.28.84:32779 -o home.html<a href="http://www.XXXX.com" target="_blank" rel="external">http://www.XXXX.com</a></p>
-<ul>
-<li>11，比较大的东西，我们可以分段下载</li>
-</ul>
-<p>curl -r 0-100 -o img.part1<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0    105      0 –:–:– –:–:– –:–:–     0<br>curl -r 100-200 -o img.part2<a href="http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0     57      0  0:00:01  0:00:01 –:–:–     0<br>curl -r 200- -o img.part3<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  104k  100  104k    0     0  52793      0  0:00:02  0:00:02 –:–:– 88961</p>
-<p>ls |grep part | xargs du -sh</p>
-<p>4.0K    one.part1<br>112K    three.part3<br>4.0K    two.part2</p>
-<p>用的时候，把他们cat一下就OK,cat img.part* &gt;img.jpg</p>
-<ul>
-<li>12，不会显示下载进度信息</li>
-</ul>
-<p>curl -s -o aaa.jpg <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<ul>
-<li>13，显示下载进度条</li>
-</ul>
-<p>curl  -0 <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a>     (以http1.0协议请求)</p>
-<p>####################################################################### 100.0%</p>
-<ul>
-<li>14,通过ftp下载文件</li>
-</ul>
-<p>curl -u用户名:密码 -O<a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
-<p>curl -u 用户名:密码 -O <a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
-<p>或者用下面的方式</p>
-<p>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css<br>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css</p>
-<ul>
-<li>15，通过ftp上传</li>
-</ul>
-<p>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/<br>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/</p>
-<ul>
-<li>15,模拟浏览器头</li>
-</ul>
-<p>curl -A “Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)” -x 123.45.67.89:1080 -o page.html -D cookie0001.txt<a href="http://www.www.baidu.com" target="_blank" rel="external">http://www.www.baidu.com</a></p>
-<ul>
-<li>16,PUT、GET、POST</li>
-</ul>
-<p>比如 curl -T localfile <a href="http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT</a> method<br>刚才说到PUT，自然想起来了其他几种methos－－GET和POST。<br>http提交一个表单，比较常用的是POST模式和GET模式<br>GET模式什么option都不用，只需要把变量写在url里面就可以了<br>比如：<br>curl <a href="http://www.yahoo.com/login.cgi?user=nick&amp;password=12345" target="_blank" rel="external">http://www.yahoo.com/login.cgi?user=nick&amp;password=12345</a><br>而POST模式的option则是 -d<br>比如，curl -d “user=nick&amp;password=12345” <a href="http://www.yahoo.com/login.cgi" target="_blank" rel="external">http://www.yahoo.com/login.cgi</a><br>就相当于向这个站点发出一次登陆申请<del>~</del><br>到底该用GET模式还是POST模式，要看对面服务器的程序设定。<br>一点需要注意的是，POST模式下的文件上的文件上传，比如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;form method=&quot;POST&quot; enctype=&quot;multipar/form-data&quot; action=&quot;http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi&quot;&gt;</div><div class="line">&lt;input type=file name=upload&gt;</div><div class="line">&lt;input type=submit name=nick value=&quot;go&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
-<p>这样一个HTTP表单，我们要用curl进行模拟，就该是这样的语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -F upload=@localfile -F nick=go http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi</div></pre></td></tr></table></figure>
 ]]></content>
     </entry>
     
@@ -1475,15 +1475,42 @@ make V=s
     </entry>
     
     <entry>
-      <title><![CDATA[常用路亚线的区别]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%B8%B8%E7%94%A8%E8%B7%AF%E4%BA%9A%E7%BA%BF%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-      <content type="html"><![CDATA[<h2 id="尼龙线"><a href="#尼龙线" class="headerlink" title="尼龙线"></a>尼龙线</h2><p>台钓中使用最多的也是尼龙线。尼龙的化工原料为PA，和PE一样是石油的下游产品。与PE不同的是，尼龙线一般为单股线，这种线的特点刚好与PE线相反。尼龙线的优点是由于有一定的延展性，抛投和中鱼的时候不易断线，由于生产技术已经发展了近70年的历史，成本低，产量大，相比PE线要便宜很多。最后一点是尼龙表面圆滑，对线环的磨损可以降到最低。</p>
-<a id="more"></a>
-<p>延展性同样也是尼龙线的缺点，在某些鱼讯轻微的场合，尼龙线不能及时将中鱼信号传达给钓手，从而失去最佳的起杆机会。另外，同样拉力的情况下，尼龙线比PE的线径更粗，从而影响路亚的抛投距离（<em>当然这个问题并不一定完全适用，需要根据具体的情况来，不过在高磅数的尼龙线与高磅数PE线做对比的话，高磅数的PE占些优势，因其相同的高磅数的线，高磅数PE线径更细一些，也就可以更加节省线杯的空间容下更多的线，并且线径也更细利于高磅数线的抛投</em>）。</p>
-<p><img src="/img/20161013/fishing-line.jpg" alt=""></p>
-<h2 id="PE线"><a href="#PE线" class="headerlink" title="PE线"></a>PE线</h2><p>PE线是指用多股化纤编织后浸胶制成的钓线，俗称编织线(BRAIDED OR CORD LINE)，最早见的就是“大力马”。<br>这种钓线的生产方式是：将多条微细纤维(如：达克龙纤维、功夫龙纤维或大力马纤维或其它聚乙烯化合物的PE纤维…等)以机器来编织而成，所以这种钓线的线体呈现纤维规则交叉的纹路，只要你将线体取出审视一番就可以清楚的发现其线体结构上的特色。<br>这种线的优点是，相同拉力的的情况下线径比尼龙要细很多，同样我们使用12磅的尼龙和12 磅的PE，因为PE的线径更细，能够抛投的更远。在实际钓场中，风力是影响路亚抛投距离的重要因素，PE同样因为相同拉力下线径更细的特点，能够将风阻的影响减小。除此之外，PE几乎没有延展性，在中鱼的时候能够在第一时间将信号传达给钓手。还有就是PE线更加耐磨。<br>但正像所有事物都有其两面性一样，PE并不是没有任何缺点。PE第一个缺点是没有延展性。这个特性在能够将中鱼信号迅速传达给钓手的同时，也经常导致跑鱼或放枪。玩过台钓的朋友都知道，中鱼后钓竿上要保持一定的力量，鱼才不易脱钩，杆软不易断线跑鱼，但是起鱼慢；杆硬起鱼快，但是容易断线跑鱼。同样，你可以把线看作杆的延伸，鱼线有一定的延展性，就像钓竿比较软一样，能够保证在鱼左冲右突的时候始终保持一定的力量，而PE就像比较硬的杆，遛鱼的余地比较小从而导致脱钩或断线。另外现在有厂家为了使用更细的线径达到更强的拉力，在PE中掺加金属丝，虽然拉力得到了加强，但是线的延展性和柔软度进一步降低，同时还容易磨损导环。</p>
-<h2 id="碳线（氟碳线）"><a href="#碳线（氟碳线）" class="headerlink" title="碳线（氟碳线）"></a>碳线（氟碳线）</h2><p>碳线是由含有氟和碳成分的树脂抽丝加工而成，碳线的特性是高比重、切水快、光的折射率非常低几乎看不到，没有吸水性，抗紫外线和耐久性要比尼龙线强很多，因为碳线的物理特性为非常低的延展性和高比重，可以让饵迅速到达所需要的水层，并且因延展性很低所以也就提供了良好的灵敏度。因碳线对光的折射率几乎为0，所以会降低鱼的敏感性，让鱼能放心的将饵食入口中。碳线适合搭配软饵钓组使用，比如：无铅钓组、WACKY、德州钓组，却不太适合搭配某一些特殊的硬饵或水面系的路亚。不过碳线也不是没有缺点，因为通常比较硬（特别是高磅数的碳线），如果作为主线使用要注意纺车轮上建议使用的主线不要超过10磅，水滴轮或鼓轮如有特殊需要最好也不要超过20磅（当然特殊情况下可以用到更高的磅数作为主线，并不是完全不可以），碳线也可以当做前导线来使用，因为碳线比较耐磨，可以搭配PE线，弥补PE不耐磨的缺点。</p>
-<p><img src="/img/20161013/钓线攻略.jpg" alt=""></p>
+      <title><![CDATA[如何选择一根适合自己的BASS竿]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E4%B8%80%E6%A0%B9%E9%80%82%E5%90%88%E8%87%AA%E5%B7%B1%E7%9A%84BASS%E7%AB%BF/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>随着路亚钓法的日益增温，人们对于路亚钓的了解也渐渐深入，随之而来的就是对钓具方面的需求更加的细化和理性，但是对于路亚之类舶来钓法，虽然大家对于路亚竿的基本情况有所了解，还是有很多地方对于入门的童鞋们来讲还是有些无所适从，特别是大嘴黑鲈钓法中对于钓竿的选择上往往会出现一些迷茫和误解，并且有时候还会因为不太了解BASS竿的特性而造成不必要的花销，下面我们就搜集了一些资料与大家探讨和参考，希望能对大家有所帮助。</p>
+</blockquote>
+<h1 id="BASS竿的整体分类"><a href="#BASS竿的整体分类" class="headerlink" title="BASS竿的整体分类"></a>BASS竿的整体分类</h1><h3 id="关于Bass竿的硬度（POWER）"><a href="#关于Bass竿的硬度（POWER）" class="headerlink" title="关于Bass竿的硬度（POWER）"></a>关于Bass竿的硬度（POWER）</h3><p>BASS竿分为直柄竿与枪柄竿，直柄竿需搭配纺车轮，枪柄竿搭配鼓轮或水滴轮。<br>通常直柄竿的硬度从UL-MH，枪柄竿的硬度从L-XXH。从抛投的角度来说，枪柄竿不适合抛投重量特别轻的拟饵，但由于适合抛投微物的水滴轮出现，枪柄竿已经可以顺利抛投1克左右的钓组。</p>
+<h4 id="路亚竿硬度（POWER）的表示方式："><a href="#路亚竿硬度（POWER）的表示方式：" class="headerlink" title="路亚竿硬度（POWER）的表示方式："></a>路亚竿硬度（POWER）的表示方式：</h4><p><img src="/img/20161013/路亚竿硬度.png" alt=""><br><img src="/img/20161013/power-action-chart.png" alt=""></p>
+<h3 id="关于Bass竿的调性（ACTION）"><a href="#关于Bass竿的调性（ACTION）" class="headerlink" title="关于Bass竿的调性（ACTION）"></a>关于Bass竿的调性（ACTION）</h3><p>很多路亚爱好者在路亚竿调性的理解上存在着误区，大家通常认为Bass竿的硬度如M、MH等就是鱼竿的调性，其实不然。鱼竿的调性代表鱼竿曲线变化，从S到F表示鱼竿在适当受力后的弯曲点越来越靠近竿梢。<br>调性越快的Bass竿鱼讯和操竿动作的传导越直接明确，但竿身的缓冲能力越差、越容易断线或脱钩。相反调性越慢的Bass竿，它的缓冲能力越好，但传达受力状况和控线动态的能力越差。另外调性也会影响钓组的抛投，一般而言调性越快越适合抛轻的钓组。而越重的钓组越适合慢调Bass竿抛投。<br>慢调路亚竿弯曲点在鱼竿的中后部，依靠鱼竿的整体受力发力，因此鱼竿的整体感觉比较柔和。通常“1 / 9调”和“2 / 8调”的Bass竿通称为快调（Fast Action），“3 / 7调”的Bass竿通称为中调（Medium Action），“4 / 6调”和“5 / 5调”的Bass竿通称为慢调（Through Action）。在使用软饵钓组中，为了精准捕捉鱼讯和细腻操控拟饵，一般使用快调Bass竿。使用硬饵钓组更多是为追求泳姿表现，或在小范围内呈现大幅度动作，通常使用慢调Bass竿。泛用型Bass竿或有抛投要求的Bass竿一般为中调。<br>选择什么调性的Bass竿通常是由使用的钓法、钓组决定。慢调路亚竿在控饵时可充分消减鱼饵在水中振动带来的阻力，竿子比较有粘性中鱼后可以充分享受与鱼搏斗带来的快感。由于慢调的鱼竿感度偏低，因此多用在使用三本钩的硬饵钓组上。快调路亚竿由于感度较高，通常用于使用单钩的软饵钓组。</p>
+<p><img src="/img/20161013/blanks_action-NEW.gif" alt=""></p>
+<h4 id="路亚竿调性（ACTION）的表示方式："><a href="#路亚竿调性（ACTION）的表示方式：" class="headerlink" title="路亚竿调性（ACTION）的表示方式："></a>路亚竿调性（ACTION）的表示方式：</h4><p><img src="/img/20161013/路亚竿调性.png" alt=""></p>
+<h4 id="不同调性Bass竿特性不同，选择搭配合适的推荐钓组如下："><a href="#不同调性Bass竿特性不同，选择搭配合适的推荐钓组如下：" class="headerlink" title="不同调性Bass竿特性不同，选择搭配合适的推荐钓组如下："></a>不同调性Bass竿特性不同，选择搭配合适的推荐钓组如下：</h4><p><img src="/img/20161013/调性配钓组.png" alt=""><br><img src="/img/20161013/fishing-rod-action.gif" alt=""></p>
+<h1 id="软饵竿和硬饵竿特性介绍"><a href="#软饵竿和硬饵竿特性介绍" class="headerlink" title="软饵竿和硬饵竿特性介绍"></a>软饵竿和硬饵竿特性介绍</h1><blockquote>
+<p>Bass钓的拟饵主要分为软饵与硬饵，软饵与硬饵在水中呈现方式的不同，决定不同的钓组选择搭配不同的Bass竿。软饵通常搭配单钩，硬饵通常搭配三本钩，这也是选择快慢调Bass竿的一个重要因素。</p>
+</blockquote>
+<h2 id="软饵竿通常调性偏快，主要原因如下："><a href="#软饵竿通常调性偏快，主要原因如下：" class="headerlink" title="软饵竿通常调性偏快，主要原因如下："></a>软饵竿通常调性偏快，主要原因如下：</h2><h3 id="感度高"><a href="#感度高" class="headerlink" title="感度高"></a>感度高</h3><p>软饵与硬饵最大的不同就是软饵需要以更自然的方式将饵呈现在鱼的眼前，以降低鱼的警惕从而对软饵发起攻击。这时我们就需要感知度较高的软饵竿进行操控才能随心所欲地控制软饵动作，并且了解它在水下的情况。对于好的钓手而言，软饵钓组在水底每一次触碰都能清楚的反应到钓手的头脑之中。感度好的软饵竿更容易察觉目标鱼的轻微咬口。在使用软饵作钓的时候，我们通常以较慢的过程去操控它，以求软饵在水下呈现最自然的状态，此时也通常是目标鱼发动攻击之时。由于环境等众多因素，我们作钓的时候经常会遇到低活性鱼，他们在对饵发动攻击的时候一般都不是那么凶猛，不宜让钓手察觉，所以我们就需要感度好的快调软饵竿进行作钓。</p>
+<h3 id="刺鱼得力"><a href="#刺鱼得力" class="headerlink" title="刺鱼得力"></a>刺鱼得力</h3><p>我们在使用软饵作钓时，都希望软饵搭配的单钩在作合刺鱼的一瞬间能钉牢鱼的口腔，这样才不易跑鱼，快调软饵竿更容易做到这一点。举个例子，假如我们在使用快调竿作合刺鱼时，理论上鱼钩一端本应有1米的刺鱼位移，实际情况下我们可能会获得0.8米的刺鱼位移，这样才能使上力直至刺破鱼的上膛。但若使用慢调竿用同样的幅度作合刺鱼时，由于鱼竿调性偏慢，无形之中会削弱我们在这过程之中所做的功和机械能，本应有1米的刺鱼位移，事实上可能还不到0.5米，甚至更少，这样我们所使用的单钩就不容易发挥最大功效并刺破鱼嘴，从而导致跑鱼。</p>
+<h3 id="抛投精确"><a href="#抛投精确" class="headerlink" title="抛投精确"></a>抛投精确</h3><p>我们在使用软饵作钓的时候需要对标点的精确打击，一支调性较快的钓竿有利于精确地抛投。在使用软饵作钓的时候，我们使用Pitching（荡抛）的频率往往要高于其他任何一种抛投。因为我们想准确的打击标点，这样才能有最好的钓获。一根竿身较挺/调性较快的软饵竿有利于我们寻找这种对软饵精确抛投的感觉，这应该是每一位钓手都想要的。</p>
+<h2 id="提高感度，减少操控硬饵的强度"><a href="#提高感度，减少操控硬饵的强度" class="headerlink" title="提高感度，减少操控硬饵的强度"></a>提高感度，减少操控硬饵的强度</h2><p>硬饵（尤其是Crankbait等摆动幅度较大的硬饵）在水中有比较大的摆动幅度或较高的摆动频率，传导到钓竿上会产生很高的振动频率或很大的水阻力。一支慢调硬饵竿能够有效的减缓这一现象，让你在操控硬饵时更轻松，并提高感度。</p>
+<h3 id="减小冲击力"><a href="#减小冲击力" class="headerlink" title="减小冲击力"></a>减小冲击力</h3><p>我们在使用硬饵中鱼的时候，饵上的三本钩有时刺的不是那么牢固，这时就需要较慢调性的钓竿来操控硬饵了。因为较慢的调性，在刺鱼瞬间以及鱼在水下挣扎之时可减小外部所带来的冲击力，这样可以避免遭受硬力导致脱钩。</p>
+<h3 id="利于远投"><a href="#利于远投" class="headerlink" title="利于远投"></a>利于远投</h3><p>很多时候我们使用硬饵搜索岸边，在很多情况下我们依旧需要把硬饵远投才能获得理想的钓获。例如在炎热的夏季使用深水Crankbait，我们必须给饵留出下潜所需的一定距离直至设定泳层，让饵尽可能长的游动在设定泳层里，这样上鱼的几率会大大的增加，所以这时我们需要远投性能好的钓竿。若远投性能不好，饵刚扔出去没还有收到设定的泳层就已经到我们的脚边上了，那样就不会有很好的效果。调性偏慢的钓竿腰弹性较大，更利于抛投更远的距离。</p>
+<h1 id="七种武器"><a href="#七种武器" class="headerlink" title="七种武器"></a>七种武器</h1><blockquote>
+<p>Bass竞技比赛中常用的钓组有Crankbait，Rubber jig，Jerkbait，无铅，倒吊，Finesse jig（此处所指的Finesse jig是2g~5g范围内的小型Rubber jig），Neko。以上七种钓组所匹配的七套装备，基本能够应对鲈鱼钓比赛大多数情况。</p>
+</blockquote>
+<h2 id="Crankbait-钓竿"><a href="#Crankbait-钓竿" class="headerlink" title="Crankbait 钓竿"></a>Crankbait 钓竿</h2><p>我通常选择Regular调性的鱼竿配合一个低速比的水滴轮来操控Crankbait，这套装备还适合操控VIB。<br>作钓中根据不同的情况可能需要搭配各种类型的线，但是如果考虑到其泛用性，我会倾向于选择10-12LB的氟碳线。如果在冬季和初春的时期，我会考虑降低线组的直径而选择6-8LB鱼线。反之在夏季和秋季，考虑要让你的饵更多的停留或经过障碍物和水草附近，我会加大线径使用12-14LB甚至更粗的线。</p>
+<h2 id="Rubber-jig钓竿"><a href="#Rubber-jig钓竿" class="headerlink" title="Rubber jig钓竿"></a>Rubber jig钓竿</h2><p>Extra fast调性的钓竿配合一个高速比的水滴轮，我能钓Jig以及德州，还有科罗拉多钓组。<br>季节以及水域情况不同所需要钓竿的硬度也有不同的要求。比如我所作钓的水域是以岩石结构为主而岸边的障碍相对比较少的情况下，我会选择M调;如果是湖泊型的水域那就意味着水域内有相当数量的水草，这时我就会选择MH硬度的钓竿;如若水域内有大量的水草区域且水草以水面水草为主，比如以菱角、蓼草、水花生等水面型水草为主而组成的障碍，以及岸边树枝垂入水中和没入水中的杂树所组成的重型障碍，这时候我就需要一根强力的钓竿，才可以有效的将鱼从障碍中拔出来。此时我通常需要一支H或者XH的杆子方能周旋应付了。<br>所搭配的线组由弱到强我将其分为三个档次：</p>
+<ul>
+<li>岩石为主的水体—8-10LB氟碳线</li>
+<li>湖泊类水线下水草为主的水体—12-14LB氟碳线</li>
+<li>水面障碍倒树以及水线上水草为主的水体—14-20LB氟碳或65LB的PE线</li>
+</ul>
+<h2 id="Jerkbait钓竿"><a href="#Jerkbait钓竿" class="headerlink" title="Jerkbait钓竿"></a>Jerkbait钓竿</h2><p>Fast调性的鱼竿配合中等速比的水滴轮，我可以用它钓Jerkbait，中小型Shad，Spinnerbait，Buzzbait。<br>可以说Jerkbait主要是在冷水中作钓的利器，但全年当中大多数时间都能够使用它有效地捕获到那些体型相对大的鲈鱼，当然应对不同的情况所使用的技法以及饵的类型都有一些细微的变化，在这里就不一一详解了。跟Jerkbait一样，Shad也是相对比较通用的一种反应饵，适合针对压力场或是天冷的季节。匀速的缓收以及抽/停都能获得不错的咬口。<br>在面对水草边缘的时候同样能够用来操作Spinnerbait 和Buzzbait，如果水草相对比较重的话就要有针对性的选择钓竿了。</p>
+<h2 id="无铅钓组钓竿"><a href="#无铅钓组钓竿" class="headerlink" title="无铅钓组钓竿"></a>无铅钓组钓竿</h2><p>L调Fast的钓竿配合2000-2500型浅线杯纺车轮是我最常用的选择。这里所指的无铅钓组，并非是单指Wacky钓组。通常我在无铅钓组的择饵上会选择长条型的软饵作钓，会选择用曲柄钩直穿的方法而非是使用Wacky的方法挂在面条虫的中间位置。这种无铅的方法比较适合在水岸比较复杂的情况下使用，其防挂性能与障碍的通过性都特别好，可以纵向地控饵犹如一条小鱼在水岸边的障碍边悄声窜过。也可以垂直的作钓，让其缓慢的垂直呈现自然落下的姿态。当然你也可以用他进行Wacky钓组的作钓，垂直地呈现你的软饵。<br>对于无铅钓竿，我的要求是有灵敏的竿先以及有力却又不至于太过刚性的腰身，在远距离中鱼的时候能够有效的作合刺穿鲈鱼的口腔，中鱼后又能够一定程度的缓冲鲈鱼的一次次强烈洗腮。绵而不失其灵动，刚直却韧劲十足。<br>通常我会选择使用4-6LB的氟碳线，又或者选择10LB的蜘蛛侠氟碳混合编织线加6LB前导氟碳线来作钓，混合编织线能够更好地把握住那些远距离的咬口，其低延展性能够有效捕捉住那些细微的就食动作。</p>
+<h2 id="倒吊钓组钓竿"><a href="#倒吊钓组钓竿" class="headerlink" title="倒吊钓组钓竿"></a>倒吊钓组钓竿</h2><p>对于这一钓组，我想国内大多钓手都非常熟知乃至于精通。我喜欢使用L调Fast的纺车竿配合2500S的纺车轮进行作钓，这钓组对于深水作钓和压力场作钓表现出的成绩都是相当优秀的。它能在原地做出更多的动作以诱惑那些警惕不愿开口的鲈鱼，也能够针对作钓区域作出有效的纵向搜索。</p>
+<p>根据不同场地的需求，可以选择自己所设定的软饵在预想的区域内尽可能自然的呈现。同时也可以配合鱼探进行垂直的定点位的呈现去钓获鲈鱼，而我在使用这一钓组的时候大多数时间会选择配合鱼探做垂直呈现的作钓。大多数时候我们都会选择使用倒吊钓组来进行结构作钓，相对的都是开阔水域，此时我会选择使用4-6LB的氟碳线。</p>
+<h2 id="Finesse-Jig钓组钓竿"><a href="#Finesse-Jig钓组钓竿" class="headerlink" title="Finesse Jig钓组钓竿"></a>Finesse Jig钓组钓竿</h2><p>我会选择使用Extra fast调性的Bait finesse钓竿配合微物水滴轮来进行作钓，它可以搭配使用Finesse jig，小型Tube，小型德州等钓组。<br>此装备的优点是可以进行精确落点的抛投，很多时候一个精准的抛投是获得咬口的重要因素，而且更小的饵确实是可以获得更多的咬口，Bait finesse钓法便如此应运而生。</p>
+<h2 id="Neko钓组钓竿"><a href="#Neko钓组钓竿" class="headerlink" title="Neko钓组钓竿"></a>Neko钓组钓竿</h2><p>我会选择一根Extra fast的钓竿和2000S的纺车轮，配合4LB氟碳线来作钓。除了Neko钓组外，我还可以用它来钓1g多的JIG和Super finesse的倒吊（2~3寸的饵配合1-2g的倒吊铅）应对极限条件下的深水作钓。<br>Neko钓组是为数较少的一种针对深水作钓的最佳选择，可它以在水温低于7摄氏度的情况下依然能够捕获一定数量的咬口，可以非常慢速的在水下呈现软饵的自然状态。其垂直落底的特性也是我对于结构作钓时的不二选择。针对国内众多压力钓场都有着不俗的表现。</p>
 ]]></content>
     </entry>
     
@@ -1533,42 +1560,15 @@ make V=s
     </entry>
     
     <entry>
-      <title><![CDATA[如何选择一根适合自己的BASS竿]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E4%B8%80%E6%A0%B9%E9%80%82%E5%90%88%E8%87%AA%E5%B7%B1%E7%9A%84BASS%E7%AB%BF/</url>
-      <content type="html"><![CDATA[<blockquote>
-<p>随着路亚钓法的日益增温，人们对于路亚钓的了解也渐渐深入，随之而来的就是对钓具方面的需求更加的细化和理性，但是对于路亚之类舶来钓法，虽然大家对于路亚竿的基本情况有所了解，还是有很多地方对于入门的童鞋们来讲还是有些无所适从，特别是大嘴黑鲈钓法中对于钓竿的选择上往往会出现一些迷茫和误解，并且有时候还会因为不太了解BASS竿的特性而造成不必要的花销，下面我们就搜集了一些资料与大家探讨和参考，希望能对大家有所帮助。</p>
-</blockquote>
-<h1 id="BASS竿的整体分类"><a href="#BASS竿的整体分类" class="headerlink" title="BASS竿的整体分类"></a>BASS竿的整体分类</h1><h3 id="关于Bass竿的硬度（POWER）"><a href="#关于Bass竿的硬度（POWER）" class="headerlink" title="关于Bass竿的硬度（POWER）"></a>关于Bass竿的硬度（POWER）</h3><p>BASS竿分为直柄竿与枪柄竿，直柄竿需搭配纺车轮，枪柄竿搭配鼓轮或水滴轮。<br>通常直柄竿的硬度从UL-MH，枪柄竿的硬度从L-XXH。从抛投的角度来说，枪柄竿不适合抛投重量特别轻的拟饵，但由于适合抛投微物的水滴轮出现，枪柄竿已经可以顺利抛投1克左右的钓组。</p>
-<h4 id="路亚竿硬度（POWER）的表示方式："><a href="#路亚竿硬度（POWER）的表示方式：" class="headerlink" title="路亚竿硬度（POWER）的表示方式："></a>路亚竿硬度（POWER）的表示方式：</h4><p><img src="/img/20161013/路亚竿硬度.png" alt=""><br><img src="/img/20161013/power-action-chart.png" alt=""></p>
-<h3 id="关于Bass竿的调性（ACTION）"><a href="#关于Bass竿的调性（ACTION）" class="headerlink" title="关于Bass竿的调性（ACTION）"></a>关于Bass竿的调性（ACTION）</h3><p>很多路亚爱好者在路亚竿调性的理解上存在着误区，大家通常认为Bass竿的硬度如M、MH等就是鱼竿的调性，其实不然。鱼竿的调性代表鱼竿曲线变化，从S到F表示鱼竿在适当受力后的弯曲点越来越靠近竿梢。<br>调性越快的Bass竿鱼讯和操竿动作的传导越直接明确，但竿身的缓冲能力越差、越容易断线或脱钩。相反调性越慢的Bass竿，它的缓冲能力越好，但传达受力状况和控线动态的能力越差。另外调性也会影响钓组的抛投，一般而言调性越快越适合抛轻的钓组。而越重的钓组越适合慢调Bass竿抛投。<br>慢调路亚竿弯曲点在鱼竿的中后部，依靠鱼竿的整体受力发力，因此鱼竿的整体感觉比较柔和。通常“1 / 9调”和“2 / 8调”的Bass竿通称为快调（Fast Action），“3 / 7调”的Bass竿通称为中调（Medium Action），“4 / 6调”和“5 / 5调”的Bass竿通称为慢调（Through Action）。在使用软饵钓组中，为了精准捕捉鱼讯和细腻操控拟饵，一般使用快调Bass竿。使用硬饵钓组更多是为追求泳姿表现，或在小范围内呈现大幅度动作，通常使用慢调Bass竿。泛用型Bass竿或有抛投要求的Bass竿一般为中调。<br>选择什么调性的Bass竿通常是由使用的钓法、钓组决定。慢调路亚竿在控饵时可充分消减鱼饵在水中振动带来的阻力，竿子比较有粘性中鱼后可以充分享受与鱼搏斗带来的快感。由于慢调的鱼竿感度偏低，因此多用在使用三本钩的硬饵钓组上。快调路亚竿由于感度较高，通常用于使用单钩的软饵钓组。</p>
-<p><img src="/img/20161013/blanks_action-NEW.gif" alt=""></p>
-<h4 id="路亚竿调性（ACTION）的表示方式："><a href="#路亚竿调性（ACTION）的表示方式：" class="headerlink" title="路亚竿调性（ACTION）的表示方式："></a>路亚竿调性（ACTION）的表示方式：</h4><p><img src="/img/20161013/路亚竿调性.png" alt=""></p>
-<h4 id="不同调性Bass竿特性不同，选择搭配合适的推荐钓组如下："><a href="#不同调性Bass竿特性不同，选择搭配合适的推荐钓组如下：" class="headerlink" title="不同调性Bass竿特性不同，选择搭配合适的推荐钓组如下："></a>不同调性Bass竿特性不同，选择搭配合适的推荐钓组如下：</h4><p><img src="/img/20161013/调性配钓组.png" alt=""><br><img src="/img/20161013/fishing-rod-action.gif" alt=""></p>
-<h1 id="软饵竿和硬饵竿特性介绍"><a href="#软饵竿和硬饵竿特性介绍" class="headerlink" title="软饵竿和硬饵竿特性介绍"></a>软饵竿和硬饵竿特性介绍</h1><blockquote>
-<p>Bass钓的拟饵主要分为软饵与硬饵，软饵与硬饵在水中呈现方式的不同，决定不同的钓组选择搭配不同的Bass竿。软饵通常搭配单钩，硬饵通常搭配三本钩，这也是选择快慢调Bass竿的一个重要因素。</p>
-</blockquote>
-<h2 id="软饵竿通常调性偏快，主要原因如下："><a href="#软饵竿通常调性偏快，主要原因如下：" class="headerlink" title="软饵竿通常调性偏快，主要原因如下："></a>软饵竿通常调性偏快，主要原因如下：</h2><h3 id="感度高"><a href="#感度高" class="headerlink" title="感度高"></a>感度高</h3><p>软饵与硬饵最大的不同就是软饵需要以更自然的方式将饵呈现在鱼的眼前，以降低鱼的警惕从而对软饵发起攻击。这时我们就需要感知度较高的软饵竿进行操控才能随心所欲地控制软饵动作，并且了解它在水下的情况。对于好的钓手而言，软饵钓组在水底每一次触碰都能清楚的反应到钓手的头脑之中。感度好的软饵竿更容易察觉目标鱼的轻微咬口。在使用软饵作钓的时候，我们通常以较慢的过程去操控它，以求软饵在水下呈现最自然的状态，此时也通常是目标鱼发动攻击之时。由于环境等众多因素，我们作钓的时候经常会遇到低活性鱼，他们在对饵发动攻击的时候一般都不是那么凶猛，不宜让钓手察觉，所以我们就需要感度好的快调软饵竿进行作钓。</p>
-<h3 id="刺鱼得力"><a href="#刺鱼得力" class="headerlink" title="刺鱼得力"></a>刺鱼得力</h3><p>我们在使用软饵作钓时，都希望软饵搭配的单钩在作合刺鱼的一瞬间能钉牢鱼的口腔，这样才不易跑鱼，快调软饵竿更容易做到这一点。举个例子，假如我们在使用快调竿作合刺鱼时，理论上鱼钩一端本应有1米的刺鱼位移，实际情况下我们可能会获得0.8米的刺鱼位移，这样才能使上力直至刺破鱼的上膛。但若使用慢调竿用同样的幅度作合刺鱼时，由于鱼竿调性偏慢，无形之中会削弱我们在这过程之中所做的功和机械能，本应有1米的刺鱼位移，事实上可能还不到0.5米，甚至更少，这样我们所使用的单钩就不容易发挥最大功效并刺破鱼嘴，从而导致跑鱼。</p>
-<h3 id="抛投精确"><a href="#抛投精确" class="headerlink" title="抛投精确"></a>抛投精确</h3><p>我们在使用软饵作钓的时候需要对标点的精确打击，一支调性较快的钓竿有利于精确地抛投。在使用软饵作钓的时候，我们使用Pitching（荡抛）的频率往往要高于其他任何一种抛投。因为我们想准确的打击标点，这样才能有最好的钓获。一根竿身较挺/调性较快的软饵竿有利于我们寻找这种对软饵精确抛投的感觉，这应该是每一位钓手都想要的。</p>
-<h2 id="提高感度，减少操控硬饵的强度"><a href="#提高感度，减少操控硬饵的强度" class="headerlink" title="提高感度，减少操控硬饵的强度"></a>提高感度，减少操控硬饵的强度</h2><p>硬饵（尤其是Crankbait等摆动幅度较大的硬饵）在水中有比较大的摆动幅度或较高的摆动频率，传导到钓竿上会产生很高的振动频率或很大的水阻力。一支慢调硬饵竿能够有效的减缓这一现象，让你在操控硬饵时更轻松，并提高感度。</p>
-<h3 id="减小冲击力"><a href="#减小冲击力" class="headerlink" title="减小冲击力"></a>减小冲击力</h3><p>我们在使用硬饵中鱼的时候，饵上的三本钩有时刺的不是那么牢固，这时就需要较慢调性的钓竿来操控硬饵了。因为较慢的调性，在刺鱼瞬间以及鱼在水下挣扎之时可减小外部所带来的冲击力，这样可以避免遭受硬力导致脱钩。</p>
-<h3 id="利于远投"><a href="#利于远投" class="headerlink" title="利于远投"></a>利于远投</h3><p>很多时候我们使用硬饵搜索岸边，在很多情况下我们依旧需要把硬饵远投才能获得理想的钓获。例如在炎热的夏季使用深水Crankbait，我们必须给饵留出下潜所需的一定距离直至设定泳层，让饵尽可能长的游动在设定泳层里，这样上鱼的几率会大大的增加，所以这时我们需要远投性能好的钓竿。若远投性能不好，饵刚扔出去没还有收到设定的泳层就已经到我们的脚边上了，那样就不会有很好的效果。调性偏慢的钓竿腰弹性较大，更利于抛投更远的距离。</p>
-<h1 id="七种武器"><a href="#七种武器" class="headerlink" title="七种武器"></a>七种武器</h1><blockquote>
-<p>Bass竞技比赛中常用的钓组有Crankbait，Rubber jig，Jerkbait，无铅，倒吊，Finesse jig（此处所指的Finesse jig是2g~5g范围内的小型Rubber jig），Neko。以上七种钓组所匹配的七套装备，基本能够应对鲈鱼钓比赛大多数情况。</p>
-</blockquote>
-<h2 id="Crankbait-钓竿"><a href="#Crankbait-钓竿" class="headerlink" title="Crankbait 钓竿"></a>Crankbait 钓竿</h2><p>我通常选择Regular调性的鱼竿配合一个低速比的水滴轮来操控Crankbait，这套装备还适合操控VIB。<br>作钓中根据不同的情况可能需要搭配各种类型的线，但是如果考虑到其泛用性，我会倾向于选择10-12LB的氟碳线。如果在冬季和初春的时期，我会考虑降低线组的直径而选择6-8LB鱼线。反之在夏季和秋季，考虑要让你的饵更多的停留或经过障碍物和水草附近，我会加大线径使用12-14LB甚至更粗的线。</p>
-<h2 id="Rubber-jig钓竿"><a href="#Rubber-jig钓竿" class="headerlink" title="Rubber jig钓竿"></a>Rubber jig钓竿</h2><p>Extra fast调性的钓竿配合一个高速比的水滴轮，我能钓Jig以及德州，还有科罗拉多钓组。<br>季节以及水域情况不同所需要钓竿的硬度也有不同的要求。比如我所作钓的水域是以岩石结构为主而岸边的障碍相对比较少的情况下，我会选择M调;如果是湖泊型的水域那就意味着水域内有相当数量的水草，这时我就会选择MH硬度的钓竿;如若水域内有大量的水草区域且水草以水面水草为主，比如以菱角、蓼草、水花生等水面型水草为主而组成的障碍，以及岸边树枝垂入水中和没入水中的杂树所组成的重型障碍，这时候我就需要一根强力的钓竿，才可以有效的将鱼从障碍中拔出来。此时我通常需要一支H或者XH的杆子方能周旋应付了。<br>所搭配的线组由弱到强我将其分为三个档次：</p>
-<ul>
-<li>岩石为主的水体—8-10LB氟碳线</li>
-<li>湖泊类水线下水草为主的水体—12-14LB氟碳线</li>
-<li>水面障碍倒树以及水线上水草为主的水体—14-20LB氟碳或65LB的PE线</li>
-</ul>
-<h2 id="Jerkbait钓竿"><a href="#Jerkbait钓竿" class="headerlink" title="Jerkbait钓竿"></a>Jerkbait钓竿</h2><p>Fast调性的鱼竿配合中等速比的水滴轮，我可以用它钓Jerkbait，中小型Shad，Spinnerbait，Buzzbait。<br>可以说Jerkbait主要是在冷水中作钓的利器，但全年当中大多数时间都能够使用它有效地捕获到那些体型相对大的鲈鱼，当然应对不同的情况所使用的技法以及饵的类型都有一些细微的变化，在这里就不一一详解了。跟Jerkbait一样，Shad也是相对比较通用的一种反应饵，适合针对压力场或是天冷的季节。匀速的缓收以及抽/停都能获得不错的咬口。<br>在面对水草边缘的时候同样能够用来操作Spinnerbait 和Buzzbait，如果水草相对比较重的话就要有针对性的选择钓竿了。</p>
-<h2 id="无铅钓组钓竿"><a href="#无铅钓组钓竿" class="headerlink" title="无铅钓组钓竿"></a>无铅钓组钓竿</h2><p>L调Fast的钓竿配合2000-2500型浅线杯纺车轮是我最常用的选择。这里所指的无铅钓组，并非是单指Wacky钓组。通常我在无铅钓组的择饵上会选择长条型的软饵作钓，会选择用曲柄钩直穿的方法而非是使用Wacky的方法挂在面条虫的中间位置。这种无铅的方法比较适合在水岸比较复杂的情况下使用，其防挂性能与障碍的通过性都特别好，可以纵向地控饵犹如一条小鱼在水岸边的障碍边悄声窜过。也可以垂直的作钓，让其缓慢的垂直呈现自然落下的姿态。当然你也可以用他进行Wacky钓组的作钓，垂直地呈现你的软饵。<br>对于无铅钓竿，我的要求是有灵敏的竿先以及有力却又不至于太过刚性的腰身，在远距离中鱼的时候能够有效的作合刺穿鲈鱼的口腔，中鱼后又能够一定程度的缓冲鲈鱼的一次次强烈洗腮。绵而不失其灵动，刚直却韧劲十足。<br>通常我会选择使用4-6LB的氟碳线，又或者选择10LB的蜘蛛侠氟碳混合编织线加6LB前导氟碳线来作钓，混合编织线能够更好地把握住那些远距离的咬口，其低延展性能够有效捕捉住那些细微的就食动作。</p>
-<h2 id="倒吊钓组钓竿"><a href="#倒吊钓组钓竿" class="headerlink" title="倒吊钓组钓竿"></a>倒吊钓组钓竿</h2><p>对于这一钓组，我想国内大多钓手都非常熟知乃至于精通。我喜欢使用L调Fast的纺车竿配合2500S的纺车轮进行作钓，这钓组对于深水作钓和压力场作钓表现出的成绩都是相当优秀的。它能在原地做出更多的动作以诱惑那些警惕不愿开口的鲈鱼，也能够针对作钓区域作出有效的纵向搜索。</p>
-<p>根据不同场地的需求，可以选择自己所设定的软饵在预想的区域内尽可能自然的呈现。同时也可以配合鱼探进行垂直的定点位的呈现去钓获鲈鱼，而我在使用这一钓组的时候大多数时间会选择配合鱼探做垂直呈现的作钓。大多数时候我们都会选择使用倒吊钓组来进行结构作钓，相对的都是开阔水域，此时我会选择使用4-6LB的氟碳线。</p>
-<h2 id="Finesse-Jig钓组钓竿"><a href="#Finesse-Jig钓组钓竿" class="headerlink" title="Finesse Jig钓组钓竿"></a>Finesse Jig钓组钓竿</h2><p>我会选择使用Extra fast调性的Bait finesse钓竿配合微物水滴轮来进行作钓，它可以搭配使用Finesse jig，小型Tube，小型德州等钓组。<br>此装备的优点是可以进行精确落点的抛投，很多时候一个精准的抛投是获得咬口的重要因素，而且更小的饵确实是可以获得更多的咬口，Bait finesse钓法便如此应运而生。</p>
-<h2 id="Neko钓组钓竿"><a href="#Neko钓组钓竿" class="headerlink" title="Neko钓组钓竿"></a>Neko钓组钓竿</h2><p>我会选择一根Extra fast的钓竿和2000S的纺车轮，配合4LB氟碳线来作钓。除了Neko钓组外，我还可以用它来钓1g多的JIG和Super finesse的倒吊（2~3寸的饵配合1-2g的倒吊铅）应对极限条件下的深水作钓。<br>Neko钓组是为数较少的一种针对深水作钓的最佳选择，可它以在水温低于7摄氏度的情况下依然能够捕获一定数量的咬口，可以非常慢速的在水下呈现软饵的自然状态。其垂直落底的特性也是我对于结构作钓时的不二选择。针对国内众多压力钓场都有着不俗的表现。</p>
+      <title><![CDATA[常用路亚线的区别]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%B8%B8%E7%94%A8%E8%B7%AF%E4%BA%9A%E7%BA%BF%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      <content type="html"><![CDATA[<h2 id="尼龙线"><a href="#尼龙线" class="headerlink" title="尼龙线"></a>尼龙线</h2><p>台钓中使用最多的也是尼龙线。尼龙的化工原料为PA，和PE一样是石油的下游产品。与PE不同的是，尼龙线一般为单股线，这种线的特点刚好与PE线相反。尼龙线的优点是由于有一定的延展性，抛投和中鱼的时候不易断线，由于生产技术已经发展了近70年的历史，成本低，产量大，相比PE线要便宜很多。最后一点是尼龙表面圆滑，对线环的磨损可以降到最低。</p>
+<a id="more"></a>
+<p>延展性同样也是尼龙线的缺点，在某些鱼讯轻微的场合，尼龙线不能及时将中鱼信号传达给钓手，从而失去最佳的起杆机会。另外，同样拉力的情况下，尼龙线比PE的线径更粗，从而影响路亚的抛投距离（<em>当然这个问题并不一定完全适用，需要根据具体的情况来，不过在高磅数的尼龙线与高磅数PE线做对比的话，高磅数的PE占些优势，因其相同的高磅数的线，高磅数PE线径更细一些，也就可以更加节省线杯的空间容下更多的线，并且线径也更细利于高磅数线的抛投</em>）。</p>
+<p><img src="/img/20161013/fishing-line.jpg" alt=""></p>
+<h2 id="PE线"><a href="#PE线" class="headerlink" title="PE线"></a>PE线</h2><p>PE线是指用多股化纤编织后浸胶制成的钓线，俗称编织线(BRAIDED OR CORD LINE)，最早见的就是“大力马”。<br>这种钓线的生产方式是：将多条微细纤维(如：达克龙纤维、功夫龙纤维或大力马纤维或其它聚乙烯化合物的PE纤维…等)以机器来编织而成，所以这种钓线的线体呈现纤维规则交叉的纹路，只要你将线体取出审视一番就可以清楚的发现其线体结构上的特色。<br>这种线的优点是，相同拉力的的情况下线径比尼龙要细很多，同样我们使用12磅的尼龙和12 磅的PE，因为PE的线径更细，能够抛投的更远。在实际钓场中，风力是影响路亚抛投距离的重要因素，PE同样因为相同拉力下线径更细的特点，能够将风阻的影响减小。除此之外，PE几乎没有延展性，在中鱼的时候能够在第一时间将信号传达给钓手。还有就是PE线更加耐磨。<br>但正像所有事物都有其两面性一样，PE并不是没有任何缺点。PE第一个缺点是没有延展性。这个特性在能够将中鱼信号迅速传达给钓手的同时，也经常导致跑鱼或放枪。玩过台钓的朋友都知道，中鱼后钓竿上要保持一定的力量，鱼才不易脱钩，杆软不易断线跑鱼，但是起鱼慢；杆硬起鱼快，但是容易断线跑鱼。同样，你可以把线看作杆的延伸，鱼线有一定的延展性，就像钓竿比较软一样，能够保证在鱼左冲右突的时候始终保持一定的力量，而PE就像比较硬的杆，遛鱼的余地比较小从而导致脱钩或断线。另外现在有厂家为了使用更细的线径达到更强的拉力，在PE中掺加金属丝，虽然拉力得到了加强，但是线的延展性和柔软度进一步降低，同时还容易磨损导环。</p>
+<h2 id="碳线（氟碳线）"><a href="#碳线（氟碳线）" class="headerlink" title="碳线（氟碳线）"></a>碳线（氟碳线）</h2><p>碳线是由含有氟和碳成分的树脂抽丝加工而成，碳线的特性是高比重、切水快、光的折射率非常低几乎看不到，没有吸水性，抗紫外线和耐久性要比尼龙线强很多，因为碳线的物理特性为非常低的延展性和高比重，可以让饵迅速到达所需要的水层，并且因延展性很低所以也就提供了良好的灵敏度。因碳线对光的折射率几乎为0，所以会降低鱼的敏感性，让鱼能放心的将饵食入口中。碳线适合搭配软饵钓组使用，比如：无铅钓组、WACKY、德州钓组，却不太适合搭配某一些特殊的硬饵或水面系的路亚。不过碳线也不是没有缺点，因为通常比较硬（特别是高磅数的碳线），如果作为主线使用要注意纺车轮上建议使用的主线不要超过10磅，水滴轮或鼓轮如有特殊需要最好也不要超过20磅（当然特殊情况下可以用到更高的磅数作为主线，并不是完全不可以），碳线也可以当做前导线来使用，因为碳线比较耐磨，可以搭配PE线，弥补PE不耐磨的缺点。</p>
+<p><img src="/img/20161013/钓线攻略.jpg" alt=""></p>
 ]]></content>
     </entry>
     
@@ -1627,33 +1627,35 @@ make V=s
     <entry>
       <title><![CDATA[个人路亚装备]]></title>
       <url>http://cuiqingwei.github.io/2016/10/10/2016-10-10-%E4%B8%AA%E4%BA%BA%E8%B7%AF%E4%BA%9A%E8%A3%85%E5%A4%87/</url>
-      <content type="html"><![CDATA[<h1 id="路亚竿"><a href="#路亚竿" class="headerlink" title="路亚竿"></a>路亚竿</h1><p><strong><a href="https://detail.tmall.com/item.htm?id=36807472493&amp;spm=a1z09.2.0.0.uapaU2&amp;_u=c154cj1d09c" target="_blank" rel="external">LMS001-662M</a></strong> <em>鱼猎人征途系列</em></p>
+      <content type="html"><![CDATA[<h2 id="路亚竿"><a href="#路亚竿" class="headerlink" title="路亚竿"></a>路亚竿</h2><p>1.<strong><a href="https://detail.tmall.com/item.htm?id=36807472493&amp;spm=a1z09.2.0.0.uapaU2&amp;_u=c154cj1d09c" target="_blank" rel="external">LMS001-662M</a></strong> <em>鱼猎人征途系列</em></p>
 <a id="more"></a>
 <p><img src="/img/20161010/LMS001-662M.jpg" alt=""></p>
-<p> <strong><a href="https://item.taobao.com/item.htm?spm=a1z0k.6846577.0.0.lvKUtC&amp;id=38551093007&amp;_u=t2dmg8j26111" target="_blank" rel="external">CWS702MH</a></strong> <em>Berkley /美国贝克力</em></p>
+<p>2.<strong><a href="https://item.taobao.com/item.htm?spm=a1z0k.6846577.0.0.lvKUtC&amp;id=38551093007&amp;_u=t2dmg8j26111" target="_blank" rel="external">CWS702MH</a></strong> <em>Berkley /美国贝克力</em></p>
 <p> <img src="/img/20161010/CWS702MH.jpg" alt=""></p>
-<p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.Jvl32R&amp;id=520196909891&amp;_u=c154cj1987f" target="_blank" rel="external">LRT702MHC</a></strong>  <em>领峰 2015款 魂系列  订制版一体式软木柄</em></p>
+<p>3.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.Jvl32R&amp;id=520196909891&amp;_u=c154cj1987f" target="_blank" rel="external">LRT702MHC</a></strong>  <em>领峰 2015款 魂系列  订制版一体式软木柄</em></p>
 <blockquote>
 <p>真正意义上的软饵以及岸钓远投竿，拥有超敏锐的快调竿尖和强有力的竿身不单只是精确抛投，<br>更是拥有良好感知水底结构的能力和从咬口开始一气呵成将鱼从水底拔出来的迸发力。<br>并且拥有20克亮片80+直线距离的远投能力。</p>
 </blockquote>
 <p><img src="/img/20161010/LRT702MHC.jpg" alt=""></p>
-<p><strong><a href="https://item.taobao.com/item.htm?spm=a1z0d.6639537.1997196601.113.Q7PwbK&amp;id=522011254955" target="_blank" rel="external">LYNN FISHING LURE/小林路亚 2.03米枪柄</a></strong></p>
+<p>4.<strong><a href="https://item.taobao.com/item.htm?spm=a1z0d.6639537.1997196601.113.Q7PwbK&amp;id=522011254955" target="_blank" rel="external">LYNN FISHING LURE/小林路亚 2.03米枪柄</a></strong></p>
 <p><img src="/img/20161010/LYNN-L.jpg" alt=""></p>
-<p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.HzLi42&amp;id=534294970180&amp;_u=s154cj11be9" target="_blank" rel="external">Major SKR-B862ML</a></strong> <em>马牌</em></p>
+<p>5.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.HzLi42&amp;id=534294970180&amp;_u=s154cj11be9" target="_blank" rel="external">Major SKR-B862ML</a></strong> <em>马牌</em></p>
 <p>钓竿长度：2米58 节数：2节 饵重：10-30克 线重：8-14磅 PE:0.8-2号 调性：中调</p>
 <p><img src="/img/20161010/SKR-B862ML.png" alt=""></p>
-<p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.HzLi42&amp;id=17264821075&amp;_u=s154cj10d82" target="_blank" rel="external">LRC664M</a></strong> <em>贝克力四节便携竿</em></p>
+<p>6.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.HzLi42&amp;id=17264821075&amp;_u=s154cj10d82" target="_blank" rel="external">LRC664M</a></strong> <em>贝克力四节便携竿</em></p>
 <p>全长：1.98m节数：4收缩长度：52.5cm饵重：7-21g适合线重：8-20LB含碳量：95% 自重：136g</p>
 <p><img src="/img/20161010/LRC664M.jpg" alt=""></p>
-<p><strong><a href="https://item.jd.com/12301115424.html" target="_blank" rel="external">SHIMANO EXPRIDE 1016M-2</a></strong> <em>17款EXPRIDE FUJI富士SIC导环 路亚竿 2.08米M枪柄(1610M-2)</em></p>
+<p>7.<strong><a href="https://item.jd.com/12301115424.html" target="_blank" rel="external">SHIMANO EXPRIDE 1016M-2</a></strong> <em>17款EXPRIDE FUJI富士SIC导环 路亚竿 2.08米M枪柄(1610M-2)</em></p>
 <p><img src="/img/20161010/EXP-1610M-2.jpg" alt=""></p>
-<p><strong><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.20.5837fb3dByxCz2&amp;id=560983810039" target="_blank" rel="external">MEGABASS OROCHI F2.1/2-67K</a></strong> <em>17款蟒蛇枪柄路亚竿 2.00米M枪柄(F2.1/2-67K)</em></p>
+<p>8.<strong><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.20.5837fb3dByxCz2&amp;id=560983810039" target="_blank" rel="external">MEGABASS OROCHI F2.1/2-67K</a></strong> <em>17款蟒蛇枪柄路亚竿 2.00米M枪柄(F2.1/2-67K)</em></p>
 <p><img src="/img/20161010/OROCHI-F2.1.jpg" alt=""></p>
-<h1 id="渔线轮"><a href="#渔线轮" class="headerlink" title="渔线轮"></a>渔线轮</h1><p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.uapaU2&amp;id=14816583709&amp;_u=c154cj143ab" target="_blank" rel="external">SIENNA 2500FD</a></strong> <em>禧玛诺4轴纺车渔轮 马来西亚产</em></p>
+<p>9.<strong><a href="https://item.jd.com/10926358721.html" target="_blank" rel="external">NS BAS-672L</a></strong> <em>NS梅河AVENGER复仇者淡水路亚枪柄超强碳素钓竿BAS-672L</em></p>
+<p><img src="/img/20161010/NS-BAC672L.jpg" alt=""></p>
+<h2 id="渔线轮"><a href="#渔线轮" class="headerlink" title="渔线轮"></a>渔线轮</h2><p>1.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.uapaU2&amp;id=14816583709&amp;_u=c154cj143ab" target="_blank" rel="external">SIENNA 2500FD</a></strong> <em>禧玛诺4轴纺车渔轮 马来西亚产</em></p>
 <p><img src="/img/20161010/SN2500FD.jpg" alt=""></p>
-<p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.uapaU2&amp;id=525599654852&amp;_u=c154cj1c6bf" target="_blank" rel="external">TATULA CT TYPE R 100HS</a></strong>  <em>DAIWA大蜘蛛美版水滴轮</em></p>
+<p>2.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.uapaU2&amp;id=525599654852&amp;_u=c154cj1c6bf" target="_blank" rel="external">TATULA CT TYPE R 100HS</a></strong>  <em>DAIWA大蜘蛛美版水滴轮</em></p>
 <p><img src="/img/20161010/TATULA-CT-100HS.jpg" alt=""></p>
-<p><strong><a href="https://item.taobao.com/item.htm?spm=a1z0d.6639537.1997196601.42.Q7PwbK&amp;id=7704001910" target="_blank" rel="external">RYOGA 1016</a></strong> <em>DAIWA达瓦顶级鼓轮</em></p>
+<p>3.<strong><a href="https://item.taobao.com/item.htm?spm=a1z0d.6639537.1997196601.42.Q7PwbK&amp;id=7704001910" target="_blank" rel="external">RYOGA 1016</a></strong> <em>DAIWA达瓦顶级鼓轮</em></p>
 <blockquote>
 <p>可选替换部件：</p>
 <ol>
@@ -1663,10 +1665,12 @@ make V=s
 </ol>
 </blockquote>
 <p><img src="/img/20161010/RYOGA.png" alt=""></p>
-<p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.HzLi42&amp;id=520734861061&amp;_u=s154cj10930" target="_blank" rel="external">Mentaniu DC HG</a></strong> <em>禧玛诺蒙塔尼DC 2015</em></p>
+<p>4.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.HzLi42&amp;id=520734861061&amp;_u=s154cj10930" target="_blank" rel="external">Mentaniu DC HG</a></strong> <em>禧玛诺蒙塔尼DC 2015</em></p>
 <p><img src="/img/20161010/MetaniumDC.png" alt=""><br><img src="/img/20161010/MetaniumDC1.png" alt=""></p>
-<p><strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.6c818473iizZfR&amp;id=545441440003&amp;_u=m154cj14da2" target="_blank" rel="external">SHIMANO NEW EXSENCE DC XG</a></strong> <em>禧玛诺海水DC 2017</em></p>
+<p>5.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.6c818473iizZfR&amp;id=545441440003&amp;_u=m154cj14da2" target="_blank" rel="external">NEW EXSENCE DC XG</a></strong> <em>禧玛诺海水DC 2017</em></p>
 <p><img src="/img/20161010/EXSENCE DC.png" alt=""></p>
+<p>6.<strong><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.21.1fec70ba8afRYR&amp;id=563408219126&amp;ns=1&amp;abbucket=12#detail" target="_blank" rel="external">COMPLEX CI4+ C2500S F4 HG</a></strong> <em>禧玛诺COMPLEX CI4+ C2500S F4高速淡水海纺车轮</em></p>
+<p><img src="/img/20161010/C2500sHG.jpg" alt=""></p>
 ]]></content>
     </entry>
     
