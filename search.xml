@@ -4,6 +4,26 @@
   
     
     <entry>
+      <title><![CDATA[Raspberry安装Domoticz]]></title>
+      <url>http://cuiqingwei.github.io/2018/09/13/2018-09-13-Raspberry%E5%AE%89%E8%A3%85Domoticz/</url>
+      <content type="html"><![CDATA[<h1 id="下载-Raspbian"><a href="#下载-Raspbian" class="headerlink" title="下载 Raspbian"></a>下载 Raspbian</h1><p><a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="external">https://www.raspberrypi.org/downloads/raspbian/</a></p>
+<h1 id="制作-TF-card"><a href="#制作-TF-card" class="headerlink" title="制作 TF card"></a>制作 TF card</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">df -h</div><div class="line">diskutil unmount /dev/disk2s1</div><div class="line">diskutil list</div><div class="line">dd bs=4m if=2018-06-27-raspbian-stretch-lite.img of=/dev/rdisk2</div><div class="line">diskutil unmountdisk /dev/disk2</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<blockquote>
+<p>note：新的img默认没有打开ssh，在tf卡根目录新建名称为 <strong>ssh</strong> 的文件夹解决</p>
+</blockquote>
+<h1 id="登录树莓派"><a href="#登录树莓派" class="headerlink" title="登录树莓派"></a>登录树莓派</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh pi@raspberrypi.local</div></pre></td></tr></table></figure>
+<h1 id="配置树莓派"><a href="#配置树莓派" class="headerlink" title="配置树莓派"></a>配置树莓派</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo raspi-config</div></pre></td></tr></table></figure>
+<h1 id="Domoticz"><a href="#Domoticz" class="headerlink" title="Domoticz"></a>Domoticz</h1><h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo curl -L install.domoticz.cn | bash</div></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://www.domoticz.cn/" target="_blank" rel="external">Domoticz</a>是一个开源的智能家居系统，通过它你可以监测和控制各种设备比如：灯、开关 ，各种传感器、仪表比如： 温度、雨、风、紫外线、电、气体、水 等等。 还可以向任一移动设备发送通知或警告。</p>
+</blockquote>
+<h3 id="2-libssl1-0-0缺失问题"><a href="#2-libssl1-0-0缺失问题" class="headerlink" title="2.libssl1.0.0缺失问题"></a>2.libssl1.0.0缺失问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">wget http://ftp.nl.debian.org/debian/pool/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u8_armhf.deb</div><div class="line">sudo dpkg -i libssl1.0.0_1.0.1t-1+deb8u8_armhf.deb</div></pre></td></tr></table></figure>
+<h3 id="3-运行"><a href="#3-运行" class="headerlink" title="3.运行"></a>3.运行</h3><p><a href="http://raspberrypi.local:8080/" target="_blank" rel="external">http://raspberrypi.local:8080/</a><br>经度：121.47<br>纬度：31.23</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[大疆“御”Mavic系列教程]]></title>
       <url>http://cuiqingwei.github.io/2018/06/27/2018-06-27-%E5%A4%A7%E7%96%86%E2%80%9C%E5%BE%A1%E2%80%9DMavic%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/</url>
       <content type="html"><![CDATA[<p>在操控大疆“御”Mavic前，请阅读《智能飞行电池安全使用指引》，并进行飞行前检查，确保飞行器各个部件完好无损，智能电池及遥控器电量充足，上电检测正常。<br><img src="/img/20180627/mavicpro.jpg" alt=""></p>
@@ -145,6 +165,19 @@ make V=s
     </entry>
     
     <entry>
+      <title><![CDATA[OpenWRT的WiFi带机量修改方法]]></title>
+      <url>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/</url>
+      <content type="html"><![CDATA[<h1 id="Wifi带机量的修改"><a href="#Wifi带机量的修改" class="headerlink" title="Wifi带机量的修改"></a>Wifi带机量的修改</h1><p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
+<p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
+<a id="more"></a>
+<blockquote>
+<p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="external">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="external">MTK_Ralink_ApSoc_SDK编译总结</a><br><a href="http://www.right.com.cn/forum/thread-208204-1-1.html" target="_blank" rel="external">openwrt wifi用户连接数限制</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[WiFi探针的工作原理]]></title>
       <url>http://cuiqingwei.github.io/2018/05/14/2018-06-18-WiFi%E6%8E%A2%E9%92%88%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</url>
       <content type="html"><![CDATA[<p><strong>WiFi探针</strong> 技术是指基于WiFi探测技术来识别AP（无线访问接入点）附近已开启WiFi的智能手机或者WiFi终端（笔记本，平板电脑等），无需用户接入WiFi，WiFi探针就能够识别用户的信息。</p>
@@ -178,19 +211,6 @@ make V=s
 <h1 id="数据释义"><a href="#数据释义" class="headerlink" title="数据释义"></a>数据释义</h1><p>　　“探针MAC”就是探针本身的MAC地址；<br>　　“抓取的设备MAC”指探针抓取到的WiFi信号的发射设备的MAC地址，一般为手机；<br>　　“信号强度”指探针抓取到的WiFi信号的强度，最小值为“-100”，一般来说，此值越大表示发射设备离探针越近；<br>　　“设备发送的WiFi包的类型”指探针抓取到的WiFi信号的类别，其末位数的值为0、4、8时，分别表示抓取到的WiFi信号为“管理”帧、“控制”帧、“数据”帧；<br>　　“时间戳”指探针抓取到WiFi信号的时间，如果探针在局域网内使用而没有接入广域网的话，时间戳可能是不准确的。</p>
 <blockquote>
 <p>WiFi探针数据可以同哪些数据融合？<br>数据的应用核心在于融合，如何将各成一派数据巧妙的组合在一起，让数据驱动商业的发展，是现在与未来的议题。虽然线上大数据已经经历过互联网的洗礼，但是线下数据仍有较长的路要走，那么WiFi探针可以同哪些数据做融合呢？<br>MAC数据可以同支付数据、会员数据、消费数据、营销数据、地理数据及线上数据做深度的融合，将多维度的数据集成一起勾画出完整的用户画像，如用户的姓名、年龄、兴趣偏好、消费特征、过往消费记录、学历等。基于这些数据再结合具体的应用，这样才能让线下商户有据可依，释放出数据的价值。</p>
-</blockquote>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[OpenWRT的WiFi带机量修改方法]]></title>
-      <url>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/</url>
-      <content type="html"><![CDATA[<h1 id="Wifi带机量的修改"><a href="#Wifi带机量的修改" class="headerlink" title="Wifi带机量的修改"></a>Wifi带机量的修改</h1><p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
-<p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
-<a id="more"></a>
-<blockquote>
-<p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="external">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="external">MTK_Ralink_ApSoc_SDK编译总结</a><br><a href="http://www.right.com.cn/forum/thread-208204-1-1.html" target="_blank" rel="external">openwrt wifi用户连接数限制</a></p>
 </blockquote>
 ]]></content>
     </entry>
@@ -1137,6 +1157,134 @@ make V=s
     </entry>
     
     <entry>
+      <title><![CDATA[图文解说水滴轮三大刹车系统]]></title>
+      <url>http://cuiqingwei.github.io/2017/02/01/2017-02-01-%E5%9B%BE%E6%96%87%E8%A7%A3%E8%AF%B4%E6%B0%B4%E6%BB%B4%E8%BD%AE%E4%B8%89%E5%A4%A7%E5%88%B9%E8%BD%A6%E7%B3%BB%E7%BB%9F/</url>
+      <content type="html"><![CDATA[<p>水滴轮属于垂钓卷线器中的一种，跟鼓轮一样都属于两轴卷线器。水滴轮主要是用于路亚钓。相比纺车轮，水滴轮抛投精确度更高，体积小，出线容易控制。缺点就是抛投不易掌握，容易炸线，就是大家说的炒粉。但良好的抛投刹车系统能让路亚作钓的过程中操控舒服，避免炒粉。</p>
+<a id="more"></a>
+<p>目前主流的刹车系统主要有Shimano厂家旗下的 <strong>SVS</strong>（全称Shimano Variable brake System无限离心刹车）、<strong>DC</strong> (Digital Control)以及Daiwa厂家旗下 <strong>磁刹制动</strong>。就是我们平时常说的三种刹车：离心刹车、磁力刹车、DC刹车。</p>
+<h1 id="先说一下，在什么地方需要刹车？"><a href="#先说一下，在什么地方需要刹车？" class="headerlink" title="先说一下，在什么地方需要刹车？"></a>先说一下，在什么地方需要刹车？</h1><p>双轴式卷线器(以下全部称水滴轮)的刹车具有两个主要目标：</p>
+<ol>
+<li>限定线杯的最高速度低于路亚出线的速度；</li>
+<li>控制速率的衰减，防止炒粉。因为最大的速度越高，路亚抛的就更远。</li>
+</ol>
+<p>线杯的速度在抛投时的简单的情况，它达到最大值后，会减速缓慢（下图左）。另一方面在抛投在困难的情况下，如逆风抛投需要更多的刹车力。附加的两个情况Pitching和Flip抛投需要一个不同配置的刹车。随著线杯的转速变慢，减少刹车力，来提供更多的动力（下图右）。</p>
+<p><img src="/img/20170201/WX20180803-103629@2x.png" alt=""></p>
+<p>为了满足这些要求，最好的刹车系统应该具有：</p>
+<ol>
+<li>当线杯的速度很慢时只有较小的刹车力；</li>
+<li>当线杯中速转动时，可以动态的调节刹车力；</li>
+<li>刹车力可以高低调整，来保证线杯具有最高的初速度。</li>
+</ol>
+<p>接下来我就个人对于这几款刹车系统的理解分别谈一谈它们的优缺点以及在实战中的感受。个人并非厂商专业人士，只是一名路亚爱好者，更希望本文起到抛砖引玉的作用。可能很多钓友不(根)是(本)特(不)别(关)懂(心)这些刹车的原理，虽然刹车在轮子上不是最重要的，但最起码也算最重要的之一，就算是业余研究着玩吧，了解普及一下。</p>
+<h1 id="一、离心刹车"><a href="#一、离心刹车" class="headerlink" title="一、离心刹车"></a>一、离心刹车</h1><p>离心系统利用刹车片跟刹车环内缘摩擦。刹车力与线杯转速的平方成正比。因此，当线杯速度快时其刹车力远大于旋转速度较慢时。你可能已经注意到离心式卷线器在慢速的抛投时表现很好，例如:Pitching(荡抛)，同样在抛投的后期你仍能感觉到飞行的路亚，这是由于当速度接近为0时，刹车力的失效范围是基于指数型的。然而，你也许已经注意到，即使你更用力的抛投但距离不会改变太多。这是由于指数型刹车力，当速度越高对初速的控制也越强烈。所以，离心刹车从根本上说是不能同时满足两种需求，在高速不能调高以及中速时没有提供足够的刹车力。因此，普通的离心刹车是不适合的。</p>
+<p><img src="/img/20170201/WX20180803-104714@2x.png" alt=""></p>
+<p>Shimano SVS 可变离心式刹车系统，原理很简单就是依靠线杯转动带动离心豆往外甩，转动的越快刹车力越大，反之则更小。看下图：</p>
+<p><img src="/img/20170201/vbs.jpg" alt=""></p>
+<p>但要说一下VBS与SVS的区别，美版是：shimano Variable Brake System（VBS）日版是：Shimano Variable brake System（SVS）除了刹车豆不大一样外，实际就是一样的东西。要想搞清楚磁力与DC，要先搞清楚：导体在磁力线中穿行运动会产生电流，要是能搞清楚这个物理学，那就会明白下列的原理。</p>
+<p><img src="/img/20170201/WX20180803-111846@2x.png" alt=""></p>
+<p>先说以磁力豆（就是吸铁石）为刹车原理的轮子。</p>
+<p><img src="/img/20170201/20160629093143iy6CQJ.jpg" alt=""></p>
+<p>红色表示N（S）；白色表示S（N）那么这几个磁力豆之间会存在看不见的磁场， 导体（线杯是金属体）穿过磁场就会有电流产生，如果不让电流导出而是让其在线杯中来回穿行势必会形成正负极的导通，那他就反过来对导体会产生阻力（定义：当导体在磁场中运动时，感应电流会使导体受到安培力，安培力的方向总是阻碍导体的运动，这种现象称为电磁阻尼。这正是运用了电磁阻尼的原理。当然，这种磁力豆是较为初级的。</p>
+<p>接下来看SVS系统，可能很多钓友都已经非常熟悉。SVS在Shimano官方的介绍中中文翻译为-无限离心刹车，下文简称SVS。SVS刹车系统是Shimano厂家旗下很经典的一种刹车模式。</p>
+<p><img src="/img/20170201/svs.png" alt=""></p>
+<p>目前市面上Shimano旗下的轮子包括newscorpion、cacitas mgl、citica 、metanium mgl、curado、aldebaran 50/51等等这些轮子都是使用了SVS刹车系统。去年升级的SHIMANO CALCUTTA CONQUEST鼓轮也全系升级了最新可微调SVS刹车系统。SVS相比传统的离心方式增加了外调，弥补了以前几个豆之间的不连续性。在实际作钓中我们将如何调整此系统呢。</p>
+<p><img src="/img/20170201/25553_feature1.jpg" alt=""></p>
+<p>首先我们看图片部分的，一般来说轮子是有4颗离心豆，豆子在卡槽旁边有写OFF和ON，当你下打开离心刹车豆时，将豆子推到ON上，此时离心刹车豆是可以活动的，若想要关闭离心刹车豆，则推到OFF上此时的豆子是固定住的。开豆子的数量是由抛投的饵重来决定的，豆子的刹车力获得是靠与刹车盘的摩擦。豆子越多刹车力越大。豆子工作时候的形态犹如花瓣，当线杯转动的时候豆子向外扩张。</p>
+<p><img src="/img/20170201/13996265202.jpg" alt=""></p>
+<p>其次，SVS刹车在轮子的侧盖部分增加了一个可以调节的旋转盘，以图片为例，转盘上有若干个可连续调节的档位。档位的调节实际上是调整刹车盘与豆子之间的距离。根据官方介绍，当开一颗离心刹车豆，调节旋盘为1时，此时的刹车力相当于只开了半个刹车豆，只有当调节旋盘调到3时才相当于开了一颗刹车豆，而旋盘到6时相当于接近1.8个刹车豆的刹车力。其余的以此类推，在4颗豆子全开而且旋盘到最大（max）时相当于接近7个刹车豆的刹车力。所以在使用svs 刹车系统时，在设定了刹车豆数量的情况下，可以方便的使用侧盖上的调节旋盘来调节刹车力。这大大的方便了我们钓友，因为不再需要像以往那样打开侧盖来调节豆子的开闭。</p>
+<p>但是在使用该刹车时请务必非常耐心的调节，只有通过不断的调节才能在使用不同重量的饵时发挥出轮子最佳的抛投水平。</p>
+<p>SVS优点：</p>
+<ol>
+<li>系统稳定，不轻易罢工；</li>
+<li>受天气、气候影响较小基本上可以实现全水域、全天气气候使用；</li>
+<li>维护保养方便；</li>
+<li>结构简单耐用性好；</li>
+<li>初始速度要快在抛投稍微轻一些的饵的时候稍微有些优势。</li>
+</ol>
+<p>SVS缺点：</p>
+<ol>
+<li>个别轮子刹车豆磨损过快；</li>
+<li>刹车力暴发的高峰是在初速度阶段，刹车力和线杯的转速成正比。这就影响他后半程的刹车力。</li>
+</ol>
+<p>Shimano SVS 可变离心式刹车系统让你能改变刹车的配置参数与被启用的刹车片的数量成正比，Scorpion 1000的4x4 SVS系统允许你通过外侧的拨盘来调节刹车环从而选择一种设置参数。通过选择三个外部刹车片的开/关的状态，你可以细微的调节设置。系统允许我们改变了刹车的两个参数：强和弱，但又不能在同一时间内满足高速和中速的刹车力需求。如果你启动更多的刹车片，在中速时会产生过大的刹车力，抛投的距离会成正比的下降。这是当逆风抛投路亚时，离心刹车不能有效作用的原因。</p>
+<p>离心刹车当线杯转速较低时效果不明显，磁力刹车系统利用在磁体和移动的金属间产生的电磁力来刹车，线杯在这种情况下，刹车力与线杯的转速成正比。刹车力与线杯到磁力间的距离成正比、磁力刹车系统是第一个能够通过外侧的拨盘来调节刹车力度来改变抛投距离的刹车系统。在中速时它具有动态的调整范围，但是过多的刹车力在慢速时存在导致不太适合Pitching（荡抛）。在高速时磁力刹车的刹车力比离心式低，它允许更高的初速度。</p>
+<p>传统的磁力刹车系统是由一个刹车板和安装在靠近线杯处的3-5小磁力组成。近年来，磁力刹车系统使用电感应转子为了保证顺滑的抛投。拨盘可以改变磁力强度在两个C型的磁力之间。由于在中速具有极好的可调整性，且相对高的刹车力在慢速、磁力系统在困难的抛投环境下是相当不错的，比如逆风抛投。</p>
+<p><img src="/img/20170201/WX20180803-114347@2x.png" alt=""></p>
+<p>抛投控制机械刹车用来改变初始的刹车位置，不管速度的高低都能提供几乎稳定的刹车力，此稳定的刹车力增加了离心式的设定参数，磁力刹车上也一样。这个刹车比其他刹车系统在中高速范围的刹车力较小，但在速度接近为0时比其他的系统有效。在打水漂、路亚在入水前急剧减速，在这种情况机械刹车是唯一有效的刹车。</p>
+<p><img src="/img/20170201/WX20180803-114357@2x.png" alt=""></p>
+<h1 id="二、磁力刹车"><a href="#二、磁力刹车" class="headerlink" title="二、磁力刹车"></a>二、磁力刹车</h1><p>Daiwa的磁刹制动理论上讲应该是最稳定、机能最好、可操作性最强的一套刹车系统，用过达瓦的轮子钓友都知道，达瓦的刹车是一个刹车盘升进磁环来获得刹车力，刹车盘随着线杯的转速高低来升进跟退出磁环获得更好的刹车力。当线杯转动很慢时，下边的磁力圈不会伸缩，那他就不会进入磁场起到刹车作用。当快速转动时会伸出磁力圈，进入磁场起到刹车作用。</p>
+<p><img src="/img/20170201/WX20180804-183523@2x.png" alt=""><br><img src="/img/20170201/WX20180804-183642@2x.png" alt=""></p>
+<p>那么Daiwa是怎么进行磁力刹车的那？是磁力圈！很多的Daiwa磁力圈都会有小缺口或者黑点表示，两个黑点或者缺口表示N与S距离越近那么他的磁场就越强，当N与N，S与S最近时，因为根据异性相斥的原理，那么它不会存在磁场就不会有电磁阻尼现象存在，那他就不会出现刹车力，有的话也可以忽略不计。</p>
+<p><img src="/img/20170201/WX20180804-183742@2x.png" alt=""></p>
+<p>关于SV，虽然官方并没有给出SV的准确定义，从官方的种种说法看，SV并不是单纯指一个结构，而是一个系统：SV刹车系统，配合多相位磁环Daiwa几乎所有轮子都有采用这个设计，刹车杯浮动设计，其特征在于，刹车杯的“浮动”，或者说“伸出”方式，更通俗一点说超线性高阶增加刹车力的召唤方式为：线杯本体和刹车杯之间存在扭力。这样刹车杯就通过一个螺旋斜面升起来了。由于弹簧作用，扭力越大，则升起越多。那么什么时候线杯本体和刹车杯之间存在扭力呢，要么是线杯急剧加速的时候，刹车杯由于惯性会有反向扭动趋势。在刹车杯深入磁环以后，速度越高，刹车杯上阻力越大，则深入也就越多，反之也就越浅。总结起来，SV在刹车结构上的特点是: 刹车杯是旋出的。 有不负责任的小道消息说这个结构并不是Daiwa发明，而是KTF最早想到的，但是KTF没有多相位磁环的专利，只能交给Daiwa用。不过，KTF的air线杯，包括T3 air, SS air，以及不出所料今年的Alpha air，都是这样的旋出结构。所以从广义上说，air系列也可以看作是SV结构。SV线杯一般都比较轻和浅，浅可以看做是变相的轻（减少缠线以后的转动惯量），所以启动和停住都比较容易，适合轻饵。SV线杯的刹车杯伸出相对比较多，低速下刹车力仍然比较够用，在档位设置高的时候不容易炒粉，又由于线杯普遍比较轻，刹车开高甚至落水可以不按也不炒。</p>
+<p><img src="/img/20170201/SV.png" alt=""></p>
+<p>总结来说：SV线杯之所以稳定而又抛投顺畅，就是因为这个设计使得线杯的刹车力在抛投的瞬间达到最大（这个时候正是线杯最不稳定的阶段，炒粉炸线大多都在这个阶段触发），而一旦线杯趋于稳定，刹车力又大幅度减弱，将刹车力对饵飞行的阻力迅速降低。我们都知道，任何轮子，只要刹车力开得够大，抛投就是稳定的，但是距离就大打折扣，距离和稳定很难取得很好的平衡，daiwa这个设计的亮点就是稳定而不影响距离，两者兼得。</p>
+<h1 id="三、DC刹车"><a href="#三、DC刹车" class="headerlink" title="三、DC刹车"></a>三、DC刹车</h1><p>DC也是运用了前面说过电磁阻尼现象。说到Shimano的DC刹车系统，想必大家的第一时间想到的还是那抛投时候电子系统制动那曼妙的声音。的确这也是Shimano DC系统的一个卖点。自进入中国市场后，搭载此系统的轮子无论是关注度和购买率来讲都是很高的。将电子系统与机械感强烈的水滴轮结合在一起，的确shimano厂家走了一条不寻常的路，当然同时也迎来了一系列的讨论和争议。Shimano的电磁刹车系统可谓是高科技产品，也是创新性的刹车系统。但是高科技带来好处的同时也带来了一些弊端。当然今天的主题不是来讲优劣的,只叙述系统原理，先来看官方视频解读：</p>
+<iframe height="498" width="700" src="http://player.youku.com/embed/XMzc2MTA2NjM1Mg==" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<p>接下来引用来自钓友的一些解读：</p>
+<blockquote>
+<p><strong>请叫我红领巾</strong>：其实很简单，通过监测线杯的转速，调节刹车力的大小比如我通过电路设计，储存一个固定的转速标准（当然shimano不止一个，会根据线不同有很多个，而且每个都有大小），抛投过程中，根据当前的转速，和标准对比，转速高了，就增加刹车力，转速低了，就减小刹车力，从而保证整个抛投过程的实际转速接近标准转速，这样就不会让你炒粉了。所以有些低端的DC刹车根本没有调整刹车力大小的设置，只有不同线的模式.</p>
+<p><strong>whsany</strong>：DC通过线圈是否短路或者是负载的电阻值来调整刹车力，如何调整是预先设定好的参数（期间通过检测转速来做微调）。这样的设计在抛投初期比daiwa的系统要好很多，不过由于线杯比较重（需要在线杯上粘上磁铁）在抛投后期影响距离。DAIWA系统的刹车环就是一个固定的线圈，切割磁力线形成电流继而形成阻力防止炒粉；相当于磁铁不动线圈在动。</p>
+<p><strong>wori007</strong>：目前我除了红蝎以外，所有的轮子都是daiwa的，如果DC系列可以做到很轻，我不会排斥它。我也是认为DC系列有很大的发展空间，相比之下，传统的磁力刹车——也就是现在daiwa现在用的SV刹车系统，已经做到机械方式磁力刹车调整的极限了，但是DC系列由于可以通过更改软件和更换更高级的处理器来升级，相对发展的空间会很大。但DC刹车有一个最大的问题，就是必须要切割磁力线，它才能工作，也就是说，DC刹车理论上，线杯必须要与磁铁发生作用，不可能像T3 AIR的刹车那样，把刹车完全关闭，达到刹车力无限接近于0的境界。如果就现在的科技环境来说，dc系列与daiwa的SV系列相比，就像之前有朋友说的那样，DC系列像自动挡，SV这种刹车系统像手档。很难说自动挡和手档哪个更好。现在的自动挡已经越来越聪明了，很多地方已经超越手档了。但是在极端情况下，还是手档更有竞争力。我的设想是，如果能把DC刹车和SV刹车结合起来，就像F1赛车的变速箱那样，起步时是手档，2档以上就变成自动挡，这样才是最好的渔轮刹车系统。<br>就目前情况看，SV刹车在极端情况下（比如微物的抛投），还是比DC刹车要强很多。毕竟T3 AIR到目前为止，还是微物抛投的皇者，没有之一。而且目前的渔轮系列中，重量始终是DC刹车无法抹去的痛。如果DC刹车能够做轻并且适用性更广，我想它秒杀传统磁力刹车（性能上啊，别跟我说性价比啊，价格啊什么的）的时日也就指日可待了。</p>
+</blockquote>
+<p>DC优点：</p>
+<ol>
+<li>饵的类型、克重适应范围广</li>
+<li>基本上可以实现傻瓜式操作</li>
+<li>在作钓时遇到更换不同重量饵的情况下可实现快速调节</li>
+</ol>
+<p>DC缺点：</p>
+<ol>
+<li>个别国内钓友反馈野钓频率过高或者进水可能会导致电磁刹车系统完全丧失工作能力</li>
+<li>因为电子系统比较娇贵，日常保养要比其它轮子多一些精力</li>
+</ol>
+<p>附：DC内部电路赏析</p>
+<p><img src="/img/20170201/shimano dc.jpg" alt=""><br><img src="/img/20170201/picicast2003shimano.jpg" alt=""><br><img src="/img/20170201/116953690424060.jpg" alt=""><br><img src="/img/20170201/1379733486.jpg" alt=""></p>
+<p>SHIMANO针对水滴轮开发出的DC(Digital Control)抛投系统（下文简称DC），不管是鼓式或者水滴式皆有机种搭载，但各机种其抛投系统调节代号不尽然完全相同，针对SHIMANO官网中现有搭载DC系统的水滴机种，包含Antares DC 2016、Metanium DC 2015、EXSENCE DC等机种，依据官方信息一一解释各调节代号的实际含意，希望以下信息对未入手或刚入手的钓友们能有所帮助。</p>
+<h3 id="1、ANTARES-DC-2016-4X8-DC-BRAKE系統"><a href="#1、ANTARES-DC-2016-4X8-DC-BRAKE系統" class="headerlink" title="1、ANTARES DC 2016(4X8 DC BRAKE系統)"></a>1、ANTARES DC 2016(4X8 DC BRAKE系統)</h3><p><img src="/img/20170201/antares1.png" alt=""><br><img src="/img/20170201/antares2.png" alt=""></p>
+<blockquote>
+<p>4代表4个模式<br>FL  - Fluoro Carbon：氟碳线模式<br>P   - PE：PE线模式<br>NM  - Nylon Monofilament：尼龙线模式<br>X   - Extreme Long Cast：超远投模式</p>
+</blockquote>
+<p><img src="/img/20170201/antares3.png" alt=""></p>
+<blockquote>
+<p>8代表8个档位微调，其中4个模式内部条件，8个档位外部调节。<br>1档 适合抛投风阻较小的金属类型的拟饵 比如 金属铁板类；<br>2档 适合在顺风环境下抛投金属材质VIB之类的拟饵；<br>3档 可以抛投大尺寸常规材质VIB；<br>4档 常规大小类型的Crankbait；<br>5档 适合抛投各类大型的Swimbait、Crankbait；<br>6档 适合抛投大型的鱼形假饵（如 大型的MINNOW类、拟形蓝鳃鱼类型拟饵）；<br>7档 大型拟饵类 S型以及大型Spinnerbait；<br>8档 适合抛投大型水面系路亚、Bigcrawlerbait\阿拉巴马钓组类型。</p>
+<p>在整个刹车模式调节档位我们可以看到，1、2两个档位的主要是针对一些风阻较小的金属类型的拟饵所以刹车力相对是最小的，3档相对前两档略高一点 但也比较小，而从4档开始一直到8档，因为基本上应对的都是风阻较大的拟饵，所以刹车力相对都较大，而在4到5档的刹车力之间的差距很明显，如果需要微调整刹车力比如调整到4到5档之间的刹车设定，那么官方建议先调整为F模式然后在调整到4档到5档之间会更合适。</p>
+</blockquote>
+<p><a href="http://tzlure.com/shimano-2018-antares-dc-md.html" target="_blank" rel="external">2018 ANTARES DC MD</a></p>
+<h3 id="2、Metanium-DC-HG-XG-2015-I-DC5系統"><a href="#2、Metanium-DC-HG-XG-2015-I-DC5系統" class="headerlink" title="2、Metanium DC HG/XG 2015(I-DC5系統)"></a>2、Metanium DC HG/XG 2015(I-DC5系統)</h3><p><img src="/img/20170201/metanium1.png" alt=""></p>
+<p>3个模式对应5个档位微调（其中一个为auto档位）</p>
+<p><img src="/img/20170201/metanium2.png" alt=""></p>
+<blockquote>
+<p>PE  - PE：PE线模式<br>FL  - Fluoro：氟碳线模式<br>NM  - Nylon：尼龙线模式<br>以上模式搭配以下微调<br>1   - 对应18~30g饵重<br>2   - 对应10~20g饵重<br>3   - 对应8~12g饵重<br>4   - 对应5~8g饵重<br>Auto- 对应饵重包含2段4~段区间</p>
+</blockquote>
+<h3 id="3、EXSENCE-DC-I-DC-EXSENCE-TUNE系統"><a href="#3、EXSENCE-DC-I-DC-EXSENCE-TUNE系統" class="headerlink" title="3、EXSENCE DC(I-DC+ EXSENCE TUNE系統)"></a>3、EXSENCE DC(I-DC+ EXSENCE TUNE系統)</h3><p><img src="/img/20170201/excensedc1.png" alt=""><br><img src="/img/20170201/excensedc2.png" alt=""></p>
+<blockquote>
+<p>PE  - Standard PE Mode：PE线标准模式<br>F   - Fluoro Line Mode：氟碳线模式<br>BB  - Big Bait PE Mode：大饵PE线模式<br>SP  - Special PE Mode：PE线特別模式(强化末端刹车力，适用不易掌握落水的时机)</p>
+<p><strong>F碳线模式</strong>:碳线模式一般都是在岸边防波堤及小型船上使用，为解决海边突然的大风影响。F模式比其他模式更有优势，并且有更大的刹车力。大大降低海边作钓炸线的可能。<br><strong>SP PE模式</strong>：该模式的最大特点是在你进行抛投的时候它会自动校正你路亚落水时的刹车力。根据我们平时作钓的经验在抛投后一般都会按住线杯防止炒粉。但遇上夜钓此种方法便不在适用，因为我们看不清路亚抛投的轨迹。但只要开启这个模式，即使你抛投后不按住线杯基本上不会发生炒粉的情况。此外SP PE模式的出线声音也和其他模式不同，当你在抛投的初期和路亚飞行的中间阶段是完全没有声音的，只有路亚在飞行抛物线的后半阶段DC系统才会介入并发出声音，这样就方便大家掌握路亚的距离和角度。<br><strong>BB PE</strong>:大饵模式，略微紧一点的刹车力，方便控制大型路亚的抛投距离及角度。</p>
+</blockquote>
+<p><a href="http://tzlure.com/shimano-2017-exsence-dc-sc.html" target="_blank" rel="external">2017 EXSENCE DC</a></p>
+<h3 id="4、CALCUTTA-CONQUEST-50DC-51DC-2011-I-DC4系統"><a href="#4、CALCUTTA-CONQUEST-50DC-51DC-2011-I-DC4系統" class="headerlink" title="4、CALCUTTA CONQUEST 50DC/51DC 2011(I-DC4系統)"></a>4、CALCUTTA CONQUEST 50DC/51DC 2011(I-DC4系統)</h3><p><img src="/img/20170201/cq50dc1.png" alt=""></p>
+<blockquote>
+<p>I-L - Long Cast：远投模式<br>I-M - Middle Distance：中等距离模式<br>I-A - All Round：全开模式<br>I-W - Wind Cast：抗风模式</p>
+</blockquote>
+<h3 id="5、CALCUTTA-CONQUEST-100DC-101DC-2010-DC-系統"><a href="#5、CALCUTTA-CONQUEST-100DC-101DC-2010-DC-系統" class="headerlink" title="5、CALCUTTA CONQUEST 100DC/101DC 2010(DC+系統)"></a>5、CALCUTTA CONQUEST 100DC/101DC 2010(DC+系統)</h3><p><img src="/img/20170201/cq101dc1.png" alt=""><br><img src="/img/20170201/cq101dc2.png" alt=""></p>
+<blockquote>
+<p>N   - Nylon：尼龙线模式<br>F   - Fluoro：氟碳线模式<br>SP  - 对应3~5g饵重的模式<br>以上模式外部可搭配8档位微调</p>
+</blockquote>
+<h3 id="6、CALCUTTA-CONQUEST-200DC-201DC-2009-DC-系統"><a href="#6、CALCUTTA-CONQUEST-200DC-201DC-2009-DC-系統" class="headerlink" title="6、CALCUTTA CONQUEST 200DC/201DC 2009(DC+系統)"></a>6、CALCUTTA CONQUEST 200DC/201DC 2009(DC+系統)</h3><p><img src="/img/20170201/cq200dc1.png" alt=""><br><img src="/img/20170201/cq200dc2.png" alt=""></p>
+<blockquote>
+<p>N   - Nylon：尼龙线模式<br>F   - Fluoro：氟碳线模式<br>SP  - 高磅线+大饵模式(20lb以上Fluoro cabon線+大型假餌如Spinner Bait、Deep Crank)<br>以上模式外部可搭配8档位微调</p>
+</blockquote>
+<h3 id="7、Scorpion-DC-DC7-I-DC-系統"><a href="#7、Scorpion-DC-DC7-I-DC-系統" class="headerlink" title="7、Scorpion DC/DC7(I-DC+系統)"></a>7、Scorpion DC/DC7(I-DC+系統)</h3><p><img src="/img/20170201/ScorpionDC1.png" alt=""><br><img src="/img/20170201/ScorpionDC2.png" alt=""><br><img src="/img/20170201/ScorpionDC3.png" alt=""></p>
+<blockquote>
+<p>I-N - Nylon：尼龙线模式<br>I-F - Fluoro：氟碳线模式<br>I-P - PowerPro<br>PE  - PE：PE线模式</p>
+</blockquote>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>圖文解說路亞輪的三大剎車原理 - 每日頭條<br><a href="https://kknews.cc/news/lkemgb.html" target="_blank" rel="external">https://kknews.cc/news/lkemgb.html</a><br>图文解说路亚轮的三大刹车原理 - 钓鱼人<br><a href="http://www.diaoyur.com/a/2016/21185.html" target="_blank" rel="external">http://www.diaoyur.com/a/2016/21185.html</a><br>水滴轮刹车系统之我见 - 百度文库<br><a href="https://wenku.baidu.com/view/656ae5116294dd88d1d26bb6.html" target="_blank" rel="external">https://wenku.baidu.com/view/656ae5116294dd88d1d26bb6.html</a><br>话说shimano的DC系列无法对抗DAIWA - 路亚之家<br><a href="http://bbs.lure123.com/forum.php?mod=viewthread&amp;tid=148579" target="_blank" rel="external">http://bbs.lure123.com/forum.php?mod=viewthread&amp;tid=148579</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[夏利俊超级远投讲解]]></title>
       <url>http://cuiqingwei.github.io/2017/01/02/2017-01-02-%E5%A4%8F%E5%88%A9%E4%BF%8A%E8%B6%85%E7%BA%A7%E8%BF%9C%E6%8A%95%E8%AE%B2%E8%A7%A3/</url>
       <content type="html"><![CDATA[<h1 id="《夏利俊路亚教室》之直柄竿超级远投"><a href="#《夏利俊路亚教室》之直柄竿超级远投" class="headerlink" title="《夏利俊路亚教室》之直柄竿超级远投"></a>《夏利俊路亚教室》之直柄竿超级远投</h1><div align="center"><br><iframe height="498" width="510" src="http://player.youku.com/embed/XMTg2Mzk2Njg4NA==" frameborder="0" 'allowfullscreen'=""></iframe><br></div>
@@ -1519,77 +1667,6 @@ make V=s
     </entry>
     
     <entry>
-      <title><![CDATA[常用路亚线的区别]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%B8%B8%E7%94%A8%E8%B7%AF%E4%BA%9A%E7%BA%BF%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-      <content type="html"><![CDATA[<h2 id="尼龙线"><a href="#尼龙线" class="headerlink" title="尼龙线"></a>尼龙线</h2><p>台钓中使用最多的也是尼龙线。尼龙的化工原料为PA，和PE一样是石油的下游产品。与PE不同的是，尼龙线一般为单股线，这种线的特点刚好与PE线相反。尼龙线的优点是由于有一定的延展性，抛投和中鱼的时候不易断线，由于生产技术已经发展了近70年的历史，成本低，产量大，相比PE线要便宜很多。最后一点是尼龙表面圆滑，对线环的磨损可以降到最低。</p>
-<a id="more"></a>
-<p>延展性同样也是尼龙线的缺点，在某些鱼讯轻微的场合，尼龙线不能及时将中鱼信号传达给钓手，从而失去最佳的起杆机会。另外，同样拉力的情况下，尼龙线比PE的线径更粗，从而影响路亚的抛投距离（<em>当然这个问题并不一定完全适用，需要根据具体的情况来，不过在高磅数的尼龙线与高磅数PE线做对比的话，高磅数的PE占些优势，因其相同的高磅数的线，高磅数PE线径更细一些，也就可以更加节省线杯的空间容下更多的线，并且线径也更细利于高磅数线的抛投</em>）。</p>
-<p><img src="/img/20161013/fishing-line.jpg" alt=""></p>
-<h2 id="PE线"><a href="#PE线" class="headerlink" title="PE线"></a>PE线</h2><p>PE线是指用多股化纤编织后浸胶制成的钓线，俗称编织线(BRAIDED OR CORD LINE)，最早见的就是“大力马”。<br>这种钓线的生产方式是：将多条微细纤维(如：达克龙纤维、功夫龙纤维或大力马纤维或其它聚乙烯化合物的PE纤维…等)以机器来编织而成，所以这种钓线的线体呈现纤维规则交叉的纹路，只要你将线体取出审视一番就可以清楚的发现其线体结构上的特色。<br>这种线的优点是，相同拉力的的情况下线径比尼龙要细很多，同样我们使用12磅的尼龙和12 磅的PE，因为PE的线径更细，能够抛投的更远。在实际钓场中，风力是影响路亚抛投距离的重要因素，PE同样因为相同拉力下线径更细的特点，能够将风阻的影响减小。除此之外，PE几乎没有延展性，在中鱼的时候能够在第一时间将信号传达给钓手。还有就是PE线更加耐磨。<br>但正像所有事物都有其两面性一样，PE并不是没有任何缺点。PE第一个缺点是没有延展性。这个特性在能够将中鱼信号迅速传达给钓手的同时，也经常导致跑鱼或放枪。玩过台钓的朋友都知道，中鱼后钓竿上要保持一定的力量，鱼才不易脱钩，杆软不易断线跑鱼，但是起鱼慢；杆硬起鱼快，但是容易断线跑鱼。同样，你可以把线看作杆的延伸，鱼线有一定的延展性，就像钓竿比较软一样，能够保证在鱼左冲右突的时候始终保持一定的力量，而PE就像比较硬的杆，遛鱼的余地比较小从而导致脱钩或断线。另外现在有厂家为了使用更细的线径达到更强的拉力，在PE中掺加金属丝，虽然拉力得到了加强，但是线的延展性和柔软度进一步降低，同时还容易磨损导环。</p>
-<h2 id="碳线（氟碳线）"><a href="#碳线（氟碳线）" class="headerlink" title="碳线（氟碳线）"></a>碳线（氟碳线）</h2><p>碳线是由含有氟和碳成分的树脂抽丝加工而成，碳线的特性是高比重、切水快、光的折射率非常低几乎看不到，没有吸水性，抗紫外线和耐久性要比尼龙线强很多，因为碳线的物理特性为非常低的延展性和高比重，可以让饵迅速到达所需要的水层，并且因延展性很低所以也就提供了良好的灵敏度。因碳线对光的折射率几乎为0，所以会降低鱼的敏感性，让鱼能放心的将饵食入口中。碳线适合搭配软饵钓组使用，比如：无铅钓组、WACKY、德州钓组，却不太适合搭配某一些特殊的硬饵或水面系的路亚。不过碳线也不是没有缺点，因为通常比较硬（特别是高磅数的碳线），如果作为主线使用要注意纺车轮上建议使用的主线不要超过10磅，水滴轮或鼓轮如有特殊需要最好也不要超过20磅（当然特殊情况下可以用到更高的磅数作为主线，并不是完全不可以），碳线也可以当做前导线来使用，因为碳线比较耐磨，可以搭配PE线，弥补PE不耐磨的缺点。</p>
-<p><img src="/img/20161013/钓线攻略.jpg" alt=""></p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[如何选择一根适合自己的BASS竿]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E4%B8%80%E6%A0%B9%E9%80%82%E5%90%88%E8%87%AA%E5%B7%B1%E7%9A%84BASS%E7%AB%BF/</url>
-      <content type="html"><![CDATA[<blockquote>
-<p>随着路亚钓法的日益增温，人们对于路亚钓的了解也渐渐深入，随之而来的就是对钓具方面的需求更加的细化和理性，但是对于路亚之类舶来钓法，虽然大家对于路亚竿的基本情况有所了解，还是有很多地方对于入门的童鞋们来讲还是有些无所适从，特别是大嘴黑鲈钓法中对于钓竿的选择上往往会出现一些迷茫和误解，并且有时候还会因为不太了解BASS竿的特性而造成不必要的花销，下面我们就搜集了一些资料与大家探讨和参考，希望能对大家有所帮助。</p>
-</blockquote>
-<h1 id="BASS竿的整体分类"><a href="#BASS竿的整体分类" class="headerlink" title="BASS竿的整体分类"></a>BASS竿的整体分类</h1><h3 id="关于Bass竿的硬度（POWER）"><a href="#关于Bass竿的硬度（POWER）" class="headerlink" title="关于Bass竿的硬度（POWER）"></a>关于Bass竿的硬度（POWER）</h3><p>BASS竿分为直柄竿与枪柄竿，直柄竿需搭配纺车轮，枪柄竿搭配鼓轮或水滴轮。<br>通常直柄竿的硬度从UL-MH，枪柄竿的硬度从L-XXH。从抛投的角度来说，枪柄竿不适合抛投重量特别轻的拟饵，但由于适合抛投微物的水滴轮出现，枪柄竿已经可以顺利抛投1克左右的钓组。</p>
-<h4 id="路亚竿硬度（POWER）的表示方式："><a href="#路亚竿硬度（POWER）的表示方式：" class="headerlink" title="路亚竿硬度（POWER）的表示方式："></a>路亚竿硬度（POWER）的表示方式：</h4><p><img src="/img/20161013/路亚竿硬度.png" alt=""><br><img src="/img/20161013/power-action-chart.png" alt=""></p>
-<h3 id="关于Bass竿的调性（ACTION）"><a href="#关于Bass竿的调性（ACTION）" class="headerlink" title="关于Bass竿的调性（ACTION）"></a>关于Bass竿的调性（ACTION）</h3><p>很多路亚爱好者在路亚竿调性的理解上存在着误区，大家通常认为Bass竿的硬度如M、MH等就是鱼竿的调性，其实不然。鱼竿的调性代表鱼竿曲线变化，从S到F表示鱼竿在适当受力后的弯曲点越来越靠近竿梢。<br>调性越快的Bass竿鱼讯和操竿动作的传导越直接明确，但竿身的缓冲能力越差、越容易断线或脱钩。相反调性越慢的Bass竿，它的缓冲能力越好，但传达受力状况和控线动态的能力越差。另外调性也会影响钓组的抛投，一般而言调性越快越适合抛轻的钓组。而越重的钓组越适合慢调Bass竿抛投。<br>慢调路亚竿弯曲点在鱼竿的中后部，依靠鱼竿的整体受力发力，因此鱼竿的整体感觉比较柔和。通常“1 / 9调”和“2 / 8调”的Bass竿通称为快调（Fast Action），“3 / 7调”的Bass竿通称为中调（Medium Action），“4 / 6调”和“5 / 5调”的Bass竿通称为慢调（Through Action）。在使用软饵钓组中，为了精准捕捉鱼讯和细腻操控拟饵，一般使用快调Bass竿。使用硬饵钓组更多是为追求泳姿表现，或在小范围内呈现大幅度动作，通常使用慢调Bass竿。泛用型Bass竿或有抛投要求的Bass竿一般为中调。<br>选择什么调性的Bass竿通常是由使用的钓法、钓组决定。慢调路亚竿在控饵时可充分消减鱼饵在水中振动带来的阻力，竿子比较有粘性中鱼后可以充分享受与鱼搏斗带来的快感。由于慢调的鱼竿感度偏低，因此多用在使用三本钩的硬饵钓组上。快调路亚竿由于感度较高，通常用于使用单钩的软饵钓组。</p>
-<p><img src="/img/20161013/blanks_action-NEW.gif" alt=""></p>
-<h4 id="路亚竿调性（ACTION）的表示方式："><a href="#路亚竿调性（ACTION）的表示方式：" class="headerlink" title="路亚竿调性（ACTION）的表示方式："></a>路亚竿调性（ACTION）的表示方式：</h4><p><img src="/img/20161013/路亚竿调性.png" alt=""></p>
-<h4 id="不同调性Bass竿特性不同，选择搭配合适的推荐钓组如下："><a href="#不同调性Bass竿特性不同，选择搭配合适的推荐钓组如下：" class="headerlink" title="不同调性Bass竿特性不同，选择搭配合适的推荐钓组如下："></a>不同调性Bass竿特性不同，选择搭配合适的推荐钓组如下：</h4><p><img src="/img/20161013/调性配钓组.png" alt=""><br><img src="/img/20161013/fishing-rod-action.gif" alt=""></p>
-<h1 id="软饵竿和硬饵竿特性介绍"><a href="#软饵竿和硬饵竿特性介绍" class="headerlink" title="软饵竿和硬饵竿特性介绍"></a>软饵竿和硬饵竿特性介绍</h1><blockquote>
-<p>Bass钓的拟饵主要分为软饵与硬饵，软饵与硬饵在水中呈现方式的不同，决定不同的钓组选择搭配不同的Bass竿。软饵通常搭配单钩，硬饵通常搭配三本钩，这也是选择快慢调Bass竿的一个重要因素。</p>
-</blockquote>
-<h2 id="软饵竿通常调性偏快，主要原因如下："><a href="#软饵竿通常调性偏快，主要原因如下：" class="headerlink" title="软饵竿通常调性偏快，主要原因如下："></a>软饵竿通常调性偏快，主要原因如下：</h2><h3 id="感度高"><a href="#感度高" class="headerlink" title="感度高"></a>感度高</h3><p>软饵与硬饵最大的不同就是软饵需要以更自然的方式将饵呈现在鱼的眼前，以降低鱼的警惕从而对软饵发起攻击。这时我们就需要感知度较高的软饵竿进行操控才能随心所欲地控制软饵动作，并且了解它在水下的情况。对于好的钓手而言，软饵钓组在水底每一次触碰都能清楚的反应到钓手的头脑之中。感度好的软饵竿更容易察觉目标鱼的轻微咬口。在使用软饵作钓的时候，我们通常以较慢的过程去操控它，以求软饵在水下呈现最自然的状态，此时也通常是目标鱼发动攻击之时。由于环境等众多因素，我们作钓的时候经常会遇到低活性鱼，他们在对饵发动攻击的时候一般都不是那么凶猛，不宜让钓手察觉，所以我们就需要感度好的快调软饵竿进行作钓。</p>
-<h3 id="刺鱼得力"><a href="#刺鱼得力" class="headerlink" title="刺鱼得力"></a>刺鱼得力</h3><p>我们在使用软饵作钓时，都希望软饵搭配的单钩在作合刺鱼的一瞬间能钉牢鱼的口腔，这样才不易跑鱼，快调软饵竿更容易做到这一点。举个例子，假如我们在使用快调竿作合刺鱼时，理论上鱼钩一端本应有1米的刺鱼位移，实际情况下我们可能会获得0.8米的刺鱼位移，这样才能使上力直至刺破鱼的上膛。但若使用慢调竿用同样的幅度作合刺鱼时，由于鱼竿调性偏慢，无形之中会削弱我们在这过程之中所做的功和机械能，本应有1米的刺鱼位移，事实上可能还不到0.5米，甚至更少，这样我们所使用的单钩就不容易发挥最大功效并刺破鱼嘴，从而导致跑鱼。</p>
-<h3 id="抛投精确"><a href="#抛投精确" class="headerlink" title="抛投精确"></a>抛投精确</h3><p>我们在使用软饵作钓的时候需要对标点的精确打击，一支调性较快的钓竿有利于精确地抛投。在使用软饵作钓的时候，我们使用Pitching（荡抛）的频率往往要高于其他任何一种抛投。因为我们想准确的打击标点，这样才能有最好的钓获。一根竿身较挺/调性较快的软饵竿有利于我们寻找这种对软饵精确抛投的感觉，这应该是每一位钓手都想要的。</p>
-<h2 id="提高感度，减少操控硬饵的强度"><a href="#提高感度，减少操控硬饵的强度" class="headerlink" title="提高感度，减少操控硬饵的强度"></a>提高感度，减少操控硬饵的强度</h2><p>硬饵（尤其是Crankbait等摆动幅度较大的硬饵）在水中有比较大的摆动幅度或较高的摆动频率，传导到钓竿上会产生很高的振动频率或很大的水阻力。一支慢调硬饵竿能够有效的减缓这一现象，让你在操控硬饵时更轻松，并提高感度。</p>
-<h3 id="减小冲击力"><a href="#减小冲击力" class="headerlink" title="减小冲击力"></a>减小冲击力</h3><p>我们在使用硬饵中鱼的时候，饵上的三本钩有时刺的不是那么牢固，这时就需要较慢调性的钓竿来操控硬饵了。因为较慢的调性，在刺鱼瞬间以及鱼在水下挣扎之时可减小外部所带来的冲击力，这样可以避免遭受硬力导致脱钩。</p>
-<h3 id="利于远投"><a href="#利于远投" class="headerlink" title="利于远投"></a>利于远投</h3><p>很多时候我们使用硬饵搜索岸边，在很多情况下我们依旧需要把硬饵远投才能获得理想的钓获。例如在炎热的夏季使用深水Crankbait，我们必须给饵留出下潜所需的一定距离直至设定泳层，让饵尽可能长的游动在设定泳层里，这样上鱼的几率会大大的增加，所以这时我们需要远投性能好的钓竿。若远投性能不好，饵刚扔出去没还有收到设定的泳层就已经到我们的脚边上了，那样就不会有很好的效果。调性偏慢的钓竿腰弹性较大，更利于抛投更远的距离。</p>
-<h1 id="七种武器"><a href="#七种武器" class="headerlink" title="七种武器"></a>七种武器</h1><blockquote>
-<p>Bass竞技比赛中常用的钓组有Crankbait，Rubber jig，Jerkbait，无铅，倒吊，Finesse jig（此处所指的Finesse jig是2g~5g范围内的小型Rubber jig），Neko。以上七种钓组所匹配的七套装备，基本能够应对鲈鱼钓比赛大多数情况。</p>
-</blockquote>
-<h2 id="Crankbait-钓竿"><a href="#Crankbait-钓竿" class="headerlink" title="Crankbait 钓竿"></a>Crankbait 钓竿</h2><p>我通常选择Regular调性的鱼竿配合一个低速比的水滴轮来操控Crankbait，这套装备还适合操控VIB。<br>作钓中根据不同的情况可能需要搭配各种类型的线，但是如果考虑到其泛用性，我会倾向于选择10-12LB的氟碳线。如果在冬季和初春的时期，我会考虑降低线组的直径而选择6-8LB鱼线。反之在夏季和秋季，考虑要让你的饵更多的停留或经过障碍物和水草附近，我会加大线径使用12-14LB甚至更粗的线。</p>
-<h2 id="Rubber-jig钓竿"><a href="#Rubber-jig钓竿" class="headerlink" title="Rubber jig钓竿"></a>Rubber jig钓竿</h2><p>Extra fast调性的钓竿配合一个高速比的水滴轮，我能钓Jig以及德州，还有科罗拉多钓组。<br>季节以及水域情况不同所需要钓竿的硬度也有不同的要求。比如我所作钓的水域是以岩石结构为主而岸边的障碍相对比较少的情况下，我会选择M调;如果是湖泊型的水域那就意味着水域内有相当数量的水草，这时我就会选择MH硬度的钓竿;如若水域内有大量的水草区域且水草以水面水草为主，比如以菱角、蓼草、水花生等水面型水草为主而组成的障碍，以及岸边树枝垂入水中和没入水中的杂树所组成的重型障碍，这时候我就需要一根强力的钓竿，才可以有效的将鱼从障碍中拔出来。此时我通常需要一支H或者XH的杆子方能周旋应付了。<br>所搭配的线组由弱到强我将其分为三个档次：</p>
-<ul>
-<li>岩石为主的水体—8-10LB氟碳线</li>
-<li>湖泊类水线下水草为主的水体—12-14LB氟碳线</li>
-<li>水面障碍倒树以及水线上水草为主的水体—14-20LB氟碳或65LB的PE线</li>
-</ul>
-<h2 id="Jerkbait钓竿"><a href="#Jerkbait钓竿" class="headerlink" title="Jerkbait钓竿"></a>Jerkbait钓竿</h2><p>Fast调性的鱼竿配合中等速比的水滴轮，我可以用它钓Jerkbait，中小型Shad，Spinnerbait，Buzzbait。<br>可以说Jerkbait主要是在冷水中作钓的利器，但全年当中大多数时间都能够使用它有效地捕获到那些体型相对大的鲈鱼，当然应对不同的情况所使用的技法以及饵的类型都有一些细微的变化，在这里就不一一详解了。跟Jerkbait一样，Shad也是相对比较通用的一种反应饵，适合针对压力场或是天冷的季节。匀速的缓收以及抽/停都能获得不错的咬口。<br>在面对水草边缘的时候同样能够用来操作Spinnerbait 和Buzzbait，如果水草相对比较重的话就要有针对性的选择钓竿了。</p>
-<h2 id="无铅钓组钓竿"><a href="#无铅钓组钓竿" class="headerlink" title="无铅钓组钓竿"></a>无铅钓组钓竿</h2><p>L调Fast的钓竿配合2000-2500型浅线杯纺车轮是我最常用的选择。这里所指的无铅钓组，并非是单指Wacky钓组。通常我在无铅钓组的择饵上会选择长条型的软饵作钓，会选择用曲柄钩直穿的方法而非是使用Wacky的方法挂在面条虫的中间位置。这种无铅的方法比较适合在水岸比较复杂的情况下使用，其防挂性能与障碍的通过性都特别好，可以纵向地控饵犹如一条小鱼在水岸边的障碍边悄声窜过。也可以垂直的作钓，让其缓慢的垂直呈现自然落下的姿态。当然你也可以用他进行Wacky钓组的作钓，垂直地呈现你的软饵。<br>对于无铅钓竿，我的要求是有灵敏的竿先以及有力却又不至于太过刚性的腰身，在远距离中鱼的时候能够有效的作合刺穿鲈鱼的口腔，中鱼后又能够一定程度的缓冲鲈鱼的一次次强烈洗腮。绵而不失其灵动，刚直却韧劲十足。<br>通常我会选择使用4-6LB的氟碳线，又或者选择10LB的蜘蛛侠氟碳混合编织线加6LB前导氟碳线来作钓，混合编织线能够更好地把握住那些远距离的咬口，其低延展性能够有效捕捉住那些细微的就食动作。</p>
-<h2 id="倒吊钓组钓竿"><a href="#倒吊钓组钓竿" class="headerlink" title="倒吊钓组钓竿"></a>倒吊钓组钓竿</h2><p>对于这一钓组，我想国内大多钓手都非常熟知乃至于精通。我喜欢使用L调Fast的纺车竿配合2500S的纺车轮进行作钓，这钓组对于深水作钓和压力场作钓表现出的成绩都是相当优秀的。它能在原地做出更多的动作以诱惑那些警惕不愿开口的鲈鱼，也能够针对作钓区域作出有效的纵向搜索。</p>
-<p>根据不同场地的需求，可以选择自己所设定的软饵在预想的区域内尽可能自然的呈现。同时也可以配合鱼探进行垂直的定点位的呈现去钓获鲈鱼，而我在使用这一钓组的时候大多数时间会选择配合鱼探做垂直呈现的作钓。大多数时候我们都会选择使用倒吊钓组来进行结构作钓，相对的都是开阔水域，此时我会选择使用4-6LB的氟碳线。</p>
-<h2 id="Finesse-Jig钓组钓竿"><a href="#Finesse-Jig钓组钓竿" class="headerlink" title="Finesse Jig钓组钓竿"></a>Finesse Jig钓组钓竿</h2><p>我会选择使用Extra fast调性的Bait finesse钓竿配合微物水滴轮来进行作钓，它可以搭配使用Finesse jig，小型Tube，小型德州等钓组。<br>此装备的优点是可以进行精确落点的抛投，很多时候一个精准的抛投是获得咬口的重要因素，而且更小的饵确实是可以获得更多的咬口，Bait finesse钓法便如此应运而生。</p>
-<h2 id="Neko钓组钓竿"><a href="#Neko钓组钓竿" class="headerlink" title="Neko钓组钓竿"></a>Neko钓组钓竿</h2><p>我会选择一根Extra fast的钓竿和2000S的纺车轮，配合4LB氟碳线来作钓。除了Neko钓组外，我还可以用它来钓1g多的JIG和Super finesse的倒吊（2~3寸的饵配合1-2g的倒吊铅）应对极限条件下的深水作钓。<br>Neko钓组是为数较少的一种针对深水作钓的最佳选择，可它以在水温低于7摄氏度的情况下依然能够捕获一定数量的咬口，可以非常慢速的在水下呈现软饵的自然状态。其垂直落底的特性也是我对于结构作钓时的不二选择。针对国内众多压力钓场都有着不俗的表现。</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[善用路亚软饵]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%96%84%E7%94%A8%E8%B7%AF%E4%BA%9A%E8%BD%AF%E9%A5%B5/</url>
-      <content type="html"><![CDATA[<p>在路亚世界里，软饵的搭配种类比较多功能性也不尽相同，但是它们的共同之处 就在于—引诱鱼饵上钩，无论是以动作逼真引诱还是以动作激怒鱼儿。 但是这些动作都需要人来赋予它，不然再好的路亚软饵也是枉然。</p>
-<p>说之前先声明，这是给各位刚刚玩的盆友们准备的，各位老鸟们还请海涵！</p>
-<a id="more"></a>
-<p><img src="/img/20161013/orka-shad-tail92.jpg" alt=""></p>
-<p>首先呢，就先 从模拟自然界中的动作讲一下吧，这个问题就在于钓友们手上的灵活多变操控了 ，一般比较常用也是比较有效的方式有三种：</p>
-<p><strong>1，跳</strong></p>
-<p><strong>2，拖</strong></p>
-<p><strong>3，停</strong></p>
-<p><em>第一种，跳，顾名思义就如同我们人跳舞一样，饵也需要在水下跳舞引诱鱼 的注意，让它们觉得这东西有点好奇，看着有些意思，进而进行试探 最后咬钩。 “跳”的方法就是手持竿子，将竿子用手腕的力量上下挑动，使饵在水下呈现出 上下跳跃的姿态 这种跳跃的幅度可大可小，不用拘泥于形式，可以夸张的大幅度 ，也可以用轻微的小幅度挑动来模拟一些落入水中的昆虫幼虫或其他小生物。</em></p>
-<p><em>第二种，拖，拖动饵在水下移动，让饵自然呈现一种在底层游动的状态，引诱鱼 前来试探，这种方法对付一些底层伏击型的鱼类比较有效果。也会对钓手们了解 水底的地形有帮助。操作方法 就是慢慢摇轮，让其软饵在水下慢慢游走。</em></p>
-<p><em>第三种，停，这个动作非常重要 有时候你一直在操控软饵时，鱼可能没有动作， 只会盯着看，往往就是在你停顿的瞬间，鱼会突然发动攻击。当然停顿的时间没 有固定的，需要大家自行体会根据不同的环境来随时调整。</em></p>
-<p>而将这三者结合起来：跳-拖-停 重复使用的时候，往往会对鱼造成极大的诱惑性 ，可以使中鱼率大大增加，特别是在鱼境况不好的压力钓场上，往往路亚软饵钓 组会发挥极大地作用，大家可以在操控软饵的时候想想一下软饵在水下的动作会 是怎样的，充分发挥自己的想象力，努力去改造软饵在水下的状态，最简单的方 法就是找一个透明的玻璃鱼缸灌满水将软虫钓组放入浴缸里进行调试，已达到你 想要的理想效果，所以软饵钓组各位一定要掌握一下，当你熟悉了路亚软饵钓组 的你肯定会爱上它的。</p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[几种常用有效的线结介绍]]></title>
       <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%87%A0%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%9C%89%E6%95%88%E7%9A%84%E7%BA%BF%E7%BB%93%E4%BB%8B%E7%BB%8D/</url>
       <content type="html"><![CDATA[<blockquote>
@@ -1635,6 +1712,77 @@ make V=s
     </entry>
     
     <entry>
+      <title><![CDATA[常用路亚线的区别]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%B8%B8%E7%94%A8%E8%B7%AF%E4%BA%9A%E7%BA%BF%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      <content type="html"><![CDATA[<h2 id="尼龙线"><a href="#尼龙线" class="headerlink" title="尼龙线"></a>尼龙线</h2><p>台钓中使用最多的也是尼龙线。尼龙的化工原料为PA，和PE一样是石油的下游产品。与PE不同的是，尼龙线一般为单股线，这种线的特点刚好与PE线相反。尼龙线的优点是由于有一定的延展性，抛投和中鱼的时候不易断线，由于生产技术已经发展了近70年的历史，成本低，产量大，相比PE线要便宜很多。最后一点是尼龙表面圆滑，对线环的磨损可以降到最低。</p>
+<a id="more"></a>
+<p>延展性同样也是尼龙线的缺点，在某些鱼讯轻微的场合，尼龙线不能及时将中鱼信号传达给钓手，从而失去最佳的起杆机会。另外，同样拉力的情况下，尼龙线比PE的线径更粗，从而影响路亚的抛投距离（<em>当然这个问题并不一定完全适用，需要根据具体的情况来，不过在高磅数的尼龙线与高磅数PE线做对比的话，高磅数的PE占些优势，因其相同的高磅数的线，高磅数PE线径更细一些，也就可以更加节省线杯的空间容下更多的线，并且线径也更细利于高磅数线的抛投</em>）。</p>
+<p><img src="/img/20161013/fishing-line.jpg" alt=""></p>
+<h2 id="PE线"><a href="#PE线" class="headerlink" title="PE线"></a>PE线</h2><p>PE线是指用多股化纤编织后浸胶制成的钓线，俗称编织线(BRAIDED OR CORD LINE)，最早见的就是“大力马”。<br>这种钓线的生产方式是：将多条微细纤维(如：达克龙纤维、功夫龙纤维或大力马纤维或其它聚乙烯化合物的PE纤维…等)以机器来编织而成，所以这种钓线的线体呈现纤维规则交叉的纹路，只要你将线体取出审视一番就可以清楚的发现其线体结构上的特色。<br>这种线的优点是，相同拉力的的情况下线径比尼龙要细很多，同样我们使用12磅的尼龙和12 磅的PE，因为PE的线径更细，能够抛投的更远。在实际钓场中，风力是影响路亚抛投距离的重要因素，PE同样因为相同拉力下线径更细的特点，能够将风阻的影响减小。除此之外，PE几乎没有延展性，在中鱼的时候能够在第一时间将信号传达给钓手。还有就是PE线更加耐磨。<br>但正像所有事物都有其两面性一样，PE并不是没有任何缺点。PE第一个缺点是没有延展性。这个特性在能够将中鱼信号迅速传达给钓手的同时，也经常导致跑鱼或放枪。玩过台钓的朋友都知道，中鱼后钓竿上要保持一定的力量，鱼才不易脱钩，杆软不易断线跑鱼，但是起鱼慢；杆硬起鱼快，但是容易断线跑鱼。同样，你可以把线看作杆的延伸，鱼线有一定的延展性，就像钓竿比较软一样，能够保证在鱼左冲右突的时候始终保持一定的力量，而PE就像比较硬的杆，遛鱼的余地比较小从而导致脱钩或断线。另外现在有厂家为了使用更细的线径达到更强的拉力，在PE中掺加金属丝，虽然拉力得到了加强，但是线的延展性和柔软度进一步降低，同时还容易磨损导环。</p>
+<h2 id="碳线（氟碳线）"><a href="#碳线（氟碳线）" class="headerlink" title="碳线（氟碳线）"></a>碳线（氟碳线）</h2><p>碳线是由含有氟和碳成分的树脂抽丝加工而成，碳线的特性是高比重、切水快、光的折射率非常低几乎看不到，没有吸水性，抗紫外线和耐久性要比尼龙线强很多，因为碳线的物理特性为非常低的延展性和高比重，可以让饵迅速到达所需要的水层，并且因延展性很低所以也就提供了良好的灵敏度。因碳线对光的折射率几乎为0，所以会降低鱼的敏感性，让鱼能放心的将饵食入口中。碳线适合搭配软饵钓组使用，比如：无铅钓组、WACKY、德州钓组，却不太适合搭配某一些特殊的硬饵或水面系的路亚。不过碳线也不是没有缺点，因为通常比较硬（特别是高磅数的碳线），如果作为主线使用要注意纺车轮上建议使用的主线不要超过10磅，水滴轮或鼓轮如有特殊需要最好也不要超过20磅（当然特殊情况下可以用到更高的磅数作为主线，并不是完全不可以），碳线也可以当做前导线来使用，因为碳线比较耐磨，可以搭配PE线，弥补PE不耐磨的缺点。</p>
+<p><img src="/img/20161013/钓线攻略.jpg" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[善用路亚软饵]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%96%84%E7%94%A8%E8%B7%AF%E4%BA%9A%E8%BD%AF%E9%A5%B5/</url>
+      <content type="html"><![CDATA[<p>在路亚世界里，软饵的搭配种类比较多功能性也不尽相同，但是它们的共同之处 就在于—引诱鱼饵上钩，无论是以动作逼真引诱还是以动作激怒鱼儿。 但是这些动作都需要人来赋予它，不然再好的路亚软饵也是枉然。</p>
+<p>说之前先声明，这是给各位刚刚玩的盆友们准备的，各位老鸟们还请海涵！</p>
+<a id="more"></a>
+<p><img src="/img/20161013/orka-shad-tail92.jpg" alt=""></p>
+<p>首先呢，就先 从模拟自然界中的动作讲一下吧，这个问题就在于钓友们手上的灵活多变操控了 ，一般比较常用也是比较有效的方式有三种：</p>
+<p><strong>1，跳</strong></p>
+<p><strong>2，拖</strong></p>
+<p><strong>3，停</strong></p>
+<p><em>第一种，跳，顾名思义就如同我们人跳舞一样，饵也需要在水下跳舞引诱鱼 的注意，让它们觉得这东西有点好奇，看着有些意思，进而进行试探 最后咬钩。 “跳”的方法就是手持竿子，将竿子用手腕的力量上下挑动，使饵在水下呈现出 上下跳跃的姿态 这种跳跃的幅度可大可小，不用拘泥于形式，可以夸张的大幅度 ，也可以用轻微的小幅度挑动来模拟一些落入水中的昆虫幼虫或其他小生物。</em></p>
+<p><em>第二种，拖，拖动饵在水下移动，让饵自然呈现一种在底层游动的状态，引诱鱼 前来试探，这种方法对付一些底层伏击型的鱼类比较有效果。也会对钓手们了解 水底的地形有帮助。操作方法 就是慢慢摇轮，让其软饵在水下慢慢游走。</em></p>
+<p><em>第三种，停，这个动作非常重要 有时候你一直在操控软饵时，鱼可能没有动作， 只会盯着看，往往就是在你停顿的瞬间，鱼会突然发动攻击。当然停顿的时间没 有固定的，需要大家自行体会根据不同的环境来随时调整。</em></p>
+<p>而将这三者结合起来：跳-拖-停 重复使用的时候，往往会对鱼造成极大的诱惑性 ，可以使中鱼率大大增加，特别是在鱼境况不好的压力钓场上，往往路亚软饵钓 组会发挥极大地作用，大家可以在操控软饵的时候想想一下软饵在水下的动作会 是怎样的，充分发挥自己的想象力，努力去改造软饵在水下的状态，最简单的方 法就是找一个透明的玻璃鱼缸灌满水将软虫钓组放入浴缸里进行调试，已达到你 想要的理想效果，所以软饵钓组各位一定要掌握一下，当你熟悉了路亚软饵钓组 的你肯定会爱上它的。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[如何选择一根适合自己的BASS竿]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E4%B8%80%E6%A0%B9%E9%80%82%E5%90%88%E8%87%AA%E5%B7%B1%E7%9A%84BASS%E7%AB%BF/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>随着路亚钓法的日益增温，人们对于路亚钓的了解也渐渐深入，随之而来的就是对钓具方面的需求更加的细化和理性，但是对于路亚之类舶来钓法，虽然大家对于路亚竿的基本情况有所了解，还是有很多地方对于入门的童鞋们来讲还是有些无所适从，特别是大嘴黑鲈钓法中对于钓竿的选择上往往会出现一些迷茫和误解，并且有时候还会因为不太了解BASS竿的特性而造成不必要的花销，下面我们就搜集了一些资料与大家探讨和参考，希望能对大家有所帮助。</p>
+</blockquote>
+<h1 id="BASS竿的整体分类"><a href="#BASS竿的整体分类" class="headerlink" title="BASS竿的整体分类"></a>BASS竿的整体分类</h1><h3 id="关于Bass竿的硬度（POWER）"><a href="#关于Bass竿的硬度（POWER）" class="headerlink" title="关于Bass竿的硬度（POWER）"></a>关于Bass竿的硬度（POWER）</h3><p>BASS竿分为直柄竿与枪柄竿，直柄竿需搭配纺车轮，枪柄竿搭配鼓轮或水滴轮。<br>通常直柄竿的硬度从UL-MH，枪柄竿的硬度从L-XXH。从抛投的角度来说，枪柄竿不适合抛投重量特别轻的拟饵，但由于适合抛投微物的水滴轮出现，枪柄竿已经可以顺利抛投1克左右的钓组。</p>
+<h4 id="路亚竿硬度（POWER）的表示方式："><a href="#路亚竿硬度（POWER）的表示方式：" class="headerlink" title="路亚竿硬度（POWER）的表示方式："></a>路亚竿硬度（POWER）的表示方式：</h4><p><img src="/img/20161013/路亚竿硬度.png" alt=""><br><img src="/img/20161013/power-action-chart.png" alt=""></p>
+<h3 id="关于Bass竿的调性（ACTION）"><a href="#关于Bass竿的调性（ACTION）" class="headerlink" title="关于Bass竿的调性（ACTION）"></a>关于Bass竿的调性（ACTION）</h3><p>很多路亚爱好者在路亚竿调性的理解上存在着误区，大家通常认为Bass竿的硬度如M、MH等就是鱼竿的调性，其实不然。鱼竿的调性代表鱼竿曲线变化，从S到F表示鱼竿在适当受力后的弯曲点越来越靠近竿梢。<br>调性越快的Bass竿鱼讯和操竿动作的传导越直接明确，但竿身的缓冲能力越差、越容易断线或脱钩。相反调性越慢的Bass竿，它的缓冲能力越好，但传达受力状况和控线动态的能力越差。另外调性也会影响钓组的抛投，一般而言调性越快越适合抛轻的钓组。而越重的钓组越适合慢调Bass竿抛投。<br>慢调路亚竿弯曲点在鱼竿的中后部，依靠鱼竿的整体受力发力，因此鱼竿的整体感觉比较柔和。通常“1 / 9调”和“2 / 8调”的Bass竿通称为快调（Fast Action），“3 / 7调”的Bass竿通称为中调（Medium Action），“4 / 6调”和“5 / 5调”的Bass竿通称为慢调（Through Action）。在使用软饵钓组中，为了精准捕捉鱼讯和细腻操控拟饵，一般使用快调Bass竿。使用硬饵钓组更多是为追求泳姿表现，或在小范围内呈现大幅度动作，通常使用慢调Bass竿。泛用型Bass竿或有抛投要求的Bass竿一般为中调。<br>选择什么调性的Bass竿通常是由使用的钓法、钓组决定。慢调路亚竿在控饵时可充分消减鱼饵在水中振动带来的阻力，竿子比较有粘性中鱼后可以充分享受与鱼搏斗带来的快感。由于慢调的鱼竿感度偏低，因此多用在使用三本钩的硬饵钓组上。快调路亚竿由于感度较高，通常用于使用单钩的软饵钓组。</p>
+<p><img src="/img/20161013/blanks_action-NEW.gif" alt=""></p>
+<h4 id="路亚竿调性（ACTION）的表示方式："><a href="#路亚竿调性（ACTION）的表示方式：" class="headerlink" title="路亚竿调性（ACTION）的表示方式："></a>路亚竿调性（ACTION）的表示方式：</h4><p><img src="/img/20161013/路亚竿调性.png" alt=""></p>
+<h4 id="不同调性Bass竿特性不同，选择搭配合适的推荐钓组如下："><a href="#不同调性Bass竿特性不同，选择搭配合适的推荐钓组如下：" class="headerlink" title="不同调性Bass竿特性不同，选择搭配合适的推荐钓组如下："></a>不同调性Bass竿特性不同，选择搭配合适的推荐钓组如下：</h4><p><img src="/img/20161013/调性配钓组.png" alt=""><br><img src="/img/20161013/fishing-rod-action.gif" alt=""></p>
+<h1 id="软饵竿和硬饵竿特性介绍"><a href="#软饵竿和硬饵竿特性介绍" class="headerlink" title="软饵竿和硬饵竿特性介绍"></a>软饵竿和硬饵竿特性介绍</h1><blockquote>
+<p>Bass钓的拟饵主要分为软饵与硬饵，软饵与硬饵在水中呈现方式的不同，决定不同的钓组选择搭配不同的Bass竿。软饵通常搭配单钩，硬饵通常搭配三本钩，这也是选择快慢调Bass竿的一个重要因素。</p>
+</blockquote>
+<h2 id="软饵竿通常调性偏快，主要原因如下："><a href="#软饵竿通常调性偏快，主要原因如下：" class="headerlink" title="软饵竿通常调性偏快，主要原因如下："></a>软饵竿通常调性偏快，主要原因如下：</h2><h3 id="感度高"><a href="#感度高" class="headerlink" title="感度高"></a>感度高</h3><p>软饵与硬饵最大的不同就是软饵需要以更自然的方式将饵呈现在鱼的眼前，以降低鱼的警惕从而对软饵发起攻击。这时我们就需要感知度较高的软饵竿进行操控才能随心所欲地控制软饵动作，并且了解它在水下的情况。对于好的钓手而言，软饵钓组在水底每一次触碰都能清楚的反应到钓手的头脑之中。感度好的软饵竿更容易察觉目标鱼的轻微咬口。在使用软饵作钓的时候，我们通常以较慢的过程去操控它，以求软饵在水下呈现最自然的状态，此时也通常是目标鱼发动攻击之时。由于环境等众多因素，我们作钓的时候经常会遇到低活性鱼，他们在对饵发动攻击的时候一般都不是那么凶猛，不宜让钓手察觉，所以我们就需要感度好的快调软饵竿进行作钓。</p>
+<h3 id="刺鱼得力"><a href="#刺鱼得力" class="headerlink" title="刺鱼得力"></a>刺鱼得力</h3><p>我们在使用软饵作钓时，都希望软饵搭配的单钩在作合刺鱼的一瞬间能钉牢鱼的口腔，这样才不易跑鱼，快调软饵竿更容易做到这一点。举个例子，假如我们在使用快调竿作合刺鱼时，理论上鱼钩一端本应有1米的刺鱼位移，实际情况下我们可能会获得0.8米的刺鱼位移，这样才能使上力直至刺破鱼的上膛。但若使用慢调竿用同样的幅度作合刺鱼时，由于鱼竿调性偏慢，无形之中会削弱我们在这过程之中所做的功和机械能，本应有1米的刺鱼位移，事实上可能还不到0.5米，甚至更少，这样我们所使用的单钩就不容易发挥最大功效并刺破鱼嘴，从而导致跑鱼。</p>
+<h3 id="抛投精确"><a href="#抛投精确" class="headerlink" title="抛投精确"></a>抛投精确</h3><p>我们在使用软饵作钓的时候需要对标点的精确打击，一支调性较快的钓竿有利于精确地抛投。在使用软饵作钓的时候，我们使用Pitching（荡抛）的频率往往要高于其他任何一种抛投。因为我们想准确的打击标点，这样才能有最好的钓获。一根竿身较挺/调性较快的软饵竿有利于我们寻找这种对软饵精确抛投的感觉，这应该是每一位钓手都想要的。</p>
+<h2 id="提高感度，减少操控硬饵的强度"><a href="#提高感度，减少操控硬饵的强度" class="headerlink" title="提高感度，减少操控硬饵的强度"></a>提高感度，减少操控硬饵的强度</h2><p>硬饵（尤其是Crankbait等摆动幅度较大的硬饵）在水中有比较大的摆动幅度或较高的摆动频率，传导到钓竿上会产生很高的振动频率或很大的水阻力。一支慢调硬饵竿能够有效的减缓这一现象，让你在操控硬饵时更轻松，并提高感度。</p>
+<h3 id="减小冲击力"><a href="#减小冲击力" class="headerlink" title="减小冲击力"></a>减小冲击力</h3><p>我们在使用硬饵中鱼的时候，饵上的三本钩有时刺的不是那么牢固，这时就需要较慢调性的钓竿来操控硬饵了。因为较慢的调性，在刺鱼瞬间以及鱼在水下挣扎之时可减小外部所带来的冲击力，这样可以避免遭受硬力导致脱钩。</p>
+<h3 id="利于远投"><a href="#利于远投" class="headerlink" title="利于远投"></a>利于远投</h3><p>很多时候我们使用硬饵搜索岸边，在很多情况下我们依旧需要把硬饵远投才能获得理想的钓获。例如在炎热的夏季使用深水Crankbait，我们必须给饵留出下潜所需的一定距离直至设定泳层，让饵尽可能长的游动在设定泳层里，这样上鱼的几率会大大的增加，所以这时我们需要远投性能好的钓竿。若远投性能不好，饵刚扔出去没还有收到设定的泳层就已经到我们的脚边上了，那样就不会有很好的效果。调性偏慢的钓竿腰弹性较大，更利于抛投更远的距离。</p>
+<h1 id="七种武器"><a href="#七种武器" class="headerlink" title="七种武器"></a>七种武器</h1><blockquote>
+<p>Bass竞技比赛中常用的钓组有Crankbait，Rubber jig，Jerkbait，无铅，倒吊，Finesse jig（此处所指的Finesse jig是2g~5g范围内的小型Rubber jig），Neko。以上七种钓组所匹配的七套装备，基本能够应对鲈鱼钓比赛大多数情况。</p>
+</blockquote>
+<h2 id="Crankbait-钓竿"><a href="#Crankbait-钓竿" class="headerlink" title="Crankbait 钓竿"></a>Crankbait 钓竿</h2><p>我通常选择Regular调性的鱼竿配合一个低速比的水滴轮来操控Crankbait，这套装备还适合操控VIB。<br>作钓中根据不同的情况可能需要搭配各种类型的线，但是如果考虑到其泛用性，我会倾向于选择10-12LB的氟碳线。如果在冬季和初春的时期，我会考虑降低线组的直径而选择6-8LB鱼线。反之在夏季和秋季，考虑要让你的饵更多的停留或经过障碍物和水草附近，我会加大线径使用12-14LB甚至更粗的线。</p>
+<h2 id="Rubber-jig钓竿"><a href="#Rubber-jig钓竿" class="headerlink" title="Rubber jig钓竿"></a>Rubber jig钓竿</h2><p>Extra fast调性的钓竿配合一个高速比的水滴轮，我能钓Jig以及德州，还有科罗拉多钓组。<br>季节以及水域情况不同所需要钓竿的硬度也有不同的要求。比如我所作钓的水域是以岩石结构为主而岸边的障碍相对比较少的情况下，我会选择M调;如果是湖泊型的水域那就意味着水域内有相当数量的水草，这时我就会选择MH硬度的钓竿;如若水域内有大量的水草区域且水草以水面水草为主，比如以菱角、蓼草、水花生等水面型水草为主而组成的障碍，以及岸边树枝垂入水中和没入水中的杂树所组成的重型障碍，这时候我就需要一根强力的钓竿，才可以有效的将鱼从障碍中拔出来。此时我通常需要一支H或者XH的杆子方能周旋应付了。<br>所搭配的线组由弱到强我将其分为三个档次：</p>
+<ul>
+<li>岩石为主的水体—8-10LB氟碳线</li>
+<li>湖泊类水线下水草为主的水体—12-14LB氟碳线</li>
+<li>水面障碍倒树以及水线上水草为主的水体—14-20LB氟碳或65LB的PE线</li>
+</ul>
+<h2 id="Jerkbait钓竿"><a href="#Jerkbait钓竿" class="headerlink" title="Jerkbait钓竿"></a>Jerkbait钓竿</h2><p>Fast调性的鱼竿配合中等速比的水滴轮，我可以用它钓Jerkbait，中小型Shad，Spinnerbait，Buzzbait。<br>可以说Jerkbait主要是在冷水中作钓的利器，但全年当中大多数时间都能够使用它有效地捕获到那些体型相对大的鲈鱼，当然应对不同的情况所使用的技法以及饵的类型都有一些细微的变化，在这里就不一一详解了。跟Jerkbait一样，Shad也是相对比较通用的一种反应饵，适合针对压力场或是天冷的季节。匀速的缓收以及抽/停都能获得不错的咬口。<br>在面对水草边缘的时候同样能够用来操作Spinnerbait 和Buzzbait，如果水草相对比较重的话就要有针对性的选择钓竿了。</p>
+<h2 id="无铅钓组钓竿"><a href="#无铅钓组钓竿" class="headerlink" title="无铅钓组钓竿"></a>无铅钓组钓竿</h2><p>L调Fast的钓竿配合2000-2500型浅线杯纺车轮是我最常用的选择。这里所指的无铅钓组，并非是单指Wacky钓组。通常我在无铅钓组的择饵上会选择长条型的软饵作钓，会选择用曲柄钩直穿的方法而非是使用Wacky的方法挂在面条虫的中间位置。这种无铅的方法比较适合在水岸比较复杂的情况下使用，其防挂性能与障碍的通过性都特别好，可以纵向地控饵犹如一条小鱼在水岸边的障碍边悄声窜过。也可以垂直的作钓，让其缓慢的垂直呈现自然落下的姿态。当然你也可以用他进行Wacky钓组的作钓，垂直地呈现你的软饵。<br>对于无铅钓竿，我的要求是有灵敏的竿先以及有力却又不至于太过刚性的腰身，在远距离中鱼的时候能够有效的作合刺穿鲈鱼的口腔，中鱼后又能够一定程度的缓冲鲈鱼的一次次强烈洗腮。绵而不失其灵动，刚直却韧劲十足。<br>通常我会选择使用4-6LB的氟碳线，又或者选择10LB的蜘蛛侠氟碳混合编织线加6LB前导氟碳线来作钓，混合编织线能够更好地把握住那些远距离的咬口，其低延展性能够有效捕捉住那些细微的就食动作。</p>
+<h2 id="倒吊钓组钓竿"><a href="#倒吊钓组钓竿" class="headerlink" title="倒吊钓组钓竿"></a>倒吊钓组钓竿</h2><p>对于这一钓组，我想国内大多钓手都非常熟知乃至于精通。我喜欢使用L调Fast的纺车竿配合2500S的纺车轮进行作钓，这钓组对于深水作钓和压力场作钓表现出的成绩都是相当优秀的。它能在原地做出更多的动作以诱惑那些警惕不愿开口的鲈鱼，也能够针对作钓区域作出有效的纵向搜索。</p>
+<p>根据不同场地的需求，可以选择自己所设定的软饵在预想的区域内尽可能自然的呈现。同时也可以配合鱼探进行垂直的定点位的呈现去钓获鲈鱼，而我在使用这一钓组的时候大多数时间会选择配合鱼探做垂直呈现的作钓。大多数时候我们都会选择使用倒吊钓组来进行结构作钓，相对的都是开阔水域，此时我会选择使用4-6LB的氟碳线。</p>
+<h2 id="Finesse-Jig钓组钓竿"><a href="#Finesse-Jig钓组钓竿" class="headerlink" title="Finesse Jig钓组钓竿"></a>Finesse Jig钓组钓竿</h2><p>我会选择使用Extra fast调性的Bait finesse钓竿配合微物水滴轮来进行作钓，它可以搭配使用Finesse jig，小型Tube，小型德州等钓组。<br>此装备的优点是可以进行精确落点的抛投，很多时候一个精准的抛投是获得咬口的重要因素，而且更小的饵确实是可以获得更多的咬口，Bait finesse钓法便如此应运而生。</p>
+<h2 id="Neko钓组钓竿"><a href="#Neko钓组钓竿" class="headerlink" title="Neko钓组钓竿"></a>Neko钓组钓竿</h2><p>我会选择一根Extra fast的钓竿和2000S的纺车轮，配合4LB氟碳线来作钓。除了Neko钓组外，我还可以用它来钓1g多的JIG和Super finesse的倒吊（2~3寸的饵配合1-2g的倒吊铅）应对极限条件下的深水作钓。<br>Neko钓组是为数较少的一种针对深水作钓的最佳选择，可它以在水温低于7摄氏度的情况下依然能够捕获一定数量的咬口，可以非常慢速的在水下呈现软饵的自然状态。其垂直落底的特性也是我对于结构作钓时的不二选择。针对国内众多压力钓场都有着不俗的表现。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[路亚竿的硬度与调性你是否混淆]]></title>
       <url>http://cuiqingwei.github.io/2016/10/12/2016-10-12-%E8%B7%AF%E4%BA%9A%E7%AB%BF%E7%9A%84%E7%A1%AC%E5%BA%A6%E4%B8%8E%E8%B0%83%E6%80%A7%E4%BD%A0%E6%98%AF%E5%90%A6%E6%B7%B7%E6%B7%86/</url>
       <content type="html"><![CDATA[<h2 id="路亚竿的硬度"><a href="#路亚竿的硬度" class="headerlink" title="路亚竿的硬度"></a>路亚竿的硬度</h2><p>选择路亚竿的时候大部分钓友会关注：长度、调性、外观做工质量、品牌与价格。其中“调性”普遍会被大家想到“M、ML、MH”等英文缩写，也经常有卖家或者钓友这样称呼：“这支竿是M调的，那支竿是MH调的”等等，实际上这些英文缩写说的不是路亚竿的调性而是硬度，英文称“<font color="red"><strong>Power</strong> <em>（最大负荷）</em></font>” 。</p>
@@ -1660,6 +1808,29 @@ make V=s
 <blockquote>
 <embed src="http://player.youku.com/player.php/sid/XMTQ1Mzg4NjAwMA==/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
 </blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[高田路亚视频]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/10/2016-10-10-%E9%AB%98%E7%94%B0%E8%B7%AF%E4%BA%9A%E8%A7%86%E9%A2%91/</url>
+      <content type="html"><![CDATA[<p>路亚教学视频很多，但个人还是认为这个最详细，而且很专业、纯洁无商业气氛。<br>是新手学习路亚知识的典范视频，讲得非常细！</p>
+<a id="more"></a>
+<h1 id="路亚抛投基础-Casting"><a href="#路亚抛投基础-Casting" class="headerlink" title="路亚抛投基础-Casting-"></a>路亚抛投基础-Casting-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNTUxMTI0" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="倒钓钓组-Down-Shot-Rig"><a href="#倒钓钓组-Down-Shot-Rig" class="headerlink" title="倒钓钓组-Down Shot Rig-"></a>倒钓钓组-Down Shot Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNTAwNTA4" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="降落伞钓组-Parachute-Rig"><a href="#降落伞钓组-Parachute-Rig" class="headerlink" title="降落伞钓组-Parachute Rig-"></a>降落伞钓组-Parachute Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDkxNzg0" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="古怪钓组-Wacky-Rig"><a href="#古怪钓组-Wacky-Rig" class="headerlink" title="古怪钓组-Wacky Rig-"></a>古怪钓组-Wacky Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDY5NDY0" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="无铅钓组-No-Sinker-Rig"><a href="#无铅钓组-No-Sinker-Rig" class="headerlink" title="无铅钓组-No Sinker Rig-"></a>无铅钓组-No Sinker Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDQwNjcy" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="胡须佬-Rubber-Jig"><a href="#胡须佬-Rubber-Jig" class="headerlink" title="胡须佬-Rubber Jig-"></a>胡须佬-Rubber Jig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDIxMzM2" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="米诺-Minnow"><a href="#米诺-Minnow" class="headerlink" title="米诺-Minnow-"></a>米诺-Minnow-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDAzMDQ4" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="小胖子-Crank-Bait"><a href="#小胖子-Crank-Bait" class="headerlink" title="小胖子-Crank Bait-"></a>小胖子-Crank Bait-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzMjE5ODI0" frameborder="0" 'allowfullscreen'=""></iframe>
 ]]></content>
     </entry>
     
@@ -1710,29 +1881,6 @@ make V=s
 <p><img src="/img/20161010/EXSENCE DC.png" alt=""></p>
 <p>6.<strong><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.21.1fec70ba8afRYR&amp;id=563408219126&amp;ns=1&amp;abbucket=12#detail" target="_blank" rel="external">COMPLEX CI4+ C2500S F4 HG</a></strong> <em>禧玛诺COMPLEX CI4+ C2500S F4高速淡水海纺车轮</em></p>
 <p><img src="/img/20161010/C2500sHG.jpg" alt=""></p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[高田路亚视频]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/10/2016-10-10-%E9%AB%98%E7%94%B0%E8%B7%AF%E4%BA%9A%E8%A7%86%E9%A2%91/</url>
-      <content type="html"><![CDATA[<p>路亚教学视频很多，但个人还是认为这个最详细，而且很专业、纯洁无商业气氛。<br>是新手学习路亚知识的典范视频，讲得非常细！</p>
-<a id="more"></a>
-<h1 id="路亚抛投基础-Casting"><a href="#路亚抛投基础-Casting" class="headerlink" title="路亚抛投基础-Casting-"></a>路亚抛投基础-Casting-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNTUxMTI0" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="倒钓钓组-Down-Shot-Rig"><a href="#倒钓钓组-Down-Shot-Rig" class="headerlink" title="倒钓钓组-Down Shot Rig-"></a>倒钓钓组-Down Shot Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNTAwNTA4" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="降落伞钓组-Parachute-Rig"><a href="#降落伞钓组-Parachute-Rig" class="headerlink" title="降落伞钓组-Parachute Rig-"></a>降落伞钓组-Parachute Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDkxNzg0" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="古怪钓组-Wacky-Rig"><a href="#古怪钓组-Wacky-Rig" class="headerlink" title="古怪钓组-Wacky Rig-"></a>古怪钓组-Wacky Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDY5NDY0" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="无铅钓组-No-Sinker-Rig"><a href="#无铅钓组-No-Sinker-Rig" class="headerlink" title="无铅钓组-No Sinker Rig-"></a>无铅钓组-No Sinker Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDQwNjcy" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="胡须佬-Rubber-Jig"><a href="#胡须佬-Rubber-Jig" class="headerlink" title="胡须佬-Rubber Jig-"></a>胡须佬-Rubber Jig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDIxMzM2" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="米诺-Minnow"><a href="#米诺-Minnow" class="headerlink" title="米诺-Minnow-"></a>米诺-Minnow-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDAzMDQ4" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="小胖子-Crank-Bait"><a href="#小胖子-Crank-Bait" class="headerlink" title="小胖子-Crank Bait-"></a>小胖子-Crank Bait-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzMjE5ODI0" frameborder="0" 'allowfullscreen'=""></iframe>
 ]]></content>
     </entry>
     
@@ -2340,7 +2488,8 @@ make V=s
 <p>经过几分钟的等待，出现下面的提示，说明SD卡刷好了：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">462+1 records <span class="keyword">in</span></div><div class="line">462+1 records out</div><div class="line">1939865600 bytes transferred <span class="keyword">in</span> 163.133220 secs (11891297 bytes/sec)</div></pre></td></tr></table></figure></p>
 <p>用diskutil unmountDisk卸载设备：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">diskutil unmountdisk /dev/disk2</div><div class="line">Unmount of all volumes on disk2 was successful</div></pre></td></tr></table></figure></p>
 <p>现在就可以拔下SD卡，插到树莓派上启动系统了。</p>
-<h1 id="用户名-amp-密码"><a href="#用户名-amp-密码" class="headerlink" title="用户名&amp;密码"></a>用户名&amp;密码</h1><p>默认用户是 <strong>pi</strong> ，密码是 <strong>raspberry</strong></p>
+<h1 id="用户名-amp-密码"><a href="#用户名-amp-密码" class="headerlink" title="用户名&amp;密码"></a>用户名&amp;密码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh pi@raspberrypi.local</div></pre></td></tr></table></figure>
+<p>默认用户是 <strong>pi</strong> ，密码是 <strong>raspberry</strong></p>
 <h1 id="使用raspi-config配置树莓派"><a href="#使用raspi-config配置树莓派" class="headerlink" title="使用raspi-config配置树莓派"></a>使用raspi-config配置树莓派</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo raspi-config</div></pre></td></tr></table></figure>
 <p><a href="http://shumeipai.nxez.com/2013/09/07/raspi-config-configuration-raspberry-pie.html" target="_blank" rel="external">http://shumeipai.nxez.com/2013/09/07/raspi-config-configuration-raspberry-pie.html</a></p>
 <h1 id="Raspberry-Pi-树莓派-国内软件源："><a href="#Raspberry-Pi-树莓派-国内软件源：" class="headerlink" title="Raspberry Pi(树莓派)国内软件源："></a>Raspberry Pi(树莓派)国内软件源：</h1><p><a href="http://www.linuxidc.com/Linux/2013-10/91012.htm" target="_blank" rel="external">http://www.linuxidc.com/Linux/2013-10/91012.htm</a></p>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2018-06-27T02:18:27.000Z</updated>
+  <updated>2018-10-05T06:52:49.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Raspberry安装Domoticz</title>
+    <link href="http://cuiqingwei.github.io/2018/09/13/2018-09-13-Raspberry%E5%AE%89%E8%A3%85Domoticz/"/>
+    <id>http://cuiqingwei.github.io/2018/09/13/2018-09-13-Raspberry安装Domoticz/</id>
+    <published>2018-09-13T01:12:08.000Z</published>
+    <updated>2018-10-05T06:52:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="下载-Raspbian"><a href="#下载-Raspbian" class="headerlink" title="下载 Raspbian"></a>下载 Raspbian</h1><p><a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="external">https://www.raspberrypi.org/downloads/raspbian/</a></p>
+<h1 id="制作-TF-card"><a href="#制作-TF-card" class="headerlink" title="制作 TF card"></a>制作 TF card</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">df -h</div><div class="line">diskutil unmount /dev/disk2s1</div><div class="line">diskutil list</div><div class="line">dd bs=4m if=2018-06-27-raspbian-stretch-lite.img of=/dev/rdisk2</div><div class="line">diskutil unmountdisk /dev/disk2</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<blockquote>
+<p>note：新的img默认没有打开ssh，在tf卡根目录新建名称为 <strong>ssh</strong> 的文件夹解决</p>
+</blockquote>
+<h1 id="登录树莓派"><a href="#登录树莓派" class="headerlink" title="登录树莓派"></a>登录树莓派</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh pi@raspberrypi.local</div></pre></td></tr></table></figure>
+<h1 id="配置树莓派"><a href="#配置树莓派" class="headerlink" title="配置树莓派"></a>配置树莓派</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo raspi-config</div></pre></td></tr></table></figure>
+<h1 id="Domoticz"><a href="#Domoticz" class="headerlink" title="Domoticz"></a>Domoticz</h1><h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo curl -L install.domoticz.cn | bash</div></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://www.domoticz.cn/" target="_blank" rel="external">Domoticz</a>是一个开源的智能家居系统，通过它你可以监测和控制各种设备比如：灯、开关 ，各种传感器、仪表比如： 温度、雨、风、紫外线、电、气体、水 等等。 还可以向任一移动设备发送通知或警告。</p>
+</blockquote>
+<h3 id="2-libssl1-0-0缺失问题"><a href="#2-libssl1-0-0缺失问题" class="headerlink" title="2.libssl1.0.0缺失问题"></a>2.libssl1.0.0缺失问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">wget http://ftp.nl.debian.org/debian/pool/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u8_armhf.deb</div><div class="line">sudo dpkg -i libssl1.0.0_1.0.1t-1+deb8u8_armhf.deb</div></pre></td></tr></table></figure>
+<h3 id="3-运行"><a href="#3-运行" class="headerlink" title="3.运行"></a>3.运行</h3><p><a href="http://raspberrypi.local:8080/" target="_blank" rel="external">http://raspberrypi.local:8080/</a><br>经度：121.47<br>纬度：31.23</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;下载-Raspbian&quot;&gt;&lt;a href=&quot;#下载-Raspbian&quot; class=&quot;headerlink&quot; title=&quot;下载 Raspbian&quot;&gt;&lt;/a&gt;下载 Raspbian&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.raspberrypi.org/downloads/raspbian/&quot;&gt;https://www.raspberrypi.org/downloads/raspbian/&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;制作-TF-card&quot;&gt;&lt;a href=&quot;#制作-TF-card&quot; class=&quot;headerlink&quot; title=&quot;制作 TF card&quot;&gt;&lt;/a&gt;制作 TF card&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;df -h&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;diskutil unmount /dev/disk2s1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;diskutil list&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;dd bs=4m if=2018-06-27-raspbian-stretch-lite.img of=/dev/rdisk2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;diskutil unmountdisk /dev/disk2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="Raspberry Pi" scheme="http://cuiqingwei.github.io/tags/Raspberry-Pi/"/>
+    
+      <category term="Domoticz" scheme="http://cuiqingwei.github.io/tags/Domoticz/"/>
+    
+  </entry>
   
   <entry>
     <title>大疆“御”Mavic系列教程</title>
@@ -224,6 +261,37 @@ make V=s
   </entry>
   
   <entry>
+    <title>OpenWRT的WiFi带机量修改方法</title>
+    <link href="http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/"/>
+    <id>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT的WiFi带机量修改方法/</id>
+    <published>2018-05-14T04:12:08.000Z</published>
+    <updated>2018-06-18T06:45:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Wifi带机量的修改"><a href="#Wifi带机量的修改" class="headerlink" title="Wifi带机量的修改"></a>Wifi带机量的修改</h1><p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
+<p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
+<a id="more"></a>
+<blockquote>
+<p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="external">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="external">MTK_Ralink_ApSoc_SDK编译总结</a><br><a href="http://www.right.com.cn/forum/thread-208204-1-1.html" target="_blank" rel="external">openwrt wifi用户连接数限制</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Wifi带机量的修改&quot;&gt;&lt;a href=&quot;#Wifi带机量的修改&quot; class=&quot;headerlink&quot; title=&quot;Wifi带机量的修改&quot;&gt;&lt;/a&gt;Wifi带机量的修改&lt;/h1&gt;&lt;p&gt;(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;#define MAX_NUMBER_OF_MAC                64 // 原始值32&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
+    
+      <category term="电子书包" scheme="http://cuiqingwei.github.io/tags/%E7%94%B5%E5%AD%90%E4%B9%A6%E5%8C%85/"/>
+    
+  </entry>
+  
+  <entry>
     <title>WiFi探针的工作原理</title>
     <link href="http://cuiqingwei.github.io/2018/05/14/2018-06-18-WiFi%E6%8E%A2%E9%92%88%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"/>
     <id>http://cuiqingwei.github.io/2018/05/14/2018-06-18-WiFi探针的工作原理/</id>
@@ -273,37 +341,6 @@ make V=s
     
     
       <category term="Wi-Fi" scheme="http://cuiqingwei.github.io/tags/Wi-Fi/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OpenWRT的WiFi带机量修改方法</title>
-    <link href="http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/"/>
-    <id>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT的WiFi带机量修改方法/</id>
-    <published>2018-05-14T04:12:08.000Z</published>
-    <updated>2018-06-18T06:45:02.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Wifi带机量的修改"><a href="#Wifi带机量的修改" class="headerlink" title="Wifi带机量的修改"></a>Wifi带机量的修改</h1><p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
-<p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
-<a id="more"></a>
-<blockquote>
-<p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="external">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="external">MTK_Ralink_ApSoc_SDK编译总结</a><br><a href="http://www.right.com.cn/forum/thread-208204-1-1.html" target="_blank" rel="external">openwrt wifi用户连接数限制</a></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Wifi带机量的修改&quot;&gt;&lt;a href=&quot;#Wifi带机量的修改&quot; class=&quot;headerlink&quot; title=&quot;Wifi带机量的修改&quot;&gt;&lt;/a&gt;Wifi带机量的修改&lt;/h1&gt;&lt;p&gt;(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;#define MAX_NUMBER_OF_MAC                64 // 原始值32&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
-    
-      <category term="电子书包" scheme="http://cuiqingwei.github.io/tags/%E7%94%B5%E5%AD%90%E4%B9%A6%E5%8C%85/"/>
     
   </entry>
   
@@ -1168,44 +1205,6 @@ make V=s
     
     
       <category term="git" scheme="http://cuiqingwei.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何查看网站是用什么语言开发的?</title>
-    <link href="http://cuiqingwei.github.io/2017/10/31/2017-10-31-%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%AB%99%E6%98%AF%E7%94%A8%E4%BB%80%E4%B9%88%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%9A%84/"/>
-    <id>http://cuiqingwei.github.io/2017/10/31/2017-10-31-如何查看网站是用什么语言开发的/</id>
-    <published>2017-10-31T04:02:08.000Z</published>
-    <updated>2017-11-29T01:40:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>查看网站开发语言方法：</p>
-<p>1）利用工具直接输入查询</p>
-<p><a href="http://w3techs.com/sites/info/baidu.com" target="_blank" rel="external">http://w3techs.com/sites/info/baidu.com</a><br><a href="https://builtwith.com/baidu.com" target="_blank" rel="external">https://builtwith.com/baidu.com</a></p>
-<p>把最后的域名换成想知道的网址，系统会自动分析。</p>
-<a id="more"></a>
-<p>2）后台语言可以通过服务器类型推测。</p>
-<p>一般情况下，服务器类型可以通过 Response Header 来看。</p>
-<p>比如 IIS，一般是 <a href="http://ASP.NET" target="_blank" rel="external">http://ASP.NET</a></p>
-<p>Tomcat、Resin、JBoss，一般是 Java。</p>
-<p>Nginx，不一定，很有可能是 PHP 或者 Python 之类的脚本语言。</p>
-<p>3）后台框架就更难分析了，不过可以尝试通过 HTML 代码格式，或者 URL 来分析。</p>
-<p>比如 URL 后缀是 do，可能用到了 Java Struts。</p>
-<p>URL 一般都是 index.php，但是后面参数不同，那么可能用到了 PHP 的一些模板引擎。</p>
-<p>当然，这个分析不可靠，只是一种推测。</p>
-<p>4）想办法联系网站创始人：），邮件或私信询问。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;查看网站开发语言方法：&lt;/p&gt;
-&lt;p&gt;1）利用工具直接输入查询&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://w3techs.com/sites/info/baidu.com&quot;&gt;http://w3techs.com/sites/info/baidu.com&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://builtwith.com/baidu.com&quot;&gt;https://builtwith.com/baidu.com&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;把最后的域名换成想知道的网址，系统会自动分析。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="开发语言" scheme="http://cuiqingwei.github.io/tags/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
