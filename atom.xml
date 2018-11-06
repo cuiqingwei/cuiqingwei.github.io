@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>iZheteng</title>
+  
   <subtitle>Enjoy work, Enjoy life!</subtitle>
   <link href="/atom.xml" rel="self"/>
   
@@ -22,26 +23,12 @@
     <published>2018-09-13T01:12:08.000Z</published>
     <updated>2018-10-05T06:52:49.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="下载-Raspbian"><a href="#下载-Raspbian" class="headerlink" title="下载 Raspbian"></a>下载 Raspbian</h1><p><a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="external">https://www.raspberrypi.org/downloads/raspbian/</a></p>
-<h1 id="制作-TF-card"><a href="#制作-TF-card" class="headerlink" title="制作 TF card"></a>制作 TF card</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">df -h</div><div class="line">diskutil unmount /dev/disk2s1</div><div class="line">diskutil list</div><div class="line">dd bs=4m if=2018-06-27-raspbian-stretch-lite.img of=/dev/rdisk2</div><div class="line">diskutil unmountdisk /dev/disk2</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<blockquote>
-<p>note：新的img默认没有打开ssh，在tf卡根目录新建名称为 <strong>ssh</strong> 的文件夹解决</p>
-</blockquote>
-<h1 id="登录树莓派"><a href="#登录树莓派" class="headerlink" title="登录树莓派"></a>登录树莓派</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh pi@raspberrypi.local</div></pre></td></tr></table></figure>
-<h1 id="配置树莓派"><a href="#配置树莓派" class="headerlink" title="配置树莓派"></a>配置树莓派</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo raspi-config</div></pre></td></tr></table></figure>
-<h1 id="Domoticz"><a href="#Domoticz" class="headerlink" title="Domoticz"></a>Domoticz</h1><h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo curl -L install.domoticz.cn | bash</div></pre></td></tr></table></figure>
-<blockquote>
-<p><a href="https://www.domoticz.cn/" target="_blank" rel="external">Domoticz</a>是一个开源的智能家居系统，通过它你可以监测和控制各种设备比如：灯、开关 ，各种传感器、仪表比如： 温度、雨、风、紫外线、电、气体、水 等等。 还可以向任一移动设备发送通知或警告。</p>
-</blockquote>
-<h3 id="2-libssl1-0-0缺失问题"><a href="#2-libssl1-0-0缺失问题" class="headerlink" title="2.libssl1.0.0缺失问题"></a>2.libssl1.0.0缺失问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">wget http://ftp.nl.debian.org/debian/pool/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u8_armhf.deb</div><div class="line">sudo dpkg -i libssl1.0.0_1.0.1t-1+deb8u8_armhf.deb</div></pre></td></tr></table></figure>
-<h3 id="3-运行"><a href="#3-运行" class="headerlink" title="3.运行"></a>3.运行</h3><p><a href="http://raspberrypi.local:8080/" target="_blank" rel="external">http://raspberrypi.local:8080/</a><br>经度：121.47<br>纬度：31.23</p>
-]]></content>
+    <content type="html"><![CDATA[<h1 id="下载-Raspbian"><a href="#下载-Raspbian" class="headerlink" title="下载 Raspbian"></a>下载 Raspbian</h1><p><a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="noopener">https://www.raspberrypi.org/downloads/raspbian/</a></p><h1 id="制作-TF-card"><a href="#制作-TF-card" class="headerlink" title="制作 TF card"></a>制作 TF card</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br><span class="line">diskutil unmount /dev/disk2s1</span><br><span class="line">diskutil list</span><br><span class="line">dd bs=4m if=2018-06-27-raspbian-stretch-lite.img of=/dev/rdisk2</span><br><span class="line">diskutil unmountdisk /dev/disk2</span><br></pre></td></tr></table></figure><a id="more"></a><blockquote><p>note：新的img默认没有打开ssh，在tf卡根目录新建名称为 <strong>ssh</strong> 的文件夹解决</p></blockquote><h1 id="登录树莓派"><a href="#登录树莓派" class="headerlink" title="登录树莓派"></a>登录树莓派</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh pi@raspberrypi.local</span><br></pre></td></tr></table></figure><h1 id="配置树莓派"><a href="#配置树莓派" class="headerlink" title="配置树莓派"></a>配置树莓派</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo raspi-config</span><br></pre></td></tr></table></figure><h1 id="Domoticz"><a href="#Domoticz" class="headerlink" title="Domoticz"></a>Domoticz</h1><h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L install.domoticz.cn | bash</span><br></pre></td></tr></table></figure><blockquote><p><a href="https://www.domoticz.cn/" target="_blank" rel="noopener">Domoticz</a>是一个开源的智能家居系统，通过它你可以监测和控制各种设备比如：灯、开关 ，各种传感器、仪表比如： 温度、雨、风、紫外线、电、气体、水 等等。 还可以向任一移动设备发送通知或警告。</p></blockquote><h3 id="2-libssl1-0-0缺失问题"><a href="#2-libssl1-0-0缺失问题" class="headerlink" title="2.libssl1.0.0缺失问题"></a>2.libssl1.0.0缺失问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http://ftp.nl.debian.org/debian/pool/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u8_armhf.deb</span><br><span class="line">sudo dpkg -i libssl1.0.0_1.0.1t-1+deb8u8_armhf.deb</span><br></pre></td></tr></table></figure><h3 id="3-运行"><a href="#3-运行" class="headerlink" title="3.运行"></a>3.运行</h3><p><a href="http://raspberrypi.local:8080/" target="_blank" rel="noopener">http://raspberrypi.local:8080/</a><br>经度：121.47<br>纬度：31.23</p>]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;下载-Raspbian&quot;&gt;&lt;a href=&quot;#下载-Raspbian&quot; class=&quot;headerlink&quot; title=&quot;下载 Raspbian&quot;&gt;&lt;/a&gt;下载 Raspbian&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.raspberrypi.org/downloads/raspbian/&quot;&gt;https://www.raspberrypi.org/downloads/raspbian/&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;制作-TF-card&quot;&gt;&lt;a href=&quot;#制作-TF-card&quot; class=&quot;headerlink&quot; title=&quot;制作 TF card&quot;&gt;&lt;/a&gt;制作 TF card&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;df -h&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;diskutil unmount /dev/disk2s1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;diskutil list&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;dd bs=4m if=2018-06-27-raspbian-stretch-lite.img of=/dev/rdisk2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;diskutil unmountdisk /dev/disk2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;h1 id=&quot;下载-Raspbian&quot;&gt;&lt;a href=&quot;#下载-Raspbian&quot; class=&quot;headerlink&quot; title=&quot;下载 Raspbian&quot;&gt;&lt;/a&gt;下载 Raspbian&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.raspberrypi.org/downloads/raspbian/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.raspberrypi.org/downloads/raspbian/&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;制作-TF-card&quot;&gt;&lt;a href=&quot;#制作-TF-card&quot; class=&quot;headerlink&quot; title=&quot;制作 TF card&quot;&gt;&lt;/a&gt;制作 TF card&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;df -h&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;diskutil unmount /dev/disk2s1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;diskutil list&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;dd bs=4m if=2018-06-27-raspbian-stretch-lite.img of=/dev/rdisk2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;diskutil unmountdisk /dev/disk2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -59,45 +46,7 @@
     <published>2018-06-27T01:56:08.000Z</published>
     <updated>2018-06-27T02:18:27.000Z</updated>
     
-    <content type="html"><![CDATA[<p>在操控大疆“御”Mavic前，请阅读《智能飞行电池安全使用指引》，并进行飞行前检查，确保飞行器各个部件完好无损，智能电池及遥控器电量充足，上电检测正常。<br><img src="/img/20180627/mavicpro.jpg" alt=""></p>
-<a id="more"></a>
-<p>“御”是大疆首款紧凑型航拍无人机。它集超高画质、机器视觉技术和便携性于一身，助你随时随地刻捕捉精彩影像。本视频中的航拍均已征得当地管理部门同意。</p>
-<embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MDQ1MzU0OA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash">
-
-<h3 id="产品展示"><a href="#产品展示" class="headerlink" title="产品展示"></a>产品展示</h3><p>先来和我一起了解大疆全新的便携无人机“御”Mavic的各个功能按键。小巧便携，性能却毫不妥协，集成大疆先进技术，带给你清晰流畅的影像和畅快的飞行体验。</p>
-<embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MDUzOTAwOA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash">
-
-
-<h3 id="首次飞行"><a href="#首次飞行" class="headerlink" title="首次飞行"></a>首次飞行</h3><p>和大疆其他消费级无人机一样，“御”Mavic上手即飞，操控简单。和我们一起了解Mavic的基本操作，制作你的第一部航拍大作和朋友分享吧。</p>
-<embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MjI5NzE4NA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash">
-
-<h3 id="手机操控"><a href="#手机操控" class="headerlink" title="手机操控"></a>手机操控</h3><p>“御”Mavic支持手机直接操控。按视频指引连接手机，随时飞行，或来张帅气的无人机自拍吧。</p>
-<embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MjQ5NjkyOA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash">
-
-<h3 id="指点飞行"><a href="#指点飞行" class="headerlink" title="指点飞行"></a>指点飞行</h3><p>轻触屏幕，“御”Mavic就能飞向你指的地方，无需费心控制航向，你可以专注于相机云台，调整画面，捕捉精美素材。</p>
-<embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MTQxMjgxMg==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash">
-
-<h3 id="智能跟随"><a href="#智能跟随" class="headerlink" title="智能跟随"></a>智能跟随</h3><p>“御”Mavic能通过相机锁定拍摄对象，进行多种模式的视觉智能跟随。快来按视频指引试一下，轻松捕捉高难度航拍素材。</p>
-<embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MTQ1OTQwNA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash">
-
-<h3 id="精准降落"><a href="#精准降落" class="headerlink" title="精准降落"></a>精准降落</h3><p>“御”Mavic支持一键起飞和精准降落功能。起飞时，飞行器通过视觉传感器和卫星定位记录起飞地点，自动返航时通过卫星定位坐标和图像比对精准返回起飞地点，避免降落在障碍物或水上，让返航更安全。</p>
-<embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MTQyNzY4NA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash">
-
-<h3 id="精准悬停"><a href="#精准悬停" class="headerlink" title="精准悬停"></a>精准悬停</h3><p>FlightAutonomy技术让“御”Mavic在室内外都能精准悬停，平稳飞行。你可以用它轻松穿越阳台，拍摄震撼的航拍大片。</p>
-<embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MTQ2NjYyNA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash">
-
-<h3 id="视觉校准"><a href="#视觉校准" class="headerlink" title="视觉校准"></a>视觉校准</h3><p>视觉传感器为“御”Mavic获取重要的环境信息，起到避障和定位的作用。当系统提事视觉传感器异常时，请参照本视频进行校准。</p>
-<embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MjI5NTM0MA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash">
-
-<h3 id="固件升级"><a href="#固件升级" class="headerlink" title="固件升级"></a>固件升级</h3><p>通过DJI GO app或连接PC都可为“御”Mavic进行升级。及时升级固件，获得全新功能和更好的飞行体验。</p>
-<embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MjI5NjY4OA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash">
-
-<h3 id="对频方法"><a href="#对频方法" class="headerlink" title="对频方法"></a>对频方法</h3><p>在“御”Mavic飞行器和遥控器无法连接，或更换新飞行器/遥控器时可参照本视频进行对频。</p>
-<embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MjI5NjI0MA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash">
-
-<h3 id="平行-锁定跟随与手势自拍"><a href="#平行-锁定跟随与手势自拍" class="headerlink" title="平行/锁定跟随与手势自拍"></a>平行/锁定跟随与手势自拍</h3><p>“御”Mavic在智能跟随模式下，新增了平行和锁定跟随，还可以手机直接操控进行手势自拍。智能又方便的航拍伙伴，就是Mavic！</p>
-<embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc2NTk0NTgwNA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash">
-]]></content>
+    <content type="html"><![CDATA[<p>在操控大疆“御”Mavic前，请阅读《智能飞行电池安全使用指引》，并进行飞行前检查，确保飞行器各个部件完好无损，智能电池及遥控器电量充足，上电检测正常。<br><img src="/img/20180627/mavicpro.jpg" alt=""></p><a id="more"></a><p>“御”是大疆首款紧凑型航拍无人机。它集超高画质、机器视觉技术和便携性于一身，助你随时随地刻捕捉精彩影像。本视频中的航拍均已征得当地管理部门同意。</p><embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MDQ1MzU0OA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"><h3 id="产品展示"><a href="#产品展示" class="headerlink" title="产品展示"></a>产品展示</h3><p>先来和我一起了解大疆全新的便携无人机“御”Mavic的各个功能按键。小巧便携，性能却毫不妥协，集成大疆先进技术，带给你清晰流畅的影像和畅快的飞行体验。</p><embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MDUzOTAwOA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"><h3 id="首次飞行"><a href="#首次飞行" class="headerlink" title="首次飞行"></a>首次飞行</h3><p>和大疆其他消费级无人机一样，“御”Mavic上手即飞，操控简单。和我们一起了解Mavic的基本操作，制作你的第一部航拍大作和朋友分享吧。</p><embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MjI5NzE4NA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"><h3 id="手机操控"><a href="#手机操控" class="headerlink" title="手机操控"></a>手机操控</h3><p>“御”Mavic支持手机直接操控。按视频指引连接手机，随时飞行，或来张帅气的无人机自拍吧。</p><embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MjQ5NjkyOA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"><h3 id="指点飞行"><a href="#指点飞行" class="headerlink" title="指点飞行"></a>指点飞行</h3><p>轻触屏幕，“御”Mavic就能飞向你指的地方，无需费心控制航向，你可以专注于相机云台，调整画面，捕捉精美素材。</p><embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MTQxMjgxMg==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"><h3 id="智能跟随"><a href="#智能跟随" class="headerlink" title="智能跟随"></a>智能跟随</h3><p>“御”Mavic能通过相机锁定拍摄对象，进行多种模式的视觉智能跟随。快来按视频指引试一下，轻松捕捉高难度航拍素材。</p><embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MTQ1OTQwNA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"><h3 id="精准降落"><a href="#精准降落" class="headerlink" title="精准降落"></a>精准降落</h3><p>“御”Mavic支持一键起飞和精准降落功能。起飞时，飞行器通过视觉传感器和卫星定位记录起飞地点，自动返航时通过卫星定位坐标和图像比对精准返回起飞地点，避免降落在障碍物或水上，让返航更安全。</p><embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MTQyNzY4NA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"><h3 id="精准悬停"><a href="#精准悬停" class="headerlink" title="精准悬停"></a>精准悬停</h3><p>FlightAutonomy技术让“御”Mavic在室内外都能精准悬停，平稳飞行。你可以用它轻松穿越阳台，拍摄震撼的航拍大片。</p><embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MTQ2NjYyNA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"><h3 id="视觉校准"><a href="#视觉校准" class="headerlink" title="视觉校准"></a>视觉校准</h3><p>视觉传感器为“御”Mavic获取重要的环境信息，起到避障和定位的作用。当系统提事视觉传感器异常时，请参照本视频进行校准。</p><embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MjI5NTM0MA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"><h3 id="固件升级"><a href="#固件升级" class="headerlink" title="固件升级"></a>固件升级</h3><p>通过DJI GO app或连接PC都可为“御”Mavic进行升级。及时升级固件，获得全新功能和更好的飞行体验。</p><embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MjI5NjY4OA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"><h3 id="对频方法"><a href="#对频方法" class="headerlink" title="对频方法"></a>对频方法</h3><p>在“御”Mavic飞行器和遥控器无法连接，或更换新飞行器/遥控器时可参照本视频进行对频。</p><embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc0MjI5NjI0MA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"><h3 id="平行-锁定跟随与手势自拍"><a href="#平行-锁定跟随与手势自拍" class="headerlink" title="平行/锁定跟随与手势自拍"></a>平行/锁定跟随与手势自拍</h3><p>“御”Mavic在智能跟随模式下，新增了平行和锁定跟随，还可以手机直接操控进行手势自拍。智能又方便的航拍伙伴，就是Mavic！</p><embed width="440" height="365" allowscriptaccess="never" menu="false" loop="false" play="true" wmode="transparent" src="http://player.youku.com/player.php/sid/XMTc2NTk0NTgwNA==/v.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash">]]></content>
     
     <summary type="html">
     
@@ -117,19 +66,7 @@
     <published>2018-06-27T01:12:08.000Z</published>
     <updated>2018-06-27T01:42:44.000Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>（2017年3月2日 深圳）</strong> 全球飞行影像系统的开拓者和领导者DJI大疆创新当日发布多边形禁飞区策略。本次更新将在中国大陆机场首先生效，之后逐步在全球范围内推广。</p>
-<p>为保障公共空域安全并给用户带去更好的飞行体验，大疆为其无人机产品设置了机场禁飞区和限飞区。以机场每条跑道的两端为圆心、半径为4.5公里的圆形区域，由两个圆和边缘连线组成的平椭圆为禁飞区。</p>
-<p>飞行器无法在禁飞区内起飞；从外部接近禁飞区边界时，将自动减速并悬停。如果在无GPS信号状态下进入禁飞区，无人机获得GPS信号后将自动降落。</p>
-<a id="more"></a>
-<p><img src="/img/20180627/content_F137C4EE-EECC-FB02-30B9-A5FA3D6882F2.jpg" alt=""></p>
-<p>除禁飞区外，另有30米、60米、120米限飞区，具体如下：</p>
-<p><strong>30米</strong> 限飞区是以跑道两端的中点为圆心、半径7公里作圆，两个圆所组成的平椭圆区域且与禁飞区不相交的部分为限飞区，限制高度为30米。</p>
-<p><strong>60米</strong> 限飞区是以跑道两端延伸15公里、扩散斜率为15%的梯形范围，与30米限飞区及禁飞区皆不相交的部分，限制高度为60米。</p>
-<p><strong>120米</strong> 限飞区是以跑道正中点为圆心、半径10公里作圆，该圆形范围与禁飞区、30米限飞区及60米限飞区非相交的部分，限制高度为120米。</p>
-<p>当飞行器从外部接近限飞区边界时，应用程序将弹出警告，提示飞行风险。如当前高度大于限制高度，飞行器将自动减速、悬停，须下降到低于限飞高度方可进入；如低于限飞高度，飞入限飞区后高度将受到限制；如在无GPS信号状态下进入限飞区，飞行器获得GPS信号后将自动下降至限飞高度。</p>
-<p>大疆各产品线将逐步适用于此次更新的多边形禁飞区策略。</p>
-<p><a href="http://haokan.baidu.com/v?pd=wisenatural&amp;vid=9573858590873636023" target="_blank" rel="external">2分钟动画解读大疆新的无人机限飞区划定规则</a><br><a href="https://www.dji.com/cn/flysafe/geo-map" target="_blank" rel="external">安全飞行指引限飞区查询</a></p>
-]]></content>
+    <content type="html"><![CDATA[<p><strong>（2017年3月2日 深圳）</strong> 全球飞行影像系统的开拓者和领导者DJI大疆创新当日发布多边形禁飞区策略。本次更新将在中国大陆机场首先生效，之后逐步在全球范围内推广。</p><p>为保障公共空域安全并给用户带去更好的飞行体验，大疆为其无人机产品设置了机场禁飞区和限飞区。以机场每条跑道的两端为圆心、半径为4.5公里的圆形区域，由两个圆和边缘连线组成的平椭圆为禁飞区。</p><p>飞行器无法在禁飞区内起飞；从外部接近禁飞区边界时，将自动减速并悬停。如果在无GPS信号状态下进入禁飞区，无人机获得GPS信号后将自动降落。</p><a id="more"></a><p><img src="/img/20180627/content_F137C4EE-EECC-FB02-30B9-A5FA3D6882F2.jpg" alt=""></p><p>除禁飞区外，另有30米、60米、120米限飞区，具体如下：</p><p><strong>30米</strong> 限飞区是以跑道两端的中点为圆心、半径7公里作圆，两个圆所组成的平椭圆区域且与禁飞区不相交的部分为限飞区，限制高度为30米。</p><p><strong>60米</strong> 限飞区是以跑道两端延伸15公里、扩散斜率为15%的梯形范围，与30米限飞区及禁飞区皆不相交的部分，限制高度为60米。</p><p><strong>120米</strong> 限飞区是以跑道正中点为圆心、半径10公里作圆，该圆形范围与禁飞区、30米限飞区及60米限飞区非相交的部分，限制高度为120米。</p><p>当飞行器从外部接近限飞区边界时，应用程序将弹出警告，提示飞行风险。如当前高度大于限制高度，飞行器将自动减速、悬停，须下降到低于限飞高度方可进入；如低于限飞高度，飞入限飞区后高度将受到限制；如在无GPS信号状态下进入限飞区，飞行器获得GPS信号后将自动下降至限飞高度。</p><p>大疆各产品线将逐步适用于此次更新的多边形禁飞区策略。</p><p><a href="http://haokan.baidu.com/v?pd=wisenatural&amp;vid=9573858590873636023" target="_blank" rel="noopener">2分钟动画解读大疆新的无人机限飞区划定规则</a><br><a href="https://www.dji.com/cn/flysafe/geo-map" target="_blank" rel="noopener">安全飞行指引限飞区查询</a></p>]]></content>
     
     <summary type="html">
     
@@ -151,41 +88,7 @@
     <published>2018-06-20T07:12:08.000Z</published>
     <updated>2018-06-21T00:19:57.000Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>QSDK</strong> 是一种在openwrt的基础上，加入了高通atheros芯片相关资料的一种环境。</p>
-<p>QSDK与OpenWRT的区别主要在如下几个方面：</p>
-<ul>
-<li>arch/mips/ath79/* – updated QCA base platform device support – GPLv2</li>
-<li>sound/soc/ath79/* – new ALSA-compliant QCA soundcard driver – ISC</li>
-<li>drivers/net/ethernet/atheros/ag71xx/* – updated QCA Ethernet switch driver – GPLv2</li>
-<li>net/core/* – performance enhancement updates to Linux sk_buff management – GPL v2</li>
-<li>drivers/spi – added modes to QCA spi driver – GPLv2</li>
-<li>drivers/mtd/nand/ – new QCA NAND flash controller driver – ISC</li>
-</ul>
-<a id="more"></a>
-<p>编译步骤如下：（基于debian服务器）</p>
-<p>1、安装开发所需软件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install gcc g++ binutils patch bzip2 flex make gettext pkg-config unzip zlib1g-dev libc6-dev subversion libncurses5-dev</div><div class="line">sudo apt-get install gawk sharutils curl libxml-parser-perl ocaml-nox</div></pre></td></tr></table></figure>
-<p>2、安装repo和git</p>
-<p>见 <a href="http://www.cnblogs.com/rohens-hbg/p/4916452.html" target="_blank" rel="external">http://www.cnblogs.com/rohens-hbg/p/4916452.html</a></p>
-<p>3、下载qsdk相关文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">repo init -u git://codeaurora.org/quic/qsdk/releases/manifest/qstak -b release -m  caf_AU_LINUX_QSDK_RELEASE_BANANA_SW_TARGET_ALL.2.7.029.xml</div><div class="line">repo sync</div><div class="line">mkdir -p qsdk/dl</div><div class="line">tar xjvf qsdk-qca-wifi-2.7.029.tar.bz2 -C qsdk</div><div class="line">tar xjvf qsdk-qca-wlan-2.7.029.tar.bz2 -C qsdk</div><div class="line">tar xjvf qsdk-qca-shortcut-fe-2.7.029.tar.bz2 -c qsdk</div></pre></td></tr></table></figure>
-<p>4、编译</p>
-<p>1)  cd qsdk</p>
-<pre><code>make package/symlinks
-</code></pre><p>2)  拷贝配置文件，目前该目录下有三个配置文件</p>
-<pre><code>ar71xx_open.config
-ar71xx_premium.config  ： 生成16m flash使用的bin文件
-ar71xx_wireless.config ： 生成8m flash使用的bin文件
-cp qca/configs/qca955x.ln/ar71xx_&lt;profile&gt;.config .config
-</code></pre><p>3)  重新生成配置文件并build</p>
-<pre><code>make defconfig
-make V=s
-</code></pre><p>4) 去目录下去.bin文件download到设备上</p>
-<p>   目录路径为：qsdk\bin\ar71xx</p>
-<blockquote>
-<p>主要文件为：<br>   openwrt-ar71xx-generic-ap147-16M-kernel.bin  (或  openwrt-ar71xx-generic-ap147-16M-kernel.bin)<br>   openwrt-ar71xx-generic-ap147-16M-rootfs-squashfs.bin (或 openwrt-ar71xx-generic-ap147-8M-rootfs-squashfs.bin)</p>
-</blockquote>
-]]></content>
+    <content type="html"><![CDATA[<p><strong>QSDK</strong> 是一种在openwrt的基础上，加入了高通atheros芯片相关资料的一种环境。</p><p>QSDK与OpenWRT的区别主要在如下几个方面：</p><ul><li>arch/mips/ath79/* – updated QCA base platform device support – GPLv2</li><li>sound/soc/ath79/* – new ALSA-compliant QCA soundcard driver – ISC</li><li>drivers/net/ethernet/atheros/ag71xx/* – updated QCA Ethernet switch driver – GPLv2</li><li>net/core/* – performance enhancement updates to Linux sk_buff management – GPL v2</li><li>drivers/spi – added modes to QCA spi driver – GPLv2</li><li>drivers/mtd/nand/ – new QCA NAND flash controller driver – ISC</li></ul><a id="more"></a><p>编译步骤如下：（基于debian服务器）</p><p>1、安装开发所需软件：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gcc g++ binutils patch bzip2 flex make gettext pkg-config unzip zlib1g-dev libc6-dev subversion libncurses5-dev</span><br><span class="line">sudo apt-get install gawk sharutils curl libxml-parser-perl ocaml-nox</span><br></pre></td></tr></table></figure><p>2、安装repo和git</p><p>见 <a href="http://www.cnblogs.com/rohens-hbg/p/4916452.html" target="_blank" rel="noopener">http://www.cnblogs.com/rohens-hbg/p/4916452.html</a></p><p>3、下载qsdk相关文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">repo init -u git://codeaurora.org/quic/qsdk/releases/manifest/qstak -b release -m  caf_AU_LINUX_QSDK_RELEASE_BANANA_SW_TARGET_ALL.2.7.029.xml</span><br><span class="line">repo sync</span><br><span class="line">mkdir -p qsdk/dl</span><br><span class="line">tar xjvf qsdk-qca-wifi-2.7.029.tar.bz2 -C qsdk</span><br><span class="line">tar xjvf qsdk-qca-wlan-2.7.029.tar.bz2 -C qsdk</span><br><span class="line">tar xjvf qsdk-qca-shortcut-fe-2.7.029.tar.bz2 -c qsdk</span><br></pre></td></tr></table></figure><p>4、编译</p><p>1)  cd qsdk</p><pre><code>make package/symlinks</code></pre><p>2)  拷贝配置文件，目前该目录下有三个配置文件</p><pre><code>ar71xx_open.configar71xx_premium.config  ： 生成16m flash使用的bin文件ar71xx_wireless.config ： 生成8m flash使用的bin文件cp qca/configs/qca955x.ln/ar71xx_&lt;profile&gt;.config .config</code></pre><p>3)  重新生成配置文件并build</p><pre><code>make defconfigmake V=s</code></pre><p>4) 去目录下去.bin文件download到设备上</p><p>   目录路径为：qsdk\bin\ar71xx</p><blockquote><p>主要文件为：<br>   openwrt-ar71xx-generic-ap147-16M-kernel.bin  (或  openwrt-ar71xx-generic-ap147-16M-kernel.bin)<br>   openwrt-ar71xx-generic-ap147-16M-rootfs-squashfs.bin (或 openwrt-ar71xx-generic-ap147-8M-rootfs-squashfs.bin)</p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -214,40 +117,7 @@ make V=s
     <published>2018-06-20T04:12:08.000Z</published>
     <updated>2018-06-20T07:44:06.000Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>OpenWrt</strong> 可以说是世界上最出名的家用 <strong>WiFi</strong> 路由器 <strong>Linux</strong> 发行版，是由以前名不经传的 <strong>Linksys WRT54G</strong> 路由催生的一个产品，已经 <strong>12</strong> 年多了。在2016年5月初，OpenWrt用户社区宣布了另一个 <strong>OpenWrt：Linux Embedded Development Environment (LEDE)</strong> 。官方解释说，<strong>LEDE</strong> 是 OpenWrt 的一个分支，或者说是副产品，该项目主要关注透明性，协作和分权。<br>LEDE 是 OpenWrt 社区的新生，有很多目标是与 OpenWrt 相同的，但是相比于 OpenWrt 也有很大的区别。</p>
-<a id="more"></a>
-<p>LEDE 当前的目标是：</p>
-<ul>
-<li>构建一个巨大的嵌入式 Linux 发行版，主要关注稳定性和功能</li>
-<li>拥有规律，可预测的发行周期</li>
-<li>建立透明的决策过程，加强社区参与和公共反馈</li>
-</ul>
-<p>创建 LEDE 是因为 OpenWrt 有一些长期存在的问题，一直悬而未决：</p>
-<ul>
-<li>核心开发者活跃度低，也没有鼓励更多新成员加入的策略</li>
-<li>不可靠的基础设施，因为淡点故障和内部分歧而阻碍修复</li>
-<li>缺乏沟通，透明和协作，无论是核心团队还是核心团队与社区之间</li>
-<li>提交 commit 的人较少，不怎么关注测试和常规构建</li>
-<li>不关注稳定性和文档</li>
-</ul>
-<p>为了解决这些问题，创建了 LEDE 项目，相比 OpenWrt 不同之处在于：</p>
-<ul>
-<li>所有沟通频道都是公开的，一些对非开发成员限制只读权限</li>
-<li>决策过程是公正公开的，大约有 50/50 的开发者和权威用户有投票权</li>
-<li>基础设施非常简单，降低维护工作的难度</li>
-<li>基于 OpenWrt 包在 Github 收到的反馈，合并策略更自由</li>
-<li>强烈关注自动化测试，简历一个简单的发布流程</li>
-</ul>
-<p>LEDE 项目地址：<a href="https://www.lede-project.org/" target="_blank" rel="external">https://www.lede-project.org/</a></p>
-<h2 id="为何使用LEDE"><a href="#为何使用LEDE" class="headerlink" title="为何使用LEDE?"></a>为何使用LEDE?</h2><p>LEDE相比制造商的原厂固件更加出色，才使得人们更倾向于使用LEDE。LEDE工作起来更加稳定、提供更多的功能，并且更加安全，同时具有良好的技术支持。<br>可扩展性： LEDE提供了许多以往只在高端设备上才提供的各种功能。它具有3000个以上的标准化应用软件包，您可以轻松地将他们应用于各种支持的设备，包括各种陈旧的路由器。</p>
-<ul>
-<li>高安全性： 从安装开始，LEDE就以安全的标准来设计。例如Wi-Fi默认禁用，没有弱密码，没有任何后门程序。LEDE的系统组件始终保持最新，因此漏洞一旦被发现后会很快得到解决。</li>
-<li>高性能、高稳定性： LEDE固件是由所支持的所有设备的标准化组件制作而成。这意味着每个组件都会接受更多的测试和bug修复，而不像原厂固件那样一旦为生产线的产品提供固件后就再也不去碰它。</li>
-<li>强大的社区支持： LEDE团队成员会经常参与到LEDE论坛、LEDE开发者、LEDE管理员以及LEDE的IRC频道中去。您可以直接与开发人员，管理软件模块的志愿者和其他LEDE用户交流，大大增加您解决问题的机会。</li>
-<li>研发： 许多团队使用LEDE作为他们对网络性能研究的平台。这意味着他们的成功实验案例将会首先在LEDE中实现，而原厂固件将会落后许多。</li>
-<li>开源/无额外支出： 使用LEDE没有任何金钱成本。它完全是由志愿者团队、开发者、维护人员、个人以及一些公司创建的。 如果您喜欢LEDE，可以考虑将它变得更好。作为开源社区的一部分，LEDE有强大的Linux Kernel驱动.</li>
-</ul>
-]]></content>
+    <content type="html"><![CDATA[<p><strong>OpenWrt</strong> 可以说是世界上最出名的家用 <strong>WiFi</strong> 路由器 <strong>Linux</strong> 发行版，是由以前名不经传的 <strong>Linksys WRT54G</strong> 路由催生的一个产品，已经 <strong>12</strong> 年多了。在2016年5月初，OpenWrt用户社区宣布了另一个 <strong>OpenWrt：Linux Embedded Development Environment (LEDE)</strong> 。官方解释说，<strong>LEDE</strong> 是 OpenWrt 的一个分支，或者说是副产品，该项目主要关注透明性，协作和分权。<br>LEDE 是 OpenWrt 社区的新生，有很多目标是与 OpenWrt 相同的，但是相比于 OpenWrt 也有很大的区别。</p><a id="more"></a><p>LEDE 当前的目标是：</p><ul><li>构建一个巨大的嵌入式 Linux 发行版，主要关注稳定性和功能</li><li>拥有规律，可预测的发行周期</li><li>建立透明的决策过程，加强社区参与和公共反馈</li></ul><p>创建 LEDE 是因为 OpenWrt 有一些长期存在的问题，一直悬而未决：</p><ul><li>核心开发者活跃度低，也没有鼓励更多新成员加入的策略</li><li>不可靠的基础设施，因为淡点故障和内部分歧而阻碍修复</li><li>缺乏沟通，透明和协作，无论是核心团队还是核心团队与社区之间</li><li>提交 commit 的人较少，不怎么关注测试和常规构建</li><li>不关注稳定性和文档</li></ul><p>为了解决这些问题，创建了 LEDE 项目，相比 OpenWrt 不同之处在于：</p><ul><li>所有沟通频道都是公开的，一些对非开发成员限制只读权限</li><li>决策过程是公正公开的，大约有 50/50 的开发者和权威用户有投票权</li><li>基础设施非常简单，降低维护工作的难度</li><li>基于 OpenWrt 包在 Github 收到的反馈，合并策略更自由</li><li>强烈关注自动化测试，简历一个简单的发布流程</li></ul><p>LEDE 项目地址：<a href="https://www.lede-project.org/" target="_blank" rel="noopener">https://www.lede-project.org/</a></p><h2 id="为何使用LEDE"><a href="#为何使用LEDE" class="headerlink" title="为何使用LEDE?"></a>为何使用LEDE?</h2><p>LEDE相比制造商的原厂固件更加出色，才使得人们更倾向于使用LEDE。LEDE工作起来更加稳定、提供更多的功能，并且更加安全，同时具有良好的技术支持。<br>可扩展性： LEDE提供了许多以往只在高端设备上才提供的各种功能。它具有3000个以上的标准化应用软件包，您可以轻松地将他们应用于各种支持的设备，包括各种陈旧的路由器。</p><ul><li>高安全性： 从安装开始，LEDE就以安全的标准来设计。例如Wi-Fi默认禁用，没有弱密码，没有任何后门程序。LEDE的系统组件始终保持最新，因此漏洞一旦被发现后会很快得到解决。</li><li>高性能、高稳定性： LEDE固件是由所支持的所有设备的标准化组件制作而成。这意味着每个组件都会接受更多的测试和bug修复，而不像原厂固件那样一旦为生产线的产品提供固件后就再也不去碰它。</li><li>强大的社区支持： LEDE团队成员会经常参与到LEDE论坛、LEDE开发者、LEDE管理员以及LEDE的IRC频道中去。您可以直接与开发人员，管理软件模块的志愿者和其他LEDE用户交流，大大增加您解决问题的机会。</li><li>研发： 许多团队使用LEDE作为他们对网络性能研究的平台。这意味着他们的成功实验案例将会首先在LEDE中实现，而原厂固件将会落后许多。</li><li>开源/无额外支出： 使用LEDE没有任何金钱成本。它完全是由志愿者团队、开发者、维护人员、个人以及一些公司创建的。 如果您喜欢LEDE，可以考虑将它变得更好。作为开源社区的一部分，LEDE有强大的Linux Kernel驱动.</li></ul>]]></content>
     
     <summary type="html">
     
@@ -261,76 +131,13 @@ make V=s
   </entry>
   
   <entry>
-    <title>OpenWRT的WiFi带机量修改方法</title>
-    <link href="http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/"/>
-    <id>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT的WiFi带机量修改方法/</id>
-    <published>2018-05-14T04:12:08.000Z</published>
-    <updated>2018-06-18T06:45:02.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Wifi带机量的修改"><a href="#Wifi带机量的修改" class="headerlink" title="Wifi带机量的修改"></a>Wifi带机量的修改</h1><p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
-<p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
-<a id="more"></a>
-<blockquote>
-<p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="external">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="external">MTK_Ralink_ApSoc_SDK编译总结</a><br><a href="http://www.right.com.cn/forum/thread-208204-1-1.html" target="_blank" rel="external">openwrt wifi用户连接数限制</a></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Wifi带机量的修改&quot;&gt;&lt;a href=&quot;#Wifi带机量的修改&quot; class=&quot;headerlink&quot; title=&quot;Wifi带机量的修改&quot;&gt;&lt;/a&gt;Wifi带机量的修改&lt;/h1&gt;&lt;p&gt;(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;#define MAX_NUMBER_OF_MAC                64 // 原始值32&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
-    
-      <category term="电子书包" scheme="http://cuiqingwei.github.io/tags/%E7%94%B5%E5%AD%90%E4%B9%A6%E5%8C%85/"/>
-    
-  </entry>
-  
-  <entry>
     <title>WiFi探针的工作原理</title>
     <link href="http://cuiqingwei.github.io/2018/05/14/2018-06-18-WiFi%E6%8E%A2%E9%92%88%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"/>
     <id>http://cuiqingwei.github.io/2018/05/14/2018-06-18-WiFi探针的工作原理/</id>
     <published>2018-05-14T04:12:08.000Z</published>
     <updated>2018-06-18T07:02:27.000Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>WiFi探针</strong> 技术是指基于WiFi探测技术来识别AP（无线访问接入点）附近已开启WiFi的智能手机或者WiFi终端（笔记本，平板电脑等），无需用户接入WiFi，WiFi探针就能够识别用户的信息。</p>
-<p>当我们走进探针信号覆盖区域内且我们的WiFi设备打开，我们的设备就能被探针探测出来，无论是iOS或者Android系统都能轻易检测到，并且获取设备的MAC地址。</p>
-<a id="more"></a>
-<h1 id="WiFi探测特点"><a href="#WiFi探测特点" class="headerlink" title="WiFi探测特点"></a>WiFi探测特点</h1><ul>
-<li>用户无需连接，无需安装APP；</li>
-<li>手机已经连接WiFi也可以探测；</li>
-<li>自动实时探测区域内的WiFi终端标识MAC地址；</li>
-<li>自动记录每个WiFi终端进入区域时间log_TIme、场强SNR；</li>
-<li>兼容iOS苹果和Android系统，开启WiFi的智能手机、笔记本电脑、Pad等移动设备都能探测。</li>
-</ul>
-<p><img src="/img/20180618/20180424090423830.jpg" alt=""></p>
-<h1 id="WiFi探针的工作原理"><a href="#WiFi探针的工作原理" class="headerlink" title="WiFi探针的工作原理"></a>WiFi探针的工作原理</h1><p>要深入了解WiFi探针技术，首先先认识WiFi使用的网络协议，WiFi采用的是IEEE802.11协议集，此协议集包含许多子协议。其中按照时间顺序发展，主要有：<br>（1）802.11a，（2）802.11b，（3）802.11g（4）802.11n。<br>在网络通信中，数据被封装成了帧，帧就是指通信中的一个数据块。但是帧在数据链路层传输的时候是有固定格式的，不是随便的封装和打包就可以传输，大小有限制，最小46字节，最大1500字节所以我们必须按照这个规则来封装。下面802.11的帧结构：</p>
-<p><img src="/img/20180618/1524574939991174.jpg" alt=""><br><img src="/img/20180618/1524574939673549.jpg" alt=""></p>
-<p>从上面的结构可以知道，前俩个字节为：帧控制字段。<br>控制字段的前2bit节为：协议类型，目前此值为：0。</p>
-<ul>
-<li>1）控制帧：（ControlFrame，例如RTS帧、CTS帧、ACK帧）用于竞争期间的握手通信和正向确认、结束非竞争期等；</li>
-<li>2）管理帧：（ManagementFrame，例如Beacon帧、ProbeRequest帧）主要用于STA与AP之间协商、关系的控制，如关联、认证、同步等；</li>
-<li>3）数据帧：（DataFrame，承载数据的载体）用于在竞争期和非竞争期传输数据。</li>
-</ul>
-<h3 id="1、管理帧"><a href="#1、管理帧" class="headerlink" title="1、管理帧"></a>1、管理帧</h3><p>BeaconFrame：信标帧，是相当重要的维护机制，主要来宣告某个AP网络的存在。定期发送的信标，可让移动WiFi设备得知该网络的存在，从而调整加入该网络所必要的参数。在基础网络里，AP必须负责发送Beacon帧，Beacon帧所及范围即为基本服务区域。在基础型网络里，所有沟通都必须通过接入点，因此WiFi设备不能距离太远，否则无法接收到信标。下图是帧格式：</p>
-<p><img src="/img/20180618/1524574940570406.jpg" alt=""></p>
-<h3 id="2、管理帧"><a href="#2、管理帧" class="headerlink" title="2、管理帧"></a>2、管理帧</h3><p>ProbeRequest：探测请求帧，WiFi设备将会利用ProbeRequest帧，扫描所在区域内目前有哪些802.11网络。下图是帧格式：</p>
-<p><img src="/img/20180618/1524574943944955.jpg" alt=""></p>
-<h3 id="3、数据帧："><a href="#3、数据帧：" class="headerlink" title="3、数据帧："></a>3、数据帧：</h3><p>Data数据帧，当接入点要送出一个帧给WiFi设备但是不必确认之前所传送的信息时，就会使用标准的数据帧。标准的数据帧并不会征询对方是否有数据待传，因此不允许接收端传送任何数据。无竞争周期所使用的纯数据（Data-Only）帧和无竞争周期所使用的数据帧完全相同。看了以上的网络知识，我们现在说说WiFi探针是怎么工作的，还是先看张图：</p>
-<p><img src="/img/20180618/1524574944692277.jpg" alt=""></p>
-<p>就像图中描述的一样，我们的WiFi探针其实就是一个AP，它定时的向自己的四周广播发送Beacon帧，用来通知附近的WiFi设备，AP是存在的，（好比它一直在向周围喊着，我在这里，大家快来连接我啊）。我们的WiFi设备，手机，平板电脑等，也不停的发送着probe帧，去寻找附近可用的AP。在probe帧的介绍中就我们可以看到probe帧包含了设备的mac地址，当我们的AP接收到probe帧之后就获取了这个设备的MAC地址，而这个AP就是我们的WIFI探针。因此只要在WiFi探针覆盖区域内的设备打开着WiFi，探针就能收集到他的MAC地址。</p>
-<h1 id="WiFi探针可以采集哪些数据"><a href="#WiFi探针可以采集哪些数据" class="headerlink" title="WiFi探针可以采集哪些数据"></a>WiFi探针可以采集哪些数据</h1><p>　　可采集数据：<br>　　设备MAC地址；<br>　　WiFi信号强度；<br>　　WiFi信号频道；<br>　　信号帧类型。<br>　　记录格式：探针 MAC|抓取的设备 MAC|设备发送的 WiFi 包的类型|子类型|信号强度|时间戳</p>
-<p><img src="/img/20180618/1524574945471237.jpg" alt=""></p>
-<h1 id="数据释义"><a href="#数据释义" class="headerlink" title="数据释义"></a>数据释义</h1><p>　　“探针MAC”就是探针本身的MAC地址；<br>　　“抓取的设备MAC”指探针抓取到的WiFi信号的发射设备的MAC地址，一般为手机；<br>　　“信号强度”指探针抓取到的WiFi信号的强度，最小值为“-100”，一般来说，此值越大表示发射设备离探针越近；<br>　　“设备发送的WiFi包的类型”指探针抓取到的WiFi信号的类别，其末位数的值为0、4、8时，分别表示抓取到的WiFi信号为“管理”帧、“控制”帧、“数据”帧；<br>　　“时间戳”指探针抓取到WiFi信号的时间，如果探针在局域网内使用而没有接入广域网的话，时间戳可能是不准确的。</p>
-<blockquote>
-<p>WiFi探针数据可以同哪些数据融合？<br>数据的应用核心在于融合，如何将各成一派数据巧妙的组合在一起，让数据驱动商业的发展，是现在与未来的议题。虽然线上大数据已经经历过互联网的洗礼，但是线下数据仍有较长的路要走，那么WiFi探针可以同哪些数据做融合呢？<br>MAC数据可以同支付数据、会员数据、消费数据、营销数据、地理数据及线上数据做深度的融合，将多维度的数据集成一起勾画出完整的用户画像，如用户的姓名、年龄、兴趣偏好、消费特征、过往消费记录、学历等。基于这些数据再结合具体的应用，这样才能让线下商户有据可依，释放出数据的价值。</p>
-</blockquote>
-]]></content>
+    <content type="html"><![CDATA[<p><strong>WiFi探针</strong> 技术是指基于WiFi探测技术来识别AP（无线访问接入点）附近已开启WiFi的智能手机或者WiFi终端（笔记本，平板电脑等），无需用户接入WiFi，WiFi探针就能够识别用户的信息。</p><p>当我们走进探针信号覆盖区域内且我们的WiFi设备打开，我们的设备就能被探针探测出来，无论是iOS或者Android系统都能轻易检测到，并且获取设备的MAC地址。</p><a id="more"></a><h1 id="WiFi探测特点"><a href="#WiFi探测特点" class="headerlink" title="WiFi探测特点"></a>WiFi探测特点</h1><ul><li>用户无需连接，无需安装APP；</li><li>手机已经连接WiFi也可以探测；</li><li>自动实时探测区域内的WiFi终端标识MAC地址；</li><li>自动记录每个WiFi终端进入区域时间log_TIme、场强SNR；</li><li>兼容iOS苹果和Android系统，开启WiFi的智能手机、笔记本电脑、Pad等移动设备都能探测。</li></ul><p><img src="/img/20180618/20180424090423830.jpg" alt=""></p><h1 id="WiFi探针的工作原理"><a href="#WiFi探针的工作原理" class="headerlink" title="WiFi探针的工作原理"></a>WiFi探针的工作原理</h1><p>要深入了解WiFi探针技术，首先先认识WiFi使用的网络协议，WiFi采用的是IEEE802.11协议集，此协议集包含许多子协议。其中按照时间顺序发展，主要有：<br>（1）802.11a，（2）802.11b，（3）802.11g（4）802.11n。<br>在网络通信中，数据被封装成了帧，帧就是指通信中的一个数据块。但是帧在数据链路层传输的时候是有固定格式的，不是随便的封装和打包就可以传输，大小有限制，最小46字节，最大1500字节所以我们必须按照这个规则来封装。下面802.11的帧结构：</p><p><img src="/img/20180618/1524574939991174.jpg" alt=""><br><img src="/img/20180618/1524574939673549.jpg" alt=""></p><p>从上面的结构可以知道，前俩个字节为：帧控制字段。<br>控制字段的前2bit节为：协议类型，目前此值为：0。</p><ul><li>1）控制帧：（ControlFrame，例如RTS帧、CTS帧、ACK帧）用于竞争期间的握手通信和正向确认、结束非竞争期等；</li><li>2）管理帧：（ManagementFrame，例如Beacon帧、ProbeRequest帧）主要用于STA与AP之间协商、关系的控制，如关联、认证、同步等；</li><li>3）数据帧：（DataFrame，承载数据的载体）用于在竞争期和非竞争期传输数据。</li></ul><h3 id="1、管理帧"><a href="#1、管理帧" class="headerlink" title="1、管理帧"></a>1、管理帧</h3><p>BeaconFrame：信标帧，是相当重要的维护机制，主要来宣告某个AP网络的存在。定期发送的信标，可让移动WiFi设备得知该网络的存在，从而调整加入该网络所必要的参数。在基础网络里，AP必须负责发送Beacon帧，Beacon帧所及范围即为基本服务区域。在基础型网络里，所有沟通都必须通过接入点，因此WiFi设备不能距离太远，否则无法接收到信标。下图是帧格式：</p><p><img src="/img/20180618/1524574940570406.jpg" alt=""></p><h3 id="2、管理帧"><a href="#2、管理帧" class="headerlink" title="2、管理帧"></a>2、管理帧</h3><p>ProbeRequest：探测请求帧，WiFi设备将会利用ProbeRequest帧，扫描所在区域内目前有哪些802.11网络。下图是帧格式：</p><p><img src="/img/20180618/1524574943944955.jpg" alt=""></p><h3 id="3、数据帧："><a href="#3、数据帧：" class="headerlink" title="3、数据帧："></a>3、数据帧：</h3><p>Data数据帧，当接入点要送出一个帧给WiFi设备但是不必确认之前所传送的信息时，就会使用标准的数据帧。标准的数据帧并不会征询对方是否有数据待传，因此不允许接收端传送任何数据。无竞争周期所使用的纯数据（Data-Only）帧和无竞争周期所使用的数据帧完全相同。看了以上的网络知识，我们现在说说WiFi探针是怎么工作的，还是先看张图：</p><p><img src="/img/20180618/1524574944692277.jpg" alt=""></p><p>就像图中描述的一样，我们的WiFi探针其实就是一个AP，它定时的向自己的四周广播发送Beacon帧，用来通知附近的WiFi设备，AP是存在的，（好比它一直在向周围喊着，我在这里，大家快来连接我啊）。我们的WiFi设备，手机，平板电脑等，也不停的发送着probe帧，去寻找附近可用的AP。在probe帧的介绍中就我们可以看到probe帧包含了设备的mac地址，当我们的AP接收到probe帧之后就获取了这个设备的MAC地址，而这个AP就是我们的WIFI探针。因此只要在WiFi探针覆盖区域内的设备打开着WiFi，探针就能收集到他的MAC地址。</p><h1 id="WiFi探针可以采集哪些数据"><a href="#WiFi探针可以采集哪些数据" class="headerlink" title="WiFi探针可以采集哪些数据"></a>WiFi探针可以采集哪些数据</h1><p>　　可采集数据：<br>　　设备MAC地址；<br>　　WiFi信号强度；<br>　　WiFi信号频道；<br>　　信号帧类型。<br>　　记录格式：探针 MAC|抓取的设备 MAC|设备发送的 WiFi 包的类型|子类型|信号强度|时间戳</p><p><img src="/img/20180618/1524574945471237.jpg" alt=""></p><h1 id="数据释义"><a href="#数据释义" class="headerlink" title="数据释义"></a>数据释义</h1><p>　　“探针MAC”就是探针本身的MAC地址；<br>　　“抓取的设备MAC”指探针抓取到的WiFi信号的发射设备的MAC地址，一般为手机；<br>　　“信号强度”指探针抓取到的WiFi信号的强度，最小值为“-100”，一般来说，此值越大表示发射设备离探针越近；<br>　　“设备发送的WiFi包的类型”指探针抓取到的WiFi信号的类别，其末位数的值为0、4、8时，分别表示抓取到的WiFi信号为“管理”帧、“控制”帧、“数据”帧；<br>　　“时间戳”指探针抓取到WiFi信号的时间，如果探针在局域网内使用而没有接入广域网的话，时间戳可能是不准确的。</p><blockquote><p>WiFi探针数据可以同哪些数据融合？<br>数据的应用核心在于融合，如何将各成一派数据巧妙的组合在一起，让数据驱动商业的发展，是现在与未来的议题。虽然线上大数据已经经历过互联网的洗礼，但是线下数据仍有较长的路要走，那么WiFi探针可以同哪些数据做融合呢？<br>MAC数据可以同支付数据、会员数据、消费数据、营销数据、地理数据及线上数据做深度的融合，将多维度的数据集成一起勾画出完整的用户画像，如用户的姓名、年龄、兴趣偏好、消费特征、过往消费记录、学历等。基于这些数据再结合具体的应用，这样才能让线下商户有据可依，释放出数据的价值。</p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -345,26 +152,37 @@ make V=s
   </entry>
   
   <entry>
+    <title>OpenWRT的WiFi带机量修改方法</title>
+    <link href="http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/"/>
+    <id>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT的WiFi带机量修改方法/</id>
+    <published>2018-05-14T04:12:08.000Z</published>
+    <updated>2018-06-18T06:45:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Wifi带机量的修改"><a href="#Wifi带机量的修改" class="headerlink" title="Wifi带机量的修改"></a>Wifi带机量的修改</h1><p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</span><br></pre></td></tr></table></figure><p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p><a id="more"></a><blockquote><p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="noopener">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="noopener">MTK_Ralink_ApSoc_SDK编译总结</a><br><a href="http://www.right.com.cn/forum/thread-208204-1-1.html" target="_blank" rel="noopener">openwrt wifi用户连接数限制</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Wifi带机量的修改&quot;&gt;&lt;a href=&quot;#Wifi带机量的修改&quot; class=&quot;headerlink&quot; title=&quot;Wifi带机量的修改&quot;&gt;&lt;/a&gt;Wifi带机量的修改&lt;/h1&gt;&lt;p&gt;(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#define MAX_NUMBER_OF_MAC                64 // 原始值32&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
+    
+      <category term="电子书包" scheme="http://cuiqingwei.github.io/tags/%E7%94%B5%E5%AD%90%E4%B9%A6%E5%8C%85/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Android MulticastSocket 组播</title>
     <link href="http://cuiqingwei.github.io/2018/05/08/2018-05-08-Android-MulticastSocket-%E7%BB%84%E6%92%AD/"/>
     <id>http://cuiqingwei.github.io/2018/05/08/2018-05-08-Android-MulticastSocket-组播/</id>
     <published>2018-05-08T04:12:08.000Z</published>
     <updated>2018-05-14T08:20:57.000Z</updated>
     
-    <content type="html"><![CDATA[<p>现象是MulticastSocket发送组播消息,一些安卓平板上可以发送、接收组播消息,个别安卓不可用。</p>
-<a id="more"></a>
-<p>1.能正常发送接收的安卓平板,向组播地址发送了组播消息后,同时会向组播地址发送一个 <strong>IGMPv2</strong> 的协议</p>
-<p><img src="/img/20180508/7820e355de8f7e4065c08b677e8fb41b.jpg" alt=""></p>
-<p>2.能发送,接收不到组播消息的安卓平板设备,可以发现设备没有向组播地址发送 <strong>IGMP</strong> 协议；</p>
-<p><img src="/img/20180508/394a6a000dd59316bab0f2d0d9b10387.jpg" alt=""></p>
-<p>3.而查看安卓平板,在 <strong>/proc/net/</strong> 目录下,有igmp文件的设备会发送IGMP协议,能正常完成组播消息收发,而没有igmp文件的,就是不能完成组播消息收发的。<strong>igmp</strong> 是IPv4下的协议文件, <strong>igmp6</strong> 是IPv6的协议。可以看到所有设备都支持IPv6的igmp</p>
-<p><img src="/img/20180508/2b61d0bd7c6a7742160c4a7aa1fd85c8.jpg" alt=""></p>
-<p>4.在Android系统下,编译Linux kernel时有一config  CONFIG_IP_MULTICAST ,如果是定制系统在编译系统的时候配置这个选项 <strong>CONFIG_IP_MULTICAST=y</strong> ,就能enable组播功能。但是有很多系统厂商在编译的时候都默认把这个config给disable了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">CONFIG_IP_MULTICAST</div><div class="line">adb shell netcfg</div><div class="line">adb shell ifconfig eth0</div></pre></td></tr></table></figure>
-<blockquote>
-<p>参考:<br><a href="https://unix.stackexchange.com/questions/25872/how-can-i-know-if-ip-multicast-is-enabled" target="_blank" rel="external">How can I know if IP Multicast is enabled</a><br><a href="https://www.cnblogs.com/inkheart0124/p/5508420.html" target="_blank" rel="external">Android App用MulticastSocket监听组播，为什么连接到不同路由、在不同手机上跑，有的能收到有的收不到</a><br><a href="https://code.google.com/p/android/issues/detail?id=51195" target="_blank" rel="external">Many devices have multicast disabled in the kernel</a></p>
-</blockquote>
-]]></content>
+    <content type="html"><![CDATA[<p>现象是MulticastSocket发送组播消息,一些安卓平板上可以发送、接收组播消息,个别安卓不可用。</p><a id="more"></a><p>1.能正常发送接收的安卓平板,向组播地址发送了组播消息后,同时会向组播地址发送一个 <strong>IGMPv2</strong> 的协议</p><p><img src="/img/20180508/7820e355de8f7e4065c08b677e8fb41b.jpg" alt=""></p><p>2.能发送,接收不到组播消息的安卓平板设备,可以发现设备没有向组播地址发送 <strong>IGMP</strong> 协议；</p><p><img src="/img/20180508/394a6a000dd59316bab0f2d0d9b10387.jpg" alt=""></p><p>3.而查看安卓平板,在 <strong>/proc/net/</strong> 目录下,有igmp文件的设备会发送IGMP协议,能正常完成组播消息收发,而没有igmp文件的,就是不能完成组播消息收发的。<strong>igmp</strong> 是IPv4下的协议文件, <strong>igmp6</strong> 是IPv6的协议。可以看到所有设备都支持IPv6的igmp</p><p><img src="/img/20180508/2b61d0bd7c6a7742160c4a7aa1fd85c8.jpg" alt=""></p><p>4.在Android系统下,编译Linux kernel时有一config  CONFIG_IP_MULTICAST ,如果是定制系统在编译系统的时候配置这个选项 <strong>CONFIG_IP_MULTICAST=y</strong> ,就能enable组播功能。但是有很多系统厂商在编译的时候都默认把这个config给disable了。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CONFIG_IP_MULTICAST</span><br><span class="line">adb shell netcfg</span><br><span class="line">adb shell ifconfig eth0</span><br></pre></td></tr></table></figure><blockquote><p>参考:<br><a href="https://unix.stackexchange.com/questions/25872/how-can-i-know-if-ip-multicast-is-enabled" target="_blank" rel="noopener">How can I know if IP Multicast is enabled</a><br><a href="https://www.cnblogs.com/inkheart0124/p/5508420.html" target="_blank" rel="noopener">Android App用MulticastSocket监听组播，为什么连接到不同路由、在不同手机上跑，有的能收到有的收不到</a><br><a href="https://code.google.com/p/android/issues/detail?id=51195" target="_blank" rel="noopener">Many devices have multicast disabled in the kernel</a></p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -386,22 +204,12 @@ make V=s
     <published>2018-04-24T04:12:08.000Z</published>
     <updated>2018-04-24T09:14:31.000Z</updated>
     
-    <content type="html"><![CDATA[<p>一般情况下，我们混淆自己的安卓项目，会使用Proguard。</p>
-<p><a href="http://www.saikoa.com/proguard" target="_blank" rel="external">http://www.saikoa.com/proguard</a></p>
-<p><strong>Progurad</strong> 是免费的，而且已经集成到Android ADT中了，使用起来很方便。</p>
-<p>混淆工作，是为了保护我们的代码。但是，即使使用Pgoruard混淆了我们的apk文件，也可以使用apktool工具反编译出资源，能够看到Manifest文件，res资源等等。也可以使用dex2jar工具生成jar文件，进而使用jd工具反编译出Java代码片段。虽然，这些代码大部分都经过了混淆，已经很难阅读，但是还是可以读的。</p>
-<a id="more"></a>
-<p>更危险的是，Proguard只能保护代码，却不能保护我们的apk文件。任何人都可以使用apktool工具，反编译我们开发的apk文件，进而更改其中各种资源，或者更改部分代码，甚至是注入代码，然后再打包回apk，二次发布后，达到自己的目的。或者是加入了广告，或者是增加了恶意木马病毒，等等。</p>
-<p>还好，我们还有一种选择，DexGuard。</p>
-<p><a href="http://www.saikoa.com/dexguard" target="_blank" rel="external">http://www.saikoa.com/dexguard</a></p>
-<p><strong>DexGuard</strong> 是收费的，虽然挺贵的，但是对于一个公司来说，还是可以承受的。</p>
-<p>DexGuard是在Proguard基础上，加入了更多的保护措施。使用DexGuard混淆后，生成的apk文件，就无法正常使用apktool反编译了。尽管还是能够反编译出部分资源文件，但是由于反编译过程不完全，就无法再打包成apk了。这样就保护了我们的apk文件，不会被二次打包发布了。</p>
-]]></content>
+    <content type="html"><![CDATA[<p>一般情况下，我们混淆自己的安卓项目，会使用Proguard。</p><p><a href="http://www.saikoa.com/proguard" target="_blank" rel="noopener">http://www.saikoa.com/proguard</a></p><p><strong>Progurad</strong> 是免费的，而且已经集成到Android ADT中了，使用起来很方便。</p><p>混淆工作，是为了保护我们的代码。但是，即使使用Pgoruard混淆了我们的apk文件，也可以使用apktool工具反编译出资源，能够看到Manifest文件，res资源等等。也可以使用dex2jar工具生成jar文件，进而使用jd工具反编译出Java代码片段。虽然，这些代码大部分都经过了混淆，已经很难阅读，但是还是可以读的。</p><a id="more"></a><p>更危险的是，Proguard只能保护代码，却不能保护我们的apk文件。任何人都可以使用apktool工具，反编译我们开发的apk文件，进而更改其中各种资源，或者更改部分代码，甚至是注入代码，然后再打包回apk，二次发布后，达到自己的目的。或者是加入了广告，或者是增加了恶意木马病毒，等等。</p><p>还好，我们还有一种选择，DexGuard。</p><p><a href="http://www.saikoa.com/dexguard" target="_blank" rel="noopener">http://www.saikoa.com/dexguard</a></p><p><strong>DexGuard</strong> 是收费的，虽然挺贵的，但是对于一个公司来说，还是可以承受的。</p><p>DexGuard是在Proguard基础上，加入了更多的保护措施。使用DexGuard混淆后，生成的apk文件，就无法正常使用apktool反编译了。尽管还是能够反编译出部分资源文件，但是由于反编译过程不完全，就无法再打包成apk了。这样就保护了我们的apk文件，不会被二次打包发布了。</p>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;一般情况下，我们混淆自己的安卓项目，会使用Proguard。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.saikoa.com/proguard&quot;&gt;http://www.saikoa.com/proguard&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.saikoa.com/proguard&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.saikoa.com/proguard&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Progurad&lt;/strong&gt; 是免费的，而且已经集成到Android ADT中了，使用起来很方便。&lt;/p&gt;
 &lt;p&gt;混淆工作，是为了保护我们的代码。但是，即使使用Pgoruard混淆了我们的apk文件，也可以使用apktool工具反编译出资源，能够看到Manifest文件，res资源等等。也可以使用dex2jar工具生成jar文件，进而使用jd工具反编译出Java代码片段。虽然，这些代码大部分都经过了混淆，已经很难阅读，但是还是可以读的。&lt;/p&gt;
     
@@ -419,45 +227,11 @@ make V=s
     <published>2018-04-24T04:12:08.000Z</published>
     <updated>2018-04-24T03:51:00.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="1-安装brew"><a href="#1-安装brew" class="headerlink" title="1.安装brew"></a>1.安装brew</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div><div class="line">如果安装后, 想要卸载</div><div class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)&quot;</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h1 id="2-安装nginx"><a href="#2-安装nginx" class="headerlink" title="2.安装nginx"></a>2.安装nginx</h1><p>先clone nginx项目到本地<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew tap denji/nginx</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>brew tap homebrew/nginx 源已失效<br>  可参考 <a href="https://github.com/denji/homebrew-nginx" target="_blank" rel="external">https://github.com/denji/homebrew-nginx</a></p>
-</blockquote>
-<p>执行安装：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install nginx-full --with-rtmp-module</div></pre></td></tr></table></figure>
-<p>此时, nginx和rtmp模块就安装好了<br>输入命令:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nginx</div></pre></td></tr></table></figure>
-<p>在浏览器里打开<a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a></p>
-<blockquote>
-<p>查询安装路径：brew info nginx-full</p>
-</blockquote>
-<h1 id="3-配置RTMP服务"><a href="#3-配置RTMP服务" class="headerlink" title="3.配置RTMP服务"></a>3.配置RTMP服务</h1><p>/usr/local/etc/nginx/nginx.conf <strong>中RTMP和Http节点一致</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nginx -c /usr/local/etc/nginx/nginx.conf</div></pre></td></tr></table></figure>
-<blockquote>
-<p>使用nginx -c的参数指定nginx.conf文件的位置</p>
-</blockquote>
-<p>在http节点后面加上rtmp配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">rtmp &#123;</div><div class="line">    server &#123;</div><div class="line">        listen 1935;</div><div class="line">        application myapp &#123;</div><div class="line">            live on;</div><div class="line">            #record keyframes;</div><div class="line">            #record_path /tmp;</div><div class="line">            #record_max_size 128K;</div><div class="line">            #record_interval 30s;</div><div class="line">            #record_suffix .this.is.flv;</div><div class="line">            #on_publish http://localhost:8080/publish;</div><div class="line">            #on_play http://localhost:8080/play;</div><div class="line">            #on_record_done http://localhost:8080/record_done;</div><div class="line">       &#125;</div><div class="line">       application hls &#123;</div><div class="line">             live on;</div><div class="line">             hls on;</div><div class="line">             hls_path /tmp/app;</div><div class="line">             hls_fragment 5s;</div><div class="line">       &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="4-查询rtmp服务是否正常"><a href="#4-查询rtmp服务是否正常" class="headerlink" title="4.查询rtmp服务是否正常"></a>4.查询rtmp服务是否正常</h1><p>修改完配置文件之后执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nginx -s reload</div></pre></td></tr></table></figure>
-<p>执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo lsof -i -P | grep -i &quot;listen&quot;</div></pre></td></tr></table></figure>
-<p>查询1935端口是否开启</p>
-<h1 id="5-直播测试"><a href="#5-直播测试" class="headerlink" title="5.直播测试　　"></a>5.直播测试　　</h1><p>安装ffmpeg</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install ffmpeg</div></pre></td></tr></table></figure>
-<p>安装<a href="http://www.videolan.org/" target="_blank" rel="external">vlc播放器</a>,准备mp4文件推流测试，用vlc播放</p>
-<p><strong>推流</strong>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ffmpeg -re -i /Volumes/WORK/Moorgen/演示资料/演示视频/moorgen.mp4 -vcodec libx264 -acodec aac -f flv rtmp://127.0.0.1:1935/myapp/room</div></pre></td></tr></table></figure>
-<p><strong>播放</strong>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rtmp://localhost:1935/myapp/room</div></pre></td></tr></table></figure>
-<p><img src="/img/20180424/rtmp.png" alt=""></p>
-]]></content>
+    <content type="html"><![CDATA[<h1 id="1-安装brew"><a href="#1-安装brew" class="headerlink" title="1.安装brew"></a>1.安装brew</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br><span class="line">如果安装后, 想要卸载</span><br><span class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)&quot;</span><br></pre></td></tr></table></figure><a id="more"></a><h1 id="2-安装nginx"><a href="#2-安装nginx" class="headerlink" title="2.安装nginx"></a>2.安装nginx</h1><p>先clone nginx项目到本地<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew tap denji/nginx</span><br></pre></td></tr></table></figure></p><blockquote><p>brew tap homebrew/nginx 源已失效<br>  可参考 <a href="https://github.com/denji/homebrew-nginx" target="_blank" rel="noopener">https://github.com/denji/homebrew-nginx</a></p></blockquote><p>执行安装：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install nginx-full --with-rtmp-module</span><br></pre></td></tr></table></figure><p>此时, nginx和rtmp模块就安装好了<br>输入命令:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx</span><br></pre></td></tr></table></figure><p>在浏览器里打开<a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a></p><blockquote><p>查询安装路径：brew info nginx-full</p></blockquote><h1 id="3-配置RTMP服务"><a href="#3-配置RTMP服务" class="headerlink" title="3.配置RTMP服务"></a>3.配置RTMP服务</h1><p>/usr/local/etc/nginx/nginx.conf <strong>中RTMP和Http节点一致</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -c /usr/local/etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure><blockquote><p>使用nginx -c的参数指定nginx.conf文件的位置</p></blockquote><p>在http节点后面加上rtmp配置：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">rtmp &#123;</span><br><span class="line">    server &#123;</span><br><span class="line">        listen 1935;</span><br><span class="line">        application myapp &#123;</span><br><span class="line">            live on;</span><br><span class="line">            #record keyframes;</span><br><span class="line">            #record_path /tmp;</span><br><span class="line">            #record_max_size 128K;</span><br><span class="line">            #record_interval 30s;</span><br><span class="line">            #record_suffix .this.is.flv;</span><br><span class="line">            #on_publish http://localhost:8080/publish;</span><br><span class="line">            #on_play http://localhost:8080/play;</span><br><span class="line">            #on_record_done http://localhost:8080/record_done;</span><br><span class="line">       &#125;</span><br><span class="line">       application hls &#123;</span><br><span class="line">             live on;</span><br><span class="line">             hls on;</span><br><span class="line">             hls_path /tmp/app;</span><br><span class="line">             hls_fragment 5s;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="4-查询rtmp服务是否正常"><a href="#4-查询rtmp服务是否正常" class="headerlink" title="4.查询rtmp服务是否正常"></a>4.查询rtmp服务是否正常</h1><p>修改完配置文件之后执行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure><p>执行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo lsof -i -P | grep -i &quot;listen&quot;</span><br></pre></td></tr></table></figure><p>查询1935端口是否开启</p><h1 id="5-直播测试"><a href="#5-直播测试" class="headerlink" title="5.直播测试　　"></a>5.直播测试　　</h1><p>安装ffmpeg</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install ffmpeg</span><br></pre></td></tr></table></figure><p>安装<a href="http://www.videolan.org/" target="_blank" rel="noopener">vlc播放器</a>,准备mp4文件推流测试，用vlc播放</p><p><strong>推流</strong>：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -re -i /Volumes/WORK/Moorgen/演示资料/演示视频/moorgen.mp4 -vcodec libx264 -acodec aac -f flv rtmp://127.0.0.1:1935/myapp/room</span><br></pre></td></tr></table></figure><p><strong>播放</strong>：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rtmp://localhost:1935/myapp/room</span><br></pre></td></tr></table></figure><p><img src="/img/20180424/rtmp.png" alt=""></p>]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;1-安装brew&quot;&gt;&lt;a href=&quot;#1-安装brew&quot; class=&quot;headerlink&quot; title=&quot;1.安装brew&quot;&gt;&lt;/a&gt;1.安装brew&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;如果安装后, 想要卸载&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)&amp;quot;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;h1 id=&quot;1-安装brew&quot;&gt;&lt;a href=&quot;#1-安装brew&quot; class=&quot;headerlink&quot; title=&quot;1.安装brew&quot;&gt;&lt;/a&gt;1.安装brew&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;如果安装后, 想要卸载&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -475,33 +249,7 @@ make V=s
     <published>2018-03-16T06:12:08.000Z</published>
     <updated>2018-03-16T08:24:23.000Z</updated>
     
-    <content type="html"><![CDATA[<p>在挑选无线路由或是AP时，尤其是那些价格不菲的高端产品，我们常常会在产品描述中看到“MU-MIMO”、“802.11ac Wave2”这些字眼。实际上，MU-MIMO技术正是802.11ac Wave2标准的精髓所在。怎么，感觉与802.11ac Wave2似曾相识？其实，它是第二波11ac。而在本期内容中，我们将向各位更为详尽细的表明：“Wave2”是啥，又到底好在哪？</p>
-<a id="more"></a>
-<p><img src="/img/20180316/10021074_Wave2hao_thumb.jpg" alt=""></p>
-<h3 id="步入正题，Wave2好在哪？"><a href="#步入正题，Wave2好在哪？" class="headerlink" title="步入正题，Wave2好在哪？"></a>步入正题，Wave2好在哪？</h3><p>正式说802.11ac Wave2之前，我们先要了解什么是802.11ac，以及它有哪些特点。IEEE 802.11ac是802.11的一个通信标准，802.11n的升级版。下面重点来了，802.11ac标准最关键的特点有四个，即256QAM调制模式、80/160MHz频宽、更高空间流和MU-MIMO技术。换言之，必须同时满足这4点，才能算是真正的802.11ac，网络速度和网络体验才能算是更进一步，而802.11ac Wave2都办到了。</p>
-<p>当然，这里的概念有些人可能容易混淆，Wave2只是一个名词后缀，802.11ac Wave2才是全称。我们常常口语化地说Wave2技术，只是因为我们懒。802.11ac Wave2不是新技术，其背后的黑科技应该是MU-MIMO。</p>
-<p><img src="/img/20180316/10021074_20170921-00_thumb.png" alt=""></p>
-<p>首先，我们来看 <strong>256QAM</strong> 。QAM，正交振幅调制，一种调制技术。QAM级别越高，每次发射的无线信号中包含的数据就越多，传输效率也就越高。802.11ac Wave2支持更高效率的256QAM（8bit）调制模式，相比802.11n采用的64QAM（6bit），调制效率提升超30%（怎么算的？8-6然后除以8啊）。</p>
-<p>如下图所示，我们将每一个点看作是一个数据包，由此可见，256QAM模式下的数据包密度远大于64QAM模式，同一时间内传输的数据总量自然也就更多。</p>
-<p><img src="/img/20180316/10021074_20170921-01_thumb.jpg" alt=""></p>
-<p>这里，需要我们注意的是，更高的QAM会带来更高的误码率。但即便如此，802.11ac Wave2的效率仍然要高出802.11n一大截。数据表明，将误码率考虑进来，在同样频宽和链路数量下，802.11ac Wave2的理论速率也要高出802.11n至少20%。</p>
-<p>接着来看 <strong>频宽</strong> 。802.11ac Wave2在802.11n——20/40MHz频宽以及802.11ac Wave1——80MHz频宽的基础上，又新增了更加稀缺的160MHz频宽。理论上，160MHz确实能够带来更高的传输速率（1x1单流传输速率即可达到867Mbps），然而你也看到了“稀缺”二字，稀缺什么意思？没资源你就没法部署，那就是空谈，尤其是在频谱资源本就不富裕的中国。</p>
-<p><img src="/img/20180316/10021074_20170921-02_thumb.jpg" alt=""></p>
-<p>按照标准，想要部署160MHz需要连续的160MHz频宽或者2个非连续的80MHz频宽组合才行。所以，再看上图。有没有资源？有，有一个……那支持160MHz意义何在？这还能算优势吗？当然算，有总比没有强。</p>
-<p>再者，就是 <strong>空间流</strong> 。一个听起来又抽象又玄妙的词汇，其实它是诸多特点里最好理解的一个。那什么是空间流呢？通常情况下，空间流的数量指的就是天线的数量（当然也有例外，这涉及到天线技术）。天线多，增益就高，同时也会增加容错能力，提高终端的覆盖范围和质量，从而带动传输性能。</p>
-<p>例如开篇我们提到的802.11ac Wave2，Wave2支持4空间流，那这个无线路由/AP采用的就是4根收发天线，即4T4R四发四收，我们也常叫它4x4 MIMO。MIMO又是啥？后面细说。为了不那么抽象，我们PO出了下面这张图帮助各位理解，眼尖的同学表示看到了8空间流？QAM调制似乎也升了一档？没错，这就是比Wave2更高阶的Wave3了。</p>
-<p><img src="/img/20180316/10021074_20170921-03_thumb.jpg" alt=""></p>
-<p>最后，再聊一聊 <strong>MU-MIMO</strong> 技术，也是802.11ac Wave2或者说整个IEEE 802.11ac标准的精髓。它的出现打破了困扰无线领域多年的一个枷锁——究竟如何才能提升多用户数据并发的处理能力。换言之，怎样才能最大化地榨干带宽资源，增加利用率。这才是难得的横向发展，而非一味追求最大传输速率的纵向拔高。</p>
-<p><img src="/img/20180316/10021074_20170921-04_thumb.jpg" alt=""></p>
-<p>正是MU-MIMO技术的重要性，网络上拿它做科普和试验对象的文章比比皆是，甚至说即便有些人不懂802.11ac Wave2，也会多少知道些MU-MIMO。因此，这里我们还是浅尝辄止，只做简单介绍。</p>
-<p>802.11n时代，我们常听到“MIMO”这个词（也被称为SU-MIMO），即“单用户多入多出”。简单说就是只擅长单挑，一无线路由/AP一终端，人一多就完蛋，不能多线作战。</p>
-<p><img src="/img/20180316/10021074_20170921-05_thumb.png" alt=""></p>
-<p>802.11ac Wave2时期的标志，就是引入了关键性的MU-MIMO技术（即“多用户多入多出”）。MU-MIMO模式下的无线路由/AP就像长了三头六臂，现在可多线作战，个战团战都能上。</p>
-<h3 id="哪些产品已经支持802-11ac-Wave2了？"><a href="#哪些产品已经支持802-11ac-Wave2了？" class="headerlink" title="哪些产品已经支持802.11ac Wave2了？"></a>哪些产品已经支持802.11ac Wave2了？</h3><p>写到这里，各位或许想知道目前市场在售产品中，有哪些已经搭上802.11ac Wave2这趟快车？别急，我们在文章的最后，也为大家在家用以及企业级两个领域，为各位举例说明。</p>
-<p>华硕RT-AC5300便是一款MU-MIMO的高端路由器，搭配AiRadar智能雷达信号成束技术，令无线信号覆盖更广，信号更稳定；又或是Linksys EA9300，也是一款支持802.11ac Wave2 MU-MIMO技术的三频无线路由；此外，美国网件R8000P也是一款支持MU-MIMO的三频千兆无线路由器。当然，这里我们只是为各位列举一二，不过大多是价格不低的高端路由器。</p>
-<p><img src="/img/20180316/10021074_20170921-06_thumb.jpg" alt=""></p>
-<p>商用这块，比较熟的是锐捷睿易的一款支援802.11ac Wave2的双频吸顶AP–RG-RAP220(EV2)。其理论并发速率1167Mbps，最大可支持256个终端接入；支持诺客MACC云平台，可实现微信强制关注、PPSK认证、自动生成拓扑、移动运维等众多实用功能；不仅如此，RG-RAP220(EV2)特有矩阵式智能天线，支持智能无缝漫游、智能负载均衡等等，有兴趣的朋友可以去官网详细了解，这里我们就不再过多赘述。</p>
-]]></content>
+    <content type="html"><![CDATA[<p>在挑选无线路由或是AP时，尤其是那些价格不菲的高端产品，我们常常会在产品描述中看到“MU-MIMO”、“802.11ac Wave2”这些字眼。实际上，MU-MIMO技术正是802.11ac Wave2标准的精髓所在。怎么，感觉与802.11ac Wave2似曾相识？其实，它是第二波11ac。而在本期内容中，我们将向各位更为详尽细的表明：“Wave2”是啥，又到底好在哪？</p><a id="more"></a><p><img src="/img/20180316/10021074_Wave2hao_thumb.jpg" alt=""></p><h3 id="步入正题，Wave2好在哪？"><a href="#步入正题，Wave2好在哪？" class="headerlink" title="步入正题，Wave2好在哪？"></a>步入正题，Wave2好在哪？</h3><p>正式说802.11ac Wave2之前，我们先要了解什么是802.11ac，以及它有哪些特点。IEEE 802.11ac是802.11的一个通信标准，802.11n的升级版。下面重点来了，802.11ac标准最关键的特点有四个，即256QAM调制模式、80/160MHz频宽、更高空间流和MU-MIMO技术。换言之，必须同时满足这4点，才能算是真正的802.11ac，网络速度和网络体验才能算是更进一步，而802.11ac Wave2都办到了。</p><p>当然，这里的概念有些人可能容易混淆，Wave2只是一个名词后缀，802.11ac Wave2才是全称。我们常常口语化地说Wave2技术，只是因为我们懒。802.11ac Wave2不是新技术，其背后的黑科技应该是MU-MIMO。</p><p><img src="/img/20180316/10021074_20170921-00_thumb.png" alt=""></p><p>首先，我们来看 <strong>256QAM</strong> 。QAM，正交振幅调制，一种调制技术。QAM级别越高，每次发射的无线信号中包含的数据就越多，传输效率也就越高。802.11ac Wave2支持更高效率的256QAM（8bit）调制模式，相比802.11n采用的64QAM（6bit），调制效率提升超30%（怎么算的？8-6然后除以8啊）。</p><p>如下图所示，我们将每一个点看作是一个数据包，由此可见，256QAM模式下的数据包密度远大于64QAM模式，同一时间内传输的数据总量自然也就更多。</p><p><img src="/img/20180316/10021074_20170921-01_thumb.jpg" alt=""></p><p>这里，需要我们注意的是，更高的QAM会带来更高的误码率。但即便如此，802.11ac Wave2的效率仍然要高出802.11n一大截。数据表明，将误码率考虑进来，在同样频宽和链路数量下，802.11ac Wave2的理论速率也要高出802.11n至少20%。</p><p>接着来看 <strong>频宽</strong> 。802.11ac Wave2在802.11n——20/40MHz频宽以及802.11ac Wave1——80MHz频宽的基础上，又新增了更加稀缺的160MHz频宽。理论上，160MHz确实能够带来更高的传输速率（1x1单流传输速率即可达到867Mbps），然而你也看到了“稀缺”二字，稀缺什么意思？没资源你就没法部署，那就是空谈，尤其是在频谱资源本就不富裕的中国。</p><p><img src="/img/20180316/10021074_20170921-02_thumb.jpg" alt=""></p><p>按照标准，想要部署160MHz需要连续的160MHz频宽或者2个非连续的80MHz频宽组合才行。所以，再看上图。有没有资源？有，有一个……那支持160MHz意义何在？这还能算优势吗？当然算，有总比没有强。</p><p>再者，就是 <strong>空间流</strong> 。一个听起来又抽象又玄妙的词汇，其实它是诸多特点里最好理解的一个。那什么是空间流呢？通常情况下，空间流的数量指的就是天线的数量（当然也有例外，这涉及到天线技术）。天线多，增益就高，同时也会增加容错能力，提高终端的覆盖范围和质量，从而带动传输性能。</p><p>例如开篇我们提到的802.11ac Wave2，Wave2支持4空间流，那这个无线路由/AP采用的就是4根收发天线，即4T4R四发四收，我们也常叫它4x4 MIMO。MIMO又是啥？后面细说。为了不那么抽象，我们PO出了下面这张图帮助各位理解，眼尖的同学表示看到了8空间流？QAM调制似乎也升了一档？没错，这就是比Wave2更高阶的Wave3了。</p><p><img src="/img/20180316/10021074_20170921-03_thumb.jpg" alt=""></p><p>最后，再聊一聊 <strong>MU-MIMO</strong> 技术，也是802.11ac Wave2或者说整个IEEE 802.11ac标准的精髓。它的出现打破了困扰无线领域多年的一个枷锁——究竟如何才能提升多用户数据并发的处理能力。换言之，怎样才能最大化地榨干带宽资源，增加利用率。这才是难得的横向发展，而非一味追求最大传输速率的纵向拔高。</p><p><img src="/img/20180316/10021074_20170921-04_thumb.jpg" alt=""></p><p>正是MU-MIMO技术的重要性，网络上拿它做科普和试验对象的文章比比皆是，甚至说即便有些人不懂802.11ac Wave2，也会多少知道些MU-MIMO。因此，这里我们还是浅尝辄止，只做简单介绍。</p><p>802.11n时代，我们常听到“MIMO”这个词（也被称为SU-MIMO），即“单用户多入多出”。简单说就是只擅长单挑，一无线路由/AP一终端，人一多就完蛋，不能多线作战。</p><p><img src="/img/20180316/10021074_20170921-05_thumb.png" alt=""></p><p>802.11ac Wave2时期的标志，就是引入了关键性的MU-MIMO技术（即“多用户多入多出”）。MU-MIMO模式下的无线路由/AP就像长了三头六臂，现在可多线作战，个战团战都能上。</p><h3 id="哪些产品已经支持802-11ac-Wave2了？"><a href="#哪些产品已经支持802-11ac-Wave2了？" class="headerlink" title="哪些产品已经支持802.11ac Wave2了？"></a>哪些产品已经支持802.11ac Wave2了？</h3><p>写到这里，各位或许想知道目前市场在售产品中，有哪些已经搭上802.11ac Wave2这趟快车？别急，我们在文章的最后，也为大家在家用以及企业级两个领域，为各位举例说明。</p><p>华硕RT-AC5300便是一款MU-MIMO的高端路由器，搭配AiRadar智能雷达信号成束技术，令无线信号覆盖更广，信号更稳定；又或是Linksys EA9300，也是一款支持802.11ac Wave2 MU-MIMO技术的三频无线路由；此外，美国网件R8000P也是一款支持MU-MIMO的三频千兆无线路由器。当然，这里我们只是为各位列举一二，不过大多是价格不低的高端路由器。</p><p><img src="/img/20180316/10021074_20170921-06_thumb.jpg" alt=""></p><p>商用这块，比较熟的是锐捷睿易的一款支援802.11ac Wave2的双频吸顶AP–RG-RAP220(EV2)。其理论并发速率1167Mbps，最大可支持256个终端接入；支持诺客MACC云平台，可实现微信强制关注、PPSK认证、自动生成拓扑、移动运维等众多实用功能；不仅如此，RG-RAP220(EV2)特有矩阵式智能天线，支持智能无缝漫游、智能负载均衡等等，有兴趣的朋友可以去官网详细了解，这里我们就不再过多赘述。</p>]]></content>
     
     <summary type="html">
     
@@ -521,34 +269,7 @@ make V=s
     <published>2018-02-05T06:12:08.000Z</published>
     <updated>2018-03-08T15:06:21.000Z</updated>
     
-    <content type="html"><![CDATA[<p>发展到现在，DCS和PLC之间没有一个严格的界限，在大多数人看来，大的系统就是DCS，小的系统就叫PLC。当然，这么说也不是不可以，但是还不对。现在我们来重新建立这个概念。</p>
-<a id="more"></a>
-<h1 id="先通过几张图看看两者的区别"><a href="#先通过几张图看看两者的区别" class="headerlink" title="先通过几张图看看两者的区别"></a>先通过几张图看看两者的区别</h1><p><img src="/img/20180205/1.jpg" alt=""><br><img src="/img/20180205/2.jpg" alt=""><br><img src="/img/20180205/3.jpg" alt=""><br><img src="/img/20180205/4.jpg" alt=""><br><img src="/img/20180205/5.jpg" alt=""><br><img src="/img/20180205/6.jpg" alt=""><br><img src="/img/20180205/7.jpg" alt=""><br><img src="/img/20180205/8.jpg" alt=""><br><img src="/img/20180205/9.jpg" alt=""><br><img src="/img/20180205/10.jpg" alt=""><br><img src="/img/20180205/11.jpg" alt=""><br><img src="/img/20180205/12.jpg" alt=""><br><img src="/img/20180205/13.jpg" alt=""></p>
-<h1 id="首先，DCS和PLC之间有什么不同？"><a href="#首先，DCS和PLC之间有什么不同？" class="headerlink" title="首先，DCS和PLC之间有什么不同？"></a>首先，DCS和PLC之间有什么不同？</h1><p>1.从发展的方向来说：</p>
-<p>　　DCS从传统的仪表盘监控系统发展而来。因此，DCS从先天性来说较侧重于仪表的控制，比如YOKOGAWACS3000，DCS系统甚至没有PID数量的限制（PID，比例微分积分算法，是调节阀、变频器闭环控制的标准算法，通常PID的数量决定了可以使用的调节阀数量）。</p>
-<p>　　PLC从传统的继电器回路发展而来，最初的PLC甚至没有模拟量的处理能力，因此，PLC从开始就强调的是逻辑运算能力。</p>
-<p>2.从系统的可扩展性和兼容性的方面来说：</p>
-<p>　　市场上控制类产品繁多，无论DCS还是PLC，均有很多厂商在生产销售。对于PLC系统来说，一般没有或者很少有扩展的需求，因为PLC系统一般针对于设备来使用。一般来讲，PLC也很少有兼容性的要求，比如两个或以上的系统要求资源共享，对于PLC来讲也是很困难的事。而且PLC一般都采用专用的网路结构，比如西门子的MPI总线性网络，甚至增加一台操作员站都不容易或成本很高。</p>
-<p>　　DCS在发展的过程中也是各厂家自成体系，但大部分的DCS系统，比如横河YOKOGAWA、霍尼韦尔、ABB等等，虽说系统内部（过程级）的通讯协议不尽相同，但操作级的网络平台不约而同的选择了以太网，采用标准或变形的TCP/IP协议。这样就提供了很方便的可扩展能力。在这种网络中，控制器、计算机均作为一个节点存在，只要网络达到的地方，就可以随意增删节点数量和布置节点位置。另外，基于Windows系统的OPC、DDE等开放协议，各系统也可很方便的通讯，已实现资源共享。</p>
-<p>3.从数据库来说：</p>
-<p>　　DCS一般都提供统一的数据库，换句话说，在DCS系统中一旦一个数据存在于数据库中，就可以在任何情况下引用，比如在组态软件中、在监控软件中、在趋势图中、在报表中……而PLC系统的数据库通常都不是统一的，组态软件和监控软件甚至归档软件都有自己的数据库。为什么常说西门子的S7-400要到了414以上才称为DCS，因为西门子的PCS7系统才使用统一的数据库，而PCS7要求控制器起码到S7414-3以上的型号。</p>
-<p>4.从时间调度上来说：</p>
-<p>　　PLC的程序一般不能按事先设定的循环周期运行。PLC程序使从头到尾执行一次后又从头开始执行。（现在一些新型PLC有所改进，不过对任务周期的数量还是有限制）而DCS可以设定任务周期。比如，快速任务等。同样是传感器的采样，压力传感器的变化时间很短，我们可以用200ms的任务周期采样，而温度传感器的滞后时间很大，我们可以用2s的任务采样周期。这样，DCS可以合理的调度控制器的资源。</p>
-<p>5.从网络结构方面来说：</p>
-<p>　　一般来讲，DCS惯常使用两层网络结构，一层为过程级网络，大部分DCS使用自己的总线协议，比如横河的Modbus、西门子和ABB的Profibus、ABB的CANbus等，这些协议均建立在标准串口传输协议RS232或RS485协议的基础上。现场IO模块，特别是模拟量的采样数据十分庞大，同时现场干扰因素较多，因此应该采用数据吞吐量大、抗干扰能力强的网络标准。基于RS485串口异步通讯方式的总线结构，符合现场通讯的要求。IO的采样数据经CPU转换后变为整型数据或实型数据，在操作级网络（第二层网络）上传输。因此操作级网络可以采用数据吞吐量适中、传输速度快、连接方便的网路标准，同时因操作级网络一般布置在控制室内，对抗干扰的要求相对较低。因此采用标准以太网是最佳选择。TCP/IP协议是一种标准以太网协议，一般我们采用100Mbit/s的通讯速率。</p>
-<p>　　PLC系统的工作任务相对简单，因此需要传输的数据量一般不会太大，所以常见的PLC系统为一层网络结构。过程级网络和操作级网络要么合并在一起，要不过程级网络简化成模块之间的内部链接。PLC不会或很少使用以太网。</p>
-<p>6.从应用对象的规模上来说：</p>
-<p>　　PLC一般用在小型自控场所，比如设备的控制或少量的模拟量的控制及连锁，而大型的应用一般都是DCS。当然，这个概念不准确，但很直观，习惯上我们把大于600点的系统成为DCS，小于这个规模叫做PLC。</p>
-<p>　　说了这么多PLC与DCS的区别，但我们应该认识到，PLC与DCS发展到今天，事实上都在向彼此靠拢，严格的说，现在的PLC与DCS已经不能一刀切开，很多时候之间的概念已经模糊了。</p>
-<h1 id="现在，我们来讨论一下彼此的相同（似）之处。"><a href="#现在，我们来讨论一下彼此的相同（似）之处。" class="headerlink" title="现在，我们来讨论一下彼此的相同（似）之处。"></a>现在，我们来讨论一下彼此的相同（似）之处。</h1><p>1.从功能上来说：</p>
-<p>　　PLC已经具备了模拟量的控制功能，有的PLC系统模拟量处理能力甚至还相当强大，比如西门子S7-400、ABB的ControlLogix和施耐德的Quantum系统。而DCS也具备相当强劲的逻辑处理能力。</p>
-<p>2.从系统结构上来说：</p>
-<p>　　PLC与DCS的基本结构是一样的。PLC发展到今天，已经全面移植到计算机系统控制上了，传统的编程器早就被淘汰。小型应用的PLC一般使用触摸屏，大规模应用的PLC全面使用计算机系统。和DCS一样，控制器与IO站使用现场总线（一般都是基于RS485或RS232异步串口通讯协议的总线方式），控制器与计算机之间如果没有扩展的要求，也就是说只使用一台计算机的情况下，也会受用这个总线通讯。但如果有不止一台计算机使用，系统结构就会和DCS一样，上位机平台使用以太网结构。这是PLC大型化后和DCS概念模糊的原因之一。</p>
-<p>3.PLC和DCS的发展方向：</p>
-<p>　　小型化的PLC将向更专业化的使用角度发展，比如功能更加有针对性、对应用的环境更有针对性等等。大型的PLC与DCS的界限逐步淡化，直至完全融合。</p>
-<p>　　DCS将向FCS的方向继续发展。FCS的核心除了控制系统更加分散化以外，特别重要的是仪表。FCS在国外的应用已经发展到仪表级。控制系统需要处理的只是信号采集和提供人机界面以及逻辑控制，整个模拟量的控制分散到现场仪表，仪表与控制系统之间无需传统电缆连接，使用现场总线连接整个仪表系统。（目前国内有横河在中海壳牌石化项目中用到了FCS，仪表级采用的是智能化仪表例如：EJX等，具备世界最先进的控制水准）</p>
-<h1 id="如何正确对待DCS和PLC？"><a href="#如何正确对待DCS和PLC？" class="headerlink" title="如何正确对待DCS和PLC？"></a>如何正确对待DCS和PLC？</h1><p>　　我们不应强调PLC和DCS之间的孰优孰劣，他们应该定义一个新名词“控制类产品”。提供给用户的是最适合用户的控制系统。绝大部分用户不会因为想要使用一套DCS而去使用DCS，控制类产品必须定位在满足用户的工艺要求基础之上。甚至提出使用DCS还是PLC的用户大多是从没接触过自控产品或有某种特殊要求的。过分强调这个只会陷入口舌之争。</p>
-]]></content>
+    <content type="html"><![CDATA[<p>发展到现在，DCS和PLC之间没有一个严格的界限，在大多数人看来，大的系统就是DCS，小的系统就叫PLC。当然，这么说也不是不可以，但是还不对。现在我们来重新建立这个概念。</p><a id="more"></a><h1 id="先通过几张图看看两者的区别"><a href="#先通过几张图看看两者的区别" class="headerlink" title="先通过几张图看看两者的区别"></a>先通过几张图看看两者的区别</h1><p><img src="/img/20180205/1.jpg" alt=""><br><img src="/img/20180205/2.jpg" alt=""><br><img src="/img/20180205/3.jpg" alt=""><br><img src="/img/20180205/4.jpg" alt=""><br><img src="/img/20180205/5.jpg" alt=""><br><img src="/img/20180205/6.jpg" alt=""><br><img src="/img/20180205/7.jpg" alt=""><br><img src="/img/20180205/8.jpg" alt=""><br><img src="/img/20180205/9.jpg" alt=""><br><img src="/img/20180205/10.jpg" alt=""><br><img src="/img/20180205/11.jpg" alt=""><br><img src="/img/20180205/12.jpg" alt=""><br><img src="/img/20180205/13.jpg" alt=""></p><h1 id="首先，DCS和PLC之间有什么不同？"><a href="#首先，DCS和PLC之间有什么不同？" class="headerlink" title="首先，DCS和PLC之间有什么不同？"></a>首先，DCS和PLC之间有什么不同？</h1><p>1.从发展的方向来说：</p><p>　　DCS从传统的仪表盘监控系统发展而来。因此，DCS从先天性来说较侧重于仪表的控制，比如YOKOGAWACS3000，DCS系统甚至没有PID数量的限制（PID，比例微分积分算法，是调节阀、变频器闭环控制的标准算法，通常PID的数量决定了可以使用的调节阀数量）。</p><p>　　PLC从传统的继电器回路发展而来，最初的PLC甚至没有模拟量的处理能力，因此，PLC从开始就强调的是逻辑运算能力。</p><p>2.从系统的可扩展性和兼容性的方面来说：</p><p>　　市场上控制类产品繁多，无论DCS还是PLC，均有很多厂商在生产销售。对于PLC系统来说，一般没有或者很少有扩展的需求，因为PLC系统一般针对于设备来使用。一般来讲，PLC也很少有兼容性的要求，比如两个或以上的系统要求资源共享，对于PLC来讲也是很困难的事。而且PLC一般都采用专用的网路结构，比如西门子的MPI总线性网络，甚至增加一台操作员站都不容易或成本很高。</p><p>　　DCS在发展的过程中也是各厂家自成体系，但大部分的DCS系统，比如横河YOKOGAWA、霍尼韦尔、ABB等等，虽说系统内部（过程级）的通讯协议不尽相同，但操作级的网络平台不约而同的选择了以太网，采用标准或变形的TCP/IP协议。这样就提供了很方便的可扩展能力。在这种网络中，控制器、计算机均作为一个节点存在，只要网络达到的地方，就可以随意增删节点数量和布置节点位置。另外，基于Windows系统的OPC、DDE等开放协议，各系统也可很方便的通讯，已实现资源共享。</p><p>3.从数据库来说：</p><p>　　DCS一般都提供统一的数据库，换句话说，在DCS系统中一旦一个数据存在于数据库中，就可以在任何情况下引用，比如在组态软件中、在监控软件中、在趋势图中、在报表中……而PLC系统的数据库通常都不是统一的，组态软件和监控软件甚至归档软件都有自己的数据库。为什么常说西门子的S7-400要到了414以上才称为DCS，因为西门子的PCS7系统才使用统一的数据库，而PCS7要求控制器起码到S7414-3以上的型号。</p><p>4.从时间调度上来说：</p><p>　　PLC的程序一般不能按事先设定的循环周期运行。PLC程序使从头到尾执行一次后又从头开始执行。（现在一些新型PLC有所改进，不过对任务周期的数量还是有限制）而DCS可以设定任务周期。比如，快速任务等。同样是传感器的采样，压力传感器的变化时间很短，我们可以用200ms的任务周期采样，而温度传感器的滞后时间很大，我们可以用2s的任务采样周期。这样，DCS可以合理的调度控制器的资源。</p><p>5.从网络结构方面来说：</p><p>　　一般来讲，DCS惯常使用两层网络结构，一层为过程级网络，大部分DCS使用自己的总线协议，比如横河的Modbus、西门子和ABB的Profibus、ABB的CANbus等，这些协议均建立在标准串口传输协议RS232或RS485协议的基础上。现场IO模块，特别是模拟量的采样数据十分庞大，同时现场干扰因素较多，因此应该采用数据吞吐量大、抗干扰能力强的网络标准。基于RS485串口异步通讯方式的总线结构，符合现场通讯的要求。IO的采样数据经CPU转换后变为整型数据或实型数据，在操作级网络（第二层网络）上传输。因此操作级网络可以采用数据吞吐量适中、传输速度快、连接方便的网路标准，同时因操作级网络一般布置在控制室内，对抗干扰的要求相对较低。因此采用标准以太网是最佳选择。TCP/IP协议是一种标准以太网协议，一般我们采用100Mbit/s的通讯速率。</p><p>　　PLC系统的工作任务相对简单，因此需要传输的数据量一般不会太大，所以常见的PLC系统为一层网络结构。过程级网络和操作级网络要么合并在一起，要不过程级网络简化成模块之间的内部链接。PLC不会或很少使用以太网。</p><p>6.从应用对象的规模上来说：</p><p>　　PLC一般用在小型自控场所，比如设备的控制或少量的模拟量的控制及连锁，而大型的应用一般都是DCS。当然，这个概念不准确，但很直观，习惯上我们把大于600点的系统成为DCS，小于这个规模叫做PLC。</p><p>　　说了这么多PLC与DCS的区别，但我们应该认识到，PLC与DCS发展到今天，事实上都在向彼此靠拢，严格的说，现在的PLC与DCS已经不能一刀切开，很多时候之间的概念已经模糊了。</p><h1 id="现在，我们来讨论一下彼此的相同（似）之处。"><a href="#现在，我们来讨论一下彼此的相同（似）之处。" class="headerlink" title="现在，我们来讨论一下彼此的相同（似）之处。"></a>现在，我们来讨论一下彼此的相同（似）之处。</h1><p>1.从功能上来说：</p><p>　　PLC已经具备了模拟量的控制功能，有的PLC系统模拟量处理能力甚至还相当强大，比如西门子S7-400、ABB的ControlLogix和施耐德的Quantum系统。而DCS也具备相当强劲的逻辑处理能力。</p><p>2.从系统结构上来说：</p><p>　　PLC与DCS的基本结构是一样的。PLC发展到今天，已经全面移植到计算机系统控制上了，传统的编程器早就被淘汰。小型应用的PLC一般使用触摸屏，大规模应用的PLC全面使用计算机系统。和DCS一样，控制器与IO站使用现场总线（一般都是基于RS485或RS232异步串口通讯协议的总线方式），控制器与计算机之间如果没有扩展的要求，也就是说只使用一台计算机的情况下，也会受用这个总线通讯。但如果有不止一台计算机使用，系统结构就会和DCS一样，上位机平台使用以太网结构。这是PLC大型化后和DCS概念模糊的原因之一。</p><p>3.PLC和DCS的发展方向：</p><p>　　小型化的PLC将向更专业化的使用角度发展，比如功能更加有针对性、对应用的环境更有针对性等等。大型的PLC与DCS的界限逐步淡化，直至完全融合。</p><p>　　DCS将向FCS的方向继续发展。FCS的核心除了控制系统更加分散化以外，特别重要的是仪表。FCS在国外的应用已经发展到仪表级。控制系统需要处理的只是信号采集和提供人机界面以及逻辑控制，整个模拟量的控制分散到现场仪表，仪表与控制系统之间无需传统电缆连接，使用现场总线连接整个仪表系统。（目前国内有横河在中海壳牌石化项目中用到了FCS，仪表级采用的是智能化仪表例如：EJX等，具备世界最先进的控制水准）</p><h1 id="如何正确对待DCS和PLC？"><a href="#如何正确对待DCS和PLC？" class="headerlink" title="如何正确对待DCS和PLC？"></a>如何正确对待DCS和PLC？</h1><p>　　我们不应强调PLC和DCS之间的孰优孰劣，他们应该定义一个新名词“控制类产品”。提供给用户的是最适合用户的控制系统。绝大部分用户不会因为想要使用一套DCS而去使用DCS，控制类产品必须定位在满足用户的工艺要求基础之上。甚至提出使用DCS还是PLC的用户大多是从没接触过自控产品或有某种特殊要求的。过分强调这个只会陷入口舌之争。</p>]]></content>
     
     <summary type="html">
     
@@ -568,61 +289,7 @@ make V=s
     <published>2017-12-26T06:12:08.000Z</published>
     <updated>2017-12-26T06:09:34.000Z</updated>
     
-    <content type="html"><![CDATA[<p>当下流行的两种企业开发MVC开源框架，是我们Java程序猿必备知识能力。MVC，即模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。框架之所以流行，在于其易复用和简化开发，精髓在思想，掌握了核心思想，我们掌握其他类似框架也不会有问题，建议大家有精力的话读一下框架源码，尤其是Spring。</p>
-<a id="more"></a>
-<h1 id="SSH和SSM定义"><a href="#SSH和SSM定义" class="headerlink" title="SSH和SSM定义"></a>SSH和SSM定义</h1><p><strong>SSH</strong> 通常指的是 Struts2 做控制器(controller)，spring 管理各层的组件，hibernate 负责持久化层。</p>
-<p><strong>SSM</strong> 则指的是 SpringMVC 做控制器(controller)，Spring 管理各层的组件，MyBatis 负责持久化层。</p>
-<p><strong>共同点</strong>：</p>
-<ul>
-<li>1.Spring依赖注入DI来管理各层的组件；</li>
-<li>2.使用面向切面编程AOP管理事物、日志、权限等。</li>
-</ul>
-<p><strong>不同点</strong>：Struts2 和 SpringMVC 控制器(controller)控制视图和模型的交互机制的不同，Struts2是Action类级别，SpringMVC是方法级别，更容易实现RESTful风格。</p>
-<h1 id="SSH-和-SSM-的实现原理"><a href="#SSH-和-SSM-的实现原理" class="headerlink" title="SSH 和 SSM 的实现原理"></a>SSH 和 SSM 的实现原理</h1><h2 id="1-Struts2-的实现原理"><a href="#1-Struts2-的实现原理" class="headerlink" title="1.Struts2 的实现原理"></a>1.Struts2 的实现原理</h2><p><img src="/img/20171226/f740001068a5c16f544.jpg" alt=""></p>
-<p>Struts2框架执行步骤（Struts2使用Filter嵌入）：</p>
-<ul>
-<li>1、客户端初始化一个指向Servlet容器（例如Tomcat）的请求；</li>
-<li>2、这个请求经过一系列的过滤器（Filter）（这些过滤器中有一个叫做ActionContextCleanUp的可选过滤器，这个过滤器对于Struts2和其他框架的集成很有帮助；</li>
-<li>3、接着FilterDispatcher被调用，FilterDispatcher询问ActionMapper来决定这个请求是否需要调用某个Action；</li>
-<li>4、如果ActionMapper决定需要调用某个Action，FilterDispatcher把请求的处理交给ActionProxy；</li>
-<li>5、ActionProxy通过Configuration Manager询问框架的配置文件，找到需要调用的Action类；</li>
-<li>6、ActionProxy创建一个ActionInvocation的实例；</li>
-<li>7、ActionInvocation实例使用命名模式来调用，在调用Action的过程前后，涉及到相关拦截器（Intercepter）的调用；</li>
-<li>8、一旦Action执行完毕，ActionInvocation负责根据struts.xml中的配置找到对应的返回结果。返回结果通常是（但不总是，也可 能是另外的一个Action链）一个需要被表示的JSP或者FreeMarker的模版；</li>
-<li>9、将处理结果返回给客户端。</li>
-</ul>
-<h2 id="2-SpringMVC-的实现原理"><a href="#2-SpringMVC-的实现原理" class="headerlink" title="2.SpringMVC 的实现原理"></a>2.SpringMVC 的实现原理</h2><p><img src="/img/20171226/f7500089dc67ac93a17.jpg" alt=""></p>
-<p>SpringMVC框架执行步骤（SpringMVC使用Servlet嵌入）：</p>
-<ul>
-<li>1、客户端发出一个http请求给web服务器，web服务器对http请求进行解析，如果匹配DispatcherServlet的请求映射路径（在web.xml中指定），web容器将请求转交给DispatcherServlet；</li>
-<li>2、DipatcherServlet接收到这个请求之后将根据请求的信息（包括URL、Http方法、请求报文头和请求参数Cookie等）以及HandlerMapping的配置找到处理请求的处理器（Handler）；</li>
-<li>3-4、DispatcherServlet根据HandlerMapping找到对应的Handler,将处理权交给Handler（Handler将具体的处理进行封装），再由具体的HandlerAdapter对Handler进行具体的调用；</li>
-<li>5、Handler对数据处理完成以后将返回一个ModelAndView()对象给DispatcherServlet；</li>
-<li>6、Handler返回的ModelAndView()只是一个逻辑视图并不是一个正式的视图，DispatcherSevlet通过ViewResolver将逻辑视图转化为真正的视图View；</li>
-<li>7、Dispatcher通过model解析出ModelAndView()中的参数进行解析最终展现出完整的view并返回给客户端。</li>
-</ul>
-<h1 id="Hibernate-和-MyBatis-两种ORM框架对比"><a href="#Hibernate-和-MyBatis-两种ORM框架对比" class="headerlink" title="Hibernate 和 MyBatis 两种ORM框架对比"></a>Hibernate 和 MyBatis 两种ORM框架对比</h1><p><strong>两者的相同点</strong></p>
-<ul>
-<li>Hibernate与MyBatis都可以是通过SessionFactoryBuider由XML配置文件生成SessionFactory，然后由SessionFactory 生成Session，最后由Session来开启执行事务和SQL语句。其中SessionFactoryBuider，SessionFactory，Session的生命周期都是差不多的。</li>
-<li>Hibernate和MyBatis都支持JDBC和JTA事务处理。</li>
-</ul>
-<p><strong>两者各自优势</strong></p>
-<ul>
-<li>MyBatis可以进行更为细致的SQL优化，可以减少查询字段。</li>
-<li>MyBatis容易掌握，而Hibernate门槛较高。</li>
-<li>Hibernate的DAO层开发比MyBatis简单，Mybatis需要维护SQL和结果映射。</li>
-<li>Hibernate对对象的维护和缓存要比MyBatis好，对增删改查的对象的维护要方便。</li>
-<li>Hibernate数据库移植性很好，MyBatis的数据库移植性不好，不同的数据库需要写不同SQL。</li>
-<li>Hibernate有更好的二级缓存机制，可以使用第三方缓存。MyBatis本身提供的缓存机制不佳，更新操作不能指定刷新指定记录，会清空整个表，但是也可以使用第三方缓存。</li>
-<li>Hibernate 封装性好，屏蔽了数据库差异，自动生成SQL语句，应对数据库变化能力较弱，SQL语句优化困难。</li>
-<li>MyBatis仅实现了SQL语句和对象的映射，需要针对具体的数据库写SQL语句，应对数据库变化能力较强，SQL语句优化较为方便。</li>
-</ul>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>SSM和SSH不同主要在MVC实现方式，以及ORM持久化方面不同（Hiibernate与Mybatis）。SSM越来越轻量级配置，将注解开发发挥到极致，且ORM实现更加灵活，SQL优化更简便；而SSH较注重配置开发，其中的Hiibernate对JDBC的完整封装更面向对象，对增删改查的数据维护更自动化，但SQL优化方面较弱，且入门门槛稍高。</p>
-<blockquote>
-<p>附Spring家族：</p>
-</blockquote>
-<p><img src="/img/20171226/f750008ad20260cf3f2.jpg" alt=""></p>
-]]></content>
+    <content type="html"><![CDATA[<p>当下流行的两种企业开发MVC开源框架，是我们Java程序猿必备知识能力。MVC，即模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。框架之所以流行，在于其易复用和简化开发，精髓在思想，掌握了核心思想，我们掌握其他类似框架也不会有问题，建议大家有精力的话读一下框架源码，尤其是Spring。</p><a id="more"></a><h1 id="SSH和SSM定义"><a href="#SSH和SSM定义" class="headerlink" title="SSH和SSM定义"></a>SSH和SSM定义</h1><p><strong>SSH</strong> 通常指的是 Struts2 做控制器(controller)，spring 管理各层的组件，hibernate 负责持久化层。</p><p><strong>SSM</strong> 则指的是 SpringMVC 做控制器(controller)，Spring 管理各层的组件，MyBatis 负责持久化层。</p><p><strong>共同点</strong>：</p><ul><li>1.Spring依赖注入DI来管理各层的组件；</li><li>2.使用面向切面编程AOP管理事物、日志、权限等。</li></ul><p><strong>不同点</strong>：Struts2 和 SpringMVC 控制器(controller)控制视图和模型的交互机制的不同，Struts2是Action类级别，SpringMVC是方法级别，更容易实现RESTful风格。</p><h1 id="SSH-和-SSM-的实现原理"><a href="#SSH-和-SSM-的实现原理" class="headerlink" title="SSH 和 SSM 的实现原理"></a>SSH 和 SSM 的实现原理</h1><h2 id="1-Struts2-的实现原理"><a href="#1-Struts2-的实现原理" class="headerlink" title="1.Struts2 的实现原理"></a>1.Struts2 的实现原理</h2><p><img src="/img/20171226/f740001068a5c16f544.jpg" alt=""></p><p>Struts2框架执行步骤（Struts2使用Filter嵌入）：</p><ul><li>1、客户端初始化一个指向Servlet容器（例如Tomcat）的请求；</li><li>2、这个请求经过一系列的过滤器（Filter）（这些过滤器中有一个叫做ActionContextCleanUp的可选过滤器，这个过滤器对于Struts2和其他框架的集成很有帮助；</li><li>3、接着FilterDispatcher被调用，FilterDispatcher询问ActionMapper来决定这个请求是否需要调用某个Action；</li><li>4、如果ActionMapper决定需要调用某个Action，FilterDispatcher把请求的处理交给ActionProxy；</li><li>5、ActionProxy通过Configuration Manager询问框架的配置文件，找到需要调用的Action类；</li><li>6、ActionProxy创建一个ActionInvocation的实例；</li><li>7、ActionInvocation实例使用命名模式来调用，在调用Action的过程前后，涉及到相关拦截器（Intercepter）的调用；</li><li>8、一旦Action执行完毕，ActionInvocation负责根据struts.xml中的配置找到对应的返回结果。返回结果通常是（但不总是，也可 能是另外的一个Action链）一个需要被表示的JSP或者FreeMarker的模版；</li><li>9、将处理结果返回给客户端。</li></ul><h2 id="2-SpringMVC-的实现原理"><a href="#2-SpringMVC-的实现原理" class="headerlink" title="2.SpringMVC 的实现原理"></a>2.SpringMVC 的实现原理</h2><p><img src="/img/20171226/f7500089dc67ac93a17.jpg" alt=""></p><p>SpringMVC框架执行步骤（SpringMVC使用Servlet嵌入）：</p><ul><li>1、客户端发出一个http请求给web服务器，web服务器对http请求进行解析，如果匹配DispatcherServlet的请求映射路径（在web.xml中指定），web容器将请求转交给DispatcherServlet；</li><li>2、DipatcherServlet接收到这个请求之后将根据请求的信息（包括URL、Http方法、请求报文头和请求参数Cookie等）以及HandlerMapping的配置找到处理请求的处理器（Handler）；</li><li>3-4、DispatcherServlet根据HandlerMapping找到对应的Handler,将处理权交给Handler（Handler将具体的处理进行封装），再由具体的HandlerAdapter对Handler进行具体的调用；</li><li>5、Handler对数据处理完成以后将返回一个ModelAndView()对象给DispatcherServlet；</li><li>6、Handler返回的ModelAndView()只是一个逻辑视图并不是一个正式的视图，DispatcherSevlet通过ViewResolver将逻辑视图转化为真正的视图View；</li><li>7、Dispatcher通过model解析出ModelAndView()中的参数进行解析最终展现出完整的view并返回给客户端。</li></ul><h1 id="Hibernate-和-MyBatis-两种ORM框架对比"><a href="#Hibernate-和-MyBatis-两种ORM框架对比" class="headerlink" title="Hibernate 和 MyBatis 两种ORM框架对比"></a>Hibernate 和 MyBatis 两种ORM框架对比</h1><p><strong>两者的相同点</strong></p><ul><li>Hibernate与MyBatis都可以是通过SessionFactoryBuider由XML配置文件生成SessionFactory，然后由SessionFactory 生成Session，最后由Session来开启执行事务和SQL语句。其中SessionFactoryBuider，SessionFactory，Session的生命周期都是差不多的。</li><li>Hibernate和MyBatis都支持JDBC和JTA事务处理。</li></ul><p><strong>两者各自优势</strong></p><ul><li>MyBatis可以进行更为细致的SQL优化，可以减少查询字段。</li><li>MyBatis容易掌握，而Hibernate门槛较高。</li><li>Hibernate的DAO层开发比MyBatis简单，Mybatis需要维护SQL和结果映射。</li><li>Hibernate对对象的维护和缓存要比MyBatis好，对增删改查的对象的维护要方便。</li><li>Hibernate数据库移植性很好，MyBatis的数据库移植性不好，不同的数据库需要写不同SQL。</li><li>Hibernate有更好的二级缓存机制，可以使用第三方缓存。MyBatis本身提供的缓存机制不佳，更新操作不能指定刷新指定记录，会清空整个表，但是也可以使用第三方缓存。</li><li>Hibernate 封装性好，屏蔽了数据库差异，自动生成SQL语句，应对数据库变化能力较弱，SQL语句优化困难。</li><li>MyBatis仅实现了SQL语句和对象的映射，需要针对具体的数据库写SQL语句，应对数据库变化能力较强，SQL语句优化较为方便。</li></ul><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>SSM和SSH不同主要在MVC实现方式，以及ORM持久化方面不同（Hiibernate与Mybatis）。SSM越来越轻量级配置，将注解开发发挥到极致，且ORM实现更加灵活，SQL优化更简便；而SSH较注重配置开发，其中的Hiibernate对JDBC的完整封装更面向对象，对增删改查的数据维护更自动化，但SQL优化方面较弱，且入门门槛稍高。</p><blockquote><p>附Spring家族：</p></blockquote><p><img src="/img/20171226/f750008ad20260cf3f2.jpg" alt=""></p>]]></content>
     
     <summary type="html">
     
@@ -646,110 +313,11 @@ make V=s
     <published>2017-12-05T06:12:08.000Z</published>
     <updated>2017-12-05T07:04:59.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="一、get请求"><a href="#一、get请求" class="headerlink" title="一、get请求"></a>一、get请求</h1><p>curl “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地<br>curl -i “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示全部信息<br>curl -l “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  只显示头部信息<br>curl -v “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示get请求全过程解析<br>wget “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     也可以</p>
-<a id="more"></a>
-<h1 id="二、post请求"><a href="#二、post请求" class="headerlink" title="二、post请求"></a>二、post请求</h1><p>curl -d “param1=value1&amp;param2=value2” “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“</p>
-<h1 id="三、json格式的post请求"><a href="#三、json格式的post请求" class="headerlink" title="三、json格式的post请求"></a>三、json格式的post请求</h1><p>curl -l -H “Content-type: application/json” -X POST -d ‘{“phone”:”13521389587”,”password”:”test”}’ <a href="http://domain/apis/users.json" target="_blank" rel="external">http://domain/apis/users.json</a></p>
-<blockquote>
-<p>例如：curl -l -H “Content-type: application/json” -X POST -d ‘{“ver”: “1.0”,”soa”:{“req”:”123”},”iface”:”me.ele.lpdinfra.prediction.service.PredictionService”,”method”:”restaurant_make_order_time”,”args”:{“arg2”:”\”stable\””,”arg1”:”{\”code\”:[\”WIND\”],\”temperature\”:11.11}”,”arg0”:”{\”tracking_id\”:\”100000000331770936\”,\”eleme_order_id\”:\”100000000331770936\”,\”platform_id\”:\”4\”,\”restaurant_id\”:\”482571\”,\”dish_num\”:1,\”dish_info\”:[{\”entity_id\”:142547763,\”quantity\”:1,\”category_id\”:1,\”dish_name\”:\”[0xe7][0x89][0xb9][0xe4][0xbb][0xb7][0xe8][0x85][0x8a][0xe5][0x91][0xb3][0xe5][0x8f][0x89][0xe7][0x83][0xa7][0xe5][0x8f][0x8c][0xe6][0x8b][0xbc][0xe7][0x85][0xb2][0xe4][0xbb][0x94][0xe9][0xa5][0xad]\”,\”price\”:31.0}],\”merchant_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”customer_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”created_at\”:1477896550,\”confirmed_at\”:1477896550,\”dishes_total_price\”:0.0,\”food_boxes_total_price\”:2.0,\”delivery_total_price\”:2.0,\”pay_amount\”:35.0,\”city_id\”:\”1\”}”}}’ <a href="http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc" target="_blank" rel="external">http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc</a></p>
-</blockquote>
-<p>ps：json串内层参数需要格式化</p>
-<h1 id="四、高级功能"><a href="#四、高级功能" class="headerlink" title="四、高级功能"></a>四、高级功能</h1><p>curl命令是一个功能强大的网络工具，它能够通过http、ftp等方式下载文件，也能够上传文件。其实curl远不止前面所说的那些功能，大家可以通过man curl阅读手册页获取更多的信息。类似的工具还有wget。</p>
-<p>curl命令使用了libcurl库来实现，libcurl库常用在C程序中用来处理HTTP请求，curlpp是libcurl的一个C++封装，这几个东西可以用在抓取网页、网络监控等方面的开发，而curl命令可以帮助来解决开发过程中遇到的问题。</p>
-<ul>
-<li>1，抓取页面内容到一个文件中</li>
-</ul>
-<p>curl -o home.html <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>   –将百度首页内容抓下到home.html中<br>curl -o #2_#1.jpg<a href="http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG</a></p>
-<p>由于A/B下的文件名都是001，002…，201，下载下来的文件重名，这样，自定义出来下载下来的文件名，就变成了这样：原来： A/001.JPG —-&gt; 下载后： 001-A.JPG 原来： B/001.JPG —&gt; 下载后： 001-B.JPG</p>
-<ul>
-<li>2，用-O（大写的），后面的url要具体到某个文件，不然抓不下来。还可以用正则来抓取东西</li>
-</ul>
-<p>curl -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<p>运行结果如下：</p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  1575  100  1575    0     0  14940      0 –:–:– –:–:– –:–:– 1538k<br>会在当前执行目录中生成一张bdlogo.gif的图片。</p>
-<p>curl -O <a href="http://XXXXX/screen[1-10].JPG" target="_blank" rel="external">http://XXXXX/screen[1-10].JPG</a>  –下载screen1.jpg~screen10.jpg</p>
-<ul>
-<li>3，模拟表单信息，模拟登录，保存cookie信息</li>
-</ul>
-<p>curl -c ./cookie_c.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>4，模拟表单信息，模拟登录，保存头信息</li>
-</ul>
-<p>curl -D ./cookie_D.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<p>-c(小写)产生的cookie和-D里面的cookie是不一样的。</p>
-<ul>
-<li>5，使用cookie文件</li>
-</ul>
-<p>curl -b ./cookie_c.txt <a href="http://www.XXXX.com/wp-admin" target="_blank" rel="external">http://www.XXXX.com/wp-admin</a></p>
-<ul>
-<li>6，断点续传，-C(大写)</li>
-</ul>
-<p>curl -C -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<ul>
-<li>7，传送数据,最好用登录页面测试，因为你传值过去后，curl回抓数据，你可以看到你传值有没有成功</li>
-</ul>
-<p>curl -d log=aaaa <a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>8，显示抓取错误，下面这个例子，很清楚的表明了。</li>
-</ul>
-<p>curl -f<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
-<p>curl: (22) The requested URL returned error: 404</p>
-<p>curl<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
-<p><html><head><title>404,not found</title></head></html></p>
-<ul>
-<li>9，伪造来源地址，有的网站会判断，请求来源地址，防止盗链。</li>
-</ul>
-<p>curl -e<a href="http://localhosthttp://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://localhosthttp://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>10，当我们经常用curl去搞人家东西的时候，人家会把你的IP给屏蔽掉的,这个时候,我们可以用代理</li>
-</ul>
-<p>curl -x 24.10.28.84:32779 -o home.html<a href="http://www.XXXX.com" target="_blank" rel="external">http://www.XXXX.com</a></p>
-<ul>
-<li>11，比较大的东西，我们可以分段下载</li>
-</ul>
-<p>curl -r 0-100 -o img.part1<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0    105      0 –:–:– –:–:– –:–:–     0<br>curl -r 100-200 -o img.part2<a href="http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0     57      0  0:00:01  0:00:01 –:–:–     0<br>curl -r 200- -o img.part3<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  104k  100  104k    0     0  52793      0  0:00:02  0:00:02 –:–:– 88961</p>
-<p>ls |grep part | xargs du -sh</p>
-<p>4.0K    one.part1<br>112K    three.part3<br>4.0K    two.part2</p>
-<p>用的时候，把他们cat一下就OK,cat img.part* &gt;img.jpg</p>
-<ul>
-<li>12，不会显示下载进度信息</li>
-</ul>
-<p>curl -s -o aaa.jpg <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<ul>
-<li>13，显示下载进度条</li>
-</ul>
-<p>curl  -0 <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a>     (以http1.0协议请求)</p>
-<p>####################################################################### 100.0%</p>
-<ul>
-<li>14,通过ftp下载文件</li>
-</ul>
-<p>curl -u用户名:密码 -O<a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
-<p>curl -u 用户名:密码 -O <a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
-<p>或者用下面的方式</p>
-<p>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css<br>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css</p>
-<ul>
-<li>15，通过ftp上传</li>
-</ul>
-<p>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/<br>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/</p>
-<ul>
-<li>15,模拟浏览器头</li>
-</ul>
-<p>curl -A “Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)” -x 123.45.67.89:1080 -o page.html -D cookie0001.txt<a href="http://www.www.baidu.com" target="_blank" rel="external">http://www.www.baidu.com</a></p>
-<ul>
-<li>16,PUT、GET、POST</li>
-</ul>
-<p>比如 curl -T localfile <a href="http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT</a> method<br>刚才说到PUT，自然想起来了其他几种methos－－GET和POST。<br>http提交一个表单，比较常用的是POST模式和GET模式<br>GET模式什么option都不用，只需要把变量写在url里面就可以了<br>比如：<br>curl <a href="http://www.yahoo.com/login.cgi?user=nick&amp;password=12345" target="_blank" rel="external">http://www.yahoo.com/login.cgi?user=nick&amp;password=12345</a><br>而POST模式的option则是 -d<br>比如，curl -d “user=nick&amp;password=12345” <a href="http://www.yahoo.com/login.cgi" target="_blank" rel="external">http://www.yahoo.com/login.cgi</a><br>就相当于向这个站点发出一次登陆申请<del>~</del><br>到底该用GET模式还是POST模式，要看对面服务器的程序设定。<br>一点需要注意的是，POST模式下的文件上的文件上传，比如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;form method=&quot;POST&quot; enctype=&quot;multipar/form-data&quot; action=&quot;http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi&quot;&gt;</div><div class="line">&lt;input type=file name=upload&gt;</div><div class="line">&lt;input type=submit name=nick value=&quot;go&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
-<p>这样一个HTTP表单，我们要用curl进行模拟，就该是这样的语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -F upload=@localfile -F nick=go http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi</div></pre></td></tr></table></figure>
-]]></content>
+    <content type="html"><![CDATA[<h1 id="一、get请求"><a href="#一、get请求" class="headerlink" title="一、get请求"></a>一、get请求</h1><p>curl “<a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a>“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地<br>curl -i “<a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a>“  显示全部信息<br>curl -l “<a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a>“  只显示头部信息<br>curl -v “<a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a>“  显示get请求全过程解析<br>wget “<a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a>“     也可以</p><a id="more"></a><h1 id="二、post请求"><a href="#二、post请求" class="headerlink" title="二、post请求"></a>二、post请求</h1><p>curl -d “param1=value1&amp;param2=value2” “<a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a>“</p><h1 id="三、json格式的post请求"><a href="#三、json格式的post请求" class="headerlink" title="三、json格式的post请求"></a>三、json格式的post请求</h1><p>curl -l -H “Content-type: application/json” -X POST -d ‘{“phone”:”13521389587”,”password”:”test”}’ <a href="http://domain/apis/users.json" target="_blank" rel="noopener">http://domain/apis/users.json</a></p><blockquote><p>例如：curl -l -H “Content-type: application/json” -X POST -d ‘{“ver”: “1.0”,”soa”:{“req”:”123”},”iface”:”me.ele.lpdinfra.prediction.service.PredictionService”,”method”:”restaurant_make_order_time”,”args”:{“arg2”:”\”stable\””,”arg1”:”{\”code\”:[\”WIND\”],\”temperature\”:11.11}”,”arg0”:”{\”tracking_id\”:\”100000000331770936\”,\”eleme_order_id\”:\”100000000331770936\”,\”platform_id\”:\”4\”,\”restaurant_id\”:\”482571\”,\”dish_num\”:1,\”dish_info\”:[{\”entity_id\”:142547763,\”quantity\”:1,\”category_id\”:1,\”dish_name\”:\”[0xe7][0x89][0xb9][0xe4][0xbb][0xb7][0xe8][0x85][0x8a][0xe5][0x91][0xb3][0xe5][0x8f][0x89][0xe7][0x83][0xa7][0xe5][0x8f][0x8c][0xe6][0x8b][0xbc][0xe7][0x85][0xb2][0xe4][0xbb][0x94][0xe9][0xa5][0xad]\”,\”price\”:31.0}],\”merchant_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”customer_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”created_at\”:1477896550,\”confirmed_at\”:1477896550,\”dishes_total_price\”:0.0,\”food_boxes_total_price\”:2.0,\”delivery_total_price\”:2.0,\”pay_amount\”:35.0,\”city_id\”:\”1\”}”}}’ <a href="http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc" target="_blank" rel="noopener">http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc</a></p></blockquote><p>ps：json串内层参数需要格式化</p><h1 id="四、高级功能"><a href="#四、高级功能" class="headerlink" title="四、高级功能"></a>四、高级功能</h1><p>curl命令是一个功能强大的网络工具，它能够通过http、ftp等方式下载文件，也能够上传文件。其实curl远不止前面所说的那些功能，大家可以通过man curl阅读手册页获取更多的信息。类似的工具还有wget。</p><p>curl命令使用了libcurl库来实现，libcurl库常用在C程序中用来处理HTTP请求，curlpp是libcurl的一个C++封装，这几个东西可以用在抓取网页、网络监控等方面的开发，而curl命令可以帮助来解决开发过程中遇到的问题。</p><ul><li>1，抓取页面内容到一个文件中</li></ul><p>curl -o home.html <a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a>   –将百度首页内容抓下到home.html中<br>curl -o #2_#1.jpg<a href="http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG" target="_blank" rel="noopener">http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG</a></p><p>由于A/B下的文件名都是001，002…，201，下载下来的文件重名，这样，自定义出来下载下来的文件名，就变成了这样：原来： A/001.JPG —-&gt; 下载后： 001-A.JPG 原来： B/001.JPG —&gt; 下载后： 001-B.JPG</p><ul><li>2，用-O（大写的），后面的url要具体到某个文件，不然抓不下来。还可以用正则来抓取东西</li></ul><p>curl -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="noopener">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p><p>运行结果如下：</p><p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  1575  100  1575    0     0  14940      0 –:–:– –:–:– –:–:– 1538k<br>会在当前执行目录中生成一张bdlogo.gif的图片。</p><p>curl -O <a href="http://XXXXX/screen[1-10].JPG" target="_blank" rel="noopener">http://XXXXX/screen[1-10].JPG</a>  –下载screen1.jpg~screen10.jpg</p><ul><li>3，模拟表单信息，模拟登录，保存cookie信息</li></ul><p>curl -c ./cookie_c.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="noopener">http://www.XXXX.com/wp-login.php</a></p><ul><li>4，模拟表单信息，模拟登录，保存头信息</li></ul><p>curl -D ./cookie_D.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="noopener">http://www.XXXX.com/wp-login.php</a></p><p>-c(小写)产生的cookie和-D里面的cookie是不一样的。</p><ul><li>5，使用cookie文件</li></ul><p>curl -b ./cookie_c.txt <a href="http://www.XXXX.com/wp-admin" target="_blank" rel="noopener">http://www.XXXX.com/wp-admin</a></p><ul><li>6，断点续传，-C(大写)</li></ul><p>curl -C -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="noopener">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p><ul><li>7，传送数据,最好用登录页面测试，因为你传值过去后，curl回抓数据，你可以看到你传值有没有成功</li></ul><p>curl -d log=aaaa <a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="noopener">http://www.XXXX.com/wp-login.php</a></p><ul><li>8，显示抓取错误，下面这个例子，很清楚的表明了。</li></ul><p>curl -f<a href="http://www.XXXX.com/asdf" target="_blank" rel="noopener">http://www.XXXX.com/asdf</a></p><p>curl: (22) The requested URL returned error: 404</p><p>curl<a href="http://www.XXXX.com/asdf" target="_blank" rel="noopener">http://www.XXXX.com/asdf</a></p><p><html><head><meta name="generator" content="Hexo 3.8.0"><title>404,not found</title></head></html></p><ul><li>9，伪造来源地址，有的网站会判断，请求来源地址，防止盗链。</li></ul><p>curl -e<a href="http://localhosthttp://www.XXXX.com/wp-login.php" target="_blank" rel="noopener">http://localhosthttp://www.XXXX.com/wp-login.php</a></p><ul><li>10，当我们经常用curl去搞人家东西的时候，人家会把你的IP给屏蔽掉的,这个时候,我们可以用代理</li></ul><p>curl -x 24.10.28.84:32779 -o home.html<a href="http://www.XXXX.com" target="_blank" rel="noopener">http://www.XXXX.com</a></p><ul><li>11，比较大的东西，我们可以分段下载</li></ul><p>curl -r 0-100 -o img.part1<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="noopener">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a></p><p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0    105      0 –:–:– –:–:– –:–:–     0<br>curl -r 100-200 -o img.part2<a href="http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="noopener">http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0     57      0  0:00:01  0:00:01 –:–:–     0<br>curl -r 200- -o img.part3<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="noopener">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  104k  100  104k    0     0  52793      0  0:00:02  0:00:02 –:–:– 88961</p><p>ls |grep part | xargs du -sh</p><p>4.0K    one.part1<br>112K    three.part3<br>4.0K    two.part2</p><p>用的时候，把他们cat一下就OK,cat img.part* &gt;img.jpg</p><ul><li>12，不会显示下载进度信息</li></ul><p>curl -s -o aaa.jpg <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="noopener">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p><ul><li>13，显示下载进度条</li></ul><p>curl  -0 <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="noopener">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a>     (以http1.0协议请求)</p><p>####################################################################### 100.0%</p><ul><li>14,通过ftp下载文件</li></ul><p>curl -u用户名:密码 -O<a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="noopener">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p><p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p><p>curl -u 用户名:密码 -O <a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="noopener">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p><p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p><p>或者用下面的方式</p><p>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css<br>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css</p><ul><li>15，通过ftp上传</li></ul><p>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/<br>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/</p><ul><li>15,模拟浏览器头</li></ul><p>curl -A “Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)” -x 123.45.67.89:1080 -o page.html -D cookie0001.txt<a href="http://www.www.baidu.com" target="_blank" rel="noopener">http://www.www.baidu.com</a></p><ul><li>16,PUT、GET、POST</li></ul><p>比如 curl -T localfile <a href="http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT" target="_blank" rel="noopener">http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT</a> method<br>刚才说到PUT，自然想起来了其他几种methos－－GET和POST。<br>http提交一个表单，比较常用的是POST模式和GET模式<br>GET模式什么option都不用，只需要把变量写在url里面就可以了<br>比如：<br>curl <a href="http://www.yahoo.com/login.cgi?user=nick&amp;password=12345" target="_blank" rel="noopener">http://www.yahoo.com/login.cgi?user=nick&amp;password=12345</a><br>而POST模式的option则是 -d<br>比如，curl -d “user=nick&amp;password=12345” <a href="http://www.yahoo.com/login.cgi" target="_blank" rel="noopener">http://www.yahoo.com/login.cgi</a><br>就相当于向这个站点发出一次登陆申请<del>~</del><br>到底该用GET模式还是POST模式，要看对面服务器的程序设定。<br>一点需要注意的是，POST模式下的文件上的文件上传，比如</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;form method=&quot;POST&quot; enctype=&quot;multipar/form-data&quot; action=&quot;http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi&quot;&gt;</span><br><span class="line">&lt;input type=file name=upload&gt;</span><br><span class="line">&lt;input type=submit name=nick value=&quot;go&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure><p>这样一个HTTP表单，我们要用curl进行模拟，就该是这样的语法：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -F upload=@localfile -F nick=go http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;一、get请求&quot;&gt;&lt;a href=&quot;#一、get请求&quot; class=&quot;headerlink&quot; title=&quot;一、get请求&quot;&gt;&lt;/a&gt;一、get请求&lt;/h1&gt;&lt;p&gt;curl “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地&lt;br&gt;curl -i “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  显示全部信息&lt;br&gt;curl -l “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  只显示头部信息&lt;br&gt;curl -v “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  显示get请求全过程解析&lt;br&gt;wget “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“     也可以&lt;/p&gt;
+      &lt;h1 id=&quot;一、get请求&quot;&gt;&lt;a href=&quot;#一、get请求&quot; class=&quot;headerlink&quot; title=&quot;一、get请求&quot;&gt;&lt;/a&gt;一、get请求&lt;/h1&gt;&lt;p&gt;curl “&lt;a href=&quot;http://www.baidu.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.baidu.com&lt;/a&gt;“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地&lt;br&gt;curl -i “&lt;a href=&quot;http://www.baidu.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.baidu.com&lt;/a&gt;“  显示全部信息&lt;br&gt;curl -l “&lt;a href=&quot;http://www.baidu.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.baidu.com&lt;/a&gt;“  只显示头部信息&lt;br&gt;curl -v “&lt;a href=&quot;http://www.baidu.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.baidu.com&lt;/a&gt;“  显示get请求全过程解析&lt;br&gt;wget “&lt;a href=&quot;http://www.baidu.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.baidu.com&lt;/a&gt;“     也可以&lt;/p&gt;
     
     </summary>
     
@@ -765,122 +333,7 @@ make V=s
     <published>2017-12-05T06:12:08.000Z</published>
     <updated>2017-12-23T03:47:18.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>FastDFS是一个开源的轻量级分布式文件系统，由跟踪服务器（tracker server）、存储服务器（storage server）和客户端（client）三个部分组成，主要解决了海量数据存储问题，特别适合以中小文件（建议范围：<strong>4KB &lt; file_size &lt;500MB</strong> ）为载体的在线服务。</p>
-<a id="more"></a>
-<p>FastDFS的系统结构图如下：</p>
-<p><img src="/img/20171222/20160922105102336.jpg" alt=""></p>
-<p>如上图，FastDFS的两个核心概念分别是：</p>
-<ul>
-<li>Tracker（跟踪器）</li>
-<li>Storage（存储节点）</li>
-</ul>
-<p>Tracker主要做调度工作，相当于mvc中的controller的角色，在访问上起负载均衡的作用。跟踪器和存储节点都可以由一台或多台服务器构成，跟踪器和存储节点中的服务器均可以随时增加或下线而不会影响线上服务，其中跟踪器中的所有服务器都是对等的，可以根据服务器的压力情况随时增加或减少。Tracker负责管理所有的Storage和group，每个storage在启动后会连接Tracker，告知自己所属的group等信息，并保持周期性的心跳，tracker根据storage的心跳信息，建立group==&gt;[storage server list]的映射表，Tracker需要管理的元信息很少，会全部存储在内存中；另外tracker上的元信息都是由storage汇报的信息生成的，本身不需要持久化任何数据，这样使得tracker非常容易扩展，直接增加tracker机器即可扩展为tracker cluster来服务，cluster里每个tracker之间是完全对等的，所有的tracker都接受stroage的心跳信息，生成元数据信息来提供读写服务。</p>
-<p>Storage采用了分卷[Volume]（或分组[group]）的组织方式，存储系统由一个或多个组组成，组与组之间的文件是相互独立的，所有组的文件容量累加就是整个存储系统中的文件容量。一个卷[Volume]（组[group]）可以由一台或多台存储服务器组成，一个组中的存储服务器中的文件都是相同的，组中的多台存储服务器起到了冗余备份和负载均衡的作用，数据互为备份，存储空间以group内容量最小的storage为准，所以建议group内的多个storage尽量配置相同，以免造成存储空间的浪费。更多原理性的内容可以参考这篇blog，介绍的很详细：<a href="http://blog.chinaunix.net/uid-20196318-id-4058561.html" target="_blank" rel="external">分布式文件系统FastDFS设计原理</a></p>
-<blockquote>
-<p>Parallels安装Centos7</p>
-</blockquote>
-<p><img src="/img/20171222/WX20171222-173110@2x.png" alt=""></p>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/happyfish100/fastdfs/archive/V5.11.tar.gz</div><div class="line">wget https://github.com/happyfish100/libfastcommon/archive/V1.0.36.tar.gz</div></pre></td></tr></table></figure>
-<p><img src="/img/20171222/WX20171222-143233@2x.png" alt=""></p>
-<p>如上图，由于FastDFS是纯C语言实现，只支持Linux、FreeBSD等UNIX系统，所以我们直接下载tar.gz的压缩包，同时FastDFS 5.11同以前版本相比将公共的一些函数等单独封装成了libfastcommon包，所以在安装FastDFS之前我们还必须安装libfastcommon，在余的GitHub首页可以看到：</p>
-<p><img src="/img/20171222/20160922114506577.png" alt=""></p>
-<p>下载完成后，就可以开始解压安装了：</p>
-<p><img src="/img/20171222/WX20171222-143631@2x.png" alt=""></p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>先要安装gcc编译器：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install gcc-c++</div></pre></td></tr></table></figure>
-<h3 id="libfastcommon"><a href="#libfastcommon" class="headerlink" title="libfastcommon"></a>libfastcommon</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tar -zxvf V1.0.36.tar.gz</div><div class="line">cd libfastcommon-1.0.36</div><div class="line">./make.sh</div><div class="line">./make.sh install</div></pre></td></tr></table></figure>
-<h3 id="FastDFS"><a href="#FastDFS" class="headerlink" title="FastDFS"></a>FastDFS</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tar -zxvf V5.11.tar.gz</div><div class="line">cd fastdfs-5.11</div><div class="line">./make.sh</div><div class="line">./make.sh install</div></pre></td></tr></table></figure>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>安装成功后就会生成如上的3个.sample文件（示例配置文件），拷贝出3个后面用的配置文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd /etc/fdfs</div><div class="line">cp client.conf.sample client.conf</div><div class="line">cp storage.conf.sample storage.conf</div><div class="line">cp tracker.conf.sample tracker.conf</div></pre></td></tr></table></figure>
-<p>至此FastDFS已经安装完毕，接下来的工作就是依次配置Tracker和Storage了。</p>
-<h1 id="Tracker"><a href="#Tracker" class="headerlink" title="Tracker"></a>Tracker</h1><p>在配置Tracker之前，首先需要创建Tracker服务器的文件路径，即用于存储Tracker的数据文件和日志文件等，我这里选择在 <strong>/opt</strong> 目录下创建一个 <strong>fastdfs_tracker</strong> 目录用于存放Tracker服务器的相关文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir /opt/fastdfs_tracker</div></pre></td></tr></table></figure>
-<p>接下来就要重新编辑上一步准备好的 <strong>/etc/fdfs</strong> 目录下的 <strong>tracker.conf</strong> 配置文件，打开文件后依次做以下修改：</p>
-<blockquote>
-<p>disabled=false                  #启用配置文件（默认启用）<br>port=22122                      #设置tracker的端口号，通常采用22122这个默认端口<br>base_path=/opt/fastdfs_tracker  #设置tracker的数据文件和日志目录<br>http.server_port=6666           #设置http端口号，默认为8080</p>
-</blockquote>
-<p>配置完成后就可以启动Tracker服务器了，但首先依然要为启动脚本创建软引用，因为fdfs_trackerd等命令在/usr/local/bin中并没有，而是在/usr/bin路径下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ln -s /usr/bin/fdfs_trackerd /usr/local/bin</div><div class="line">ln -s /usr/bin/stop.sh /usr/local/bin</div><div class="line">ln -s /usr/bin/restart.sh /usr/local/bin</div></pre></td></tr></table></figure>
-<p>最后通过命令启动Tracker服务器：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service fdfs_trackerd start</div></pre></td></tr></table></figure>
-<p>如果启动命令执行成功，那么同时在刚才创建的tracker文件目录 <strong>/opt/fastdfs_tracker</strong> 中就可以看到启动后新生成的data和logs目录，tracker服务的端口也应当被正常监听，最后再通过netstat命令查看一下端口监听情况.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -unltp|grep fdfs</div></pre></td></tr></table></figure>
-<p>Tracker至此就配置好了，接下来就可以配置FastDFS的另一核心——Storage。</p>
-<h1 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h1><p>同理，步骤基本与配置Tracker一致，首先是创建Storage服务器的文件目录，需要注意的是同Tracker相比我多建了一个目录，因为Storage还需要一个文件存储路径，用于存放接收的文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir /opt/fastdfs_storage</div><div class="line">mkdir /opt/fastdfs_storage_data</div></pre></td></tr></table></figure>
-<p>接下来修改/etc/fdfs目录下的storage.conf配置文件，打开文件后依次做以下修改：</p>
-<blockquote>
-<p>disabled=false    #启用配置文件（默认启用）<br>group_name=group1 #组名，根据实际情况修改<br>port=23000        #设置storage的端口号，默认是23000，同一个组的storage端口号必须一致<br>base_path=/opt/fastdfs_storage  #设置storage数据文件和日志目录<br>store_path_count=1              #存储路径个数，需要和store_path个数匹配<br>store_path0=/opt/fastdfs_storage_data #实际文件存储路径<br>tracker_server=10.211.55.8:22122   #tracker 服务器的 IP地址和端口号，如果是单机搭建，IP不要写127.0.0.1，否则启动不成功（此处的ip是我的CentOS虚拟机ip）<br>http.server_port=8888           #设置 http 端口号</p>
-</blockquote>
-<p>配置完成后同样要为Storage服务器的启动脚本设置软引用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ln -s /usr/bin/fdfs_storaged /usr/local/bin</div></pre></td></tr></table></figure>
-<p>接下来就可以启动Storage服务了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service fdfs_storaged start</div></pre></td></tr></table></figure>
-<p>同理，如果启动成功，/opt/fastdfs_storage中就可以看到启动后新生成的 <strong>data</strong> 和 <strong>logs</strong> 目录，端口23000也应被正常监听，还有一点就是文件存储路径下会生成多级存储目录，那么接下来看看是否启动成功.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -unltp|grep fdfs</div></pre></td></tr></table></figure>
-<p><img src="/img/20171222/WX20171222-162905@2x.png" alt=""></p>
-<p>如上图，可以看到此时已经正常监听tracker的22122端口和storage的23000端口，至此storage服务器就已经配置完成，确定了storage服务器启动成功后，还有一项工作就是看看storage服务器是否已经登记到 tracker服务器（也可以理解为tracker与storage是否整合成功），运行以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/fdfs_monitor /etc/fdfs/storage.conf</div></pre></td></tr></table></figure>
-<p><img src="/img/20171222/WX20171222-163212@2x.png" alt=""></p>
-<p>如上所示，看到 <strong>ip_addr = 10.211.55.8 (centos-7.shared)  ACTIVE</strong> 字样即可说明storage服务器已经成功登记到了tracker服务器.</p>
-<p>添加开机启动，检查一下rc.local是否具备可执行权限，若是无可执行权限则通过</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x /etc/rc.d/rc.local</div></pre></td></tr></table></figure>
-<p>进行授权，如下图：</p>
-<p><img src="/img/20171222/WX20171222-163634@2x.png" alt=""></p>
-<p>至此我们就已经完成了fastdfs的全部配置，此时也就可以用客户端工具进行文件上传下载的测试了。</p>
-<h1 id="上传测试"><a href="#上传测试" class="headerlink" title="上传测试"></a>上传测试</h1><p>测试时需要设置客户端的配置文件，编辑 <strong>/etc/fdfs</strong> 目录下的 <strong>client.conf</strong> 文件，打开文件后依次做以下修改：</p>
-<blockquote>
-<p>base_path=/opt/fastdfs_tracker      #tracker服务器文件路径<br>tracker_server=10.211.55.8:22122    #tracker服务器IP地址和端口号<br>http.tracker_server_port=6666       #tracker服务器的http端口号，必须和tracker的设置对应起来</p>
-</blockquote>
-<p>配置完成后就可以模拟文件上传了，先通过scp向 <strong>/tmp</strong> 目录下传一下文件。</p>
-<p>然后通过执行客户端上传命令尝试上传：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/fdfs_upload_file /etc/fdfs/client.conf /tmp/big.jpg</div></pre></td></tr></table></figure>
-<p>运行后可以发现给我们返回了一个路径：</p>
-<p><img src="/img/20171222/WX20171222-164154@2x.png" alt=""></p>
-<p>这就表示我们的文件已经上传成功了，当文件存储到某个子目录后，即认为该文件存储成功，接下来会为该文件生成一个文件名，文件名由group、存储目录、两级子目录、fileid、文件后缀名（由客户端指定，主要用于区分文件类型）拼接而成，如下图：</p>
-<p><img src="/img/20171222/20160923132829236.jpg" alt=""></p>
-<p>同时在之前配置的storage服务器的实际文件存储路径中也可以根据返回的路径找到实际文件：</p>
-<h1 id="HTTP访问文件"><a href="#HTTP访问文件" class="headerlink" title="HTTP访问文件"></a>HTTP访问文件</h1><p>因为FastDFS目前已不支持http协议，<strong>4.0.5</strong> 版本开始移除了自带的HTTP支持（因为之前自带的HTTP服务较为简单，无法提供负载均衡等高性能服务），所以余大提供了nginx上使用FastDFS的模块fastdfs-nginx-module，下载地址如下：<a href="https://github.com/happyfish100/fastdfs-nginx-module" target="_blank" rel="external">https://github.com/happyfish100/fastdfs-nginx-module</a>，这样做最大的好处就是提供了HTTP服务并且解决了group中storage服务器的同步延迟问题，接下是fastdfs-nginx-module的安装配置过程.</p>
-<h3 id="fastdfs-nginx-module"><a href="#fastdfs-nginx-module" class="headerlink" title="fastdfs-nginx-module"></a>fastdfs-nginx-module</h3><p>先安装系统依赖</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install pcre pcre-devel zlib zlib-devel openssl openssl-devel git</div></pre></td></tr></table></figure>
-<p>下载所需组件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/src/</div><div class="line">git clone https://github.com/happyfish100/fastdfs-nginx-module.git</div><div class="line">wget http://nginx.org/download/nginx-1.8.1.tar.gz</div></pre></td></tr></table></figure>
-<h3 id="storage-nginx"><a href="#storage-nginx" class="headerlink" title="storage nginx"></a>storage nginx</h3><p>首先是为storage服务器安装nginx</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tar -zxvf nginx-1.8.1.tar.gz</div><div class="line">cd nginx-1.8.1</div><div class="line">./configure --prefix=/usr/local/nginx --add-module=/usr/local/src/fastdfs-nginx-module/src</div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
-<p>接下来要修改一下nginx的配置文件，进入conf目录并打开 <strong>nginx.conf</strong> 修改，如下图：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /usr/local/nginx/conf/nginx.conf</div></pre></td></tr></table></figure>
-<p><img src="/img/20171222/WX20171222-165331@2x.png" alt=""></p>
-<p>然后进入FastDFS的安装目录 <strong>/usr/local/src/fastdfs-5.11</strong> 目录下的conf目录，将http.conf和mime.types拷贝到 <strong>/etc/fdfs</strong> 目录下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cp -r /usr/local/src/fastdfs-5.11/conf/http.conf /etc/fdfs/</div><div class="line">cp -r /usr/local/src/fastdfs-5.11/conf/mime.types /etc/fdfs/</div></pre></td></tr></table></figure>
-<p>接下来还需要把fastdfs-nginx-module安装目录中src目录下的mod_fastdfs.conf也拷贝到 <strong>/etc/fdfs</strong> 目录下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp -r /usr/local/src/fastdfs-nginx-module/src/mod_fastdfs.conf /etc/fdfs/</div></pre></td></tr></table></figure>
-<p>就需要编辑刚拷贝的这个mod_fastdfs.conf文件了，打开mod_fastdfs.conf并按顺序依次编译以下内容：</p>
-<blockquote>
-<p>base_path=/opt/fastdfs_storage        #保存日志目录<br>tracker_server=10.211.55.8:22122   #tracker服务器的IP地址以及端口号<br>storage_server_port=23000             #storage服务器的端口号<br>url_have_group_name = true            #文件 url 中是否有 group 名<br>store_path0=/opt/fastdfs_storage_data #存储路径<br>group_count = 3                       #设置组的个数，事实上这次只使用了group1</p>
-</blockquote>
-<p>设置了group_count = 3，接下来就需要在文件尾部追加这3个group setting：</p>
-<blockquote>
-<p>[group1]<br>group_name=group1<br>storage_server_port=23000<br>store_path_count=1<br>store_path0=/opt/fastdfs_storage_data</p>
-<p>[group2]<br>group_name=group2<br>storage_server_port=23000<br>store_path_count=1<br>store_path0=/opt/fastdfs_storage_data</p>
-<p>[group3]<br>group_name=group3<br>storage_server_port=23000<br>store_path_count=1<br>store_path0=/opt/fastdfs_storage_data</p>
-</blockquote>
-<p>接下来还需要建立 M00 至存储目录的符号连接：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ln  -s  /opt/fastdfs_storage_data/data  /opt/fastdfs_storage_data/data/M00</div></pre></td></tr></table></figure>
-<p>最后启动nginx：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/nginx/sbin/nginx</div></pre></td></tr></table></figure>
-<p>通过浏览器访问 <a href="http://10.211.55.8:9999/" target="_blank" rel="external">http://10.211.55.8:9999/</a> 也可以看到nginx的主页：</p>
-<h3 id="tracker-nginx"><a href="#tracker-nginx" class="headerlink" title="tracker nginx"></a>tracker nginx</h3><p>同理，再装一个nginx，目录命名为 <strong>nginx2</strong> ，安装路径依旧放在 <strong>/usr/local</strong> 下，由于和之前一样，此处就不再做详细解释：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /usr/loca/src/nginx-1.8.1</div><div class="line">./configure --prefix=/usr/local/nginx2 --add-module=/usr/local/src/fastdfs-nginx-module/src</div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
-<p>接下来依然是修改nginx2的配置文件，进入conf目录并打开nginx.conf文件加入以下配置，storage的nginx无需修改listen端口，即默认的80端口，并将upstream指向tracker的nginx地址：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /usr/local/nginx2/conf/nginx.conf</div></pre></td></tr></table></figure>
-<p><img src="/img/20171222/WX20171222-170041@2x.png" alt=""></p>
-<p>至此关于fastdfs就已经全部配置完毕了，再一次进行测试看看是否能正常上传文件并通过http访问文件。</p>
-<p>上传文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">scp big.jpg root@10.211.55.8:/tmp/</div><div class="line">cd /tmp/</div><div class="line">/usr/bin/fdfs_upload_file /etc/fdfs/client.conf big.jpg</div><div class="line">/usr/bin/fdfs_upload_file /etc/fdfs/client.conf CADENCE+SPB+15.7工程实例入门.pdf</div><div class="line">/usr/bin/fdfs_upload_file /etc/fdfs/client.conf Step\ by\ Step_\ How\ to\ easily\ tie\ the\ FG\ Knot.mp4</div></pre></td></tr></table></figure></p>
-<p>接下来的关键就是通过HTTP测试文件访问，打开浏览器输入ip地址+文件名看看是否能正常访问该图片：</p>
-<p><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ysuALXURAAyIkvltU0w661.jpg" target="_blank" rel="external">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ysuALXURAAyIkvltU0w661.jpg</a><br><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytGABqkAAnhI9lHEHhw379.pdf" target="_blank" rel="external">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytGABqkAAnhI9lHEHhw379.pdf</a><br><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytaAZqEqA8pGTvhXcBQ424.mp4" target="_blank" rel="external">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytaAZqEqA8pGTvhXcBQ424.mp4</a></p>
-<p><img src="/img/20171222/WX20171222-170825@2x.png" alt=""></p>
-<p>一切正常~ 至此关于FastDFS在CentOS 7下的部署测试就已经全部完成。</p>
-]]></content>
+    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>FastDFS是一个开源的轻量级分布式文件系统，由跟踪服务器（tracker server）、存储服务器（storage server）和客户端（client）三个部分组成，主要解决了海量数据存储问题，特别适合以中小文件（建议范围：<strong>4KB &lt; file_size &lt;500MB</strong> ）为载体的在线服务。</p><a id="more"></a><p>FastDFS的系统结构图如下：</p><p><img src="/img/20171222/20160922105102336.jpg" alt=""></p><p>如上图，FastDFS的两个核心概念分别是：</p><ul><li>Tracker（跟踪器）</li><li>Storage（存储节点）</li></ul><p>Tracker主要做调度工作，相当于mvc中的controller的角色，在访问上起负载均衡的作用。跟踪器和存储节点都可以由一台或多台服务器构成，跟踪器和存储节点中的服务器均可以随时增加或下线而不会影响线上服务，其中跟踪器中的所有服务器都是对等的，可以根据服务器的压力情况随时增加或减少。Tracker负责管理所有的Storage和group，每个storage在启动后会连接Tracker，告知自己所属的group等信息，并保持周期性的心跳，tracker根据storage的心跳信息，建立group==&gt;[storage server list]的映射表，Tracker需要管理的元信息很少，会全部存储在内存中；另外tracker上的元信息都是由storage汇报的信息生成的，本身不需要持久化任何数据，这样使得tracker非常容易扩展，直接增加tracker机器即可扩展为tracker cluster来服务，cluster里每个tracker之间是完全对等的，所有的tracker都接受stroage的心跳信息，生成元数据信息来提供读写服务。</p><p>Storage采用了分卷[Volume]（或分组[group]）的组织方式，存储系统由一个或多个组组成，组与组之间的文件是相互独立的，所有组的文件容量累加就是整个存储系统中的文件容量。一个卷[Volume]（组[group]）可以由一台或多台存储服务器组成，一个组中的存储服务器中的文件都是相同的，组中的多台存储服务器起到了冗余备份和负载均衡的作用，数据互为备份，存储空间以group内容量最小的storage为准，所以建议group内的多个storage尽量配置相同，以免造成存储空间的浪费。更多原理性的内容可以参考这篇blog，介绍的很详细：<a href="http://blog.chinaunix.net/uid-20196318-id-4058561.html" target="_blank" rel="noopener">分布式文件系统FastDFS设计原理</a></p><blockquote><p>Parallels安装Centos7</p></blockquote><p><img src="/img/20171222/WX20171222-173110@2x.png" alt=""></p><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/happyfish100/fastdfs/archive/V5.11.tar.gz</span><br><span class="line">wget https://github.com/happyfish100/libfastcommon/archive/V1.0.36.tar.gz</span><br></pre></td></tr></table></figure><p><img src="/img/20171222/WX20171222-143233@2x.png" alt=""></p><p>如上图，由于FastDFS是纯C语言实现，只支持Linux、FreeBSD等UNIX系统，所以我们直接下载tar.gz的压缩包，同时FastDFS 5.11同以前版本相比将公共的一些函数等单独封装成了libfastcommon包，所以在安装FastDFS之前我们还必须安装libfastcommon，在余的GitHub首页可以看到：</p><p><img src="/img/20171222/20160922114506577.png" alt=""></p><p>下载完成后，就可以开始解压安装了：</p><p><img src="/img/20171222/WX20171222-143631@2x.png" alt=""></p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>先要安装gcc编译器：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install gcc-c++</span><br></pre></td></tr></table></figure><h3 id="libfastcommon"><a href="#libfastcommon" class="headerlink" title="libfastcommon"></a>libfastcommon</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf V1.0.36.tar.gz</span><br><span class="line">cd libfastcommon-1.0.36</span><br><span class="line">./make.sh</span><br><span class="line">./make.sh install</span><br></pre></td></tr></table></figure><h3 id="FastDFS"><a href="#FastDFS" class="headerlink" title="FastDFS"></a>FastDFS</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf V5.11.tar.gz</span><br><span class="line">cd fastdfs-5.11</span><br><span class="line">./make.sh</span><br><span class="line">./make.sh install</span><br></pre></td></tr></table></figure><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>安装成功后就会生成如上的3个.sample文件（示例配置文件），拷贝出3个后面用的配置文件：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/fdfs</span><br><span class="line">cp client.conf.sample client.conf</span><br><span class="line">cp storage.conf.sample storage.conf</span><br><span class="line">cp tracker.conf.sample tracker.conf</span><br></pre></td></tr></table></figure><p>至此FastDFS已经安装完毕，接下来的工作就是依次配置Tracker和Storage了。</p><h1 id="Tracker"><a href="#Tracker" class="headerlink" title="Tracker"></a>Tracker</h1><p>在配置Tracker之前，首先需要创建Tracker服务器的文件路径，即用于存储Tracker的数据文件和日志文件等，我这里选择在 <strong>/opt</strong> 目录下创建一个 <strong>fastdfs_tracker</strong> 目录用于存放Tracker服务器的相关文件：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/fastdfs_tracker</span><br></pre></td></tr></table></figure><p>接下来就要重新编辑上一步准备好的 <strong>/etc/fdfs</strong> 目录下的 <strong>tracker.conf</strong> 配置文件，打开文件后依次做以下修改：</p><blockquote><p>disabled=false                  #启用配置文件（默认启用）<br>port=22122                      #设置tracker的端口号，通常采用22122这个默认端口<br>base_path=/opt/fastdfs_tracker  #设置tracker的数据文件和日志目录<br>http.server_port=6666           #设置http端口号，默认为8080</p></blockquote><p>配置完成后就可以启动Tracker服务器了，但首先依然要为启动脚本创建软引用，因为fdfs_trackerd等命令在/usr/local/bin中并没有，而是在/usr/bin路径下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/bin/fdfs_trackerd /usr/local/bin</span><br><span class="line">ln -s /usr/bin/stop.sh /usr/local/bin</span><br><span class="line">ln -s /usr/bin/restart.sh /usr/local/bin</span><br></pre></td></tr></table></figure><p>最后通过命令启动Tracker服务器：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service fdfs_trackerd start</span><br></pre></td></tr></table></figure><p>如果启动命令执行成功，那么同时在刚才创建的tracker文件目录 <strong>/opt/fastdfs_tracker</strong> 中就可以看到启动后新生成的data和logs目录，tracker服务的端口也应当被正常监听，最后再通过netstat命令查看一下端口监听情况.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -unltp|grep fdfs</span><br></pre></td></tr></table></figure><p>Tracker至此就配置好了，接下来就可以配置FastDFS的另一核心——Storage。</p><h1 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h1><p>同理，步骤基本与配置Tracker一致，首先是创建Storage服务器的文件目录，需要注意的是同Tracker相比我多建了一个目录，因为Storage还需要一个文件存储路径，用于存放接收的文件：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /opt/fastdfs_storage</span><br><span class="line">mkdir /opt/fastdfs_storage_data</span><br></pre></td></tr></table></figure><p>接下来修改/etc/fdfs目录下的storage.conf配置文件，打开文件后依次做以下修改：</p><blockquote><p>disabled=false    #启用配置文件（默认启用）<br>group_name=group1 #组名，根据实际情况修改<br>port=23000        #设置storage的端口号，默认是23000，同一个组的storage端口号必须一致<br>base_path=/opt/fastdfs_storage  #设置storage数据文件和日志目录<br>store_path_count=1              #存储路径个数，需要和store_path个数匹配<br>store_path0=/opt/fastdfs_storage_data #实际文件存储路径<br>tracker_server=10.211.55.8:22122   #tracker 服务器的 IP地址和端口号，如果是单机搭建，IP不要写127.0.0.1，否则启动不成功（此处的ip是我的CentOS虚拟机ip）<br>http.server_port=8888           #设置 http 端口号</p></blockquote><p>配置完成后同样要为Storage服务器的启动脚本设置软引用：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/bin/fdfs_storaged /usr/local/bin</span><br></pre></td></tr></table></figure><p>接下来就可以启动Storage服务了：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service fdfs_storaged start</span><br></pre></td></tr></table></figure><p>同理，如果启动成功，/opt/fastdfs_storage中就可以看到启动后新生成的 <strong>data</strong> 和 <strong>logs</strong> 目录，端口23000也应被正常监听，还有一点就是文件存储路径下会生成多级存储目录，那么接下来看看是否启动成功.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -unltp|grep fdfs</span><br></pre></td></tr></table></figure><p><img src="/img/20171222/WX20171222-162905@2x.png" alt=""></p><p>如上图，可以看到此时已经正常监听tracker的22122端口和storage的23000端口，至此storage服务器就已经配置完成，确定了storage服务器启动成功后，还有一项工作就是看看storage服务器是否已经登记到 tracker服务器（也可以理解为tracker与storage是否整合成功），运行以下命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/fdfs_monitor /etc/fdfs/storage.conf</span><br></pre></td></tr></table></figure><p><img src="/img/20171222/WX20171222-163212@2x.png" alt=""></p><p>如上所示，看到 <strong>ip_addr = 10.211.55.8 (centos-7.shared)  ACTIVE</strong> 字样即可说明storage服务器已经成功登记到了tracker服务器.</p><p>添加开机启动，检查一下rc.local是否具备可执行权限，若是无可执行权限则通过</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /etc/rc.d/rc.local</span><br></pre></td></tr></table></figure><p>进行授权，如下图：</p><p><img src="/img/20171222/WX20171222-163634@2x.png" alt=""></p><p>至此我们就已经完成了fastdfs的全部配置，此时也就可以用客户端工具进行文件上传下载的测试了。</p><h1 id="上传测试"><a href="#上传测试" class="headerlink" title="上传测试"></a>上传测试</h1><p>测试时需要设置客户端的配置文件，编辑 <strong>/etc/fdfs</strong> 目录下的 <strong>client.conf</strong> 文件，打开文件后依次做以下修改：</p><blockquote><p>base_path=/opt/fastdfs_tracker      #tracker服务器文件路径<br>tracker_server=10.211.55.8:22122    #tracker服务器IP地址和端口号<br>http.tracker_server_port=6666       #tracker服务器的http端口号，必须和tracker的设置对应起来</p></blockquote><p>配置完成后就可以模拟文件上传了，先通过scp向 <strong>/tmp</strong> 目录下传一下文件。</p><p>然后通过执行客户端上传命令尝试上传：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/fdfs_upload_file /etc/fdfs/client.conf /tmp/big.jpg</span><br></pre></td></tr></table></figure><p>运行后可以发现给我们返回了一个路径：</p><p><img src="/img/20171222/WX20171222-164154@2x.png" alt=""></p><p>这就表示我们的文件已经上传成功了，当文件存储到某个子目录后，即认为该文件存储成功，接下来会为该文件生成一个文件名，文件名由group、存储目录、两级子目录、fileid、文件后缀名（由客户端指定，主要用于区分文件类型）拼接而成，如下图：</p><p><img src="/img/20171222/20160923132829236.jpg" alt=""></p><p>同时在之前配置的storage服务器的实际文件存储路径中也可以根据返回的路径找到实际文件：</p><h1 id="HTTP访问文件"><a href="#HTTP访问文件" class="headerlink" title="HTTP访问文件"></a>HTTP访问文件</h1><p>因为FastDFS目前已不支持http协议，<strong>4.0.5</strong> 版本开始移除了自带的HTTP支持（因为之前自带的HTTP服务较为简单，无法提供负载均衡等高性能服务），所以余大提供了nginx上使用FastDFS的模块fastdfs-nginx-module，下载地址如下：<a href="https://github.com/happyfish100/fastdfs-nginx-module" target="_blank" rel="noopener">https://github.com/happyfish100/fastdfs-nginx-module</a>，这样做最大的好处就是提供了HTTP服务并且解决了group中storage服务器的同步延迟问题，接下是fastdfs-nginx-module的安装配置过程.</p><h3 id="fastdfs-nginx-module"><a href="#fastdfs-nginx-module" class="headerlink" title="fastdfs-nginx-module"></a>fastdfs-nginx-module</h3><p>先安装系统依赖</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install pcre pcre-devel zlib zlib-devel openssl openssl-devel git</span><br></pre></td></tr></table></figure><p>下载所需组件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/src/</span><br><span class="line">git clone https://github.com/happyfish100/fastdfs-nginx-module.git</span><br><span class="line">wget http://nginx.org/download/nginx-1.8.1.tar.gz</span><br></pre></td></tr></table></figure><h3 id="storage-nginx"><a href="#storage-nginx" class="headerlink" title="storage nginx"></a>storage nginx</h3><p>首先是为storage服务器安装nginx</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf nginx-1.8.1.tar.gz</span><br><span class="line">cd nginx-1.8.1</span><br><span class="line">./configure --prefix=/usr/local/nginx --add-module=/usr/local/src/fastdfs-nginx-module/src</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure><p>接下来要修改一下nginx的配置文件，进入conf目录并打开 <strong>nginx.conf</strong> 修改，如下图：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /usr/local/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure><p><img src="/img/20171222/WX20171222-165331@2x.png" alt=""></p><p>然后进入FastDFS的安装目录 <strong>/usr/local/src/fastdfs-5.11</strong> 目录下的conf目录，将http.conf和mime.types拷贝到 <strong>/etc/fdfs</strong> 目录下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp -r /usr/local/src/fastdfs-5.11/conf/http.conf /etc/fdfs/</span><br><span class="line">cp -r /usr/local/src/fastdfs-5.11/conf/mime.types /etc/fdfs/</span><br></pre></td></tr></table></figure><p>接下来还需要把fastdfs-nginx-module安装目录中src目录下的mod_fastdfs.conf也拷贝到 <strong>/etc/fdfs</strong> 目录下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -r /usr/local/src/fastdfs-nginx-module/src/mod_fastdfs.conf /etc/fdfs/</span><br></pre></td></tr></table></figure><p>就需要编辑刚拷贝的这个mod_fastdfs.conf文件了，打开mod_fastdfs.conf并按顺序依次编译以下内容：</p><blockquote><p>base_path=/opt/fastdfs_storage        #保存日志目录<br>tracker_server=10.211.55.8:22122   #tracker服务器的IP地址以及端口号<br>storage_server_port=23000             #storage服务器的端口号<br>url_have_group_name = true            #文件 url 中是否有 group 名<br>store_path0=/opt/fastdfs_storage_data #存储路径<br>group_count = 3                       #设置组的个数，事实上这次只使用了group1</p></blockquote><p>设置了group_count = 3，接下来就需要在文件尾部追加这3个group setting：</p><blockquote><p>[group1]<br>group_name=group1<br>storage_server_port=23000<br>store_path_count=1<br>store_path0=/opt/fastdfs_storage_data</p><p>[group2]<br>group_name=group2<br>storage_server_port=23000<br>store_path_count=1<br>store_path0=/opt/fastdfs_storage_data</p><p>[group3]<br>group_name=group3<br>storage_server_port=23000<br>store_path_count=1<br>store_path0=/opt/fastdfs_storage_data</p></blockquote><p>接下来还需要建立 M00 至存储目录的符号连接：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln  -s  /opt/fastdfs_storage_data/data  /opt/fastdfs_storage_data/data/M00</span><br></pre></td></tr></table></figure><p>最后启动nginx：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/nginx/sbin/nginx</span><br></pre></td></tr></table></figure><p>通过浏览器访问 <a href="http://10.211.55.8:9999/" target="_blank" rel="noopener">http://10.211.55.8:9999/</a> 也可以看到nginx的主页：</p><h3 id="tracker-nginx"><a href="#tracker-nginx" class="headerlink" title="tracker nginx"></a>tracker nginx</h3><p>同理，再装一个nginx，目录命名为 <strong>nginx2</strong> ，安装路径依旧放在 <strong>/usr/local</strong> 下，由于和之前一样，此处就不再做详细解释：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/loca/src/nginx-1.8.1</span><br><span class="line">./configure --prefix=/usr/local/nginx2 --add-module=/usr/local/src/fastdfs-nginx-module/src</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure><p>接下来依然是修改nginx2的配置文件，进入conf目录并打开nginx.conf文件加入以下配置，storage的nginx无需修改listen端口，即默认的80端口，并将upstream指向tracker的nginx地址：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /usr/local/nginx2/conf/nginx.conf</span><br></pre></td></tr></table></figure><p><img src="/img/20171222/WX20171222-170041@2x.png" alt=""></p><p>至此关于fastdfs就已经全部配置完毕了，再一次进行测试看看是否能正常上传文件并通过http访问文件。</p><p>上传文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">scp big.jpg root@10.211.55.8:/tmp/</span><br><span class="line">cd /tmp/</span><br><span class="line">/usr/bin/fdfs_upload_file /etc/fdfs/client.conf big.jpg</span><br><span class="line">/usr/bin/fdfs_upload_file /etc/fdfs/client.conf CADENCE+SPB+15.7工程实例入门.pdf</span><br><span class="line">/usr/bin/fdfs_upload_file /etc/fdfs/client.conf Step\ by\ Step_\ How\ to\ easily\ tie\ the\ FG\ Knot.mp4</span><br></pre></td></tr></table></figure></p><p>接下来的关键就是通过HTTP测试文件访问，打开浏览器输入ip地址+文件名看看是否能正常访问该图片：</p><p><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ysuALXURAAyIkvltU0w661.jpg" target="_blank" rel="noopener">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ysuALXURAAyIkvltU0w661.jpg</a><br><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytGABqkAAnhI9lHEHhw379.pdf" target="_blank" rel="noopener">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytGABqkAAnhI9lHEHhw379.pdf</a><br><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytaAZqEqA8pGTvhXcBQ424.mp4" target="_blank" rel="noopener">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytaAZqEqA8pGTvhXcBQ424.mp4</a></p><p><img src="/img/20171222/WX20171222-170825@2x.png" alt=""></p><p>一切正常~ 至此关于FastDFS在CentOS 7下的部署测试就已经全部完成。</p>]]></content>
     
     <summary type="html">
     
@@ -900,100 +353,7 @@ make V=s
     <published>2017-12-04T06:12:08.000Z</published>
     <updated>2017-12-04T06:39:55.000Z</updated>
     
-    <content type="html"><![CDATA[<p>生活要有质感，这是很多人所追求的，也是很多人所向往的，但是，你真的懂质感吗?质感这种东西，重要的是感觉。怎样才能让自己的家变得有感觉呢?</p>
-<p>答案当然是灯光!试想一下，当你回到家，看到明亮的、昏黄的、温暖的灯光，是不是都能让你的家有不一样的感觉?我们先来看一看，一个家的六大功能区。</p>
-<a id="more"></a>
-<p><img src="/img/20171204/640.jpeg" alt=""></p>
-<p>一般人都会想，房间只要够亮就行了，于是就出现了下面这种“一盏荧光灯or吸顶灯走天下”的死板场景。</p>
-<p><img src="/img/20171204/640-1.jpeg" alt=""></p>
-<p>怎么样，是不是感觉看到了自己的家?</p>
-<p>这样简单粗暴的照明设置，只能解决基本的照明需求。实际使用起来你会发现，其实有诸多不便，有解决办法吗?</p>
-<p>当然有!这时候你就需要给家里做一个专业的灯光设计。</p>
-<p><img src="/img/20171204/640-2.jpeg" alt=""></p>
-<p>灯光100%、50%、10%、多种灯具互相配合，明暗张弛有度，提高房间品味的同时还能打造房间层次感。</p>
-<p>那想打造一个生活与灯光协调的智能化住宅，具体应该怎么做呢?</p>
-<p>首先你得认识灯光，了解灯光，才能合理的运用灯光。</p>
-<h3 id="1、如何认识灯光"><a href="#1、如何认识灯光" class="headerlink" title="1、如何认识灯光?"></a>1、如何认识灯光?</h3><p><img src="/img/20171204/640-3.jpeg" alt=""></p>
-<p>买灯具跟买家具一样，既麻烦又复杂，以下就是小编贴心为大家整理的两个步骤，学会它，选灯具似乎也很简单。</p>
-<ul>
-<li>1)确认你需要的灯光类别</li>
-<li>2)确认你需要的照明方式</li>
-</ul>
-<p>灯光的类别分为：环境光、轮廓光、焦点光。</p>
-<p><img src="/img/20171204/640-4.jpeg" alt=""></p>
-<p>环境光是指照明范围最大的常规光源，看不清直接光源和方向，具有柔和的光照。</p>
-<p>轮廓光主要是强调墙壁，天花板等的轮廓，营造空间的层次感，还可以增添室内的美感。</p>
-<p>焦点光相对照明范围小，光照集中，主要用来营造局部的氛围</p>
-<p>三种光的作用不一样当然照明方式也不一样。</p>
-<blockquote>
-<p>环境光照明方式↓</p>
-</blockquote>
-<p><img src="/img/20171204/640-5.jpeg" alt=""></p>
-<blockquote>
-<p>轮廓光照明方式↓</p>
-</blockquote>
-<p><img src="/img/20171204/640-6.jpeg" alt=""></p>
-<blockquote>
-<p>焦点光照明方式↓</p>
-</blockquote>
-<p><img src="/img/20171204/640-7.jpeg" alt=""></p>
-<p>对灯光有了基本了解，接下来就看看灯光如何进行空间布局吧。</p>
-<h3 id="2、玄关"><a href="#2、玄关" class="headerlink" title="2、玄关"></a>2、玄关</h3><p><img src="/img/20171204/640-8.jpeg" alt=""></p>
-<p>传统的灯光只是起到了一个基础照明的作用，没有考虑到使用起来的方便性。人的身体会阻挡住焦点光，有限的光源也会让玄关柜的阴影阻挡视线。而且一进门，就要摸黑去找开关，导致来访，换鞋都很不方便。</p>
-<p><img src="/img/20171204/640-9.jpeg" alt=""></p>
-<p>人在玄关处停留的市价虽然不长，但是一个明亮的光线还是很重要的。</p>
-<p>选用整体适合整体照明的嵌入式节能灯，光线平均且充分。在顶部设置红外感应开关，人一进家门就自动开启了回家模式，带来更好的居家体验。</p>
-<p><img src="/img/20171204/640-10.jpeg" alt=""></p>
-<h3 id="3、客厅"><a href="#3、客厅" class="headerlink" title="3、客厅"></a>3、客厅</h3><p><img src="/img/20171204/640-11.jpeg" alt=""></p>
-<p>传统的客厅，用一盏吸顶灯或荧光灯管，就可以轻松的照亮整个空间。但是缺乏特色和可变性，不能根据空间使用者的行为变化做出对应调整。</p>
-<p><img src="/img/20171204/640-12.jpeg" alt=""></p>
-<p>采用点状光源，均匀分布于天花板，按需求调节亮度，节省用电，选用造型感强的漫射照明灯具，以满足核心区域的照明需求。</p>
-<p><img src="/img/20171204/640-13.jpeg" alt=""></p>
-<p>在墙面区域，可以增加光线更柔和、更均匀的间接照明灯饰。比如灯带或者一些小台灯。这样可以使人更放松。电视上方可以装灯槽，为整个空间提供漫反射光线，减少电视画面与背后的亮差，缓解视觉疲劳。</p>
-<p><img src="/img/20171204/640-14.jpeg" alt=""></p>
-<p>电视机旁的角落，可以加一盏落地灯，它能使客厅显得更有层次感，也能在你看电视的时候，提供柔和的中段视觉的光线，让你的眼睛有更舒服的体验。同时，一个颜值高的落地灯也是一个提升家庭格调的装饰物。</p>
-<p><img src="/img/20171204/640-15.jpeg" alt=""></p>
-<p>客厅的边缘区域一般会有装饰挂画，可以使用可调角度的轨道射灯提供照明，同时为附近的空间提供间接照明，客人来家里就可以清楚的欣赏你的挂画。</p>
-<p><img src="/img/20171204/640-16.jpeg" alt=""></p>
-<h3 id="4、餐厅"><a href="#4、餐厅" class="headerlink" title="4、餐厅"></a>4、餐厅</h3><p><img src="/img/20171204/640-17.jpeg" alt=""></p>
-<p>你家的餐厅照明是不是这样?</p>
-<p><img src="/img/20171204/640-18.jpeg" alt=""></p>
-<p>一盏吸顶灯搞定全区照明，满足了日常使用，但是体验却不好。</p>
-<p>餐厅在照明上需要满足的两个点：一是要看的见菜，而是要看得清楚人。设计照明的目的则是为了更好的展现食物和人的气色。</p>
-<p>餐厅是最需要调光的，摩根可以通过全宅调光，增加空间的个性，突出食物的美味，打造一个光线柔和的空间。我们去高档餐厅吃饭，会发现里面的灯光都不会很亮，给人一种温馨，舒适的感觉。如果对餐厅做了调光的话，我们在家就可以享受到高档餐厅才有的灯光环境氛围。当节假日，比如情人节、结婚纪念日，生日，吃西餐时，我们把餐厅的灯光调至50%、10%，就可以打造出烛光晚餐的效果，这是一件多么浪漫的事情啊。</p>
-<p><img src="/img/20171204/640-19.jpeg" alt=""></p>
-<h3 id="5、厨房"><a href="#5、厨房" class="headerlink" title="5、厨房"></a>5、厨房</h3><p><img src="/img/20171204/640-20.jpeg" alt=""></p>
-<p>厨房作为美食的生产地，也是整个家里最需要光的地方，大多数人却只是在天花中央安了一盏吸顶灯而已。</p>
-<p>当你切菜煮饭的时候就会发现，你刚好挡住了吸顶灯下的光，面对的地方都是一片阴影。</p>
-<p><img src="/img/20171204/640-21.jpeg" alt=""></p>
-<p>是不是仿佛又看到了自己在厨房摸黑切菜的样子?</p>
-<p>采用暖黄色灯光，在料理台和水槽的上方增加焦点光，安装小射灯用于局部和重点照明。厨房的收纳区域可以增加轮廓光补充照明，安装灯带便于取放物件。</p>
-<p><img src="/img/20171204/640-22.jpeg" alt=""></p>
-<p>如果是开放式厨房，摩根选用可调角度的窄光速角射灯照亮料理台，这样能更灵活地调节光线。</p>
-<p><img src="/img/20171204/640-23.jpeg" alt=""></p>
-<h3 id="6、卧室"><a href="#6、卧室" class="headerlink" title="6、卧室"></a>6、卧室</h3><p><img src="/img/20171204/640-24.jpeg" alt=""></p>
-<p>这是我们的卧室，我们回到卧室主要是休息、睡觉的，我们可以把灯光调至10%，这种昏暗的灯光下，有助于我们快速入眠，有小孩的话，哄孩子入睡也会非常容易。尤其是小朋友，不敢关着灯睡觉时，可只留10%的亮光，睡着后会自动启动“睡眠模式”将灯光关闭。如果累了，想休息时，也只需按一下“睡眠模式”，不会影响睡眠质量。</p>
-<p>卧室是我们休息的区域，卧室的照明除了要满足平时的活动，还要顾及到起夜的时候，光线对睡眼惺忪的人来说，会很刺眼。</p>
-<p><img src="/img/20171204/640-25.jpeg" alt=""></p>
-<p>卧室的照明其实可以分为两部分：</p>
-<ul>
-<li>A整体照明。</li>
-<li>B局部照明。</li>
-</ul>
-<p><img src="/img/20171204/640-26.jpeg" alt=""></p>
-<p>整体照明可以装在卧室中央(床尾的天花板上)，避开躺下时会让光线直接进入视线的位置。布置柔和灯带抬高天花板，并通过漫反射的间接照明为整个空间进行光照辅助，整体感觉很舒服。</p>
-<p><img src="/img/20171204/640-27.jpeg" alt=""></p>
-<p>局部照明是为了让人在床上进行税前活动和方便起夜设置的。可以在床头距地约1.8m的两段墙壁，安装不占空间的壁灯。或者设置床头柜台灯或者落地灯也可以。</p>
-<p><img src="/img/20171204/640-28.jpeg" alt=""></p>
-<p>如果比较怕黑的，可以学酒店，在床尾设置光线微弱的墙角灯，增加安全感。晚上睡觉时只需要开一盏小小的灯就够了。</p>
-<p>喜欢大晚上看电视的，也要分散屏幕强光。在背景墙两边增加灯槽，拉近光暗对比，避免在昏暗环境下对视力造成伤害。</p>
-<p><img src="/img/20171204/640-29.jpeg" alt=""></p>
-<h3 id="7、卫生间"><a href="#7、卫生间" class="headerlink" title="7、卫生间"></a>7、卫生间</h3><p><img src="/img/20171204/640-30.jpeg" alt=""></p>
-<p>卫生间别看面积不大，里面的灯光可是大有名堂。卫生间的灯光设置不合理，在镜子前人脸会出现阴影，不利于化妆、刮胡子等脸部清洁活动。</p>
-<p><img src="/img/20171204/640-31.jpeg" alt=""></p>
-<p>在镜前区增加镜前照明，光源均匀打在脸上，可以避免出现上述情况。镜柜下方放置洗浴用品的位置，同样可以增设灯带。浴缸上方采用灯带取代传统的直射吸顶灯，营造均匀柔和的光线。避免中央光源对眼睛的影响。</p>
-<p><img src="/img/20171204/640-32.jpeg" alt=""></p>
-]]></content>
+    <content type="html"><![CDATA[<p>生活要有质感，这是很多人所追求的，也是很多人所向往的，但是，你真的懂质感吗?质感这种东西，重要的是感觉。怎样才能让自己的家变得有感觉呢?</p><p>答案当然是灯光!试想一下，当你回到家，看到明亮的、昏黄的、温暖的灯光，是不是都能让你的家有不一样的感觉?我们先来看一看，一个家的六大功能区。</p><a id="more"></a><p><img src="/img/20171204/640.jpeg" alt=""></p><p>一般人都会想，房间只要够亮就行了，于是就出现了下面这种“一盏荧光灯or吸顶灯走天下”的死板场景。</p><p><img src="/img/20171204/640-1.jpeg" alt=""></p><p>怎么样，是不是感觉看到了自己的家?</p><p>这样简单粗暴的照明设置，只能解决基本的照明需求。实际使用起来你会发现，其实有诸多不便，有解决办法吗?</p><p>当然有!这时候你就需要给家里做一个专业的灯光设计。</p><p><img src="/img/20171204/640-2.jpeg" alt=""></p><p>灯光100%、50%、10%、多种灯具互相配合，明暗张弛有度，提高房间品味的同时还能打造房间层次感。</p><p>那想打造一个生活与灯光协调的智能化住宅，具体应该怎么做呢?</p><p>首先你得认识灯光，了解灯光，才能合理的运用灯光。</p><h3 id="1、如何认识灯光"><a href="#1、如何认识灯光" class="headerlink" title="1、如何认识灯光?"></a>1、如何认识灯光?</h3><p><img src="/img/20171204/640-3.jpeg" alt=""></p><p>买灯具跟买家具一样，既麻烦又复杂，以下就是小编贴心为大家整理的两个步骤，学会它，选灯具似乎也很简单。</p><ul><li>1)确认你需要的灯光类别</li><li>2)确认你需要的照明方式</li></ul><p>灯光的类别分为：环境光、轮廓光、焦点光。</p><p><img src="/img/20171204/640-4.jpeg" alt=""></p><p>环境光是指照明范围最大的常规光源，看不清直接光源和方向，具有柔和的光照。</p><p>轮廓光主要是强调墙壁，天花板等的轮廓，营造空间的层次感，还可以增添室内的美感。</p><p>焦点光相对照明范围小，光照集中，主要用来营造局部的氛围</p><p>三种光的作用不一样当然照明方式也不一样。</p><blockquote><p>环境光照明方式↓</p></blockquote><p><img src="/img/20171204/640-5.jpeg" alt=""></p><blockquote><p>轮廓光照明方式↓</p></blockquote><p><img src="/img/20171204/640-6.jpeg" alt=""></p><blockquote><p>焦点光照明方式↓</p></blockquote><p><img src="/img/20171204/640-7.jpeg" alt=""></p><p>对灯光有了基本了解，接下来就看看灯光如何进行空间布局吧。</p><h3 id="2、玄关"><a href="#2、玄关" class="headerlink" title="2、玄关"></a>2、玄关</h3><p><img src="/img/20171204/640-8.jpeg" alt=""></p><p>传统的灯光只是起到了一个基础照明的作用，没有考虑到使用起来的方便性。人的身体会阻挡住焦点光，有限的光源也会让玄关柜的阴影阻挡视线。而且一进门，就要摸黑去找开关，导致来访，换鞋都很不方便。</p><p><img src="/img/20171204/640-9.jpeg" alt=""></p><p>人在玄关处停留的市价虽然不长，但是一个明亮的光线还是很重要的。</p><p>选用整体适合整体照明的嵌入式节能灯，光线平均且充分。在顶部设置红外感应开关，人一进家门就自动开启了回家模式，带来更好的居家体验。</p><p><img src="/img/20171204/640-10.jpeg" alt=""></p><h3 id="3、客厅"><a href="#3、客厅" class="headerlink" title="3、客厅"></a>3、客厅</h3><p><img src="/img/20171204/640-11.jpeg" alt=""></p><p>传统的客厅，用一盏吸顶灯或荧光灯管，就可以轻松的照亮整个空间。但是缺乏特色和可变性，不能根据空间使用者的行为变化做出对应调整。</p><p><img src="/img/20171204/640-12.jpeg" alt=""></p><p>采用点状光源，均匀分布于天花板，按需求调节亮度，节省用电，选用造型感强的漫射照明灯具，以满足核心区域的照明需求。</p><p><img src="/img/20171204/640-13.jpeg" alt=""></p><p>在墙面区域，可以增加光线更柔和、更均匀的间接照明灯饰。比如灯带或者一些小台灯。这样可以使人更放松。电视上方可以装灯槽，为整个空间提供漫反射光线，减少电视画面与背后的亮差，缓解视觉疲劳。</p><p><img src="/img/20171204/640-14.jpeg" alt=""></p><p>电视机旁的角落，可以加一盏落地灯，它能使客厅显得更有层次感，也能在你看电视的时候，提供柔和的中段视觉的光线，让你的眼睛有更舒服的体验。同时，一个颜值高的落地灯也是一个提升家庭格调的装饰物。</p><p><img src="/img/20171204/640-15.jpeg" alt=""></p><p>客厅的边缘区域一般会有装饰挂画，可以使用可调角度的轨道射灯提供照明，同时为附近的空间提供间接照明，客人来家里就可以清楚的欣赏你的挂画。</p><p><img src="/img/20171204/640-16.jpeg" alt=""></p><h3 id="4、餐厅"><a href="#4、餐厅" class="headerlink" title="4、餐厅"></a>4、餐厅</h3><p><img src="/img/20171204/640-17.jpeg" alt=""></p><p>你家的餐厅照明是不是这样?</p><p><img src="/img/20171204/640-18.jpeg" alt=""></p><p>一盏吸顶灯搞定全区照明，满足了日常使用，但是体验却不好。</p><p>餐厅在照明上需要满足的两个点：一是要看的见菜，而是要看得清楚人。设计照明的目的则是为了更好的展现食物和人的气色。</p><p>餐厅是最需要调光的，摩根可以通过全宅调光，增加空间的个性，突出食物的美味，打造一个光线柔和的空间。我们去高档餐厅吃饭，会发现里面的灯光都不会很亮，给人一种温馨，舒适的感觉。如果对餐厅做了调光的话，我们在家就可以享受到高档餐厅才有的灯光环境氛围。当节假日，比如情人节、结婚纪念日，生日，吃西餐时，我们把餐厅的灯光调至50%、10%，就可以打造出烛光晚餐的效果，这是一件多么浪漫的事情啊。</p><p><img src="/img/20171204/640-19.jpeg" alt=""></p><h3 id="5、厨房"><a href="#5、厨房" class="headerlink" title="5、厨房"></a>5、厨房</h3><p><img src="/img/20171204/640-20.jpeg" alt=""></p><p>厨房作为美食的生产地，也是整个家里最需要光的地方，大多数人却只是在天花中央安了一盏吸顶灯而已。</p><p>当你切菜煮饭的时候就会发现，你刚好挡住了吸顶灯下的光，面对的地方都是一片阴影。</p><p><img src="/img/20171204/640-21.jpeg" alt=""></p><p>是不是仿佛又看到了自己在厨房摸黑切菜的样子?</p><p>采用暖黄色灯光，在料理台和水槽的上方增加焦点光，安装小射灯用于局部和重点照明。厨房的收纳区域可以增加轮廓光补充照明，安装灯带便于取放物件。</p><p><img src="/img/20171204/640-22.jpeg" alt=""></p><p>如果是开放式厨房，摩根选用可调角度的窄光速角射灯照亮料理台，这样能更灵活地调节光线。</p><p><img src="/img/20171204/640-23.jpeg" alt=""></p><h3 id="6、卧室"><a href="#6、卧室" class="headerlink" title="6、卧室"></a>6、卧室</h3><p><img src="/img/20171204/640-24.jpeg" alt=""></p><p>这是我们的卧室，我们回到卧室主要是休息、睡觉的，我们可以把灯光调至10%，这种昏暗的灯光下，有助于我们快速入眠，有小孩的话，哄孩子入睡也会非常容易。尤其是小朋友，不敢关着灯睡觉时，可只留10%的亮光，睡着后会自动启动“睡眠模式”将灯光关闭。如果累了，想休息时，也只需按一下“睡眠模式”，不会影响睡眠质量。</p><p>卧室是我们休息的区域，卧室的照明除了要满足平时的活动，还要顾及到起夜的时候，光线对睡眼惺忪的人来说，会很刺眼。</p><p><img src="/img/20171204/640-25.jpeg" alt=""></p><p>卧室的照明其实可以分为两部分：</p><ul><li>A整体照明。</li><li>B局部照明。</li></ul><p><img src="/img/20171204/640-26.jpeg" alt=""></p><p>整体照明可以装在卧室中央(床尾的天花板上)，避开躺下时会让光线直接进入视线的位置。布置柔和灯带抬高天花板，并通过漫反射的间接照明为整个空间进行光照辅助，整体感觉很舒服。</p><p><img src="/img/20171204/640-27.jpeg" alt=""></p><p>局部照明是为了让人在床上进行税前活动和方便起夜设置的。可以在床头距地约1.8m的两段墙壁，安装不占空间的壁灯。或者设置床头柜台灯或者落地灯也可以。</p><p><img src="/img/20171204/640-28.jpeg" alt=""></p><p>如果比较怕黑的，可以学酒店，在床尾设置光线微弱的墙角灯，增加安全感。晚上睡觉时只需要开一盏小小的灯就够了。</p><p>喜欢大晚上看电视的，也要分散屏幕强光。在背景墙两边增加灯槽，拉近光暗对比，避免在昏暗环境下对视力造成伤害。</p><p><img src="/img/20171204/640-29.jpeg" alt=""></p><h3 id="7、卫生间"><a href="#7、卫生间" class="headerlink" title="7、卫生间"></a>7、卫生间</h3><p><img src="/img/20171204/640-30.jpeg" alt=""></p><p>卫生间别看面积不大，里面的灯光可是大有名堂。卫生间的灯光设置不合理，在镜子前人脸会出现阴影，不利于化妆、刮胡子等脸部清洁活动。</p><p><img src="/img/20171204/640-31.jpeg" alt=""></p><p>在镜前区增加镜前照明，光源均匀打在脸上，可以避免出现上述情况。镜柜下方放置洗浴用品的位置，同样可以增设灯带。浴缸上方采用灯带取代传统的直射吸顶灯，营造均匀柔和的光线。避免中央光源对眼睛的影响。</p><p><img src="/img/20171204/640-32.jpeg" alt=""></p>]]></content>
     
     <summary type="html">
     
@@ -1014,29 +374,12 @@ make V=s
     <published>2017-11-29T01:02:08.000Z</published>
     <updated>2017-11-29T01:35:13.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="一、添加开机自启服务"><a href="#一、添加开机自启服务" class="headerlink" title="一、添加开机自启服务"></a>一、添加开机自启服务</h1><p>在CentOS 7中添加开机自启服务非常方便，只需要两条命令(以Jenkins为例)：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">systemctl enable jenkins.service  # 设置jenkins服务为自启动服务</div><div class="line">sysstemctl start  jenkins.service # 启动jenkins服务</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h1 id="二、添加开机自启脚本"><a href="#二、添加开机自启脚本" class="headerlink" title="二、添加开机自启脚本"></a>二、添加开机自启脚本</h1><p>在centos7中增加脚本有两种常用的方法，以脚本autostart.sh为例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">#description:开机自启脚本</div><div class="line">/usr/local/tomcat/bin/startup.sh  #启动tomcat</div></pre></td></tr></table></figure>
-<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>1、赋予脚本可执行权限（/opt/script/autostart.sh是你的脚本路径）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x /opt/script/autostart.sh</div></pre></td></tr></table></figure>
-<p>2、打开/etc/rc.d/rc/local文件，在末尾增加如下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/opt/script/autostart.sh</div></pre></td></tr></table></figure>
-<p>3、在centos7中，/etc/rc.d/rc.local的权限被降低了，所以需要执行如下命令赋予其可执行权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x /etc/rc.d/rc.local</div></pre></td></tr></table></figure>
-<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>1、将脚本移动到/etc/rc.d/init.d目录下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mv  /opt/script/autostart.sh /etc/rc.d/init.d</div></pre></td></tr></table></figure>
-<p>2、增加脚本的可执行权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x  /etc/rc.d/init.d/autostart.sh</div></pre></td></tr></table></figure>
-<p>3、添加脚本到开机自动启动项目中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /etc/rc.d/init.d</div><div class="line">chkconfig --add autostart.sh</div><div class="line">chkconfig autostart.sh on</div></pre></td></tr></table></figure>
-]]></content>
+    <content type="html"><![CDATA[<h1 id="一、添加开机自启服务"><a href="#一、添加开机自启服务" class="headerlink" title="一、添加开机自启服务"></a>一、添加开机自启服务</h1><p>在CentOS 7中添加开机自启服务非常方便，只需要两条命令(以Jenkins为例)：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable jenkins.service  # 设置jenkins服务为自启动服务</span><br><span class="line">sysstemctl start  jenkins.service # 启动jenkins服务</span><br></pre></td></tr></table></figure><a id="more"></a><h1 id="二、添加开机自启脚本"><a href="#二、添加开机自启脚本" class="headerlink" title="二、添加开机自启脚本"></a>二、添加开机自启脚本</h1><p>在centos7中增加脚本有两种常用的方法，以脚本autostart.sh为例：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">#description:开机自启脚本</span><br><span class="line">/usr/local/tomcat/bin/startup.sh  #启动tomcat</span><br></pre></td></tr></table></figure><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>1、赋予脚本可执行权限（/opt/script/autostart.sh是你的脚本路径）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /opt/script/autostart.sh</span><br></pre></td></tr></table></figure><p>2、打开/etc/rc.d/rc/local文件，在末尾增加如下内容</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/script/autostart.sh</span><br></pre></td></tr></table></figure><p>3、在centos7中，/etc/rc.d/rc.local的权限被降低了，所以需要执行如下命令赋予其可执行权限</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /etc/rc.d/rc.local</span><br></pre></td></tr></table></figure><h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>1、将脚本移动到/etc/rc.d/init.d目录下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv  /opt/script/autostart.sh /etc/rc.d/init.d</span><br></pre></td></tr></table></figure><p>2、增加脚本的可执行权限</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x  /etc/rc.d/init.d/autostart.sh</span><br></pre></td></tr></table></figure><p>3、添加脚本到开机自动启动项目中</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/rc.d/init.d</span><br><span class="line">chkconfig --add autostart.sh</span><br><span class="line">chkconfig autostart.sh on</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       &lt;h1 id=&quot;一、添加开机自启服务&quot;&gt;&lt;a href=&quot;#一、添加开机自启服务&quot; class=&quot;headerlink&quot; title=&quot;一、添加开机自启服务&quot;&gt;&lt;/a&gt;一、添加开机自启服务&lt;/h1&gt;&lt;p&gt;在CentOS 7中添加开机自启服务非常方便，只需要两条命令(以Jenkins为例)：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;systemctl enable jenkins.service  # 设置jenkins服务为自启动服务&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sysstemctl start  jenkins.service # 启动jenkins服务&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;systemctl enable jenkins.service  # 设置jenkins服务为自启动服务&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sysstemctl start  jenkins.service # 启动jenkins服务&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -1052,55 +395,7 @@ make V=s
     <published>2017-11-27T07:02:08.000Z</published>
     <updated>2017-11-29T01:22:58.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="办公节能新技术"><a href="#办公节能新技术" class="headerlink" title="办公节能新技术"></a>办公节能新技术</h2><p>在提倡建设节约型社会的今天，建筑节能问题日益得到普遍关注，而降低新风及冷风负 荷也就成为主要的节能措施之一。建筑室内人员密度是新风量及冷风量合理确定需要考虑的重点因素也是难点因素。</p>
-<p>近年来，基于摄像头的人数检测技术愈发成熟。然而，在办公室这样的环境中，摄像头的使用受到一定的限制。</p>
-<p>本文介绍了一种基于阵列红外传感器的办公空间人员密度监控解决方案。在充分保护个人隐私及企业秘密的前提下，准确实时的检测人员密度，从而为新风及冷风控制提供准确的输入参书以达到节能之需求。</p>
-<a id="more"></a>
-<h2 id="红外阵列传感器"><a href="#红外阵列传感器" class="headerlink" title="红外阵列传感器"></a>红外阵列传感器</h2><p>PIR 即人体热释电红外传感器，被广泛的应用到电子防盗、人体探测领域中，这种传感器不会导致隐私和商业保密泄露，但是这种传感器从原理上，只能检测到运动中的人体目标，单独的 PIR 传感器不能检测出人员分布。</p>
-<p>红外阵列传感器是一个包含多个像素的 IR 传感阵列组合，每个像素都具有低噪声放大器以及 ADC，包含一个数字 I2C 接口用于读取传感阵列 ADC 转化后存储在 RAM 中的测量结果、以及一片 EEPROM 用于存储温度计算和校准的参数。</p>
-<p>AMG8853通过探测物体由于黑体辐射而产生的红外光而测量出物体表面温度的。根据黑体辐射原理，一切温度高于绝对零度的物体都在不停地向周围空间发出红外辐射能量。</p>
-<p>物体的红外辐射能量的大小及其按波长的分布与它的表面温度有着十分密切的关系。</p>
-<p>因此，通过对物体自身辐射的红外能量的测量，便能准确地测定它的表面温度，这就是红外辐射测温 所依据的客观基础。</p>
-<div align="center"><br><img src="/img/20171127/AMG8853.jpg" alt=""><br></div>
-
-<p>上图为AMG8853内部结构，数字有源热电堆阵列是由 64 个传感器探测单元（热电堆）组成，每个探测单元探测接收到的红外波段能量并将其转化为电信号，经过 ADC 转化后转化为数字信息，然后通过数字滤波写入传感器中的 RAM。</p>
-<p>用户通过 I2C 界面可以访问 RAM并读取测量结果用于温度计算。</p>
-<p>选用 120°×30°视场角的传感器，如果垂直安装高度为 2.5 米，那么单个 AMG8853检测 范围可以覆盖到 8.6m×1.3m 的地面。采用多个传感器拼接可以实现完整的室内区域覆盖。</p>
-<h2 id="红外图像采集系统"><a href="#红外图像采集系统" class="headerlink" title="红外图像采集系统"></a>红外图像采集系统</h2><p>连接红外传感器的外部单片机读取不同地址的 RAM 数据，并参考 EEPROM 的校准数值，来补偿不同传感器之间的差异，以建立热图像，来计算图像中每点的温度。</p>
-<p>同时考虑到 AMG8853传感器速度快，数据量大，多个传感器拼接成像时需要良好的管 理，因此，应用中需要可靠的数据通信方式，使用以太网通讯可以保证通信质量。</p>
-<p>因此在该系统中，我们采用 MN103SFL7G 作为主控单片机来接收并处理相应的数据，同时负责最终计算结果的上传，同时采用 PoE 供电方式来实现系统供电及通信。系统架构图如下：</p>
-<div align="center"><br><img src="/img/20171127/AMG8853-1.jpg" alt=""><br></div>
-
-<blockquote>
-<p>整个计算共需要如下几个步骤：</p>
-<ul>
-<li>计算传感器自身温度，从传感器中读取 PTAT 寄存器，得到值后与参数运算获得传感器温度；</li>
-<li>补偿和校准。运算值用于补偿和校准每个传感像素单元的差异。这部分计算利用了若干公式，其中的参数是由 EEPROM 中的值二次计算而来;</li>
-<li>发射率补偿。根据热辐射理论，物体不可能是一个“黑体”，即其发射率总是小于 1。 不同的材料具有不同的发射率，在应用中需要考虑被测物体表面的材料发射率，并加以补偿;</li>
-<li>最后根据公式计算出被测物的表面温度。</li>
-</ul>
-</blockquote>
-<div align="center"><br><img src="/img/20171127/AMG8853-2.jpg" alt=""><br></div>
-
-<p>计算结果即为视场内的目标的表面温度。计算结束后，结果乘以 10 以后，以整数形式存储在 RAM 中。通过 UDP 以太网协议，将数据传送至上位机。</p>
-<h2 id="红外图像处理算法"><a href="#红外图像处理算法" class="headerlink" title="红外图像处理算法"></a>红外图像处理算法</h2><p>计算机通过以太网与传感器建立 UDP 连接，并获取到传感器传回的温度信息。计算机将这些数据有序的拼接起来，还原出办公室内的温度信息。</p>
-<p>然而这种温度信息并不能直观的反映出办公环境中的人数和位置信息，计算机可以通过一些算法，将人数以及人所在房间中的位置计算出来，这样的结果更直观，也更利于其他应用处理。</p>
-<p>因此，计算机在获取到温度信息表之后，需要通过算法将办公室内人员数量计算出来并给出对应的位置坐标。</p>
-<p>室内人员数量可以通过图像处理的算法确定。人数计算的算法过程如下图所示。</p>
-<div align="center"><br><img src="/img/20171127/AMG8853-3.jpg" alt=""><br></div>
-
-<p>图像处理算法的关键在于准确的将人体温度从温度矩阵中提取出来。</p>
-<p>由于人体表面温度因人而异，而且受室温的影响较大，所以有效的提取人体表面温度遇到了诸多难题。经分析和试验，采用大津法进行阈值提取，可以将人体表面温度与环境温度区别开来。</p>
-<p>处理矩阵的红外信息，工程上和学术界普遍使用灰度级、伪彩色等图像的方法表示，使用图像处理的方法表示、分析和处理红外图像是可行而有效的。</p>
-<p>温度数据可以通过归一化后，落在对应的灰度级上，从而可以通过灰度图像表示也可以使用蓝色表示低的温度，红色表示高温，然后在色彩空间渐变，则是伪彩色的表示方法。</p>
-<p>在我们的程序中，使用伪彩色来表示温度高低，使人可以直观的看到温度分布，从图中可以看出，红色部分代表温度要比周围环境高，则认为这部分办公室空间被人占用；蓝色部分代表温度要稍微低一点，认为这部分空间没有被占用。</p>
-<h2 id="最终我们将得到如下的人员分布热图及人数统计值："><a href="#最终我们将得到如下的人员分布热图及人数统计值：" class="headerlink" title="最终我们将得到如下的人员分布热图及人数统计值："></a>最终我们将得到如下的人员分布热图及人数统计值：</h2><div align="center"><br><img src="/img/20171127/AMG8853-4.png" alt=""><br></div>
-
-<p>界面的主要部分是将温度数据矩阵通过伪彩色方法显示出来，人眼便可以直观的看出温度的高低分布。程序通过之前所述算法，获得当前办公环境中的人数，并显示在界面上。</p>
-<p>楼宇控制系统可以根据所获得的数据精确的控制空间中所需要的新风量及冷风量，从而达在节能与办公舒适性直接达到最佳的平衡。</p>
-<p>综上所述，基于红外阵列传感器的室内人员分布检测系统具有配置灵活、硬件结构简单、保密性好、测量效果好的特点。为办公室节能控制提供了精确的，稳定的实时数据。</p>
-<p>同时可以应用在流动办公室监控配置场合，管理人员可以通过直观的界面看出人员分布情况，从而合理规划办公室空间，得到最优的空间利用。</p>
-]]></content>
+    <content type="html"><![CDATA[<h2 id="办公节能新技术"><a href="#办公节能新技术" class="headerlink" title="办公节能新技术"></a>办公节能新技术</h2><p>在提倡建设节约型社会的今天，建筑节能问题日益得到普遍关注，而降低新风及冷风负 荷也就成为主要的节能措施之一。建筑室内人员密度是新风量及冷风量合理确定需要考虑的重点因素也是难点因素。</p><p>近年来，基于摄像头的人数检测技术愈发成熟。然而，在办公室这样的环境中，摄像头的使用受到一定的限制。</p><p>本文介绍了一种基于阵列红外传感器的办公空间人员密度监控解决方案。在充分保护个人隐私及企业秘密的前提下，准确实时的检测人员密度，从而为新风及冷风控制提供准确的输入参书以达到节能之需求。</p><a id="more"></a><h2 id="红外阵列传感器"><a href="#红外阵列传感器" class="headerlink" title="红外阵列传感器"></a>红外阵列传感器</h2><p>PIR 即人体热释电红外传感器，被广泛的应用到电子防盗、人体探测领域中，这种传感器不会导致隐私和商业保密泄露，但是这种传感器从原理上，只能检测到运动中的人体目标，单独的 PIR 传感器不能检测出人员分布。</p><p>红外阵列传感器是一个包含多个像素的 IR 传感阵列组合，每个像素都具有低噪声放大器以及 ADC，包含一个数字 I2C 接口用于读取传感阵列 ADC 转化后存储在 RAM 中的测量结果、以及一片 EEPROM 用于存储温度计算和校准的参数。</p><p>AMG8853通过探测物体由于黑体辐射而产生的红外光而测量出物体表面温度的。根据黑体辐射原理，一切温度高于绝对零度的物体都在不停地向周围空间发出红外辐射能量。</p><p>物体的红外辐射能量的大小及其按波长的分布与它的表面温度有着十分密切的关系。</p><p>因此，通过对物体自身辐射的红外能量的测量，便能准确地测定它的表面温度，这就是红外辐射测温 所依据的客观基础。</p><div align="center"><br><img src="/img/20171127/AMG8853.jpg" alt=""><br></div><p>上图为AMG8853内部结构，数字有源热电堆阵列是由 64 个传感器探测单元（热电堆）组成，每个探测单元探测接收到的红外波段能量并将其转化为电信号，经过 ADC 转化后转化为数字信息，然后通过数字滤波写入传感器中的 RAM。</p><p>用户通过 I2C 界面可以访问 RAM并读取测量结果用于温度计算。</p><p>选用 120°×30°视场角的传感器，如果垂直安装高度为 2.5 米，那么单个 AMG8853检测 范围可以覆盖到 8.6m×1.3m 的地面。采用多个传感器拼接可以实现完整的室内区域覆盖。</p><h2 id="红外图像采集系统"><a href="#红外图像采集系统" class="headerlink" title="红外图像采集系统"></a>红外图像采集系统</h2><p>连接红外传感器的外部单片机读取不同地址的 RAM 数据，并参考 EEPROM 的校准数值，来补偿不同传感器之间的差异，以建立热图像，来计算图像中每点的温度。</p><p>同时考虑到 AMG8853传感器速度快，数据量大，多个传感器拼接成像时需要良好的管 理，因此，应用中需要可靠的数据通信方式，使用以太网通讯可以保证通信质量。</p><p>因此在该系统中，我们采用 MN103SFL7G 作为主控单片机来接收并处理相应的数据，同时负责最终计算结果的上传，同时采用 PoE 供电方式来实现系统供电及通信。系统架构图如下：</p><div align="center"><br><img src="/img/20171127/AMG8853-1.jpg" alt=""><br></div><blockquote><p>整个计算共需要如下几个步骤：</p><ul><li>计算传感器自身温度，从传感器中读取 PTAT 寄存器，得到值后与参数运算获得传感器温度；</li><li>补偿和校准。运算值用于补偿和校准每个传感像素单元的差异。这部分计算利用了若干公式，其中的参数是由 EEPROM 中的值二次计算而来;</li><li>发射率补偿。根据热辐射理论，物体不可能是一个“黑体”，即其发射率总是小于 1。 不同的材料具有不同的发射率，在应用中需要考虑被测物体表面的材料发射率，并加以补偿;</li><li>最后根据公式计算出被测物的表面温度。</li></ul></blockquote><div align="center"><br><img src="/img/20171127/AMG8853-2.jpg" alt=""><br></div><p>计算结果即为视场内的目标的表面温度。计算结束后，结果乘以 10 以后，以整数形式存储在 RAM 中。通过 UDP 以太网协议，将数据传送至上位机。</p><h2 id="红外图像处理算法"><a href="#红外图像处理算法" class="headerlink" title="红外图像处理算法"></a>红外图像处理算法</h2><p>计算机通过以太网与传感器建立 UDP 连接，并获取到传感器传回的温度信息。计算机将这些数据有序的拼接起来，还原出办公室内的温度信息。</p><p>然而这种温度信息并不能直观的反映出办公环境中的人数和位置信息，计算机可以通过一些算法，将人数以及人所在房间中的位置计算出来，这样的结果更直观，也更利于其他应用处理。</p><p>因此，计算机在获取到温度信息表之后，需要通过算法将办公室内人员数量计算出来并给出对应的位置坐标。</p><p>室内人员数量可以通过图像处理的算法确定。人数计算的算法过程如下图所示。</p><div align="center"><br><img src="/img/20171127/AMG8853-3.jpg" alt=""><br></div><p>图像处理算法的关键在于准确的将人体温度从温度矩阵中提取出来。</p><p>由于人体表面温度因人而异，而且受室温的影响较大，所以有效的提取人体表面温度遇到了诸多难题。经分析和试验，采用大津法进行阈值提取，可以将人体表面温度与环境温度区别开来。</p><p>处理矩阵的红外信息，工程上和学术界普遍使用灰度级、伪彩色等图像的方法表示，使用图像处理的方法表示、分析和处理红外图像是可行而有效的。</p><p>温度数据可以通过归一化后，落在对应的灰度级上，从而可以通过灰度图像表示也可以使用蓝色表示低的温度，红色表示高温，然后在色彩空间渐变，则是伪彩色的表示方法。</p><p>在我们的程序中，使用伪彩色来表示温度高低，使人可以直观的看到温度分布，从图中可以看出，红色部分代表温度要比周围环境高，则认为这部分办公室空间被人占用；蓝色部分代表温度要稍微低一点，认为这部分空间没有被占用。</p><h2 id="最终我们将得到如下的人员分布热图及人数统计值："><a href="#最终我们将得到如下的人员分布热图及人数统计值：" class="headerlink" title="最终我们将得到如下的人员分布热图及人数统计值："></a>最终我们将得到如下的人员分布热图及人数统计值：</h2><div align="center"><br><img src="/img/20171127/AMG8853-4.png" alt=""><br></div><p>界面的主要部分是将温度数据矩阵通过伪彩色方法显示出来，人眼便可以直观的看出温度的高低分布。程序通过之前所述算法，获得当前办公环境中的人数，并显示在界面上。</p><p>楼宇控制系统可以根据所获得的数据精确的控制空间中所需要的新风量及冷风量，从而达在节能与办公舒适性直接达到最佳的平衡。</p><p>综上所述，基于红外阵列传感器的室内人员分布检测系统具有配置灵活、硬件结构简单、保密性好、测量效果好的特点。为办公室节能控制提供了精确的，稳定的实时数据。</p><p>同时可以应用在流动办公室监控配置场合，管理人员可以通过直观的界面看出人员分布情况，从而合理规划办公室空间，得到最优的空间利用。</p>]]></content>
     
     <summary type="html">
     
@@ -1122,54 +417,7 @@ make V=s
     <published>2017-11-26T15:02:08.000Z</published>
     <updated>2017-11-29T01:22:58.000Z</updated>
     
-    <content type="html"><![CDATA[<p> 近年来，由于基于MEMS的独立式热隔离像素结构采用薄膜红外吸收层，使得非制冷红外传感器取得了显著进展。　　</p>
-<p><img src="/img/20171126/W020160708332880615768.jpg" alt=""></p>
-<a id="more"></a>
-<p>　　人们利用红外传感技术开发了许多应用，例如热成像、人体探测以及夜视等。对于红外能量的量化，使用户能够确定目标的温度以及热行为。</p>
-<p>　　红外热传感和成像仪实现了被动、非侵入式的物体表面温度测量，并能够绘制其温度分布图谱。随着物体表面温度的升高，其辐射光谱的强度也会相应增强。这使我们可以通过远程测量人体或目标物体发射出的能量来确定其温度。红外探测器主要分为两类——红外光子探测器和红外热探测器。</p>
-<h1 id="红外光子探测器"><a href="#红外光子探测器" class="headerlink" title="红外光子探测器"></a>红外光子探测器</h1><p>　　红外光子探测器利用材料和电子间的相互作用，吸收被测物体表面发出的红外辐射。通过吸收电子产生的电能分布变化，输出红外探测信号。红外光子探测器每个单元对入射辐射能量的吸收具有波长选择性。红外光子探测器具有完美的信噪比和快速响应性能。但是，红外光子探测器的缺点是需要对其进行低温冷却。而冷却要求，是基于半导体光子探测器的红外系统获得广泛应用的主要障碍。因为这使得光子探测器红外系统变得庞大、笨重、昂贵，而且使用不便。</p>
-<h1 id="红外热探测器"><a href="#红外热探测器" class="headerlink" title="红外热探测器"></a>红外热探测器</h1><p>　　一直以来，高成本问题严重限制了消费类市场红外系统的发展。红外热探测器优势包括宽广的波长响应范围、无需冷却、高温稳定性、高信噪比以及较低的成本。红外热探测器主要分为热释电、热电堆和微测辐射热计。（注：本文暂不介绍微测辐射热计，请参考：非制冷红外焦平面探测器及其技术发展动态）</p>
-<h1 id="红外热释电传感器"><a href="#红外热释电传感器" class="headerlink" title="红外热释电传感器"></a>红外热释电传感器</h1><p>　　热释电材料吸收热辐射，在晶体材料间产生静态电压信号。但是，热释电材料在持续的红外辐射下，其输出的静态电压信号会减弱，需要对其进行周期性的刷新。热释电探测器可以实现大规模批量生产。它们凭借防盗系统和自动照明开关等应用，在消费类市场逐渐找到了切入口。热释电探测器也被应用于高性能气体分析、火焰探测器等科学仪器。另一方面，对于静态温度测量应用，热释电探测器仍然相对比较昂贵，需要包含一些机械部件。</p>
-<h1 id="红外热电堆传感器"><a href="#红外热电堆传感器" class="headerlink" title="红外热电堆传感器"></a>红外热电堆传感器</h1><p>　　根据塞贝克效应，在两种不同材料的连接处，当它们的温度有差异时，会在这两种材料组成的闭环电路中产生电流。这种现象被广泛应用于热电偶的温度测量。热电堆或热电阵列由许多热敏元件组成，每个热敏元件都是一根由两种不同热敏活性材料组成的细丝。当细丝两端的温度出现差异时，便在细丝两端产生了电压（热张力）。热接点集中在一个非常薄的共同吸收区，而冷节点位于一个周边环绕高热质量的散热片上。</p>
-<p>　　现代半导体技术实现了在几平方毫米内，制造包含数百个热电偶的红外热电堆传感器。这种红外传感器因其微小的尺寸，而具有极高的灵敏度和极快的响应时间，而且由于应用了半导体规模生产和光刻技术，使其成本也较低。</p>
-<h1 id="什么是Grid-EYE"><a href="#什么是Grid-EYE" class="headerlink" title="什么是Grid-EYE"></a>什么是Grid-EYE</h1><p>　　松下Grid-EYE的8 x 8热电堆阵列红外传感器，开启了其红外阵列传感器业务。Grid-EYE是一款64像素红外摄像头，采用一体化的紧凑SMD封装。基于松下的MEMS技术，Grid-EYE包含一颗MEMS传感器芯片、一颗数字ASIC（I2C接口）以及一款硅基镜头。　　</p>
-<p><img src="/img/20171126/XzhN6uEQ_4dfn.png" alt=""></p>
-<p>　　Grid-EYE在一个8 x 8网格式布局内含有64个热电堆元件，能够在不接触被测物体的前提下探测物体表面的绝对温度。与传统的传感器不同，Grid-EYE采用了一款受专利保护的60°硅基镜头，该镜头在硅晶圆上通过刻蚀工艺制成，是市场上最小（高度低于0.3 mm）的镜头。所有这些技术的结合，使该款传感器的封装尺寸仅为11.6 mm x 8 mm x 4.3 mm。　　</p>
-<p><img src="/img/20171126/W020160708332880629183.jpg" alt=""></p>
-<blockquote>
-<p>含有64个热电堆元件的Grid-EYE可以探测静止和运动的人体</p>
-</blockquote>
-<p>　　与单点热电堆红外传感器和热释电传感器相比，Grid-EYE不仅能够探测移动的人体和物体，还能够探测不动的人体和物体的出现和位置、运动方向以及精确的表面温度，温度测量范围为- 20°C~+100°C。　　</p>
-<p><img src="/img/20171126/W020160708332880624859.jpg" alt=""></p>
-<blockquote>
-<p>基于MEMS技术的热电堆阵列红外传感器</p>
-</blockquote>
-<p>　　松下凭借Grid-EYE的宽温度测量范围，其噪声等效温差在室温时，精度达到了+/- 0.08°C @ 1Hz。Grid-EYE热电堆传感元件协同阵列，能够探测多个人体或物体在不同方向上的运动。近距离时，Grid-EYE甚至能够探测人手的运动，实现简单的手势控制。　<br><img src="/img/20171126/W020160708332880629505.jpg" alt=""></p>
-<blockquote>
-<p>Grid-EYE红外传感器实现手势控制</p>
-</blockquote>
-<h2 id="应用领域"><a href="#应用领域" class="headerlink" title="应用领域"></a>应用领域</h2><p><img src="/img/20171126/area.png" alt=""><br><img src="/img/20171126/application.png" alt=""></p>
-<p>　　许多红外应用不需要完整的图像信息，只需要从图像中挖掘出的特定信息，例如位置、运动以及热（或冷）物体的区域。面对这些非成像应用的新兴市场，需要基于不同概念的传统成像红外焦平面阵列的红外阵列传感器。这里将讨论热成像系统应用的两个主要门类：非活体目标和人体目标。</p>
-<h3 id="非活体目标"><a href="#非活体目标" class="headerlink" title="非活体目标"></a>非活体目标</h3><p>　　工厂机械设备、发电及配电设备、物料以及工艺生产制造出来的部件，它们的温度和热学性能，是生产制造过程中以及工厂维持安全和经济有效运营的最重要因素。</p>
-<p>　　突然出现的热点能够预示有缺陷的区域和连接点。应用热成像技术进行温度测量的原因之一，是热成像测量无需接触被测物体。热成像技术可以作为一款诊断工具应用于电力传输系统中电气接头的检测，也可以用于探测其它电气装置的热状况。它还可以应用于不同材料的具体特性评估。</p>
-<h3 id="人体目标"><a href="#人体目标" class="headerlink" title="人体目标"></a>人体目标</h3><p>　　被动红外传感器针对即时进入或目标探测应用效果很好。但是，它们仅能感测运动中的人体或目标，这使它们能够有条件地应用于建筑自动化和安防系统中。这些简单的红外传感器具有传统的局限性，因此不能应用于更先进的探测领域。例如，被动红外传感器无法感应不动的目标，它们不能精确地探测目标的运动方向，它们也不能获得热成像图谱或者探测目标的温度。所有这三个任务都是下一代智能自动化、安防系统、数字标识系统以及医疗成像应用的基本要素。</p>
-<h3 id="人体探测设计"><a href="#人体探测设计" class="headerlink" title="人体探测设计"></a>人体探测设计</h3><p>　　热电堆阵列传感器能够在保留探测对象隐私的前提下，提供粗略的追踪功能。Basu和Rowe开发了一款低成本方法，在Grid-EYE传感器的视场内，估算人员数量和他们的运动方向。对具有本地峰值计数功能的连接组件上应用支持向量机分类，他们估算即时进入人数的准确率超过了80%（《应用热电堆阵列传感器的运动追踪和空间关系学》，2014，卡内基梅隆大学）。　　</p>
-<p><img src="/img/20171126/W020160708333700204392.jpg" alt=""></p>
-<blockquote>
-<p>利用Grid-EYE红外传感器估算即时进入房间的人数</p>
-</blockquote>
-<p>　　Jeong、Yoon和Joung等人在2014年开发了一种更复杂的方法，他们利用Grid-EYE传感器结合一种概率统计方法来确定人体目标，这种概率统计方法利用了多重前后成像处理技术。前处理和图像分割提供基本结构，然后利用概率统计方法来计算图中的热标识为人体目标的概率。即使分割出来的人体图像短暂消失了，他们提出的方法还能够利用局部自适应阈值实现继续追踪。</p>
-<h3 id="智能建筑应用"><a href="#智能建筑应用" class="headerlink" title="智能建筑应用"></a>智能建筑应用</h3><p>　　智能建筑应用是信息物理系统的案例之一。大部分时间，这些应用需要不同类型的传感器、网络拓扑结构以及个性的配置，来满足不同用户的需求。利用Grid-EYE传感器提供的即时进入信息，能够帮助实现家居自动化和暖通系统的集成。Grid-EYE传感器当然也可以应用于安防目的。即时进入监测、安防和建筑自动化是智能建筑的基本功能。房间的即时进入监测，能够帮助建筑管理者实现暖通系统控制，由此实现可持续发展。Grid-EYE传感器8 × 8二元矩阵中连接的组件，能够告诉我们该传感器周边人员的数量（即时进入监测）。　　</p>
-<p><img src="/img/20171126/W020160708333700208787.jpg" alt=""></p>
-<blockquote>
-<p>Grid-EYE红外传感器的应用</p>
-</blockquote>
-<p>　　对于安防应用，即时进入监测能够监测非法入侵的发生，能够即时触发警报或者发送相关信息给屋主。对于家居自动化应用，它能够用于暖通系统或者家用电器的开启。</p>
-<p>　　美国加州大学的Merced在2013年展示了一款基于Grid-EYE传感器的系统，用于估算即时进入信息，使他们能够基于房间进入人员的数量调整房间利用，从而有效的维持房间的温度，通过这一方法每年能够节约25%的能源。</p>
-<blockquote>
-<iframe height="498" width="510" src="http://player.youku.com/embed/XMzE4NTY0NTQzNg==" frameborder="0" 'allowfullscreen'=""></iframe>
-</blockquote>
-]]></content>
+    <content type="html"><![CDATA[<p> 近年来，由于基于MEMS的独立式热隔离像素结构采用薄膜红外吸收层，使得非制冷红外传感器取得了显著进展。　　</p><p><img src="/img/20171126/W020160708332880615768.jpg" alt=""></p><a id="more"></a><p>　　人们利用红外传感技术开发了许多应用，例如热成像、人体探测以及夜视等。对于红外能量的量化，使用户能够确定目标的温度以及热行为。</p><p>　　红外热传感和成像仪实现了被动、非侵入式的物体表面温度测量，并能够绘制其温度分布图谱。随着物体表面温度的升高，其辐射光谱的强度也会相应增强。这使我们可以通过远程测量人体或目标物体发射出的能量来确定其温度。红外探测器主要分为两类——红外光子探测器和红外热探测器。</p><h1 id="红外光子探测器"><a href="#红外光子探测器" class="headerlink" title="红外光子探测器"></a>红外光子探测器</h1><p>　　红外光子探测器利用材料和电子间的相互作用，吸收被测物体表面发出的红外辐射。通过吸收电子产生的电能分布变化，输出红外探测信号。红外光子探测器每个单元对入射辐射能量的吸收具有波长选择性。红外光子探测器具有完美的信噪比和快速响应性能。但是，红外光子探测器的缺点是需要对其进行低温冷却。而冷却要求，是基于半导体光子探测器的红外系统获得广泛应用的主要障碍。因为这使得光子探测器红外系统变得庞大、笨重、昂贵，而且使用不便。</p><h1 id="红外热探测器"><a href="#红外热探测器" class="headerlink" title="红外热探测器"></a>红外热探测器</h1><p>　　一直以来，高成本问题严重限制了消费类市场红外系统的发展。红外热探测器优势包括宽广的波长响应范围、无需冷却、高温稳定性、高信噪比以及较低的成本。红外热探测器主要分为热释电、热电堆和微测辐射热计。（注：本文暂不介绍微测辐射热计，请参考：非制冷红外焦平面探测器及其技术发展动态）</p><h1 id="红外热释电传感器"><a href="#红外热释电传感器" class="headerlink" title="红外热释电传感器"></a>红外热释电传感器</h1><p>　　热释电材料吸收热辐射，在晶体材料间产生静态电压信号。但是，热释电材料在持续的红外辐射下，其输出的静态电压信号会减弱，需要对其进行周期性的刷新。热释电探测器可以实现大规模批量生产。它们凭借防盗系统和自动照明开关等应用，在消费类市场逐渐找到了切入口。热释电探测器也被应用于高性能气体分析、火焰探测器等科学仪器。另一方面，对于静态温度测量应用，热释电探测器仍然相对比较昂贵，需要包含一些机械部件。</p><h1 id="红外热电堆传感器"><a href="#红外热电堆传感器" class="headerlink" title="红外热电堆传感器"></a>红外热电堆传感器</h1><p>　　根据塞贝克效应，在两种不同材料的连接处，当它们的温度有差异时，会在这两种材料组成的闭环电路中产生电流。这种现象被广泛应用于热电偶的温度测量。热电堆或热电阵列由许多热敏元件组成，每个热敏元件都是一根由两种不同热敏活性材料组成的细丝。当细丝两端的温度出现差异时，便在细丝两端产生了电压（热张力）。热接点集中在一个非常薄的共同吸收区，而冷节点位于一个周边环绕高热质量的散热片上。</p><p>　　现代半导体技术实现了在几平方毫米内，制造包含数百个热电偶的红外热电堆传感器。这种红外传感器因其微小的尺寸，而具有极高的灵敏度和极快的响应时间，而且由于应用了半导体规模生产和光刻技术，使其成本也较低。</p><h1 id="什么是Grid-EYE"><a href="#什么是Grid-EYE" class="headerlink" title="什么是Grid-EYE"></a>什么是Grid-EYE</h1><p>　　松下Grid-EYE的8 x 8热电堆阵列红外传感器，开启了其红外阵列传感器业务。Grid-EYE是一款64像素红外摄像头，采用一体化的紧凑SMD封装。基于松下的MEMS技术，Grid-EYE包含一颗MEMS传感器芯片、一颗数字ASIC（I2C接口）以及一款硅基镜头。　　</p><p><img src="/img/20171126/XzhN6uEQ_4dfn.png" alt=""></p><p>　　Grid-EYE在一个8 x 8网格式布局内含有64个热电堆元件，能够在不接触被测物体的前提下探测物体表面的绝对温度。与传统的传感器不同，Grid-EYE采用了一款受专利保护的60°硅基镜头，该镜头在硅晶圆上通过刻蚀工艺制成，是市场上最小（高度低于0.3 mm）的镜头。所有这些技术的结合，使该款传感器的封装尺寸仅为11.6 mm x 8 mm x 4.3 mm。　　</p><p><img src="/img/20171126/W020160708332880629183.jpg" alt=""></p><blockquote><p>含有64个热电堆元件的Grid-EYE可以探测静止和运动的人体</p></blockquote><p>　　与单点热电堆红外传感器和热释电传感器相比，Grid-EYE不仅能够探测移动的人体和物体，还能够探测不动的人体和物体的出现和位置、运动方向以及精确的表面温度，温度测量范围为- 20°C~+100°C。　　</p><p><img src="/img/20171126/W020160708332880624859.jpg" alt=""></p><blockquote><p>基于MEMS技术的热电堆阵列红外传感器</p></blockquote><p>　　松下凭借Grid-EYE的宽温度测量范围，其噪声等效温差在室温时，精度达到了+/- 0.08°C @ 1Hz。Grid-EYE热电堆传感元件协同阵列，能够探测多个人体或物体在不同方向上的运动。近距离时，Grid-EYE甚至能够探测人手的运动，实现简单的手势控制。　<br><img src="/img/20171126/W020160708332880629505.jpg" alt=""></p><blockquote><p>Grid-EYE红外传感器实现手势控制</p></blockquote><h2 id="应用领域"><a href="#应用领域" class="headerlink" title="应用领域"></a>应用领域</h2><p><img src="/img/20171126/area.png" alt=""><br><img src="/img/20171126/application.png" alt=""></p><p>　　许多红外应用不需要完整的图像信息，只需要从图像中挖掘出的特定信息，例如位置、运动以及热（或冷）物体的区域。面对这些非成像应用的新兴市场，需要基于不同概念的传统成像红外焦平面阵列的红外阵列传感器。这里将讨论热成像系统应用的两个主要门类：非活体目标和人体目标。</p><h3 id="非活体目标"><a href="#非活体目标" class="headerlink" title="非活体目标"></a>非活体目标</h3><p>　　工厂机械设备、发电及配电设备、物料以及工艺生产制造出来的部件，它们的温度和热学性能，是生产制造过程中以及工厂维持安全和经济有效运营的最重要因素。</p><p>　　突然出现的热点能够预示有缺陷的区域和连接点。应用热成像技术进行温度测量的原因之一，是热成像测量无需接触被测物体。热成像技术可以作为一款诊断工具应用于电力传输系统中电气接头的检测，也可以用于探测其它电气装置的热状况。它还可以应用于不同材料的具体特性评估。</p><h3 id="人体目标"><a href="#人体目标" class="headerlink" title="人体目标"></a>人体目标</h3><p>　　被动红外传感器针对即时进入或目标探测应用效果很好。但是，它们仅能感测运动中的人体或目标，这使它们能够有条件地应用于建筑自动化和安防系统中。这些简单的红外传感器具有传统的局限性，因此不能应用于更先进的探测领域。例如，被动红外传感器无法感应不动的目标，它们不能精确地探测目标的运动方向，它们也不能获得热成像图谱或者探测目标的温度。所有这三个任务都是下一代智能自动化、安防系统、数字标识系统以及医疗成像应用的基本要素。</p><h3 id="人体探测设计"><a href="#人体探测设计" class="headerlink" title="人体探测设计"></a>人体探测设计</h3><p>　　热电堆阵列传感器能够在保留探测对象隐私的前提下，提供粗略的追踪功能。Basu和Rowe开发了一款低成本方法，在Grid-EYE传感器的视场内，估算人员数量和他们的运动方向。对具有本地峰值计数功能的连接组件上应用支持向量机分类，他们估算即时进入人数的准确率超过了80%（《应用热电堆阵列传感器的运动追踪和空间关系学》，2014，卡内基梅隆大学）。　　</p><p><img src="/img/20171126/W020160708333700204392.jpg" alt=""></p><blockquote><p>利用Grid-EYE红外传感器估算即时进入房间的人数</p></blockquote><p>　　Jeong、Yoon和Joung等人在2014年开发了一种更复杂的方法，他们利用Grid-EYE传感器结合一种概率统计方法来确定人体目标，这种概率统计方法利用了多重前后成像处理技术。前处理和图像分割提供基本结构，然后利用概率统计方法来计算图中的热标识为人体目标的概率。即使分割出来的人体图像短暂消失了，他们提出的方法还能够利用局部自适应阈值实现继续追踪。</p><h3 id="智能建筑应用"><a href="#智能建筑应用" class="headerlink" title="智能建筑应用"></a>智能建筑应用</h3><p>　　智能建筑应用是信息物理系统的案例之一。大部分时间，这些应用需要不同类型的传感器、网络拓扑结构以及个性的配置，来满足不同用户的需求。利用Grid-EYE传感器提供的即时进入信息，能够帮助实现家居自动化和暖通系统的集成。Grid-EYE传感器当然也可以应用于安防目的。即时进入监测、安防和建筑自动化是智能建筑的基本功能。房间的即时进入监测，能够帮助建筑管理者实现暖通系统控制，由此实现可持续发展。Grid-EYE传感器8 × 8二元矩阵中连接的组件，能够告诉我们该传感器周边人员的数量（即时进入监测）。　　</p><p><img src="/img/20171126/W020160708333700208787.jpg" alt=""></p><blockquote><p>Grid-EYE红外传感器的应用</p></blockquote><p>　　对于安防应用，即时进入监测能够监测非法入侵的发生，能够即时触发警报或者发送相关信息给屋主。对于家居自动化应用，它能够用于暖通系统或者家用电器的开启。</p><p>　　美国加州大学的Merced在2013年展示了一款基于Grid-EYE传感器的系统，用于估算即时进入信息，使他们能够基于房间进入人员的数量调整房间利用，从而有效的维持房间的温度，通过这一方法每年能够节约25%的能源。</p><blockquote><iframe height="498" width="510" src="http://player.youku.com/embed/XMzE4NTY0NTQzNg==" frameborder="0" 'allowfullscreen'=""></iframe></blockquote>]]></content>
     
     <summary type="html">
     
@@ -1190,16 +438,14 @@ make V=s
     <published>2017-11-23T04:02:08.000Z</published>
     <updated>2017-11-29T01:22:58.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="1-先删除原有的-DS-Store："><a href="#1-先删除原有的-DS-Store：" class="headerlink" title="1. 先删除原有的.DS_Store："></a>1. 先删除原有的.DS_Store：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name &quot;.DS_Store&quot; -type f -delete</div></pre></td></tr></table></figure>
-<p>命令解释：在当前文件夹以及当前文件夹的子文件夹中找到所有的.DS_Store文件</p>
-<h3 id="2-建立-gitignore文件"><a href="#2-建立-gitignore文件" class="headerlink" title="2. 建立.gitignore文件"></a>2. 建立.gitignore文件</h3><p>vi .gitignore。然后添加.DS_Store作为忽略：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.DS_Store</div></pre></td></tr></table></figure>
-<h3 id="3-提交到git"><a href="#3-提交到git" class="headerlink" title="3. 提交到git"></a>3. 提交到git</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git add .gitignore</div><div class="line">git commit -m &apos;delete .DS_Store&apos;</div></pre></td></tr></table></figure>
-]]></content>
+    <content type="html"><![CDATA[<h3 id="1-先删除原有的-DS-Store："><a href="#1-先删除原有的-DS-Store：" class="headerlink" title="1. 先删除原有的.DS_Store："></a>1. 先删除原有的.DS_Store：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name &quot;.DS_Store&quot; -type f -delete</span><br></pre></td></tr></table></figure><p>命令解释：在当前文件夹以及当前文件夹的子文件夹中找到所有的.DS_Store文件</p><h3 id="2-建立-gitignore文件"><a href="#2-建立-gitignore文件" class="headerlink" title="2. 建立.gitignore文件"></a>2. 建立.gitignore文件</h3><p>vi .gitignore。然后添加.DS_Store作为忽略：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store</span><br></pre></td></tr></table></figure><h3 id="3-提交到git"><a href="#3-提交到git" class="headerlink" title="3. 提交到git"></a>3. 提交到git</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .gitignore</span><br><span class="line">git commit -m &apos;delete .DS_Store&apos;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;1-先删除原有的-DS-Store：&quot;&gt;&lt;a href=&quot;#1-先删除原有的-DS-Store：&quot; class=&quot;headerlink&quot; title=&quot;1. 先删除原有的.DS_Store：&quot;&gt;&lt;/a&gt;1. 先删除原有的.DS_Store：&lt;/h3&gt;&lt;figure
+      
+      
+        &lt;h3 id=&quot;1-先删除原有的-DS-Store：&quot;&gt;&lt;a href=&quot;#1-先删除原有的-DS-Store：&quot; class=&quot;headerlink&quot; title=&quot;1. 先删除原有的.DS_Store：&quot;&gt;&lt;/a&gt;1. 先删除原有的.DS_Store：&lt;/h3&gt;&lt;figure
+      
     
     </summary>
     
