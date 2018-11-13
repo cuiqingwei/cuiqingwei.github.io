@@ -2289,6 +2289,8 @@ make V=s
 <p><img src="/img/20161010/C2500sHG.jpg" alt=""></p>
 <p>7.<strong><a href="https://detail.tmall.com/item.htm?spm=a230r.1.14.6.651e61e2ff8B1i&amp;id=544697673576&amp;ad_id=&amp;am_id=&amp;cm_id=140105335569ed55e27b&amp;pm_id=&amp;abbucket=5" target="_blank" rel="noopener">GW.CA 灰色</a></strong> <em>小黄轮 光威GW.CA水滴轮</em></p>
 <p><img src="/img/20161010/GW-GA.png" alt=""></p>
+<p>8.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.1ad42e8dPZk5Ii&amp;id=571645554503&amp;_u=d154cj1b3c2" target="_blank" rel="noopener">BANTAM MGL</a></strong> <em>邦汤姆泛用远投路亚水滴轮</em></p>
+<p><img src="/img/20161010/BANTAM-MGL.png" alt=""></p>
 ]]></content>
       
         
@@ -3780,47 +3782,6 @@ make V=s
     </entry>
     
     <entry>
-      <title><![CDATA[MacOS]]></title>
-      <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-MacOS/</url>
-      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="noopener">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
-<h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p><strong>工作</strong>：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br><a href="http://www.tuicool.com/articles/yeyIfuu" target="_blank" rel="noopener">http://www.tuicool.com/articles/yeyIfuu</a><br><strong>系统</strong>：QQ、CleanMyDrive 3 等</p>
-<a id="more"></a>
-<h3 id="2-dmg安装"><a href="#2-dmg安装" class="headerlink" title="2. dmg安装"></a>2. dmg安装</h3><p>Chrome、Parallels Desktop、RDC、QQInput、RTX、cornerstone、Kaleidoscope<br>Sublime Text、Atom …</p>
-<p><strong>dmg下载</strong><br><a href="http://xclient.info/" target="_blank" rel="noopener">http://xclient.info/</a><br><a href="http://www.sdifen.com/" target="_blank" rel="noopener">http://www.sdifen.com/</a><br><a href="http://soft.macx.cn/" target="_blank" rel="noopener">http://soft.macx.cn/</a></p>
-<h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)</span>"</span></span><br><span class="line">[http://brew.sh/](http://brew.sh/)</span><br></pre></td></tr></table></figure>
-<p><a href="http://blog.csdn.net/aaawqqq/article/details/44088141" target="_blank" rel="noopener">http://blog.csdn.net/aaawqqq/article/details/44088141</a><br><a href="http://www.xitongzhijia.net/xtjc/20141204/31879.html" target="_blank" rel="noopener">http://www.xitongzhijia.net/xtjc/20141204/31879.html</a></p>
-<h3 id="4-MacPorts"><a href="#4-MacPorts" class="headerlink" title="4. MacPorts"></a>4. MacPorts</h3><p><a href="https://www.macports.org/install.php" target="_blank" rel="noopener">https://www.macports.org/install.php</a><br><a href="http://guide.macports.org/#installing.macports" target="_blank" rel="noopener">http://guide.macports.org/#installing.macports</a></p>
-<h3 id="5-oh-my-zsh"><a href="#5-oh-my-zsh" class="headerlink" title="5. oh my zsh"></a>5. oh my zsh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</span><br></pre></td></tr></table></figure>
-<p><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="noopener">http://leeiio.me/bash-to-zsh-for-mac/</a></p>
-<h3 id="6-iTerm"><a href="#6-iTerm" class="headerlink" title="6. iTerm"></a>6. iTerm</h3><p>iTerm2 + oh my zsh +agnoster 打造最强Mac终端<br><a href="http://www.siguoya.name/pc/home/article/256" target="_blank" rel="noopener">http://www.siguoya.name/pc/home/article/256</a><br>iterm2有什么酷功能？<br><a href="https://www.zhihu.com/question/27447370" target="_blank" rel="noopener">https://www.zhihu.com/question/27447370</a></p>
-<h3 id="7-wget"><a href="#7-wget" class="headerlink" title="7. wget"></a>7. wget</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo brew install wget</span><br></pre></td></tr></table></figure>
-<h3 id="8-pbcopy"><a href="#8-pbcopy" class="headerlink" title="8. pbcopy"></a>8. pbcopy</h3><blockquote>
-<p>使用 <strong>pbcopy</strong> 命令,对应有个 <strong>pbpaste</strong> 命令。</p>
-</blockquote>
-<p>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'Hello World!'</span> | pbcopy</span><br></pre></td></tr></table></figure></p>
-<p><em>将字符串Hello World放入剪贴板</em></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat myFile.txt | pbcopy</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pbpaste &gt; file.txt</span><br></pre></td></tr></table></figure>
-<h3 id="9-mac-say-唱歌"><a href="#9-mac-say-唱歌" class="headerlink" title="9. mac say 唱歌"></a>9. mac say 唱歌</h3><blockquote>
-<p>spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。<br>  在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。<br>  开始听歌了。</p>
-</blockquote>
-<p><a href="https://www.macx.cn/thread-2048013-1-1.html?mod=viewthread&amp;tid=2048013&amp;extra=page%253D1&amp;page=1" target="_blank" rel="noopener">https://www.macx.cn/thread-2048013-1-1.html?mod=viewthread&amp;tid=2048013&amp;extra=page%253D1&amp;page=1</a></p>
-<h3 id="10-其他"><a href="#10-其他" class="headerlink" title="10. 其他"></a>10. 其他</h3><blockquote>
-<p>打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!</p>
-</blockquote>
-<h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="noopener">https://checkcoverage.apple.com/cn/zh/</a></p>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> MacOS </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Ubuntu]]></title>
       <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-Ubuntu/</url>
       <content type="html"><![CDATA[<h3 id="1-常用指令"><a href="#1-常用指令" class="headerlink" title="1.常用指令"></a>1.常用指令</h3><pre><code>版本查看：
@@ -3878,6 +3839,47 @@ hosts
         <tags>
             
             <tag> ubuntu </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[MacOS]]></title>
+      <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-MacOS/</url>
+      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="noopener">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
+<h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p><strong>工作</strong>：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br><a href="http://www.tuicool.com/articles/yeyIfuu" target="_blank" rel="noopener">http://www.tuicool.com/articles/yeyIfuu</a><br><strong>系统</strong>：QQ、CleanMyDrive 3 等</p>
+<a id="more"></a>
+<h3 id="2-dmg安装"><a href="#2-dmg安装" class="headerlink" title="2. dmg安装"></a>2. dmg安装</h3><p>Chrome、Parallels Desktop、RDC、QQInput、RTX、cornerstone、Kaleidoscope<br>Sublime Text、Atom …</p>
+<p><strong>dmg下载</strong><br><a href="http://xclient.info/" target="_blank" rel="noopener">http://xclient.info/</a><br><a href="http://www.sdifen.com/" target="_blank" rel="noopener">http://www.sdifen.com/</a><br><a href="http://soft.macx.cn/" target="_blank" rel="noopener">http://soft.macx.cn/</a></p>
+<h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)</span>"</span></span><br><span class="line">[http://brew.sh/](http://brew.sh/)</span><br></pre></td></tr></table></figure>
+<p><a href="http://blog.csdn.net/aaawqqq/article/details/44088141" target="_blank" rel="noopener">http://blog.csdn.net/aaawqqq/article/details/44088141</a><br><a href="http://www.xitongzhijia.net/xtjc/20141204/31879.html" target="_blank" rel="noopener">http://www.xitongzhijia.net/xtjc/20141204/31879.html</a></p>
+<h3 id="4-MacPorts"><a href="#4-MacPorts" class="headerlink" title="4. MacPorts"></a>4. MacPorts</h3><p><a href="https://www.macports.org/install.php" target="_blank" rel="noopener">https://www.macports.org/install.php</a><br><a href="http://guide.macports.org/#installing.macports" target="_blank" rel="noopener">http://guide.macports.org/#installing.macports</a></p>
+<h3 id="5-oh-my-zsh"><a href="#5-oh-my-zsh" class="headerlink" title="5. oh my zsh"></a>5. oh my zsh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</span><br></pre></td></tr></table></figure>
+<p><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="noopener">http://leeiio.me/bash-to-zsh-for-mac/</a></p>
+<h3 id="6-iTerm"><a href="#6-iTerm" class="headerlink" title="6. iTerm"></a>6. iTerm</h3><p>iTerm2 + oh my zsh +agnoster 打造最强Mac终端<br><a href="http://www.siguoya.name/pc/home/article/256" target="_blank" rel="noopener">http://www.siguoya.name/pc/home/article/256</a><br>iterm2有什么酷功能？<br><a href="https://www.zhihu.com/question/27447370" target="_blank" rel="noopener">https://www.zhihu.com/question/27447370</a></p>
+<h3 id="7-wget"><a href="#7-wget" class="headerlink" title="7. wget"></a>7. wget</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo brew install wget</span><br></pre></td></tr></table></figure>
+<h3 id="8-pbcopy"><a href="#8-pbcopy" class="headerlink" title="8. pbcopy"></a>8. pbcopy</h3><blockquote>
+<p>使用 <strong>pbcopy</strong> 命令,对应有个 <strong>pbpaste</strong> 命令。</p>
+</blockquote>
+<p>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'Hello World!'</span> | pbcopy</span><br></pre></td></tr></table></figure></p>
+<p><em>将字符串Hello World放入剪贴板</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat myFile.txt | pbcopy</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pbpaste &gt; file.txt</span><br></pre></td></tr></table></figure>
+<h3 id="9-mac-say-唱歌"><a href="#9-mac-say-唱歌" class="headerlink" title="9. mac say 唱歌"></a>9. mac say 唱歌</h3><blockquote>
+<p>spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。<br>  在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。<br>  开始听歌了。</p>
+</blockquote>
+<p><a href="https://www.macx.cn/thread-2048013-1-1.html?mod=viewthread&amp;tid=2048013&amp;extra=page%253D1&amp;page=1" target="_blank" rel="noopener">https://www.macx.cn/thread-2048013-1-1.html?mod=viewthread&amp;tid=2048013&amp;extra=page%253D1&amp;page=1</a></p>
+<h3 id="10-其他"><a href="#10-其他" class="headerlink" title="10. 其他"></a>10. 其他</h3><blockquote>
+<p>打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!</p>
+</blockquote>
+<h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="noopener">https://checkcoverage.apple.com/cn/zh/</a></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> MacOS </tag>
             
         </tags>
         
@@ -5204,24 +5206,6 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     </entry>
     
     <entry>
-      <title><![CDATA[Linux中生成shadow的加密密码.04安装arm开发环境]]></title>
-      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-08-Linux%E4%B8%AD%E7%94%9F%E6%88%90shadow%E7%9A%84%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81/</url>
-      <content type="html"><![CDATA[<p>How to generate Linux shadow password / Linux中如何生成shadow密码（CentOS 5下测试通过）<br>/etc/shadow中的root信息:<br>root:$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.:15225:0:99999:7:::</p>
-<p>其中，”$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.” 就是加密后的root密码，我们在修改用户密码的时候都使用passwd命令，其实也可以直接修改/etc/shadow文件。那要面临的问题就是如何生成这个加密过的shadow密码($1$ 表示加密算法是基于MD5的，不同发行版本默认的加密算法可能不同)。</p>
-<p>方法一（交互式）<br>[root@centos-vm ~]# openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32)<br>Password:    # input your password here<br>$1$MZrDxgEw$i2XBgmDMo0Wf1.OVvOGGQ1</p>
-<p>方法二（适用于脚本）<br>[root@centos-vm ~]# echo “passwd” | openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32) -stdin<br>$1$KsRJO8kG$M9co4G7T6.5KcITsSCRNS/</p>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> linux </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[ubuntu11.04安装arm开发环境]]></title>
       <url>http://cuiqingwei.github.io/2012/09/07/2012-09-07-ubuntu11-04%E5%AE%89%E8%A3%85arm%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
       <content type="html"><![CDATA[<p>特别提示：整个过程中计算机必须联网，因为有些程序需要从网络上下载!</p>
@@ -5321,6 +5305,24 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
             <tag> 嵌入式 </tag>
             
             <tag> ubuntu </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Linux中生成shadow的加密密码.04安装arm开发环境]]></title>
+      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-08-Linux%E4%B8%AD%E7%94%9F%E6%88%90shadow%E7%9A%84%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81/</url>
+      <content type="html"><![CDATA[<p>How to generate Linux shadow password / Linux中如何生成shadow密码（CentOS 5下测试通过）<br>/etc/shadow中的root信息:<br>root:$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.:15225:0:99999:7:::</p>
+<p>其中，”$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.” 就是加密后的root密码，我们在修改用户密码的时候都使用passwd命令，其实也可以直接修改/etc/shadow文件。那要面临的问题就是如何生成这个加密过的shadow密码($1$ 表示加密算法是基于MD5的，不同发行版本默认的加密算法可能不同)。</p>
+<p>方法一（交互式）<br>[root@centos-vm ~]# openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32)<br>Password:    # input your password here<br>$1$MZrDxgEw$i2XBgmDMo0Wf1.OVvOGGQ1</p>
+<p>方法二（适用于脚本）<br>[root@centos-vm ~]# echo “passwd” | openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32) -stdin<br>$1$KsRJO8kG$M9co4G7T6.5KcITsSCRNS/</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> linux </tag>
             
         </tags>
         
