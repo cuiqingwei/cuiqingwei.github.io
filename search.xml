@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[有关路亚起源的故事]]></title>
-      <url>http://cuiqingwei.github.io/2018/12/03/2019-12-03-%E6%9C%89%E5%85%B3%E8%B7%AF%E4%BA%9A%E8%B5%B7%E6%BA%90%E7%9A%84%E6%95%85%E4%BA%8B/</url>
+      <url>http://cuiqingwei.github.io/2019/12/03/2019-12-03-%E6%9C%89%E5%85%B3%E8%B7%AF%E4%BA%9A%E8%B5%B7%E6%BA%90%E7%9A%84%E6%95%85%E4%BA%8B/</url>
       <content type="html"><![CDATA[<p>近年来一种新的垂钓方法（路亚）开始在国内风靡，很受新生代垂钓爱好者的推崇，涌现出众多喜爱此钓法的路亚一族。 </p>
 <p>路亚，一词属舶来词，由英文（lure）的近音译成，意思是引诱、诱惑。路亚钓鱼就是引诱鱼，诱惑鱼上钩。又有称其为（拟饵钓法），顾名思义是通过人为操控假饵摆动,利用不同形状的假饵在水中做出不同姿态，从而诱惑鱼类攻击，将其俘获。</p>
 <a id="more"></a>
@@ -1393,19 +1393,6 @@ make V=s
     </entry>
     
     <entry>
-      <title><![CDATA[GoAhead移植到OpenWRT]]></title>
-      <url>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/</url>
-      <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
-<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
-<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
-<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
-<blockquote>
-<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
-</blockquote>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Contiki-CC2538-CoAP]]></title>
       <url>http://cuiqingwei.github.io/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/</url>
       <content type="html"><![CDATA[<div align="center"><br><iframe height="498" width="510" src="http://player.youku.com/embed/XMTgyNDA3NDAzNg==" frameborder="0" 'allowfullscreen'=""></iframe><br></div>
@@ -1426,6 +1413,19 @@ make V=s
 <h1 id="ping6"><a href="#ping6" class="headerlink" title="ping6"></a>ping6</h1><p>ping6 aaaa::212:4b00:5af:84e0</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">PING aaaa::212:4b00:5af:84e0(aaaa::212:4b00:5af:84e0) 56 data bytes</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=1 ttl=63 time=1013 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=2 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=3 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=4 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=5 ttl=63 time=125 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=6 ttl=63 time=120 ms</div></pre></td></tr></table></figure>
 <h1 id="firefox"><a href="#firefox" class="headerlink" title="firefox"></a>firefox</h1><p><img src="/img/20161117/coap1.png" alt=""><br><img src="/img/20161117/coap2.png" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[GoAhead移植到OpenWRT]]></title>
+      <url>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/</url>
+      <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
+<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
+<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
+<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
+<blockquote>
+<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
+</blockquote>
 ]]></content>
     </entry>
     
