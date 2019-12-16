@@ -4,8 +4,183 @@
   
     
     <entry>
+      <title><![CDATA[Typora使用说明]]></title>
+      <url>http://cuiqingwei.github.io/2019/12/15/2019-12-15-Typora%25E4%25BD%25BF%25E7%2594%25A8%25E8%25AF%25B4%25E6%2598%258E/</url>
+      <content type="html"><![CDATA[<h3 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h3><p>写Markdown文档很难？Typora让你像写word一样行云流水，所见即所得。</p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><ul>
+<li>Typora删除了预览窗口，以及所有其他不必要的干扰。取而代之的是实时预览。</li>
+<li>Markdown的语法因不同的解析器或编辑器而异，Typora使用的是<a href="https://help.github.com/articles/basic-writing-and-formatting-syntax/" target="_blank" rel="noopener">GitHub Flavored Markdown</a>。</li>
+</ul>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>Typora<a href="https://www.typora.io/#download" target="_blank" rel="noopener">下载</a>。</p>
+<h3 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h3><ul>
+<li>加粗： <code>Ctrl/Cmd + B</code></li>
+<li>标题： <code>Ctrl/Cmd + H</code></li>
+<li>插入链接： <code>Ctrl/Cmd + K</code></li>
+<li>插入代码： <code>Ctrl/Cmd + Shift + C</code></li>
+<li>行内代码： <code>Ctrl/Cmd + Shift + K</code></li>
+<li>插入图片： <code>Ctrl/Cmd + Shift + I</code></li>
+<li>无序列表： <code>Ctrl/Cmd + Shift + L</code></li>
+<li>撤销： <code>Ctrl/Cmd + Z</code></li>
+<li>一级标题：快捷键为Crtl + 1，以此类推</li>
+</ul>
+<a id="more"></a>
+
+<h3 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h3><h4 id="换行符"><a href="#换行符" class="headerlink" title="换行符"></a>换行符</h4><p>在markdown中，段落由多个<strong>空格</strong>分隔。在Typora中，只需<strong>回车</strong>即可创建新段落。</p>
+<h4 id="标题级别"><a href="#标题级别" class="headerlink" title="标题级别"></a>标题级别</h4><blockquote>
+<p># 一级标题， 快捷键为<code>Crtl + 1</code><br>## 二级标题，快捷键为<code>Crtl + 2</code><br>###### 六级标题，快捷键为<code>Crtl + 6</code></p>
+</blockquote>
+<h4 id="引用文字"><a href="#引用文字" class="headerlink" title="引用文字"></a>引用文字</h4><blockquote>
+<p>&gt; + 空格 + 引用文字</p>
+</blockquote>
+<h4 id="清单"><a href="#清单" class="headerlink" title="清单"></a>清单</h4><p>输入 -列表内容 将创建一个无序列表，该-符号可以替换为+或*。</p>
+<p>输入1. 列表内容 将创建一个有序列表，其markdown源代码如下：</p>
+<blockquote>
+<p>无序列表<br>- AA<br>- BB<br>- CC</p>
+<p>有序列表</p>
+<ol>
+<li>AA</li>
+<li>BB</li>
+<li>CC</li>
+</ol>
+</blockquote>
+<p>无序列表</p>
+<ul>
+<li>AA</li>
+<li>BB</li>
+<li>CC</li>
+</ul>
+<p>有序列表</p>
+<ol>
+<li>AA</li>
+<li>BB</li>
+<li>CC</li>
+</ol>
+<h4 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h4><blockquote>
+<p>- [ ] 不勾选<br>- [x] 勾选</p>
+</blockquote>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 勾选</li>
+<li><input disabled="" type="checkbox"> 不勾选</li>
+</ul>
+<h4 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h4><p>在Typora中输入``` + <code>回车</code>，并在后面选择一个语言名称即可语法高亮。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">helloWorld</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">print</span> <span class="string">'hello, world'</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="数学表达式"><a href="#数学表达式" class="headerlink" title="数学表达式"></a>数学表达式</h4><p>输入$$, 然后按<code>回车</code>键，如下：</p>
+<blockquote>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\mathbf&#123;V&#125;_1 \times \mathbf&#123;V&#125;_2 &#x3D; \begin&#123;vmatrix&#125;</span><br><span class="line">\mathbf&#123;i&#125; &amp; \mathbf&#123;j&#125; &amp; \mathbf&#123;k&#125;</span><br><span class="line">\frac&#123;\partial X&#125;&#123;\partial u&#125; &amp; \frac&#123;\partial Y&#125;&#123;\partial u&#125; &amp; 0</span><br><span class="line">\frac&#123;\partial X&#125;&#123;\partial v&#125; &amp; \frac&#123;\partial Y&#125;&#123;\partial v&#125; &amp; 0</span><br><span class="line">\end&#123;vmatrix&#125;</span><br><span class="line">$$ </span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>效果如下：<br>$$<br>\mathbf{V}_1 \times \mathbf{V}_2 = \begin{vmatrix}<br>\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k}<br>\frac{\partial X}{\partial u} &amp; \frac{\partial Y}{\partial u} &amp; 0<br>\frac{\partial X}{\partial v} &amp; \frac{\partial Y}{\partial v} &amp; 0<br>\end{vmatrix}<br>$$</p>
+<h4 id="表"><a href="#表" class="headerlink" title="表"></a>表</h4><p>输入<code>| 表头1 | 表头2 |</code>并回车。即可将创建一个包含两列的表，然后就像操作Word文档一样设置表格即可，没必要知道Markdown的复杂语法，因为这些语法会由Typora自动生成。效果如下：</p>
+<table>
+<thead>
+<tr>
+<th>First Header</th>
+<th>Second Header</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>111111</td>
+<td>222222</td>
+</tr>
+</tbody></table>
+<h4 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h4><blockquote>
+<p>你可以创建一个脚注，像这样[^注释]</p>
+<p>[^注释]:这就是注释的具体描述</p>
+</blockquote>
+<p>你可以创建一个脚注，像这样<a href="这就是注释的具体描述">^注释</a>.</p>
+<p>[^注意]：该例子脚注标识是1，脚注标识可以为字母数字下划线，但是暂不支持中文。脚注内容可为任意字符，包括中文。</p>
+<h4 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h4><p>输入<code>***</code>或<code>---</code> 再按回车即可绘制一条水平线，如下：</p>
+<hr>
+<h4 id="YAML-Front-Matter"><a href="#YAML-Front-Matter" class="headerlink" title="YAML Front Matter"></a>YAML Front Matter</h4><p>Typora支持<a href="http://jekyllrb.com/docs/frontmatter/" target="_blank" rel="noopener">YAML Front Matter</a>， 在文章开头输入<code>---</code>，然后按回车即可。</p>
+<h4 id="目录（TOC）"><a href="#目录（TOC）" class="headerlink" title="目录（TOC）"></a>目录（TOC）</h4><p>输入<code>[toc]</code>然后回车，即可创建一个“目录”。TOC从文档中提取所有标题，其内容将自动更新。</p>
+<h3 id="跨度元素"><a href="#跨度元素" class="headerlink" title="跨度元素"></a>跨度元素</h3><p>跨度元素即图片，网址，视频等，在Typora中输入后，会立即载入并呈现。</p>
+<h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><h5 id="内部链接"><a href="#内部链接" class="headerlink" title="内部链接"></a>内部链接</h5><blockquote>
+<p>这是一个带有标题属性的[链接](<a href="http://example.com/" target="_blank" rel="noopener">http://example.com/</a> “标题”).<br>这是一个没有标题属性的[链接](<a href="http://example.net/" target="_blank" rel="noopener">http://example.net/</a>).</p>
+</blockquote>
+<p>效果如下：</p>
+<p>这是一个带有标题属性的<a href="http://example.com/" target="_blank" rel="noopener"标题"">链接</a>.<br>这是一个没有标题属性的<a href="http://example.net/" target="_blank" rel="noopener">链接</a>.</p>
+<h5 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h5><blockquote>
+<p>这是一个[参考链接]<a href="http://example.com/" target="_blank" rel="noopener">id</a>。<br>[id]: <a href="http://example.com/" target="_blank" rel="noopener">http://example.com/</a> “标题”</p>
+</blockquote>
+<p>这是一个<a href="http://example.com/" target="_blank" rel="noopener">参考链接</a>。</p>
+<h4 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h4><p>Typora允许用&lt;括号括起来&gt;, 把URL作为链接插入。输 &lt; <a href="https://cuiqingwei.github.io">https://cuiqingwei.github.io</a> &gt; 即 <a href="https://cuiqingwei.github.io">https://cuiqingwei.github.io</a>。<br>Typora还会自动链接标准网址。例如：<a href="https://cuiqingwei.github.io/">cuiqingwei.github.io</a></p>
+<h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><blockquote>
+<p><code>![ avatar](http://XXX..png)</code></p>
+</blockquote>
+<p>还可以通过拖拉的方式，将本地文件夹中的图片或者网络上的图片插入。</p>
+<h4 id="倾斜"><a href="#倾斜" class="headerlink" title="倾斜"></a>倾斜</h4><blockquote>
+<p>*单个星号 *<br>_单下划线 _</p>
+</blockquote>
+<p>效果如下：<br><em>单个星号</em></p>
+<p><em>单下划线</em></p>
+<h4 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h4><blockquote>
+<p>** 两个星号 **<br>__ 双下划线 __</p>
+</blockquote>
+<p>效果如下：<br><strong>两个星号</strong><br><strong>双下划线</strong></p>
+<h4 id="代码标记"><a href="#代码标记" class="headerlink" title="代码标记"></a>代码标记</h4><p>标记代码使用反引号，即在英文输入法下，<code>ESC</code>键下面和<code>1</code>键左边的符号<strong>`</strong></p>
+<p>使用该`printf()`功能。<br>效果如下：<br>使用该<code>printf()</code>功能。</p>
+<h4 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h4><blockquote>
+<p><del>~ 删除线 ~</del></p>
+</blockquote>
+<p>效果如下：</p>
+<p><del>删除线</del></p>
+<h4 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h4><p>&lt;u&gt;下划线&lt;/u&gt;</p>
+<p>效果如下：</p>
+<p><u>下划线</u></p>
+<h4 id="表情符号"><a href="#表情符号" class="headerlink" title="表情符号"></a>表情符号</h4><blockquote>
+<p>：smile ：（注意为：是英文的冒号）</p>
+</blockquote>
+<p>😄</p>
+<h4 id="下标"><a href="#下标" class="headerlink" title="下标"></a>下标</h4><p>H~2~O</p>
+<h4 id="上标"><a href="#上标" class="headerlink" title="上标"></a>上标</h4><p>X^2^</p>
+<h4 id="高亮"><a href="#高亮" class="headerlink" title="高亮"></a>高亮</h4><p>==高亮==</p>
+<blockquote>
+<p>上标、下标、高亮默认不使能，需在设置中打开。</p>
+</blockquote>
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>支持HTML</p>
+<h4 id="嵌入内容"><a href="#嵌入内容" class="headerlink" title="嵌入内容"></a>嵌入内容</h4><p>支持iframe-based嵌入代码，</p>
+<blockquote>
+<p>&lt; iframe height=’265’ scrolling=’no’ title=’Fancy Animated SVG Menu’ src=’<a href="http://codepen.io/jeangontijo/embed/OxVywj/?height=265&theme-id=0&default-tab=css,result&embed-version=2' target="_blank" rel="noopener"">http://codepen.io/jeangontijo/embed/OxVywj/?height=265&amp;theme-id=0&amp;default-tab=css,result&amp;embed-version=2’</a> frameborder=’no’ allowtransparency=’true’ allowfullscreen=’true’ style=’width: 100%;’&gt;</p>
+</blockquote>
+<h4 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h4><blockquote>
+<p>&lt; video src=”<a href="https://typora.io/img/beta.mp4”" target="_blank" rel="noopener">https://typora.io/img/beta.mp4”</a> /&gt;</p>
+</blockquote>
+<hr>
+<p><strong>总结：</strong></p>
+<ol>
+<li>建议打开大纲视图（快捷键<code>Ctrl/Cmd + Shift + 1</code>）。</li>
+<li>插入表格需要顶格写，不然显示不出来。</li>
+<li>以上语法不用刻意记，在Typora中的菜单都有， 常用功能基本上都有快捷键。</li>
+</ol>
+<hr>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Mac OS X 下搭建nRF51822开发环境]]></title>
+      <url>http://cuiqingwei.github.io/2019/12/06/2019-12-06-Mac-OS-X-%25E4%25B8%258B%25E6%2590%25AD%25E5%25BB%25BAnRF51822%25E5%25BC%2580%25E5%258F%2591%25E7%258E%25AF%25E5%25A2%2583/</url>
+      <content type="html"><![CDATA[<p><em>Step1</em> 下载SDK<br>下载地址：<a href="http://developer.nordicsemi.com/" target="_blank" rel="external">http://developer.nordicsemi.com/</a><br>当前最高版本是 <a href="http://developer.nordicsemi.com/nRF5_SDK/nRF51_SDK_v10.x.x/nRF51_SDK_10.0.0_dc26b5e.zip" target="_blank" rel="external">V10</a><br>解压zip包到某个项目目录</p>
+<p><em>Step2</em> 下载交叉编译工具<br>即 <code>gcc-arm-none-eabi-9-2019-q4-major-mac.tar.bz2</code><br>下载地址 <a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads" target="_blank" rel="external">https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads</a></p>
+<p>我解压到了 <code>/usr/local/gcc-arm-none-eabi-9-2019-q4-major</code></p>
+<a id="more"></a>
+<p><em>Step3</em> 下载安装Nordic官方nrfjprog<br>下载地址 <a href="https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Command-Line-Tools/Download" target="_blank" rel="external">https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Command-Line-Tools/Download</a><br>下载的是 <code>nRF-Command-Line-Tools_10_5_0_OSX.tar</code></p>
+<p><em>Step4</em> 配置编译工具路径<br>打开 <code>/..../nRF51_SDK_10.0.0_dc26b5e/components/toolchain/gcc/Makefile.posix</code><br>改为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">GNU_INSTALL_ROOT := /usr/local/gcc-arm-none-eabi-9-2019-q4-major</div><div class="line">GNU_VERSION := 9.2.1</div><div class="line">GNU_PREFIX := arm-none-eabi</div></pre></td></tr></table></figure>
+<p><em>编译例程代码</em><br>进入demo目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">...../nRF51_SDK_10.0.0_dc26b5e/examples/ble_peripheral/ble_app_template/pca10028/s110/armgcc</div><div class="line">make</div></pre></td></tr></table></figure>
+<p><em>烧录</em></p>
+<p>清空数据<br><code>nrfjprog --eraseall</code></p>
+<p>烧录hex文件<br><code>nrfjprog --program /path-to-hex-file.hex</code><br>出现以下表示烧录成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Parsing hex file.</div><div class="line">Reading flash area to program to guarantee it is erased.</div><div class="line">Checking that the area to write is not protected.</div><div class="line">Programing device.</div></pre></td></tr></table></figure>
+<p>也可以使用Makefile中提供的方法</p>
+<p>#烧录 softdevice<br><code>make flash_softdevice</code></p>
+<p>#烧录application<br><code>make flash</code></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[有关路亚起源的故事]]></title>
-      <url>http://cuiqingwei.github.io/2019/12/03/2019-12-03-%E6%9C%89%E5%85%B3%E8%B7%AF%E4%BA%9A%E8%B5%B7%E6%BA%90%E7%9A%84%E6%95%85%E4%BA%8B/</url>
+      <url>http://cuiqingwei.github.io/2019/12/03/2019-12-03-%25E6%259C%2589%25E5%2585%25B3%25E8%25B7%25AF%25E4%25BA%259A%25E8%25B5%25B7%25E6%25BA%2590%25E7%259A%2584%25E6%2595%2585%25E4%25BA%258B/</url>
       <content type="html"><![CDATA[<p>近年来一种新的垂钓方法（路亚）开始在国内风靡，很受新生代垂钓爱好者的推崇，涌现出众多喜爱此钓法的路亚一族。 </p>
 <p>路亚，一词属舶来词，由英文（lure）的近音译成，意思是引诱、诱惑。路亚钓鱼就是引诱鱼，诱惑鱼上钩。又有称其为（拟饵钓法），顾名思义是通过人为操控假饵摆动,利用不同形状的假饵在水中做出不同姿态，从而诱惑鱼类攻击，将其俘获。</p>
 <a id="more"></a>
@@ -33,7 +208,7 @@
     
     <entry>
       <title><![CDATA[大疆“御”Mavic系列教程]]></title>
-      <url>http://cuiqingwei.github.io/2018/06/27/2018-06-27-%E5%A4%A7%E7%96%86%E2%80%9C%E5%BE%A1%E2%80%9DMavic%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/</url>
+      <url>http://cuiqingwei.github.io/2018/06/27/2018-06-27-%25E5%25A4%25A7%25E7%2596%2586%25E2%2580%259C%25E5%25BE%25A1%25E2%2580%259DMavic%25E7%25B3%25BB%25E5%2588%2597%25E6%2595%2599%25E7%25A8%258B/</url>
       <content type="html"><![CDATA[<p>在操控大疆“御”Mavic前，请阅读《智能飞行电池安全使用指引》，并进行飞行前检查，确保飞行器各个部件完好无损，智能电池及遥控器电量充足，上电检测正常。<br><img src="/img/20180627/mavicpro.jpg" alt=""></p>
 <a id="more"></a>
 <p>“御”是大疆首款紧凑型航拍无人机。它集超高画质、机器视觉技术和便携性于一身，助你随时随地刻捕捉精彩影像。本视频中的航拍均已征得当地管理部门同意。</p>
@@ -77,7 +252,7 @@
     
     <entry>
       <title><![CDATA[DJI大疆创新发布多边形禁飞区策略]]></title>
-      <url>http://cuiqingwei.github.io/2018/06/27/2018-06-27-DJI%E5%A4%A7%E7%96%86%E5%88%9B%E6%96%B0%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%A6%81%E9%A3%9E%E5%8C%BA%E7%AD%96%E7%95%A5/</url>
+      <url>http://cuiqingwei.github.io/2018/06/27/2018-06-27-DJI%25E5%25A4%25A7%25E7%2596%2586%25E5%2588%259B%25E6%2596%25B0%25E5%25A4%259A%25E8%25BE%25B9%25E5%25BD%25A2%25E7%25A6%2581%25E9%25A3%259E%25E5%258C%25BA%25E7%25AD%2596%25E7%2595%25A5/</url>
       <content type="html"><![CDATA[<p><strong>（2017年3月2日 深圳）</strong> 全球飞行影像系统的开拓者和领导者DJI大疆创新当日发布多边形禁飞区策略。本次更新将在中国大陆机场首先生效，之后逐步在全球范围内推广。</p>
 <p>为保障公共空域安全并给用户带去更好的飞行体验，大疆为其无人机产品设置了机场禁飞区和限飞区。以机场每条跑道的两端为圆心、半径为4.5公里的圆形区域，由两个圆和边缘连线组成的平椭圆为禁飞区。</p>
 <p>飞行器无法在禁飞区内起飞；从外部接近禁飞区边界时，将自动减速并悬停。如果在无GPS信号状态下进入禁飞区，无人机获得GPS信号后将自动降落。</p>
@@ -95,7 +270,7 @@
     
     <entry>
       <title><![CDATA[QSDK编译]]></title>
-      <url>http://cuiqingwei.github.io/2018/06/20/2018-06-20-QSDK%E7%BC%96%E8%AF%91/</url>
+      <url>http://cuiqingwei.github.io/2018/06/20/2018-06-20-QSDK%25E7%25BC%2596%25E8%25AF%2591/</url>
       <content type="html"><![CDATA[<p><strong>QSDK</strong> 是一种在openwrt的基础上，加入了高通atheros芯片相关资料的一种环境。</p>
 <p>QSDK与OpenWRT的区别主要在如下几个方面：</p>
 <ul>
@@ -135,7 +310,7 @@ make V=s
     
     <entry>
       <title><![CDATA[什么是LEDE?]]></title>
-      <url>http://cuiqingwei.github.io/2018/06/20/2018-06-20-%E4%BB%80%E4%B9%88%E6%98%AFLEDE/</url>
+      <url>http://cuiqingwei.github.io/2018/06/20/2018-06-20-%25E4%25BB%2580%25E4%25B9%2588%25E6%2598%25AFLEDE/</url>
       <content type="html"><![CDATA[<p><strong>OpenWrt</strong> 可以说是世界上最出名的家用 <strong>WiFi</strong> 路由器 <strong>Linux</strong> 发行版，是由以前名不经传的 <strong>Linksys WRT54G</strong> 路由催生的一个产品，已经 <strong>12</strong> 年多了。在2016年5月初，OpenWrt用户社区宣布了另一个 <strong>OpenWrt：Linux Embedded Development Environment (LEDE)</strong> 。官方解释说，<strong>LEDE</strong> 是 OpenWrt 的一个分支，或者说是副产品，该项目主要关注透明性，协作和分权。<br>LEDE 是 OpenWrt 社区的新生，有很多目标是与 OpenWrt 相同的，但是相比于 OpenWrt 也有很大的区别。</p>
 <a id="more"></a>
 <p>LEDE 当前的目标是：</p>
@@ -174,7 +349,7 @@ make V=s
     
     <entry>
       <title><![CDATA[OpenWRT的WiFi带机量修改方法]]></title>
-      <url>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/</url>
+      <url>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%25E7%259A%2584WiFi%25E5%25B8%25A6%25E6%259C%25BA%25E9%2587%258F%25E4%25BF%25AE%25E6%2594%25B9%25E6%2596%25B9%25E6%25B3%2595/</url>
       <content type="html"><![CDATA[<h1 id="Wifi带机量的修改"><a href="#Wifi带机量的修改" class="headerlink" title="Wifi带机量的修改"></a>Wifi带机量的修改</h1><p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
 <p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
@@ -187,7 +362,7 @@ make V=s
     
     <entry>
       <title><![CDATA[WiFi探针的工作原理]]></title>
-      <url>http://cuiqingwei.github.io/2018/05/14/2018-06-18-WiFi%E6%8E%A2%E9%92%88%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</url>
+      <url>http://cuiqingwei.github.io/2018/05/14/2018-06-18-WiFi%25E6%258E%25A2%25E9%2592%2588%25E7%259A%2584%25E5%25B7%25A5%25E4%25BD%259C%25E5%258E%259F%25E7%2590%2586/</url>
       <content type="html"><![CDATA[<p><strong>WiFi探针</strong> 技术是指基于WiFi探测技术来识别AP（无线访问接入点）附近已开启WiFi的智能手机或者WiFi终端（笔记本，平板电脑等），无需用户接入WiFi，WiFi探针就能够识别用户的信息。</p>
 <p>当我们走进探针信号覆盖区域内且我们的WiFi设备打开，我们的设备就能被探针探测出来，无论是iOS或者Android系统都能轻易检测到，并且获取设备的MAC地址。</p>
 <a id="more"></a>
@@ -225,7 +400,7 @@ make V=s
     
     <entry>
       <title><![CDATA[Android MulticastSocket 组播]]></title>
-      <url>http://cuiqingwei.github.io/2018/05/08/2018-05-08-Android-MulticastSocket-%E7%BB%84%E6%92%AD/</url>
+      <url>http://cuiqingwei.github.io/2018/05/08/2018-05-08-Android-MulticastSocket-%25E7%25BB%2584%25E6%2592%25AD/</url>
       <content type="html"><![CDATA[<p>现象是MulticastSocket发送组播消息,一些安卓平板上可以发送、接收组播消息,个别安卓不可用。</p>
 <a id="more"></a>
 <p>1.能正常发送接收的安卓平板,向组播地址发送了组播消息后,同时会向组播地址发送一个 <strong>IGMPv2</strong> 的协议</p>
@@ -244,7 +419,7 @@ make V=s
     
     <entry>
       <title><![CDATA[OSX安装nginx和rtmp模块]]></title>
-      <url>http://cuiqingwei.github.io/2018/04/24/2018-04-24-OSX%E5%AE%89%E8%A3%85nginx%E5%92%8Crtmp%E6%A8%A1%E5%9D%97/</url>
+      <url>http://cuiqingwei.github.io/2018/04/24/2018-04-24-OSX%25E5%25AE%2589%25E8%25A3%2585nginx%25E5%2592%258Crtmp%25E6%25A8%25A1%25E5%259D%2597/</url>
       <content type="html"><![CDATA[<h1 id="1-安装brew"><a href="#1-安装brew" class="headerlink" title="1.安装brew"></a>1.安装brew</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div><div class="line">如果安装后, 想要卸载</div><div class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)&quot;</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <h1 id="2-安装nginx"><a href="#2-安装nginx" class="headerlink" title="2.安装nginx"></a>2.安装nginx</h1><p>先clone nginx项目到本地<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew tap denji/nginx</div></pre></td></tr></table></figure></p>
@@ -300,7 +475,7 @@ make V=s
     
     <entry>
       <title><![CDATA[802.11ac Wave2到底好在哪?]]></title>
-      <url>http://cuiqingwei.github.io/2018/03/16/2018-03-16-802-11ac-Wave2%E5%88%B0%E5%BA%95%E5%A5%BD%E5%9C%A8%E5%93%AA/</url>
+      <url>http://cuiqingwei.github.io/2018/03/16/2018-03-16-802-11ac-Wave2%25E5%2588%25B0%25E5%25BA%2595%25E5%25A5%25BD%25E5%259C%25A8%25E5%2593%25AA/</url>
       <content type="html"><![CDATA[<p>在挑选无线路由或是AP时，尤其是那些价格不菲的高端产品，我们常常会在产品描述中看到“MU-MIMO”、“802.11ac Wave2”这些字眼。实际上，MU-MIMO技术正是802.11ac Wave2标准的精髓所在。怎么，感觉与802.11ac Wave2似曾相识？其实，它是第二波11ac。而在本期内容中，我们将向各位更为详尽细的表明：“Wave2”是啥，又到底好在哪？</p>
 <a id="more"></a>
 <p><img src="/img/20180316/10021074_Wave2hao_thumb.jpg" alt=""></p>
@@ -332,7 +507,7 @@ make V=s
     
     <entry>
       <title><![CDATA[DCS和PLC的区别]]></title>
-      <url>http://cuiqingwei.github.io/2018/02/05/2018-02-05-DCS%E5%92%8CPLC%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      <url>http://cuiqingwei.github.io/2018/02/05/2018-02-05-DCS%25E5%2592%258CPLC%25E7%259A%2584%25E5%258C%25BA%25E5%2588%25AB/</url>
       <content type="html"><![CDATA[<p>发展到现在，DCS和PLC之间没有一个严格的界限，在大多数人看来，大的系统就是DCS，小的系统就叫PLC。当然，这么说也不是不可以，但是还不对。现在我们来重新建立这个概念。</p>
 <a id="more"></a>
 <h1 id="先通过几张图看看两者的区别"><a href="#先通过几张图看看两者的区别" class="headerlink" title="先通过几张图看看两者的区别"></a>先通过几张图看看两者的区别</h1><p><img src="/img/20180205/1.jpg" alt=""><br><img src="/img/20180205/2.jpg" alt=""><br><img src="/img/20180205/3.jpg" alt=""><br><img src="/img/20180205/4.jpg" alt=""><br><img src="/img/20180205/5.jpg" alt=""><br><img src="/img/20180205/6.jpg" alt=""><br><img src="/img/20180205/7.jpg" alt=""><br><img src="/img/20180205/8.jpg" alt=""><br><img src="/img/20180205/9.jpg" alt=""><br><img src="/img/20180205/10.jpg" alt=""><br><img src="/img/20180205/11.jpg" alt=""><br><img src="/img/20180205/12.jpg" alt=""><br><img src="/img/20180205/13.jpg" alt=""></p>
@@ -365,7 +540,7 @@ make V=s
     
     <entry>
       <title><![CDATA[SSH与SSM对比]]></title>
-      <url>http://cuiqingwei.github.io/2017/12/26/2017-12-26-SSH%E4%B8%8ESSM%E5%AF%B9%E6%AF%94/</url>
+      <url>http://cuiqingwei.github.io/2017/12/26/2017-12-26-SSH%25E4%25B8%258ESSM%25E5%25AF%25B9%25E6%25AF%2594/</url>
       <content type="html"><![CDATA[<p>当下流行的两种企业开发MVC开源框架，是我们Java程序猿必备知识能力。MVC，即模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。框架之所以流行，在于其易复用和简化开发，精髓在思想，掌握了核心思想，我们掌握其他类似框架也不会有问题，建议大家有精力的话读一下框架源码，尤其是Spring。</p>
 <a id="more"></a>
 <h1 id="SSH和SSM定义"><a href="#SSH和SSM定义" class="headerlink" title="SSH和SSM定义"></a>SSH和SSM定义</h1><p><strong>SSH</strong> 通常指的是 Struts2 做控制器(controller)，spring 管理各层的组件，hibernate 负责持久化层。</p>
@@ -425,7 +600,7 @@ make V=s
     
     <entry>
       <title><![CDATA[curl模拟http发送get或post接口测试]]></title>
-      <url>http://cuiqingwei.github.io/2017/12/05/2017-12-05-curl%E6%A8%A1%E6%8B%9Fhttp%E5%8F%91%E9%80%81get%E6%88%96post%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/</url>
+      <url>http://cuiqingwei.github.io/2017/12/05/2017-12-05-curl%25E6%25A8%25A1%25E6%258B%259Fhttp%25E5%258F%2591%25E9%2580%2581get%25E6%2588%2596post%25E6%258E%25A5%25E5%258F%25A3%25E6%25B5%258B%25E8%25AF%2595/</url>
       <content type="html"><![CDATA[<h1 id="一、get请求"><a href="#一、get请求" class="headerlink" title="一、get请求"></a>一、get请求</h1><p>curl “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地<br>curl -i “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示全部信息<br>curl -l “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  只显示头部信息<br>curl -v “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示get请求全过程解析<br>wget “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     也可以</p>
 <a id="more"></a>
 <h1 id="二、post请求"><a href="#二、post请求" class="headerlink" title="二、post请求"></a>二、post请求</h1><p>curl -d “param1=value1&amp;param2=value2” “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“</p>
@@ -530,7 +705,7 @@ make V=s
     
     <entry>
       <title><![CDATA[分布式文件系统 FastDFS 5 & Linux CentOS 7 搭建]]></title>
-      <url>http://cuiqingwei.github.io/2017/12/05/2017-12-22-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F-FastDFS-5-Linux-CentOS-7-%E6%90%AD%E5%BB%BA/</url>
+      <url>http://cuiqingwei.github.io/2017/12/05/2017-12-22-%25E5%2588%2586%25E5%25B8%2583%25E5%25BC%258F%25E6%2596%2587%25E4%25BB%25B6%25E7%25B3%25BB%25E7%25BB%259F-FastDFS-5-Linux-CentOS-7-%25E6%2590%25AD%25E5%25BB%25BA/</url>
       <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>FastDFS是一个开源的轻量级分布式文件系统，由跟踪服务器（tracker server）、存储服务器（storage server）和客户端（client）三个部分组成，主要解决了海量数据存储问题，特别适合以中小文件（建议范围：<strong>4KB &lt; file_size &lt;500MB</strong> ）为载体的在线服务。</p>
 <a id="more"></a>
 <p>FastDFS的系统结构图如下：</p>
@@ -651,7 +826,7 @@ make V=s
     
     <entry>
       <title><![CDATA[怎样的家居照明才有质感?]]></title>
-      <url>http://cuiqingwei.github.io/2017/12/04/2017-12-04-%E6%80%8E%E6%A0%B7%E7%9A%84%E5%AE%B6%E5%B1%85%E7%85%A7%E6%98%8E%E6%89%8D%E6%9C%89%E8%B4%A8%E6%84%9F/</url>
+      <url>http://cuiqingwei.github.io/2017/12/04/2017-12-04-%25E6%2580%258E%25E6%25A0%25B7%25E7%259A%2584%25E5%25AE%25B6%25E5%25B1%2585%25E7%2585%25A7%25E6%2598%258E%25E6%2589%258D%25E6%259C%2589%25E8%25B4%25A8%25E6%2584%259F/</url>
       <content type="html"><![CDATA[<p>生活要有质感，这是很多人所追求的，也是很多人所向往的，但是，你真的懂质感吗?质感这种东西，重要的是感觉。怎样才能让自己的家变得有感觉呢?</p>
 <p>答案当然是灯光!试想一下，当你回到家，看到明亮的、昏黄的、温暖的灯光，是不是都能让你的家有不一样的感觉?我们先来看一看，一个家的六大功能区。</p>
 <a id="more"></a>
@@ -750,7 +925,7 @@ make V=s
     
     <entry>
       <title><![CDATA[CentOS7添加开机启动服务脚本]]></title>
-      <url>http://cuiqingwei.github.io/2017/11/29/2017-11-29-CentOS7%E6%B7%BB%E5%8A%A0%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E8%84%9A%E6%9C%AC/</url>
+      <url>http://cuiqingwei.github.io/2017/11/29/2017-11-29-CentOS7%25E6%25B7%25BB%25E5%258A%25A0%25E5%25BC%2580%25E6%259C%25BA%25E5%2590%25AF%25E5%258A%25A8%25E6%259C%258D%25E5%258A%25A1%25E8%2584%259A%25E6%259C%25AC/</url>
       <content type="html"><![CDATA[<h1 id="一、添加开机自启服务"><a href="#一、添加开机自启服务" class="headerlink" title="一、添加开机自启服务"></a>一、添加开机自启服务</h1><p>在CentOS 7中添加开机自启服务非常方便，只需要两条命令(以Jenkins为例)：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">systemctl enable jenkins.service  # 设置jenkins服务为自启动服务</div><div class="line">sysstemctl start  jenkins.service # 启动jenkins服务</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -773,7 +948,7 @@ make V=s
     
     <entry>
       <title><![CDATA[基于红外阵列传感器的检测系统]]></title>
-      <url>http://cuiqingwei.github.io/2017/11/27/2017-11-27-%E5%9F%BA%E4%BA%8E%E7%BA%A2%E5%A4%96%E9%98%B5%E5%88%97%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F/</url>
+      <url>http://cuiqingwei.github.io/2017/11/27/2017-11-27-%25E5%259F%25BA%25E4%25BA%258E%25E7%25BA%25A2%25E5%25A4%2596%25E9%2598%25B5%25E5%2588%2597%25E4%25BC%25A0%25E6%2584%259F%25E5%2599%25A8%25E7%259A%2584%25E6%25A3%2580%25E6%25B5%258B%25E7%25B3%25BB%25E7%25BB%259F/</url>
       <content type="html"><![CDATA[<h2 id="办公节能新技术"><a href="#办公节能新技术" class="headerlink" title="办公节能新技术"></a>办公节能新技术</h2><p>在提倡建设节约型社会的今天，建筑节能问题日益得到普遍关注，而降低新风及冷风负 荷也就成为主要的节能措施之一。建筑室内人员密度是新风量及冷风量合理确定需要考虑的重点因素也是难点因素。</p>
 <p>近年来，基于摄像头的人数检测技术愈发成熟。然而，在办公室这样的环境中，摄像头的使用受到一定的限制。</p>
 <p>本文介绍了一种基于阵列红外传感器的办公空间人员密度监控解决方案。在充分保护个人隐私及企业秘密的前提下，准确实时的检测人员密度，从而为新风及冷风控制提供准确的输入参书以达到节能之需求。</p>
@@ -827,7 +1002,7 @@ make V=s
     
     <entry>
       <title><![CDATA[松下Grid-EYE红外阵列传感器解析]]></title>
-      <url>http://cuiqingwei.github.io/2017/11/26/2017-11-26-%E6%9D%BE%E4%B8%8BGrid-EYE%E7%BA%A2%E5%A4%96%E9%98%B5%E5%88%97%E5%8C%BB%E7%96%97%E4%BC%A0%E6%84%9F%E5%99%A8%E8%A7%A3%E6%9E%90/</url>
+      <url>http://cuiqingwei.github.io/2017/11/26/2017-11-26-%25E6%259D%25BE%25E4%25B8%258BGrid-EYE%25E7%25BA%25A2%25E5%25A4%2596%25E9%2598%25B5%25E5%2588%2597%25E5%258C%25BB%25E7%2596%2597%25E4%25BC%25A0%25E6%2584%259F%25E5%2599%25A8%25E8%25A7%25A3%25E6%259E%2590/</url>
       <content type="html"><![CDATA[<p> 近年来，由于基于MEMS的独立式热隔离像素结构采用薄膜红外吸收层，使得非制冷红外传感器取得了显著进展。　　</p>
 <p><img src="/img/20171126/W020160708332880615768.jpg" alt=""></p>
 <a id="more"></a>
@@ -880,7 +1055,7 @@ make V=s
     
     <entry>
       <title><![CDATA[git中避免提交.DS_Store文件]]></title>
-      <url>http://cuiqingwei.github.io/2017/11/23/2017-11-23-git%E4%B8%AD%E9%81%BF%E5%85%8D%E6%8F%90%E4%BA%A4-DS-Store%E6%96%87%E4%BB%B6/</url>
+      <url>http://cuiqingwei.github.io/2017/11/23/2017-11-23-git%25E4%25B8%25AD%25E9%2581%25BF%25E5%2585%258D%25E6%258F%2590%25E4%25BA%25A4-DS-Store%25E6%2596%2587%25E4%25BB%25B6/</url>
       <content type="html"><![CDATA[<h3 id="1-先删除原有的-DS-Store："><a href="#1-先删除原有的-DS-Store：" class="headerlink" title="1. 先删除原有的.DS_Store："></a>1. 先删除原有的.DS_Store：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name &quot;.DS_Store&quot; -type f -delete</div></pre></td></tr></table></figure>
 <p>命令解释：在当前文件夹以及当前文件夹的子文件夹中找到所有的.DS_Store文件</p>
 <h3 id="2-建立-gitignore文件"><a href="#2-建立-gitignore文件" class="headerlink" title="2. 建立.gitignore文件"></a>2. 建立.gitignore文件</h3><p>vi .gitignore。然后添加.DS_Store作为忽略：</p>
@@ -891,7 +1066,7 @@ make V=s
     
     <entry>
       <title><![CDATA[如何查看网站是用什么语言开发的?]]></title>
-      <url>http://cuiqingwei.github.io/2017/10/31/2017-10-31-%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%AB%99%E6%98%AF%E7%94%A8%E4%BB%80%E4%B9%88%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%9A%84/</url>
+      <url>http://cuiqingwei.github.io/2017/10/31/2017-10-31-%25E5%25A6%2582%25E4%25BD%2595%25E6%259F%25A5%25E7%259C%258B%25E7%25BD%2591%25E7%25AB%2599%25E6%2598%25AF%25E7%2594%25A8%25E4%25BB%2580%25E4%25B9%2588%25E8%25AF%25AD%25E8%25A8%2580%25E5%25BC%2580%25E5%258F%2591%25E7%259A%2584/</url>
       <content type="html"><![CDATA[<p>查看网站开发语言方法：</p>
 <p>1）利用工具直接输入查询</p>
 <p><a href="http://w3techs.com/sites/info/baidu.com" target="_blank" rel="external">http://w3techs.com/sites/info/baidu.com</a><br><a href="https://builtwith.com/baidu.com" target="_blank" rel="external">https://builtwith.com/baidu.com</a></p>
@@ -912,7 +1087,7 @@ make V=s
     
     <entry>
       <title><![CDATA[酒店PMS]]></title>
-      <url>http://cuiqingwei.github.io/2017/09/21/2017-09-21-%E9%85%92%E5%BA%97PMS/</url>
+      <url>http://cuiqingwei.github.io/2017/09/21/2017-09-21-%25E9%2585%2592%25E5%25BA%2597PMS/</url>
       <content type="html"><![CDATA[<h1 id="什么是PMS"><a href="#什么是PMS" class="headerlink" title="什么是PMS"></a>什么是PMS</h1><p><strong>PMS</strong>：Property Management System，直译为物业管理系统，也有翻译为：酒店管理系统。</p>
 <p>酒店PMS系统是一个以计算机为工具，对酒店信息管理和处理的人机综合系统，它不但能准确及时地反映酒店业务的当前状态、房源状态，还能快速实现客人预定入住到财务对账等一系列操作;不但是一个数据统计的数据库，还能够提供各方面的报表，且利用数据进行统计分析，从而更有利于酒店的经营和管理。</p>
 <a id="more"></a>
@@ -934,7 +1109,7 @@ make V=s
     
     <entry>
       <title><![CDATA[使用Ionic框架开发Hybird应用]]></title>
-      <url>http://cuiqingwei.github.io/2017/09/19/2017-09-19-%E4%BD%BF%E7%94%A8Ionic%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91Hybird%E5%BA%94%E7%94%A8/</url>
+      <url>http://cuiqingwei.github.io/2017/09/19/2017-09-19-%25E4%25BD%25BF%25E7%2594%25A8Ionic%25E6%25A1%2586%25E6%259E%25B6%25E5%25BC%2580%25E5%258F%2591Hybird%25E5%25BA%2594%25E7%2594%25A8/</url>
       <content type="html"><![CDATA[<h1 id="什么是Ionic"><a href="#什么是Ionic" class="headerlink" title="什么是Ionic"></a>什么是Ionic</h1><p>Ionic是一个强大的HTML5 原生应用（Native App）开发框架，帮助你用HTML，CSS和JavaScript构建具有原生味道的移动应用;</p>
 <p>Ionic是一个高级HTML5混合式移动应用开发框架，同时也是一个开源的前端框架;</p>
 <p>Ionic注重的是视觉效果和用户体验，所以使用了AngularJS来构建很各种酷的效果;</p>
@@ -994,7 +1169,7 @@ make V=s
     
     <entry>
       <title><![CDATA[HomeKit初体验]]></title>
-      <url>http://cuiqingwei.github.io/2017/02/09/2017-02-09-Homekit%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
+      <url>http://cuiqingwei.github.io/2017/02/09/2017-02-09-Homekit%25E5%2588%259D%25E4%25BD%2593%25E9%25AA%258C/</url>
       <content type="html"><![CDATA[<h1 id="对话Siri"><a href="#对话Siri" class="headerlink" title="对话Siri"></a>对话Siri</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XMjUwMzIyMjEyMA==" frameborder="0" 'allowfullscreen'=""></iframe>
 
 <a id="more"></a>
@@ -1079,7 +1254,7 @@ make V=s
     
     <entry>
       <title><![CDATA[OpenWRT之HomeKit]]></title>
-      <url>http://cuiqingwei.github.io/2017/02/08/2017-02-08-OpenWRT%E4%B9%8BHomeKit/</url>
+      <url>http://cuiqingwei.github.io/2017/02/08/2017-02-08-OpenWRT%25E4%25B9%258BHomeKit/</url>
       <content type="html"><![CDATA[<h1 id="1-制备openwrt系统镜像"><a href="#1-制备openwrt系统镜像" class="headerlink" title="1.制备openwrt系统镜像"></a>1.制备openwrt系统镜像</h1><p>预编译的openwrt是musl的toolchain，而homebridge需要glibc的toolchain所以需要自己编译系统。</p>
 <p>建议安装完成后开启ssh，直接用putty和winscp来传送文件和操作虚拟机更方便。<br>以下所有命令都是通过putty登陆虚拟机或使用虚拟机的terminal来执行的。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt update</div></pre></td></tr></table></figure>
@@ -1143,7 +1318,7 @@ make V=s
     
     <entry>
       <title><![CDATA[Raspberry安装HAP-NodeJS]]></title>
-      <url>http://cuiqingwei.github.io/2017/02/08/2017-02-08-Raspberry%E5%AE%89%E8%A3%85HAP-NodeJS/</url>
+      <url>http://cuiqingwei.github.io/2017/02/08/2017-02-08-Raspberry%25E5%25AE%2589%25E8%25A3%2585HAP-NodeJS/</url>
       <content type="html"><![CDATA[<h1 id="下载-Raspbian"><a href="#下载-Raspbian" class="headerlink" title="下载 Raspbian"></a>下载 Raspbian</h1><p><a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="external">https://www.raspberrypi.org/downloads/raspbian/</a></p>
 <h1 id="制作-TF-card"><a href="#制作-TF-card" class="headerlink" title="制作 TF card"></a>制作 TF card</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">df -h</div><div class="line">diskutil unmount /dev/disk2s1</div><div class="line">diskutil list</div><div class="line">dd bs=4m if=2017-01-11-raspbian-jessie.img of=/dev/rdisk2</div><div class="line">diskutil unmountdisk /dev/disk2</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -1166,7 +1341,7 @@ make V=s
     
     <entry>
       <title><![CDATA[图文解说水滴轮三大刹车系统]]></title>
-      <url>http://cuiqingwei.github.io/2017/02/01/2017-02-01-%E5%9B%BE%E6%96%87%E8%A7%A3%E8%AF%B4%E6%B0%B4%E6%BB%B4%E8%BD%AE%E4%B8%89%E5%A4%A7%E5%88%B9%E8%BD%A6%E7%B3%BB%E7%BB%9F/</url>
+      <url>http://cuiqingwei.github.io/2017/02/01/2017-02-01-%25E5%259B%25BE%25E6%2596%2587%25E8%25A7%25A3%25E8%25AF%25B4%25E6%25B0%25B4%25E6%25BB%25B4%25E8%25BD%25AE%25E4%25B8%2589%25E5%25A4%25A7%25E5%2588%25B9%25E8%25BD%25A6%25E7%25B3%25BB%25E7%25BB%259F/</url>
       <content type="html"><![CDATA[<p>水滴轮属于垂钓卷线器中的一种，跟鼓轮一样都属于两轴卷线器。水滴轮主要是用于路亚钓。相比纺车轮，水滴轮抛投精确度更高，体积小，出线容易控制。缺点就是抛投不易掌握，容易炸线，就是大家说的炒粉。但良好的抛投刹车系统能让路亚作钓的过程中操控舒服避免炒粉。</p>
 <a id="more"></a>
 <p>目前主流的刹车系统主要有Shimano厂家旗下的 SVS（全称Shimano Variable brake System无限离心刹车）、DC(Digital Control)以及Daiwa厂家旗下磁刹制动。就是我们平时常说的三种刹车：离心刹车、磁力刹车、DC刹车。</p>
@@ -1271,7 +1446,7 @@ make V=s
     
     <entry>
       <title><![CDATA[夏利俊超级远投讲解]]></title>
-      <url>http://cuiqingwei.github.io/2017/01/02/2017-01-02-%E5%A4%8F%E5%88%A9%E4%BF%8A%E8%B6%85%E7%BA%A7%E8%BF%9C%E6%8A%95%E8%AE%B2%E8%A7%A3/</url>
+      <url>http://cuiqingwei.github.io/2017/01/02/2017-01-02-%25E5%25A4%258F%25E5%2588%25A9%25E4%25BF%258A%25E8%25B6%2585%25E7%25BA%25A7%25E8%25BF%259C%25E6%258A%2595%25E8%25AE%25B2%25E8%25A7%25A3/</url>
       <content type="html"><![CDATA[<h1 id="《夏利俊路亚教室》之直柄竿超级远投"><a href="#《夏利俊路亚教室》之直柄竿超级远投" class="headerlink" title="《夏利俊路亚教室》之直柄竿超级远投"></a>《夏利俊路亚教室》之直柄竿超级远投</h1><div align="center"><br><iframe height="498" width="510" src="http://player.youku.com/embed/XMTg2Mzk2Njg4NA==" frameborder="0" 'allowfullscreen'=""></iframe><br></div>
 
 <a id="more"></a>
@@ -1281,7 +1456,7 @@ make V=s
     
     <entry>
       <title><![CDATA[路亚装逼指南]]></title>
-      <url>http://cuiqingwei.github.io/2017/01/01/2017-01-01-%E8%B7%AF%E4%BA%9A%E8%A3%85%E9%80%BC%E6%8C%87%E5%8D%97/</url>
+      <url>http://cuiqingwei.github.io/2017/01/01/2017-01-01-%25E8%25B7%25AF%25E4%25BA%259A%25E8%25A3%2585%25E9%2580%25BC%25E6%258C%2587%25E5%258D%2597/</url>
       <content type="html"><![CDATA[<p>何为<strong>路亚</strong>？你看有人站水边，竿尖挂个假鱼，抛出去，收回来，抛出去，再收，那就是了。</p>
 <p><img src="/img/20170101/pjlure.jpg" alt=""></p>
 <a id="more"></a>
@@ -1343,7 +1518,7 @@ make V=s
     
     <entry>
       <title><![CDATA[谈谈用ASP.NET开发的大型网站有哪些架构方式]]></title>
-      <url>http://cuiqingwei.github.io/2016/12/30/2016-12-30-%E7%94%A8ASP-NET%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%9C%89%E5%93%AA%E4%BA%9B%E6%9E%B6%E6%9E%84%E6%96%B9%E5%BC%8F/</url>
+      <url>http://cuiqingwei.github.io/2016/12/30/2016-12-30-%25E7%2594%25A8ASP-NET%25E5%25BC%2580%25E5%258F%2591%25E7%259A%2584%25E5%25A4%25A7%25E5%259E%258B%25E7%25BD%2591%25E7%25AB%2599%25E6%259C%2589%25E5%2593%25AA%25E4%25BA%259B%25E6%259E%25B6%25E6%259E%2584%25E6%2596%25B9%25E5%25BC%258F/</url>
       <content type="html"><![CDATA[<p>在<a href="http://www.cnblogs.com/ms0017/archive/2011/07/26/2117676.html" target="_blank" rel="external">文章</a>里，列举了国内外用ASP.NET开发的大型网站有哪些。最后提到了用.NET开发的大型网站和LAMP/JAVA平台的成本比较。其实在很多时候，收费的不一定就比免费的成本更高。因为开发一个网站要使用哪个平台的技术更合适，需要考虑很多种情况（除了开发技术本身，还要考虑人工，开发效率，时间，后续的支持，维护等等），要综合计算成本才行。微软平台本身虽然是收费的，但总体的成本并非一定比LAMP/JAVA高，上篇文章列举的国内外的那么多基于ASP.NET开发的大型网站就是例证。尤其是在开发效率上，无论是C#开发语言，还是免费的开发工具（Visual Studio Express，或者MonoDevelop/SharpDevelop），.NET明显比其他两个平台更胜一筹。而这一点正是互联网企业所需要的。效率就是生产力。并且，由于有Mono (<a href="http://mono-project.org/" target="_blank" rel="external">http://mono-project.org/</a>) 这个开源平台的存在，.NET技术也可以在linux/BSD等开源服务器上使用。使.NET完全可以实现跨平台应用。据此，我们可以分Windows/Linux两种方式来架构我们的ASP.NET网站：</p>
 <a id="more"></a>
 <h1 id="一、Windows平台"><a href="#一、Windows平台" class="headerlink" title="一、Windows平台"></a>一、Windows平台</h1><p>在Windows平台下开发大型网站，很多人首先想到的是Microsoft软件高昂的许可费，觉得成本一定很高。其实，这里有个误区。我们开发ASP.NET网站，web服务器完全可以用Windows Werver的WEB版本Windows Web Server 2003/2008，它们并不贵，才3k多RMB。并且注意了，一个系统是一次性买，买了可以用N年，现在还有很多大型网站在用Win2003，想想已经用了多少年？而人员工资则是月付，几年下来成本也并不是很高。贵的地方，应该是SQLServer数据库和支持它的Windows Server企业版。它们确实很贵。但我们开发网站不一定非要用SQLServer啊。数据库可以使用在linux下部署mysql,postgresql等开源数据库，并且也可以考虑用mongodb等开源NOSQL数据库。一般的中大型网站有十几台web服务器就足够了(这里有2013年底的Stack Overflow服务器数据可参考),也就是3w多人民币而已啊！对于Stack Overflow这种规模的网站，这点钱应该也不算什么了吧。当然，如果你真能做到像myspace那种超大型的.NET网站，你应该可以直接找微软要优惠价来批量购买了。呵呵。</p>
@@ -1359,7 +1534,7 @@ make V=s
     
     <entry>
       <title><![CDATA[基于微软平台IIS/ASP.NET开发的大型网站有哪些?]]></title>
-      <url>http://cuiqingwei.github.io/2016/12/30/2016-12-30-%E5%9F%BA%E4%BA%8E%E5%BE%AE%E8%BD%AF%E5%B9%B3%E5%8F%B0IIS-ASP-NET%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%9C%89%E5%93%AA%E4%BA%9B/</url>
+      <url>http://cuiqingwei.github.io/2016/12/30/2016-12-30-%25E5%259F%25BA%25E4%25BA%258E%25E5%25BE%25AE%25E8%25BD%25AF%25E5%25B9%25B3%25E5%258F%25B0IIS-ASP-NET%25E5%25BC%2580%25E5%258F%2591%25E7%259A%2584%25E5%25A4%25A7%25E5%259E%258B%25E7%25BD%2591%25E7%25AB%2599%25E6%259C%2589%25E5%2593%25AA%25E4%25BA%259B/</url>
       <content type="html"><![CDATA[<p>首先说明一下，本文绝不是要说Microsoft平台多么好，多么强。<br>只是要说明一下除了LAMP/JAVA平台，微软平台不至于像有些人说的，和想象的那么不堪！</p>
 <a id="more"></a>
 <p>下面一一列举几个:<br><a href="http://www.msn.com/" target="_blank" rel="external">http://www.msn.com/</a><br><a href="http://www.live.com/" target="_blank" rel="external">http://www.live.com/</a> (包括skydrive、hotmail等)<br><a href="http://www.bing.com/" target="_blank" rel="external">http://www.bing.com/</a></p>
@@ -1393,6 +1568,19 @@ make V=s
     </entry>
     
     <entry>
+      <title><![CDATA[GoAhead移植到OpenWRT]]></title>
+      <url>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%25E7%25A7%25BB%25E6%25A4%258D%25E5%2588%25B0OpenWRT/</url>
+      <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
+<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
+<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
+<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
+<blockquote>
+<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Contiki-CC2538-CoAP]]></title>
       <url>http://cuiqingwei.github.io/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/</url>
       <content type="html"><![CDATA[<div align="center"><br><iframe height="498" width="510" src="http://player.youku.com/embed/XMTgyNDA3NDAzNg==" frameborder="0" 'allowfullscreen'=""></iframe><br></div>
@@ -1413,19 +1601,6 @@ make V=s
 <h1 id="ping6"><a href="#ping6" class="headerlink" title="ping6"></a>ping6</h1><p>ping6 aaaa::212:4b00:5af:84e0</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">PING aaaa::212:4b00:5af:84e0(aaaa::212:4b00:5af:84e0) 56 data bytes</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=1 ttl=63 time=1013 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=2 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=3 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=4 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=5 ttl=63 time=125 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=6 ttl=63 time=120 ms</div></pre></td></tr></table></figure>
 <h1 id="firefox"><a href="#firefox" class="headerlink" title="firefox"></a>firefox</h1><p><img src="/img/20161117/coap1.png" alt=""><br><img src="/img/20161117/coap2.png" alt=""></p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[GoAhead移植到OpenWRT]]></title>
-      <url>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/</url>
-      <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
-<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
-<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
-<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
-<blockquote>
-<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
-</blockquote>
 ]]></content>
     </entry>
     
@@ -1505,7 +1680,7 @@ make V=s
     
     <entry>
       <title><![CDATA[基于Contiki-Cooja的6lbr模拟仿真]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/29/2016-10-29-%E5%9F%BA%E4%BA%8EContiki-Cooja%E7%9A%846lbr%E6%A8%A1%E6%8B%9F%E4%BB%BF%E7%9C%9F/</url>
+      <url>http://cuiqingwei.github.io/2016/10/29/2016-10-29-%25E5%259F%25BA%25E4%25BA%258EContiki-Cooja%25E7%259A%25846lbr%25E6%25A8%25A1%25E6%258B%259F%25E4%25BB%25BF%25E7%259C%259F/</url>
       <content type="html"><![CDATA[<h1 id="Instant-Contiki-2-7"><a href="#Instant-Contiki-2-7" class="headerlink" title="Instant Contiki 2.7"></a>Instant Contiki 2.7</h1><p>下载、安装… 具体请查看链接-&gt;<a href="http://www.contiki-os.org/start.html" target="_blank" rel="external">http://www.contiki-os.org/start.html</a></p>
 <h1 id="Java版本"><a href="#Java版本" class="headerlink" title="Java版本"></a>Java版本</h1><p>打开（<em>Ctrl+Alt+T</em>）超级终端，键入 <strong>java -version</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">user@instant-contiki:~$ java -version</div><div class="line">java version &quot;1.7.0_25&quot;</div><div class="line">OpenJDK Runtime Environment (IcedTea 2.3.10) (7u25-2.3.10-1ubuntu0.12.04.2)</div><div class="line">OpenJDK Client VM (build 23.7-b01, mixed mode, sharing)</div></pre></td></tr></table></figure>
@@ -1544,7 +1719,7 @@ make V=s
     
     <entry>
       <title><![CDATA[利用Travis CI、MkDocs自動部署Blog至GitHub Pages]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/27/2016-10-27-%E5%88%A9%E7%94%A8Travis-CI%E3%80%81MkDocs%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2Blog%E8%87%B3GitHub-Pages/</url>
+      <url>http://cuiqingwei.github.io/2016/10/27/2016-10-27-%25E5%2588%25A9%25E7%2594%25A8Travis-CI%25E3%2580%2581MkDocs%25E8%2587%25AA%25E5%258B%2595%25E9%2583%25A8%25E7%25BD%25B2Blog%25E8%2587%25B3GitHub-Pages/</url>
       <content type="html"><![CDATA[<h1 id="技术要点"><a href="#技术要点" class="headerlink" title="技术要点"></a>技术要点</h1><h3 id="GitHub-Pages"><a href="#GitHub-Pages" class="headerlink" title="GitHub Pages"></a>GitHub Pages</h3><p><a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a>免费的静态站点，三个特点：免费托管、自带主题、支持自制页面和Jekyll。</p>
 <h3 id="MkDocs"><a href="#MkDocs" class="headerlink" title="MkDocs"></a>MkDocs</h3><p><a href="http://markdown-docs-zh.readthedocs.io/zh_CN/latest/" target="_blank" rel="external">MkDocs</a>是一个用于创建项目文档的 快速, 简单 , 完美华丽 的静态站点生成器. 文档源码使用 Markdown 来撰写, 用一个 YAML 文件作为配置文档.</p>
 <h3 id="Travis-CI"><a href="#Travis-CI" class="headerlink" title="Travis CI"></a>Travis CI</h3><p><a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI</a>，是一个专门为开源项目打造的持续集成环境。<br>如果你有一个放在github上的开源项目，Travis CI简直就是一个完美的CI选择。<br><a id="more"></a></p>
@@ -1652,8 +1827,26 @@ make V=s
     </entry>
     
     <entry>
+      <title><![CDATA[善用路亚软饵]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%25E5%2596%2584%25E7%2594%25A8%25E8%25B7%25AF%25E4%25BA%259A%25E8%25BD%25AF%25E9%25A5%25B5/</url>
+      <content type="html"><![CDATA[<p>在路亚世界里，软饵的搭配种类比较多功能性也不尽相同，但是它们的共同之处 就在于—引诱鱼饵上钩，无论是以动作逼真引诱还是以动作激怒鱼儿。 但是这些动作都需要人来赋予它，不然再好的路亚软饵也是枉然。</p>
+<p>说之前先声明，这是给各位刚刚玩的盆友们准备的，各位老鸟们还请海涵！</p>
+<a id="more"></a>
+<p><img src="/img/20161013/orka-shad-tail92.jpg" alt=""></p>
+<p>首先呢，就先 从模拟自然界中的动作讲一下吧，这个问题就在于钓友们手上的灵活多变操控了 ，一般比较常用也是比较有效的方式有三种：</p>
+<p><strong>1，跳</strong></p>
+<p><strong>2，拖</strong></p>
+<p><strong>3，停</strong></p>
+<p><em>第一种，跳，顾名思义就如同我们人跳舞一样，饵也需要在水下跳舞引诱鱼 的注意，让它们觉得这东西有点好奇，看着有些意思，进而进行试探 最后咬钩。 “跳”的方法就是手持竿子，将竿子用手腕的力量上下挑动，使饵在水下呈现出 上下跳跃的姿态 这种跳跃的幅度可大可小，不用拘泥于形式，可以夸张的大幅度 ，也可以用轻微的小幅度挑动来模拟一些落入水中的昆虫幼虫或其他小生物。</em></p>
+<p><em>第二种，拖，拖动饵在水下移动，让饵自然呈现一种在底层游动的状态，引诱鱼 前来试探，这种方法对付一些底层伏击型的鱼类比较有效果。也会对钓手们了解 水底的地形有帮助。操作方法 就是慢慢摇轮，让其软饵在水下慢慢游走。</em></p>
+<p><em>第三种，停，这个动作非常重要 有时候你一直在操控软饵时，鱼可能没有动作， 只会盯着看，往往就是在你停顿的瞬间，鱼会突然发动攻击。当然停顿的时间没 有固定的，需要大家自行体会根据不同的环境来随时调整。</em></p>
+<p>而将这三者结合起来：跳-拖-停 重复使用的时候，往往会对鱼造成极大的诱惑性 ，可以使中鱼率大大增加，特别是在鱼境况不好的压力钓场上，往往路亚软饵钓 组会发挥极大地作用，大家可以在操控软饵的时候想想一下软饵在水下的动作会 是怎样的，充分发挥自己的想象力，努力去改造软饵在水下的状态，最简单的方 法就是找一个透明的玻璃鱼缸灌满水将软虫钓组放入浴缸里进行调试，已达到你 想要的理想效果，所以软饵钓组各位一定要掌握一下，当你熟悉了路亚软饵钓组 的你肯定会爱上它的。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[几种常用有效的线结介绍]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%87%A0%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%9C%89%E6%95%88%E7%9A%84%E7%BA%BF%E7%BB%93%E4%BB%8B%E7%BB%8D/</url>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%25E5%2587%25A0%25E7%25A7%258D%25E5%25B8%25B8%25E7%2594%25A8%25E6%259C%2589%25E6%2595%2588%25E7%259A%2584%25E7%25BA%25BF%25E7%25BB%2593%25E4%25BB%258B%25E7%25BB%258D/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>在路亚钓的过程中，线结是比较基础的一项技能，正确的使用和绑制一种线结关系到你作钓的成功与否，对于连接路亚的线结目前有很多种绑制方式，但是不是所有的方式都是可靠或优秀的，有因为大家都知道线的拉力磅数一般指的是直线拉力值，但是在线打结后的拉力值会降低不少，如果没有一个有效的线结的话，你打结后的线的拉力值可能会降到原来值的50%甚至更低，那样势必会影响整个线组的强度。</p>
 </blockquote>
@@ -1679,26 +1872,8 @@ make V=s
     </entry>
     
     <entry>
-      <title><![CDATA[善用路亚软饵]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%96%84%E7%94%A8%E8%B7%AF%E4%BA%9A%E8%BD%AF%E9%A5%B5/</url>
-      <content type="html"><![CDATA[<p>在路亚世界里，软饵的搭配种类比较多功能性也不尽相同，但是它们的共同之处 就在于—引诱鱼饵上钩，无论是以动作逼真引诱还是以动作激怒鱼儿。 但是这些动作都需要人来赋予它，不然再好的路亚软饵也是枉然。</p>
-<p>说之前先声明，这是给各位刚刚玩的盆友们准备的，各位老鸟们还请海涵！</p>
-<a id="more"></a>
-<p><img src="/img/20161013/orka-shad-tail92.jpg" alt=""></p>
-<p>首先呢，就先 从模拟自然界中的动作讲一下吧，这个问题就在于钓友们手上的灵活多变操控了 ，一般比较常用也是比较有效的方式有三种：</p>
-<p><strong>1，跳</strong></p>
-<p><strong>2，拖</strong></p>
-<p><strong>3，停</strong></p>
-<p><em>第一种，跳，顾名思义就如同我们人跳舞一样，饵也需要在水下跳舞引诱鱼 的注意，让它们觉得这东西有点好奇，看着有些意思，进而进行试探 最后咬钩。 “跳”的方法就是手持竿子，将竿子用手腕的力量上下挑动，使饵在水下呈现出 上下跳跃的姿态 这种跳跃的幅度可大可小，不用拘泥于形式，可以夸张的大幅度 ，也可以用轻微的小幅度挑动来模拟一些落入水中的昆虫幼虫或其他小生物。</em></p>
-<p><em>第二种，拖，拖动饵在水下移动，让饵自然呈现一种在底层游动的状态，引诱鱼 前来试探，这种方法对付一些底层伏击型的鱼类比较有效果。也会对钓手们了解 水底的地形有帮助。操作方法 就是慢慢摇轮，让其软饵在水下慢慢游走。</em></p>
-<p><em>第三种，停，这个动作非常重要 有时候你一直在操控软饵时，鱼可能没有动作， 只会盯着看，往往就是在你停顿的瞬间，鱼会突然发动攻击。当然停顿的时间没 有固定的，需要大家自行体会根据不同的环境来随时调整。</em></p>
-<p>而将这三者结合起来：跳-拖-停 重复使用的时候，往往会对鱼造成极大的诱惑性 ，可以使中鱼率大大增加，特别是在鱼境况不好的压力钓场上，往往路亚软饵钓 组会发挥极大地作用，大家可以在操控软饵的时候想想一下软饵在水下的动作会 是怎样的，充分发挥自己的想象力，努力去改造软饵在水下的状态，最简单的方 法就是找一个透明的玻璃鱼缸灌满水将软虫钓组放入浴缸里进行调试，已达到你 想要的理想效果，所以软饵钓组各位一定要掌握一下，当你熟悉了路亚软饵钓组 的你肯定会爱上它的。</p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[如何选择一根适合自己的BASS竿]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E4%B8%80%E6%A0%B9%E9%80%82%E5%90%88%E8%87%AA%E5%B7%B1%E7%9A%84BASS%E7%AB%BF/</url>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%25E5%25A6%2582%25E4%25BD%2595%25E9%2580%2589%25E6%258B%25A9%25E4%25B8%2580%25E6%25A0%25B9%25E9%2580%2582%25E5%2590%2588%25E8%2587%25AA%25E5%25B7%25B1%25E7%259A%2584BASS%25E7%25AB%25BF/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>随着路亚钓法的日益增温，人们对于路亚钓的了解也渐渐深入，随之而来的就是对钓具方面的需求更加的细化和理性，但是对于路亚之类舶来钓法，虽然大家对于路亚竿的基本情况有所了解，还是有很多地方对于入门的童鞋们来讲还是有些无所适从，特别是大嘴黑鲈钓法中对于钓竿的选择上往往会出现一些迷茫和误解，并且有时候还会因为不太了解BASS竿的特性而造成不必要的花销，下面我们就搜集了一些资料与大家探讨和参考，希望能对大家有所帮助。</p>
 </blockquote>
@@ -1738,7 +1913,7 @@ make V=s
     
     <entry>
       <title><![CDATA[常用路亚线的区别]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%B8%B8%E7%94%A8%E8%B7%AF%E4%BA%9A%E7%BA%BF%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%25E5%25B8%25B8%25E7%2594%25A8%25E8%25B7%25AF%25E4%25BA%259A%25E7%25BA%25BF%25E7%259A%2584%25E5%258C%25BA%25E5%2588%25AB/</url>
       <content type="html"><![CDATA[<h2 id="尼龙线"><a href="#尼龙线" class="headerlink" title="尼龙线"></a>尼龙线</h2><p>台钓中使用最多的也是尼龙线。尼龙的化工原料为PA，和PE一样是石油的下游产品。与PE不同的是，尼龙线一般为单股线，这种线的特点刚好与PE线相反。尼龙线的优点是由于有一定的延展性，抛投和中鱼的时候不易断线，由于生产技术已经发展了近70年的历史，成本低，产量大，相比PE线要便宜很多。最后一点是尼龙表面圆滑，对线环的磨损可以降到最低。</p>
 <a id="more"></a>
 <p>延展性同样也是尼龙线的缺点，在某些鱼讯轻微的场合，尼龙线不能及时将中鱼信号传达给钓手，从而失去最佳的起杆机会。另外，同样拉力的情况下，尼龙线比PE的线径更粗，从而影响路亚的抛投距离（<em>当然这个问题并不一定完全适用，需要根据具体的情况来，不过在高磅数的尼龙线与高磅数PE线做对比的话，高磅数的PE占些优势，因其相同的高磅数的线，高磅数PE线径更细一些，也就可以更加节省线杯的空间容下更多的线，并且线径也更细利于高磅数线的抛投</em>）。</p>
@@ -1751,7 +1926,7 @@ make V=s
     
     <entry>
       <title><![CDATA[路亚水滴轮的速比的选择]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E8%B7%AF%E4%BA%9A%E6%B0%B4%E6%BB%B4%E8%BD%AE%E7%9A%84%E9%80%9F%E6%AF%94%E7%9A%84%E9%80%89%E6%8B%A9/</url>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%25E8%25B7%25AF%25E4%25BA%259A%25E6%25B0%25B4%25E6%25BB%25B4%25E8%25BD%25AE%25E7%259A%2584%25E9%2580%259F%25E6%25AF%2594%25E7%259A%2584%25E9%2580%2589%25E6%258B%25A9/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>大家在购买轮子时，估计很多人都是首先关注轮子的价格，再关注轮子的牌子、外观、线容量、轴承数等，然后在各论坛到处问“XX的轮怎样？用过的说说！”结果，最后听了一大堆意见后最终还是进了一个价格自己可以接受的轮而不管轮子怎样了；或者受一些钓友的影响，入了一个超出了预算的牌子轮子却不是最适合自己的；或者入了一个价格差不多，只是多了一个或几个轴承的杂牌三无轮子而其它质量极差。鲜少有人（特别是新人）关注轮子的齿轮转速比，或者有关注，但却不是先决条件。</p>
 </blockquote>
@@ -1769,7 +1944,7 @@ make V=s
     
     <entry>
       <title><![CDATA[路亚竿的硬度与调性你是否混淆]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/12/2016-10-12-%E8%B7%AF%E4%BA%9A%E7%AB%BF%E7%9A%84%E7%A1%AC%E5%BA%A6%E4%B8%8E%E8%B0%83%E6%80%A7%E4%BD%A0%E6%98%AF%E5%90%A6%E6%B7%B7%E6%B7%86/</url>
+      <url>http://cuiqingwei.github.io/2016/10/12/2016-10-12-%25E8%25B7%25AF%25E4%25BA%259A%25E7%25AB%25BF%25E7%259A%2584%25E7%25A1%25AC%25E5%25BA%25A6%25E4%25B8%258E%25E8%25B0%2583%25E6%2580%25A7%25E4%25BD%25A0%25E6%2598%25AF%25E5%2590%25A6%25E6%25B7%25B7%25E6%25B7%2586/</url>
       <content type="html"><![CDATA[<h2 id="路亚竿的硬度"><a href="#路亚竿的硬度" class="headerlink" title="路亚竿的硬度"></a>路亚竿的硬度</h2><p>选择路亚竿的时候大部分钓友会关注：长度、调性、外观做工质量、品牌与价格。其中“调性”普遍会被大家想到“M、ML、MH”等英文缩写，也经常有卖家或者钓友这样称呼：“这支竿是M调的，那支竿是MH调的”等等，实际上这些英文缩写说的不是路亚竿的调性而是硬度，英文称“<font color="red"><strong>Power</strong> <em>（最大负荷）</em></font>” 。</p>
 <p>路亚竿的 <font color="red"><strong>硬度</strong> <em>（最大负荷）</em></font>就是我们通常说的ML、M、MH等“调性”，是指的路亚竿的最大负荷值以及适合抛投饵重的范围。路亚竿的硬度由软到硬大概分为几个等：<em>UUL-UL-L-ML-M-MH-H-XH-XXH</em>。其中“<strong>M</strong>”为分界线，以上为软，以下为硬。</p>
 <a id="more"></a>
@@ -1785,7 +1960,7 @@ make V=s
     
     <entry>
       <title><![CDATA[活鱼放血]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/11/2016-10-11-%E6%B4%BB%E9%B1%BC%E6%94%BE%E8%A1%80/</url>
+      <url>http://cuiqingwei.github.io/2016/10/11/2016-10-11-%25E6%25B4%25BB%25E9%25B1%25BC%25E6%2594%25BE%25E8%25A1%2580/</url>
       <content type="html"><![CDATA[<p>鱼的鳃部是血管较集中的位置，在这里下刀比其它部位较好些。<br>用刀往两边的鳃盖下部边缘处也就是靠鱼腹部的方向用力往下切上一刀，此时流出血后放到清水中让其游动，这样能使鱼体内的血液加速流出体外，使鱼体内的血达到最少量，这样的排放后血的鱼较少鱼的腥味，在吃食上味道鲜美。<strong>其次放血后的鱼易于保鲜不易变质变坏。</strong></p>
 <a id="more"></a>
 <p><img src="/img/20161011/fish.jpg" alt=""></p>
@@ -1798,7 +1973,7 @@ make V=s
     
     <entry>
       <title><![CDATA[个人路亚装备]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/10/2016-10-10-%E4%B8%AA%E4%BA%BA%E8%B7%AF%E4%BA%9A%E8%A3%85%E5%A4%87/</url>
+      <url>http://cuiqingwei.github.io/2016/10/10/2016-10-10-%25E4%25B8%25AA%25E4%25BA%25BA%25E8%25B7%25AF%25E4%25BA%259A%25E8%25A3%2585%25E5%25A4%2587/</url>
       <content type="html"><![CDATA[<h2 id="路亚竿"><a href="#路亚竿" class="headerlink" title="路亚竿"></a>路亚竿</h2><p>1.<strong><a href="https://detail.tmall.com/item.htm?id=36807472493&amp;spm=a1z09.2.0.0.uapaU2&amp;_u=c154cj1d09c" target="_blank" rel="external">LMS001-662M</a></strong> <em>鱼猎人征途系列</em></p>
 <a id="more"></a>
 <p><img src="/img/20161010/LMS001-662M.jpg" alt=""></p>
@@ -1848,7 +2023,7 @@ make V=s
     
     <entry>
       <title><![CDATA[高田路亚视频]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/10/2016-10-10-%E9%AB%98%E7%94%B0%E8%B7%AF%E4%BA%9A%E8%A7%86%E9%A2%91/</url>
+      <url>http://cuiqingwei.github.io/2016/10/10/2016-10-10-%25E9%25AB%2598%25E7%2594%25B0%25E8%25B7%25AF%25E4%25BA%259A%25E8%25A7%2586%25E9%25A2%2591/</url>
       <content type="html"><![CDATA[<p>路亚教学视频很多，但个人还是认为这个最详细，而且很专业、纯洁无商业气氛。<br>是新手学习路亚知识的典范视频，讲得非常细！</p>
 <a id="more"></a>
 <h1 id="路亚抛投基础-Casting"><a href="#路亚抛投基础-Casting" class="headerlink" title="路亚抛投基础-Casting-"></a>路亚抛投基础-Casting-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNTUxMTI0" frameborder="0" 'allowfullscreen'=""></iframe>
@@ -1893,7 +2068,7 @@ make V=s
     
     <entry>
       <title><![CDATA[路亚绑法]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/09/2016-10-09-%E8%B7%AF%E4%BA%9A%E7%BB%91%E6%B3%95/</url>
+      <url>http://cuiqingwei.github.io/2016/10/09/2016-10-09-%25E8%25B7%25AF%25E4%25BA%259A%25E7%25BB%2591%25E6%25B3%2595/</url>
       <content type="html"><![CDATA[<h1 id="渔轮绑法"><a href="#渔轮绑法" class="headerlink" title="渔轮绑法"></a>渔轮绑法</h1><p><img src="/img/20161009/渔轮上线绑法.jpg" alt=""></p>
 <a id="more"></a>
 <p><img src="/img/20161009/渔轮上线绑法1.jpg" alt=""></p>
@@ -1919,7 +2094,7 @@ make V=s
     
     <entry>
       <title><![CDATA[OpenWRT开源硬件汇总]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/08/2016-10-08-OpenWRT%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6%E6%B1%87%E6%80%BB/</url>
+      <url>http://cuiqingwei.github.io/2016/10/08/2016-10-08-OpenWRT%25E5%25BC%2580%25E6%25BA%2590%25E7%25A1%25AC%25E4%25BB%25B6%25E6%25B1%2587%25E6%2580%25BB/</url>
       <content type="html"><![CDATA[<h1 id="Arduino-Yun"><a href="#Arduino-Yun" class="headerlink" title="Arduino Yún"></a>Arduino Yún</h1><p><a href="https://www.arduino.cc/en/Main/ArduinoBoardYun" target="_blank" rel="external">https://www.arduino.cc/en/Main/ArduinoBoardYun</a><br>cpu: Atheros AR9331 @400MHZ (含ATmega32U4)<br>ram:  64MB DDR2<br>flash: 16MB<br>wifi: 150Mbit Wi-Fi 1T1R 2.4 GHz</p>
 <h1 id="LinkIt-Smart-7688-Duo"><a href="#LinkIt-Smart-7688-Duo" class="headerlink" title="LinkIt Smart 7688 Duo"></a>LinkIt Smart 7688 Duo</h1><p><a href="https://www.seeedstudio.com/LinkIt-Smart-7688-Duo-p-2574.html" target="_blank" rel="external">https://www.seeedstudio.com/LinkIt-Smart-7688-Duo-p-2574.html</a><br>cpu: MT7688 @580MHZ (含ATmega32U4)<br>ram:  128MB DDR2<br>flash: 32MB</p>
 <a id="more"></a>
@@ -1934,7 +2109,7 @@ make V=s
     
     <entry>
       <title><![CDATA[拟饵手法]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/08/2016-10-08-%E6%8B%9F%E9%A5%B5%E6%89%8B%E6%B3%95/</url>
+      <url>http://cuiqingwei.github.io/2016/10/08/2016-10-08-%25E6%258B%259F%25E9%25A5%25B5%25E6%2589%258B%25E6%25B3%2595/</url>
       <content type="html"><![CDATA[<h3 id="全泳层饵的泳层基础知识"><a href="#全泳层饵的泳层基础知识" class="headerlink" title="全泳层饵的泳层基础知识"></a>全泳层饵的泳层基础知识</h3><p>全泳层饵，顾名思义，理论上可以作钓所有水层，从水表到水底，钓者有完全的决定权，这与 <strong>米诺[MINNOW]</strong> 或 <strong>摇滚[CRANK]</strong> 有明确的潜行深度明显不同。</p>
 <blockquote>
 <p>沉水铅笔、VIB、各类金属饵，都是全泳层饵。</p>
@@ -2013,7 +2188,7 @@ make V=s
     
     <entry>
       <title><![CDATA[路亚术语]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/08/2016-10-08-%E8%B7%AF%E4%BA%9A%E6%9C%AF%E8%AF%AD/</url>
+      <url>http://cuiqingwei.github.io/2016/10/08/2016-10-08-%25E8%25B7%25AF%25E4%25BA%259A%25E6%259C%25AF%25E8%25AF%25AD/</url>
       <content type="html"><![CDATA[<p><strong>路亚</strong> 钓鱼取名来源为 <strong>Lure</strong> 的音译，即 <em>假饵钓鱼</em>，是模仿弱小生物引发大鱼攻击的一种方法。讲究技巧，需要竿、饵、轮的综合操作。在整个过程中，钓者是在做全身运动，同时路亚装备简洁，干净环保，与传统钓法有着极大的差异。路亚钓在欧洲非常盛行，自2007年我国也逐渐兴起路亚钓，被越来越多的钓鱼爱好者所喜爱。</p>
 <a id="more"></a>
 <p>路亚钓法是一种以现代科技辅以人类智慧的新兴钓法，更充分将环境、气候、鱼类习性等因素加以综合考虑，才能在自然环境中透过操作，使假饵能发挥引诱对象鱼觅食的作用，从某个程度来说，也就是做到了真正的“以假乱真”。</p>
@@ -2037,7 +2212,7 @@ make V=s
     
     <entry>
       <title><![CDATA[IoT知识点汇总]]></title>
-      <url>http://cuiqingwei.github.io/2016/05/13/2016-05-13-IoT%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/</url>
+      <url>http://cuiqingwei.github.io/2016/05/13/2016-05-13-IoT%25E7%259F%25A5%25E8%25AF%2586%25E7%2582%25B9%25E6%25B1%2587%25E6%2580%25BB/</url>
       <content type="html"><![CDATA[<h2 id="IoT-Struct"><a href="#IoT-Struct" class="headerlink" title="IoT Struct"></a>IoT Struct</h2><div align="center"><br><img src="/img/20160513/struct.jpg" alt="IoT Struct"><br></div>
 
 <a id="more"></a>
@@ -2361,7 +2536,7 @@ make V=s
     
     <entry>
       <title><![CDATA[网站设计的最简主义]]></title>
-      <url>http://cuiqingwei.github.io/2016/05/12/2016-05-12-%E7%BD%91%E7%AB%99%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%9C%80%E7%AE%80%E4%B8%BB%E4%B9%89/</url>
+      <url>http://cuiqingwei.github.io/2016/05/12/2016-05-12-%25E7%25BD%2591%25E7%25AB%2599%25E8%25AE%25BE%25E8%25AE%25A1%25E7%259A%2584%25E6%259C%2580%25E7%25AE%2580%25E4%25B8%25BB%25E4%25B9%2589/</url>
       <content type="html"><![CDATA[<p>之前在阮一峰的网络日志看到《网站设计的最简主义》，文中写到：</p>
 <p>昨天，我看到了一个网站 (<a href="http://www.plaintxt.org" target="_blank" rel="external"><u>http://www.plaintxt.org</u></a>)，提倡最简主义（<strong>Minimalism</strong>）的设计，这也正是我的想法。我因此感到十分惊喜。所谓”最简主义”设计，就是说网页上没有不相关的内容与装饰，美工基本就是白底黑字，尽量少用图片和复杂的排版，给人一种非常简单朴素的感觉。</p>
 <p><strong>Plaintxt.org</strong>的站长<strong>Scott</strong>说，他信奉”最简主义”设计，因为<strong>2000</strong>年下半年他去尼泊尔当志愿者。在那里，他只能用<strong>24.4K</strong>的<strong>Modem</strong>上网，这意味着一幅<strong>120K</strong>的图片，都要花将近1分钟才能看到。他在尼泊尔待了3年，再回到美国以后，彻底改变了对网站设计的看法，从此走上了宣传”最简主义”的道路。<br><a id="more"></a><br>至于我为什么喜欢”最简主义”，除了因为我喜欢简洁的东西以外，还因为我觉得将页面最简化，可以使访问者集中注意力，关注主要的内容。（顺便说一句，在读书上，我也喜欢”最简主义”的文字，就是说没有不相关的废话。）我认为，”最简主义”有利于节省访问者的时间，体现了对访问者的尊重，最终也有利于网站的成功。Google就是”最简主义”的一个典型，首页上就是只有一个长长的搜索框。</p>
@@ -2520,7 +2695,7 @@ make V=s
     
     <entry>
       <title><![CDATA[创客硬件]]></title>
-      <url>http://cuiqingwei.github.io/2015/11/18/2015-11-18-%E5%88%9B%E5%AE%A2%E7%A1%AC%E4%BB%B6/</url>
+      <url>http://cuiqingwei.github.io/2015/11/18/2015-11-18-%25E5%2588%259B%25E5%25AE%25A2%25E7%25A1%25AC%25E4%25BB%25B6/</url>
       <content type="html"><![CDATA[<p>SparkFun Electronics<br><a href="https://www.sparkfun.com/" target="_blank" rel="external">https://www.sparkfun.com/</a><br>美国Sparkfun是世界最具盛名的电子零配件供应商，主要面向产品原型开发以及项目设计。电子产品种类相当齐全多大上万种，有许多国内少见的电子产品都可以在这里觅寻到。</p>
 <p>Adafruit Industries, Unique &amp; fun DIY electronics and kits<br><a href="http://www.adafruit.com/" target="_blank" rel="external">http://www.adafruit.com/</a></p>
 <p>美国纽约的Adafruit是一家DIY公司，网上对此公司评价为创意无底限。该公司在智能穿戴设备、物联网上有很好的创意与发展。Adafruit的CEO是MIT工程硕士毕业的 Limor Fried，是创客浪潮里的扛旗人物，提起她的花名“Ladyada”，大概创客圈里无人不知。<br><a id="more"></a><br>哈尔滨奥松机器人<br><a href="http://www.alsrobot.cn/index.php" target="_blank" rel="external">http://www.alsrobot.cn/index.php</a></p>
@@ -2547,7 +2722,7 @@ make V=s
     
     <entry>
       <title><![CDATA[折叠公路车]]></title>
-      <url>http://cuiqingwei.github.io/2015/10/03/2015-10-03-%E6%8A%98%E5%8F%A0%E5%85%AC%E8%B7%AF%E8%BD%A6/</url>
+      <url>http://cuiqingwei.github.io/2015/10/03/2015-10-03-%25E6%258A%2598%25E5%258F%25A0%25E5%2585%25AC%25E8%25B7%25AF%25E8%25BD%25A6/</url>
       <content type="html"><![CDATA[<h4 id="Ori-Surpaz-CR-1-0"><a href="#Ori-Surpaz-CR-1-0" class="headerlink" title="Ori Surpaz CR 1.0"></a>Ori Surpaz CR 1.0</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=386" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=386</a></p>
 <p><img src="http://15km.hk/bike/images/bikeimage/bike_id_386_0.jpg" alt="1"><br><a id="more"></a><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_386_2.jpg" alt="2"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_386_3.jpg" alt="3"><br><img src="http://15km.hk/bike/images/bikeimage/bike_id_386_1.jpg" alt="4"></p>
 <h4 id="Airnimal-Joey-Explore-Drop"><a href="#Airnimal-Joey-Explore-Drop" class="headerlink" title="Airnimal Joey - Explore Drop"></a>Airnimal Joey - Explore Drop</h4><p><a href="http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=46" target="_blank" rel="external">http://15km.hk/index.php?comCat=bikedetails&amp;bikeId=46</a></p>
@@ -2605,7 +2780,7 @@ make V=s
     
     <entry>
       <title><![CDATA[Linux打补丁和git打patch方法 ]]></title>
-      <url>http://cuiqingwei.github.io/2015/08/19/2015-08-19-Linux%E6%89%93%E8%A1%A5%E4%B8%81%E5%92%8Cgit%E6%89%93patch%E6%96%B9%E6%B3%95/</url>
+      <url>http://cuiqingwei.github.io/2015/08/19/2015-08-19-Linux%25E6%2589%2593%25E8%25A1%25A5%25E4%25B8%2581%25E5%2592%258Cgit%25E6%2589%2593patch%25E6%2596%25B9%25E6%25B3%2595/</url>
       <content type="html"><![CDATA[<h1 id="一、linux打补丁方法"><a href="#一、linux打补丁方法" class="headerlink" title="一、linux打补丁方法"></a>一、linux打补丁方法</h1><h3 id="1、处理单个文件补丁的方法："><a href="#1、处理单个文件补丁的方法：" class="headerlink" title="1、处理单个文件补丁的方法："></a>1、处理单个文件补丁的方法：</h3><ul>
 <li>产生补丁</li>
 </ul>
@@ -2665,7 +2840,7 @@ make V=s
     
     <entry>
       <title><![CDATA[亚马逊云服务免费一年VPS主机翻墙术]]></title>
-      <url>http://cuiqingwei.github.io/2015/08/15/2015-08-15-%E4%BA%9A%E9%A9%AC%E9%80%8A%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%85%8D%E8%B4%B9%E4%B8%80%E5%B9%B4VPS%E4%B8%BB%E6%9C%BA%E7%BF%BB%E5%A2%99%E6%9C%AF/</url>
+      <url>http://cuiqingwei.github.io/2015/08/15/2015-08-15-%25E4%25BA%259A%25E9%25A9%25AC%25E9%2580%258A%25E4%25BA%2591%25E6%259C%258D%25E5%258A%25A1%25E5%2585%258D%25E8%25B4%25B9%25E4%25B8%2580%25E5%25B9%25B4VPS%25E4%25B8%25BB%25E6%259C%25BA%25E7%25BF%25BB%25E5%25A2%2599%25E6%259C%25AF/</url>
       <content type="html"><![CDATA[<h3 id="Amazon-AWS亚马逊云服务免费一年VPS主机成功申请和使用方法"><a href="#Amazon-AWS亚马逊云服务免费一年VPS主机成功申请和使用方法" class="headerlink" title="Amazon AWS亚马逊云服务免费一年VPS主机成功申请和使用方法"></a>Amazon AWS亚马逊云服务免费一年VPS主机成功申请和使用方法</h3><p><a href="http://www.freehao123.com/amazon-aws/" target="_blank" rel="external">http://www.freehao123.com/amazon-aws/</a></p>
 <h3 id="How-to-Connect-to-Amazon-EC2-Linux-AMI-using-SecureCRT"><a href="#How-to-Connect-to-Amazon-EC2-Linux-AMI-using-SecureCRT" class="headerlink" title="How-to : Connect to Amazon EC2 Linux AMI using SecureCRT"></a>How-to : Connect to Amazon EC2 Linux AMI using SecureCRT</h3><p><a href="http://blog.skufel.net/2012/09/how-to-connect-to-amazon-ec2-linux-ami-using-securecrt/" target="_blank" rel="external">http://blog.skufel.net/2012/09/how-to-connect-to-amazon-ec2-linux-ami-using-securecrt/</a><br><a id="more"></a></p>
 <h3 id="基于-EC2-Shadowsocks-的翻墙解决方案"><a href="#基于-EC2-Shadowsocks-的翻墙解决方案" class="headerlink" title="基于 EC2 + Shadowsocks 的翻墙解决方案"></a>基于 EC2 + Shadowsocks 的翻墙解决方案</h3><p><a href="http://www.harrycode.com/2015/07/26/EC2-ShadowSocks-GFW/" target="_blank" rel="external">http://www.harrycode.com/2015/07/26/EC2-ShadowSocks-GFW/</a></p>
@@ -2680,7 +2855,7 @@ make V=s
     
     <entry>
       <title><![CDATA[常用Wi-Fi网络评测工具]]></title>
-      <url>http://cuiqingwei.github.io/2015/07/23/2015-07-23-%E5%B8%B8%E7%94%A8Wi-Fi%E7%BD%91%E7%BB%9C%E8%AF%84%E6%B5%8B%E5%B7%A5%E5%85%B7/</url>
+      <url>http://cuiqingwei.github.io/2015/07/23/2015-07-23-%25E5%25B8%25B8%25E7%2594%25A8Wi-Fi%25E7%25BD%2591%25E7%25BB%259C%25E8%25AF%2584%25E6%25B5%258B%25E5%25B7%25A5%25E5%2585%25B7/</url>
       <content type="html"><![CDATA[<h1 id="inSSIDer2"><a href="#inSSIDer2" class="headerlink" title="inSSIDer2"></a>inSSIDer2</h1><p><a href="http://inssider.en.softonic.com/" target="_blank" rel="external">http://inssider.en.softonic.com/</a><br><img src="/img/20150723/1.png" alt=""><br><a id="more"></a></p>
 <h1 id="WirelessMon"><a href="#WirelessMon" class="headerlink" title="WirelessMon"></a>WirelessMon</h1><p><a href="http://wirelessmon.com/" target="_blank" rel="external">http://wirelessmon.com/</a><br><a href="http://www.greenxiazai.com/soft/8567.html" target="_blank" rel="external">http://www.greenxiazai.com/soft/8567.html</a><br><img src="/img/20150723/2.jpg" alt=""></p>
 <h1 id="NetIQ-Chariot"><a href="#NetIQ-Chariot" class="headerlink" title="NetIQ Chariot"></a>NetIQ Chariot</h1><p><a href="http://www.piaodown.com/soft/292.htm" target="_blank" rel="external">http://www.piaodown.com/soft/292.htm</a><br><img src="/img/20150723/3.jpg" alt=""></p>
@@ -2694,7 +2869,7 @@ make V=s
     
     <entry>
       <title><![CDATA[有趣的Linux命令行功效]]></title>
-      <url>http://cuiqingwei.github.io/2015/07/16/2015-07-16-%E6%9C%89%E8%B6%A3%E7%9A%84Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8A%9F%E6%95%88/</url>
+      <url>http://cuiqingwei.github.io/2015/07/16/2015-07-16-%25E6%259C%2589%25E8%25B6%25A3%25E7%259A%2584Linux%25E5%2591%25BD%25E4%25BB%25A4%25E8%25A1%258C%25E5%258A%259F%25E6%2595%2588/</url>
       <content type="html"><![CDATA[<h1 id="1-sl-命令"><a href="#1-sl-命令" class="headerlink" title="1.sl 命令"></a>1.sl 命令</h1><p>首先，安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install sl</div></pre></td></tr></table></figure></p>
 <p>然后，输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sl</div></pre></td></tr></table></figure></p>
 <p>我们看到了动画蒸汽机机头从屏幕右边开往左边。这个火车头是用ASCLL字符绘制。<br><a id="more"></a><br>提供特定的选项如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">SYNOPSIS</div><div class="line">sl [ -alFe ]</div><div class="line">DESCRIPTION</div><div class="line">sl Displays animations aimed to correct users who accidentally enter sl instead of ls. SL stands <span class="keyword">for</span> Steam Locomotive.</div><div class="line">OPTIONS</div><div class="line"><span class="_">-a</span> An accident seems to happen. You\<span class="string">'ll feel pity for people who cry for help.</span></div><div class="line">-l shows little one.</div><div class="line">-F It flies.</div><div class="line">-e Allow interrupt by Ctrl+C.</div></pre></td></tr></table></figure></p>
@@ -2832,7 +3007,7 @@ make V=s
     
     <entry>
       <title><![CDATA[OpenWRT折腾日记]]></title>
-      <url>http://cuiqingwei.github.io/2015/07/08/2015-07-08-OpenWRT%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0/</url>
+      <url>http://cuiqingwei.github.io/2015/07/08/2015-07-08-OpenWRT%25E6%258A%2598%25E8%2585%25BE%25E6%2597%25A5%25E8%25AE%25B0/</url>
       <content type="html"><![CDATA[<h2 id="2016-04-23-Openwrt-Yun"><a href="#2016-04-23-Openwrt-Yun" class="headerlink" title="2016-04-23 Openwrt Yun"></a>2016-04-23 Openwrt Yun</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/bin/bash -ex</span></div></pre></td></tr></table></figure>
 <h4 id="FEEDS"><a href="#FEEDS" class="headerlink" title="FEEDS"></a>FEEDS</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">./scripts/feeds uninstall <span class="_">-a</span></div><div class="line">rm -rf feeds</div><div class="line">./scripts/feeds update <span class="_">-a</span></div><div class="line">./scripts/feeds install <span class="_">-a</span></div><div class="line">./scripts/feeds uninstall erlang freeswitch remotefs libzstream shflags opensips pulseaudio xmlrpc-c rtorrent sox umurmur-polarssl freecwmp-zstream osirisd logtrigger libplist libimobiledevice cmus mxml boost wt etherpuppet php4 aprx n2n pdnsd crtmpserver kissdx openconnect telepathy-python alljoyn</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -2994,7 +3169,7 @@ make V=s
     
     <entry>
       <title><![CDATA[OpenWRT之dl下载分享]]></title>
-      <url>http://cuiqingwei.github.io/2015/07/07/2015-07-07-OpenWRT%E4%B9%8Bdl%E4%B8%8B%E8%BD%BD%E5%88%86%E4%BA%AB/</url>
+      <url>http://cuiqingwei.github.io/2015/07/07/2015-07-07-OpenWRT%25E4%25B9%258Bdl%25E4%25B8%258B%25E8%25BD%25BD%25E5%2588%2586%25E4%25BA%25AB/</url>
       <content type="html"><![CDATA[<p>在编译OpenWrt最新的trunk时，碰到一个Git源码取不下来（你懂得，被墙了！）<br>在google上搜了一下，找到一个dl的地址：<br><a href="http://193.87.95.148/openwrt/raspi/trunk/dl/" target="_blank" rel="external">http://193.87.95.148/openwrt/raspi/trunk/dl/</a><br>补充：OpenWrt中国站也有一个下载地址！<br><a href="http://downloads.openwrt.org.cn/sources/" target="_blank" rel="external">http://downloads.openwrt.org.cn/sources/</a></p>
 <p>另外还有一个将openwrt官网上的软件都下载下来了，并在本地建了服务器，然后与共享给大家！！<br>跳转下载链接<a href="http://dl.openwrtdl.com/index.html" target="_blank" rel="external">http://dl.openwrtdl.com/index.html</a><br>软件包总数量达到了<strong>3926</strong>个！<br>最新更新时间：<strong>2016-05-09</strong><br><a id="more"></a><br>并用脚本每小时执行一次，与openwrt官网对比，当官网更新了软件包则将对应的软件包下载到本地，保证官网更新，本地也会更新的效果！</p>
 <p>服务器在我家里放着，上海长城宽带，20M光纤，上传速度可以达到3MB，对于下载小的软件包足够了！！</p>
@@ -3020,7 +3195,7 @@ make V=s
     
     <entry>
       <title><![CDATA[OpenWRT下ifconfig各接口说明]]></title>
-      <url>http://cuiqingwei.github.io/2015/07/06/2015-07-06-OpenWRT%E4%B8%8Bifconfig%E5%90%84%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E/</url>
+      <url>http://cuiqingwei.github.io/2015/07/06/2015-07-06-OpenWRT%25E4%25B8%258Bifconfig%25E5%2590%2584%25E6%258E%25A5%25E5%258F%25A3%25E8%25AF%25B4%25E6%2598%258E/</url>
       <content type="html"><![CDATA[<h1 id="rao-和raio（无线）"><a href="#rao-和raio（无线）" class="headerlink" title="rao 和raio（无线）"></a>rao 和raio（无线）</h1><p>这两个是成对出现，一看就知道是无线设备，它们各自对应一个SSID，分别是2.4G和5G。</p>
 <h1 id="eth0（物理网卡）"><a href="#eth0（物理网卡）" class="headerlink" title="eth0（物理网卡）"></a>eth0（物理网卡）</h1><p>eth0.1 是vlan1分出的lan口。<br>eth0.2 是vlan分出的wan口。<br><a id="more"></a></p>
 <h1 id="br-lan（无线-有线）"><a href="#br-lan（无线-有线）" class="headerlink" title="br-lan（无线+有线）"></a>br-lan（无线+有线）</h1><p>虚拟设备，br-lan = eth0.1 + rai0 + ra0，即将有线LAN口和无线网统一划分为 LAN，便于管理</p>
@@ -3033,7 +3208,7 @@ make V=s
     
     <entry>
       <title><![CDATA[OpenWRT经典网站]]></title>
-      <url>http://cuiqingwei.github.io/2015/07/01/2015-07-01-OpenWRT%E7%BB%8F%E5%85%B8%E7%BD%91%E7%AB%99/</url>
+      <url>http://cuiqingwei.github.io/2015/07/01/2015-07-01-OpenWRT%25E7%25BB%258F%25E5%2585%25B8%25E7%25BD%2591%25E7%25AB%2599/</url>
       <content type="html"><![CDATA[<h1 id="官方网站"><a href="#官方网站" class="headerlink" title="官方网站"></a>官方网站</h1><p><a href="https://openwrt.org/" target="_blank" rel="external">https://openwrt.org/</a></p>
 <ul>
 <li>Releases<br><a href="https://downloads.openwrt.org/" target="_blank" rel="external">https://downloads.openwrt.org/</a></li>
@@ -3060,7 +3235,7 @@ make V=s
     
     <entry>
       <title><![CDATA[技术领域的深刻体会、教训]]></title>
-      <url>http://cuiqingwei.github.io/2015/06/24/2015-06-24-%E6%8A%80%E6%9C%AF%E9%A2%86%E5%9F%9F%E7%9A%84%E6%B7%B1%E5%88%BB%E4%BD%93%E4%BC%9A%E3%80%81%E6%95%99%E8%AE%AD/</url>
+      <url>http://cuiqingwei.github.io/2015/06/24/2015-06-24-%25E6%258A%2580%25E6%259C%25AF%25E9%25A2%2586%25E5%259F%259F%25E7%259A%2584%25E6%25B7%25B1%25E5%2588%25BB%25E4%25BD%2593%25E4%25BC%259A%25E3%2580%2581%25E6%2595%2599%25E8%25AE%25AD/</url>
       <content type="html"><![CDATA[<p>记录之，告诫自己；分享之，愿助他人。</p>
 <p>学习一定要，知之为知之，不知为不知，不仅自己不能装逼，也不能向装逼的人讨教，否则只是相互浪费时间而已。</p>
 <p>不要和不懂规则且贪婪的人合作，否则他们会反过来诬陷和要挟你。</p>
@@ -3072,7 +3247,7 @@ make V=s
     
     <entry>
       <title><![CDATA[三星平板工厂模式]]></title>
-      <url>http://cuiqingwei.github.io/2015/06/03/2015-06-03-%E4%B8%89%E6%98%9F%E5%B9%B3%E6%9D%BF%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</url>
+      <url>http://cuiqingwei.github.io/2015/06/03/2015-06-03-%25E4%25B8%2589%25E6%2598%259F%25E5%25B9%25B3%25E6%259D%25BF%25E5%25B7%25A5%25E5%258E%2582%25E6%25A8%25A1%25E5%25BC%258F/</url>
       <content type="html"><![CDATA[<p>进入应用桌面打开计算器输入 <strong>(+30012012732+</strong> 进入Factory Mode</p>
 <p>On android 3.X version <strong>(+32286798378+</strong>           left bracket, plus, 3,2,2,8,6,7,9,8,3,7,8, plus<br>On android 4.X version <strong>(+30012012732+</strong>           left bracket, plus, 3,0,0,1,2,0,1,2,7,3,2, plus<br><a id="more"></a><br>Android 4.X 示例:<br><img src="/img/20150603/1.jpeg" alt=""></p>
 <p>工厂模式代码一览（供参考）</p>
@@ -3083,7 +3258,7 @@ make V=s
     
     <entry>
       <title><![CDATA[ZigBee射频模块晶振选型]]></title>
-      <url>http://cuiqingwei.github.io/2015/03/01/2015-03-01-ZigBee%E5%B0%84%E9%A2%91%E6%A8%A1%E5%9D%97%E6%99%B6%E6%8C%AF%E9%80%89%E5%9E%8B/</url>
+      <url>http://cuiqingwei.github.io/2015/03/01/2015-03-01-ZigBee%25E5%25B0%2584%25E9%25A2%2591%25E6%25A8%25A1%25E5%259D%2597%25E6%2599%25B6%25E6%258C%25AF%25E9%2580%2589%25E5%259E%258B/</url>
       <content type="html"><![CDATA[<p><a href="http://www.ti.com/lit/an/swra372c/swra372c.pdf" target="_blank" rel="external">AN100 - Crystal Selection Guide (Rev. C)</a></p>
 <h3 id="CC2530"><a href="#CC2530" class="headerlink" title="CC2530"></a>CC2530</h3><p>NX3225SA : Crystal, 32.000MHz, 10/15ppm, 16 pF  ! Temp range -30 - +85 deg C !<br><a href="http://www.ndk.com/cn/products/search/crystal/1188115_1533.html" target="_blank" rel="external">http://www.ndk.com/cn/products/search/crystal/1188115_1533.html</a><br>TSX-3225 : Crystal, 32.000MHz, 16 pF, -10PPM/+10PPM, -40DEGC/+85DEGC, SMD<br><a href="http://www5.epsondevice.com/cn/quartz/product/crystal/at/tsx3225.html" target="_blank" rel="external">http://www5.epsondevice.com/cn/quartz/product/crystal/at/tsx3225.html</a><br>MC-306 : Crystal, 32.768 kHz, 12.5pF, 20/50 ppm,SMD package<br><a href="http://www5.epsondevice.com/cn/quartz/product/crystal/tuning_fork/mc306.html" target="_blank" rel="external">http://www5.epsondevice.com/cn/quartz/product/crystal/tuning_fork/mc306.html</a></p>
 <h3 id="CC2538"><a href="#CC2538" class="headerlink" title="CC2538"></a>CC2538</h3><p>FA-128 : CRYSTAL, OSCILATOR, 32MHz, 10pF, -10PPM/+10PPM, -40DEGC/+85DEGC, SMD<br><a href="http://www5.epsondevice.com/cn/quartz/product/crystal/at/fa128.html" target="_blank" rel="external">http://www5.epsondevice.com/cn/quartz/product/crystal/at/fa128.html</a><br>FC-12M : CRYSTAL, OSCILATOR, 32.768kHz, -20PPM/ + 20PPM, -40DEGC/ +85DEGC, 12.5pF, SMD<br><a href="http://www5.epsondevice.com/cn/quartz/product/crystal/tuning_fork/fc12d12m.html" target="_blank" rel="external">http://www5.epsondevice.com/cn/quartz/product/crystal/tuning_fork/fc12d12m.html</a><br>ABS05 : 32.768KHZ<br><a href="http://www.abracon.com/Resonators/ABS05.pdf" target="_blank" rel="external">http://www.abracon.com/Resonators/ABS05.pdf</a></p>
@@ -3092,7 +3267,7 @@ make V=s
     
     <entry>
       <title><![CDATA[xclip,pbcopy,xsel用法 terminal 复制粘帖 (mac, ubuntu)]]></title>
-      <url>http://cuiqingwei.github.io/2015/01/15/2015-01-15-xclip-pbcopy-xsel%E7%94%A8%E6%B3%95-terminal-%E5%A4%8D%E5%88%B6%E7%B2%98%E5%B8%96-mac-ubuntu/</url>
+      <url>http://cuiqingwei.github.io/2015/01/15/2015-01-15-xclip-pbcopy-xsel%25E7%2594%25A8%25E6%25B3%2595-terminal-%25E5%25A4%258D%25E5%2588%25B6%25E7%25B2%2598%25E5%25B8%2596-mac-ubuntu/</url>
       <content type="html"><![CDATA[<h3 id="1-Mac下"><a href="#1-Mac下" class="headerlink" title="1.Mac下"></a>1.Mac下</h3><p>使用pbcopy命令。 # 对应有个pbpaste命令。</p>
 <p>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">'Hello World!'</span> | pbcopy</div></pre></td></tr></table></figure></p>
 <h1 id="将字符串Hello-World放入剪贴板"><a href="#将字符串Hello-World放入剪贴板" class="headerlink" title="将字符串Hello World放入剪贴板"></a>将字符串Hello World放入剪贴板</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat myFile.txt | pbcopy</div></pre></td></tr></table></figure>
@@ -3205,7 +3380,7 @@ hosts
     
     <entry>
       <title><![CDATA[SDK之uClinux、Ralink、Atheros、Realtek、Broadcom]]></title>
-      <url>http://cuiqingwei.github.io/2014/12/08/2014-12-08-SDK%E4%B9%8BuClinux%E3%80%81Ralink%E3%80%81Atheros%E3%80%81Realtek%E3%80%81Broadcom/</url>
+      <url>http://cuiqingwei.github.io/2014/12/08/2014-12-08-SDK%25E4%25B9%258BuClinux%25E3%2580%2581Ralink%25E3%2580%2581Atheros%25E3%2580%2581Realtek%25E3%2580%2581Broadcom/</url>
       <content type="html"><![CDATA[<p>接触的Linux SDK越来越多，整理整理，分享分享，不求系统全面，对您有帮助便足矣<br>文中大部分是与AP/Router SoC解决方案（单芯片WIFI 路由器解决方案）相关的Linux SDK</p>
 <h1 id="SDK（Software-Development-Kit）软件开发工具包"><a href="#SDK（Software-Development-Kit）软件开发工具包" class="headerlink" title="SDK（Software Development Kit）软件开发工具包"></a>SDK（Software Development Kit）软件开发工具包</h1><p>一般是一些被软件工程师用于为特定的软件包、软件框架、硬件平台、操作系统等建立应用软件的开发工具的集合<br>想想，最早接触到的SDK是在Cortex-M3项目开发中，也叫BSP（板级支持包），<br>这种SDK里大部分是芯片资源（硬件平台）的驱动和测试程序，少有软件框架和操作系统的源码<br><a id="more"></a></p>
 <h1 id="uClinux"><a href="#uClinux" class="headerlink" title="uClinux"></a>uClinux</h1><p>在用的ATMEL9200和9G25的SDK包就是uClinux的风格，Ralink的Ralink_Ap_SoC_SDK也是uClinux的风格，<br>不用多说，直接上地址：<a href="http://www.uclinux.org/" target="_blank" rel="external">http://www.uclinux.org/</a></p>
@@ -3219,7 +3394,7 @@ hosts
     
     <entry>
       <title><![CDATA[骑行7：滴水湖2014]]></title>
-      <url>http://cuiqingwei.github.io/2014/06/08/2014-06-08-%E9%AA%91%E8%A1%8C7%EF%BC%9A%E6%BB%B4%E6%B0%B4%E6%B9%962014/</url>
+      <url>http://cuiqingwei.github.io/2014/06/08/2014-06-08-%25E9%25AA%2591%25E8%25A1%258C7%25EF%25BC%259A%25E6%25BB%25B4%25E6%25B0%25B4%25E6%25B9%25962014/</url>
       <content type="html"><![CDATA[<p><img src="/img/20130429/head.png" alt=""></p>
 <h1 id="具体安排"><a href="#具体安排" class="headerlink" title="具体安排"></a>具体安排</h1><p><img src="/img/20140608/1.png" alt=""><br><strong>【活动时间】</strong>： 2014-06-08，周日<br><strong>【活动目的地】</strong>：滴水湖（南汇嘴观海公园）<br><strong>【集合地点】</strong>：上海闵行龙之梦影城、上海闵行区东川路地铁站<br><a id="more"></a><br><strong>【时间】</strong>：7:00开始汇合，8:50出发<br><strong>【返程解散点】</strong>：上海市闵行区东川路地铁站<br><strong>【返程到达解散点时间】</strong>：大约17点<br><strong>【骑行工具】</strong>：任何车型；任何品牌变速车（请保证车况良好） 非快拆车辆请自带扳手!<br><strong>【骑行线路（去程）】</strong>：<em>集合地点-&gt;沪闵公路à闵浦二桥-&gt;沪杭公路（S103）-&gt;大叶公路（S324）-&gt;东大公路（S324-&gt;滨果公路à临港大道-&gt;环湖西一路-&gt;目的地</em><br><strong>【骑行线路（返程）】</strong>：<em>临港大道-&gt;滨果公路-&gt;东大公路（S324）-&gt;大叶公路（S324）-&gt;沪杭公路（S103）-&gt;闵浦二桥-&gt;沪闵公路-&gt;返程解散点</em><br><strong>【全程单程距离】</strong>：谷歌测算83.3KM<br><strong>【休息段】</strong>：约每20公里休息一次<br><strong>【装备建议】</strong>：头盔必须<br><strong>【活动取消条件】</strong>：活动前一天晚上天气预报为准,如取消活动会在活动出发前2小时短息通知</p>
 <p>#汇合安排<br><img src="/img/20140608/2.png" alt=""><br>7:00 徐超，始发<br>7:10 崔庆伟，七宝实验中学<br>7:20严铠锋，万兆家园<br>7:50 林建建、郑乐锋，闵行龙之梦影城十字路口<br>8:25 汪烁华，东川路地铁站(近沪闵路)<br>8:50 孙东亮，大叶公路沪杭公路交叉口(大叶公路右边)</p>
@@ -3232,7 +3407,7 @@ hosts
     
     <entry>
       <title><![CDATA[骑行6：上海南京路步行街]]></title>
-      <url>http://cuiqingwei.github.io/2014/05/21/2014-05-21-%E9%AA%91%E8%A1%8C6%EF%BC%9A%E4%B8%8A%E6%B5%B7%E5%8D%97%E4%BA%AC%E8%B7%AF%E6%AD%A5%E8%A1%8C%E8%A1%97/</url>
+      <url>http://cuiqingwei.github.io/2014/05/21/2014-05-21-%25E9%25AA%2591%25E8%25A1%258C6%25EF%25BC%259A%25E4%25B8%258A%25E6%25B5%25B7%25E5%258D%2597%25E4%25BA%25AC%25E8%25B7%25AF%25E6%25AD%25A5%25E8%25A1%258C%25E8%25A1%2597/</url>
       <content type="html"><![CDATA[<p><img src="/img/20130429/head.png" alt=""></p>
 <h1 id="下班后同事一起夜骑上海南京路步行街，临时决定未策划线路"><a href="#下班后同事一起夜骑上海南京路步行街，临时决定未策划线路" class="headerlink" title="下班后同事一起夜骑上海南京路步行街，临时决定未策划线路"></a>下班后同事一起夜骑上海南京路步行街，临时决定未策划线路</h1><p><img src="/img/20130429/foot.png" alt=""><br><a id="more"></a></p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><img src="/img/20140521/1.jpeg" alt=""></p>
@@ -3242,7 +3417,7 @@ hosts
     
     <entry>
       <title><![CDATA[网络命令]]></title>
-      <url>http://cuiqingwei.github.io/2014/04/17/2014-04-17-%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/</url>
+      <url>http://cuiqingwei.github.io/2014/04/17/2014-04-17-%25E7%25BD%2591%25E7%25BB%259C%25E5%2591%25BD%25E4%25BB%25A4/</url>
       <content type="html"><![CDATA[<h3 id="Ping"><a href="#Ping" class="headerlink" title="Ping"></a>Ping</h3><p>这个应该大家都会用的吧，最主要的就是检测目标主机是不是可连通。Ping程序实际就是发送一个ICMP回显请求报文给目的主机，并等待回显的ICMP应答。然后打印出回显的报文。Ping不通一个地址，并不一定表示这个IP不存在或者没有连接在网络上，因为对方主机可能做了限制，比如安装了防火墙，因此Ping不通并不表示不能使用FTP或者TELNET连接。<br><a id="more"></a><br>PING得到的结果包括字节数、反应时间、以及生存时间。Ping程序通过在ICMP报文数据中存放发送请求的时间来计算返回时间。当应答返回时，根据现在时间减去报文中存放的发送时间就得到反应时间了。生存时间（TTL），本来就存放在IP数据报的头部，直接就能够获取。<br>上次和Dancefire说天网防火墙的时候，现在不是天网能识别哪些程序在进行网络连接么，结果试验用Ping的时候，天网就不知道了，呵呵，反正是没有警告。那ICMP木马天网能防么？</p>
 <h3 id="Tracert"><a href="#Tracert" class="headerlink" title="Tracert"></a>Tracert</h3><p>一个探测路由的程序，可以让我们看见IP数据报到达目的地经过的路由。<br>Tracert利用ICMP数据报和IP数据报头部中的TTL值。TTL（Time To Live）是一个IP数据报的生存时间，当每个IP数据报经过路由器的时候都回把TTL值减去1或者减去在路由器中停留的时间，但是大多数数据报在路由器中停留的时间都小于1秒种，因此实际上就是在TTL值减去了1。这样，TTL值就相当于一个路由器的计数器。<br>当路由器接收到一个TTL为0或者1的IP数据报的时候，路由器就不再转发这个数据了，而直接丢弃，并且发送一个ICMP“超时”信息给源主机。Tracert程序的关键就是这个回显的ICMP报文的IP报头的信源地址就是这个路由器的IP地址。同时，如果到达了目的主机，我们并不能知道，于是，Tracert还同时发送一个UDP信息给目的主机，并且选择一个很大的值作为UDP的端口，使主机的任何一个应用程序都不使用这个端口。所以，当达到目的主机的时候，UDP模块就产生一个“端口不可到达”的错误，这样就能判断是否是到达目的地了。<br>有说法是利用ping得到的TTL值来判断主机类型，这种办法可以大概地用来判断，有人问为什么一般得到的都不是标准的TTL值。这个就是因为ICMP数据包走的路由器线路的原因，所以，用ping 和 tracert 一起来用更容易判断主机类型（不过并不一定两次走的路线都一样，所以，还是个大概值，不过更接近点，而且主机的默认TTL值是可以改变的）。</p>
 <p><strong>ping</strong> 211.95.60.151 -l 1200 -t  (带包ping)<br><strong>tracert</strong> 211.95.60.151</p>
@@ -3267,7 +3442,7 @@ hosts
     
     <entry>
       <title><![CDATA[骑行5：沪杭公路到九龙山]]></title>
-      <url>http://cuiqingwei.github.io/2013/06/15/2013-06-15-%E9%AA%91%E8%A1%8C5%EF%BC%9A%E6%B2%AA%E6%9D%AD%E5%85%AC%E8%B7%AF%E5%88%B0%E4%B9%9D%E9%BE%99%E5%B1%B1/</url>
+      <url>http://cuiqingwei.github.io/2013/06/15/2013-06-15-%25E9%25AA%2591%25E8%25A1%258C5%25EF%25BC%259A%25E6%25B2%25AA%25E6%259D%25AD%25E5%2585%25AC%25E8%25B7%25AF%25E5%2588%25B0%25E4%25B9%259D%25E9%25BE%2599%25E5%25B1%25B1/</url>
       <content type="html"><![CDATA[<p><img src="/img/20130429/head.png" alt=""><br><img src="/img/20130615/1.png" alt=""><br>【“老沪杭公路起自上海闵行西渡，南下经奉贤柘林镇，西折沿杭州湾北海岸，蜿蜒如龙，曲折而行，过乔司，九堡进杭州城。一路串联许多江南名镇，人文景观丰富。尽管现代化进程它被渐渐淘汰，但老路的古朴，乡间公路的风味，还是深深吸引我们，每年去徽杭，或观潮，我们总会骑上几趟。弯弯曲曲的老沪路，两排合抱粗的老树，密密的夹着公路，浓密的树荫遮蔽夏日的骄阳，就是盛夏也非常凉爽。春秋季节又仿佛行走在五彩斑斓的树的隧道，这里骑行是享受，这样的美好感觉，在宽广的公路320国道，01东西道是没有的。路的两边连片果园，桑树林，农舍，小桥流水，是典型的江南田园风光。最引人入胜的是，公路大部分路段贴海堤而行，石块砌就的海堤，挡住滔滔海水，上筑宽阔通道，人们都会上海堤骑行。远望迷蒙，一袭烟波粼粼，看着这无限诲景，枯燥的骑行心情随美景变得盈润了。观潮季节一路都能看到”乱石穿空，惊涛拍岸”钱江潮壮观。在与日俱进的今天你还能看到蔚为壮观的跨海大桥，现代化的秦山核电站。南北湖风景，盐官古镇——众多景观我就不一一介绍，你去骑一趟就全知道了。<br>老沪杭路是条美丽的路，值得单车骑行的路，它似一条彩练，我们深深喜爱它。“<br><em>—— 引自<a href="http://bbs.bikehome.net/forum.php?mod=viewthread&amp;tid=72438" target="_blank" rel="external">http://bbs.bikehome.net/forum.php?mod=viewthread&amp;tid=72438</a></em><br><a id="more"></a></p>
 <h1 id="具体安排"><a href="#具体安排" class="headerlink" title="具体安排"></a>具体安排</h1><p><strong>【目的地点】</strong>：沿沪杭公路到九龙山<br><strong>【全程距离】</strong>：谷歌测算约140KM<br><strong>【活动时间】</strong>：2013-06-15，周六<br><strong>【集合地点】</strong>：上海市闵行区东川路地铁站<br><strong>【集合时间】</strong>：7:50集合，8:00出发。<br><strong>【解散地点】</strong>：上海市闵行区东川路地铁站<br><strong>【解散时间】</strong>：大约18点<br><strong>【骑行工具】</strong>：任何车型；任何品牌变速车（请保证车况良好） 非快拆车辆请自带扳手!<br><strong>【装备建议】</strong>：头盔必须<br><strong>【配备手台】</strong>：至少2部<br><strong>【休息段】</strong>：约每10公里休息一次。<br><strong>【活动取消条件】</strong>：活动前一天晚上天气预报为准。如取消活动会在活动出发前2小时短息通知</p>
 <h1 id="路线规划"><a href="#路线规划" class="headerlink" title="路线规划"></a>路线规划</h1><p> <a href="http://goo.gl/maps/N6hoa" target="_blank" rel="external">http://goo.gl/maps/N6hoa</a><br><img src="/img/20130615/2.png" alt=""></p>
@@ -3280,7 +3455,7 @@ hosts
     
     <entry>
       <title><![CDATA[骑行4：老上海&浦西世博园]]></title>
-      <url>http://cuiqingwei.github.io/2013/04/29/2013-04-29-%E9%AA%91%E8%A1%8C4%EF%BC%9A%E8%80%81%E4%B8%8A%E6%B5%B7-%E6%B5%A6%E8%A5%BF%E4%B8%96%E5%8D%9A%E5%9B%AD/</url>
+      <url>http://cuiqingwei.github.io/2013/04/29/2013-04-29-%25E9%25AA%2591%25E8%25A1%258C4%25EF%25BC%259A%25E8%2580%2581%25E4%25B8%258A%25E6%25B5%25B7-%25E6%25B5%25A6%25E8%25A5%25BF%25E4%25B8%2596%25E5%258D%259A%25E5%259B%25AD/</url>
       <content type="html"><![CDATA[<p><img src="/img/20130429/head.png" alt=""></p>
 <h1 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h1><p> <strong>【目的地点】</strong>：老上海&amp;浦西世博园<br> <strong>【全程距离】</strong>：路书测算28.4KM<br> <strong>【活动时间】</strong>：未定<br> <strong>【集合地点】</strong>：公司<br> <strong>【集合时间】</strong>：12:50集合，13:00出发。<br> <strong>【解散地点】</strong>：龙华塔<br> <strong>【解散时间】</strong>：大约15点<br> <strong>【骑行工具】</strong>：任何车型；任何品牌变速车（请保证车况良好） 非快拆车辆请自带扳手!<br> <strong>【装备建议】</strong>：头盔必须<br> <strong>【配备手台】</strong>：至少2部<br> <strong>【休息段】</strong>：约每10公里休息一次。<br> <strong>【活动取消条件】</strong>：活动前一天晚上天气预报为准。如取消活动会在活动出发前2小时短息通知！<br> <strong>【天气】</strong>：<a href="http://tianqi.2345.com/shanghai/58362.htm" target="_blank" rel="external">http://tianqi.2345.com/shanghai/58362.htm</a><br> <strong>【路线】</strong>：<a href="http://map.sogou.com/lushu/swf/lushu.swf?id=8a8c084d3e2ee224013e3104ab85514d" target="_blank" rel="external">http://map.sogou.com/lushu/swf/lushu.swf?id=8a8c084d3e2ee224013e3104ab85514d</a><br><img src="/img/20130429/1.png" alt=""><br><img src="/img/20130429/foot.png" alt=""><br><a id="more"></a></p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><img src="/img/20130429/2.png" alt=""></p>
@@ -3290,7 +3465,7 @@ hosts
     
     <entry>
       <title><![CDATA[骑行3：天马山&淀山湖]]></title>
-      <url>http://cuiqingwei.github.io/2013/04/20/2013-04-20-%E9%AA%91%E8%A1%8C3%EF%BC%9A%E5%A4%A9%E9%A9%AC%E5%B1%B1-%E6%B7%80%E5%B1%B1%E6%B9%96/</url>
+      <url>http://cuiqingwei.github.io/2013/04/20/2013-04-20-%25E9%25AA%2591%25E8%25A1%258C3%25EF%25BC%259A%25E5%25A4%25A9%25E9%25A9%25AC%25E5%25B1%25B1-%25E6%25B7%2580%25E5%25B1%25B1%25E6%25B9%2596/</url>
       <content type="html"><![CDATA[<h1 id="路线"><a href="#路线" class="headerlink" title="路线"></a>路线</h1><p><a href="http://map.sogou.com/lushu/swf/lushu.swf?id=8a8c07c83e1f7cf5013e205ac8d428be" target="_blank" rel="external">http://map.sogou.com/lushu/swf/lushu.swf?id=8a8c07c83e1f7cf5013e205ac8d428be</a><br><a id="more"></a></p>
 <h1 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h1><p><img src="/img/20130420/1.png" alt=""></p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><img src="/img/20130420/2.png" alt=""></p>
@@ -3300,7 +3475,7 @@ hosts
     
     <entry>
       <title><![CDATA[我的单车装备]]></title>
-      <url>http://cuiqingwei.github.io/2013/04/06/2013-04-06-%E6%88%91%E7%9A%84%E5%8D%95%E8%BD%A6%E8%A3%85%E5%A4%87/</url>
+      <url>http://cuiqingwei.github.io/2013/04/06/2013-04-06-%25E6%2588%2591%25E7%259A%2584%25E5%258D%2595%25E8%25BD%25A6%25E8%25A3%2585%25E5%25A4%2587/</url>
       <content type="html"><![CDATA[<p>整理自己所买装备，记录备忘。同时，也希望能给准备买车的人做个参考。</p>
 <h1 id="GIANT-ATX777：￥-2998-00-专门店售价"><a href="#GIANT-ATX777：￥-2998-00-专门店售价" class="headerlink" title="GIANT ATX777：￥ 2998.00 [专门店售价]"></a><strong>GIANT ATX777</strong>：￥ 2998.00 [专门店售价]</h1><p><a href="http://www.giant.com.cn/Bike/BikeView/972" target="_blank" rel="external">http://www.giant.com.cn/Bike/BikeView/972</a><br>淘宝推荐<a href="http://detail.tmall.com/item.htm?spm=a230r.1.14.3.gtHCFG&amp;id=21684276849" target="_blank" rel="external">http://detail.tmall.com/item.htm?spm=a230r.1.14.3.gtHCFG&amp;id=21684276849</a><br><img src="/img/20130406/1.png" alt=""><br><a id="more"></a></p>
 <h1 id="脚撑：￥-97-00-专门店售价"><a href="#脚撑：￥-97-00-专门店售价" class="headerlink" title="脚撑：￥ 97.00 [专门店售价]"></a><strong>脚撑</strong>：￥ 97.00 [专门店售价]</h1><p>淘宝推荐<a href="http://item.taobao.com/item.htm?spm=a230r.1.0.174.IWDnCY&amp;id=8229495532" target="_blank" rel="external">http://item.taobao.com/item.htm?spm=a230r.1.0.174.IWDnCY&amp;id=8229495532</a><br><img src="/img/20130406/2.png" alt=""></p>
@@ -3345,7 +3520,7 @@ hosts
     
     <entry>
       <title><![CDATA[骑行2：滴水湖]]></title>
-      <url>http://cuiqingwei.github.io/2013/04/05/2013-04-05-%E9%AA%91%E8%A1%8C2%EF%BC%9A%E6%BB%B4%E6%B0%B4%E6%B9%96/</url>
+      <url>http://cuiqingwei.github.io/2013/04/05/2013-04-05-%25E9%25AA%2591%25E8%25A1%258C2%25EF%25BC%259A%25E6%25BB%25B4%25E6%25B0%25B4%25E6%25B9%2596/</url>
       <content type="html"><![CDATA[<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><img src="/img/20130405/2.png" alt=""><br><a id="more"></a></p>
 <h1 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h1><p><img src="/img/20130405/1.jpeg" alt=""></p>
 <h1 id="留影"><a href="#留影" class="headerlink" title="留影"></a>留影</h1><p><a href="http://user.qzone.qq.com/39886157/photo/V12hjze90Nolq2/" target="_blank" rel="external">http://user.qzone.qq.com/39886157/photo/V12hjze90Nolq2/</a></p>
@@ -3354,7 +3529,7 @@ hosts
     
     <entry>
       <title><![CDATA[骑行1：佘山]]></title>
-      <url>http://cuiqingwei.github.io/2013/04/02/2013-04-02-%E9%AA%91%E8%A1%8C1%EF%BC%9A%E4%BD%98%E5%B1%B1/</url>
+      <url>http://cuiqingwei.github.io/2013/04/02/2013-04-02-%25E9%25AA%2591%25E8%25A1%258C1%25EF%25BC%259A%25E4%25BD%2598%25E5%25B1%25B1/</url>
       <content type="html"><![CDATA[<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><img src="/img/20130402/2.png" alt=""><br><a id="more"></a></p>
 <h1 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h1><p><img src="/img/20130402/1.jpeg" alt=""></p>
 <h1 id="留影"><a href="#留影" class="headerlink" title="留影"></a>留影</h1><p><a href="http://user.qzone.qq.com/39886157/photo/V12hjze93dVIi6/" target="_blank" rel="external">http://user.qzone.qq.com/39886157/photo/V12hjze93dVIi6/</a></p>
@@ -3363,7 +3538,7 @@ hosts
     
     <entry>
       <title><![CDATA[GitHub建立个人站点]]></title>
-      <url>http://cuiqingwei.github.io/2013/03/23/2013-03-23-GitHub%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9/</url>
+      <url>http://cuiqingwei.github.io/2013/03/23/2013-03-23-GitHub%25E5%25BB%25BA%25E7%25AB%258B%25E4%25B8%25AA%25E4%25BA%25BA%25E7%25AB%2599%25E7%2582%25B9/</url>
       <content type="html"><![CDATA[<p>Jekyll-简单的博客、静态网站工具<a href="http://jekyll.bootcss.om/" target="_blank" rel="external">http://jekyll.bootcss.com/</a>;</p>
 <h3 id="1-Git简介"><a href="#1-Git简介" class="headerlink" title="1.Git简介"></a>1.Git简介</h3><ul>
 <li>Git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。</li>
@@ -3965,7 +4140,7 @@ cd /home/user/contiki-sensinode/examples/cc2530dk
     
     <entry>
       <title><![CDATA[曾经折腾过的那些]]></title>
-      <url>http://cuiqingwei.github.io/2012/10/14/2012-10-14-%E6%9B%BE%E7%BB%8F%E6%8A%98%E8%85%BE%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B/</url>
+      <url>http://cuiqingwei.github.io/2012/10/14/2012-10-14-%25E6%259B%25BE%25E7%25BB%258F%25E6%258A%2598%25E8%2585%25BE%25E8%25BF%2587%25E7%259A%2584%25E9%2582%25A3%25E4%25BA%259B/</url>
       <content type="html"><![CDATA[<p>整理硬盘资料时，看到这些图片。心情很激动，这些个都是与硬件相关的，什么MP3啊等等，可惜没有保留图片,纯软件的就更多了。才发现自己2009年到现在这几年一直忙着搞公司的事。已好久没停下来做点自己真正喜欢或是让自己心动的事了！</p>
 <a id="more"></a>
 <ul>
@@ -4136,7 +4311,7 @@ cd /home/user/contiki-sensinode/examples/cc2530dk
     
     <entry>
       <title><![CDATA[SQLite移植到ARM开发板]]></title>
-      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-07-SQLite%E7%A7%BB%E6%A4%8D%E5%88%B0ARM%E5%BC%80%E5%8F%91%E6%9D%BF/</url>
+      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-07-SQLite%25E7%25A7%25BB%25E6%25A4%258D%25E5%2588%25B0ARM%25E5%25BC%2580%25E5%258F%2591%25E6%259D%25BF/</url>
       <content type="html"><![CDATA[<h1 id="1-下载sqlite3源代码"><a href="#1-下载sqlite3源代码" class="headerlink" title="1.下载sqlite3源代码"></a>1.下载sqlite3源代码</h1><p><a href="http://www.sqlite.org/sqlite-autoconf-3071400.tar.gz" target="_blank" rel="external">http://www.sqlite.org/sqlite-autoconf-3071400.tar.gz</a></p>
 <h1 id="2-解压源代码："><a href="#2-解压源代码：" class="headerlink" title="2.解压源代码："></a>2.解压源代码：</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tar xvzf sqlite-autoconf-3071400.tar.gz</div><div class="line"><span class="built_in">cd</span> sqlite-autoconf-3071400</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -4160,7 +4335,7 @@ cd /home/user/contiki-sensinode/examples/cc2530dk
     
     <entry>
       <title><![CDATA[goAhead2.5嵌入式web服务器移植]]></title>
-      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-07-goAhead2-5%E5%B5%8C%E5%85%A5%E5%BC%8Fweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A7%BB%E6%A4%8D/</url>
+      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-07-goAhead2-5%25E5%25B5%258C%25E5%2585%25A5%25E5%25BC%258Fweb%25E6%259C%258D%25E5%258A%25A1%25E5%2599%25A8%25E7%25A7%25BB%25E6%25A4%258D/</url>
       <content type="html"><![CDATA[<h1 id="1-GoAhead-Web服务器介绍"><a href="#1-GoAhead-Web服务器介绍" class="headerlink" title="1. GoAhead Web服务器介绍"></a>1. GoAhead Web服务器介绍</h1><p>goAhead Web服务器，小巧、精致，提供了值得称道的性能，特别适合于嵌入式系统，因此，在很多嵌入式产品如路由器中都用到了goAhead作为嵌入式web服务器。<br><a id="more"></a><br>goAhead Web服务器，具有如下特点：<br>    支持ASP；<br>    嵌入式的JavaScript，即Ejscript；<br>    支持内存中的CGI处理；<br>    快速响应，每秒中可处理超过65个请求；<br>    符合HTTP1.0/HTTP1.1标准；<br>    拥有众多扩展API，方便用户开发；<br>    支持SSL3.0（Secure Sockets Layer），如MatrixSSL（最新版本为：MatrixSSL 3-2）；<br>    支持用户群组管理；<br>    支持DAA访问认证；<br>    占用很小内存，如果不包含SSL，仅要求60K内存；包含SSL，要求500K内存；<br>    Web页面可存在于ROM或文件系统中；<br>    支持多种操作系统，如linux、wince、vxworks等等；</p>
 <p>当前最新版本为：WebServer 2.5，本次移植即是这个版本。</p>
 <h1 id="2-获取Goahead源码包"><a href="#2-获取Goahead源码包" class="headerlink" title="2. 获取Goahead源码包"></a>2. 获取Goahead源码包</h1><p>地址为：<br><a href="http://velep.com/archives/321.html" target="_blank" rel="external">http://velep.com/archives/321.html</a><br><a href="http://velep.com/download/webs-2-5.tar.gz" target="_blank" rel="external">http://velep.com/download/webs-2-5.tar.gz</a><br>当前最新版本为：WebServer 2.5</p>
@@ -4243,7 +4418,7 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     
     <entry>
       <title><![CDATA[jffs2根文件系统制作]]></title>
-      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-07-jffs2%E6%A0%B9%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%88%B6%E4%BD%9C/</url>
+      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-07-jffs2%25E6%25A0%25B9%25E6%2596%2587%25E4%25BB%25B6%25E7%25B3%25BB%25E7%25BB%259F%25E5%2588%25B6%25E4%25BD%259C/</url>
       <content type="html"><![CDATA[<h1 id="1．建立目录"><a href="#1．建立目录" class="headerlink" title="1．建立目录"></a>1．建立目录</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gedit creatRootfs.sh</div></pre></td></tr></table></figure>
 <p>creatRootfs.sh 内容如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="built_in">cd</span> /home/at91sam9/mdk9261/rootfs</div><div class="line"><span class="built_in">echo</span> <span class="string">"------Create rootfs directons......"</span></div><div class="line">mkdir jffs2</div><div class="line"><span class="built_in">cd</span> jffs2</div><div class="line"><span class="built_in">echo</span> <span class="string">"--------Create root,dev......"</span></div><div class="line">mkdir root dev etc bin sbin mnt sys proc lib home tmp var usr</div><div class="line">mkdir usr/sbin usr/bin usr/lib usr/modules</div><div class="line">mkdir etc/init.d</div><div class="line">mkdir lib/modules</div><div class="line">chmod 777 tmp</div><div class="line"><span class="built_in">cd</span> ..</div><div class="line"><span class="built_in">echo</span> <span class="string">"-------make direction done---------"</span></div><div class="line"><span class="comment"># by: cuiqingwei 20120913</span></div></pre></td></tr></table></figure></p>
 <a id="more"></a>
@@ -4318,7 +4493,7 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     
     <entry>
       <title><![CDATA[at91sam9x5编译过程]]></title>
-      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-07-at91sam9x5%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</url>
+      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-07-at91sam9x5%25E7%25BC%2596%25E8%25AF%2591%25E8%25BF%2587%25E7%25A8%258B/</url>
       <content type="html"><![CDATA[<h1 id="1、创建目录"><a href="#1、创建目录" class="headerlink" title="1、创建目录"></a>1、创建目录</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home</div><div class="line">mkdir at91sam9</div><div class="line"><span class="built_in">cd</span> at92sam9</div><div class="line">mkdir at91sam9x5-ek</div><div class="line"><span class="built_in">cd</span> at91sam9x5-ek</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <h1 id="2、Bootstrap编译"><a href="#2、Bootstrap编译" class="headerlink" title="2、Bootstrap编译"></a>2、Bootstrap编译</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget ftp://ftp.linux4sam.org/pub/at91bootstrap/AT91Bootstrap3.1/AT91Bootstrap-5series_1.2.tgz</div><div class="line">tar xvzf AT91Bootstrap-5series_1.2.tgz</div><div class="line"><span class="built_in">cd</span> AT91Bootstrap-5series_1.2</div></pre></td></tr></table></figure>
@@ -4359,7 +4534,7 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     
     <entry>
       <title><![CDATA[ubuntu11.04安装arm开发环境]]></title>
-      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-07-ubuntu11-04%E5%AE%89%E8%A3%85arm%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
+      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-07-ubuntu11-04%25E5%25AE%2589%25E8%25A3%2585arm%25E5%25BC%2580%25E5%258F%2591%25E7%258E%25AF%25E5%25A2%2583/</url>
       <content type="html"><![CDATA[<p>特别提示：整个过程中计算机必须联网，因为有些程序需要从网络上下载!</p>
 <h1 id="一、安装Ubuntu-11-04"><a href="#一、安装Ubuntu-11-04" class="headerlink" title="一、安装Ubuntu 11.04"></a>一、安装Ubuntu 11.04</h1><ul>
 <li>1、首先用虚拟机安装ubuntu 11.04版本,建议将硬盘空间设大一点，80G最好，编译linux，根文件系统会占用很多的硬盘空间。<br>登陆后修改root密码<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo passwd root</div></pre></td></tr></table></figure>
@@ -4454,7 +4629,7 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     
     <entry>
       <title><![CDATA[Linux中生成shadow的加密密码.04安装arm开发环境]]></title>
-      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-08-Linux%E4%B8%AD%E7%94%9F%E6%88%90shadow%E7%9A%84%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81/</url>
+      <url>http://cuiqingwei.github.io/2012/09/07/2012-09-08-Linux%25E4%25B8%25AD%25E7%2594%259F%25E6%2588%2590shadow%25E7%259A%2584%25E5%258A%25A0%25E5%25AF%2586%25E5%25AF%2586%25E7%25A0%2581/</url>
       <content type="html"><![CDATA[<p>How to generate Linux shadow password / Linux中如何生成shadow密码（CentOS 5下测试通过）<br>/etc/shadow中的root信息:<br>root:$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.:15225:0:99999:7:::</p>
 <p>其中，”$1$nnXLnQUR$eqQTkzEx/xP2yvVDyb6jO.” 就是加密后的root密码，我们在修改用户密码的时候都使用passwd命令，其实也可以直接修改/etc/shadow文件。那要面临的问题就是如何生成这个加密过的shadow密码($1$ 表示加密算法是基于MD5的，不同发行版本默认的加密算法可能不同)。</p>
 <p>方法一（交互式）<br>[root@centos-vm ~]# openssl passwd -1 -salt $(&lt; /dev/urandom tr -dc ‘[:alnum:]’ | head -c 32)<br>Password:    # input your password here<br>$1$MZrDxgEw$i2XBgmDMo0Wf1.OVvOGGQ1</p>
@@ -4464,7 +4639,7 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     
     <entry>
       <title><![CDATA[vim循序渐进]]></title>
-      <url>http://cuiqingwei.github.io/2012/08/08/2012-08-08-vim%E5%BE%AA%E5%BA%8F%E6%B8%90%E8%BF%9B/</url>
+      <url>http://cuiqingwei.github.io/2012/08/08/2012-08-08-vim%25E5%25BE%25AA%25E5%25BA%258F%25E6%25B8%2590%25E8%25BF%259B/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>vim的学习曲线相当的大（参看<a href="http://coolshell.cn/articles/3125.html" target="_blank" rel="external">各种文本编辑器的学习曲线</a>），所以，如果你一开始看到的是一大堆VIM的命令分类，你一定会对这个编辑器失去兴趣的。下面的文章翻译自《<a href="http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/" target="_blank" rel="external">Learn Vim Progressively</a>》，我觉得这是给新手最好的VIM的升级教程了，没有列举所有的命令，只是列举了那些最有用的命令。非常不错!</p>
 </blockquote>
@@ -4634,7 +4809,7 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     
     <entry>
       <title><![CDATA[如何选择开源许可证?]]></title>
-      <url>http://cuiqingwei.github.io/2012/08/02/2012-08-02-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E5%BC%80%E6%BA%90%E8%AE%B8%E5%8F%AF%E8%AF%81/</url>
+      <url>http://cuiqingwei.github.io/2012/08/02/2012-08-02-%25E5%25A6%2582%25E4%25BD%2595%25E9%2580%2589%25E6%258B%25A9%25E5%25BC%2580%25E6%25BA%2590%25E8%25AE%25B8%25E5%258F%25AF%25E8%25AF%2581/</url>
       <content type="html"><![CDATA[<p>如何为代码选择开源许可证，这是一个问题。<br>世界上的开源许可证，大概有上百种。很少有人搞得清楚它们的区别。即使在最流行的六种—-<a href="http://www.gnu.org/licenses/gpl.html" target="_blank" rel="external">GPL</a>、<a href="http://en.wikipedia.org/wiki/BSD_licenses" target="_blank" rel="external">BSD</a>、<a href="http://en.wikipedia.org/wiki/MIT_License" target="_blank" rel="external">MIT</a>、<a href="http://www.mozilla.org/MPL/" target="_blank" rel="external">Mozilla</a>、<a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="external">Apache</a>和<a href="http://www.gnu.org/copyleft/lesser.html" target="_blank" rel="external">LGPL</a>—-之中做选择，也很复杂。</p>
 <p>乌克兰程序员<a href="http://pbagwl.com/post/5078147450/description-of-popular-software-licenses" target="_blank" rel="external">Paul Bagwell</a>，画了一张分析图，说明应该怎么选择。这是我见过的最简单的讲解，只用两分钟，你就能搞清楚这六种许可证之间的最大区别。<br><a id="more"></a><br>下面是<a href="http://www.ruanyifeng.com/home.html" target="_blank" rel="external">阮一峰</a>制作的中文版，请点击看大图。</p>
 <p><img src="/img/20120802/free_software_licenses.png" alt=""></p>
@@ -4643,7 +4818,7 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     
     <entry>
       <title><![CDATA[vi备忘]]></title>
-      <url>http://cuiqingwei.github.io/2012/08/01/2012-08-01-vi%E5%A4%87%E5%BF%98/</url>
+      <url>http://cuiqingwei.github.io/2012/08/01/2012-08-01-vi%25E5%25A4%2587%25E5%25BF%2598/</url>
       <content type="html"><![CDATA[<h3 id="1-设置行号显示"><a href="#1-设置行号显示" class="headerlink" title="1.设置行号显示"></a>1.设置行号显示</h3><p><strong>ESC</strong> -&gt; <strong>:</strong> <strong>set nu</strong></p>
 <h3 id="2-跳到指定行"><a href="#2-跳到指定行" class="headerlink" title="2.跳到指定行"></a>2.跳到指定行</h3><p>命令模式下 <strong>:n</strong> 到第n行,如 <strong>:12</strong> - 就是跳到12行<br>命令模式不输入 <strong>:</strong> ，行号 <strong>gg</strong>，如：<strong>12gg</strong> - 就是跳到12行<br><a id="more"></a></p>
 <h3 id="3-查找"><a href="#3-查找" class="headerlink" title="3.查找"></a>3.查找</h3><p><strong>/xx</strong> 查找xx<br><strong>n</strong> 下一个，<strong>N</strong> 上一个</p>
@@ -4659,7 +4834,7 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     
     <entry>
       <title><![CDATA[Telnet&Socket调试工具]]></title>
-      <url>http://cuiqingwei.github.io/2010/07/23/2010-07-23-Telnet-Socket%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</url>
+      <url>http://cuiqingwei.github.io/2010/07/23/2010-07-23-Telnet-Socket%25E8%25B0%2583%25E8%25AF%2595%25E5%25B7%25A5%25E5%2585%25B7/</url>
       <content type="html"><![CDATA[<p>最近在研究 TI Cortex-M3 LM3S8962 调试TCP时，找了一些TCP&amp;UDP调试工具，用起来不怎么习惯。随后自己写了一个调试工具，现与君共享！代码全部公布，喜爱者共同学习完善！</p>
 <p>该 TCP &amp; Telnet 调试工具，主要用于 TCP、Telnet 调试，它具有以下特点：<br>① 不同的色彩，突出显示RX和TX信息内容;<br>② 支持字符串或十六进制发送、显示;<br>③ 自定义按钮组可定义经常使用的命令;<br>④ 一键点击导出/打印通讯日志。<br><a id="more"></a></p>
 <h1 id="1、使用说明"><a href="#1、使用说明" class="headerlink" title="1、使用说明"></a>1、使用说明</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_31/ourdev_570278.png" alt="效果图"></p>
@@ -4676,7 +4851,7 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     
     <entry>
       <title><![CDATA[基于Altium Designer Winter 09在PCB中放置LOGO]]></title>
-      <url>http://cuiqingwei.github.io/2009/07/28/2009-07-28-%E5%9F%BA%E4%BA%8EAltium-Designer-Winter-09%E5%9C%A8PCB%E4%B8%AD%E6%94%BE%E7%BD%AELOGO/</url>
+      <url>http://cuiqingwei.github.io/2009/07/28/2009-07-28-%25E5%259F%25BA%25E4%25BA%258EAltium-Designer-Winter-09%25E5%259C%25A8PCB%25E4%25B8%25AD%25E6%2594%25BE%25E7%25BD%25AELOGO/</url>
       <content type="html"><![CDATA[<p>处理问题方法:</p>
 <ul>
 <li>1.把LOGO保存成单色的BMP图像;</li>
@@ -4690,7 +4865,7 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     
     <entry>
       <title><![CDATA[在TI-CC1111&CC25111上搞定USBHID]]></title>
-      <url>http://cuiqingwei.github.io/2009/03/13/2009-03-13-%E5%9C%A8TI-CC1111-CC25111%E4%B8%8A%E6%90%9E%E5%AE%9AUSBHID/</url>
+      <url>http://cuiqingwei.github.io/2009/03/13/2009-03-13-%25E5%259C%25A8TI-CC1111-CC25111%25E4%25B8%258A%25E6%2590%259E%25E5%25AE%259AUSBHID/</url>
       <content type="html"><![CDATA[<p><img src="http://cache.amobbs.com/bbs_upload782111/files_13/ourdev_425633.png" alt="效果图"></p>
 <hr>
 <p><em>发表链接</em></p>
@@ -4714,7 +4889,7 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     
     <entry>
       <title><![CDATA[Proteus产品仿真]]></title>
-      <url>http://cuiqingwei.github.io/2008/05/11/2008-05-11-Proteus%E4%BA%A7%E5%93%81%E4%BB%BF%E7%9C%9F/</url>
+      <url>http://cuiqingwei.github.io/2008/05/11/2008-05-11-Proteus%25E4%25BA%25A7%25E5%2593%2581%25E4%25BB%25BF%25E7%259C%259F/</url>
       <content type="html"><![CDATA[<p>现将2006在一家公司做的一个产品的仿真部分所有源码资料公布，供大家学习和参考！包括参菜单管理算法。菜单翻页可像手机菜单一下，可滚动翻页，并有进度条指示。另还有TWI读写PCF8563的程序。不多说大家看看就知道。以前只公布过proteus和hex，反映还可以。今天是源码也公布，希望对大家有帮助。传播请注明作者及出处，谢谢！</p>
 <h1 id="图示效果一"><a href="#图示效果一" class="headerlink" title="图示效果一"></a>图示效果一</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_274222.png" alt="效果图"><br><a id="more"></a></p>
 <h1 id="图示效果二"><a href="#图示效果二" class="headerlink" title="图示效果二"></a>图示效果二</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_274223.png" alt="效果图"></p>
@@ -4732,7 +4907,7 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     
     <entry>
       <title><![CDATA[USB_M8_RGBLED彩灯]]></title>
-      <url>http://cuiqingwei.github.io/2008/01/03/2008-01-03-USB-M8-RGBLED%E5%BD%A9%E7%81%AF/</url>
+      <url>http://cuiqingwei.github.io/2008/01/03/2008-01-03-USB-M8-RGBLED%25E5%25BD%25A9%25E7%2581%25AF/</url>
       <content type="html"><![CDATA[<p>用M8控制RGBLED测试了一下，效果不错。并做了一个上位机软件，通过USB控制，现将资料整理上传与君共享！</p>
 <h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_9/ourdev_198395.PNG" alt="原理图"><br><a id="more"></a></p>
 <h1 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/******************************************************************************</span></div><div class="line">* rgbCtrl.h</div><div class="line">*</div><div class="line">* Copyright XiaoCui' Products</div><div class="line">*</div><div class="line">* DESCRIPTION:</div><div class="line">*</div><div class="line">* modification history</div><div class="line">* --------------------</div><div class="line">* 01a, 01jan2008, cuiqingwei written</div><div class="line">* --------------------</div><div class="line">******************************************************************************/</div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;avr/io.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;avr/interrupt.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;avr/pgmspace.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;avr/wdt.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"usbdrv.h"</span></span></div><div class="line"><span class="comment">/* Explanation of the HSV color space:</span></div><div class="line">H: Hue        - 色调(如红，蓝，黄，绿...)</div><div class="line">S: Saturation - 饱和度</div><div class="line">V: Value      - 亮度</div><div class="line">Scaling of the HSV values:</div><div class="line">H: [0-255] 0 = red, 42 = yellow, 85 = green, 128 = turquoise, 171 = blue, 214 = purple</div><div class="line">S: [0-255] 0 = white, 255 = pure colors</div><div class="line">V: [0-255] 0 = off,   255 = maximum brightness */</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> &#123;</div><div class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> r;</div><div class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> g;</div><div class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> b;</div><div class="line">&#125; RGB;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> Ledport         PORTD            <span class="comment">// RGB Led Port</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> DDR_Ledport     DDRD</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> R_PIN           5                <span class="comment">// R Output</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> G_PIN           6                <span class="comment">// G</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> B_PIN           7                <span class="comment">// B</span></span></div><div class="line"><span class="comment">/* 函数声名 */</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">void</span>)</span></span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">hsv_to_rgb</span> <span class="params">(<span class="keyword">unsigned</span> <span class="keyword">char</span> h, <span class="keyword">unsigned</span> <span class="keyword">char</span> s, <span class="keyword">unsigned</span> <span class="keyword">char</span> v, RGB * out)</span></span>;</div><div class="line"><span class="comment">/* 全局变量 */</span></div><div class="line">RGB lamp = &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;;</div><div class="line"><span class="keyword">unsigned</span> <span class="keyword">char</span> type,H,S,V;</div><div class="line"><span class="comment">//-----------------------------------------------------------------------------</span></div><div class="line"><span class="comment">// Init</span></div><div class="line"><span class="comment">//-----------------------------------------------------------------------------</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</div><div class="line">    PORTD = <span class="number">0</span>;</div><div class="line">    PORTB = <span class="number">0</span>;                  <span class="comment">// no pullups on USB and ISP pins</span></div><div class="line">    DDRD = ~(<span class="number">1</span> &lt;&lt; <span class="number">2</span>);           <span class="comment">// all outputs except PD2 = INT0</span></div><div class="line">    DDRB = <span class="number">0</span>;                   <span class="comment">// all USB and ISP pins inputs</span></div><div class="line">    DDR_Ledport = (<span class="number">1</span>&lt;&lt;R_PIN)|(<span class="number">1</span>&lt;&lt;G_PIN)|(<span class="number">1</span>&lt;&lt;B_PIN);</div><div class="line">    TCCR0 = <span class="number">1</span>;</div><div class="line">    TIMSK = (<span class="number">1</span>&lt;&lt;TOIE0);        <span class="comment">// Overflow Interrupt f/256  </span></div><div class="line">&#125;</div><div class="line"><span class="function">uchar <span class="title">usbFunctionSetup</span><span class="params">(uchar data[<span class="number">8</span>])</span> </span>&#123;</div><div class="line">    usbRequest_t \*rq = (<span class="keyword">void</span> \*)data;</div><div class="line">    <span class="keyword">if</span>( rq-&gt;bRequest ) &#123;</div><div class="line">        type = <span class="number">1</span>;</div><div class="line">        H = rq-&gt;wValue.bytes[<span class="number">0</span>];</div><div class="line">        S = rq-&gt;wValue.bytes[<span class="number">1</span>];</div><div class="line">        V = rq-&gt;wValue.bytes[<span class="number">2</span>];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        type = <span class="number">0</span>;</div><div class="line">        lamp.r = rq-&gt;wValue.bytes[<span class="number">0</span>];</div><div class="line">        lamp.g = rq-&gt;wValue.bytes[<span class="number">1</span>];</div><div class="line">        lamp.b = rq-&gt;wValue.bytes[<span class="number">2</span>];</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//computeOutputStatus();</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//-----------------------------------------------------------------------------</span></div><div class="line"><span class="comment">// Main</span></div><div class="line"><span class="comment">//-----------------------------------------------------------------------------</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;        </div><div class="line">    cli();</div><div class="line">    init();</div><div class="line">    usbInit();</div><div class="line">    sei();</div><div class="line">    H = <span class="number">180</span>;</div><div class="line">    S = <span class="number">255</span>;</div><div class="line">    V = <span class="number">355</span>;</div><div class="line">    type = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(;;) &#123;</div><div class="line">        usbPoll();</div><div class="line">        <span class="keyword">if</span> ( type ) &#123;</div><div class="line">            type = <span class="number">0</span>;</div><div class="line">            hsv_to_rgb(H,S,V,&amp;lamp);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">//-----------------------------------------------------------------------------</span></div><div class="line"><span class="comment">// Converts HSV to RGB</span></div><div class="line"><span class="comment">//-----------------------------------------------------------------------------</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">hsv_to_rgb</span> <span class="params">(<span class="keyword">unsigned</span> <span class="keyword">char</span> h, <span class="keyword">unsigned</span> <span class="keyword">char</span> s, <span class="keyword">unsigned</span> <span class="keyword">char</span> v, RGB * out)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> r=<span class="number">0</span>,g=<span class="number">0</span>,b=<span class="number">0</span>, i, f;</div><div class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> p, q, t;</div><div class="line">    <span class="keyword">if</span>( s == <span class="number">0</span> ) &#123;        </div><div class="line">        r = g = b = v;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;        </div><div class="line">        i=h/<span class="number">43</span>;</div><div class="line">        f=h%<span class="number">43</span>;</div><div class="line">        p = (v * (<span class="number">255</span> - s))/<span class="number">256</span>;</div><div class="line">        q = (v * ((<span class="number">10710</span> - (s * f))/<span class="number">42</span>))/<span class="number">256</span>;</div><div class="line">        t = (v * ((<span class="number">10710</span> - (s * (<span class="number">42</span> - f)))/<span class="number">42</span>))/<span class="number">256</span>;</div><div class="line">        <span class="keyword">switch</span>( i ) &#123;        </div><div class="line">            <span class="keyword">case</span> <span class="number">0</span>:</div><div class="line">                r = v; g = t; b = p; <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">                r = q; g = v; b = p; <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="number">2</span>:</div><div class="line">                r = p; g = v; b = t; <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> <span class="number">3</span>:</div><div class="line">                r = p; g = q; b = v; <span class="keyword">break</span>;                        </div><div class="line">            <span class="keyword">case</span> <span class="number">4</span>:</div><div class="line">                r = t; g = p; b = v; <span class="keyword">break</span>;                                </div><div class="line">            <span class="keyword">case</span> <span class="number">5</span>:</div><div class="line">                r = v; g = p; b = q; <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    out-&gt;r=r; out-&gt;g=g; out-&gt;b=b;</div><div class="line">&#125;</div><div class="line"><span class="comment">//-----------------------------------------------------------------------------</span></div><div class="line"><span class="comment">// Timer  0 Interrupt, f/256</span></div><div class="line"><span class="comment">//-----------------------------------------------------------------------------</span></div><div class="line">SIGNAL (SIG_OVERFLOW0) &#123;        </div><div class="line">    <span class="keyword">static</span> <span class="keyword">unsigned</span> <span class="keyword">char</span> PWM_cnt;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">unsigned</span> <span class="keyword">char</span> prescale;</div><div class="line">    <span class="keyword">if</span>(prescale++) &#123;                                </div><div class="line">        prescale=<span class="number">0</span>;                <span class="comment">// Used to halve the PWM frequency</span></div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (PWM_cnt &lt;lamp.r)</div><div class="line">        Ledport |= (<span class="number">1</span> &lt;&lt; R_PIN);</div><div class="line">    <span class="keyword">else</span></div><div class="line">        Ledport &amp;=~(<span class="number">1</span> &lt;&lt; R_PIN);</div><div class="line">    <span class="keyword">if</span> (PWM_cnt &lt;lamp.g)</div><div class="line">        Ledport |= (<span class="number">1</span> &lt;&lt; G_PIN);</div><div class="line">    <span class="keyword">else</span></div><div class="line">        Ledport &amp;=~(<span class="number">1</span> &lt;&lt; G_PIN);</div><div class="line">    <span class="keyword">if</span> (PWM_cnt &lt;lamp.b)</div><div class="line">        Ledport |= (<span class="number">1</span> &lt;&lt; B_PIN);</div><div class="line">    <span class="keyword">else</span></div><div class="line">        Ledport &amp;=~(<span class="number">1</span> &lt;&lt; B_PIN);</div><div class="line">    PWM_cnt++;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*-----------------------------------------------------------------------------</span></div><div class="line">                                0ooo</div><div class="line">                       ooo0     (   )</div><div class="line">                       (   )     ) /</div><div class="line">                        \ (     (_/</div><div class="line">                         \_)        By:cuiqingwei [gary]</div><div class="line">-----------------------------------------------------------------------------*/</div></pre></td></tr></table></figure>
@@ -4756,7 +4931,7 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     
     <entry>
       <title><![CDATA[EAGLE3D终于搞定了!]]></title>
-      <url>http://cuiqingwei.github.io/2007/11/19/2007-11-19-EAGLE3D%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9A%E4%BA%86%EF%BC%81/</url>
+      <url>http://cuiqingwei.github.io/2007/11/19/2007-11-19-EAGLE3D%25E7%25BB%2588%25E4%25BA%258E%25E6%2590%259E%25E5%25AE%259A%25E4%25BA%2586%25EF%25BC%2581/</url>
       <content type="html"><![CDATA[<h1 id="3D效果"><a href="#3D效果" class="headerlink" title="3D效果"></a>3D效果</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_182056.png" alt="3d"><br><a id="more"></a></p>
 <h1 id="实物"><a href="#实物" class="headerlink" title="实物"></a>实物</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_185116.JPG" alt="实物"></p>
 <h1 id="再传一下，我实验阶段的手工作品，看起来还是洗板的效果好啊，呵呵。"><a href="#再传一下，我实验阶段的手工作品，看起来还是洗板的效果好啊，呵呵。" class="headerlink" title="再传一下，我实验阶段的手工作品，看起来还是洗板的效果好啊，呵呵。"></a>再传一下，我实验阶段的手工作品，看起来还是洗板的效果好啊，呵呵。</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_185117.JPG" alt="手工"></p>
@@ -4768,7 +4943,7 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     
     <entry>
       <title><![CDATA[CC2430模块自测程序]]></title>
-      <url>http://cuiqingwei.github.io/2007/10/12/2007-10-12-CC2430%E6%A8%A1%E5%9D%97%E8%87%AA%E6%B5%8B%E7%A8%8B%E5%BA%8F/</url>
+      <url>http://cuiqingwei.github.io/2007/10/12/2007-10-12-CC2430%25E6%25A8%25A1%25E5%259D%2597%25E8%2587%25AA%25E6%25B5%258B%25E7%25A8%258B%25E5%25BA%258F/</url>
       <content type="html"><![CDATA[<p>ModuleTest V1.0 Written: 崔庆伟 [gary]</p>
 <p>可以用指令控制选择信道，设置发射功率，发送数据包（长度可选），接收数据包（接收时延可设），CC2430复位，MCU温度读取等。底层函数基本做好，如果要加入新功能，可自行更改。<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line">文件目录</div><div class="line">│  MT.eww</div><div class="line">│  Serial.ht</div><div class="line">│</div><div class="line">├─app</div><div class="line">│      includes.h</div><div class="line">│      ver.h</div><div class="line">│      mt.h</div><div class="line">│      mt.c</div><div class="line">│      MT.lib</div><div class="line">│</div><div class="line">├─hal</div><div class="line">│      hal.h</div><div class="line">│      rfConfig.h</div><div class="line">│      rfPacket.h</div><div class="line">│      wait.h</div><div class="line">│      timerSet.h</div><div class="line">│      uart.h</div><div class="line">│      tSensor.h</div><div class="line">│</div><div class="line">├─proj</div><div class="line">│  │  MT.ewd</div><div class="line">│  │  MT.ewp</div><div class="line">│  │  MT.IMB</div><div class="line">│  │  MT.IMD</div><div class="line">│  │  MT.IAB</div><div class="line">│  │  MT.IAD</div><div class="line">│  │  MT.PR</div><div class="line">│  │  MT.PS</div><div class="line">│  │  MT.PFI</div><div class="line">│  │  MT.PO</div><div class="line">│  │  MT.dep</div><div class="line">│  │  MT.SearchResults</div><div class="line">│  │  MT.WK3</div><div class="line">│  │  MT.PRI</div><div class="line">│  │</div><div class="line">│  ├─settings</div><div class="line">│  │      MT.dni</div><div class="line">│  │      MT.dbgdt</div><div class="line">│  │</div><div class="line">│  └─Debug</div><div class="line">│      ├─Exe</div><div class="line">│      │      MT.d51</div><div class="line">│      │</div><div class="line">│      ├─Obj</div><div class="line">│      │      uart.r51</div><div class="line">│      │      hal_uart.r51</div><div class="line">│      │      wait.r51</div><div class="line">│      │      rfConfig.r51</div><div class="line">│      │      rfPacket.r51</div><div class="line">│      │      timerSet.r51</div><div class="line">│      │      lcd.pbi</div><div class="line">│      │      lcd.r51</div><div class="line">│      │      rfPacketTransceiver.pbi</div><div class="line">│      │      MT.pbd</div><div class="line">│      │      mt.pbi</div><div class="line">│      │      mt.r51</div><div class="line">│      │</div><div class="line">│      └─List</div><div class="line">│              MT.map</div><div class="line">│</div><div class="line">└─settings</div><div class="line">        MT.wsdt</div></pre></td></tr></table></figure></p>
 <ul>
@@ -4783,7 +4958,7 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     
     <entry>
       <title><![CDATA[基于Cport的多功能串口调试工具]]></title>
-      <url>http://cuiqingwei.github.io/2006/12/25/2006-12-25-%E5%9F%BA%E4%BA%8ECport%E7%9A%84%E5%A4%9A%E5%8A%9F%E8%83%BD%E4%B8%B2%E5%8F%A3%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/</url>
+      <url>http://cuiqingwei.github.io/2006/12/25/2006-12-25-%25E5%259F%25BA%25E4%25BA%258ECport%25E7%259A%2584%25E5%25A4%259A%25E5%258A%259F%25E8%2583%25BD%25E4%25B8%25B2%25E5%258F%25A3%25E8%25B0%2583%25E8%25AF%2595%25E5%25B7%25A5%25E5%2585%25B7/</url>
       <content type="html"><![CDATA[<h1 id="简约版："><a href="#简约版：" class="headerlink" title="简约版："></a>简约版：</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_6/armok01138998.jpg" alt="效果图"><br><a id="more"></a><br><img src="http://cache.amobbs.com/bbs_upload782111/files_6/armok01138997.jpg" alt="效果图"></p>
 <h1 id="多功能版："><a href="#多功能版：" class="headerlink" title="多功能版："></a>多功能版：</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_6/armok01138999.jpg" alt="效果图"><br><img src="http://cache.amobbs.com/bbs_upload782111/files_6/armok01139000.jpg" alt="效果图"></p>
 <hr>
@@ -4794,7 +4969,7 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     
     <entry>
       <title><![CDATA[AT91SAM7S64的定时器初始化计算器]]></title>
-      <url>http://cuiqingwei.github.io/2006/12/06/2006-12-06-AT91SAM7S64%E7%9A%84%E5%AE%9A%E6%97%B6%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E8%AE%A1%E7%AE%97%E5%B7%A5%E5%99%A8/</url>
+      <url>http://cuiqingwei.github.io/2006/12/06/2006-12-06-AT91SAM7S64%25E7%259A%2584%25E5%25AE%259A%25E6%2597%25B6%25E5%2599%25A8%25E5%2588%259D%25E5%25A7%258B%25E5%258C%2596%25E8%25AE%25A1%25E7%25AE%2597%25E5%25B7%25A5%25E5%2599%25A8/</url>
       <content type="html"><![CDATA[<p>AT91SAM7S系列ARM初始化计算工具</p>
 <p>此软件将会不断加入新的功能，请多支持，如发现bug,请回贴指正，谢谢</p>
 <h1 id="软件界面如下："><a href="#软件界面如下：" class="headerlink" title="软件界面如下："></a>软件界面如下：</h1><p><img src="http://cache.amobbs.com/bbs_upload782111/files_6/armok01137511.jpg" alt="效果图"><br><a id="more"></a><br><img src="http://cache.amobbs.com/bbs_upload782111/files_6/armok01137512.jpg" alt="效果图"></p>
@@ -4806,7 +4981,7 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     
     <entry>
       <title><![CDATA[闪动的“LOVE”]]></title>
-      <url>http://cuiqingwei.github.io/2006/10/31/2006-10-31-%E9%97%AA%E5%8A%A8%E7%9A%84%E2%80%9CLOVE%E2%80%9D/</url>
+      <url>http://cuiqingwei.github.io/2006/10/31/2006-10-31-%25E9%2597%25AA%25E5%258A%25A8%25E7%259A%2584%25E2%2580%259CLOVE%25E2%2580%259D/</url>
       <content type="html"><![CDATA[<p><img src="http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_180972.gif" alt="love gif"></p>
 <h1 id="§-№-1-★背景"><a href="#§-№-1-★背景" class="headerlink" title="§ №.1 ★背景"></a>§ №.1 ★背景</h1><p>这个简单的东东制作于2001年参加电子设计竞赛，赛前强化培训期间。那段时光是多么美好呀，资源时间双丰富呀。想必，参加过竞赛的都会有体会的。一开始老师就让照着《电子线路设计·实验·测试》这本书做实验，直流稳压电流、数字时钟、抢答器……一个个搭，这个板子就是在这种环境中诞生的，一天晚上实验老师不在，自己发神精就搞了这个，当时我们同组几个成员还把实验室的灯关了看效果，现在想想……:)，后来参赛时我们组做的“C题自动往返电动小车”得了个二等奖，毕业时小车老师不给呀，要不怎么也留作纪念！昨天是晚上整理杂物时找到此板，根据板子在Proteus绘出原理图并仿真，整理此文档留作纪念！</p>
 <p><img src="http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_180973.JPG" alt="实物"><br><a id="more"></a></p>
@@ -4822,7 +4997,7 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
     
     <entry>
       <title><![CDATA[活着，就要折腾]]></title>
-      <url>http://cuiqingwei.github.io/2006/10/01/2006-10-01-%E6%B4%BB%E7%9D%80%EF%BC%8C%E5%B0%B1%E8%A6%81%E6%8A%98%E8%85%BE/</url>
+      <url>http://cuiqingwei.github.io/2006/10/01/2006-10-01-%25E6%25B4%25BB%25E7%259D%2580%25EF%25BC%258C%25E5%25B0%25B1%25E8%25A6%2581%25E6%258A%2598%25E8%2585%25BE/</url>
       <content type="html"><![CDATA[<div align="center"><br><fieldset style="padding: 15px; max-width: 100%; min-width: 0px; border: 1px solid rgb(0, 202, 255); color: rgb(51, 51, 51); line-height: 24px; font-family: 宋体; orphans: 2; widows: 2; box-shadow: rgb(165, 165, 165) 5px 5px 2px; background-color: rgb(239, 239, 239); box-sizing: border-box !important; word-wrap: break-word !important;"><legend style="max-width: 100%; text-align: center; font-size: medium; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="padding: 4px 10px; max-width: 100%; border-top-left-radius: 2em 0.5em; border-top-right-radius: 1em 3em; border-bottom-right-radius: 4em 0.5em; border-bottom-left-radius: 1em 3em; color: rgb(255, 255, 255); box-shadow: rgb(165, 165, 165) 4px 4px 2px; background-color: rgb(0, 202, 255); font-family: 微软雅黑; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">写在前面</span></legend><br><span style="max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">积极的人像太阳，</span><br><span style="max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">照到哪里哪里亮；</span><br><span style="max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">消极的人像月亮，</span><br><span style="max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">初一十五不一样。</span><br><span style="max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">态度决定一切。</span><br><span style="max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">有什么态度，</span><br><span style="max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">就有什么样的未来。</span><br><span style="max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">有怎样的性格，</span><br><span style="max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">就有怎样的人生。</span><br><span style="max-width: 100%; color: rgb(0, 0, 0); box-sizing: border-box !important; word-wrap: break-word !important;">不折腾，你永远都是——“做梦君”！</span><br></fieldset><br></div><br><a id="more"></a><br><div align="center"><br><img src="/img/20160905/1.png" alt=""><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">如果你不能飞，那就跑；</span><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">如果跑不动，那就走；</span><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">实在走不动了，那就爬。</span><br><strong><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">记住：</span></strong><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">无论做什么，都要勇往直前；</span><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">无论有多难，都要多坚持一下。</span><br></div><br><div align="center"><br><img src="/img/20160905/2.png" alt=""><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">斑驳如画的风景是大自然对人类的慷慨；</span><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">努力在事业中拼搏是生命对人生的期待；</span><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">千万不要低估你实现梦想的能力。</span><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">更不要怀疑你的努力。</span><br><span style="max-width: 100%; font-family: 宋体; font-weight: bold; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">请时刻提醒自己：</span><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">再不折腾，你就老了！</span><br></div><br><div align="center"><br><img src="/img/20160905/3.png" alt=""><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">所谓青春纪念册，</span><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">是折腾不动时候的回忆。</span><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">趁年轻，趁当下，</span><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">努力拼搏，好好生活，</span><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">工作之余，多读几本益身心的书；</span><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">有时间，多去看望朋友。</span><br><span style="max-width: 100%; font-size: 16px; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">忙碌，让生活更有意义，</span><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">让回忆充满色彩。</span><br></div><br><div align="center"><br><img src="/img/20160905/4.png" alt=""><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">我们必须接受失望，因为它是有限的；</span><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">但千万不可失去希望，因为它是无穷的。</span><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">感恩那些让你有笑有泪的成长，</span><br><span style="max-width: 100%; font-family: 宋体; font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;">同时也别忘了提醒自己：</span><br><span style="max-width: 100%; color: rgb(247, 150, 70); font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;"><strong><span style="max-width: 100%; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">还有梦想尚未实现，还有高峰不曾抵达，</span></strong></span><br><span style="max-width: 100%; color: rgb(247, 150, 70); font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;"><strong><span style="max-width: 100%; font-size: 18px; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;">让我们更有力量！</span></strong></span><br><span style="max-width: 100%; color: rgb(247, 150, 70); font-size: 16px; box-sizing: border-box !important; word-wrap: break-word !important;"><strong><span style="max-width: 100%; font-size: 18px; font-family: 宋体; box-sizing: border-box !important; word-wrap: break-word !important;"></span></strong></span><br></div>
 ]]></content>
     </entry>
