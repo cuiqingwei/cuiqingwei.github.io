@@ -266,7 +266,7 @@ GitHub Pages免费的静态站点，三个特点：免费托管、自带主题�
                 
                 <section class="switch-part switch-part4">
                 
-                    <div id="js-aboutme">我是一个爱折腾的人</div>
+                    <div id="js-aboutme">是一个爱折腾的人</div>
                 </section>
                 
             </div>
@@ -335,6 +335,15 @@ GitHub Pages免费的静态站点，三个特点：免费托管、自带主题�
       <time datetime="2013-03-23T03:38:38.000Z" itemprop="datePublished">2013-03-23</time>
 </a>
 
+ 
+    <a href="/2013/03/23/2013-03-23-GitHub建立个人站点/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2013/03/23/2013-03-23-GitHub建立个人站点/"></span>
+        
+    </a>
 
     </div>
   
@@ -838,6 +847,65 @@ GitHub Pages免费的静态站点，三个特点：免费托管、自带主题�
 
 
 
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'http://cuiqingwei.github.io/2013/03/23/2013-03-23-GitHub建立个人站点/';
+            this.page.identifier = '2013/03/23/2013-03-23-GitHub建立个人站点/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//cuiqingwei.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+</section>
+
+
+    <script id="dsq-count-scr" src="//cuiqingwei.disqus.com/count.js" async></script>
+    <span class="disqus-comment-count" data-disqus-identifier="2013/03/23/2013-03-23-GitHub建立个人站点/"></span>
+    <span class="disqus-comment-count" data-disqus-url="http://cuiqingwei.github.io/2013/03/23/2013-03-23-GitHub建立个人站点/"></span>
+    <script>
+        $(".disqus-comment-count").hide();
+        var $disqusCount = $(".disqus-comment-count");
+        $disqusCount.bind("DOMNodeInserted", function(e) {
+            $(".count-comment").text(
+                $(this).text().replace(/[^0-9]/ig,"")
+            )
+            DISQUSWIDGETS.getCount({reset: true});
+        })
+    </script>
 
     
 

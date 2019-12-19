@@ -47,7 +47,7 @@ mysqldump -u root -p dbname &amp;gt; dbname.sql；
  mysqldump -u 用户名 -p 数据库名 表名&amp;gt; 导出的文件名
 
 mysql">
-<meta property="og:updated_time" content="2019-12-19T03:49:18.000Z">
+<meta property="og:updated_time" content="2019-12-19T11:30:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL命令">
 <meta name="twitter:description" content="库外操作
@@ -272,7 +272,7 @@ mysql">
                 
                 <section class="switch-part switch-part4">
                 
-                    <div id="js-aboutme">我是一个爱折腾的人</div>
+                    <div id="js-aboutme">是一个爱折腾的人</div>
                 </section>
                 
             </div>
@@ -341,6 +341,15 @@ mysql">
       <time datetime="2019-12-19T02:54:00.000Z" itemprop="datePublished">2019-12-19</time>
 </a>
 
+ 
+    <a href="/2019/12/19/2019-12-19-MySQL命令/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2019/12/19/2019-12-19-MySQL命令/"></span>
+        
+    </a>
 
     </div>
   
@@ -524,11 +533,11 @@ mysql">
 <p>例如：在表MyClass名字更改为YouClass</p>
 <p><code>mysql&gt; rename table MyClass to YouClass;</code></p>
 <ul>
-<li>更新字段内容<blockquote>
+<li>更新字段内容</li>
+</ul>
+<blockquote>
 <p>update 表名 set 字段名 = 新内容<br>update 表名 set 字段名 = replace(字段名,’旧内容’,’新内容’)</p>
 </blockquote>
-</li>
-</ul>
 
       
     </div>
@@ -540,7 +549,7 @@ mysql">
         <p><span>本文标题:</span><a href="/2019/12/19/2019-12-19-MySQL命令/">MySQL命令</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">cuiqingwei</a></p>
         <p><span>发布时间:</span>2019-12-19, 10:54:00</p>
-        <p><span>最后更新:</span>2019-12-19, 11:49:18</p>
+        <p><span>最后更新:</span>2019-12-19, 19:30:04</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/12/19/2019-12-19-MySQL命令/" title="MySQL命令">http://cuiqingwei.github.io/2019/12/19/2019-12-19-MySQL命令/</a>
             <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2019/12/19/2019-12-19-MySQL命令/　　作者: cuiqingwei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -618,6 +627,65 @@ mysql">
 
 
 
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'http://cuiqingwei.github.io/2019/12/19/2019-12-19-MySQL命令/';
+            this.page.identifier = '2019/12/19/2019-12-19-MySQL命令/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//cuiqingwei.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+</section>
+
+
+    <script id="dsq-count-scr" src="//cuiqingwei.disqus.com/count.js" async></script>
+    <span class="disqus-comment-count" data-disqus-identifier="2019/12/19/2019-12-19-MySQL命令/"></span>
+    <span class="disqus-comment-count" data-disqus-url="http://cuiqingwei.github.io/2019/12/19/2019-12-19-MySQL命令/"></span>
+    <script>
+        $(".disqus-comment-count").hide();
+        var $disqusCount = $(".disqus-comment-count");
+        $disqusCount.bind("DOMNodeInserted", function(e) {
+            $(".count-comment").text(
+                $(this).text().replace(/[^0-9]/ig,"")
+            )
+            DISQUSWIDGETS.getCount({reset: true});
+        })
+    </script>
 
     
 
