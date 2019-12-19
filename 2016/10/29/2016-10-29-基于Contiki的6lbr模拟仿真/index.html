@@ -15,19 +15,30 @@
 
 
 
-<meta name="description" content="1.下载sqlite3源代码http://www.sqlite.org/sqlite-autoconf-3071400.tar.gz
-2.解压源代码：12tar xvzf sqlite-autoconf-3071400.tar.gzcd sqlite-autoconf-3071400">
+<meta name="description" content="Instant Contiki 2.7下载、安装… 具体请查看链接-&amp;gt;http://www.contiki-os.org/start.html
+Java版本打开（Ctrl+Alt+T）超级终端，键入 java -version
+1234user@instant-contiki:~$ java -versionjava version &amp;quot;1.7.0_25&amp;quot;OpenJDK R">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SQLite移植到ARM开发板">
-<meta property="og:url" content="http://cuiqingwei.github.io/2012/09/07/2012-09-07-SQLite移植到ARM开发板/index.html">
+<meta property="og:title" content="基于Contiki的6lbr模拟仿真">
+<meta property="og:url" content="http://cuiqingwei.github.io/2016/10/29/2016-10-29-基于Contiki的6lbr模拟仿真/index.html">
 <meta property="og:site_name" content="iZheteng">
-<meta property="og:description" content="1.下载sqlite3源代码http://www.sqlite.org/sqlite-autoconf-3071400.tar.gz
-2.解压源代码：12tar xvzf sqlite-autoconf-3071400.tar.gzcd sqlite-autoconf-3071400">
-<meta property="og:updated_time" content="2018-03-08T15:03:24.000Z">
+<meta property="og:description" content="Instant Contiki 2.7下载、安装… 具体请查看链接-&amp;gt;http://www.contiki-os.org/start.html
+Java版本打开（Ctrl+Alt+T）超级终端，键入 java -version
+1234user@instant-contiki:~$ java -versionjava version &amp;quot;1.7.0_25&amp;quot;OpenJDK R">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20161029/6lbr1.png">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20161029/6lbr2.png">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20161029/6lbr3.png">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20161029/6lbr4.png">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20161029/6lbr5.png">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20161029/6lbr6.png">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20161029/6lbr7.png">
+<meta property="og:updated_time" content="2019-12-19T13:12:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SQLite移植到ARM开发板">
-<meta name="twitter:description" content="1.下载sqlite3源代码http://www.sqlite.org/sqlite-autoconf-3071400.tar.gz
-2.解压源代码：12tar xvzf sqlite-autoconf-3071400.tar.gzcd sqlite-autoconf-3071400">
+<meta name="twitter:title" content="基于Contiki的6lbr模拟仿真">
+<meta name="twitter:description" content="Instant Contiki 2.7下载、安装… 具体请查看链接-&amp;gt;http://www.contiki-os.org/start.html
+Java版本打开（Ctrl+Alt+T）超级终端，键入 java -version
+1234user@instant-contiki:~$ java -versionjava version &amp;quot;1.7.0_25&amp;quot;OpenJDK R">
+<meta name="twitter:image" content="http://cuiqingwei.github.io/img/20161029/6lbr1.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -59,7 +70,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>SQLite移植到ARM开发板 | iZheteng</title>
+<title>基于Contiki的6lbr模拟仿真 | iZheteng</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -298,20 +309,20 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-2012-09-07-SQLite移植到ARM开发板" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-2016-10-29-基于Contiki的6lbr模拟仿真" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2012/09/07/2012-09-07-SQLite移植到ARM开发板/" class="article-date">
-      <time datetime="2012-09-07T11:50:00.000Z" itemprop="datePublished">2012-09-07</time>
+      <a href="/2016/10/29/2016-10-29-基于Contiki的6lbr模拟仿真/" class="article-date">
+      <time datetime="2016-10-29T13:04:40.000Z" itemprop="datePublished">2016-10-29</time>
 </a>
 
  
-    <a href="/2012/09/07/2012-09-07-SQLite移植到ARM开发板/#comments" title="查看评论">
+    <a href="/2016/10/29/2016-10-29-基于Contiki的6lbr模拟仿真/#comments" title="查看评论">
         <i class="fa fa-comments-o" aria-hidden="true"></i>
         <span class="count-comment"></span>
         
         
-            <span class="disqus-comment-count" data-disqus-identifier="2012/09/07/2012-09-07-SQLite移植到ARM开发板/"></span>
+            <span class="disqus-comment-count" data-disqus-identifier="2016/10/29/2016-10-29-基于Contiki的6lbr模拟仿真/"></span>
         
     </a>
 
@@ -326,7 +337,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      SQLite移植到ARM开发板
+      基于Contiki的6lbr模拟仿真
     </h1>
   
 
@@ -337,7 +348,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQLite/">SQLite</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/嵌入式/">嵌入式</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/6lbr/">6lbr</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Contiki/">Contiki</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cooja/">Cooja</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -347,24 +358,40 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="1-下载sqlite3源代码"><a href="#1-下载sqlite3源代码" class="headerlink" title="1.下载sqlite3源代码"></a>1.下载sqlite3源代码</h1><p><a href="http://www.sqlite.org/sqlite-autoconf-3071400.tar.gz" target="_blank" rel="external">http://www.sqlite.org/sqlite-autoconf-3071400.tar.gz</a></p>
-<h1 id="2-解压源代码："><a href="#2-解压源代码：" class="headerlink" title="2.解压源代码："></a>2.解压源代码：</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tar xvzf sqlite-autoconf-3071400.tar.gz</div><div class="line"><span class="built_in">cd</span> sqlite-autoconf-3071400</div></pre></td></tr></table></figure>
+        <h1 id="Instant-Contiki-2-7"><a href="#Instant-Contiki-2-7" class="headerlink" title="Instant Contiki 2.7"></a>Instant Contiki 2.7</h1><p>下载、安装… 具体请查看链接-&gt;<a href="http://www.contiki-os.org/start.html" target="_blank" rel="external">http://www.contiki-os.org/start.html</a></p>
+<h1 id="Java版本"><a href="#Java版本" class="headerlink" title="Java版本"></a>Java版本</h1><p>打开（<em>Ctrl+Alt+T</em>）超级终端，键入 <strong>java -version</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">user@instant-contiki:~$ java -version</div><div class="line">java version &quot;1.7.0_25&quot;</div><div class="line">OpenJDK Runtime Environment (IcedTea 2.3.10) (7u25-2.3.10-1ubuntu0.12.04.2)</div><div class="line">OpenJDK Client VM (build 23.7-b01, mixed mode, sharing)</div></pre></td></tr></table></figure>
+<h1 id="安装网桥管理工具-bridge-utils-包"><a href="#安装网桥管理工具-bridge-utils-包" class="headerlink" title="安装网桥管理工具 bridge-utils 包"></a>安装网桥管理工具 <strong>bridge-utils</strong> 包</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install bridge-utils</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h1 id="3-配置交叉编译到armlinux平台-prefix-home-at91sam9-sqlite-autoconf-3071400-sqlite-arm为目标目录"><a href="#3-配置交叉编译到armlinux平台-prefix-home-at91sam9-sqlite-autoconf-3071400-sqlite-arm为目标目录" class="headerlink" title="3. 配置交叉编译到armlinux平台,prefix=/home/at91sam9/sqlite-autoconf-3071400/sqlite-arm为目标目录:"></a>3. 配置交叉编译到armlinux平台,prefix=/home/at91sam9/sqlite-autoconf-3071400/sqlite-arm为目标目录:</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">./configure --host=arm-none-linux-gnueabi --prefix=/home/at91sam9/sqlite-autoconf-3071400/sqlite-arm</div><div class="line">./configure --host=arm-linux --prefix=/home/at91sam9/sqlite-autoconf-3071400/sqlite-arm CC=arm-none-linux-gnueabi-gcc</div></pre></td></tr></table></figure>
-<h1 id="4-编译"><a href="#4-编译" class="headerlink" title="4.编译:"></a>4.编译:</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make</div></pre></td></tr></table></figure>
-<h1 id="5-安装"><a href="#5-安装" class="headerlink" title="5.安装:"></a>5.安装:</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make install</div></pre></td></tr></table></figure>
-<h1 id="6-生成文件："><a href="#6-生成文件：" class="headerlink" title="6.生成文件："></a>6.生成文件：</h1><p>头文件和生成的库文件将安装到/home/at91sam9/sqlite-amalgamation-3.6.1/sqlite-arm目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/at91sam9/sqlite-amalgamation-3.6.1/sqlite-arm/lib</div><div class="line">file libsqlite3.so.0.8.6 							// 看库文件是否是针对mipsel版的</div><div class="line">arm-none-linux-gnueabi-strip libsqlite3.so.0.8.6 	// 优化，处理掉其中的调试信息</div></pre></td></tr></table></figure></p>
-<p>用如下命令查看webs执行文件依赖的库文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arm-none-linux-gnueabi-readelf <span class="_">-d</span> libsqlite3.so.0.8.6</div></pre></td></tr></table></figure></p>
-<p>其中，arm-none-linux-gnueabi-依你用的交叉编译器而定。</p>
-<p>查看得到如下信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">Dynamic section at offset 0x8ae94 contains 28 entries:</div><div class="line">  Tag        Type                         Name/Value</div><div class="line"> 0x00000001 (NEEDED)                     Shared library: [libdl.so.2]</div><div class="line"> 0x00000001 (NEEDED)                     Shared library: [libpthread.so.0]</div><div class="line"> 0x00000001 (NEEDED)                     Shared library: [libgcc_s.so.1]</div><div class="line"> 0x00000001 (NEEDED)                     Shared library: [libc.so.6]</div><div class="line"> 0x0000000e (SONAME)                     Library soname: [libsqlite3.so.0]</div><div class="line"> 0x0000000c (INIT)                       0x51bc</div><div class="line"> 0x0000000d (FINI)                       0x8186c</div><div class="line"> 0x00000019 (INIT_ARRAY)                 0x92330</div><div class="line"> 0x0000001b (INIT_ARRAYSZ)               4 (bytes)</div><div class="line"> 0x0000001a (FINI_ARRAY)                 0x92334</div><div class="line"> 0x0000001c (FINI_ARRAYSZ)               4 (bytes)</div><div class="line"> 0x00000004 (HASH)                       0xd4</div><div class="line"> 0x00000005 (STRTAB)                     0x1ac4</div><div class="line"> 0x00000006 (SYMTAB)                     0x954</div><div class="line"> 0x0000000a (STRSZ)                      4866 (bytes)</div><div class="line"> 0x0000000b (SYMENT)                     16 (bytes)</div><div class="line"> 0x00000003 (PLTGOT)                     0x92f94</div><div class="line"> 0x00000002 (PLTRELSZ)                   1352 (bytes)</div><div class="line"> 0x00000014 (PLTREL)                     REL</div><div class="line"> 0x00000017 (JMPREL)                     0x4c74</div><div class="line"> 0x00000011 (REL)                        0x3074</div><div class="line"> 0x00000012 (RELSZ)                      7168 (bytes)</div><div class="line"> 0x00000013 (RELENT)                     8 (bytes)</div><div class="line"> 0x6ffffffe (VERNEED)                    0x2ff4</div><div class="line"> 0x6fffffff (VERNEEDNUM)                 4</div><div class="line"> 0x6ffffff0 (VERSYM)                     0x2dc6</div><div class="line"> 0x6ffffffa (RELCOUNT)                   704</div><div class="line"> 0x00000000 (NULL)                       0x0</div></pre></td></tr></table></figure></p>
-<p>依赖的库如果嵌入式系统lib目录没有，将没有的依赖库文件复制到嵌入式系统的相应lib目录中。</p>
-<p>bin文件夹下的sqlite3，是sqlite可执行应用程序，下载到板子Linux系统下的/bin目录或者/usr/bin目录下，并添加文件可执行权限。在板子Linux系统命令行下执行：<br>libsqlite3.so和libsqlite3.so.0都是libsqlite3.so.0.8.6的软链接文件。真正需要下载到板子目录/lib下的动态libsqlite3.so.0.8.6。</p>
-<p>要成功在嵌入式系统运行sqlite3，需要把./lib下的动态链接库下载到板子上。否则会有无法找到动态链接库libsqlite3.so.0的错误提示。</p>
-<p>下载到板子后，还需对它建立软链接文件，因为可执行程序寻找的动态链接库的名字为libsqlite3.so.0，在嵌入式系统运行如下指令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ln <span class="_">-s</span> /lib/libsqlite3.so.0.8.6  /lib/libsqlite3.so.0</div><div class="line">chmod +x sqlite3</div><div class="line">./sqlite3</div></pre></td></tr></table></figure></p>
-<p>打印显示如下信息，代表成功运行！<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># ./sqlite3</span></div><div class="line">SQLite version 3.7.14 2012-09-03 15:42:36</div><div class="line">Enter <span class="string">".help"</span> <span class="keyword">for</span> instructions</div><div class="line">Enter SQL statements terminated with a <span class="string">";"</span></div></pre></td></tr></table></figure></p>
-<h1 id="7-写自己的数据库应用"><a href="#7-写自己的数据库应用" class="headerlink" title="7. 写自己的数据库应用"></a>7. 写自己的数据库应用</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//error sqlite3_exec( db , sql , 0 , callback , &amp;zErrMsg );</span></div><div class="line"></div><div class="line">＃include &lt;stdio.h&gt;</div><div class="line">＃include &lt;sqlite3.h&gt;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">callback</span><span class="params">(<span class="keyword">void</span> \*NotUsed, <span class="keyword">int</span> argc, <span class="keyword">char</span> \*\*argv, <span class="keyword">char</span> \*\*azColName)</span></span>&#123;</div><div class="line">  <span class="keyword">int</span> i;</div><div class="line">  <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;argc; i++)&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s = %s\n"</span>, azColName[i], argv[i] ? argv[i] : <span class="string">"NULL"</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> \*\*argv)</span></span>&#123;</div><div class="line">  sqlite3 \*db;</div><div class="line">  <span class="keyword">char</span> \*zErrMsg = <span class="number">0</span>;</div><div class="line">  <span class="keyword">int</span> rc;</div><div class="line"></div><div class="line">  <span class="keyword">if</span>( argc!=<span class="number">2</span> )&#123;</div><div class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"Usage: %s DATABASE \n"</span>, argv[<span class="number">0</span>]);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">  rc = sqlite3_open(argv[<span class="number">1</span>], &amp;db);</div><div class="line">  <span class="keyword">if</span>( rc )&#123;</div><div class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"Can't open database: %s\n"</span>, sqlite3_errmsg(db));</div><div class="line">    sqlite3_close(db);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">char</span> \*sql = <span class="string">" CREATE TABLE SensorData(               \</span></div><div class="line">                        ID       INTEGER PRIMARY KEY,  \</div><div class="line">                        SensorID INTEGER,              \</div><div class="line">                        SiteNum  INTEGER,              \</div><div class="line">                        Time     VARCHAR(12),          \</div><div class="line">                        SensorParameter REAL           \</div><div class="line">                );";</div><div class="line">   <span class="comment">//使用sql字符串指定的sql语言 创建数据表SensorData</span></div><div class="line"></div><div class="line">    sqlite3_exec( db , sql , callback , <span class="number">0</span> ,  &amp;zErrMsg );</div><div class="line"></div><div class="line">   <span class="comment">//插入数据到数据表</span></div><div class="line"></div><div class="line">  sql = <span class="string">"INSERT INTO 'SensorData' VALUES( 0 , 1 , 1 ,  '200605011206', 18.9 );"</span> ;</div><div class="line"></div><div class="line">   <span class="comment">//error sqlite3_exec( db , sql , 0 , callback , &amp;zErrMsg );</span></div><div class="line">    sqlite3_exec( db , sql , callback , <span class="number">0</span> ,  &amp;zErrMsg );</div><div class="line"></div><div class="line">   <span class="comment">//插入数据到数据表</span></div><div class="line">  sql = <span class="string">"INSERT INTO  'SensorData'  VALUES(1 , 1 , 1 , '200605011306', 16.4 );"</span> ;</div><div class="line"></div><div class="line">   <span class="comment">//error sqlite3_exec( db , sql , 0 , callback , &amp;zErrMsg );</span></div><div class="line">    sqlite3_exec( db , sql , callback , <span class="number">0</span> ,  &amp;zErrMsg );</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">  <span class="keyword">int</span> nrow = <span class="number">0</span>, ncolumn = <span class="number">0</span>;</div><div class="line">  <span class="keyword">char</span> \*\*azResult;</div><div class="line">  <span class="keyword">int</span> i;</div><div class="line"></div><div class="line">  <span class="comment">//从数据表查询数据</span></div><div class="line">  sql = <span class="string">"SELECT \* FROM SensorData "</span>;</div><div class="line">  sqlite3_get_table( db , sql , &amp;azResult , &amp;nrow , &amp;ncolumn , &amp;zErrMsg );</div><div class="line"></div><div class="line">  <span class="built_in">printf</span>( <span class="string">"row:%d column=%d"</span> , nrow , ncolumn );</div><div class="line">  <span class="built_in">printf</span>( <span class="string">"The result of querying is :"</span> );</div><div class="line">  <span class="keyword">for</span>( i=<span class="number">0</span> ; i&lt;( nrow + <span class="number">1</span> ) * ncolumn ; i++ )&#123;</div><div class="line">     <span class="built_in">printf</span>( <span class="string">"azResult[%d] = %s \r\n"</span>, i , azResult[i] );</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  sqlite3_free_table( azResult );</div><div class="line"></div><div class="line">  <span class="keyword">if</span>( rc!=SQLITE_OK )&#123;</div><div class="line">        <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"SQL error: %s\n"</span>, zErrMsg);</div><div class="line">        sqlite3_free(zErrMsg);</div><div class="line">  &#125;</div><div class="line">  sqlite3_close(db);</div><div class="line"></div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="8-编写Makefile"><a href="#8-编写Makefile" class="headerlink" title="8. 编写Makefile"></a>8. 编写Makefile</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">prefix=/home/at91sam9/sqlite-amalgamation-3.6.1/sqlite-arm</div><div class="line">exec_prefix=<span class="variable">$&#123;prefix&#125;</span></div><div class="line">libdir=<span class="variable">$&#123;exec_prefix&#125;</span>/lib</div><div class="line">includedir=<span class="variable">$&#123;prefix&#125;</span>/include</div><div class="line">Libs = -L<span class="variable">$&#123;libdir&#125;</span> -lsqlite3 -lpthread</div><div class="line">Cflags = -I<span class="variable">$&#123;includedir&#125;</span></div><div class="line">CROSS_COMPILE = arm-none-linux-gnueabi-</div><div class="line">CC = $(CROSS_COMPILE)gcc</div><div class="line">LD = $(CROSS_COMPILE)ld</div><div class="line">radiodb: radiodb.o</div><div class="line">        $(CC) $^ $(Libs)  -o <span class="variable">$@</span></div><div class="line">radiodb.o:radiodb.c</div><div class="line">        $(CC) $(Cflags) -c $^ -o <span class="variable">$@</span></div><div class="line">clean:</div><div class="line">        rm -rf radiodb  *.o</div><div class="line"><span class="keyword">in</span>:</div><div class="line">        cp radiodb /srv/nfs/sqlite</div></pre></td></tr></table></figure>
-<p>注意makefile里的红色字体内容可以在sqlite安装目录的lib下的pkconfig下的文件查得。</p>
+<h1 id="获取6lbr代码，初始化子模块"><a href="#获取6lbr代码，初始化子模块" class="headerlink" title="获取6lbr代码，初始化子模块"></a>获取<a href="http://cetic.github.com/6lbr" target="_blank" rel="external">6lbr</a>代码，初始化子模块</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git clone --recursive https://github.com/cetic/6lbr</div><div class="line">cd 6lbr/examples/6lbr</div></pre></td></tr></table></figure>
+<h1 id="在6lbr源目录，执行以下命令："><a href="#在6lbr源目录，执行以下命令：" class="headerlink" title="在6lbr源目录，执行以下命令："></a>在6lbr源目录，执行以下命令：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">make TARGET=native all</div><div class="line">make tools</div></pre></td></tr></table></figure>
+<h1 id="启动一个-1-BR-COOJA-实例"><a href="#启动一个-1-BR-COOJA-实例" class="headerlink" title="启动一个 1-BR COOJA 实例"></a>启动一个 <strong>1-BR COOJA</strong> 实例</h1><p><font style="font-weight:bold;" color="red">警告：</font> 默认Instant Contiki 2.7环境中没有添加serial2pty插件，添加方法是：</p>
+<ul>
+<li>运行cooja</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/6lbr/tools/cooja</div><div class="line">ant run</div></pre></td></tr></table></figure>
+<p>Settings -&gt; External tools paths… 添加</p>
+<p><strong>;[CONTIKI_DIR]/tools/cooja/apps/serial2pty</strong></p>
+<p><img src="/img/20161029/6lbr1.png" alt=""></p>
+<p>设置完成后，关闭。运行下面命令，启动实例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd examples/6lbr/test</div><div class="line">make cooja-small</div></pre></td></tr></table></figure></p>
+<p><img src="/img/20161029/6lbr2.png" alt=""></p>
+<p>运行成功，console会输出如下结尾的信息，详见下图：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">INFO [main] (Serial2Pty.java:116) - serialpty;open;9;/dev/pts/11</div><div class="line">INFO [main] (Serial2Pty.java:116) - serialpty;open;10;/dev/pts/12</div><div class="line">INFO [main] (Serial2Pty.java:116) - serialpty;open;11;/dev/pts/13</div><div class="line">INFO [main] (Serial2Pty.java:116) - serialpty;open;12;/dev/pts/14</div></pre></td></tr></table></figure>
+<p><img src="/img/20161029/6lbr3.png" alt=""></p>
+<p>通过鼠标右击节点，也可打开其他节点的串口监控，如下图所示：</p>
+<p><img src="/img/20161029/6lbr4.png" alt=""></p>
+<h1 id="运行一个6lbr实例"><a href="#运行一个6lbr实例" class="headerlink" title="运行一个6lbr实例"></a>运行一个6lbr实例</h1><p>Cooja <em>Simulation control</em> 点击 <strong>Start</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd examples/6lbr/test</div><div class="line">sudo make launch-6lbr-router-1-cooja</div></pre></td></tr></table></figure>
+<p>运行后，终端键入 <strong>ifconfig</strong> 会发现多了 <a href="/2015/07/06/2015-07-06-OpenWRT下ifconfig各接口说明/">br0网桥接口</a></p>
+<p><img src="/img/20161029/6lbr5.png" alt=""></p>
+<p><strong>如果要避免重复输出</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Fetching MAC address</div><div class="line">Fetching MAC address</div></pre></td></tr></table></figure>
+<p>可以</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/6lbr/examples/6lbr/test/conf-templates</div><div class="line">vi cooja-1-router.conf</div></pre></td></tr></table></figure>
+<p>最后两行，指定日志写入 <strong>/var/log/6lbr.log</strong>，如下图所示：</p>
+<p><img src="/img/20161029/6lbr6.png" alt=""></p>
+<h1 id="访问6lbr-webserver-界面"><a href="#访问6lbr-webserver-界面" class="headerlink" title="访问6lbr webserver 界面"></a>访问6lbr <strong>webserver</strong> 界面</h1><p>打开浏览器，地址栏输入 <strong>[bbbb::100]</strong> 回车，看到如下界面就算成功了！</p>
+<p><img src="/img/20161029/6lbr7.png" alt=""></p>
 
       
     </div>
@@ -373,13 +400,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2012/09/07/2012-09-07-SQLite移植到ARM开发板/">SQLite移植到ARM开发板</a></p>
+        <p><span>本文标题:</span><a href="/2016/10/29/2016-10-29-基于Contiki的6lbr模拟仿真/">基于Contiki的6lbr模拟仿真</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">cuiqingwei</a></p>
-        <p><span>发布时间:</span>2012-09-07, 19:50:00</p>
-        <p><span>最后更新:</span>2018-03-08, 23:03:24</p>
+        <p><span>发布时间:</span>2016-10-29, 21:04:40</p>
+        <p><span>最后更新:</span>2019-12-19, 21:12:43</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2012/09/07/2012-09-07-SQLite移植到ARM开发板/" title="SQLite移植到ARM开发板">http://cuiqingwei.github.io/2012/09/07/2012-09-07-SQLite移植到ARM开发板/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2012/09/07/2012-09-07-SQLite移植到ARM开发板/　　作者: cuiqingwei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/10/29/2016-10-29-基于Contiki的6lbr模拟仿真/" title="基于Contiki的6lbr模拟仿真">http://cuiqingwei.github.io/2016/10/29/2016-10-29-基于Contiki的6lbr模拟仿真/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2016/10/29/2016-10-29-基于Contiki的6lbr模拟仿真/　　作者: cuiqingwei" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -392,15 +419,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2012/09/07/2012-09-07-autoRootfs-sh/">
-                    autoRootfs.sh
+                <a href="/2016/11/09/2016-11-09-Contiki-CC2538/">
+                    Contiki-CC2538
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2012/09/07/2012-09-07-goAhead2-5嵌入式web服务器移植/">
-                    goAhead2.5嵌入式web服务器移植
+                <a href="/2016/10/27/2016-10-27-利用Travis-CI、MkDocs自動部署Blog至GitHub-Pages/">
+                    利用Travis CI、MkDocs自動部署Blog至GitHub Pages
                 </a>
             </div>
         
@@ -412,7 +439,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-下载sqlite3源代码"><span class="toc-number">1.</span> <span class="toc-text">1.下载sqlite3源代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-解压源代码："><span class="toc-number">2.</span> <span class="toc-text">2.解压源代码：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-配置交叉编译到armlinux平台-prefix-home-at91sam9-sqlite-autoconf-3071400-sqlite-arm为目标目录"><span class="toc-number">3.</span> <span class="toc-text">3. 配置交叉编译到armlinux平台,prefix=/home/at91sam9/sqlite-autoconf-3071400/sqlite-arm为目标目录:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-编译"><span class="toc-number">4.</span> <span class="toc-text">4.编译:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-安装"><span class="toc-number">5.</span> <span class="toc-text">5.安装:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-生成文件："><span class="toc-number">6.</span> <span class="toc-text">6.生成文件：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-写自己的数据库应用"><span class="toc-number">7.</span> <span class="toc-text">7. 写自己的数据库应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-编写Makefile"><span class="toc-number">8.</span> <span class="toc-text">8. 编写Makefile</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Instant-Contiki-2-7"><span class="toc-number">1.</span> <span class="toc-text">Instant Contiki 2.7</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java版本"><span class="toc-number">2.</span> <span class="toc-text">Java版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装网桥管理工具-bridge-utils-包"><span class="toc-number">3.</span> <span class="toc-text">安装网桥管理工具 bridge-utils 包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#获取6lbr代码，初始化子模块"><span class="toc-number">4.</span> <span class="toc-text">获取6lbr代码，初始化子模块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在6lbr源目录，执行以下命令："><span class="toc-number">5.</span> <span class="toc-text">在6lbr源目录，执行以下命令：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#启动一个-1-BR-COOJA-实例"><span class="toc-number">6.</span> <span class="toc-text">启动一个 1-BR COOJA 实例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#运行一个6lbr实例"><span class="toc-number">7.</span> <span class="toc-text">运行一个6lbr实例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#访问6lbr-webserver-界面"><span class="toc-number">8.</span> <span class="toc-text">访问6lbr webserver 界面</span></a></li></ol>
         
     </div>
     <style>
@@ -448,7 +475,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"SQLite移植到ARM开发板　| iZheteng　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"基于Contiki的6lbr模拟仿真　| iZheteng　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -467,8 +494,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://cuiqingwei.github.io/2012/09/07/2012-09-07-SQLite移植到ARM开发板/';
-            this.page.identifier = '2012/09/07/2012-09-07-SQLite移植到ARM开发板/';
+            this.page.url = 'http://cuiqingwei.github.io/2016/10/29/2016-10-29-基于Contiki的6lbr模拟仿真/';
+            this.page.identifier = '2016/10/29/2016-10-29-基于Contiki的6lbr模拟仿真/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -507,8 +534,8 @@
 
 
     <script id="dsq-count-scr" src="//cuiqingwei.disqus.com/count.js" async></script>
-    <span class="disqus-comment-count" data-disqus-identifier="2012/09/07/2012-09-07-SQLite移植到ARM开发板/"></span>
-    <span class="disqus-comment-count" data-disqus-url="http://cuiqingwei.github.io/2012/09/07/2012-09-07-SQLite移植到ARM开发板/"></span>
+    <span class="disqus-comment-count" data-disqus-identifier="2016/10/29/2016-10-29-基于Contiki的6lbr模拟仿真/"></span>
+    <span class="disqus-comment-count" data-disqus-url="http://cuiqingwei.github.io/2016/10/29/2016-10-29-基于Contiki的6lbr模拟仿真/"></span>
     <script>
         $(".disqus-comment-count").hide();
         var $disqusCount = $(".disqus-comment-count");
@@ -527,7 +554,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2012/09/07/2012-09-07-autoRootfs-sh/" title="上一篇: autoRootfs.sh">
+            <a href="/2016/11/09/2016-11-09-Contiki-CC2538/" title="上一篇: Contiki-CC2538">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -535,7 +562,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2012/09/07/2012-09-07-goAhead2-5嵌入式web服务器移植/" title="下一篇: goAhead2.5嵌入式web服务器移植">
+            <a href="/2016/10/27/2016-10-27-利用Travis-CI、MkDocs自動部署Blog至GitHub-Pages/" title="下一篇: 利用Travis CI、MkDocs自動部署Blog至GitHub Pages">
                 <i class="fa fa-angle-right"></i>
             </a>
         
