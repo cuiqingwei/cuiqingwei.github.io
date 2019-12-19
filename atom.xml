@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2019-12-16T07:19:39.000Z</updated>
+  <updated>2019-12-19T03:49:18.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -14,6 +14,196 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL命令</title>
+    <link href="http://cuiqingwei.github.io/2019/12/19/2019-12-19-MySQL%E5%91%BD%E4%BB%A4/"/>
+    <id>http://cuiqingwei.github.io/2019/12/19/2019-12-19-MySQL命令/</id>
+    <published>2019-12-19T02:54:00.000Z</published>
+    <updated>2019-12-19T03:49:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="库外操作"><a href="#库外操作" class="headerlink" title="库外操作"></a>库外操作</h2><ul>
+<li>导出整个数据库</li>
+</ul>
+<blockquote>
+<p> mysqldump -u 用户名 -p –default-character-set=latin1 数据库名 &gt; 导出的文件名(数据库默认编码是latin1)</p>
+</blockquote>
+<p><code>mysqldump -u root -p dbname &gt; dbname.sql；</code></p>
+<ul>
+<li>导出一个表</li>
+</ul>
+<blockquote>
+<p> mysqldump -u 用户名 -p 数据库名 表名&gt; 导出的文件名</p>
+</blockquote>
+<p><code>mysqldump -u root -p dbname tablename&gt; dbname_tablename.sql；</code></p>
+<a id="more"></a>
+<ul>
+<li>导出一个数据库结构</li>
+</ul>
+<p><code>mysqldump -u root -p -d –add-drop-table dbname &gt;d:name_db.sql；</code></p>
+<p>-d 没有数据 –add-drop-table 在每个create语句之前增加一个drop table</p>
+<ul>
+<li>导入数据库</li>
+</ul>
+<ol>
+<li><p>常用source 命令</p>
+<p>进入mysql数据库控制台，</p>
+<p>如<code>mysql -u root -p；</code></p>
+<p>mysql&gt;use 数据库</p>
+<p>然后使用source命令，后面参数为脚本文件(如这里用到的.sql)</p>
+<p><code>mysql&gt;source dbname.sql；</code></p>
+</li>
+<li><p>使用mysqldump命令</p>
+<p><code>mysqldump -u username -p dbname &lt; dbnam.sql；</code></p>
+</li>
+<li><p>使用mysql命令</p>
+<p><code>mysql -u username -p -D dbname &lt; dename.sql；</code></p>
+</li>
+</ol>
+<ul>
+<li>启动与退出</li>
+</ul>
+<ol>
+<li>进入MySQL：启动MySQL Command Line Client（MySQL的DOS界面），直接输入安装时的密码即可。此时的提示符是：<code>mysql&gt;</code></li>
+<li>退出MySQL：<code>quit；</code>或<code>exit；</code></li>
+</ol>
+<h2 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h2><ul>
+<li>创建数据库</li>
+</ul>
+<p>mysql&gt; <code>create database dbname;</code></p>
+<ul>
+<li>显示所有的数据库</li>
+</ul>
+<p>mysql&gt; <code>show databases;</code></p>
+<ul>
+<li>删除数据库</li>
+</ul>
+<p>mysql&gt; <code>drop database dbname;</code></p>
+<ul>
+<li>连接数据库</li>
+</ul>
+<p>mysql&gt; <code>use dbname;</code></p>
+<ul>
+<li>查看当前使用的数据库</li>
+</ul>
+<p>mysql&gt; <code>select database();</code></p>
+<ul>
+<li>当前数据库包含的表信息：</li>
+</ul>
+<p>mysql&gt; <code>show tables;</code></p>
+<h2 id="表单操作"><a href="#表单操作" class="headerlink" title="表单操作"></a>表单操作</h2><ul>
+<li>建表</li>
+</ul>
+<blockquote>
+<p>命令：create table &lt;表名&gt; ( &lt;字段名&gt; &lt;类型&gt; [,..&lt;字段名n&gt; &lt;类型n&gt;]);</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">mysql&gt;create table MyClass(</div><div class="line"></div><div class="line">&gt;id int(4) not null primary key auto_increment,</div><div class="line"></div><div class="line">&gt;name char(20) not null,</div><div class="line"></div><div class="line">&gt;sex int(4) not null default ’′,</div><div class="line"></div><div class="line">&gt;degree double(16,2));</div></pre></td></tr></table></figure>
+<ul>
+<li>获取表结构</li>
+</ul>
+<blockquote>
+<p>命令：desc 表名，或者show columns from 表名</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mysql&gt;DESCRIBE MyClass</div><div class="line"></div><div class="line">mysql&gt; desc MyClass;</div><div class="line"></div><div class="line">mysql&gt; show columns from MyClass;</div></pre></td></tr></table></figure>
+<ul>
+<li>删除表</li>
+</ul>
+<blockquote>
+<p>命令：drop table &lt;表名&gt;</p>
+</blockquote>
+<p><code>mysql&gt; drop table MyClass;</code></p>
+<ul>
+<li>插入数据</li>
+</ul>
+<blockquote>
+<p>命令：insert into &lt;表名&gt; [( &lt;字段名&gt;[,..&lt;字段名n &gt; ])] values ( 值 )[, ( 值n )]</p>
+</blockquote>
+<p>例如，往表 MyClass中插入二条记录, 这二条记录表示：编号为的名为Tom的成绩为.45, 编号为 的名为Joan 的成绩为.99，编号为 的名为Wang 的成绩为.5.</p>
+<p><code>mysql&gt; insert into MyClass values(1,’Tom’,96.45),(2,’Joan’,82.99), (2,’Wang’, 96.59);</code></p>
+<ul>
+<li>查询表中的数据</li>
+</ul>
+<ol>
+<li>查询所有行</li>
+</ol>
+<blockquote>
+<p>命令：select &lt;字段，字段，…&gt; from &lt; 表名 &gt; where &lt; 表达式 &gt;</p>
+</blockquote>
+<p>例如：查看表 MyClass 中所有数据</p>
+<p><code>mysql&gt; select * from MyClass;</code></p>
+<ol>
+<li>查询前几行数据</li>
+</ol>
+<blockquote>
+<p>例如：查看表 MyClass 中前行数据</p>
+</blockquote>
+<p><code>mysql&gt; select * from MyClass order by id limit 0,2;</code></p>
+<p>或者：</p>
+<p><code>mysql&gt; select * from MyClass limit 0,2;</code></p>
+<ul>
+<li>删除表中数据</li>
+</ul>
+<blockquote>
+<p>命令：delete from 表名 where 表达式</p>
+</blockquote>
+<p>例如：删除表 MyClass中编号为 的记录</p>
+<p><code>mysql&gt; delete from MyClass where id=1;</code></p>
+<ul>
+<li>修改表中数据</li>
+</ul>
+<blockquote>
+<p>命令：update 表名 set 字段=新值,…where 条件</p>
+</blockquote>
+<p><code>mysql&gt; update MyClass set name=’Mary’where id=1;</code></p>
+<ul>
+<li>在表中增加字段：</li>
+</ul>
+<blockquote>
+<p>命令：alter table 表名 add字段 类型 其他;</p>
+</blockquote>
+<p>例如：在表MyClass中添加了一个字段passtest，类型为int(4)，默认值为</p>
+<p><code>mysql&gt; alter table MyClass add passtest int(4) default ’′</code></p>
+<ul>
+<li>更改表名：</li>
+</ul>
+<blockquote>
+<p>命令：rename table 原表名 to 新表名;</p>
+</blockquote>
+<p>例如：在表MyClass名字更改为YouClass</p>
+<p><code>mysql&gt; rename table MyClass to YouClass;</code></p>
+<ul>
+<li>更新字段内容<blockquote>
+<p>update 表名 set 字段名 = 新内容<br>update 表名 set 字段名 = replace(字段名,’旧内容’,’新内容’)</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;库外操作&quot;&gt;&lt;a href=&quot;#库外操作&quot; class=&quot;headerlink&quot; title=&quot;库外操作&quot;&gt;&lt;/a&gt;库外操作&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;导出整个数据库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt; mysqldump -u 用户名 -p –default-character-set=latin1 数据库名 &amp;gt; 导出的文件名(数据库默认编码是latin1)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;mysqldump -u root -p dbname &amp;gt; dbname.sql；&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;导出一个表&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt; mysqldump -u 用户名 -p 数据库名 表名&amp;gt; 导出的文件名&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;mysqldump -u root -p dbname tablename&amp;gt; dbname_tablename.sql；&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="备忘" scheme="http://cuiqingwei.github.io/tags/%E5%A4%87%E5%BF%98/"/>
+    
+      <category term="MySQL" scheme="http://cuiqingwei.github.io/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>Typora使用说明</title>
@@ -492,9 +682,10 @@ make V=s
     <link href="http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/"/>
     <id>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT的WiFi带机量修改方法/</id>
     <published>2018-05-14T04:12:08.000Z</published>
-    <updated>2018-06-18T06:45:02.000Z</updated>
+    <updated>2019-12-19T10:31:28.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Wifi带机量的修改"><a href="#Wifi带机量的修改" class="headerlink" title="Wifi带机量的修改"></a>Wifi带机量的修改</h1><p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
+    <content type="html"><![CDATA[<p>WiFi带机量的修改</p>
+<p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
 <p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
 <a id="more"></a>
@@ -505,7 +696,8 @@ make V=s
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Wifi带机量的修改&quot;&gt;&lt;a href=&quot;#Wifi带机量的修改&quot; class=&quot;headerlink&quot; title=&quot;Wifi带机量的修改&quot;&gt;&lt;/a&gt;Wifi带机量的修改&lt;/h1&gt;&lt;p&gt;(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)&lt;/p&gt;
+      &lt;p&gt;WiFi带机量的修改&lt;/p&gt;
+&lt;p&gt;(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;#define MAX_NUMBER_OF_MAC                64 // 原始值32&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)&lt;/p&gt;
     
@@ -523,7 +715,7 @@ make V=s
     <link href="http://cuiqingwei.github.io/2018/05/14/2018-06-18-WiFi%E6%8E%A2%E9%92%88%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"/>
     <id>http://cuiqingwei.github.io/2018/05/14/2018-06-18-WiFi探针的工作原理/</id>
     <published>2018-05-14T04:12:08.000Z</published>
-    <updated>2018-06-18T07:02:27.000Z</updated>
+    <updated>2019-12-19T10:59:53.000Z</updated>
     
     <content type="html"><![CDATA[<p><strong>WiFi探针</strong> 技术是指基于WiFi探测技术来识别AP（无线访问接入点）附近已开启WiFi的智能手机或者WiFi终端（笔记本，平板电脑等），无需用户接入WiFi，WiFi探针就能够识别用户的信息。</p>
 <p>当我们走进探针信号覆盖区域内且我们的WiFi设备打开，我们的设备就能被探针探测出来，无论是iOS或者Android系统都能轻易检测到，并且获取设备的MAC地址。</p>
@@ -544,11 +736,11 @@ make V=s
 <li>2）管理帧：（ManagementFrame，例如Beacon帧、ProbeRequest帧）主要用于STA与AP之间协商、关系的控制，如关联、认证、同步等；</li>
 <li>3）数据帧：（DataFrame，承载数据的载体）用于在竞争期和非竞争期传输数据。</li>
 </ul>
-<h3 id="1、管理帧"><a href="#1、管理帧" class="headerlink" title="1、管理帧"></a>1、管理帧</h3><p>BeaconFrame：信标帧，是相当重要的维护机制，主要来宣告某个AP网络的存在。定期发送的信标，可让移动WiFi设备得知该网络的存在，从而调整加入该网络所必要的参数。在基础网络里，AP必须负责发送Beacon帧，Beacon帧所及范围即为基本服务区域。在基础型网络里，所有沟通都必须通过接入点，因此WiFi设备不能距离太远，否则无法接收到信标。下图是帧格式：</p>
+<h2 id="1、管理帧"><a href="#1、管理帧" class="headerlink" title="1、管理帧"></a>1、管理帧</h2><p>BeaconFrame：信标帧，是相当重要的维护机制，主要来宣告某个AP网络的存在。定期发送的信标，可让移动WiFi设备得知该网络的存在，从而调整加入该网络所必要的参数。在基础网络里，AP必须负责发送Beacon帧，Beacon帧所及范围即为基本服务区域。在基础型网络里，所有沟通都必须通过接入点，因此WiFi设备不能距离太远，否则无法接收到信标。下图是帧格式：</p>
 <p><img src="/img/20180618/1524574940570406.jpg" alt=""></p>
-<h3 id="2、管理帧"><a href="#2、管理帧" class="headerlink" title="2、管理帧"></a>2、管理帧</h3><p>ProbeRequest：探测请求帧，WiFi设备将会利用ProbeRequest帧，扫描所在区域内目前有哪些802.11网络。下图是帧格式：</p>
+<h2 id="2、管理帧"><a href="#2、管理帧" class="headerlink" title="2、管理帧"></a>2、管理帧</h2><p>ProbeRequest：探测请求帧，WiFi设备将会利用ProbeRequest帧，扫描所在区域内目前有哪些802.11网络。下图是帧格式：</p>
 <p><img src="/img/20180618/1524574943944955.jpg" alt=""></p>
-<h3 id="3、数据帧："><a href="#3、数据帧：" class="headerlink" title="3、数据帧："></a>3、数据帧：</h3><p>Data数据帧，当接入点要送出一个帧给WiFi设备但是不必确认之前所传送的信息时，就会使用标准的数据帧。标准的数据帧并不会征询对方是否有数据待传，因此不允许接收端传送任何数据。无竞争周期所使用的纯数据（Data-Only）帧和无竞争周期所使用的数据帧完全相同。看了以上的网络知识，我们现在说说WiFi探针是怎么工作的，还是先看张图：</p>
+<h2 id="3、数据帧："><a href="#3、数据帧：" class="headerlink" title="3、数据帧："></a>3、数据帧：</h2><p>Data数据帧，当接入点要送出一个帧给WiFi设备但是不必确认之前所传送的信息时，就会使用标准的数据帧。标准的数据帧并不会征询对方是否有数据待传，因此不允许接收端传送任何数据。无竞争周期所使用的纯数据（Data-Only）帧和无竞争周期所使用的数据帧完全相同。看了以上的网络知识，我们现在说说WiFi探针是怎么工作的，还是先看张图：</p>
 <p><img src="/img/20180618/1524574944692277.jpg" alt=""></p>
 <p>就像图中描述的一样，我们的WiFi探针其实就是一个AP，它定时的向自己的四周广播发送Beacon帧，用来通知附近的WiFi设备，AP是存在的，（好比它一直在向周围喊着，我在这里，大家快来连接我啊）。我们的WiFi设备，手机，平板电脑等，也不停的发送着probe帧，去寻找附近可用的AP。在probe帧的介绍中就我们可以看到probe帧包含了设备的mac地址，当我们的AP接收到probe帧之后就获取了这个设备的MAC地址，而这个AP就是我们的WIFI探针。因此只要在WiFi探针覆盖区域内的设备打开着WiFi，探针就能收集到他的MAC地址。</p>
 <h1 id="WiFi探针可以采集哪些数据"><a href="#WiFi探针可以采集哪些数据" class="headerlink" title="WiFi探针可以采集哪些数据"></a>WiFi探针可以采集哪些数据</h1><p>　　可采集数据：<br>　　设备MAC地址；<br>　　WiFi信号强度；<br>　　WiFi信号频道；<br>　　信号帧类型。<br>　　记录格式：探针 MAC|抓取的设备 MAC|设备发送的 WiFi 包的类型|子类型|信号强度|时间戳</p>
@@ -990,7 +1182,7 @@ make V=s
     <link href="http://cuiqingwei.github.io/2017/12/05/2017-12-22-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F-FastDFS-5-Linux-CentOS-7-%E6%90%AD%E5%BB%BA/"/>
     <id>http://cuiqingwei.github.io/2017/12/05/2017-12-22-分布式文件系统-FastDFS-5-Linux-CentOS-7-搭建/</id>
     <published>2017-12-05T06:12:08.000Z</published>
-    <updated>2017-12-23T03:47:18.000Z</updated>
+    <updated>2019-12-19T10:36:37.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>FastDFS是一个开源的轻量级分布式文件系统，由跟踪服务器（tracker server）、存储服务器（storage server）和客户端（client）三个部分组成，主要解决了海量数据存储问题，特别适合以中小文件（建议范围：<strong>4KB &lt; file_size &lt;500MB</strong> ）为载体的在线服务。</p>
 <a id="more"></a>
@@ -1001,11 +1193,11 @@ make V=s
 <li>Tracker（跟踪器）</li>
 <li>Storage（存储节点）</li>
 </ul>
+<blockquote>
 <p>Tracker主要做调度工作，相当于mvc中的controller的角色，在访问上起负载均衡的作用。跟踪器和存储节点都可以由一台或多台服务器构成，跟踪器和存储节点中的服务器均可以随时增加或下线而不会影响线上服务，其中跟踪器中的所有服务器都是对等的，可以根据服务器的压力情况随时增加或减少。Tracker负责管理所有的Storage和group，每个storage在启动后会连接Tracker，告知自己所属的group等信息，并保持周期性的心跳，tracker根据storage的心跳信息，建立group==&gt;[storage server list]的映射表，Tracker需要管理的元信息很少，会全部存储在内存中；另外tracker上的元信息都是由storage汇报的信息生成的，本身不需要持久化任何数据，这样使得tracker非常容易扩展，直接增加tracker机器即可扩展为tracker cluster来服务，cluster里每个tracker之间是完全对等的，所有的tracker都接受stroage的心跳信息，生成元数据信息来提供读写服务。</p>
 <p>Storage采用了分卷[Volume]（或分组[group]）的组织方式，存储系统由一个或多个组组成，组与组之间的文件是相互独立的，所有组的文件容量累加就是整个存储系统中的文件容量。一个卷[Volume]（组[group]）可以由一台或多台存储服务器组成，一个组中的存储服务器中的文件都是相同的，组中的多台存储服务器起到了冗余备份和负载均衡的作用，数据互为备份，存储空间以group内容量最小的storage为准，所以建议group内的多个storage尽量配置相同，以免造成存储空间的浪费。更多原理性的内容可以参考这篇blog，介绍的很详细：<a href="http://blog.chinaunix.net/uid-20196318-id-4058561.html" target="_blank" rel="external">分布式文件系统FastDFS设计原理</a></p>
-<blockquote>
-<p>Parallels安装Centos7</p>
 </blockquote>
+<p>Parallels安装Centos7</p>
 <p><img src="/img/20171222/WX20171222-173110@2x.png" alt=""></p>
 <h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/happyfish100/fastdfs/archive/V5.11.tar.gz</div><div class="line">wget https://github.com/happyfish100/libfastcommon/archive/V1.0.36.tar.gz</div></pre></td></tr></table></figure>
 <p><img src="/img/20171222/WX20171222-143233@2x.png" alt=""></p>
@@ -1015,9 +1207,9 @@ make V=s
 <p><img src="/img/20171222/WX20171222-143631@2x.png" alt=""></p>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>先要安装gcc编译器：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install gcc-c++</div></pre></td></tr></table></figure>
-<h3 id="libfastcommon"><a href="#libfastcommon" class="headerlink" title="libfastcommon"></a>libfastcommon</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tar -zxvf V1.0.36.tar.gz</div><div class="line">cd libfastcommon-1.0.36</div><div class="line">./make.sh</div><div class="line">./make.sh install</div></pre></td></tr></table></figure>
-<h3 id="FastDFS"><a href="#FastDFS" class="headerlink" title="FastDFS"></a>FastDFS</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tar -zxvf V5.11.tar.gz</div><div class="line">cd fastdfs-5.11</div><div class="line">./make.sh</div><div class="line">./make.sh install</div></pre></td></tr></table></figure>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>安装成功后就会生成如上的3个.sample文件（示例配置文件），拷贝出3个后面用的配置文件：</p>
+<h2 id="libfastcommon"><a href="#libfastcommon" class="headerlink" title="libfastcommon"></a>libfastcommon</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tar -zxvf V1.0.36.tar.gz</div><div class="line">cd libfastcommon-1.0.36</div><div class="line">./make.sh</div><div class="line">./make.sh install</div></pre></td></tr></table></figure>
+<h2 id="FastDFS"><a href="#FastDFS" class="headerlink" title="FastDFS"></a>FastDFS</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tar -zxvf V5.11.tar.gz</div><div class="line">cd fastdfs-5.11</div><div class="line">./make.sh</div><div class="line">./make.sh install</div></pre></td></tr></table></figure>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>安装成功后就会生成如上的3个.sample文件（示例配置文件），拷贝出3个后面用的配置文件：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd /etc/fdfs</div><div class="line">cp client.conf.sample client.conf</div><div class="line">cp storage.conf.sample storage.conf</div><div class="line">cp tracker.conf.sample tracker.conf</div></pre></td></tr></table></figure>
 <p>至此FastDFS已经安装完毕，接下来的工作就是依次配置Tracker和Storage了。</p>
 <h1 id="Tracker"><a href="#Tracker" class="headerlink" title="Tracker"></a>Tracker</h1><p>在配置Tracker之前，首先需要创建Tracker服务器的文件路径，即用于存储Tracker的数据文件和日志文件等，我这里选择在 <strong>/opt</strong> 目录下创建一个 <strong>fastdfs_tracker</strong> 目录用于存放Tracker服务器的相关文件：</p>
@@ -1068,11 +1260,11 @@ make V=s
 <p><img src="/img/20171222/20160923132829236.jpg" alt=""></p>
 <p>同时在之前配置的storage服务器的实际文件存储路径中也可以根据返回的路径找到实际文件：</p>
 <h1 id="HTTP访问文件"><a href="#HTTP访问文件" class="headerlink" title="HTTP访问文件"></a>HTTP访问文件</h1><p>因为FastDFS目前已不支持http协议，<strong>4.0.5</strong> 版本开始移除了自带的HTTP支持（因为之前自带的HTTP服务较为简单，无法提供负载均衡等高性能服务），所以余大提供了nginx上使用FastDFS的模块fastdfs-nginx-module，下载地址如下：<a href="https://github.com/happyfish100/fastdfs-nginx-module" target="_blank" rel="external">https://github.com/happyfish100/fastdfs-nginx-module</a>，这样做最大的好处就是提供了HTTP服务并且解决了group中storage服务器的同步延迟问题，接下是fastdfs-nginx-module的安装配置过程.</p>
-<h3 id="fastdfs-nginx-module"><a href="#fastdfs-nginx-module" class="headerlink" title="fastdfs-nginx-module"></a>fastdfs-nginx-module</h3><p>先安装系统依赖</p>
+<h2 id="fastdfs-nginx-module"><a href="#fastdfs-nginx-module" class="headerlink" title="fastdfs-nginx-module"></a>fastdfs-nginx-module</h2><p>先安装系统依赖</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install pcre pcre-devel zlib zlib-devel openssl openssl-devel git</div></pre></td></tr></table></figure>
 <p>下载所需组件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/src/</div><div class="line">git clone https://github.com/happyfish100/fastdfs-nginx-module.git</div><div class="line">wget http://nginx.org/download/nginx-1.8.1.tar.gz</div></pre></td></tr></table></figure>
-<h3 id="storage-nginx"><a href="#storage-nginx" class="headerlink" title="storage nginx"></a>storage nginx</h3><p>首先是为storage服务器安装nginx</p>
+<h2 id="storage-nginx"><a href="#storage-nginx" class="headerlink" title="storage nginx"></a>storage nginx</h2><p>首先是为storage服务器安装nginx</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tar -zxvf nginx-1.8.1.tar.gz</div><div class="line">cd nginx-1.8.1</div><div class="line">./configure --prefix=/usr/local/nginx --add-module=/usr/local/src/fastdfs-nginx-module/src</div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
 <p>接下来要修改一下nginx的配置文件，进入conf目录并打开 <strong>nginx.conf</strong> 修改，如下图：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /usr/local/nginx/conf/nginx.conf</div></pre></td></tr></table></figure>
@@ -1096,7 +1288,7 @@ make V=s
 <p>最后启动nginx：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/nginx/sbin/nginx</div></pre></td></tr></table></figure>
 <p>通过浏览器访问 <a href="http://10.211.55.8:9999/" target="_blank" rel="external">http://10.211.55.8:9999/</a> 也可以看到nginx的主页：</p>
-<h3 id="tracker-nginx"><a href="#tracker-nginx" class="headerlink" title="tracker nginx"></a>tracker nginx</h3><p>同理，再装一个nginx，目录命名为 <strong>nginx2</strong> ，安装路径依旧放在 <strong>/usr/local</strong> 下，由于和之前一样，此处就不再做详细解释：</p>
+<h2 id="tracker-nginx"><a href="#tracker-nginx" class="headerlink" title="tracker nginx"></a>tracker nginx</h2><p>同理，再装一个nginx，目录命名为 <strong>nginx2</strong> ，安装路径依旧放在 <strong>/usr/local</strong> 下，由于和之前一样，此处就不再做详细解释：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /usr/loca/src/nginx-1.8.1</div><div class="line">./configure --prefix=/usr/local/nginx2 --add-module=/usr/local/src/fastdfs-nginx-module/src</div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
 <p>接下来依然是修改nginx2的配置文件，进入conf目录并打开nginx.conf文件加入以下配置，storage的nginx无需修改listen端口，即默认的80端口，并将upstream指向tracker的nginx地址：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /usr/local/nginx2/conf/nginx.conf</div></pre></td></tr></table></figure>
@@ -1239,20 +1431,20 @@ make V=s
     <link href="http://cuiqingwei.github.io/2017/11/29/2017-11-29-CentOS7%E6%B7%BB%E5%8A%A0%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E8%84%9A%E6%9C%AC/"/>
     <id>http://cuiqingwei.github.io/2017/11/29/2017-11-29-CentOS7添加开机启动服务脚本/</id>
     <published>2017-11-29T01:02:08.000Z</published>
-    <updated>2017-11-29T01:35:13.000Z</updated>
+    <updated>2019-12-19T10:37:41.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="一、添加开机自启服务"><a href="#一、添加开机自启服务" class="headerlink" title="一、添加开机自启服务"></a>一、添加开机自启服务</h1><p>在CentOS 7中添加开机自启服务非常方便，只需要两条命令(以Jenkins为例)：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">systemctl enable jenkins.service  # 设置jenkins服务为自启动服务</div><div class="line">sysstemctl start  jenkins.service # 启动jenkins服务</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <h1 id="二、添加开机自启脚本"><a href="#二、添加开机自启脚本" class="headerlink" title="二、添加开机自启脚本"></a>二、添加开机自启脚本</h1><p>在centos7中增加脚本有两种常用的方法，以脚本autostart.sh为例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">#description:开机自启脚本</div><div class="line">/usr/local/tomcat/bin/startup.sh  #启动tomcat</div></pre></td></tr></table></figure>
-<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>1、赋予脚本可执行权限（/opt/script/autostart.sh是你的脚本路径）</p>
+<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>1、赋予脚本可执行权限（/opt/script/autostart.sh是你的脚本路径）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x /opt/script/autostart.sh</div></pre></td></tr></table></figure>
 <p>2、打开/etc/rc.d/rc/local文件，在末尾增加如下内容</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/opt/script/autostart.sh</div></pre></td></tr></table></figure>
 <p>3、在centos7中，/etc/rc.d/rc.local的权限被降低了，所以需要执行如下命令赋予其可执行权限</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x /etc/rc.d/rc.local</div></pre></td></tr></table></figure>
-<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>1、将脚本移动到/etc/rc.d/init.d目录下</p>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>1、将脚本移动到/etc/rc.d/init.d目录下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mv  /opt/script/autostart.sh /etc/rc.d/init.d</div></pre></td></tr></table></figure>
 <p>2、增加脚本的可执行权限</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x  /etc/rc.d/init.d/autostart.sh</div></pre></td></tr></table></figure>
@@ -1269,76 +1461,6 @@ make V=s
     
     
       <category term="linux" scheme="http://cuiqingwei.github.io/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于红外阵列传感器的检测系统</title>
-    <link href="http://cuiqingwei.github.io/2017/11/27/2017-11-27-%E5%9F%BA%E4%BA%8E%E7%BA%A2%E5%A4%96%E9%98%B5%E5%88%97%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F/"/>
-    <id>http://cuiqingwei.github.io/2017/11/27/2017-11-27-基于红外阵列传感器的检测系统/</id>
-    <published>2017-11-27T07:02:08.000Z</published>
-    <updated>2017-11-29T01:22:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="办公节能新技术"><a href="#办公节能新技术" class="headerlink" title="办公节能新技术"></a>办公节能新技术</h2><p>在提倡建设节约型社会的今天，建筑节能问题日益得到普遍关注，而降低新风及冷风负 荷也就成为主要的节能措施之一。建筑室内人员密度是新风量及冷风量合理确定需要考虑的重点因素也是难点因素。</p>
-<p>近年来，基于摄像头的人数检测技术愈发成熟。然而，在办公室这样的环境中，摄像头的使用受到一定的限制。</p>
-<p>本文介绍了一种基于阵列红外传感器的办公空间人员密度监控解决方案。在充分保护个人隐私及企业秘密的前提下，准确实时的检测人员密度，从而为新风及冷风控制提供准确的输入参书以达到节能之需求。</p>
-<a id="more"></a>
-<h2 id="红外阵列传感器"><a href="#红外阵列传感器" class="headerlink" title="红外阵列传感器"></a>红外阵列传感器</h2><p>PIR 即人体热释电红外传感器，被广泛的应用到电子防盗、人体探测领域中，这种传感器不会导致隐私和商业保密泄露，但是这种传感器从原理上，只能检测到运动中的人体目标，单独的 PIR 传感器不能检测出人员分布。</p>
-<p>红外阵列传感器是一个包含多个像素的 IR 传感阵列组合，每个像素都具有低噪声放大器以及 ADC，包含一个数字 I2C 接口用于读取传感阵列 ADC 转化后存储在 RAM 中的测量结果、以及一片 EEPROM 用于存储温度计算和校准的参数。</p>
-<p>AMG8853通过探测物体由于黑体辐射而产生的红外光而测量出物体表面温度的。根据黑体辐射原理，一切温度高于绝对零度的物体都在不停地向周围空间发出红外辐射能量。</p>
-<p>物体的红外辐射能量的大小及其按波长的分布与它的表面温度有着十分密切的关系。</p>
-<p>因此，通过对物体自身辐射的红外能量的测量，便能准确地测定它的表面温度，这就是红外辐射测温 所依据的客观基础。</p>
-<div align="center"><br><img src="/img/20171127/AMG8853.jpg" alt=""><br></div>
-
-<p>上图为AMG8853内部结构，数字有源热电堆阵列是由 64 个传感器探测单元（热电堆）组成，每个探测单元探测接收到的红外波段能量并将其转化为电信号，经过 ADC 转化后转化为数字信息，然后通过数字滤波写入传感器中的 RAM。</p>
-<p>用户通过 I2C 界面可以访问 RAM并读取测量结果用于温度计算。</p>
-<p>选用 120°×30°视场角的传感器，如果垂直安装高度为 2.5 米，那么单个 AMG8853检测 范围可以覆盖到 8.6m×1.3m 的地面。采用多个传感器拼接可以实现完整的室内区域覆盖。</p>
-<h2 id="红外图像采集系统"><a href="#红外图像采集系统" class="headerlink" title="红外图像采集系统"></a>红外图像采集系统</h2><p>连接红外传感器的外部单片机读取不同地址的 RAM 数据，并参考 EEPROM 的校准数值，来补偿不同传感器之间的差异，以建立热图像，来计算图像中每点的温度。</p>
-<p>同时考虑到 AMG8853传感器速度快，数据量大，多个传感器拼接成像时需要良好的管 理，因此，应用中需要可靠的数据通信方式，使用以太网通讯可以保证通信质量。</p>
-<p>因此在该系统中，我们采用 MN103SFL7G 作为主控单片机来接收并处理相应的数据，同时负责最终计算结果的上传，同时采用 PoE 供电方式来实现系统供电及通信。系统架构图如下：</p>
-<div align="center"><br><img src="/img/20171127/AMG8853-1.jpg" alt=""><br></div>
-
-<blockquote>
-<p>整个计算共需要如下几个步骤：</p>
-<ul>
-<li>计算传感器自身温度，从传感器中读取 PTAT 寄存器，得到值后与参数运算获得传感器温度；</li>
-<li>补偿和校准。运算值用于补偿和校准每个传感像素单元的差异。这部分计算利用了若干公式，其中的参数是由 EEPROM 中的值二次计算而来;</li>
-<li>发射率补偿。根据热辐射理论，物体不可能是一个“黑体”，即其发射率总是小于 1。 不同的材料具有不同的发射率，在应用中需要考虑被测物体表面的材料发射率，并加以补偿;</li>
-<li>最后根据公式计算出被测物的表面温度。</li>
-</ul>
-</blockquote>
-<div align="center"><br><img src="/img/20171127/AMG8853-2.jpg" alt=""><br></div>
-
-<p>计算结果即为视场内的目标的表面温度。计算结束后，结果乘以 10 以后，以整数形式存储在 RAM 中。通过 UDP 以太网协议，将数据传送至上位机。</p>
-<h2 id="红外图像处理算法"><a href="#红外图像处理算法" class="headerlink" title="红外图像处理算法"></a>红外图像处理算法</h2><p>计算机通过以太网与传感器建立 UDP 连接，并获取到传感器传回的温度信息。计算机将这些数据有序的拼接起来，还原出办公室内的温度信息。</p>
-<p>然而这种温度信息并不能直观的反映出办公环境中的人数和位置信息，计算机可以通过一些算法，将人数以及人所在房间中的位置计算出来，这样的结果更直观，也更利于其他应用处理。</p>
-<p>因此，计算机在获取到温度信息表之后，需要通过算法将办公室内人员数量计算出来并给出对应的位置坐标。</p>
-<p>室内人员数量可以通过图像处理的算法确定。人数计算的算法过程如下图所示。</p>
-<div align="center"><br><img src="/img/20171127/AMG8853-3.jpg" alt=""><br></div>
-
-<p>图像处理算法的关键在于准确的将人体温度从温度矩阵中提取出来。</p>
-<p>由于人体表面温度因人而异，而且受室温的影响较大，所以有效的提取人体表面温度遇到了诸多难题。经分析和试验，采用大津法进行阈值提取，可以将人体表面温度与环境温度区别开来。</p>
-<p>处理矩阵的红外信息，工程上和学术界普遍使用灰度级、伪彩色等图像的方法表示，使用图像处理的方法表示、分析和处理红外图像是可行而有效的。</p>
-<p>温度数据可以通过归一化后，落在对应的灰度级上，从而可以通过灰度图像表示也可以使用蓝色表示低的温度，红色表示高温，然后在色彩空间渐变，则是伪彩色的表示方法。</p>
-<p>在我们的程序中，使用伪彩色来表示温度高低，使人可以直观的看到温度分布，从图中可以看出，红色部分代表温度要比周围环境高，则认为这部分办公室空间被人占用；蓝色部分代表温度要稍微低一点，认为这部分空间没有被占用。</p>
-<h2 id="最终我们将得到如下的人员分布热图及人数统计值："><a href="#最终我们将得到如下的人员分布热图及人数统计值：" class="headerlink" title="最终我们将得到如下的人员分布热图及人数统计值："></a>最终我们将得到如下的人员分布热图及人数统计值：</h2><div align="center"><br><img src="/img/20171127/AMG8853-4.png" alt=""><br></div>
-
-<p>界面的主要部分是将温度数据矩阵通过伪彩色方法显示出来，人眼便可以直观的看出温度的高低分布。程序通过之前所述算法，获得当前办公环境中的人数，并显示在界面上。</p>
-<p>楼宇控制系统可以根据所获得的数据精确的控制空间中所需要的新风量及冷风量，从而达在节能与办公舒适性直接达到最佳的平衡。</p>
-<p>综上所述，基于红外阵列传感器的室内人员分布检测系统具有配置灵活、硬件结构简单、保密性好、测量效果好的特点。为办公室节能控制提供了精确的，稳定的实时数据。</p>
-<p>同时可以应用在流动办公室监控配置场合，管理人员可以通过直观的界面看出人员分布情况，从而合理规划办公室空间，得到最优的空间利用。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;办公节能新技术&quot;&gt;&lt;a href=&quot;#办公节能新技术&quot; class=&quot;headerlink&quot; title=&quot;办公节能新技术&quot;&gt;&lt;/a&gt;办公节能新技术&lt;/h2&gt;&lt;p&gt;在提倡建设节约型社会的今天，建筑节能问题日益得到普遍关注，而降低新风及冷风负 荷也就成为主要的节能措施之一。建筑室内人员密度是新风量及冷风量合理确定需要考虑的重点因素也是难点因素。&lt;/p&gt;
-&lt;p&gt;近年来，基于摄像头的人数检测技术愈发成熟。然而，在办公室这样的环境中，摄像头的使用受到一定的限制。&lt;/p&gt;
-&lt;p&gt;本文介绍了一种基于阵列红外传感器的办公空间人员密度监控解决方案。在充分保护个人隐私及企业秘密的前提下，准确实时的检测人员密度，从而为新风及冷风控制提供准确的输入参书以达到节能之需求。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="传感器" scheme="http://cuiqingwei.github.io/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/"/>
     
   </entry>
   
