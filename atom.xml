@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2019-12-19T11:30:04.000Z</updated>
+  <updated>2019-12-22T13:27:46.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -14,6 +14,136 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在Ubuntu 18.04 LTS中使用Katoolin安装Kali Linux Tools</title>
+    <link href="http://cuiqingwei.github.io/2019/12/22/2019-12-22-%E5%9C%A8Ubuntu-18-04-LTS%E4%B8%AD%E4%BD%BF%E7%94%A8Katoolin%E5%AE%89%E8%A3%85Kali-Linux-Tools/"/>
+    <id>http://cuiqingwei.github.io/2019/12/22/2019-12-22-在Ubuntu-18-04-LTS中使用Katoolin安装Kali-Linux-Tools/</id>
+    <published>2019-12-22T13:07:00.000Z</published>
+    <updated>2019-12-22T13:27:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>本文将引导您逐步在Ubuntu中使用Katoolin安装Kali Linux Tools。对于那些不知道的人，<strong>Katoolin</strong>是一个Python脚本，可用于一次安装所有Kali Linux工具或手动一次安装。Kali Linux具有300多种渗透测试工具。除了安装所有工具，您还可以使用Katoolin在Linux框中仅安装您选择的选择性工具。如果您想在Ubuntu或任何其他基于DEB的系统上尝试使用Kali Linux工具，则应该尝试一下Katoolin。它将在您的Ubuntu系统中添加Kali Linux存储库，以便您可以一次安装所有渗透测试工具，也可以仅安装必要的工具。Katoolin是完全免费的开源软件，并已在基于Debian的系统上经过正式测试。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="在Ubuntu-18-04-LTS中安装Katoolin"><a href="#在Ubuntu-18-04-LTS中安装Katoolin" class="headerlink" title="在Ubuntu 18.04 LTS中安装Katoolin"></a>在Ubuntu 18.04 LTS中安装Katoolin</h2><p>我已经在Ubuntu 18.04 LTS服务器版本中测试了Katoolin。但是，它应该可以在其他Ubuntu版本和派生版本上使用。</p>
+<p>确保在Ubuntu系统中安装了以下先决条件。</p>
+<ul>
+<li>Python 2.7</li>
+<li>Git</li>
+</ul>
+<p>这些软件包在Ubuntu的默认源中可用，因此您可以使用apt软件包管理器进行安装。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install python git</div></pre></td></tr></table></figure>
+<p>另外，请确保已启用<strong>[Universe]</strong>源。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo add-apt-repository Universe</div></pre></td></tr></table></figure>
+<p>这是我的测试机详细信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">cuiqingwei@Gary-Aspire-4739:/usr/bin$ lsb_release -a</div><div class="line">No LSB modules are available.</div><div class="line">Distributor ID:	Ubuntu</div><div class="line">Description:	Ubuntu 18.04.3 LTS</div><div class="line">Release:	18.04</div><div class="line">Codename:	bionic</div><div class="line">cuiqingwei@Gary-Aspire-4739:/usr/bin$ python -V</div><div class="line">Python 2.7.15+</div><div class="line">cuiqingwei@Gary-Aspire-4739:/usr/bin$ git --version</div><div class="line">git version 2.17.1</div><div class="line">cuiqingwei@Gary-Aspire-4739:/usr/bin$</div></pre></td></tr></table></figure>
+<p>python和git版本</p>
+<p>好吧，我们已经准备就绪。安装必备组件后，如下所示安装Katoolin：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone https://github.com/LionSec/katoolin.git</div></pre></td></tr></table></figure>
+<p>上面的命令会将katoolin存储库克隆到当前工作目录中名为<strong>“ katoolin”</strong>的文件夹中。</p>
+<p>接下来，将Katoolin二进制文件复制到您的路径，例如<strong>/ usr / bin /</strong>，如下所示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo cp katoolin / katoolin.py / usr / bin / katoolin</div></pre></td></tr></table></figure>
+<p>最后，将Katoolin二进制文件设置为可执行文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo chmod + x / usr / bin / katoolin</div></pre></td></tr></table></figure>
+<p>现在，我们已经安装了Katoolin。让我们继续前进，看看如何使用它。</p>
+<h2 id="使用Katoolin安装Kali-Linux-Tools"><a href="#使用Katoolin安装Kali-Linux-Tools" class="headerlink" title="使用Katoolin安装Kali Linux Tools"></a>使用Katoolin安装Kali Linux Tools</h2><p>所有命令都应以root用户或<strong>sudo</strong>特权运行。</p>
+<p>要启动Katoolin，请运行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo katoolin</div></pre></td></tr></table></figure>
+<p>这就是katoolin命令行界面的样子。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"> $$\   $$\             $$\                         $$\ $$\           </div><div class="line"> $$ | $$  |            $$ |                        $$ |\__|          </div><div class="line"> $$ |$$  /  $$$$$$\  $$$$$$\    $$$$$$\   $$$$$$\  $$ |$$\ $$$$$$$\  </div><div class="line"> $$$$$  /   \____$$\ \_$$  _|  $$  __$$\ $$  __$$\ $$ |$$ |$$  __$$\ </div><div class="line"> $$  $$&lt;    $$$$$$$ |  Kali linux tools installer |$$ |$$ |$$ |  $$ |</div><div class="line"> $$ |\$$\  $$  __$$ |  $$ |$$\ $$ |  $$ |$$ |  $$ |$$ |$$ |$$ |  $$ |</div><div class="line"> $$ | \$$\ \$$$$$$$ |  \$$$$  |\$$$$$$  |\$$$$$$  |$$ |$$ |$$ |  $$ |</div><div class="line"> \__|  \__| \_______|   \____/  \______/  \______/ \__|\__|\__|  \__| V2.0 </div><div class="line"></div><div class="line"></div><div class="line"> + -- -- +=[ Author: LionSec | Homepage: www.neodrix.com</div><div class="line"> + -- -- +=[ 331 Tools </div><div class="line"></div><div class="line"></div><div class="line">[W] Before updating your system , please remove all Kali-linux repositories to avoid any kind of problem .</div><div class="line">		</div><div class="line"></div><div class="line">1) Add Kali repositories &amp; Update </div><div class="line">2) View Categories</div><div class="line">3) Install classicmenu indicator</div><div class="line">4) Install Kali menu</div><div class="line">5) Help</div><div class="line"></div><div class="line">kat &gt;</div></pre></td></tr></table></figure>
+<p>启动Katoolin</p>
+<p>如上所示，Katoolin主界面有四个选项。输入数字以打开相应的子菜单。让我们一一看。</p>
+<h4 id="1-添加Kali存储库并更新"><a href="#1-添加Kali存储库并更新" class="headerlink" title="1.添加Kali存储库并更新"></a>1.添加Kali存储库并更新</h4><p>该选项使您可以将kali Linux存储库添加到Linux系统。为此，请键入 <strong>1</strong>（数字1）以添加存储库。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">1) Add Kali repositories &amp; Update </div><div class="line">2) View Categories</div><div class="line">3) Install classicmenu indicator</div><div class="line">4) Install Kali menu</div><div class="line">5) Help</div><div class="line"></div><div class="line">			</div><div class="line">kat &gt; 1</div></pre></td></tr></table></figure>
+<p>添加Kali存储库</p>
+<p>将打开一个子菜单。再次输入<strong>1</strong>以添加Kali-linux存储库。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">kat &gt; 1</div><div class="line"></div><div class="line">1) Add kali linux repositories</div><div class="line">2) Update</div><div class="line">3) Remove all kali linux repositories</div><div class="line">4) View the contents of sources.list file</div><div class="line"></div><div class="line">					</div><div class="line">What do you want to do ?&gt; 1</div></pre></td></tr></table></figure>
+<p>然后，键入<strong>2</strong>以更新存储库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Executing: /tmp/apt-key-gpghome.MvaSscaYwv/gpg.1.sh --keyserver pool.sks-keyservers.net --recv-keys ED444FF07D8D0BF6</div><div class="line">gpg: connecting dirmngr at &apos;/tmp/apt-key-gpghome.MvaSscaYwv/S.dirmngr&apos; failed: IPC connect call failed</div><div class="line">gpg: keyserver receive failed: No dirmngr</div><div class="line"></div><div class="line">1) Add kali linux repositories</div><div class="line">2) Update</div><div class="line">3) Remove all kali linux repositories</div><div class="line">4) View the contents of sources.list file</div><div class="line"></div><div class="line">					</div><div class="line">What do you want to do ?&gt; 2</div></pre></td></tr></table></figure>
+<p>类型<strong>3</strong>，如果你想删除已添加的卡利Linux的存储库，并键入<strong>4</strong>，查看的sources.list文件的内容。</p>
+<p>要返回上一菜单，请键入<strong>back</strong>，然后按Enter。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">What do you want to do ?&gt; back</div><div class="line">1) Add Kali repositories &amp; Update </div><div class="line">2) View Categories</div><div class="line">3) Install classicmenu indicator</div><div class="line">4) Install Kali menu</div><div class="line">5) Help</div><div class="line"></div><div class="line">kat &gt;</div></pre></td></tr></table></figure>
+<p>要返回主菜单，请键入<strong>gohome，</strong>然后按Enter。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">kat &gt; gohome</div><div class="line">1) Add Kali repositories &amp; Update </div><div class="line">2) View Categories</div><div class="line">3) Install classicmenu indicator</div><div class="line">4) Install Kali menu</div><div class="line">5) Help</div><div class="line"></div><div class="line">kat &gt;</div></pre></td></tr></table></figure>
+<h4 id="2-类别"><a href="#2-类别" class="headerlink" title="2.类别"></a>2.类别</h4><p>要查看所有可用类别列表，请在主菜单中键入<strong>2</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">kat &gt; 2</div><div class="line">**************************** All Categories *****************************</div><div class="line">1) Information Gathering			8) Exploitation Tools</div><div class="line">2) Vulnerability Analysis			9) Forensics Tools</div><div class="line">3) Wireless Attacks				10) Stress Testing</div><div class="line">4) Web Applications				11) Password Attacks</div><div class="line">5) Sniffing &amp; Spoofing				12) Reverse Engineering</div><div class="line">6) Maintaining Access				13) Hardware Hacking</div><div class="line">7) Reporting Tools 				14) Extra</div><div class="line">0) All</div><div class="line">Select a category or press (0) to install all Kali linux tools .</div></pre></td></tr></table></figure>
+<p>如您在上面的输出中看到的，有<strong>14个</strong>类别可用。您可以一次安装所有它们，也可以通过输入相应的类别编号来安装任何特定类别。</p>
+<p>要安装所有kali Linux工具，请键入<strong>0</strong>（零），然后按Enter键。这将安装所有工具。需要一段时间，具体取决于Internet的速度。另外，请确保硬盘驱动器中有足够的可用空间。安装所有Kali Linux可能会占用大量磁盘空间。</p>
+<p>如果您不具备所有工具，则只需安装要使用的工具即可。举例来说，要在“ <strong>漏洞利用工具”</strong>类别下安装<strong>工具</strong>，请键入<strong>8</strong>并按Enter。它将显示一个子菜单，并列出此类别中的所有可用软件包。您可以通过键入<strong>0</strong>（零）来安装该类别中的所有工具，或者键入任何特定的数字以将特定工具安装在“利用工具”类别下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">kat &gt; 8</div><div class="line"></div><div class="line">=+[ Exploitation Tools</div><div class="line"></div><div class="line">1) Armitage</div><div class="line"> 2) Backdoor Factory</div><div class="line"> 3) BeEF</div><div class="line"> 4) cisco-auditing-tool</div><div class="line"> 5) cisco-global-exploiter </div><div class="line"> 6) cisco-ocs</div><div class="line"> 7) cisco-torch</div><div class="line"> 8) commix</div><div class="line"> 9) crackle</div><div class="line">10) jboss-autopwn</div><div class="line">11) Linux Exploit Suggester</div><div class="line">12) Maltego Teeth</div><div class="line">13) SET</div><div class="line">14) ShellNoob</div><div class="line">15) sqlmap</div><div class="line">16) THC-IPV6</div><div class="line">17) Yersinia</div><div class="line"></div><div class="line">0) Install all Exploitation Tools</div><div class="line"></div><div class="line">Insert the number of the tool to install it .</div><div class="line"></div><div class="line">kat &gt;</div></pre></td></tr></table></figure>
+<p>要返回上<strong>一级</strong>菜单，请键入<strong>back</strong>，然后要返回主菜单，请键入<strong>gohome</strong>。</p>
+<h4 id="3-安装ClassicMenu指示器"><a href="#3-安装ClassicMenu指示器" class="headerlink" title="3.安装ClassicMenu指示器"></a>3.安装ClassicMenu指示器</h4><p>ClassicMenu Indicator是Ubuntu桌面环境顶部面板的通知区域小程序。它为那些喜欢Unity破折号菜单的人提供了一种获取经典GNOME风格应用程序菜单的简单方法。像经典的GNOME菜单一样，它包含Wine游戏和应用程序（如果已安装）。</p>
+<p>要安装它，请键入<strong>3</strong>并按Enter，然后键入y进行确认并安装。</p>
+<h4 id="4-安装Kali菜单"><a href="#4-安装Kali菜单" class="headerlink" title="4.安装Kali菜单"></a>4.安装Kali菜单</h4><p>要安装Kali Menu，请键入<strong>4，</strong> 然后键入 <strong>y</strong> 以确认安装。</p>
+<p>使用Katoolin完成操作后，按 <strong>“ Ctrl + C”</strong>退出。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">kat &gt; ^CShutdown requested...Goodbye...</div></pre></td></tr></table></figure>
+<p>就这样。如您所见，Katoolin是非常简单易用的工具，它提供了一种在Ubuntu Linux盒子中安装Kali Linux工具的简便方法。您并不总是需要Kali Linux来尝试所有取证，渗透和安全测试工具。Katoolin将在任何基于DEB的Linux系统中轻松为您完成此任务。试试看，您不会失望的。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本文将引导您逐步在Ubuntu中使用Katoolin安装Kali Linux Tools。对于那些不知道的人，&lt;strong&gt;Katoolin&lt;/strong&gt;是一个Python脚本，可用于一次安装所有Kali Linux工具或手动一次安装。Kali Linux具有300多种渗透测试工具。除了安装所有工具，您还可以使用Katoolin在Linux框中仅安装您选择的选择性工具。如果您想在Ubuntu或任何其他基于DEB的系统上尝试使用Kali Linux工具，则应该尝试一下Katoolin。它将在您的Ubuntu系统中添加Kali Linux存储库，以便您可以一次安装所有渗透测试工具，也可以仅安装必要的工具。Katoolin是完全免费的开源软件，并已在基于Debian的系统上经过正式测试。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="ubuntu" scheme="http://cuiqingwei.github.io/tags/ubuntu/"/>
+    
+      <category term="Kali" scheme="http://cuiqingwei.github.io/tags/Kali/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>动画大师华特•迪士尼关于梦想的10堂课</title>
+    <link href="http://cuiqingwei.github.io/2019/12/22/2019-12-22-%E5%8A%A8%E7%94%BB%E5%A4%A7%E5%B8%88%E5%8D%8E%E7%89%B9%E2%80%A2%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%85%B3%E4%BA%8E%E6%A2%A6%E6%83%B3%E7%9A%8410%E5%A0%82%E8%AF%BE/"/>
+    <id>http://cuiqingwei.github.io/2019/12/22/2019-12-22-动画大师华特•迪士尼关于梦想的10堂课/</id>
+    <published>2019-12-22T06:04:00.000Z</published>
+    <updated>2019-12-22T06:21:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p><em>Walt Disney was a showman. According to Time, he “received more Academy Awards and nominations than any other person in history.” The Disneyland theme parks are truly magical kingdoms, for adults, as well as for children.</em><br>华特·迪士尼是位表演者。据《时代》报道，他“收到的奥斯卡奖项和提名是史上最多的。” 迪士尼主题公园对成年人来说都是魔幻王国，更别提孩子们了。<br><em>Here are some Walt Disney lessons in making your dreams come true, courtesy of the master of imagination, dreaming, and achievement himself.</em><br>下面的这些华特·迪士尼的人生课能让你的梦想成真，让你成为想象力和梦想的大师，并有所成就。</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="1-Dream-Big"><a href="#1-Dream-Big" class="headerlink" title="1. Dream Big"></a>1. Dream Big</h1><p><strong>尽情梦想</strong></p>
+<p>“If you can dream it, you can do it.” - Walt Disney<br><code>“如果你能梦想，那么你就能做到。”</code>——华特·迪士尼<br><em>What if money, time, looks, and gender were no object? What would your biggest dream be? Often we short-change ourselves. We listen to others’ put-downs, and internalize them. It’s hard to remember our dreams. Harder still, to imagine that we could achieve a dream. Take Walt Disney’s words to heart. Start dreaming. Then believe that you can achieve your dream.</em><br><code>如果金钱、时间、外貌、性别都不成问题，那你最大的梦想是什么？我们经常欺骗自己。我们听别人说那些贬低人的话，并让它们成为自己性格的一部分，我们很难想起自己的梦想。更难的是去想象我们可以实现梦想。把华特·迪士尼先生的话记在心里。开始梦想，相信你可以实现自己的梦想。</code></p>
+<h1 id="2-Be-Courageous"><a href="#2-Be-Courageous" class="headerlink" title="2. Be Courageous"></a>2. Be Courageous</h1><p><strong>勇敢起来</strong></p>
+<p>“All our dreams can come true, if we have the courage to pursue them.”- Walt Disney<br><code>“如果我们有勇气去追求梦想，那么我们所有的梦想都会成真。”</code>——华特·迪士尼<br><em>It takes courage to step outside your comfort zone. However, achieving your dreams always means that you’re doing things you’ve never done before. Practice being courageous. Today, do something you haven’t done before. Propose a new project to your boss. Send your crush some flowers. Being courageous doesn’t mean that you’re unafraid. It means acting in spite of your fear.</em><br><code>要想走出舒适区，必须需要勇气。不管怎样，实现梦想都意味着你要做以前没做过的事情。练习一下，让自己勇敢起来。今天，做做你以前没做过的事情：向你的老板提议一个新的项目，给你喜欢的人送些花儿。勇敢起来并不是说你无所畏惧，它指的是尽管害怕也依然去做。</code></p>
+<h1 id="3-Be-Yourself"><a href="#3-Be-Yourself" class="headerlink" title="3. Be Yourself"></a>3. Be Yourself</h1><p><strong>做你自己</strong></p>
+<p>“The more you like yourself, the less you are like anyone else, which makes you unique.”- Walt Disney<br><code>“你越喜欢自己，你就越不会把自己和别人相似，这会让你独一无二。”</code>——华特·迪士尼<br><em>We all wear masks. We try to be what we think people want us to be. We try to emulate role models. What if you were just yourself? Discovering who you are underneath all the masks is challenging. It’s hard to be authentic if you’re not sure who you are. Just for today, do what pleases you. Say what you mean, rather than saying what you think someone wants to hear. However, be appropriate—being “like yourself” isn’t a license to be outrageous, or to say hurtful things.</em><br><code>我们每个人都戴着面具，我们试着去成为别人想让我们成为的样子，我们试着去模仿榜样。如果你就是你自己呢？找出面具下面的真我是富于挑战性的。如果你不确定自己是谁，那很难做真实的自己。说出你想表达的意思，而不是你认为别人想听的话。但不管怎样，也要恰当。——“喜欢自己” 并不表示要语出惊人，或说些伤人心的话语。</code></p>
+<h1 id="4-Stop-Talking-Start-Doing"><a href="#4-Stop-Talking-Start-Doing" class="headerlink" title="4. Stop Talking. Start Doing"></a>4. Stop Talking. Start Doing</h1><p><strong>停止交谈，开始实干。</strong></p>
+<p>“The way to get started is to quit talking and begin doing.”- Walt Disney<br><code>“开始的方法就是停止交谈并开始实干。”</code>——华特·迪士尼<br><em>You’re dreaming big. You’re inspired. You tell everyone about your dream. Stop! Keep it to yourself. Work quietly towards your dream. You don’t need validation from anyone, nor do you need permission. Be authentic, and do something today, which will help you to achieve your dream.</em><br><code>你在尽情地梦想。你受到了鼓舞。你把梦想告诉了大家。停！只要自己知道就行。悄悄地朝着梦想努力。你不必需要别人的认可，你也不需要别人的准许。做真实的自己，今天就做些事情，这会帮你实现梦想。</code></p>
+<h1 id="5-Embrace-Competition"><a href="#5-Embrace-Competition" class="headerlink" title="5. Embrace Competition"></a>5. Embrace Competition</h1><p><strong>拥抱竞争</strong></p>
+<p>“I have been up against tough competition all my life. I wouldn’t know how to get along without it.”- Walt Disney<br><code>“我一生都在不断地面临着严峻的竞争。我不知道没有竞争该如何是好。”</code>——华特·迪士尼<br><em>Competition is essential to help you to achieve your dreams. If there were no competition, you’d have nothing against which to measure yourself. Competition makes you better and stronger than you might otherwise be. In business, competition fosters innovation. If you’re uncomfortable with competition, or envious of competitors, ask yourself why. Then do the best you can.</em><br><code>竞争是帮你实现梦想的必要条件。如果没有竞争，那你就没什么东西来衡量自己。竞争会让你变得更好、更强大。在业务方面，竞争可以促进创新。如果你不喜欢竞争，或羡慕竞争对手，那你该想想原因。然后尽你最大的努力。</code></p>
+<h1 id="6-Go-and-Get-What-You-Want-Don’t-Wait"><a href="#6-Go-and-Get-What-You-Want-Don’t-Wait" class="headerlink" title="6. Go and Get What You Want. Don’t Wait"></a>6. Go and Get What You Want. Don’t Wait</h1><p><strong>去追求并得到你想要的，不要等待。</strong></p>
+<p>“Cinderella believed in dreams, all right, but she also believed in doing something about them. When Prince Charming didn’t come along, she went over to the palace and got him.” - Walt Disney<br><code>“灰姑娘相信梦想，但是她也相信要为之奋斗。当白马王子没来时，她去了宫殿才得以遇见他。”</code>——华特·迪士尼<br><em>Forget wishing. No one is handed his dreams for free. You have to fight to achieve a dream. Expect to struggle. Ask yourself what price you’re will to pay—dreams always have a price. However, it’s not all doom and gloom. Setting goals, making plans, and working toward your dream is wonderful. Enjoy the journey. When you’ve achieved a long-held dream, you find that while you appreciate the achievement, the memories of the journey are what make you smile.</em><br><code>别许愿了。没人会无偿让出自己的梦想。要想实现梦想，你要学会去争取。你要预料到要和困难做斗争。问问自己你准备要付的代价——梦想总是有代价的。然而，它并不是无望的。设定目标，制定计划，朝着梦想去努力，这是很美好的事情。享受这个过程。当你实现了梦想已久的事情后，你会发现，虽然你很欣赏你的成果，但是让你微笑的却是追求梦想过程中的点点滴滴。</code></p>
+<h1 id="7-Do-Your-Best-Work-Don’t-Worry-About-Money"><a href="#7-Do-Your-Best-Work-Don’t-Worry-About-Money" class="headerlink" title="7. Do Your Best Work. Don’t Worry About Money"></a>7. Do Your Best Work. Don’t Worry About Money</h1><p><strong>尽你最大的努力，不要担心钱的问题。</strong></p>
+<p>“Do a good job. You don’t have to worry about the money; it will take care of itself. Just do your best work—then try to trump it.” - Walt Disney<br><code>“好好做。不要去担心钱的问题；它会自然而然地得到解决的。只是尽你最大的努力——然后试着超越它。”</code>——华特·迪士尼<br><em>You’re poor. You can’t afford to take time off to get another degree so you can get a better job. The answer is to do the best you can, right where you are, and cling onto your dream. Life will give you what you want, when you least expect it: do your best work, every day. Results will come.</em><br><code>你很拮据。你没法抽出时间进一步深造来去找一份更好的工作。答案是去尽你最大的努力，在当下，坚持自己的梦想。生活会在你意想不到的时候给予你想要的：每天都尽你最大的努力，有付出就有结果。</code></p>
+<h1 id="8-Don’t-Quit"><a href="#8-Don’t-Quit" class="headerlink" title="8. Don’t Quit"></a>8. Don’t Quit</h1><p><strong>不要放弃</strong></p>
+<p>“The difference in winning and losing is most often… not quitting.”- Walt Disney<br><code>“赢和输的区别在于，大部分的时候….不要放弃。”</code>——华特·迪士尼<br><em>You can’t succeed at anything without failing, and failing a lot. Failure is the way we learn. Here’s what Thomas Edison said: “The three great essentials to achieve anything worthwhile are, first, hard work; second, stick-to-itiveness; third, common sense.” Everyone fails his way to success. Look on your failures as speed bumps in your success journey, and keep going. Don’t quit.</em><br><code>如果不经历失败，不经历很多次的失败，你是无法成功的。失败是我们学习的方式。爱迪生曾说过：“要想完成任何有意义的事情，都需要三个必要条件：第一是艰苦的努力；第二是坚持；第三是常识。” 每个人都是通过失败走向成功的。把你的失败看成是通往成功路上的减速带，继续前进，不要放弃。</code></p>
+<h1 id="9-Be-Grateful"><a href="#9-Be-Grateful" class="headerlink" title="9. Be Grateful"></a>9. Be Grateful</h1><p><strong>心怀感激</strong></p>
+<p>“The more you are in a state of gratitude, the more you will attract things to be grateful for.”- Walt Disney<br><code>“你越经常心怀感激之情，就越会有更多值得你感恩的事情发生在你身上。”</code>——华特·迪士尼<br>What are you grateful for? We all have endless reasons to be grateful. What do you take for granted? Chances are that you’re blasé about your health, your comfortable home, your loving family, and about your job. Even if you have none of those things, you can be grateful for being alive. Studies have shown that gratitude improves your health, your relationships, and makes you happier.<br><code>你因为什么事情感恩？我们都因为各种原因而心怀感激之情。你把什么东西视为理所当然？很有可能你对自己的健康状况、舒适的家、充满爱的家庭和你的工作已无动于衷了。即使是这些你都没有，你也可以因为活着而感恩。研究表明，感恩能改善你的健康状况、你的恋爱关系，可以让你更加幸福。</code></p>
+<h1 id="10-Do-Your-Best"><a href="#10-Do-Your-Best" class="headerlink" title="10. Do Your Best"></a>10. Do Your Best</h1><p><strong>全力以赴</strong></p>
+<p>“Why worry? If you’ve done the very best you can, worrying won’t make it better.”- Walt Disney“<br><code>为什么要担心？如果你尽力了，担心不会让事情变得更好。“</code>-—华特·迪士尼<br><em>Worry is anticipation; worry can help you to improve and do your best. However, once something is done, distract yourself from concern about the results. If you’ve gone through three interviews for a job, there’s nothing else you can do. Worrying about whether you get the job is pointless at that stage. Only worry when it serves a useful purpose.</em><br><code>担心就是期望；担心能帮你提高水平并让你尽力而为。然而一旦做了某件事后，不要让自己分心去担心结果。如果你找一份工作时通过三次面试，那能做的你都做了。这时担心自己是否能得到这份工作是毫无意义的。只有在担心有益的情况下才担心。</code></p>
+<hr>
+
+<p>So, there you have ten Walt Disney lessons. Apply them to your life. They’ll help you to make your dreams come true.<br>这就是华特·迪士尼的10堂课。把它们用在生活中。它们能帮助你，让你的梦想成真。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Walt Disney was a showman. According to Time, he “received more Academy Awards and nominations than any other person in history.” The Disneyland theme parks are truly magical kingdoms, for adults, as well as for children.&lt;/em&gt;&lt;br&gt;华特·迪士尼是位表演者。据《时代》报道，他“收到的奥斯卡奖项和提名是史上最多的。” 迪士尼主题公园对成年人来说都是魔幻王国，更别提孩子们了。&lt;br&gt;&lt;em&gt;Here are some Walt Disney lessons in making your dreams come true, courtesy of the master of imagination, dreaming, and achievement himself.&lt;/em&gt;&lt;br&gt;下面的这些华特·迪士尼的人生课能让你的梦想成真，让你成为想象力和梦想的大师，并有所成就。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="梦想" scheme="http://cuiqingwei.github.io/tags/%E6%A2%A6%E6%83%B3/"/>
+    
+  </entry>
   
   <entry>
     <title>MySQL命令</title>
@@ -1309,158 +1439,6 @@ make V=s
     
     
       <category term="FastDFS" scheme="http://cuiqingwei.github.io/tags/FastDFS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>怎样的家居照明才有质感?</title>
-    <link href="http://cuiqingwei.github.io/2017/12/04/2017-12-04-%E6%80%8E%E6%A0%B7%E7%9A%84%E5%AE%B6%E5%B1%85%E7%85%A7%E6%98%8E%E6%89%8D%E6%9C%89%E8%B4%A8%E6%84%9F/"/>
-    <id>http://cuiqingwei.github.io/2017/12/04/2017-12-04-怎样的家居照明才有质感/</id>
-    <published>2017-12-04T06:12:08.000Z</published>
-    <updated>2017-12-04T06:39:55.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>生活要有质感，这是很多人所追求的，也是很多人所向往的，但是，你真的懂质感吗?质感这种东西，重要的是感觉。怎样才能让自己的家变得有感觉呢?</p>
-<p>答案当然是灯光!试想一下，当你回到家，看到明亮的、昏黄的、温暖的灯光，是不是都能让你的家有不一样的感觉?我们先来看一看，一个家的六大功能区。</p>
-<a id="more"></a>
-<p><img src="/img/20171204/640.jpeg" alt=""></p>
-<p>一般人都会想，房间只要够亮就行了，于是就出现了下面这种“一盏荧光灯or吸顶灯走天下”的死板场景。</p>
-<p><img src="/img/20171204/640-1.jpeg" alt=""></p>
-<p>怎么样，是不是感觉看到了自己的家?</p>
-<p>这样简单粗暴的照明设置，只能解决基本的照明需求。实际使用起来你会发现，其实有诸多不便，有解决办法吗?</p>
-<p>当然有!这时候你就需要给家里做一个专业的灯光设计。</p>
-<p><img src="/img/20171204/640-2.jpeg" alt=""></p>
-<p>灯光100%、50%、10%、多种灯具互相配合，明暗张弛有度，提高房间品味的同时还能打造房间层次感。</p>
-<p>那想打造一个生活与灯光协调的智能化住宅，具体应该怎么做呢?</p>
-<p>首先你得认识灯光，了解灯光，才能合理的运用灯光。</p>
-<h3 id="1、如何认识灯光"><a href="#1、如何认识灯光" class="headerlink" title="1、如何认识灯光?"></a>1、如何认识灯光?</h3><p><img src="/img/20171204/640-3.jpeg" alt=""></p>
-<p>买灯具跟买家具一样，既麻烦又复杂，以下就是小编贴心为大家整理的两个步骤，学会它，选灯具似乎也很简单。</p>
-<ul>
-<li>1)确认你需要的灯光类别</li>
-<li>2)确认你需要的照明方式</li>
-</ul>
-<p>灯光的类别分为：环境光、轮廓光、焦点光。</p>
-<p><img src="/img/20171204/640-4.jpeg" alt=""></p>
-<p>环境光是指照明范围最大的常规光源，看不清直接光源和方向，具有柔和的光照。</p>
-<p>轮廓光主要是强调墙壁，天花板等的轮廓，营造空间的层次感，还可以增添室内的美感。</p>
-<p>焦点光相对照明范围小，光照集中，主要用来营造局部的氛围</p>
-<p>三种光的作用不一样当然照明方式也不一样。</p>
-<blockquote>
-<p>环境光照明方式↓</p>
-</blockquote>
-<p><img src="/img/20171204/640-5.jpeg" alt=""></p>
-<blockquote>
-<p>轮廓光照明方式↓</p>
-</blockquote>
-<p><img src="/img/20171204/640-6.jpeg" alt=""></p>
-<blockquote>
-<p>焦点光照明方式↓</p>
-</blockquote>
-<p><img src="/img/20171204/640-7.jpeg" alt=""></p>
-<p>对灯光有了基本了解，接下来就看看灯光如何进行空间布局吧。</p>
-<h3 id="2、玄关"><a href="#2、玄关" class="headerlink" title="2、玄关"></a>2、玄关</h3><p><img src="/img/20171204/640-8.jpeg" alt=""></p>
-<p>传统的灯光只是起到了一个基础照明的作用，没有考虑到使用起来的方便性。人的身体会阻挡住焦点光，有限的光源也会让玄关柜的阴影阻挡视线。而且一进门，就要摸黑去找开关，导致来访，换鞋都很不方便。</p>
-<p><img src="/img/20171204/640-9.jpeg" alt=""></p>
-<p>人在玄关处停留的市价虽然不长，但是一个明亮的光线还是很重要的。</p>
-<p>选用整体适合整体照明的嵌入式节能灯，光线平均且充分。在顶部设置红外感应开关，人一进家门就自动开启了回家模式，带来更好的居家体验。</p>
-<p><img src="/img/20171204/640-10.jpeg" alt=""></p>
-<h3 id="3、客厅"><a href="#3、客厅" class="headerlink" title="3、客厅"></a>3、客厅</h3><p><img src="/img/20171204/640-11.jpeg" alt=""></p>
-<p>传统的客厅，用一盏吸顶灯或荧光灯管，就可以轻松的照亮整个空间。但是缺乏特色和可变性，不能根据空间使用者的行为变化做出对应调整。</p>
-<p><img src="/img/20171204/640-12.jpeg" alt=""></p>
-<p>采用点状光源，均匀分布于天花板，按需求调节亮度，节省用电，选用造型感强的漫射照明灯具，以满足核心区域的照明需求。</p>
-<p><img src="/img/20171204/640-13.jpeg" alt=""></p>
-<p>在墙面区域，可以增加光线更柔和、更均匀的间接照明灯饰。比如灯带或者一些小台灯。这样可以使人更放松。电视上方可以装灯槽，为整个空间提供漫反射光线，减少电视画面与背后的亮差，缓解视觉疲劳。</p>
-<p><img src="/img/20171204/640-14.jpeg" alt=""></p>
-<p>电视机旁的角落，可以加一盏落地灯，它能使客厅显得更有层次感，也能在你看电视的时候，提供柔和的中段视觉的光线，让你的眼睛有更舒服的体验。同时，一个颜值高的落地灯也是一个提升家庭格调的装饰物。</p>
-<p><img src="/img/20171204/640-15.jpeg" alt=""></p>
-<p>客厅的边缘区域一般会有装饰挂画，可以使用可调角度的轨道射灯提供照明，同时为附近的空间提供间接照明，客人来家里就可以清楚的欣赏你的挂画。</p>
-<p><img src="/img/20171204/640-16.jpeg" alt=""></p>
-<h3 id="4、餐厅"><a href="#4、餐厅" class="headerlink" title="4、餐厅"></a>4、餐厅</h3><p><img src="/img/20171204/640-17.jpeg" alt=""></p>
-<p>你家的餐厅照明是不是这样?</p>
-<p><img src="/img/20171204/640-18.jpeg" alt=""></p>
-<p>一盏吸顶灯搞定全区照明，满足了日常使用，但是体验却不好。</p>
-<p>餐厅在照明上需要满足的两个点：一是要看的见菜，而是要看得清楚人。设计照明的目的则是为了更好的展现食物和人的气色。</p>
-<p>餐厅是最需要调光的，摩根可以通过全宅调光，增加空间的个性，突出食物的美味，打造一个光线柔和的空间。我们去高档餐厅吃饭，会发现里面的灯光都不会很亮，给人一种温馨，舒适的感觉。如果对餐厅做了调光的话，我们在家就可以享受到高档餐厅才有的灯光环境氛围。当节假日，比如情人节、结婚纪念日，生日，吃西餐时，我们把餐厅的灯光调至50%、10%，就可以打造出烛光晚餐的效果，这是一件多么浪漫的事情啊。</p>
-<p><img src="/img/20171204/640-19.jpeg" alt=""></p>
-<h3 id="5、厨房"><a href="#5、厨房" class="headerlink" title="5、厨房"></a>5、厨房</h3><p><img src="/img/20171204/640-20.jpeg" alt=""></p>
-<p>厨房作为美食的生产地，也是整个家里最需要光的地方，大多数人却只是在天花中央安了一盏吸顶灯而已。</p>
-<p>当你切菜煮饭的时候就会发现，你刚好挡住了吸顶灯下的光，面对的地方都是一片阴影。</p>
-<p><img src="/img/20171204/640-21.jpeg" alt=""></p>
-<p>是不是仿佛又看到了自己在厨房摸黑切菜的样子?</p>
-<p>采用暖黄色灯光，在料理台和水槽的上方增加焦点光，安装小射灯用于局部和重点照明。厨房的收纳区域可以增加轮廓光补充照明，安装灯带便于取放物件。</p>
-<p><img src="/img/20171204/640-22.jpeg" alt=""></p>
-<p>如果是开放式厨房，摩根选用可调角度的窄光速角射灯照亮料理台，这样能更灵活地调节光线。</p>
-<p><img src="/img/20171204/640-23.jpeg" alt=""></p>
-<h3 id="6、卧室"><a href="#6、卧室" class="headerlink" title="6、卧室"></a>6、卧室</h3><p><img src="/img/20171204/640-24.jpeg" alt=""></p>
-<p>这是我们的卧室，我们回到卧室主要是休息、睡觉的，我们可以把灯光调至10%，这种昏暗的灯光下，有助于我们快速入眠，有小孩的话，哄孩子入睡也会非常容易。尤其是小朋友，不敢关着灯睡觉时，可只留10%的亮光，睡着后会自动启动“睡眠模式”将灯光关闭。如果累了，想休息时，也只需按一下“睡眠模式”，不会影响睡眠质量。</p>
-<p>卧室是我们休息的区域，卧室的照明除了要满足平时的活动，还要顾及到起夜的时候，光线对睡眼惺忪的人来说，会很刺眼。</p>
-<p><img src="/img/20171204/640-25.jpeg" alt=""></p>
-<p>卧室的照明其实可以分为两部分：</p>
-<ul>
-<li>A整体照明。</li>
-<li>B局部照明。</li>
-</ul>
-<p><img src="/img/20171204/640-26.jpeg" alt=""></p>
-<p>整体照明可以装在卧室中央(床尾的天花板上)，避开躺下时会让光线直接进入视线的位置。布置柔和灯带抬高天花板，并通过漫反射的间接照明为整个空间进行光照辅助，整体感觉很舒服。</p>
-<p><img src="/img/20171204/640-27.jpeg" alt=""></p>
-<p>局部照明是为了让人在床上进行税前活动和方便起夜设置的。可以在床头距地约1.8m的两段墙壁，安装不占空间的壁灯。或者设置床头柜台灯或者落地灯也可以。</p>
-<p><img src="/img/20171204/640-28.jpeg" alt=""></p>
-<p>如果比较怕黑的，可以学酒店，在床尾设置光线微弱的墙角灯，增加安全感。晚上睡觉时只需要开一盏小小的灯就够了。</p>
-<p>喜欢大晚上看电视的，也要分散屏幕强光。在背景墙两边增加灯槽，拉近光暗对比，避免在昏暗环境下对视力造成伤害。</p>
-<p><img src="/img/20171204/640-29.jpeg" alt=""></p>
-<h3 id="7、卫生间"><a href="#7、卫生间" class="headerlink" title="7、卫生间"></a>7、卫生间</h3><p><img src="/img/20171204/640-30.jpeg" alt=""></p>
-<p>卫生间别看面积不大，里面的灯光可是大有名堂。卫生间的灯光设置不合理，在镜子前人脸会出现阴影，不利于化妆、刮胡子等脸部清洁活动。</p>
-<p><img src="/img/20171204/640-31.jpeg" alt=""></p>
-<p>在镜前区增加镜前照明，光源均匀打在脸上，可以避免出现上述情况。镜柜下方放置洗浴用品的位置，同样可以增设灯带。浴缸上方采用灯带取代传统的直射吸顶灯，营造均匀柔和的光线。避免中央光源对眼睛的影响。</p>
-<p><img src="/img/20171204/640-32.jpeg" alt=""></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;生活要有质感，这是很多人所追求的，也是很多人所向往的，但是，你真的懂质感吗?质感这种东西，重要的是感觉。怎样才能让自己的家变得有感觉呢?&lt;/p&gt;
-&lt;p&gt;答案当然是灯光!试想一下，当你回到家，看到明亮的、昏黄的、温暖的灯光，是不是都能让你的家有不一样的感觉?我们先来看一看，一个家的六大功能区。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="智能家居" scheme="http://cuiqingwei.github.io/tags/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CentOS7添加开机启动服务脚本</title>
-    <link href="http://cuiqingwei.github.io/2017/11/29/2017-11-29-CentOS7%E6%B7%BB%E5%8A%A0%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E8%84%9A%E6%9C%AC/"/>
-    <id>http://cuiqingwei.github.io/2017/11/29/2017-11-29-CentOS7添加开机启动服务脚本/</id>
-    <published>2017-11-29T01:02:08.000Z</published>
-    <updated>2019-12-19T10:37:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="一、添加开机自启服务"><a href="#一、添加开机自启服务" class="headerlink" title="一、添加开机自启服务"></a>一、添加开机自启服务</h1><p>在CentOS 7中添加开机自启服务非常方便，只需要两条命令(以Jenkins为例)：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">systemctl enable jenkins.service  # 设置jenkins服务为自启动服务</div><div class="line">sysstemctl start  jenkins.service # 启动jenkins服务</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h1 id="二、添加开机自启脚本"><a href="#二、添加开机自启脚本" class="headerlink" title="二、添加开机自启脚本"></a>二、添加开机自启脚本</h1><p>在centos7中增加脚本有两种常用的方法，以脚本autostart.sh为例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">#description:开机自启脚本</div><div class="line">/usr/local/tomcat/bin/startup.sh  #启动tomcat</div></pre></td></tr></table></figure>
-<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>1、赋予脚本可执行权限（/opt/script/autostart.sh是你的脚本路径）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x /opt/script/autostart.sh</div></pre></td></tr></table></figure>
-<p>2、打开/etc/rc.d/rc/local文件，在末尾增加如下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/opt/script/autostart.sh</div></pre></td></tr></table></figure>
-<p>3、在centos7中，/etc/rc.d/rc.local的权限被降低了，所以需要执行如下命令赋予其可执行权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x /etc/rc.d/rc.local</div></pre></td></tr></table></figure>
-<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>1、将脚本移动到/etc/rc.d/init.d目录下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mv  /opt/script/autostart.sh /etc/rc.d/init.d</div></pre></td></tr></table></figure>
-<p>2、增加脚本的可执行权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x  /etc/rc.d/init.d/autostart.sh</div></pre></td></tr></table></figure>
-<p>3、添加脚本到开机自动启动项目中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /etc/rc.d/init.d</div><div class="line">chkconfig --add autostart.sh</div><div class="line">chkconfig autostart.sh on</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;一、添加开机自启服务&quot;&gt;&lt;a href=&quot;#一、添加开机自启服务&quot; class=&quot;headerlink&quot; title=&quot;一、添加开机自启服务&quot;&gt;&lt;/a&gt;一、添加开机自启服务&lt;/h1&gt;&lt;p&gt;在CentOS 7中添加开机自启服务非常方便，只需要两条命令(以Jenkins为例)：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;systemctl enable jenkins.service  # 设置jenkins服务为自启动服务&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sysstemctl start  jenkins.service # 启动jenkins服务&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="linux" scheme="http://cuiqingwei.github.io/tags/linux/"/>
     
   </entry>
   
