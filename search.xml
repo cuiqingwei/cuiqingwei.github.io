@@ -1428,22 +1428,21 @@ make V=s
 <h1 id="或许有用"><a href="#或许有用" class="headerlink" title="或许有用"></a>或许有用</h1><ol>
 <li>查看shell：</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat /etc/shells</div></pre></td></tr></table></figure>
+<p><code>cat /etc/shells</code> </p>
 <p>/bin/bash<br>/bin/csh<br>/bin/ksh<br>/bin/sh<br>/bin/tcsh<br>/bin/zsh</p>
 <ol>
 <li>切换shell：</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">chsh -s /bin/zsh</div><div class="line">chsh -s /bin/bash</div></pre></td></tr></table></figure>
+<p><code>chsh -s /bin/zsh</code><br><code>chsh -s /bin/bash</code></p>
 <ol>
 <li>查看当前shell，但不能时时反映shell，需重启iTerm2：</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="variable">$SHELL</span></div></pre></td></tr></table></figure>
+<p><code>echo $SHELL</code></p>
 <ol>
 <li><p>卸载<code>oh my zsh</code>，在命令行输入：<code>uninstall_oh_my_zsh</code></p>
 </li>
-<li><p>路径前缀的XX@XX太长，缩短方法：</p>
+<li><p>路径前缀的XX@XX太长，缩短方法：<br>编辑<code>~/.oh-my-zsh/themes/agnoster.zsh-theme</code>主体文件，将里面的<code>build_prompt</code>下的<code>prompt_context</code>字段在前面加<code>#</code>注释掉即可。</p>
 </li>
-<li>编辑<code>~/.oh-my-zsh/themes/agnoster.zsh-theme</code>主体文件，将里面的<code>build_prompt</code>下的<code>prompt_context</code>字段在前面加<code>#</code>注释掉即可。</li>
 </ol>
 ]]></content>
     </entry>
@@ -1928,19 +1927,6 @@ make V=s
     </entry>
     
     <entry>
-      <title><![CDATA[GoAhead移植到OpenWRT]]></title>
-      <url>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/</url>
-      <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
-<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
-<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
-<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
-<blockquote>
-<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
-</blockquote>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Contiki-CC2538-CoAP]]></title>
       <url>http://cuiqingwei.github.io/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/</url>
       <content type="html"><![CDATA[<div align="center"><br><iframe height="498" width="510" src="http://player.youku.com/embed/XMTgyNDA3NDAzNg==" frameborder="0" 'allowfullscreen'=""></iframe><br></div>
@@ -1960,6 +1946,19 @@ make V=s
 <h1 id="ping6"><a href="#ping6" class="headerlink" title="ping6"></a>ping6</h1><p><code>ping6 aaaa::212:4b00:5af:84e0</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">PING aaaa::212:4b00:5af:84e0(aaaa::212:4b00:5af:84e0) 56 data bytes</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=1 ttl=63 time=1013 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=2 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=3 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=4 ttl=63 time=126 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=5 ttl=63 time=125 ms</div><div class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq=6 ttl=63 time=120 ms</div></pre></td></tr></table></figure>
 <h1 id="firefox"><a href="#firefox" class="headerlink" title="firefox"></a>firefox</h1><p><img src="/img/20161117/coap1.png" alt=""><br><img src="/img/20161117/coap2.png" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[GoAhead移植到OpenWRT]]></title>
+      <url>http://cuiqingwei.github.io/2016/11/17/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/</url>
+      <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
+<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
+<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
+<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
+<blockquote>
+<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
+</blockquote>
 ]]></content>
     </entry>
     
@@ -2187,37 +2186,6 @@ make V=s
     </entry>
     
     <entry>
-      <title><![CDATA[善用路亚软饵]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%96%84%E7%94%A8%E8%B7%AF%E4%BA%9A%E8%BD%AF%E9%A5%B5/</url>
-      <content type="html"><![CDATA[<p>在路亚世界里，软饵的搭配种类比较多功能性也不尽相同，但是它们的共同之处 就在于—引诱鱼饵上钩，无论是以动作逼真引诱还是以动作激怒鱼儿。 但是这些动作都需要人来赋予它，不然再好的路亚软饵也是枉然。</p>
-<p>说之前先声明，这是给各位刚刚玩的盆友们准备的，各位老鸟们还请海涵！</p>
-<a id="more"></a>
-<p><img src="/img/20161013/orka-shad-tail92.jpg" alt=""></p>
-<p>首先呢，就先 从模拟自然界中的动作讲一下吧，这个问题就在于钓友们手上的灵活多变操控了 ，一般比较常用也是比较有效的方式有三种：</p>
-<p><strong>1，跳</strong></p>
-<p><strong>2，拖</strong></p>
-<p><strong>3，停</strong></p>
-<p><em>第一种，跳，顾名思义就如同我们人跳舞一样，饵也需要在水下跳舞引诱鱼 的注意，让它们觉得这东西有点好奇，看着有些意思，进而进行试探 最后咬钩。 “跳”的方法就是手持竿子，将竿子用手腕的力量上下挑动，使饵在水下呈现出 上下跳跃的姿态 这种跳跃的幅度可大可小，不用拘泥于形式，可以夸张的大幅度 ，也可以用轻微的小幅度挑动来模拟一些落入水中的昆虫幼虫或其他小生物。</em></p>
-<p><em>第二种，拖，拖动饵在水下移动，让饵自然呈现一种在底层游动的状态，引诱鱼 前来试探，这种方法对付一些底层伏击型的鱼类比较有效果。也会对钓手们了解 水底的地形有帮助。操作方法 就是慢慢摇轮，让其软饵在水下慢慢游走。</em></p>
-<p><em>第三种，停，这个动作非常重要 有时候你一直在操控软饵时，鱼可能没有动作， 只会盯着看，往往就是在你停顿的瞬间，鱼会突然发动攻击。当然停顿的时间没 有固定的，需要大家自行体会根据不同的环境来随时调整。</em></p>
-<p>而将这三者结合起来：跳-拖-停 重复使用的时候，往往会对鱼造成极大的诱惑性 ，可以使中鱼率大大增加，特别是在鱼境况不好的压力钓场上，往往路亚软饵钓 组会发挥极大地作用，大家可以在操控软饵的时候想想一下软饵在水下的动作会 是怎样的，充分发挥自己的想象力，努力去改造软饵在水下的状态，最简单的方 法就是找一个透明的玻璃鱼缸灌满水将软虫钓组放入浴缸里进行调试，已达到你 想要的理想效果，所以软饵钓组各位一定要掌握一下，当你熟悉了路亚软饵钓组 的你肯定会爱上它的。</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[常用路亚线的区别]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%B8%B8%E7%94%A8%E8%B7%AF%E4%BA%9A%E7%BA%BF%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-      <content type="html"><![CDATA[<h2 id="尼龙线"><a href="#尼龙线" class="headerlink" title="尼龙线"></a>尼龙线</h2><p>台钓中使用最多的也是尼龙线。尼龙的化工原料为PA，和PE一样是石油的下游产品。与PE不同的是，尼龙线一般为单股线，这种线的特点刚好与PE线相反。尼龙线的优点是由于有一定的延展性，抛投和中鱼的时候不易断线，由于生产技术已经发展了近70年的历史，成本低，产量大，相比PE线要便宜很多。最后一点是尼龙表面圆滑，对线环的磨损可以降到最低。</p>
-<a id="more"></a>
-<p>延展性同样也是尼龙线的缺点，在某些鱼讯轻微的场合，尼龙线不能及时将中鱼信号传达给钓手，从而失去最佳的起杆机会。另外，同样拉力的情况下，尼龙线比PE的线径更粗，从而影响路亚的抛投距离（<em>当然这个问题并不一定完全适用，需要根据具体的情况来，不过在高磅数的尼龙线与高磅数PE线做对比的话，高磅数的PE占些优势，因其相同的高磅数的线，高磅数PE线径更细一些，也就可以更加节省线杯的空间容下更多的线，并且线径也更细利于高磅数线的抛投</em>）。</p>
-<p><img src="/img/20161013/fishing-line.jpg" alt=""></p>
-<h2 id="PE线"><a href="#PE线" class="headerlink" title="PE线"></a>PE线</h2><p>PE线是指用多股化纤编织后浸胶制成的钓线，俗称编织线(BRAIDED OR CORD LINE)，最早见的就是“大力马”。<br>这种钓线的生产方式是：将多条微细纤维(如：达克龙纤维、功夫龙纤维或大力马纤维或其它聚乙烯化合物的PE纤维…等)以机器来编织而成，所以这种钓线的线体呈现纤维规则交叉的纹路，只要你将线体取出审视一番就可以清楚的发现其线体结构上的特色。<br>这种线的优点是，相同拉力的的情况下线径比尼龙要细很多，同样我们使用12磅的尼龙和12 磅的PE，因为PE的线径更细，能够抛投的更远。在实际钓场中，风力是影响路亚抛投距离的重要因素，PE同样因为相同拉力下线径更细的特点，能够将风阻的影响减小。除此之外，PE几乎没有延展性，在中鱼的时候能够在第一时间将信号传达给钓手。还有就是PE线更加耐磨。<br>但正像所有事物都有其两面性一样，PE并不是没有任何缺点。PE第一个缺点是没有延展性。这个特性在能够将中鱼信号迅速传达给钓手的同时，也经常导致跑鱼或放枪。玩过台钓的朋友都知道，中鱼后钓竿上要保持一定的力量，鱼才不易脱钩，杆软不易断线跑鱼，但是起鱼慢；杆硬起鱼快，但是容易断线跑鱼。同样，你可以把线看作杆的延伸，鱼线有一定的延展性，就像钓竿比较软一样，能够保证在鱼左冲右突的时候始终保持一定的力量，而PE就像比较硬的杆，遛鱼的余地比较小从而导致脱钩或断线。另外现在有厂家为了使用更细的线径达到更强的拉力，在PE中掺加金属丝，虽然拉力得到了加强，但是线的延展性和柔软度进一步降低，同时还容易磨损导环。</p>
-<h2 id="碳线（氟碳线）"><a href="#碳线（氟碳线）" class="headerlink" title="碳线（氟碳线）"></a>碳线（氟碳线）</h2><p>碳线是由含有氟和碳成分的树脂抽丝加工而成，碳线的特性是高比重、切水快、光的折射率非常低几乎看不到，没有吸水性，抗紫外线和耐久性要比尼龙线强很多，因为碳线的物理特性为非常低的延展性和高比重，可以让饵迅速到达所需要的水层，并且因延展性很低所以也就提供了良好的灵敏度。因碳线对光的折射率几乎为0，所以会降低鱼的敏感性，让鱼能放心的将饵食入口中。碳线适合搭配软饵钓组使用，比如：无铅钓组、WACKY、德州钓组，却不太适合搭配某一些特殊的硬饵或水面系的路亚。不过碳线也不是没有缺点，因为通常比较硬（特别是高磅数的碳线），如果作为主线使用要注意纺车轮上建议使用的主线不要超过10磅，水滴轮或鼓轮如有特殊需要最好也不要超过20磅（当然特殊情况下可以用到更高的磅数作为主线，并不是完全不可以），碳线也可以当做前导线来使用，因为碳线比较耐磨，可以搭配PE线，弥补PE不耐磨的缺点。</p>
-<p><img src="/img/20161013/钓线攻略.jpg" alt=""></p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[几种常用有效的线结介绍]]></title>
       <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%87%A0%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%9C%89%E6%95%88%E7%9A%84%E7%BA%BF%E7%BB%93%E4%BB%8B%E7%BB%8D/</url>
       <content type="html"><![CDATA[<blockquote>
@@ -2241,6 +2209,24 @@ make V=s
 <p>这是主线与线杯连接打结的，也是很简单的一种方式，无论双轴卷线器还是纺车轮都可以使用，具体方法可以看图所示。</p>
 <p><em>再附上3种线结：</em></p>
 <p><img src="/img/20161013/线结7.jpg" alt=""><br><img src="/img/20161013/线结8.jpg" alt=""><br><img src="/img/20161013/线结9.jpg" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[善用路亚软饵]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%96%84%E7%94%A8%E8%B7%AF%E4%BA%9A%E8%BD%AF%E9%A5%B5/</url>
+      <content type="html"><![CDATA[<p>在路亚世界里，软饵的搭配种类比较多功能性也不尽相同，但是它们的共同之处 就在于—引诱鱼饵上钩，无论是以动作逼真引诱还是以动作激怒鱼儿。 但是这些动作都需要人来赋予它，不然再好的路亚软饵也是枉然。</p>
+<p>说之前先声明，这是给各位刚刚玩的盆友们准备的，各位老鸟们还请海涵！</p>
+<a id="more"></a>
+<p><img src="/img/20161013/orka-shad-tail92.jpg" alt=""></p>
+<p>首先呢，就先 从模拟自然界中的动作讲一下吧，这个问题就在于钓友们手上的灵活多变操控了 ，一般比较常用也是比较有效的方式有三种：</p>
+<p><strong>1，跳</strong></p>
+<p><strong>2，拖</strong></p>
+<p><strong>3，停</strong></p>
+<p><em>第一种，跳，顾名思义就如同我们人跳舞一样，饵也需要在水下跳舞引诱鱼 的注意，让它们觉得这东西有点好奇，看着有些意思，进而进行试探 最后咬钩。 “跳”的方法就是手持竿子，将竿子用手腕的力量上下挑动，使饵在水下呈现出 上下跳跃的姿态 这种跳跃的幅度可大可小，不用拘泥于形式，可以夸张的大幅度 ，也可以用轻微的小幅度挑动来模拟一些落入水中的昆虫幼虫或其他小生物。</em></p>
+<p><em>第二种，拖，拖动饵在水下移动，让饵自然呈现一种在底层游动的状态，引诱鱼 前来试探，这种方法对付一些底层伏击型的鱼类比较有效果。也会对钓手们了解 水底的地形有帮助。操作方法 就是慢慢摇轮，让其软饵在水下慢慢游走。</em></p>
+<p><em>第三种，停，这个动作非常重要 有时候你一直在操控软饵时，鱼可能没有动作， 只会盯着看，往往就是在你停顿的瞬间，鱼会突然发动攻击。当然停顿的时间没 有固定的，需要大家自行体会根据不同的环境来随时调整。</em></p>
+<p>而将这三者结合起来：跳-拖-停 重复使用的时候，往往会对鱼造成极大的诱惑性 ，可以使中鱼率大大增加，特别是在鱼境况不好的压力钓场上，往往路亚软饵钓 组会发挥极大地作用，大家可以在操控软饵的时候想想一下软饵在水下的动作会 是怎样的，充分发挥自己的想象力，努力去改造软饵在水下的状态，最简单的方 法就是找一个透明的玻璃鱼缸灌满水将软虫钓组放入浴缸里进行调试，已达到你 想要的理想效果，所以软饵钓组各位一定要掌握一下，当你熟悉了路亚软饵钓组 的你肯定会爱上它的。</p>
 ]]></content>
     </entry>
     
@@ -2309,6 +2295,19 @@ make V=s
     </entry>
     
     <entry>
+      <title><![CDATA[常用路亚线的区别]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%B8%B8%E7%94%A8%E8%B7%AF%E4%BA%9A%E7%BA%BF%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      <content type="html"><![CDATA[<h2 id="尼龙线"><a href="#尼龙线" class="headerlink" title="尼龙线"></a>尼龙线</h2><p>台钓中使用最多的也是尼龙线。尼龙的化工原料为PA，和PE一样是石油的下游产品。与PE不同的是，尼龙线一般为单股线，这种线的特点刚好与PE线相反。尼龙线的优点是由于有一定的延展性，抛投和中鱼的时候不易断线，由于生产技术已经发展了近70年的历史，成本低，产量大，相比PE线要便宜很多。最后一点是尼龙表面圆滑，对线环的磨损可以降到最低。</p>
+<a id="more"></a>
+<p>延展性同样也是尼龙线的缺点，在某些鱼讯轻微的场合，尼龙线不能及时将中鱼信号传达给钓手，从而失去最佳的起杆机会。另外，同样拉力的情况下，尼龙线比PE的线径更粗，从而影响路亚的抛投距离（<em>当然这个问题并不一定完全适用，需要根据具体的情况来，不过在高磅数的尼龙线与高磅数PE线做对比的话，高磅数的PE占些优势，因其相同的高磅数的线，高磅数PE线径更细一些，也就可以更加节省线杯的空间容下更多的线，并且线径也更细利于高磅数线的抛投</em>）。</p>
+<p><img src="/img/20161013/fishing-line.jpg" alt=""></p>
+<h2 id="PE线"><a href="#PE线" class="headerlink" title="PE线"></a>PE线</h2><p>PE线是指用多股化纤编织后浸胶制成的钓线，俗称编织线(BRAIDED OR CORD LINE)，最早见的就是“大力马”。<br>这种钓线的生产方式是：将多条微细纤维(如：达克龙纤维、功夫龙纤维或大力马纤维或其它聚乙烯化合物的PE纤维…等)以机器来编织而成，所以这种钓线的线体呈现纤维规则交叉的纹路，只要你将线体取出审视一番就可以清楚的发现其线体结构上的特色。<br>这种线的优点是，相同拉力的的情况下线径比尼龙要细很多，同样我们使用12磅的尼龙和12 磅的PE，因为PE的线径更细，能够抛投的更远。在实际钓场中，风力是影响路亚抛投距离的重要因素，PE同样因为相同拉力下线径更细的特点，能够将风阻的影响减小。除此之外，PE几乎没有延展性，在中鱼的时候能够在第一时间将信号传达给钓手。还有就是PE线更加耐磨。<br>但正像所有事物都有其两面性一样，PE并不是没有任何缺点。PE第一个缺点是没有延展性。这个特性在能够将中鱼信号迅速传达给钓手的同时，也经常导致跑鱼或放枪。玩过台钓的朋友都知道，中鱼后钓竿上要保持一定的力量，鱼才不易脱钩，杆软不易断线跑鱼，但是起鱼慢；杆硬起鱼快，但是容易断线跑鱼。同样，你可以把线看作杆的延伸，鱼线有一定的延展性，就像钓竿比较软一样，能够保证在鱼左冲右突的时候始终保持一定的力量，而PE就像比较硬的杆，遛鱼的余地比较小从而导致脱钩或断线。另外现在有厂家为了使用更细的线径达到更强的拉力，在PE中掺加金属丝，虽然拉力得到了加强，但是线的延展性和柔软度进一步降低，同时还容易磨损导环。</p>
+<h2 id="碳线（氟碳线）"><a href="#碳线（氟碳线）" class="headerlink" title="碳线（氟碳线）"></a>碳线（氟碳线）</h2><p>碳线是由含有氟和碳成分的树脂抽丝加工而成，碳线的特性是高比重、切水快、光的折射率非常低几乎看不到，没有吸水性，抗紫外线和耐久性要比尼龙线强很多，因为碳线的物理特性为非常低的延展性和高比重，可以让饵迅速到达所需要的水层，并且因延展性很低所以也就提供了良好的灵敏度。因碳线对光的折射率几乎为0，所以会降低鱼的敏感性，让鱼能放心的将饵食入口中。碳线适合搭配软饵钓组使用，比如：无铅钓组、WACKY、德州钓组，却不太适合搭配某一些特殊的硬饵或水面系的路亚。不过碳线也不是没有缺点，因为通常比较硬（特别是高磅数的碳线），如果作为主线使用要注意纺车轮上建议使用的主线不要超过10磅，水滴轮或鼓轮如有特殊需要最好也不要超过20磅（当然特殊情况下可以用到更高的磅数作为主线，并不是完全不可以），碳线也可以当做前导线来使用，因为碳线比较耐磨，可以搭配PE线，弥补PE不耐磨的缺点。</p>
+<p><img src="/img/20161013/钓线攻略.jpg" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[路亚水滴轮的速比的选择]]></title>
       <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E8%B7%AF%E4%BA%9A%E6%B0%B4%E6%BB%B4%E8%BD%AE%E7%9A%84%E9%80%9F%E6%AF%94%E7%9A%84%E9%80%89%E6%8B%A9/</url>
       <content type="html"><![CDATA[<blockquote>
@@ -2352,29 +2351,6 @@ make V=s
 <blockquote>
 <embed src="http://player.youku.com/player.php/sid/XMTQ1Mzg4NjAwMA==/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
 </blockquote>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[高田路亚视频]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/10/2016-10-10-%E9%AB%98%E7%94%B0%E8%B7%AF%E4%BA%9A%E8%A7%86%E9%A2%91/</url>
-      <content type="html"><![CDATA[<p>路亚教学视频很多，但个人还是认为这个最详细，而且很专业、纯洁无商业气氛。<br>是新手学习路亚知识的典范视频，讲得非常细！</p>
-<a id="more"></a>
-<h1 id="路亚抛投基础-Casting"><a href="#路亚抛投基础-Casting" class="headerlink" title="路亚抛投基础-Casting-"></a>路亚抛投基础-Casting-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNTUxMTI0" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="倒钓钓组-Down-Shot-Rig"><a href="#倒钓钓组-Down-Shot-Rig" class="headerlink" title="倒钓钓组-Down Shot Rig-"></a>倒钓钓组-Down Shot Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNTAwNTA4" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="降落伞钓组-Parachute-Rig"><a href="#降落伞钓组-Parachute-Rig" class="headerlink" title="降落伞钓组-Parachute Rig-"></a>降落伞钓组-Parachute Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDkxNzg0" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="古怪钓组-Wacky-Rig"><a href="#古怪钓组-Wacky-Rig" class="headerlink" title="古怪钓组-Wacky Rig-"></a>古怪钓组-Wacky Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDY5NDY0" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="无铅钓组-No-Sinker-Rig"><a href="#无铅钓组-No-Sinker-Rig" class="headerlink" title="无铅钓组-No Sinker Rig-"></a>无铅钓组-No Sinker Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDQwNjcy" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="胡须佬-Rubber-Jig"><a href="#胡须佬-Rubber-Jig" class="headerlink" title="胡须佬-Rubber Jig-"></a>胡须佬-Rubber Jig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDIxMzM2" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="米诺-Minnow"><a href="#米诺-Minnow" class="headerlink" title="米诺-Minnow-"></a>米诺-Minnow-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDAzMDQ4" frameborder="0" 'allowfullscreen'=""></iframe>
-
-<h1 id="小胖子-Crank-Bait"><a href="#小胖子-Crank-Bait" class="headerlink" title="小胖子-Crank Bait-"></a>小胖子-Crank Bait-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzMjE5ODI0" frameborder="0" 'allowfullscreen'=""></iframe>
 ]]></content>
     </entry>
     
@@ -2425,6 +2401,29 @@ make V=s
 <p><img src="/img/20161010/EXSENCE DC.png" alt=""></p>
 <p>6.<strong><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.21.1fec70ba8afRYR&amp;id=563408219126&amp;ns=1&amp;abbucket=12#detail" target="_blank" rel="external">COMPLEX CI4+ C2500S F4 HG</a></strong> <em>禧玛诺COMPLEX CI4+ C2500S F4高速淡水海纺车轮</em></p>
 <p><img src="/img/20161010/C2500sHG.jpg" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[高田路亚视频]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/10/2016-10-10-%E9%AB%98%E7%94%B0%E8%B7%AF%E4%BA%9A%E8%A7%86%E9%A2%91/</url>
+      <content type="html"><![CDATA[<p>路亚教学视频很多，但个人还是认为这个最详细，而且很专业、纯洁无商业气氛。<br>是新手学习路亚知识的典范视频，讲得非常细！</p>
+<a id="more"></a>
+<h1 id="路亚抛投基础-Casting"><a href="#路亚抛投基础-Casting" class="headerlink" title="路亚抛投基础-Casting-"></a>路亚抛投基础-Casting-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNTUxMTI0" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="倒钓钓组-Down-Shot-Rig"><a href="#倒钓钓组-Down-Shot-Rig" class="headerlink" title="倒钓钓组-Down Shot Rig-"></a>倒钓钓组-Down Shot Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNTAwNTA4" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="降落伞钓组-Parachute-Rig"><a href="#降落伞钓组-Parachute-Rig" class="headerlink" title="降落伞钓组-Parachute Rig-"></a>降落伞钓组-Parachute Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDkxNzg0" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="古怪钓组-Wacky-Rig"><a href="#古怪钓组-Wacky-Rig" class="headerlink" title="古怪钓组-Wacky Rig-"></a>古怪钓组-Wacky Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDY5NDY0" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="无铅钓组-No-Sinker-Rig"><a href="#无铅钓组-No-Sinker-Rig" class="headerlink" title="无铅钓组-No Sinker Rig-"></a>无铅钓组-No Sinker Rig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDQwNjcy" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="胡须佬-Rubber-Jig"><a href="#胡须佬-Rubber-Jig" class="headerlink" title="胡须佬-Rubber Jig-"></a>胡须佬-Rubber Jig-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDIxMzM2" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="米诺-Minnow"><a href="#米诺-Minnow" class="headerlink" title="米诺-Minnow-"></a>米诺-Minnow-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDAzMDQ4" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="小胖子-Crank-Bait"><a href="#小胖子-Crank-Bait" class="headerlink" title="小胖子-Crank Bait-"></a>小胖子-Crank Bait-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzMjE5ODI0" frameborder="0" 'allowfullscreen'=""></iframe>
 ]]></content>
     </entry>
     
