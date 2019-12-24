@@ -376,6 +376,80 @@
 
 
   
+    <article id="post-2019-12-24-在Mac上制作Ubuntu启动U盘" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/12/22/2019-12-24-在Mac上制作Ubuntu启动U盘/" class="article-date">
+      <time datetime="2019-12-22T13:07:00.000Z" itemprop="datePublished">2019-12-22</time>
+</a>
+
+ 
+    <a href="/2019/12/22/2019-12-24-在Mac上制作Ubuntu启动U盘/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2019/12/22/2019-12-24-在Mac上制作Ubuntu启动U盘/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/22/2019-12-24-在Mac上制作Ubuntu启动U盘/">在Mac上制作Ubuntu启动U盘</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Mac的<code>diskutil</code>命令非常强大，可以格式化U盘，也可以直接制作系统安装启动盘。</p>
+<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>县列表看看你的U盘是哪个，千万别选错了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">diskutil list</div><div class="line">sudo diskutil eraseDisk FAT32 UBUNTU18 MBRFormat /dev/disk5</div></pre></td></tr></table></figure>
+<h2 id="卸载U盘"><a href="#卸载U盘" class="headerlink" title="卸载U盘"></a>卸载U盘</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil unmountDisk /dev/disk5</div></pre></td></tr></table></figure>
+<h2 id="刻录"><a href="#刻录" class="headerlink" title="刻录"></a>刻录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo dd <span class="keyword">if</span>=/Users/chen/Downloads/ubuntu-18.04.3-desktop-amd64.iso of=/dev/disk5 bs=1m</div></pre></td></tr></table></figure>
+<p>备选<br> <code>pv -petr ubuntu-18.04.3-desktop-amd64.iso | dd of=/dev/disk2 bs=1m</code></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2019-12-22-在Ubuntu-18-04-LTS中使用Katoolin安装Kali-Linux-Tools" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -432,80 +506,6 @@
         <p class="article-more-link">
           <a href="/2019/12/22/2019-12-22-在Ubuntu-18-04-LTS中使用Katoolin安装Kali-Linux-Tools/#more">阅读全文 >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2019-12-24-在Mac上制作Ubuntu启动U盘" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/12/22/2019-12-24-在Mac上制作Ubuntu启动U盘/" class="article-date">
-      <time datetime="2019-12-22T13:07:00.000Z" itemprop="datePublished">2019-12-22</time>
-</a>
-
- 
-    <a href="/2019/12/22/2019-12-24-在Mac上制作Ubuntu启动U盘/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2019/12/22/2019-12-24-在Mac上制作Ubuntu启动U盘/"></span>
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/22/2019-12-24-在Mac上制作Ubuntu启动U盘/">在Ubuntu 18.04 LTS中使用Katoolin安装Kali Linux Tools</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Mac的<code>diskutil</code>命令非常强大，可以格式化U盘，也可以直接制作系统安装启动盘。</p>
-<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>县列表看看你的U盘是哪个，千万别选错了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">diskutil list</div><div class="line">sudo diskutil eraseDisk FAT32 UBUNTU18 MBRFormat /dev/disk5</div></pre></td></tr></table></figure>
-<h2 id="卸载U盘"><a href="#卸载U盘" class="headerlink" title="卸载U盘"></a>卸载U盘</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil unmountDisk /dev/disk5</div></pre></td></tr></table></figure>
-<h2 id="刻录"><a href="#刻录" class="headerlink" title="刻录"></a>刻录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo dd <span class="keyword">if</span>=/Users/chen/Downloads/ubuntu-18.04.3-desktop-amd64.iso of=/dev/disk5 bs=1m</div></pre></td></tr></table></figure>
-<p>备选<br> <code>pv -petr ubuntu-18.04.3-desktop-amd64.iso | dd of=/dev/disk2 bs=1m</code></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kali/">Kali</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
-    </div>
-
       
       <div class="clearfix"></div>
     </div>

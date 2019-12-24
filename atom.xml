@@ -90,6 +90,33 @@
   </entry>
   
   <entry>
+    <title>在Mac上制作Ubuntu启动U盘</title>
+    <link href="http://cuiqingwei.github.io/2019/12/22/2019-12-24-%E5%9C%A8Mac%E4%B8%8A%E5%88%B6%E4%BD%9CUbuntu%E5%90%AF%E5%8A%A8U%E7%9B%98/"/>
+    <id>http://cuiqingwei.github.io/2019/12/22/2019-12-24-在Mac上制作Ubuntu启动U盘/</id>
+    <published>2019-12-22T13:07:00.000Z</published>
+    <updated>2019-12-24T14:21:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Mac的<code>diskutil</code>命令非常强大，可以格式化U盘，也可以直接制作系统安装启动盘。</p>
+<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>县列表看看你的U盘是哪个，千万别选错了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">diskutil list</div><div class="line">sudo diskutil eraseDisk FAT32 UBUNTU18 MBRFormat /dev/disk5</div></pre></td></tr></table></figure>
+<h2 id="卸载U盘"><a href="#卸载U盘" class="headerlink" title="卸载U盘"></a>卸载U盘</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil unmountDisk /dev/disk5</div></pre></td></tr></table></figure>
+<h2 id="刻录"><a href="#刻录" class="headerlink" title="刻录"></a>刻录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo dd <span class="keyword">if</span>=/Users/chen/Downloads/ubuntu-18.04.3-desktop-amd64.iso of=/dev/disk5 bs=1m</div></pre></td></tr></table></figure>
+<p>备选<br> <code>pv -petr ubuntu-18.04.3-desktop-amd64.iso | dd of=/dev/disk2 bs=1m</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Mac的&lt;code&gt;diskutil&lt;/code&gt;命令非常强大，可以格式化U盘，也可以直接制作系统安装启动盘。&lt;/p&gt;
+&lt;h2 id=&quot;格式化&quot;&gt;&lt;a href=&quot;#格式化&quot; class=&quot;headerlink&quot; title=&quot;格式化&quot;&gt;&lt;/a&gt;格式化&lt;/h2&gt;&lt;p&gt;县列表
+    
+    </summary>
+    
+    
+      <category term="ubuntu" scheme="http://cuiqingwei.github.io/tags/ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
     <title>在Ubuntu 18.04 LTS中使用Katoolin安装Kali Linux Tools</title>
     <link href="http://cuiqingwei.github.io/2019/12/22/2019-12-22-%E5%9C%A8Ubuntu-18-04-LTS%E4%B8%AD%E4%BD%BF%E7%94%A8Katoolin%E5%AE%89%E8%A3%85Kali-Linux-Tools/"/>
     <id>http://cuiqingwei.github.io/2019/12/22/2019-12-22-在Ubuntu-18-04-LTS中使用Katoolin安装Kali-Linux-Tools/</id>
@@ -156,35 +183,6 @@
     <summary type="html">
     
       &lt;p&gt;本文将引导您逐步在Ubuntu中使用Katoolin安装Kali Linux Tools。对于那些不知道的人，&lt;strong&gt;Katoolin&lt;/strong&gt;是一个Python脚本，可用于一次安装所有Kali Linux工具或手动一次安装。Kali Linux具有300多种渗透测试工具。除了安装所有工具，您还可以使用Katoolin在Linux框中仅安装您选择的选择性工具。如果您想在Ubuntu或任何其他基于DEB的系统上尝试使用Kali Linux工具，则应该尝试一下Katoolin。它将在您的Ubuntu系统中添加Kali Linux存储库，以便您可以一次安装所有渗透测试工具，也可以仅安装必要的工具。Katoolin是完全免费的开源软件，并已在基于Debian的系统上经过正式测试。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="ubuntu" scheme="http://cuiqingwei.github.io/tags/ubuntu/"/>
-    
-      <category term="Kali" scheme="http://cuiqingwei.github.io/tags/Kali/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在Ubuntu 18.04 LTS中使用Katoolin安装Kali Linux Tools</title>
-    <link href="http://cuiqingwei.github.io/2019/12/22/2019-12-24-%E5%9C%A8Mac%E4%B8%8A%E5%88%B6%E4%BD%9CUbuntu%E5%90%AF%E5%8A%A8U%E7%9B%98/"/>
-    <id>http://cuiqingwei.github.io/2019/12/22/2019-12-24-在Mac上制作Ubuntu启动U盘/</id>
-    <published>2019-12-22T13:07:00.000Z</published>
-    <updated>2019-12-24T10:59:34.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Mac的<code>diskutil</code>命令非常强大，可以格式化U盘，也可以直接制作系统安装启动盘。</p>
-<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>县列表看看你的U盘是哪个，千万别选错了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">diskutil list</div><div class="line">sudo diskutil eraseDisk FAT32 UBUNTU18 MBRFormat /dev/disk5</div></pre></td></tr></table></figure>
-<h2 id="卸载U盘"><a href="#卸载U盘" class="headerlink" title="卸载U盘"></a>卸载U盘</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil unmountDisk /dev/disk5</div></pre></td></tr></table></figure>
-<h2 id="刻录"><a href="#刻录" class="headerlink" title="刻录"></a>刻录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo dd <span class="keyword">if</span>=/Users/chen/Downloads/ubuntu-18.04.3-desktop-amd64.iso of=/dev/disk5 bs=1m</div></pre></td></tr></table></figure>
-<p>备选<br> <code>pv -petr ubuntu-18.04.3-desktop-amd64.iso | dd of=/dev/disk2 bs=1m</code></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Mac的&lt;code&gt;diskutil&lt;/code&gt;命令非常强大，可以格式化U盘，也可以直接制作系统安装启动盘。&lt;/p&gt;
-&lt;h2 id=&quot;格式化&quot;&gt;&lt;a href=&quot;#格式化&quot; class=&quot;headerlink&quot; title=&quot;格式化&quot;&gt;&lt;/a&gt;格式化&lt;/h2&gt;&lt;p&gt;县列表
     
     </summary>
     
@@ -1669,9 +1667,9 @@ make V=s
     </summary>
     
     
-      <category term="android" scheme="http://cuiqingwei.github.io/tags/android/"/>
-    
       <category term="电子书包" scheme="http://cuiqingwei.github.io/tags/%E7%94%B5%E5%AD%90%E4%B9%A6%E5%8C%85/"/>
+    
+      <category term="android" scheme="http://cuiqingwei.github.io/tags/android/"/>
     
   </entry>
   
