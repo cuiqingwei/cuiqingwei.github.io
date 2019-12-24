@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2019-12-24T10:57:18.000Z</updated>
+  <updated>2019-12-24T10:58:18.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>在Ubuntu 18.04 LTS中使用Katoolin安装Kali Linux Tools</title>
+    <title>使用GitHub Actions编译OpenWRT</title>
     <link href="http://cuiqingwei.github.io/2019/12/24/2019-12-24-%E4%BD%BF%E7%94%A8GitHub-Actions%E7%BC%96%E8%AF%91OpenWRT/"/>
     <id>http://cuiqingwei.github.io/2019/12/24/2019-12-24-使用GitHub-Actions编译OpenWRT/</id>
     <published>2019-12-24T04:07:00.000Z</published>
-    <updated>2019-12-24T10:57:18.000Z</updated>
+    <updated>2019-12-24T10:58:18.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="使用-GitHub-Actions-编译-OpenWrt"><a href="#使用-GitHub-Actions-编译-OpenWrt" class="headerlink" title="使用 GitHub Actions 编译 OpenWrt"></a>使用 GitHub Actions 编译 OpenWrt</h1><p><img src="../img/20191224/Actions.png" alt="《使用 GitHub Actions 编译 OpenWrt》"></p>
 <p><strong>Github Ac­tions</strong> 是 GitHub 推出的持续集成 (Con­tin­u­ous in­te­gra­tion，简称 <strong>CI</strong>) 服务，它提供了配置非常不错的虚拟服务器环境（E5 2vCPU/7G RAM），基于它可以进行构建、测试、打包、部署项目。这篇文章就是介绍如何使用P3TERX 项目（work­flow文件），进行云编译 OpenWrt固件。该方法免费，快速，无需消耗自己的计算机资源，每次编译都是全新环境。</p>
@@ -1676,39 +1676,6 @@ make V=s
   </entry>
   
   <entry>
-    <title>Proguard And DexGuard</title>
-    <link href="http://cuiqingwei.github.io/2018/04/24/2018-04-24-Proguard-And-DexGuard/"/>
-    <id>http://cuiqingwei.github.io/2018/04/24/2018-04-24-Proguard-And-DexGuard/</id>
-    <published>2018-04-24T04:12:08.000Z</published>
-    <updated>2018-04-24T09:14:31.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>一般情况下，我们混淆自己的安卓项目，会使用Proguard。</p>
-<p><a href="http://www.saikoa.com/proguard" target="_blank" rel="external">http://www.saikoa.com/proguard</a></p>
-<p><strong>Progurad</strong> 是免费的，而且已经集成到Android ADT中了，使用起来很方便。</p>
-<p>混淆工作，是为了保护我们的代码。但是，即使使用Pgoruard混淆了我们的apk文件，也可以使用apktool工具反编译出资源，能够看到Manifest文件，res资源等等。也可以使用dex2jar工具生成jar文件，进而使用jd工具反编译出Java代码片段。虽然，这些代码大部分都经过了混淆，已经很难阅读，但是还是可以读的。</p>
-<a id="more"></a>
-<p>更危险的是，Proguard只能保护代码，却不能保护我们的apk文件。任何人都可以使用apktool工具，反编译我们开发的apk文件，进而更改其中各种资源，或者更改部分代码，甚至是注入代码，然后再打包回apk，二次发布后，达到自己的目的。或者是加入了广告，或者是增加了恶意木马病毒，等等。</p>
-<p>还好，我们还有一种选择，DexGuard。</p>
-<p><a href="http://www.saikoa.com/dexguard" target="_blank" rel="external">http://www.saikoa.com/dexguard</a></p>
-<p><strong>DexGuard</strong> 是收费的，虽然挺贵的，但是对于一个公司来说，还是可以承受的。</p>
-<p>DexGuard是在Proguard基础上，加入了更多的保护措施。使用DexGuard混淆后，生成的apk文件，就无法正常使用apktool反编译了。尽管还是能够反编译出部分资源文件，但是由于反编译过程不完全，就无法再打包成apk了。这样就保护了我们的apk文件，不会被二次打包发布了。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;一般情况下，我们混淆自己的安卓项目，会使用Proguard。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.saikoa.com/proguard&quot;&gt;http://www.saikoa.com/proguard&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Progurad&lt;/strong&gt; 是免费的，而且已经集成到Android ADT中了，使用起来很方便。&lt;/p&gt;
-&lt;p&gt;混淆工作，是为了保护我们的代码。但是，即使使用Pgoruard混淆了我们的apk文件，也可以使用apktool工具反编译出资源，能够看到Manifest文件，res资源等等。也可以使用dex2jar工具生成jar文件，进而使用jd工具反编译出Java代码片段。虽然，这些代码大部分都经过了混淆，已经很难阅读，但是还是可以读的。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="android" scheme="http://cuiqingwei.github.io/tags/android/"/>
-    
-  </entry>
-  
-  <entry>
     <title>OSX安装nginx和rtmp模块</title>
     <link href="http://cuiqingwei.github.io/2018/04/24/2018-04-24-OSX%E5%AE%89%E8%A3%85nginx%E5%92%8Crtmp%E6%A8%A1%E5%9D%97/"/>
     <id>http://cuiqingwei.github.io/2018/04/24/2018-04-24-OSX安装nginx和rtmp模块/</id>
@@ -1761,6 +1728,39 @@ make V=s
       <category term="rtmp" scheme="http://cuiqingwei.github.io/tags/rtmp/"/>
     
       <category term="nginx" scheme="http://cuiqingwei.github.io/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Proguard And DexGuard</title>
+    <link href="http://cuiqingwei.github.io/2018/04/24/2018-04-24-Proguard-And-DexGuard/"/>
+    <id>http://cuiqingwei.github.io/2018/04/24/2018-04-24-Proguard-And-DexGuard/</id>
+    <published>2018-04-24T04:12:08.000Z</published>
+    <updated>2018-04-24T09:14:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>一般情况下，我们混淆自己的安卓项目，会使用Proguard。</p>
+<p><a href="http://www.saikoa.com/proguard" target="_blank" rel="external">http://www.saikoa.com/proguard</a></p>
+<p><strong>Progurad</strong> 是免费的，而且已经集成到Android ADT中了，使用起来很方便。</p>
+<p>混淆工作，是为了保护我们的代码。但是，即使使用Pgoruard混淆了我们的apk文件，也可以使用apktool工具反编译出资源，能够看到Manifest文件，res资源等等。也可以使用dex2jar工具生成jar文件，进而使用jd工具反编译出Java代码片段。虽然，这些代码大部分都经过了混淆，已经很难阅读，但是还是可以读的。</p>
+<a id="more"></a>
+<p>更危险的是，Proguard只能保护代码，却不能保护我们的apk文件。任何人都可以使用apktool工具，反编译我们开发的apk文件，进而更改其中各种资源，或者更改部分代码，甚至是注入代码，然后再打包回apk，二次发布后，达到自己的目的。或者是加入了广告，或者是增加了恶意木马病毒，等等。</p>
+<p>还好，我们还有一种选择，DexGuard。</p>
+<p><a href="http://www.saikoa.com/dexguard" target="_blank" rel="external">http://www.saikoa.com/dexguard</a></p>
+<p><strong>DexGuard</strong> 是收费的，虽然挺贵的，但是对于一个公司来说，还是可以承受的。</p>
+<p>DexGuard是在Proguard基础上，加入了更多的保护措施。使用DexGuard混淆后，生成的apk文件，就无法正常使用apktool反编译了。尽管还是能够反编译出部分资源文件，但是由于反编译过程不完全，就无法再打包成apk了。这样就保护了我们的apk文件，不会被二次打包发布了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一般情况下，我们混淆自己的安卓项目，会使用Proguard。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.saikoa.com/proguard&quot;&gt;http://www.saikoa.com/proguard&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Progurad&lt;/strong&gt; 是免费的，而且已经集成到Android ADT中了，使用起来很方便。&lt;/p&gt;
+&lt;p&gt;混淆工作，是为了保护我们的代码。但是，即使使用Pgoruard混淆了我们的apk文件，也可以使用apktool工具反编译出资源，能够看到Manifest文件，res资源等等。也可以使用dex2jar工具生成jar文件，进而使用jd工具反编译出Java代码片段。虽然，这些代码大部分都经过了混淆，已经很难阅读，但是还是可以读的。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="android" scheme="http://cuiqingwei.github.io/tags/android/"/>
     
   </entry>
   
