@@ -340,57 +340,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="使用-GitHub-Actions-编译-OpenWrt"><a href="#使用-GitHub-Actions-编译-OpenWrt" class="headerlink" title="使用 GitHub Actions 编译 OpenWrt"></a>使用 GitHub Actions 编译 OpenWrt</h1><p><img src="../img/20191224/Actions.png" alt="《使用 GitHub Actions 编译 OpenWrt》"></p>
+              <h1 id="使用-GitHub-Actions-编译-OpenWrt"><a href="#使用-GitHub-Actions-编译-OpenWrt" class="headerlink" title="使用 GitHub Actions 编译 OpenWrt"></a>使用 GitHub Actions 编译 OpenWrt</h1><p><img src="../img/20191224/Actions.png" alt="《使用 GitHub Actions 编译 OpenWrt》"></p>
 <p><strong>Github Ac­tions</strong> 是 GitHub 推出的持续集成 (Con­tin­u­ous in­te­gra­tion，简称 <strong>CI</strong>) 服务，它提供了配置非常不错的虚拟服务器环境（E5 2vCPU/7G RAM），基于它可以进行构建、测试、打包、部署项目。这篇文章就是介绍如何使用P3TERX 项目（work­flow文件），进行云编译 OpenWrt固件。该方法免费，快速，无需消耗自己的计算机资源，每次编译都是全新环境。</p>
-<p>项目地址：</p>
-<p><a href="https://github.com/P3TERX/Actions-OpenWrt" target="_blank" rel="external">https://github.com/P3TERX/Actions-OpenWrt</a> （P3TERX 项目）</p>
-<p><a href="https://github.com/cuiqingwei/Actions-OpenWrt" target="_blank" rel="external">https://github.com/cuiqingwei/Actions-OpenWrt</a> （Fork项目）</p>
-<h2 id="一、拷贝项目"><a href="#一、拷贝项目" class="headerlink" title="一、拷贝项目"></a>一、拷贝项目</h2><p>登录自己的 GitHub，<strong>Fork</strong>以上任一项目到自己GitHub，有其它需求可自行修改 work­flow 文件，方法后面有说明。</p>
-<h2 id="二、修改-work­flow-文件，配置触发编译"><a href="#二、修改-work­flow-文件，配置触发编译" class="headerlink" title="二、修改 work­flow 文件，配置触发编译"></a>二、修改 work­flow 文件，配置触发编译</h2><p>默认有两种方法触发编译：</p>
-<ul>
-<li><p>通过在 <code>releases</code> 页面发布一个 release ；</p>
-</li>
-<li><p>把定生成好的<code>.config</code>文件push 到项目根目录下，这两种方法触发编译。</p>
-</li>
-</ul>
-<p>另个还可以修改work­flow文件使其增加定时<code>自动编译</code>、点击<code>Star</code> 开始编译以及通过SSH 连接到 Actions生成.config编译配置，或者其他定制化操作。</p>
-<p>1、定时自动编译</p>
-<p>编辑 work­flow 文件（.github/workflows/build-openwrt.yml）取消注释下面两行。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#  schedule:</div><div class="line">#    - cron: 0 8 * * 5</div></pre></td></tr></table></figure>
-<p>例子是北京时间每周五下午 4 点钟开始编译。如需自定义则按照 cron 格式修改即可，Ac­tions 虚拟环境中的时区是 UTC ，注意按照自己所在地时区进行转换。</p>
-<p>2、点击 Star 开始编译</p>
-<p>编辑 work­flow 文件（.github/workflows/build-openwrt.yml）取消注释下面两行，后续点击自己仓库上的 <code>star</code>即可开始编译。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#  watch:</div><div class="line">#    types: [started]</div></pre></td></tr></table></figure>
-<p>注意：编译完成后，不要忘记注释回去。以防，其他人点击<code>star</code>触发编译造成资源浪费。</p>
-<h2 id="三、定制化编译"><a href="#三、定制化编译" class="headerlink" title="三、定制化编译"></a>三、定制化编译</h2><p>1、DIY 脚本</p>
-<p>仓库内有一个 <code>diy.sh</code> 文件，你可以把对源码修改的指令写到这个文件中，比如修改默认 IP、主机名、主题、添加 / 删除软件包等操作。但不仅限于这些操作，发挥你强大的想象力，可做出更强大的功能。</p>
-<p>如：修改默认 IP为<code>192.168.10.1</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sed -i &apos;s/192.168.1.1/192.168.10.1/g&apos; package/base-files/files/bin/config_generate</div></pre></td></tr></table></figure>
-<p>删除原主题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm -rf package/lean/luci-theme-argon</div></pre></td></tr></table></figure>
-<p>添加新的主题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/sypopo/luci-theme-atmaterial.git package/lean/luci-theme-atmaterial</div></pre></td></tr></table></figure>
-<p>取消bootstrap为默认主题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sed -i &apos;/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d&apos; feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap</div></pre></td></tr></table></figure>
-<p>删除默认密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sed -i &quot;/CYXluq4wUazHjmCDBCqXF/d&quot; package/lean/default-settings/files/zzz-default-settings</div></pre></td></tr></table></figure>
-<p>生成.config文件时记得选中相应的软件或主题。如果添加的软件包与 Open­Wrt 中已有的软件包同名的情况，则需要把源码中的同名软件包删除，否则会优先编译 Open­Wrt 中的软件包。</p>
-<p>2、SSH 连接到 Actions生成编译配置</p>
-<p>通过 SSH 连接到 GitHub Ac­tions 虚拟服务器环境，可直接进行 make menuconfig 操作生成编译配置，或者任意的定制化操作。</p>
-<p>编辑 workflow 文件（.github/workflows/build-openwrt.yml），取消注释下面两行开启这个功能。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#    - name: SSH connection to Actions</div><div class="line">#      uses: p3terx/debugger-action@master</div></pre></td></tr></table></figure>
-<p>在触发工作流程后，在 Actions 页面等待执行到SSH connection to Actions步骤，会出现类似下面的信息。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">To connect to this session copy-n-paste the following into a terminal or browser:</div><div class="line"></div><div class="line">ssh gnhyDLyDDueFaTDe223KyBbun@nyc1.tmate.io</div><div class="line"></div><div class="line">https://tmate.io/t/Y26QeagDtsPXp2mT6me5cnMRd</div></pre></td></tr></table></figure>
-<p>复制 SSH 连接命令粘贴到终端内执行，然后输入以下命令进行编译配置。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd openwrt &amp;&amp; make menuconfig</div></pre></td></tr></table></figure>
-<p>完成后按快捷键<code>Ctrl+D</code>或输入<code>exit</code>命令退出，后续编译工作将自动进行。</p>
-<p>3、Custom files（自定义文件）</p>
-<p>俗称 “files 大法”实际就是把现在的配置以文件的形式固化到新固件里。这样做的好处就是升级不需要保留配置，或者恢复出厂设置，缺省值就是你自己设置好的配置。</p>
-<p>如固化你的network设置： 首先提取路由固件下的\etc\config\network 然后在项目根目录下创建files目录并push 到到 \files\etc\config\network ，最后编译出来的固件就是你自己配置好的network。</p>
-<p>定制化编译的方法可以搭配使用，自己需要的功能一般也是固定的，就可以在 make menuconfig 选好后执行 ./scripts/diffconfig.sh &gt; seed.config 复制一下这个seed.config的文本内容到项目根目录的.config文件中，这样就不用每次都SSH 连接到 Actions生成编译配置，真正一键编译。另外如果，使用“files 大法”仓库最好设为私有，否则你的配置信息，如宽带账号等会公开在网上。</p>
-<h2 id="四、下载编译好的固件·"><a href="#四、下载编译好的固件·" class="headerlink" title="四、下载编译好的固件·"></a>四、下载编译好的固件·</h2><p>编译时间<em>1-2</em>小时，编译完成点击 <code>Actions</code> 页面右上角的<code>Artifacts</code>按钮下载固件。</p>
-<p><img src="../img/20191224/githubaction.png" alt="githubaction"></p>
-
+          
       
     </div>
     
@@ -403,6 +355,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kali/">Kali</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2019/12/24/2019-12-24-使用GitHub-Actions编译OpenWRT/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
