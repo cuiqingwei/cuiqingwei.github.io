@@ -6,7 +6,7 @@
     <entry>
       <title><![CDATA[使用GitHub Actions编译OpenWRT]]></title>
       <url>http://cuiqingwei.github.io/2019/12/24/2019-12-24-%E4%BD%BF%E7%94%A8GitHub-Actions%E7%BC%96%E8%AF%91OpenWRT/</url>
-      <content type="html"><![CDATA[<h1 id="使用-GitHub-Actions-编译-OpenWrt"><a href="#使用-GitHub-Actions-编译-OpenWrt" class="headerlink" title="使用 GitHub Actions 编译 OpenWrt"></a>使用 GitHub Actions 编译 OpenWrt</h1><p><img src="../img/20191224/Actions.png" alt="《使用 GitHub Actions 编译 OpenWrt》"></p>
+      <content type="html"><![CDATA[<p><img src="../img/20191224/Actions.png" alt="《使用 GitHub Actions 编译 OpenWrt》"></p>
 <p><strong>Github Ac­tions</strong> 是 GitHub 推出的持续集成 (Con­tin­u­ous in­te­gra­tion，简称 <strong>CI</strong>) 服务，它提供了配置非常不错的虚拟服务器环境（E5 2vCPU/7G RAM），基于它可以进行构建、测试、打包、部署项目。这篇文章就是介绍如何使用P3TERX 项目（work­flow文件），进行云编译 OpenWrt固件。该方法免费，快速，无需消耗自己的计算机资源，每次编译都是全新环境。</p>
 <a id="more"></a>
 <p>项目地址：</p>
@@ -127,8 +127,8 @@
       <content type="html"><![CDATA[<p>Mac的<code>diskutil</code>命令非常强大，可以格式化U盘，也可以直接制作系统安装启动盘。</p>
 <h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>县列表看看你的U盘是哪个，千万别选错了。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">diskutil list</div><div class="line">sudo diskutil eraseDisk FAT32 UBUNTU18 MBRFormat /dev/disk5</div></pre></td></tr></table></figure>
-<h2 id="卸载U盘"><a href="#卸载U盘" class="headerlink" title="卸载U盘"></a>卸载U盘</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil unmountDisk /dev/disk5</div></pre></td></tr></table></figure>
-<h2 id="刻录"><a href="#刻录" class="headerlink" title="刻录"></a>刻录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo dd if=/Users/chen/Downloads/ubuntu-18.04.3-desktop-amd64.iso of=/dev/disk5 bs=1m</div></pre></td></tr></table></figure>
+<h2 id="卸载U盘"><a href="#卸载U盘" class="headerlink" title="卸载U盘"></a>卸载U盘</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil unmountDisk /dev/disk5</div></pre></td></tr></table></figure>
+<h2 id="刻录"><a href="#刻录" class="headerlink" title="刻录"></a>刻录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo dd <span class="keyword">if</span>=/Users/chen/Downloads/ubuntu-18.04.3-desktop-amd64.iso of=/dev/disk5 bs=1m</div></pre></td></tr></table></figure>
 <p>备选<br> <code>pv -petr ubuntu-18.04.3-desktop-amd64.iso | dd of=/dev/disk2 bs=1m</code></p>
 ]]></content>
     </entry>
@@ -2963,6 +2963,24 @@ make V=s
     </entry>
     
     <entry>
+      <title><![CDATA[善用路亚软饵]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%96%84%E7%94%A8%E8%B7%AF%E4%BA%9A%E8%BD%AF%E9%A5%B5/</url>
+      <content type="html"><![CDATA[<p>在路亚世界里，软饵的搭配种类比较多功能性也不尽相同，但是它们的共同之处 就在于—引诱鱼饵上钩，无论是以动作逼真引诱还是以动作激怒鱼儿。 但是这些动作都需要人来赋予它，不然再好的路亚软饵也是枉然。</p>
+<p>说之前先声明，这是给各位刚刚玩的盆友们准备的，各位老鸟们还请海涵！</p>
+<a id="more"></a>
+<p><img src="/img/20161013/orka-shad-tail92.jpg" alt=""></p>
+<p>首先呢，就先 从模拟自然界中的动作讲一下吧，这个问题就在于钓友们手上的灵活多变操控了 ，一般比较常用也是比较有效的方式有三种：</p>
+<p><strong>1，跳</strong></p>
+<p><strong>2，拖</strong></p>
+<p><strong>3，停</strong></p>
+<p><em>第一种，跳，顾名思义就如同我们人跳舞一样，饵也需要在水下跳舞引诱鱼 的注意，让它们觉得这东西有点好奇，看着有些意思，进而进行试探 最后咬钩。 “跳”的方法就是手持竿子，将竿子用手腕的力量上下挑动，使饵在水下呈现出 上下跳跃的姿态 这种跳跃的幅度可大可小，不用拘泥于形式，可以夸张的大幅度 ，也可以用轻微的小幅度挑动来模拟一些落入水中的昆虫幼虫或其他小生物。</em></p>
+<p><em>第二种，拖，拖动饵在水下移动，让饵自然呈现一种在底层游动的状态，引诱鱼 前来试探，这种方法对付一些底层伏击型的鱼类比较有效果。也会对钓手们了解 水底的地形有帮助。操作方法 就是慢慢摇轮，让其软饵在水下慢慢游走。</em></p>
+<p><em>第三种，停，这个动作非常重要 有时候你一直在操控软饵时，鱼可能没有动作， 只会盯着看，往往就是在你停顿的瞬间，鱼会突然发动攻击。当然停顿的时间没 有固定的，需要大家自行体会根据不同的环境来随时调整。</em></p>
+<p>而将这三者结合起来：跳-拖-停 重复使用的时候，往往会对鱼造成极大的诱惑性 ，可以使中鱼率大大增加，特别是在鱼境况不好的压力钓场上，往往路亚软饵钓 组会发挥极大地作用，大家可以在操控软饵的时候想想一下软饵在水下的动作会 是怎样的，充分发挥自己的想象力，努力去改造软饵在水下的状态，最简单的方 法就是找一个透明的玻璃鱼缸灌满水将软虫钓组放入浴缸里进行调试，已达到你 想要的理想效果，所以软饵钓组各位一定要掌握一下，当你熟悉了路亚软饵钓组 的你肯定会爱上它的。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[如何选择一根适合自己的BASS竿]]></title>
       <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E4%B8%80%E6%A0%B9%E9%80%82%E5%90%88%E8%87%AA%E5%B7%B1%E7%9A%84BASS%E7%AB%BF/</url>
       <content type="html"><![CDATA[<blockquote>
@@ -3023,24 +3041,6 @@ make V=s
 <p>根据不同场地的需求，可以选择自己所设定的软饵在预想的区域内尽可能自然的呈现。同时也可以配合鱼探进行垂直的定点位的呈现去钓获鲈鱼，而我在使用这一钓组的时候大多数时间会选择配合鱼探做垂直呈现的作钓。大多数时候我们都会选择使用倒吊钓组来进行结构作钓，相对的都是开阔水域，此时我会选择使用4-6LB的氟碳线。</p>
 <h2 id="Finesse-Jig钓组钓竿"><a href="#Finesse-Jig钓组钓竿" class="headerlink" title="Finesse Jig钓组钓竿"></a>Finesse Jig钓组钓竿</h2><p>我会选择使用Extra fast调性的Bait finesse钓竿配合微物水滴轮来进行作钓，它可以搭配使用Finesse jig，小型Tube，小型德州等钓组。<br>此装备的优点是可以进行精确落点的抛投，很多时候一个精准的抛投是获得咬口的重要因素，而且更小的饵确实是可以获得更多的咬口，Bait finesse钓法便如此应运而生。</p>
 <h2 id="Neko钓组钓竿"><a href="#Neko钓组钓竿" class="headerlink" title="Neko钓组钓竿"></a>Neko钓组钓竿</h2><p>我会选择一根Extra fast的钓竿和2000S的纺车轮，配合4LB氟碳线来作钓。除了Neko钓组外，我还可以用它来钓1g多的JIG和Super finesse的倒吊（2~3寸的饵配合1-2g的倒吊铅）应对极限条件下的深水作钓。<br>Neko钓组是为数较少的一种针对深水作钓的最佳选择，可它以在水温低于7摄氏度的情况下依然能够捕获一定数量的咬口，可以非常慢速的在水下呈现软饵的自然状态。其垂直落底的特性也是我对于结构作钓时的不二选择。针对国内众多压力钓场都有着不俗的表现。</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[善用路亚软饵]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%96%84%E7%94%A8%E8%B7%AF%E4%BA%9A%E8%BD%AF%E9%A5%B5/</url>
-      <content type="html"><![CDATA[<p>在路亚世界里，软饵的搭配种类比较多功能性也不尽相同，但是它们的共同之处 就在于—引诱鱼饵上钩，无论是以动作逼真引诱还是以动作激怒鱼儿。 但是这些动作都需要人来赋予它，不然再好的路亚软饵也是枉然。</p>
-<p>说之前先声明，这是给各位刚刚玩的盆友们准备的，各位老鸟们还请海涵！</p>
-<a id="more"></a>
-<p><img src="/img/20161013/orka-shad-tail92.jpg" alt=""></p>
-<p>首先呢，就先 从模拟自然界中的动作讲一下吧，这个问题就在于钓友们手上的灵活多变操控了 ，一般比较常用也是比较有效的方式有三种：</p>
-<p><strong>1，跳</strong></p>
-<p><strong>2，拖</strong></p>
-<p><strong>3，停</strong></p>
-<p><em>第一种，跳，顾名思义就如同我们人跳舞一样，饵也需要在水下跳舞引诱鱼 的注意，让它们觉得这东西有点好奇，看着有些意思，进而进行试探 最后咬钩。 “跳”的方法就是手持竿子，将竿子用手腕的力量上下挑动，使饵在水下呈现出 上下跳跃的姿态 这种跳跃的幅度可大可小，不用拘泥于形式，可以夸张的大幅度 ，也可以用轻微的小幅度挑动来模拟一些落入水中的昆虫幼虫或其他小生物。</em></p>
-<p><em>第二种，拖，拖动饵在水下移动，让饵自然呈现一种在底层游动的状态，引诱鱼 前来试探，这种方法对付一些底层伏击型的鱼类比较有效果。也会对钓手们了解 水底的地形有帮助。操作方法 就是慢慢摇轮，让其软饵在水下慢慢游走。</em></p>
-<p><em>第三种，停，这个动作非常重要 有时候你一直在操控软饵时，鱼可能没有动作， 只会盯着看，往往就是在你停顿的瞬间，鱼会突然发动攻击。当然停顿的时间没 有固定的，需要大家自行体会根据不同的环境来随时调整。</em></p>
-<p>而将这三者结合起来：跳-拖-停 重复使用的时候，往往会对鱼造成极大的诱惑性 ，可以使中鱼率大大增加，特别是在鱼境况不好的压力钓场上，往往路亚软饵钓 组会发挥极大地作用，大家可以在操控软饵的时候想想一下软饵在水下的动作会 是怎样的，充分发挥自己的想象力，努力去改造软饵在水下的状态，最简单的方 法就是找一个透明的玻璃鱼缸灌满水将软虫钓组放入浴缸里进行调试，已达到你 想要的理想效果，所以软饵钓组各位一定要掌握一下，当你熟悉了路亚软饵钓组 的你肯定会爱上它的。</p>
 ]]></content>
     </entry>
     
@@ -4543,6 +4543,39 @@ make V=s
     </entry>
     
     <entry>
+      <title><![CDATA[MacOS]]></title>
+      <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-MacOS/</url>
+      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
+<h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p><strong>工作</strong>：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br><a href="http://www.tuicool.com/articles/yeyIfuu" target="_blank" rel="external">http://www.tuicool.com/articles/yeyIfuu</a><br><strong>系统</strong>：QQ、CleanMyDrive 3 等</p>
+<a id="more"></a>
+<h3 id="2-dmg安装"><a href="#2-dmg安装" class="headerlink" title="2. dmg安装"></a>2. dmg安装</h3><p>Chrome、Parallels Desktop、RDC、QQInput、RTX、cornerstone、Kaleidoscope<br>Sublime Text、Atom …</p>
+<p><strong>dmg下载</strong><br><a href="http://xclient.info/" target="_blank" rel="external">http://xclient.info/</a><br><a href="http://www.sdifen.com/" target="_blank" rel="external">http://www.sdifen.com/</a><br><a href="http://soft.macx.cn/" target="_blank" rel="external">http://soft.macx.cn/</a></p>
+<h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)</span>"</span></div><div class="line">[http://brew.sh/](http://brew.sh/)</div></pre></td></tr></table></figure>
+<p><a href="http://blog.csdn.net/aaawqqq/article/details/44088141" target="_blank" rel="external">http://blog.csdn.net/aaawqqq/article/details/44088141</a><br><a href="http://www.xitongzhijia.net/xtjc/20141204/31879.html" target="_blank" rel="external">http://www.xitongzhijia.net/xtjc/20141204/31879.html</a></p>
+<h3 id="4-MacPorts"><a href="#4-MacPorts" class="headerlink" title="4. MacPorts"></a>4. MacPorts</h3><p><a href="https://www.macports.org/install.php" target="_blank" rel="external">https://www.macports.org/install.php</a><br><a href="http://guide.macports.org/#installing.macports" target="_blank" rel="external">http://guide.macports.org/#installing.macports</a></p>
+<h3 id="5-oh-my-zsh"><a href="#5-oh-my-zsh" class="headerlink" title="5. oh my zsh"></a>5. oh my zsh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</div></pre></td></tr></table></figure>
+<p><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="external">http://leeiio.me/bash-to-zsh-for-mac/</a></p>
+<h3 id="6-iTerm"><a href="#6-iTerm" class="headerlink" title="6. iTerm"></a>6. iTerm</h3><p>iTerm2 + oh my zsh +agnoster 打造最强Mac终端<br><a href="http://www.siguoya.name/pc/home/article/256" target="_blank" rel="external">http://www.siguoya.name/pc/home/article/256</a><br>iterm2有什么酷功能？<br><a href="https://www.zhihu.com/question/27447370" target="_blank" rel="external">https://www.zhihu.com/question/27447370</a></p>
+<h3 id="7-wget"><a href="#7-wget" class="headerlink" title="7. wget"></a>7. wget</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo brew install wget</div></pre></td></tr></table></figure>
+<h3 id="8-pbcopy"><a href="#8-pbcopy" class="headerlink" title="8. pbcopy"></a>8. pbcopy</h3><blockquote>
+<p>使用 <strong>pbcopy</strong> 命令,对应有个 <strong>pbpaste</strong> 命令。</p>
+</blockquote>
+<p>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">'Hello World!'</span> | pbcopy</div></pre></td></tr></table></figure></p>
+<p><em>将字符串Hello World放入剪贴板</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat myFile.txt | pbcopy</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pbpaste &gt; file.txt</div></pre></td></tr></table></figure>
+<h3 id="9-mac-say-唱歌"><a href="#9-mac-say-唱歌" class="headerlink" title="9. mac say 唱歌"></a>9. mac say 唱歌</h3><blockquote>
+<p>spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。<br>  在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。<br>  开始听歌了。</p>
+</blockquote>
+<p><a href="https://www.macx.cn/thread-2048013-1-1.html?mod=viewthread&amp;tid=2048013&amp;extra=page%253D1&amp;page=1" target="_blank" rel="external">https://www.macx.cn/thread-2048013-1-1.html?mod=viewthread&amp;tid=2048013&amp;extra=page%253D1&amp;page=1</a></p>
+<h3 id="10-其他"><a href="#10-其他" class="headerlink" title="10. 其他"></a>10. 其他</h3><blockquote>
+<p>打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!</p>
+</blockquote>
+<h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="external">https://checkcoverage.apple.com/cn/zh/</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Ubuntu]]></title>
       <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-Ubuntu/</url>
       <content type="html"><![CDATA[<h3 id="1-常用指令"><a href="#1-常用指令" class="headerlink" title="1.常用指令"></a>1.常用指令</h3><pre><code>版本查看：
@@ -4594,39 +4627,6 @@ hosts
      https://github.com/racaljk/hosts
 </code></pre><p><strong>Cannot Set LC_ALL to default locale: No such file or directory</strong><br><a href="http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/" target="_blank" rel="external">http://linoxide.com/linux-how-to/fix-error-locale-cannot-set-lc_all-to-default-locale-no-such-file-or-directory/</a></p>
 <p>sEx只是调用相关程序，本身并无压缩、解压功能，请注意！<br>sEx请到： <a href="http://sourceforge.net/projects/sex下载！" target="_blank" rel="external">http://sourceforge.net/projects/sex下载！</a><br>解压后请将sEx拷贝到/usr/bin目录（其他由$PATH环境变量指定的目录也可以）：<br>[root@www2 tmp]# cp sEx /usr/bin/</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[MacOS]]></title>
-      <url>http://cuiqingwei.github.io/2015/01/13/2015-01-13-MacOS/</url>
-      <content type="html"><![CDATA[<h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html" target="_blank" rel="external">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
-<h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p><strong>工作</strong>：Evernote、Alfred、Go2Shell、The Unarchiver、CheatSheet、Xcode、SourceTree(Git/Hg)<br><a href="http://www.tuicool.com/articles/yeyIfuu" target="_blank" rel="external">http://www.tuicool.com/articles/yeyIfuu</a><br><strong>系统</strong>：QQ、CleanMyDrive 3 等</p>
-<a id="more"></a>
-<h3 id="2-dmg安装"><a href="#2-dmg安装" class="headerlink" title="2. dmg安装"></a>2. dmg安装</h3><p>Chrome、Parallels Desktop、RDC、QQInput、RTX、cornerstone、Kaleidoscope<br>Sublime Text、Atom …</p>
-<p><strong>dmg下载</strong><br><a href="http://xclient.info/" target="_blank" rel="external">http://xclient.info/</a><br><a href="http://www.sdifen.com/" target="_blank" rel="external">http://www.sdifen.com/</a><br><a href="http://soft.macx.cn/" target="_blank" rel="external">http://soft.macx.cn/</a></p>
-<h3 id="3-brew"><a href="#3-brew" class="headerlink" title="3. brew"></a>3. brew</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ruby <span class="_">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)</span>"</span></div><div class="line">[http://brew.sh/](http://brew.sh/)</div></pre></td></tr></table></figure>
-<p><a href="http://blog.csdn.net/aaawqqq/article/details/44088141" target="_blank" rel="external">http://blog.csdn.net/aaawqqq/article/details/44088141</a><br><a href="http://www.xitongzhijia.net/xtjc/20141204/31879.html" target="_blank" rel="external">http://www.xitongzhijia.net/xtjc/20141204/31879.html</a></p>
-<h3 id="4-MacPorts"><a href="#4-MacPorts" class="headerlink" title="4. MacPorts"></a>4. MacPorts</h3><p><a href="https://www.macports.org/install.php" target="_blank" rel="external">https://www.macports.org/install.php</a><br><a href="http://guide.macports.org/#installing.macports" target="_blank" rel="external">http://guide.macports.org/#installing.macports</a></p>
-<h3 id="5-oh-my-zsh"><a href="#5-oh-my-zsh" class="headerlink" title="5. oh my zsh"></a>5. oh my zsh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</div></pre></td></tr></table></figure>
-<p><a href="http://leeiio.me/bash-to-zsh-for-mac/" target="_blank" rel="external">http://leeiio.me/bash-to-zsh-for-mac/</a></p>
-<h3 id="6-iTerm"><a href="#6-iTerm" class="headerlink" title="6. iTerm"></a>6. iTerm</h3><p>iTerm2 + oh my zsh +agnoster 打造最强Mac终端<br><a href="http://www.siguoya.name/pc/home/article/256" target="_blank" rel="external">http://www.siguoya.name/pc/home/article/256</a><br>iterm2有什么酷功能？<br><a href="https://www.zhihu.com/question/27447370" target="_blank" rel="external">https://www.zhihu.com/question/27447370</a></p>
-<h3 id="7-wget"><a href="#7-wget" class="headerlink" title="7. wget"></a>7. wget</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo brew install wget</div></pre></td></tr></table></figure>
-<h3 id="8-pbcopy"><a href="#8-pbcopy" class="headerlink" title="8. pbcopy"></a>8. pbcopy</h3><blockquote>
-<p>使用 <strong>pbcopy</strong> 命令,对应有个 <strong>pbpaste</strong> 命令。</p>
-</blockquote>
-<p>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">'Hello World!'</span> | pbcopy</div></pre></td></tr></table></figure></p>
-<p><em>将字符串Hello World放入剪贴板</em></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat myFile.txt | pbcopy</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pbpaste &gt; file.txt</div></pre></td></tr></table></figure>
-<h3 id="9-mac-say-唱歌"><a href="#9-mac-say-唱歌" class="headerlink" title="9. mac say 唱歌"></a>9. mac say 唱歌</h3><blockquote>
-<p>spotlight搜索框中输入”终端”或者”terminal”, 找到并打开”终端”这个程序。<br>  在下面引用框里单击三下，cmd+c复制歌词，cmd+v粘贴到终端窗口，回车。<br>  开始听歌了。</p>
-</blockquote>
-<p><a href="https://www.macx.cn/thread-2048013-1-1.html?mod=viewthread&amp;tid=2048013&amp;extra=page%253D1&amp;page=1" target="_blank" rel="external">https://www.macx.cn/thread-2048013-1-1.html?mod=viewthread&amp;tid=2048013&amp;extra=page%253D1&amp;page=1</a></p>
-<h3 id="10-其他"><a href="#10-其他" class="headerlink" title="10. 其他"></a>10. 其他</h3><blockquote>
-<p>打开 “终端” 输入： chflags nohidden ~/library/ 即可显示被隐藏的 Library（资源库）!</p>
-</blockquote>
-<h2 id="保-修服-务和支-持期-限（序-列-号）查-询-工-具"><a href="#保-修服-务和支-持期-限（序-列-号）查-询-工-具" class="headerlink" title="保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具"></a>保﻿修服﻿务和支﻿持期﻿限（序﻿列﻿号）查﻿询﻿工﻿具</h2><p><a href="https://checkcoverage.apple.com/cn/zh/" target="_blank" rel="external">https://checkcoverage.apple.com/cn/zh/</a></p>
 ]]></content>
     </entry>
     

@@ -340,7 +340,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h1 id="使用-GitHub-Actions-编译-OpenWrt"><a href="#使用-GitHub-Actions-编译-OpenWrt" class="headerlink" title="使用 GitHub Actions 编译 OpenWrt"></a>使用 GitHub Actions 编译 OpenWrt</h1><p><img src="../img/20191224/Actions.png" alt="《使用 GitHub Actions 编译 OpenWrt》"></p>
+              <p><img src="../img/20191224/Actions.png" alt="《使用 GitHub Actions 编译 OpenWrt》"></p>
 <p><strong>Github Ac­tions</strong> 是 GitHub 推出的持续集成 (Con­tin­u­ous in­te­gra­tion，简称 <strong>CI</strong>) 服务，它提供了配置非常不错的虚拟服务器环境（E5 2vCPU/7G RAM），基于它可以进行构建、测试、打包、部署项目。这篇文章就是介绍如何使用P3TERX 项目（work­flow文件），进行云编译 OpenWrt固件。该方法免费，快速，无需消耗自己的计算机资源，每次编译都是全新环境。</p>
           
       
@@ -352,7 +352,7 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kali/">Kali</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
     </div>
 
       
@@ -490,8 +490,8 @@
         <p>Mac的<code>diskutil</code>命令非常强大，可以格式化U盘，也可以直接制作系统安装启动盘。</p>
 <h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>县列表看看你的U盘是哪个，千万别选错了。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">diskutil list</div><div class="line">sudo diskutil eraseDisk FAT32 UBUNTU18 MBRFormat /dev/disk5</div></pre></td></tr></table></figure>
-<h2 id="卸载U盘"><a href="#卸载U盘" class="headerlink" title="卸载U盘"></a>卸载U盘</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil unmountDisk /dev/disk5</div></pre></td></tr></table></figure>
-<h2 id="刻录"><a href="#刻录" class="headerlink" title="刻录"></a>刻录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo dd if=/Users/chen/Downloads/ubuntu-18.04.3-desktop-amd64.iso of=/dev/disk5 bs=1m</div></pre></td></tr></table></figure>
+<h2 id="卸载U盘"><a href="#卸载U盘" class="headerlink" title="卸载U盘"></a>卸载U盘</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil unmountDisk /dev/disk5</div></pre></td></tr></table></figure>
+<h2 id="刻录"><a href="#刻录" class="headerlink" title="刻录"></a>刻录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo dd <span class="keyword">if</span>=/Users/chen/Downloads/ubuntu-18.04.3-desktop-amd64.iso of=/dev/disk5 bs=1m</div></pre></td></tr></table></figure>
 <p>备选<br> <code>pv -petr ubuntu-18.04.3-desktop-amd64.iso | dd of=/dev/disk2 bs=1m</code></p>
 
       

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2019-12-24T10:58:18.000Z</updated>
+  <updated>2019-12-24T11:00:39.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://cuiqingwei.github.io/2019/12/24/2019-12-24-%E4%BD%BF%E7%94%A8GitHub-Actions%E7%BC%96%E8%AF%91OpenWRT/"/>
     <id>http://cuiqingwei.github.io/2019/12/24/2019-12-24-使用GitHub-Actions编译OpenWRT/</id>
     <published>2019-12-24T04:07:00.000Z</published>
-    <updated>2019-12-24T10:58:18.000Z</updated>
+    <updated>2019-12-24T11:00:39.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="使用-GitHub-Actions-编译-OpenWrt"><a href="#使用-GitHub-Actions-编译-OpenWrt" class="headerlink" title="使用 GitHub Actions 编译 OpenWrt"></a>使用 GitHub Actions 编译 OpenWrt</h1><p><img src="../img/20191224/Actions.png" alt="《使用 GitHub Actions 编译 OpenWrt》"></p>
+    <content type="html"><![CDATA[<p><img src="../img/20191224/Actions.png" alt="《使用 GitHub Actions 编译 OpenWrt》"></p>
 <p><strong>Github Ac­tions</strong> 是 GitHub 推出的持续集成 (Con­tin­u­ous in­te­gra­tion，简称 <strong>CI</strong>) 服务，它提供了配置非常不错的虚拟服务器环境（E5 2vCPU/7G RAM），基于它可以进行构建、测试、打包、部署项目。这篇文章就是介绍如何使用P3TERX 项目（work­flow文件），进行云编译 OpenWrt固件。该方法免费，快速，无需消耗自己的计算机资源，每次编译都是全新环境。</p>
 <a id="more"></a>
 <p>项目地址：</p>
@@ -77,7 +77,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;使用-GitHub-Actions-编译-OpenWrt&quot;&gt;&lt;a href=&quot;#使用-GitHub-Actions-编译-OpenWrt&quot; class=&quot;headerlink&quot; title=&quot;使用 GitHub Actions 编译 OpenWrt&quot;&gt;&lt;/a&gt;使用 GitHub Actions 编译 OpenWrt&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;../img/20191224/Actions.png&quot; alt=&quot;《使用 GitHub Actions 编译 OpenWrt》&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;../img/20191224/Actions.png&quot; alt=&quot;《使用 GitHub Actions 编译 OpenWrt》&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Github Ac­tions&lt;/strong&gt; 是 GitHub 推出的持续集成 (Con­tin­u­ous in­te­gra­tion，简称 &lt;strong&gt;CI&lt;/strong&gt;) 服务，它提供了配置非常不错的虚拟服务器环境（E5 2vCPU/7G RAM），基于它可以进行构建、测试、打包、部署项目。这篇文章就是介绍如何使用P3TERX 项目（work­flow文件），进行云编译 OpenWrt固件。该方法免费，快速，无需消耗自己的计算机资源，每次编译都是全新环境。&lt;/p&gt;
     
     </summary>
@@ -85,7 +85,7 @@
     
       <category term="ubuntu" scheme="http://cuiqingwei.github.io/tags/ubuntu/"/>
     
-      <category term="Kali" scheme="http://cuiqingwei.github.io/tags/Kali/"/>
+      <category term="GitHub" scheme="http://cuiqingwei.github.io/tags/GitHub/"/>
     
   </entry>
   
@@ -171,13 +171,13 @@
     <link href="http://cuiqingwei.github.io/2019/12/22/2019-12-24-%E5%9C%A8Mac%E4%B8%8A%E5%88%B6%E4%BD%9CUbuntu%E5%90%AF%E5%8A%A8U%E7%9B%98/"/>
     <id>http://cuiqingwei.github.io/2019/12/22/2019-12-24-在Mac上制作Ubuntu启动U盘/</id>
     <published>2019-12-22T13:07:00.000Z</published>
-    <updated>2019-12-24T07:59:52.000Z</updated>
+    <updated>2019-12-24T10:59:34.000Z</updated>
     
     <content type="html"><![CDATA[<p>Mac的<code>diskutil</code>命令非常强大，可以格式化U盘，也可以直接制作系统安装启动盘。</p>
 <h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>县列表看看你的U盘是哪个，千万别选错了。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">diskutil list</div><div class="line">sudo diskutil eraseDisk FAT32 UBUNTU18 MBRFormat /dev/disk5</div></pre></td></tr></table></figure>
-<h2 id="卸载U盘"><a href="#卸载U盘" class="headerlink" title="卸载U盘"></a>卸载U盘</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil unmountDisk /dev/disk5</div></pre></td></tr></table></figure>
-<h2 id="刻录"><a href="#刻录" class="headerlink" title="刻录"></a>刻录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo dd if=/Users/chen/Downloads/ubuntu-18.04.3-desktop-amd64.iso of=/dev/disk5 bs=1m</div></pre></td></tr></table></figure>
+<h2 id="卸载U盘"><a href="#卸载U盘" class="headerlink" title="卸载U盘"></a>卸载U盘</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil unmountDisk /dev/disk5</div></pre></td></tr></table></figure>
+<h2 id="刻录"><a href="#刻录" class="headerlink" title="刻录"></a>刻录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo dd <span class="keyword">if</span>=/Users/chen/Downloads/ubuntu-18.04.3-desktop-amd64.iso of=/dev/disk5 bs=1m</div></pre></td></tr></table></figure>
 <p>备选<br> <code>pv -petr ubuntu-18.04.3-desktop-amd64.iso | dd of=/dev/disk2 bs=1m</code></p>
 ]]></content>
     
