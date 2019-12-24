@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2019-12-22T13:32:04.000Z</updated>
+  <updated>2019-12-24T10:54:25.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -14,6 +14,78 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在Ubuntu 18.04 LTS中使用Katoolin安装Kali Linux Tools</title>
+    <link href="http://cuiqingwei.github.io/2019/12/24/2019-12-24-%E4%BD%BF%E7%94%A8GitHub-Actions%E7%BC%96%E8%AF%91OpenWRT/"/>
+    <id>http://cuiqingwei.github.io/2019/12/24/2019-12-24-使用GitHub-Actions编译OpenWRT/</id>
+    <published>2019-12-24T04:07:00.000Z</published>
+    <updated>2019-12-24T10:54:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="使用-GitHub-Actions-编译-OpenWrt"><a href="#使用-GitHub-Actions-编译-OpenWrt" class="headerlink" title="使用 GitHub Actions 编译 OpenWrt"></a>使用 GitHub Actions 编译 OpenWrt</h1><p><img src="https://img.lswifi.com/wp-content/uploads/2019/12/Actions.jpg" alt="《使用 GitHub Actions 编译 OpenWrt》"></p>
+<p><strong>Github Ac­tions</strong> 是 GitHub 推出的持续集成 (Con­tin­u­ous in­te­gra­tion，简称 <strong>CI</strong>) 服务，它提供了配置非常不错的虚拟服务器环境（E5 2vCPU/7G RAM），基于它可以进行构建、测试、打包、部署项目。这篇文章就是介绍如何使用P3TERX 项目（work­flow文件），进行云编译 OpenWrt固件。该方法免费，快速，无需消耗自己的计算机资源，每次编译都是全新环境。</p>
+<p>项目地址：</p>
+<p><a href="https://github.com/P3TERX/Actions-OpenWrt" target="_blank" rel="external">https://github.com/P3TERX/Actions-OpenWrt</a> （P3TERX 项目）</p>
+<p><a href="https://github.com/cuiqingwei/Actions-OpenWrt" target="_blank" rel="external">https://github.com/cuiqingwei/Actions-OpenWrt</a> （Fork项目）</p>
+<h2 id="一、拷贝项目"><a href="#一、拷贝项目" class="headerlink" title="一、拷贝项目"></a>一、拷贝项目</h2><p>登录自己的 GitHub，<strong>Fork</strong>以上任一项目到自己GitHub，有其它需求可自行修改 work­flow 文件，方法后面有说明。</p>
+<h2 id="二、修改-work­flow-文件，配置触发编译"><a href="#二、修改-work­flow-文件，配置触发编译" class="headerlink" title="二、修改 work­flow 文件，配置触发编译"></a>二、修改 work­flow 文件，配置触发编译</h2><p>默认有两种方法触发编译：</p>
+<ul>
+<li><p>通过在 <code>releases</code> 页面发布一个 release ；</p>
+</li>
+<li><p>把定生成好的<code>.config</code>文件push 到项目根目录下，这两种方法触发编译。</p>
+</li>
+</ul>
+<p>另个还可以修改work­flow文件使其增加定时<code>自动编译</code>、点击<code>Star</code> 开始编译以及通过SSH 连接到 Actions生成.config编译配置，或者其他定制化操作。</p>
+<p>1、定时自动编译</p>
+<p>编辑 work­flow 文件（.github/workflows/build-openwrt.yml）取消注释下面两行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#  schedule:</div><div class="line">#    - cron: 0 8 * * 5</div></pre></td></tr></table></figure>
+<p>例子是北京时间每周五下午 4 点钟开始编译。如需自定义则按照 cron 格式修改即可，Ac­tions 虚拟环境中的时区是 UTC ，注意按照自己所在地时区进行转换。</p>
+<p>2、点击 Star 开始编译</p>
+<p>编辑 work­flow 文件（.github/workflows/build-openwrt.yml）取消注释下面两行，后续点击自己仓库上的 <code>star</code>即可开始编译。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#  watch:</div><div class="line">#    types: [started]</div></pre></td></tr></table></figure>
+<p>注意：编译完成后，不要忘记注释回去。以防，其他人点击<code>star</code>触发编译造成资源浪费。</p>
+<h2 id="三、定制化编译"><a href="#三、定制化编译" class="headerlink" title="三、定制化编译"></a>三、定制化编译</h2><p>1、DIY 脚本</p>
+<p>仓库内有一个 <code>diy.sh</code> 文件，你可以把对源码修改的指令写到这个文件中，比如修改默认 IP、主机名、主题、添加 / 删除软件包等操作。但不仅限于这些操作，发挥你强大的想象力，可做出更强大的功能。</p>
+<p>如：修改默认 IP为<code>192.168.10.1</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sed -i &apos;s/192.168.1.1/192.168.10.1/g&apos; package/base-files/files/bin/config_generate</div></pre></td></tr></table></figure>
+<p>删除原主题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm -rf package/lean/luci-theme-argon</div></pre></td></tr></table></figure>
+<p>添加新的主题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/sypopo/luci-theme-atmaterial.git package/lean/luci-theme-atmaterial</div></pre></td></tr></table></figure>
+<p>取消bootstrap为默认主题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sed -i &apos;/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d&apos; feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap</div></pre></td></tr></table></figure>
+<p>删除默认密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sed -i &quot;/CYXluq4wUazHjmCDBCqXF/d&quot; package/lean/default-settings/files/zzz-default-settings</div></pre></td></tr></table></figure>
+<p>生成.config文件时记得选中相应的软件或主题。如果添加的软件包与 Open­Wrt 中已有的软件包同名的情况，则需要把源码中的同名软件包删除，否则会优先编译 Open­Wrt 中的软件包。</p>
+<p>2、SSH 连接到 Actions生成编译配置</p>
+<p>通过 SSH 连接到 GitHub Ac­tions 虚拟服务器环境，可直接进行 make menuconfig 操作生成编译配置，或者任意的定制化操作。</p>
+<p>编辑 workflow 文件（.github/workflows/build-openwrt.yml），取消注释下面两行开启这个功能。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#    - name: SSH connection to Actions</div><div class="line">#      uses: p3terx/debugger-action@master</div></pre></td></tr></table></figure>
+<p>在触发工作流程后，在 Actions 页面等待执行到SSH connection to Actions步骤，会出现类似下面的信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">To connect to this session copy-n-paste the following into a terminal or browser:</div><div class="line"></div><div class="line">ssh gnhyDLyDDueFaTDe223KyBbun@nyc1.tmate.io</div><div class="line"></div><div class="line">https://tmate.io/t/Y26QeagDtsPXp2mT6me5cnMRd</div></pre></td></tr></table></figure>
+<p>复制 SSH 连接命令粘贴到终端内执行，然后输入以下命令进行编译配置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd openwrt &amp;&amp; make menuconfig</div></pre></td></tr></table></figure>
+<p>完成后按快捷键<code>Ctrl+D</code>或输入<code>exit</code>命令退出，后续编译工作将自动进行。</p>
+<p>3、Custom files（自定义文件）</p>
+<p>俗称 “files 大法”实际就是把现在的配置以文件的形式固化到新固件里。这样做的好处就是升级不需要保留配置，或者恢复出厂设置，缺省值就是你自己设置好的配置。</p>
+<p>如固化你的network设置： 首先提取路由固件下的\etc\config\network 然后在项目根目录下创建files目录并push 到到 \files\etc\config\network ，最后编译出来的固件就是你自己配置好的network。</p>
+<p>定制化编译的方法可以搭配使用，自己需要的功能一般也是固定的，就可以在 make menuconfig 选好后执行 ./scripts/diffconfig.sh &gt; seed.config 复制一下这个seed.config的文本内容到项目根目录的.config文件中，这样就不用每次都SSH 连接到 Actions生成编译配置，真正一键编译。另外如果，使用“files 大法”仓库最好设为私有，否则你的配置信息，如宽带账号等会公开在网上。</p>
+<h2 id="四、下载编译好的固件·"><a href="#四、下载编译好的固件·" class="headerlink" title="四、下载编译好的固件·"></a>四、下载编译好的固件·</h2><p>编译时间<em>1-2</em>小时，编译完成点击 <code>Actions</code> 页面右上角的<code>Artifacts</code>按钮下载固件。</p>
+<p><img src="../img/20191224/githubaction.png" alt="githubaction"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;使用-GitHub-Actions-编译-OpenWrt&quot;&gt;&lt;a href=&quot;#使用-GitHub-Actions-编译-OpenWrt&quot; class=&quot;headerlink&quot; title=&quot;使用 GitHub Actions 编译 OpenWrt&quot;&gt;&lt;/a&gt;使用
+    
+    </summary>
+    
+    
+      <category term="ubuntu" scheme="http://cuiqingwei.github.io/tags/ubuntu/"/>
+    
+      <category term="Kali" scheme="http://cuiqingwei.github.io/tags/Kali/"/>
+    
+  </entry>
   
   <entry>
     <title>在Ubuntu 18.04 LTS中使用Katoolin安装Kali Linux Tools</title>
@@ -82,6 +154,35 @@
     <summary type="html">
     
       &lt;p&gt;本文将引导您逐步在Ubuntu中使用Katoolin安装Kali Linux Tools。对于那些不知道的人，&lt;strong&gt;Katoolin&lt;/strong&gt;是一个Python脚本，可用于一次安装所有Kali Linux工具或手动一次安装。Kali Linux具有300多种渗透测试工具。除了安装所有工具，您还可以使用Katoolin在Linux框中仅安装您选择的选择性工具。如果您想在Ubuntu或任何其他基于DEB的系统上尝试使用Kali Linux工具，则应该尝试一下Katoolin。它将在您的Ubuntu系统中添加Kali Linux存储库，以便您可以一次安装所有渗透测试工具，也可以仅安装必要的工具。Katoolin是完全免费的开源软件，并已在基于Debian的系统上经过正式测试。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="ubuntu" scheme="http://cuiqingwei.github.io/tags/ubuntu/"/>
+    
+      <category term="Kali" scheme="http://cuiqingwei.github.io/tags/Kali/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Ubuntu 18.04 LTS中使用Katoolin安装Kali Linux Tools</title>
+    <link href="http://cuiqingwei.github.io/2019/12/22/2019-12-24-%E5%9C%A8Mac%E4%B8%8A%E5%88%B6%E4%BD%9CUbuntu%E5%90%AF%E5%8A%A8U%E7%9B%98/"/>
+    <id>http://cuiqingwei.github.io/2019/12/22/2019-12-24-在Mac上制作Ubuntu启动U盘/</id>
+    <published>2019-12-22T13:07:00.000Z</published>
+    <updated>2019-12-24T07:59:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Mac的<code>diskutil</code>命令非常强大，可以格式化U盘，也可以直接制作系统安装启动盘。</p>
+<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>县列表看看你的U盘是哪个，千万别选错了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">diskutil list</div><div class="line">sudo diskutil eraseDisk FAT32 UBUNTU18 MBRFormat /dev/disk5</div></pre></td></tr></table></figure>
+<h2 id="卸载U盘"><a href="#卸载U盘" class="headerlink" title="卸载U盘"></a>卸载U盘</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil unmountDisk /dev/disk5</div></pre></td></tr></table></figure>
+<h2 id="刻录"><a href="#刻录" class="headerlink" title="刻录"></a>刻录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo dd if=/Users/chen/Downloads/ubuntu-18.04.3-desktop-amd64.iso of=/dev/disk5 bs=1m</div></pre></td></tr></table></figure>
+<p>备选<br> <code>pv -petr ubuntu-18.04.3-desktop-amd64.iso | dd of=/dev/disk2 bs=1m</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Mac的&lt;code&gt;diskutil&lt;/code&gt;命令非常强大，可以格式化U盘，也可以直接制作系统安装启动盘。&lt;/p&gt;
+&lt;h2 id=&quot;格式化&quot;&gt;&lt;a href=&quot;#格式化&quot; class=&quot;headerlink&quot; title=&quot;格式化&quot;&gt;&lt;/a&gt;格式化&lt;/h2&gt;&lt;p&gt;县列表
     
     </summary>
     
@@ -596,6 +697,654 @@
   </entry>
   
   <entry>
+    <title>Telegram好玩实用的群组</title>
+    <link href="http://cuiqingwei.github.io/2019/09/21/2019-09-21-Telegram%E5%A5%BD%E7%8E%A9%E5%AE%9E%E7%94%A8%E7%9A%84%E7%BE%A4%E7%BB%84/"/>
+    <id>http://cuiqingwei.github.io/2019/09/21/2019-09-21-Telegram好玩实用的群组/</id>
+    <published>2019-09-21T01:12:08.000Z</published>
+    <updated>2019-12-24T01:23:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>推荐</strong></p>
+<p>印象笔记 科技 NEWS:<a href="https://t.me/YinxiangBiji_News" target="_blank" rel="external">https://t.me/YinxiangBiji_News</a></p>
+<p>印象笔记 Evernote 社群:<a href="https://t.me/YinxiangBiji" target="_blank" rel="external">https://t.me/YinxiangBiji</a></p>
+<p>Telegram 中文圈:<a href="https://t.me/tgzhcn" target="_blank" rel="external">https://t.me/tgzhcn</a></p>
+<p>RSS 交流群:<a href="https://t.me/joinchat/Ag98F0evTbZwY8HB7oH4fA" target="_blank" rel="external">https://t.me/joinchat/Ag98F0evTbZwY8HB7oH4fA</a></p>
+<p>Notion 用户群:<a href="https://t.me/joinchat/Ag98F0DdcZr1X1xS6lJsyA" target="_blank" rel="external">https://t.me/joinchat/Ag98F0DdcZr1X1xS6lJsyA</a></p>
+<p>幕布用户群:<a href="https://t.me/joinchat/Ag98F01tRQ2RIk_icHhiyA" target="_blank" rel="external">https://t.me/joinchat/Ag98F01tRQ2RIk_icHhiyA</a></p>
+<p>为知笔记用户群:<a href="https://t.me/joinchat/Ag98F1MLJji5WC5OpjAcHQ" target="_blank" rel="external">https://t.me/joinchat/Ag98F1MLJji5WC5OpjAcHQ</a></p>
+<p>有道云笔记用户群:<a href="https://t.me/joinchat/Ag98F1C2ip5g0Bac_KCJ2A" target="_blank" rel="external">https://t.me/joinchat/Ag98F1C2ip5g0Bac_KCJ2A</a></p>
+<p>Todoist 用户群:<a href="https://t.me/joinchat/Ag98F1DuGqE_dIiNkeM2uA" target="_blank" rel="external">https://t.me/joinchat/Ag98F1DuGqE_dIiNkeM2uA</a></p>
+<p>Simplenote 用户群:<a href="https://t.me/joinchat/Ag98F0f7fjEKqZKVHNW0aA" target="_blank" rel="external">https://t.me/joinchat/Ag98F0f7fjEKqZKVHNW0aA</a></p>
+<p>MarginNote 用户群:<a href="https://t.me/joinchat/Ag98F0ZLDrJZOSBWXAEiow" target="_blank" rel="external">https://t.me/joinchat/Ag98F0ZLDrJZOSBWXAEiow</a></p>
+<p>iMazing 用户群:<a href="https://t.me/joinchat/Ag98F07KJmIlmwSCfTOKxQ" target="_blank" rel="external">https://t.me/joinchat/Ag98F07KJmIlmwSCfTOKxQ</a></p>
+<p>Typora 用户群:<a href="https://t.me/joinchat/Ag98FxBSO7eJ9mMwxxUIPw" target="_blank" rel="external">https://t.me/joinchat/Ag98FxBSO7eJ9mMwxxUIPw</a></p>
+<a id="more"></a>
+<p><strong>软件</strong></p>
+<p>落格输入法:<a href="https://t.me/joinchat/DGZalT6pMAHNNg8JyfPLXw" target="_blank" rel="external">https://t.me/joinchat/DGZalT6pMAHNNg8JyfPLXw</a></p>
+<p>Microsoft users:<a href="https://t.me/Microsofthelp" target="_blank" rel="external">https://t.me/Microsofthelp</a></p>
+<p>捷径 Shortcuts:<a href="https://t.me/SiriShortcuts" target="_blank" rel="external">https://t.me/SiriShortcuts</a></p>
+<p>捷径社区:<a href="https://t.me/shortcuts_cn" target="_blank" rel="external">https://t.me/shortcuts_cn</a></p>
+<p>Snipaste:<a href="https://t.me/joinchat/BGyWwD9ZNqE3pLbhXc-VgQ" target="_blank" rel="external">https://t.me/joinchat/BGyWwD9ZNqE3pLbhXc-VgQ</a></p>
+<p>Snipaste Discuss:<a href="https://t.me/joinchat/BGyWwEDqrqiwizDA6gt16g" target="_blank" rel="external">https://t.me/joinchat/BGyWwEDqrqiwizDA6gt16g</a></p>
+<p>Price Tag:<a href="https://t.me/pricetagapp" target="_blank" rel="external">https://t.me/pricetagapp</a></p>
+<p>版本控:<a href="https://t.me/appscon" target="_blank" rel="external">https://t.me/appscon</a></p>
+<p>Chrome:<a href="https://t.me/ChromeCN" target="_blank" rel="external">https://t.me/ChromeCN</a></p>
+<p>MWeb 及相关讨论:<a href="https://t.me/mwebapp" target="_blank" rel="external">https://t.me/mwebapp</a></p>
+<p>最美记账应用 MOZE:<a href="https://t.me/mozeapp" target="_blank" rel="external">https://t.me/mozeapp</a></p>
+<p>岁寒输入法交流:<a href="https://t.me/SuiHanIME" target="_blank" rel="external">https://t.me/SuiHanIME</a></p>
+<p>HyperApp:<a href="https://t.me/hyperapp" target="_blank" rel="external">https://t.me/hyperapp</a></p>
+<p>Plus Messenger Support:<a href="https://t.me/plusmsgrchat" target="_blank" rel="external">https://t.me/plusmsgrchat</a></p>
+<p>Plus Messenger 中文討論區:<a href="https://t.me/plusfgc" target="_blank" rel="external">https://t.me/plusfgc</a></p>
+<p>Docker:<a href="https://t.me/dockertutorial" target="_blank" rel="external">https://t.me/dockertutorial</a></p>
+<p>Pin:<a href="https://t.me/PinTG" target="_blank" rel="external">https://t.me/PinTG</a></p>
+<p>奇点:<a href="https://t.me/jidian" target="_blank" rel="external">https://t.me/jidian</a></p>
+<p>Thor:<a href="https://t.me/thorshu" target="_blank" rel="external">https://t.me/thorshu</a></p>
+<p>iTools:<a href="https://t.me/toolinbox" target="_blank" rel="external">https://t.me/toolinbox</a></p>
+<p>X.cat:<a href="https://t.me/PcatApp" target="_blank" rel="external">https://t.me/PcatApp</a></p>
+<p>Drafts:<a href="https://t.me/drafts4" target="_blank" rel="external">https://t.me/drafts4</a></p>
+<p>Aria2 中文交流群:<a href="https://t.me/Aria2_CN" target="_blank" rel="external">https://t.me/Aria2_CN</a></p>
+<p>Lucis（优雅的第三方 Tumblr 客户端）:<a href="https://t.me/LucisApp" target="_blank" rel="external">https://t.me/LucisApp</a></p>
+<p>LyricsX:<a href="https://t.me/LyricsXTestFlight" target="_blank" rel="external">https://t.me/LyricsXTestFlight</a></p>
+<p>PureWriter’s Friends:<a href="https://t.me/purewriter/" target="_blank" rel="external">https://t.me/purewriter/</a></p>
+<p>码农群英会:<a href="https://t.me/devmanman" target="_blank" rel="external">https://t.me/devmanman</a></p>
+<p>EOS:<a href="https://t.me/EOSproject" target="_blank" rel="external">https://t.me/EOSproject</a></p>
+<p>Sifter:<a href="https://t.me/sifterapp" target="_blank" rel="external">https://t.me/sifterapp</a></p>
+<p>IINA 中文:<a href="https://t.me/IINAUsersZH" target="_blank" rel="external">https://t.me/IINAUsersZH</a></p>
+<p>IINA:<a href="https://t.me/IINAUsers" target="_blank" rel="external">https://t.me/IINAUsers</a></p>
+<p>RSSHub:<a href="https://t.me/rsshub" target="_blank" rel="external">https://t.me/rsshub</a></p>
+<p>PPHub 官方群:<a href="https://t.me/joinchat/Jn89QxI2MWt9hgTLQQW2Gg" target="_blank" rel="external">https://t.me/joinchat/Jn89QxI2MWt9hgTLQQW2Gg</a></p>
+<p>Anki 中文讨论群:<a href="https://t.me/ankiweb" target="_blank" rel="external">https://t.me/ankiweb</a></p>
+<p>Cuto 壁纸:<a href="https://t.me/joinchat/BC6PtD89sEGgHKR28OtQVA" target="_blank" rel="external">https://t.me/joinchat/BC6PtD89sEGgHKR28OtQVA</a></p>
+<p>UpperSoft-讨论组:<a href="https://t.me/UpperSoftDiscuss" target="_blank" rel="external">https://t.me/UpperSoftDiscuss</a></p>
+<p>Mac玩儿法茶馆:<a href="https://t.me/waerfa" target="_blank" rel="external">https://t.me/waerfa</a></p>
+<p>软件技术资源共享:<a href="https://t.me/SharedResourcesplus" target="_blank" rel="external">https://t.me/SharedResourcesplus</a></p>
+<p>TelePlus 官方討論組:<a href="https://t.me/TelePlus_Group" target="_blank" rel="external">https://t.me/TelePlus_Group</a></p>
+<p>MK播放器:<a href="https://t.me/MKPlayerApp" target="_blank" rel="external">https://t.me/MKPlayerApp</a></p>
+<p>畅邮（Cymail）电子邮箱客户端:<a href="https://t.me/cyemail" target="_blank" rel="external">https://t.me/cyemail</a></p>
+<p>记账应用讨论:<a href="https://t.me/accountingapps" target="_blank" rel="external">https://t.me/accountingapps</a></p>
+<p>Mixin Network (XIN):<a href="https://t.me/MixinCommunity" target="_blank" rel="external">https://t.me/MixinCommunity</a></p>
+<p>Unigram Insiders:<a href="https://t.me/joinchat/AAAAAD851oqVwhp9oy9WbQ" target="_blank" rel="external">https://t.me/joinchat/AAAAAD851oqVwhp9oy9WbQ</a></p>
+<p>52破解信息:<a href="https://t.me/wuaipojie" target="_blank" rel="external">https://t.me/wuaipojie</a></p>
+<p>Launch Center Pro 交流分享:<a href="https://t.me/lcpapp" target="_blank" rel="external">https://t.me/lcpapp</a></p>
+<p>Reddigram:<a href="https://t.me/reddigram" target="_blank" rel="external">https://t.me/reddigram</a></p>
+<p>Nicegram Chat:<a href="https://t.me/nicegramchat" target="_blank" rel="external">https://t.me/nicegramchat</a></p>
+<p>AdGuard Chat:<a href="https://t.me/adguard_en" target="_blank" rel="external">https://t.me/adguard_en</a></p>
+<p>Gridea 群组:<a href="https://t.me/joinchat/IDY0ahRqb8NPodv95BNpBg" target="_blank" rel="external">https://t.me/joinchat/IDY0ahRqb8NPodv95BNpBg</a></p>
+<p>Office Tool Group:<a href="https://t.me/joinchat/GdsEL0ejcWZ-T-koyW4Wug" target="_blank" rel="external">https://t.me/joinchat/GdsEL0ejcWZ-T-koyW4Wug</a></p>
+<p>Excel学习群:<a href="https://t.me/excellearner" target="_blank" rel="external">https://t.me/excellearner</a></p>
+<p>VShareCloud:<a href="https://t.me/VShareCloud" target="_blank" rel="external">https://t.me/VShareCloud</a></p>
+<p>VVebo:<a href="https://t.me/VVebo" target="_blank" rel="external">https://t.me/VVebo</a></p>
+<p>MoonFM:<a href="https://t.me/joinchat/FLWvJhDhXGAQO5SGDg87nw" target="_blank" rel="external">https://t.me/joinchat/FLWvJhDhXGAQO5SGDg87nw</a></p>
+<p>Telegreat 中文支援區:<a href="https://t.me/TelegreatX" target="_blank" rel="external">https://t.me/TelegreatX</a></p>
+<p>Instagram:<a href="https://t.me/joinchat/AAAAAFL_lXy0yPL754j5CQ" target="_blank" rel="external">https://t.me/joinchat/AAAAAFL_lXy0yPL754j5CQ</a></p>
+<p>PanDownload交流群:<a href="https://t.me/joinchat/Lz9fSlOgUUyinc5N7Gv6tg" target="_blank" rel="external">https://t.me/joinchat/Lz9fSlOgUUyinc5N7Gv6tg</a></p>
+<p>APKs, ROMs &amp; Tools:<a href="https://t.me/r3l3as3s" target="_blank" rel="external">https://t.me/r3l3as3s</a></p>
+<p><strong>番羽土番</strong></p>
+<p>Surge 交流:<a href="https://t.me/loveapps" target="_blank" rel="external">https://t.me/loveapps</a></p>
+<p>Quantumult (X):<a href="https://t.me/quantumultapp" target="_blank" rel="external">https://t.me/quantumultapp</a></p>
+<p>Quantumult:<a href="https://t.me/quantumult" target="_blank" rel="external">https://t.me/quantumult</a></p>
+<p>Shadowrocket:<a href="https://t.me/ShadowrocketApp" target="_blank" rel="external">https://t.me/ShadowrocketApp</a></p>
+<p>lhie1 Rules:<a href="https://t.me/lhie1x" target="_blank" rel="external">https://t.me/lhie1x</a></p>
+<p>DivineEngine Chat:<a href="https://t.me/joinchat/BlP48kmUGY-iR41Iq11-3w" target="_blank" rel="external">https://t.me/joinchat/BlP48kmUGY-iR41Iq11-3w</a></p>
+<p>Dler Cloud 用户群:<a href="https://t.me/DlerCloud_bot" target="_blank" rel="external">https://t.me/DlerCloud_bot</a> (绑定账号后,会给你发送群链接)</p>
+<p>rixCloud 用户群:<a href="https://t.me/rixCloudbot" target="_blank" rel="external">https://t.me/rixCloudbot</a> (绑定账号后,发送’/joingroup’获取群链接)</p>
+<p>喵帕斯用户群:<a href="https://t.me/npsBoostbot" target="_blank" rel="external">https://t.me/npsBoostbot</a> (绑定账号后,发送’/joingroup’获取群链接)</p>
+<p>N3RO Network:<a href="https://t.me/cuteSakuraHime_Bot" target="_blank" rel="external">https://t.me/cuteSakuraHime_Bot</a> (绑定账号后,会给你发送群链接)</p>
+<p>lhie1 墙洞 Rules:<a href="https://t.me/lhie1x" target="_blank" rel="external">https://t.me/lhie1x</a></p>
+<p>科学上网技术研究会:<a href="https://t.me/kxswjs" target="_blank" rel="external">https://t.me/kxswjs</a></p>
+<p>神机规则群:<a href="https://t.me/DivineEngine" target="_blank" rel="external">https://t.me/DivineEngine</a></p>
+<p>毒药机场测速DuyaoSS吹水群:<a href="https://t.me/DuyaoSS_Group" target="_blank" rel="external">https://t.me/DuyaoSS_Group</a></p>
+<p>Professional-V1 BLOG 交流群:<a href="https://t.me/V1Blog_Group" target="_blank" rel="external">https://t.me/V1Blog_Group</a></p>
+<p>BGP测速:<a href="https://t.me/hxisj8whsv" target="_blank" rel="external">https://t.me/hxisj8whsv</a></p>
+<p>Shadowsocks:<a href="https://t.me/joinchat/A1lxzDuvcioTtic84c12vQ" target="_blank" rel="external">https://t.me/joinchat/A1lxzDuvcioTtic84c12vQ</a></p>
+<p>ShadowsocksR 讨论组:<a href="https://t.me/ssrunofficial" target="_blank" rel="external">https://t.me/ssrunofficial</a></p>
+<p>ShadowsocksR 讨论组 2群:<a href="https://t.me/chatssr" target="_blank" rel="external">https://t.me/chatssr</a></p>
+<p>ShadowsocksRR 讨论组:<a href="https://t.me/ssrrchat" target="_blank" rel="external">https://t.me/ssrrchat</a></p>
+<p>Clash for Windows:<a href="https://t.me/fndroid_group" target="_blank" rel="external">https://t.me/fndroid_group</a></p>
+<p>Clash:<a href="https://t.me/joinchat/D4mVX0n-n5mOK6YO_W3_Og" target="_blank" rel="external">https://t.me/joinchat/D4mVX0n-n5mOK6YO_W3_Og</a></p>
+<p>ClashA:<a href="http://t.me/clash_android_discuss" target="_blank" rel="external">http://t.me/clash_android_discuss</a></p>
+<p>ShadowRay:<a href="https://t.me/ShadowRay" target="_blank" rel="external">https://t.me/ShadowRay</a></p>
+<p>Project V(V2Ray):<a href="https://t.me/projectv2ray" target="_blank" rel="external">https://t.me/projectv2ray</a></p>
+<p>Netch 游戏加速工具:<a href="https://t.me/NetchX" target="_blank" rel="external">https://t.me/NetchX</a></p>
+<p>V2fly Official:<a href="https://t.me/v2fly_chat" target="_blank" rel="external">https://t.me/v2fly_chat</a></p>
+<p>V2Fly #Off-Topic:<a href="https://t.me/joinchat/GhXX_0zQFLOkjy9z81eQqg" target="_blank" rel="external">https://t.me/joinchat/GhXX_0zQFLOkjy9z81eQqg</a></p>
+<p>v2rayN&amp;G:<a href="https://t.me/v2rayN" target="_blank" rel="external">https://t.me/v2rayN</a></p>
+<p>Wingy Halal Group:<a href="https://t.me/wingytg" target="_blank" rel="external">https://t.me/wingytg</a></p>
+<p>魅影极速:<a href="https://t.me/joinchat/HOQoQ09I100G-60a5HyS1A" target="_blank" rel="external">https://t.me/joinchat/HOQoQ09I100G-60a5HyS1A</a></p>
+<p>CordCloud泡面交流群:<a href="https://t.me/joinchat/DsPjq0KEVl6saO_62MHEDA" target="_blank" rel="external">https://t.me/joinchat/DsPjq0KEVl6saO_62MHEDA</a></p>
+<p>佩奇 Nexitally:<a href="https://t.me/nexitallyusers" target="_blank" rel="external">https://t.me/nexitallyusers</a></p>
+<p>IPLC.cloud:<a href="https://t.me/joinchat/Kt2jPxWr4SxT4M40CKDfjA" target="_blank" rel="external">https://t.me/joinchat/Kt2jPxWr4SxT4M40CKDfjA</a></p>
+<p>WireGuard:<a href="https://t.me/WireGuard" target="_blank" rel="external">https://t.me/WireGuard</a></p>
+<p>VPN讨论群:<a href="https://t.me/gouwu" target="_blank" rel="external">https://t.me/gouwu</a></p>
+<p>海豚湾の三温暖:<a href="https://t.me/joinchat/IVfY9w2yQbtFtuyjcS7i6w" target="_blank" rel="external">https://t.me/joinchat/IVfY9w2yQbtFtuyjcS7i6w</a></p>
+<p>Surfboard 交流群:<a href="https://t.me/surfboardapp" target="_blank" rel="external">https://t.me/surfboardapp</a></p>
+<p>SockBoom 咕咕咕交流群:<a href="https://t.me/sockboom" target="_blank" rel="external">https://t.me/sockboom</a></p>
+<p>CCCAT Madhouse:<a href="https://t.me/joinchat/AwB5ckAQb8s9Ev9c6shndg" target="_blank" rel="external">https://t.me/joinchat/AwB5ckAQb8s9Ev9c6shndg</a></p>
+<p>CCCAT Helpdesk:<a href="https://t.me/joinchat/AwB5ckdlwjLKRARW0nac2A" target="_blank" rel="external">https://t.me/joinchat/AwB5ckdlwjLKRARW0nac2A</a></p>
+<p>Professional-V1 交流群:<a href="https://t.me/joinchat/JSNwtRNj99fL0-m2_AeWuw" target="_blank" rel="external">https://t.me/joinchat/JSNwtRNj99fL0-m2_AeWuw</a></p>
+<p>Python云-一个学习py的公益机场:<a href="https://t.me/pythonyun" target="_blank" rel="external">https://t.me/pythonyun</a></p>
+<p>忍者云:<a href="https://t.me/joinchat/JzPmF0Vpbn30D36D9_Ja_w" target="_blank" rel="external">https://t.me/joinchat/JzPmF0Vpbn30D36D9_Ja_w</a></p>
+<p>几鸡:<a href="https://t.me/ngcss" target="_blank" rel="external">https://t.me/ngcss</a></p>
+<p>梦迪mdssCloud:<a href="https://t.me/MdCloud" target="_blank" rel="external">https://t.me/MdCloud</a></p>
+<p>ssrcloud:<a href="https://t.me/ssrcloud" target="_blank" rel="external">https://t.me/ssrcloud</a></p>
+<p>次元链接:<a href="https://t.me/cylink" target="_blank" rel="external">https://t.me/cylink</a></p>
+<p>星愿云加速:<a href="https://t.me/starwishss" target="_blank" rel="external">https://t.me/starwishss</a></p>
+<p>百草园:<a href="https://t.me/baicaoyuan" target="_blank" rel="external">https://t.me/baicaoyuan</a></p>
+<p>星愿云SWcloud:<a href="https://t.me/starwishss" target="_blank" rel="external">https://t.me/starwishss</a></p>
+<p>不拘阁:<a href="https://t.me/bujuyige" target="_blank" rel="external">https://t.me/bujuyige</a></p>
+<p>YoYu游鱼:<a href="https://t.me/yoyutrans" target="_blank" rel="external">https://t.me/yoyutrans</a></p>
+<p>NFNF:<a href="https://t.me/nfnf2018" target="_blank" rel="external">https://t.me/nfnf2018</a></p>
+<p>MunClolud:<a href="https://t.me/MunCloudSSR" target="_blank" rel="external">https://t.me/MunCloudSSR</a></p>
+<p>NSL NetWork:<a href="https://t.me/nsl_ssr" target="_blank" rel="external">https://t.me/nsl_ssr</a></p>
+<p>I·SSR·do:<a href="https://t.me/i_SSR" target="_blank" rel="external">https://t.me/i_SSR</a></p>
+<p>LSJ AirPort:<a href="https://t.me/lsjairport" target="_blank" rel="external">https://t.me/lsjairport</a></p>
+<p>PoiCloud:<a href="https://t.me/PoiCloud" target="_blank" rel="external">https://t.me/PoiCloud</a></p>
+<p>良辰云:<a href="https://t.me/liangchenyunss" target="_blank" rel="external">https://t.me/liangchenyunss</a></p>
+<p>ZCSSR:<a href="https://t.me/zcssr" target="_blank" rel="external">https://t.me/zcssr</a></p>
+<p>qazCloud:<a href="https://t.me/qazcloud" target="_blank" rel="external">https://t.me/qazcloud</a></p>
+<p>陆玖:<a href="https://t.me/GroupFor69" target="_blank" rel="external">https://t.me/GroupFor69</a></p>
+<p>Conair:<a href="https://t.me/conairme" target="_blank" rel="external">https://t.me/conairme</a></p>
+<p>Flysocks-Server:<a href="https://t.me/flysocks" target="_blank" rel="external">https://t.me/flysocks</a></p>
+<p>X-Air T3航站楼:<a href="https://t.me/xssr_booster" target="_blank" rel="external">https://t.me/xssr_booster</a></p>
+<p>FHV站(antei):<a href="https://t.me/FHVHKHK" target="_blank" rel="external">https://t.me/FHVHKHK</a></p>
+<p>loriCloud:<a href="https://t.me/loricloud" target="_blank" rel="external">https://t.me/loricloud</a></p>
+<p>928Net购物小车:<a href="https://t.me/net928" target="_blank" rel="external">https://t.me/net928</a></p>
+<p>贼船:<a href="https://t.me/zeichuan" target="_blank" rel="external">https://t.me/zeichuan</a></p>
+<p>AAEX:<a href="https://t.me/AAEX_CLOUD" target="_blank" rel="external">https://t.me/AAEX_CLOUD</a></p>
+<p>GeekCloud:<a href="https://t.me/joinchat/Ky2VFBBt2S5uRDbF3bJfQg" target="_blank" rel="external">https://t.me/joinchat/Ky2VFBBt2S5uRDbF3bJfQg</a></p>
+<p>THE.SSR官方售后群(BLINKLOAD):<a href="https://t.me/thessrgroup" target="_blank" rel="external">https://t.me/thessrgroup</a></p>
+<p>SunCloud萌妹吃瓜:<a href="https://t.me/Mengmm" target="_blank" rel="external">https://t.me/Mengmm</a></p>
+<p>永久公益机场:<a href="https://t.me/AC_FFree" target="_blank" rel="external">https://t.me/AC_FFree</a></p>
+<p>大水比交流群:<a href="https://t.me/hxisj8whsv" target="_blank" rel="external">https://t.me/hxisj8whsv</a></p>
+<p>大佬吹牛群:<a href="https://t.me/xddos0" target="_blank" rel="external">https://t.me/xddos0</a></p>
+<p>少数人TG交流群:<a href="https://t.me/shaoshurenx" target="_blank" rel="external">https://t.me/shaoshurenx</a></p>
+<p>WestCloud养生之道:<a href="https://t.me/joinchat/LM3Mm061YantoLHzgOs41Q" target="_blank" rel="external">https://t.me/joinchat/LM3Mm061YantoLHzgOs41Q</a></p>
+<p>DLK的奔放交流时间:<a href="https://t.me/dlkvpn" target="_blank" rel="external">https://t.me/dlkvpn</a></p>
+<p>Mac-SSR:<a href="https://t.me/MacSSR" target="_blank" rel="external">https://t.me/MacSSR</a></p>
+<p>Mac翻墙 · SpechtLite交流群:<a href="https://t.me/SpechtLite" target="_blank" rel="external">https://t.me/SpechtLite</a></p>
+<p>GFW 吐槽 &amp;&amp; 翻墙方法讨论:<a href="https://t.me/DiscussCrossGFW" target="_blank" rel="external">https://t.me/DiscussCrossGFW</a></p>
+<p>Alice:<a href="https://t.me/joinchat/AAAAAEAKmMX609B2f_Z9iQ" target="_blank" rel="external">https://t.me/joinchat/AAAAAEAKmMX609B2f_Z9iQ</a></p>
+<p>AnyFlow:<a href="https://t.me/AnyFlowApp" target="_blank" rel="external">https://t.me/AnyFlowApp</a></p>
+<p>极客公园:<a href="https://t.me/geekpark" target="_blank" rel="external">https://t.me/geekpark</a></p>
+<p>SSR V2ray 讨论分享:<a href="https://t.me/joinchat/HHeAr1ELdNEKXdOhr1yXkw" target="_blank" rel="external">https://t.me/joinchat/HHeAr1ELdNEKXdOhr1yXkw</a></p>
+<p>arukas.io+免费ss帐号:<a href="https://t.me/arukass" target="_blank" rel="external">https://t.me/arukass</a></p>
+<p>Affyun.com 买买买大会:<a href="https://t.me/pingcat" target="_blank" rel="external">https://t.me/pingcat</a></p>
+<p>路由器梅林固件SS客户端交流群:<a href="https://t.me/joinchat/AAAAAEC7pgV9vPdPcJ4dJw" target="_blank" rel="external">https://t.me/joinchat/AAAAAEC7pgV9vPdPcJ4dJw</a></p>
+<p>XX-Net:<a href="https://t.me/xxnet" target="_blank" rel="external">https://t.me/xxnet</a></p>
+<p>pipesocks:<a href="https://t.me/pipesocks" target="_blank" rel="external">https://t.me/pipesocks</a></p>
+<p>SocksCap64官方群:<a href="https://t.me/tarolab" target="_blank" rel="external">https://t.me/tarolab</a></p>
+<p>NICO Homemade “CupSS”:<a href="https://t.me/niconode" target="_blank" rel="external">https://t.me/niconode</a></p>
+<p>VPS全球主機交流:<a href="https://t.me/VPSchat" target="_blank" rel="external">https://t.me/VPSchat</a></p>
+<p>BIS科学上网:<a href="https://t.me/BISproject" target="_blank" rel="external">https://t.me/BISproject</a></p>
+<p>glzjinmod:<a href="https://t.me/glzjinmod" target="_blank" rel="external">https://t.me/glzjinmod</a></p>
+<p>代理「配置·规则」分享:<a href="https://t.me/RuleConfig" target="_blank" rel="external">https://t.me/RuleConfig</a></p>
+<p>狸猫加速器活动交流群:<a href="https://t.me/joinchat/AAAAAEQuL_IYR9I0wuLnfQ" target="_blank" rel="external">https://t.me/joinchat/AAAAAEQuL_IYR9I0wuLnfQ</a></p>
+<p>Kitsunebi:<a href="https://t.me/kitsunebi" target="_blank" rel="external">https://t.me/kitsunebi</a></p>
+<p>Kitsunebi交流:<a href="https://t.me/Kitsunebi_funs" target="_blank" rel="external">https://t.me/Kitsunebi_funs</a></p>
+<p>精品免费翻墙app推荐:<a href="https://t.me/fuckyougfw" target="_blank" rel="external">https://t.me/fuckyougfw</a></p>
+<p>SSTap Rule:<a href="https://t.me/SSTapRule" target="_blank" rel="external">https://t.me/SSTapRule</a></p>
+<p>SSGlobal.co 官方群:<a href="https://t.me/joinchat/ESwgR0Ckp_zXMCuRKqykqA" target="_blank" rel="external">https://t.me/joinchat/ESwgR0Ckp_zXMCuRKqykqA</a></p>
+<p>Trojan:<a href="https://t.me/trojangfw" target="_blank" rel="external">https://t.me/trojangfw</a></p>
+<p>Lantern Beta:<a href="https://t.me/joinchat/BxT4KUg7B5HATgrFP22VXg" target="_blank" rel="external">https://t.me/joinchat/BxT4KUg7B5HATgrFP22VXg</a></p>
+<p>几鸡-小圈自用公益机场:<a href="https://t.me/lisuanlaoji" target="_blank" rel="external">https://t.me/lisuanlaoji</a></p>
+<p>Pharos User Support:<a href="https://t.me/Shadow_x_user_support" target="_blank" rel="external">https://t.me/Shadow_x_user_support</a></p>
+<p>Pharos-Android:<a href="https://t.me/joinchat/EthDYRQ80Clo_dj8e3PJnQ" target="_blank" rel="external">https://t.me/joinchat/EthDYRQ80Clo_dj8e3PJnQ</a></p>
+<p>SuJ-Tech公益SSR:<a href="https://t.me/joinchat/KKbIW0pwN0JfXI86groWNA" target="_blank" rel="external">https://t.me/joinchat/KKbIW0pwN0JfXI86groWNA</a></p>
+<p>SSRLittle小布机场:<a href="https://t.me/ssrli" target="_blank" rel="external">https://t.me/ssrli</a></p>
+<p>vAgent云计算加速服务:<a href="https://t.me/crossgreatfirewall" target="_blank" rel="external">https://t.me/crossgreatfirewall</a></p>
+<p>ss panel v3 mod 非官方水群:<a href="https://t.me/SSUnion" target="_blank" rel="external">https://t.me/SSUnion</a></p>
+<p>小布吉岛闲聊群:<a href="https://t.me/bujidaochat" target="_blank" rel="external">https://t.me/bujidaochat</a></p>
+<p>OKAB3吹水:<a href="https://t.me/OKAB3Script" target="_blank" rel="external">https://t.me/OKAB3Script</a></p>
+<p>爱听歌交流群:<a href="https://t.me/musictools666" target="_blank" rel="external">https://t.me/musictools666</a></p>
+<p><strong>社区/用户</strong></p>
+<p>印象笔记 Evernote 社群:<a href="https://t.me/YinxiangBiji" target="_blank" rel="external">https://t.me/YinxiangBiji</a></p>
+<p>Telegram 中文圈:<a href="https://t.me/tgzhcn" target="_blank" rel="external">https://t.me/tgzhcn</a></p>
+<p>科技花:<a href="https://t.me/zaihuachat" target="_blank" rel="external">https://t.me/zaihuachat</a></p>
+<p>谷歌交流社区 • 科技圈:<a href="https://t.me/GoogleFans" target="_blank" rel="external">https://t.me/GoogleFans</a></p>
+<p>逗比根据地:<a href="https://t.me/doubi" target="_blank" rel="external">https://t.me/doubi</a></p>
+<p>逗比根据地:<a href="https://t.me/doubi2" target="_blank" rel="external">https://t.me/doubi2</a></p>
+<p>Apple Talk 交流群:<a href="https://t.me/apple_talk" target="_blank" rel="external">https://t.me/apple_talk</a></p>
+<p>Apple Watch 大集合:<a href="https://t.me/apple_watch" target="_blank" rel="external">https://t.me/apple_watch</a></p>
+<p>少数派 sspai 社群 非官方:<a href="https://t.me/sspai_group" target="_blank" rel="external">https://t.me/sspai_group</a></p>
+<p>iOS &amp; Mac · Free Talk:<a href="https://t.me/joinchat/BC6PtDwOzSNWFpXosJUnYw" target="_blank" rel="external">https://t.me/joinchat/BC6PtDwOzSNWFpXosJUnYw</a></p>
+<p>Android · Free Talk:<a href="https://t.me/joinchat/BC6PtDwBMhfDu6pnrg2wgw" target="_blank" rel="external">https://t.me/joinchat/BC6PtDwBMhfDu6pnrg2wgw</a></p>
+<p>Tech·Free Talk:<a href="https://t.me/joinchat/Ag98FzveUjPyDL-fMVNuXg" target="_blank" rel="external">https://t.me/joinchat/Ag98FzveUjPyDL-fMVNuXg</a></p>
+<p>Android &amp; iOS 相爱群:<a href="https://t.me/iosandandroidlove" target="_blank" rel="external">https://t.me/iosandandroidlove</a></p>
+<p>库克的后厨 Cook’s Kitchen:<a href="https://t.me/OnlineAppleUserGroup" target="_blank" rel="external">https://t.me/OnlineAppleUserGroup</a></p>
+<p>一加手机/OnePlus:<a href="https://t.me/oneplus666" target="_blank" rel="external">https://t.me/oneplus666</a></p>
+<p>GIF 群聚地:<a href="https://t.me/GIFgroupTW" target="_blank" rel="external">https://t.me/GIFgroupTW</a></p>
+<p>貼圖群 Sticker Group:<a href="https://t.me/StickerGroup" target="_blank" rel="external">https://t.me/StickerGroup</a></p>
+<p>V2EX 后花园:<a href="https://t.me/joinchat/Bg3MFjv5FgYrWI0WqHDo8Q" target="_blank" rel="external">https://t.me/joinchat/Bg3MFjv5FgYrWI0WqHDo8Q</a></p>
+<p>V2EX 后花园 v2.0:<a href="https://t.me/goV2EX" target="_blank" rel="external">https://t.me/goV2EX</a></p>
+<p>Appinn Talk (小众软件):<a href="https://t.me/appinn" target="_blank" rel="external">https://t.me/appinn</a></p>
+<p>Setapp 开车群:<a href="https://t.me/joinchat/AacydhT79JJBmDj68rCC9w" target="_blank" rel="external">https://t.me/joinchat/AacydhT79JJBmDj68rCC9w</a></p>
+<p>Setapp 拼车群:<a href="https://t.me/setapp_di" target="_blank" rel="external">https://t.me/setapp_di</a></p>
+<p>SetApp - Mac玩儿法开车群:<a href="https://t.me/setappondrive" target="_blank" rel="external">https://t.me/setappondrive</a></p>
+<p>JS神技能:<a href="https://t.me/joinchat/IH5XJktzBKVVn4Q5fZeq5Q" target="_blank" rel="external">https://t.me/joinchat/IH5XJktzBKVVn4Q5fZeq5Q</a></p>
+<p>BIGdongdongGroup:<a href="https://t.me/bigdongdongGroup" target="_blank" rel="external">https://t.me/bigdongdongGroup</a></p>
+<p>YouTube—ImShuker:<a href="https://t.me/shukerz" target="_blank" rel="external">https://t.me/shukerz</a></p>
+<p>Ubuntu 中文交流群:<a href="http://t.me/ubuntuzh" target="_blank" rel="external">http://t.me/ubuntuzh</a></p>
+<p>电报人:<a href="https://t.me/three001" target="_blank" rel="external">https://t.me/three001</a></p>
+<p>Kevin自留地:<a href="https://t.me/mrkevinh" target="_blank" rel="external">https://t.me/mrkevinh</a></p>
+<p>Google Drive 无限容量:<a href="https://t.me/google_drive" target="_blank" rel="external">https://t.me/google_drive</a></p>
+<p>搬瓦工 (BandwagonHost):<a href="https://t.me/BandwagonHostGroup" target="_blank" rel="external">https://t.me/BandwagonHostGroup</a></p>
+<p>跳蚤市场-科学上网交流等:<a href="http://t.me/PharosMarketShopping" target="_blank" rel="external">http://t.me/PharosMarketShopping</a></p>
+<p>读书会:<a href="https://t.me/readingclub1984" target="_blank" rel="external">https://t.me/readingclub1984</a></p>
+<p>读书会众议院:<a href="https://t.me/readingclubhouse" target="_blank" rel="external">https://t.me/readingclubhouse</a></p>
+<p>鲸发现:<a href="https://t.me/whalediscovery" target="_blank" rel="external">https://t.me/whalediscovery</a></p>
+<p>无限月读Group:<a href="https://t.me/la4ji" target="_blank" rel="external">https://t.me/la4ji</a></p>
+<p>PayPal交流群:<a href="http://t.me/paypal_us" target="_blank" rel="external">http://t.me/paypal_us</a></p>
+<p>游戏交流群:<a href="https://t.me/cngame" target="_blank" rel="external">https://t.me/cngame</a></p>
+<p>kindle电子书读书会:<a href="https://t.me/zebook" target="_blank" rel="external">https://t.me/zebook</a></p>
+<p>iBeta 尝鲜派 官方用户讨论群:<a href="https://t.me/ibetame" target="_blank" rel="external">https://t.me/ibetame</a></p>
+<p>创造者们:<a href="https://t.me/joinchat/DNc0EECuTl_xs0O30bvCWQ" target="_blank" rel="external">https://t.me/joinchat/DNc0EECuTl_xs0O30bvCWQ</a></p>
+<p>数码养生:<a href="https://t.me/joinchat/KN3lR1QT8tGXImuc8L8k3g" target="_blank" rel="external">https://t.me/joinchat/KN3lR1QT8tGXImuc8L8k3g</a></p>
+<p>编程随想读者群:<a href="https://t.me/programthinkreader" target="_blank" rel="external">https://t.me/programthinkreader</a></p>
+<p>OpenWRT 编译官方大群:<a href="https://t.me/joinchat/JhKgAA6Hx1uiihA7RaTW1w" target="_blank" rel="external">https://t.me/joinchat/JhKgAA6Hx1uiihA7RaTW1w</a></p>
+<p>OpenWRT LEDE/Wireless Routers:<a href="https://t.me/OpenWRT_Routers" target="_blank" rel="external">https://t.me/OpenWRT_Routers</a></p>
+<p>老毛子Padavan固件自助交流群:<a href="http://t.me/pdcn2" target="_blank" rel="external">http://t.me/pdcn2</a></p>
+<p>老毛子Padavan固件IOS自助交流群:<a href="http://t.me/pdcn3" target="_blank" rel="external">http://t.me/pdcn3</a></p>
+<p>安卓手机交流圈:<a href="https://t.me/androidsee" target="_blank" rel="external">https://t.me/androidsee</a></p>
+<p>暗网市场:<a href="https://t.me/heise888" target="_blank" rel="external">https://t.me/heise888</a></p>
+<p>暗网交流群:<a href="https://t.me/ANWANG00" target="_blank" rel="external">https://t.me/ANWANG00</a></p>
+<p>暗网交流群:<a href="https://t.me/CreditCardSell" target="_blank" rel="external">https://t.me/CreditCardSell</a></p>
+<p>Google Fi 交流群:<a href="https://t.me/google_fi" target="_blank" rel="external">https://t.me/google_fi</a></p>
+<p>YouTube Music:<a href="https://t.me/YTMusicCN" target="_blank" rel="external">https://t.me/YTMusicCN</a></p>
+<p>字谈字畅听众群:<a href="https://t.me/TypeChat" target="_blank" rel="external">https://t.me/TypeChat</a></p>
+<p>Ruby 中文圈:<a href="https://t.me/rubycn" target="_blank" rel="external">https://t.me/rubycn</a></p>
+<p>polyhedron:<a href="https://t.me/polyhedron" target="_blank" rel="external">https://t.me/polyhedron</a></p>
+<p>聽世界:<a href="https://t.me/listentotheworld" target="_blank" rel="external">https://t.me/listentotheworld</a></p>
+<p>Vap0rVVave:<a href="https://t.me/Vap0rVVave" target="_blank" rel="external">https://t.me/Vap0rVVave</a></p>
+<p>NickTalk:<a href="https://t.me/nicktalk" target="_blank" rel="external">https://t.me/nicktalk</a></p>
+<p>iOS:<a href="https://t.me/iOSdevotee" target="_blank" rel="external">https://t.me/iOSdevotee</a></p>
+<p>iPad:<a href="https://t.me/aboutipad" target="_blank" rel="external">https://t.me/aboutipad</a></p>
+<p>MacGG:<a href="https://t.me/macgg" target="_blank" rel="external">https://t.me/macgg</a></p>
+<p>macOS 交流组:<a href="https://t.me/macoser" target="_blank" rel="external">https://t.me/macoser</a></p>
+<p>macOS:<a href="https://t.me/getosx" target="_blank" rel="external">https://t.me/getosx</a></p>
+<p>iOS 交流群:<a href="https://t.me/iOS_cn" target="_blank" rel="external">https://t.me/iOS_cn</a></p>
+<p>iPadOS 交流群:<a href="https://t.me/iPadOS" target="_blank" rel="external">https://t.me/iPadOS</a></p>
+<p>APPLE 用户交流群:<a href="https://t.me/apple_cn" target="_blank" rel="external">https://t.me/apple_cn</a></p>
+<p>macOS 用户交流群:<a href="https://t.me/mac_cn" target="_blank" rel="external">https://t.me/mac_cn</a></p>
+<p>IT之家 群组:<a href="https://t.me/iOS1314" target="_blank" rel="external">https://t.me/iOS1314</a></p>
+<p>黑苹果与白苹果用户交流群:<a href="https://t.me/Balancer996" target="_blank" rel="external">https://t.me/Balancer996</a></p>
+<p>Pi&amp;N1玩家交流群，专业:<a href="https://t.me/PIN1Group" target="_blank" rel="external">https://t.me/PIN1Group</a></p>
+<p>Newlearner水群:<a href="https://t.me/NewlearnerGroup" target="_blank" rel="external">https://t.me/NewlearnerGroup</a></p>
+<p>233Blog:<a href="https://t.me/blog233" target="_blank" rel="external">https://t.me/blog233</a></p>
+<p>软路由综合交流群:<a href="https://t.me/Balancer66" target="_blank" rel="external">https://t.me/Balancer66</a></p>
+<p>悟空的日常粉丝:<a href="https://t.me/wkongsvlog" target="_blank" rel="external">https://t.me/wkongsvlog</a></p>
+<p>Vediotalk:<a href="https://t.me/VedioTalkGroup" target="_blank" rel="external">https://t.me/VedioTalkGroup</a></p>
+<p>synology/黑群晖用户交流群:<a href="https://t.me/nasfan" target="_blank" rel="external">https://t.me/nasfan</a></p>
+<p>ssgobal:<a href="https://t.me/joinchat/ESwgR0Ckp_zXMCuRKqykqA" target="_blank" rel="external">https://t.me/joinchat/ESwgR0Ckp_zXMCuRKqykqA</a></p>
+<p>Linux&amp;vps交流:<a href="https://t.me/Supermarket666" target="_blank" rel="external">https://t.me/Supermarket666</a></p>
+<p>GroupHub_Chat:<a href="https://t.me/GroupHub_Chat" target="_blank" rel="external">https://t.me/GroupHub_Chat</a></p>
+<p>中国数字时代读者群:<a href="https://t.me/cdtchinese" target="_blank" rel="external">https://t.me/cdtchinese</a></p>
+<p>掘金 iOS 开发交流群:<a href="https://t.me/joinchat/BAjjKkLl8h5wfynrpFvOwQ" target="_blank" rel="external">https://t.me/joinchat/BAjjKkLl8h5wfynrpFvOwQ</a></p>
+<p>掘金 Android 开发交流群:<a href="https://t.me/joinchat/BAjjKkMXyR2_SrASapNZ0A" target="_blank" rel="external">https://t.me/joinchat/BAjjKkMXyR2_SrASapNZ0A</a></p>
+<p>Google Voice 交流群:<a href="https://t.me/googlevoice" target="_blank" rel="external">https://t.me/googlevoice</a></p>
+<p>Google Play Party:<a href="https://t.me/joinchat/AAAAAEQyqqFfIeHCsuQe5w" target="_blank" rel="external">https://t.me/joinchat/AAAAAEQyqqFfIeHCsuQe5w</a></p>
+<p>Google Fans +1s Club:<a href="https://t.me/googlecn" target="_blank" rel="external">https://t.me/googlecn</a></p>
+<p>Ingress Prime 讨论群:<a href="https://t.me/joinchat/BJY4f03cl_8YHMdUrVDxuw" target="_blank" rel="external">https://t.me/joinchat/BJY4f03cl_8YHMdUrVDxuw</a></p>
+<p>RedSoloCup’s League of Ingress Agents:<a href="https://t.me/joinchat/DEqMlRFr-nH2lu73mP7_9Q" target="_blank" rel="external">https://t.me/joinchat/DEqMlRFr-nH2lu73mP7_9Q</a></p>
+<p>GTD Users Base:<a href="https://t.me/gtdusersbase" target="_blank" rel="external">https://t.me/gtdusersbase</a></p>
+<p>小米手机讨论群:<a href="https://t.me/M_Phone" target="_blank" rel="external">https://t.me/M_Phone</a></p>
+<p>MIUI Beta Team - China:<a href="https://t.me/joinchat/DdB-ZxL__BxfXlQCGJUUmg" target="_blank" rel="external">https://t.me/joinchat/DdB-ZxL__BxfXlQCGJUUmg</a></p>
+<p>M-Team official chat - Chinese:<a href="https://t.me/M_Team_Chat" target="_blank" rel="external">https://t.me/M_Team_Chat</a></p>
+<p>Nexus Users:<a href="https://t.me/nexususers" target="_blank" rel="external">https://t.me/nexususers</a></p>
+<p>One Plus:<a href="https://t.me/oneplus3tt" target="_blank" rel="external">https://t.me/oneplus3tt</a></p>
+<p>Python:<a href="https://t.me/Python" target="_blank" rel="external">https://t.me/Python</a></p>
+<p>Python中文社区:<a href="https://t.me/PyChina" target="_blank" rel="external">https://t.me/PyChina</a></p>
+<p>Python 中文交流:<a href="https://t.me/pythonzh" target="_blank" rel="external">https://t.me/pythonzh</a></p>
+<p>C++ 中文交流:<a href="https://t.me/cpluspluszh" target="_blank" rel="external">https://t.me/cpluspluszh</a></p>
+<p>Google交流群:<a href="https://t.me/GoogleFans" target="_blank" rel="external">https://t.me/GoogleFans</a></p>
+<p>生活 读书 新知:<a href="https://t.me/joinchat/BZKdbj1dAu5m8X48JV2gYg" target="_blank" rel="external">https://t.me/joinchat/BZKdbj1dAu5m8X48JV2gYg</a></p>
+<p>主机测评(zhujiceping.com):<a href="https://t.me/zhujiceping" target="_blank" rel="external">https://t.me/zhujiceping</a></p>
+<p>BTSynChina中文资源分享:<a href="https://t.me/btsynchina" target="_blank" rel="external">https://t.me/btsynchina</a></p>
+<p>Sync资源分享讨论:<a href="https://t.me/joinchat/Drwnmz6wvT8wpIcFEBI57g" target="_blank" rel="external">https://t.me/joinchat/Drwnmz6wvT8wpIcFEBI57g</a></p>
+<p>NAS私有云技术交流:<a href="https://t.me/NASteam" target="_blank" rel="external">https://t.me/NASteam</a></p>
+<p>SmallBeeX固件玩家群:<a href="https://t.me/sbxsw" target="_blank" rel="external">https://t.me/sbxsw</a></p>
+<p>Dev. iOS/macOS/watchOS/tvOS:<a href="https://t.me/AppleDevCN" target="_blank" rel="external">https://t.me/AppleDevCN</a></p>
+<p>Java 编程语言:<a href="https://t.me/Javaer" target="_blank" rel="external">https://t.me/Javaer</a></p>
+<p>iOS越狱讨论群 Cydia:<a href="https://t.me/iOS_Cydia" target="_blank" rel="external">https://t.me/iOS_Cydia</a></p>
+<p>IT人的生活日常:<a href="https://t.me/it_normal_life" target="_blank" rel="external">https://t.me/it_normal_life</a></p>
+<p>Android Develop 中文讨论群:<a href="https://t.me/AndroidDevCn" target="_blank" rel="external">https://t.me/AndroidDevCn</a></p>
+<p>Android Delicious:<a href="https://t.me/AndroidDiscuss" target="_blank" rel="external">https://t.me/AndroidDiscuss</a></p>
+<p>Android Dress:<a href="https://t.me/AndroidDress" target="_blank" rel="external">https://t.me/AndroidDress</a></p>
+<p>Android Dev:<a href="https://t.me/AndroidDevChat" target="_blank" rel="external">https://t.me/AndroidDevChat</a></p>
+<p>Android Dev[CN]:<a href="https://t.me/AndroidDevCn" target="_blank" rel="external">https://t.me/AndroidDevCn</a></p>
+<p>网易云音乐:<a href="https://t.me/NetEaseMusic" target="_blank" rel="external">https://t.me/NetEaseMusic</a></p>
+<p>Scala 中文群组:<a href="https://t.me/scala_zh" target="_blank" rel="external">https://t.me/scala_zh</a></p>
+<p>Geeks Chat:<a href="https://t.me/geeksChat" target="_blank" rel="external">https://t.me/geeksChat</a></p>
+<p>Nintendo Switch 闲聊群:<a href="https://t.me/NintendoSwitchCN" target="_blank" rel="external">https://t.me/NintendoSwitchCN</a></p>
+<p>红红火火恍恍惚惚:<a href="https://t.me/joinchat/DfC7Q0HhtNTA5R53WfAZyQ" target="_blank" rel="external">https://t.me/joinchat/DfC7Q0HhtNTA5R53WfAZyQ</a></p>
+<p>香港 IT 群:<a href="https://t.me/din_lo_it" target="_blank" rel="external">https://t.me/din_lo_it</a></p>
+<p>酷友交流群:<a href="https://t.me/coolapkchina" target="_blank" rel="external">https://t.me/coolapkchina</a></p>
+<p>ZeroNet[zh]:<a href="https://t.me/joinchat/AAAAAAtSeltSs7ffxR0wzw" target="_blank" rel="external">https://t.me/joinchat/AAAAAAtSeltSs7ffxR0wzw</a></p>
+<p>Beijing GNU/Linux User Group:<a href="https://t.me/beijinglug" target="_blank" rel="external">https://t.me/beijinglug</a></p>
+<p>MAT - 广场（My Android Tools）:<a href="https://t.me/MyAndroidTools" target="_blank" rel="external">https://t.me/MyAndroidTools</a></p>
+<p>美剧交流群:<a href="https://t.me/SSKMJBTS" target="_blank" rel="external">https://t.me/SSKMJBTS</a></p>
+<p>Cryptocurrency:<a href="https://t.me/joinchat/AAAAAENKOpO9tmbe5etMnA" target="_blank" rel="external">https://t.me/joinchat/AAAAAENKOpO9tmbe5etMnA</a></p>
+<p>Tg攝影社群:<a href="https://t.me/photographyintelegram" target="_blank" rel="external">https://t.me/photographyintelegram</a></p>
+<p>知日讀者群:<a href="https://t.me/zhijapan" target="_blank" rel="external">https://t.me/zhijapan</a></p>
+<p>fibjs 交流:<a href="https://t.me/fibjs" target="_blank" rel="external">https://t.me/fibjs</a></p>
+<p>加密货币与区块链讨论群:<a href="https://t.me/onBlockchain" target="_blank" rel="external">https://t.me/onBlockchain</a></p>
+<p>第欧根尼俱乐部 The Diogenes Club:<a href="https://t.me/TheDiogenesClub" target="_blank" rel="external">https://t.me/TheDiogenesClub</a></p>
+<p>老毛子Padavan固件自助交流群:<a href="http://t.me/pdcn2" target="_blank" rel="external">http://t.me/pdcn2</a></p>
+<p>游戏交流群:<a href="https://t.me/cngame" target="_blank" rel="external">https://t.me/cngame</a></p>
+<p>Netflix迷:<a href="https://t.me/NetflixFun" target="_blank" rel="external">https://t.me/NetflixFun</a></p>
+<p>Netflix 讨论群:<a href="https://t.me/netflixchina" target="_blank" rel="external">https://t.me/netflixchina</a></p>
+<p>Netflix 讨论:<a href="https://t.me/joinchat/C94vkUP2WbygEhA59U4mZA" target="_blank" rel="external">https://t.me/joinchat/C94vkUP2WbygEhA59U4mZA</a></p>
+<p>Netflix-剧天堂:<a href="https://t.me/NetflixGod" target="_blank" rel="external">https://t.me/NetflixGod</a></p>
+<p>Netflix等App解锁:<a href="https://t.me/happy_dns" target="_blank" rel="external">https://t.me/happy_dns</a></p>
+<p>NETFLIX极乐世界:<a href="https://t.me/duxiangNF" target="_blank" rel="external">https://t.me/duxiangNF</a></p>
+<p>莓友会:<a href="https://t.me/bbfans" target="_blank" rel="external">https://t.me/bbfans</a></p>
+<p>电子书支援计划 eBooksPlan:<a href="https://t.me/what_youread" target="_blank" rel="external">https://t.me/what_youread</a></p>
+<p>群晖壕技术交流:<a href="https://t.me/joinchat/BzNX6A2jzj1nMBlltYKbEg" target="_blank" rel="external">https://t.me/joinchat/BzNX6A2jzj1nMBlltYKbEg</a></p>
+<p>社工库机器人CCTV认证群:<a href="https://t.me/shegroup" target="_blank" rel="external">https://t.me/shegroup</a></p>
+<p>gate.io的小伙伴们:<a href="https://t.me/gate_io" target="_blank" rel="external">https://t.me/gate_io</a></p>
+<p>iQOS:<a href="https://t.me/iqos8" target="_blank" rel="external">https://t.me/iqos8</a></p>
+<p>双拼小教练:<a href="https://t.me/udpn_group" target="_blank" rel="external">https://t.me/udpn_group</a></p>
+<p>Steam:<a href="https://t.me/SteamCN" target="_blank" rel="external">https://t.me/SteamCN</a></p>
+<p>the speechless $$ apexidea:<a href="https://t.me/thespeechless" target="_blank" rel="external">https://t.me/thespeechless</a></p>
+<p>DEW官方中文群:<a href="https://t.me/dew_cn" target="_blank" rel="external">https://t.me/dew_cn</a></p>
+<p>DEW Offical EnglishGroup:<a href="https://t.me/dew_en" target="_blank" rel="external">https://t.me/dew_en</a></p>
+<p>DEW 日本語グループ:<a href="https://t.me/dew_jp" target="_blank" rel="external">https://t.me/dew_jp</a></p>
+<p>DEW 공식 한국어 그룹:<a href="https://t.me/dew_kr" target="_blank" rel="external">https://t.me/dew_kr</a></p>
+<p>Python数据社群,数据分析大数据相关知识交流:<a href="https://t.me/datapy" target="_blank" rel="external">https://t.me/datapy</a></p>
+<p>TechCrunch中文版讨论组:<a href="https://t.me/techcrunchcngroup" target="_blank" rel="external">https://t.me/techcrunchcngroup</a></p>
+<p>锤子科技 Smartisan 讨论组:<a href="https://t.me/smartisan_unofficial" target="_blank" rel="external">https://t.me/smartisan_unofficial</a></p>
+<p>内涵段子:<a href="https://t.me/duanzige" target="_blank" rel="external">https://t.me/duanzige</a></p>
+<p>TeFuir 自渡:<a href="https://t.me/TeFuirZIDu" target="_blank" rel="external">https://t.me/TeFuirZIDu</a></p>
+<p>Dribbble 设计交流:<a href="https://t.me/dribbbletalk" target="_blank" rel="external">https://t.me/dribbbletalk</a></p>
+<p>Android Plaza:<a href="https://t.me/AndroidPlaza" target="_blank" rel="external">https://t.me/AndroidPlaza</a></p>
+<p>[ZH/EN] 摄影:<a href="https://t.me/cnphotog" target="_blank" rel="external">https://t.me/cnphotog</a></p>
+<p>加速吧小宝（koolshare merlin firmware）:<a href="https://t.me/xbchat" target="_blank" rel="external">https://t.me/xbchat</a></p>
+<p>软路由综合交流群:<a href="https://t.me/Balancer66" target="_blank" rel="external">https://t.me/Balancer66</a></p>
+<p>软路由闲置信息发布:<a href="http://t.me/supermarket666" target="_blank" rel="external">http://t.me/supermarket666</a></p>
+<p>Tasker中文交流群组:<a href="https://t.me/taskercn" target="_blank" rel="external">https://t.me/taskercn</a></p>
+<p>简信用户群:<a href="https://t.me/mailtime" target="_blank" rel="external">https://t.me/mailtime</a></p>
+<p>Rime&amp;iRime交流群:<a href="https://t.me/joinchat/F2HuOQpBU2NjUrg8ybQMDg" target="_blank" rel="external">https://t.me/joinchat/F2HuOQpBU2NjUrg8ybQMDg</a></p>
+<p>锤子科技 Smartisan 讨论组:<a href="https://t.me/smartisan_unofficial" target="_blank" rel="external">https://t.me/smartisan_unofficial</a></p>
+<p>Vim 用户交流群:<a href="http://t.me/vimhub" target="_blank" rel="external">http://t.me/vimhub</a></p>
+<p>Jailbreak Chat:<a href="https://t.me/joinchat/AAAAAD161xTKVMuu-bOaxg" target="_blank" rel="external">https://t.me/joinchat/AAAAAD161xTKVMuu-bOaxg</a></p>
+<p>iOS 越狱讨论群:<a href="https://t.me/iOS_Jailbreak" target="_blank" rel="external">https://t.me/iOS_Jailbreak</a></p>
+<p>iOS 越狱交流群:<a href="https://t.me/iOS_jailbreaking" target="_blank" rel="external">https://t.me/iOS_jailbreaking</a></p>
+<p>Telegram Hath Group:<a href="https://t.me/telehathgroup" target="_blank" rel="external">https://t.me/telehathgroup</a></p>
+<p>靠谱实测VPS推荐:<a href="https://t.me/guboorg" target="_blank" rel="external">https://t.me/guboorg</a></p>
+<p>Vps交流:<a href="https://t.me/talkvps" target="_blank" rel="external">https://t.me/talkvps</a></p>
+<p>自由世界之声:<a href="https://t.me/TetgramC" target="_blank" rel="external">https://t.me/TetgramC</a></p>
+<p>今日我地唔倾健身倾人生:<a href="https://t.me/telegrc" target="_blank" rel="external">https://t.me/telegrc</a></p>
+<p>Product Hunt 分享讨论:<a href="https://t.me/joinchat/CreGnBZN4DGqRb4HiBkm9g" target="_blank" rel="external">https://t.me/joinchat/CreGnBZN4DGqRb4HiBkm9g</a></p>
+<p>wikipedia-zh:<a href="https://t.me/wikipedia_zh_n" target="_blank" rel="external">https://t.me/wikipedia_zh_n</a></p>
+<p>RetroShare:<a href="https://t.me/cnretroshare" target="_blank" rel="external">https://t.me/cnretroshare</a></p>
+<p>MoeUnion:<a href="https://t.me/MoeUnion" target="_blank" rel="external">https://t.me/MoeUnion</a></p>
+<p>Vediotalk:<a href="https://t.me/VedioTalkGroup" target="_blank" rel="external">https://t.me/VedioTalkGroup</a></p>
+<p>独立开发者们:<a href="https://t.me/fun_makers" target="_blank" rel="external">https://t.me/fun_makers</a></p>
+<p>Developer 中文圈:<a href="https://t.me/coderzh" target="_blank" rel="external">https://t.me/coderzh</a></p>
+<p>酷安闲聊群:<a href="https://t.me/coolapkxianliao" target="_blank" rel="external">https://t.me/coolapkxianliao</a></p>
+<p>酷安:<a href="https://t.me/cool_apk" target="_blank" rel="external">https://t.me/cool_apk</a></p>
+<p>Telegram蛤丝总群:<a href="https://t.me/joinchat/EgReJ0BeLkTPKtZLJ1HipA" target="_blank" rel="external">https://t.me/joinchat/EgReJ0BeLkTPKtZLJ1HipA</a></p>
+<p>Licenses Group 合租 美剧讨论 薅羊毛:<a href="https://t.me/Licensess" target="_blank" rel="external">https://t.me/Licensess</a></p>
+<p>[合租] Netflix Spotify office365 YouTube Hulu Surge等音乐影视:<a href="https://t.me/hezu1" target="_blank" rel="external">https://t.me/hezu1</a></p>
+<p>Netflix/Spo/Hulu/HBO低价体验车:<a href="https://t.me/FreetrialStore" target="_blank" rel="external">https://t.me/FreetrialStore</a></p>
+<p>Ben先生的杂货铺:<a href="https://t.me/joinchat/K1vTsBMebnPn7mLwR6KGmA" target="_blank" rel="external">https://t.me/joinchat/K1vTsBMebnPn7mLwR6KGmA</a></p>
+<p>EhViewer・DEPRECATED・交流群:<a href="https://t.me/ehviewer" target="_blank" rel="external">https://t.me/ehviewer</a></p>
+<p>谈股论金:<a href="https://t.me/CNFinance" target="_blank" rel="external">https://t.me/CNFinance</a></p>
+<p>三家村:<a href="https://t.me/platoer" target="_blank" rel="external">https://t.me/platoer</a></p>
+<p>谷歌、微软云盘讨论群:<a href="https://t.me/google_win" target="_blank" rel="external">https://t.me/google_win</a></p>
+<p>黑洞资源交流群:<a href="https://t.me/debated" target="_blank" rel="external">https://t.me/debated</a></p>
+<p>好棒 羊毛福利站 自助查:<a href="https://t.me/dajiajia" target="_blank" rel="external">https://t.me/dajiajia</a></p>
+<p>优质 淘宝 京东 隐藏优惠券 福利推荐:<a href="https://t.me/taobaojuan" target="_blank" rel="external">https://t.me/taobaojuan</a></p>
+<p>VIA Official Group:<a href="https://t.me/viatg" target="_blank" rel="external">https://t.me/viatg</a></p>
+<p>Magisk中文讨论群组:<a href="https://t.me/magiskCNshare" target="_blank" rel="external">https://t.me/magiskCNshare</a></p>
+<p>LetITFly’s Group:<a href="https://t.me/joinchat/DnJ2K0An6XhI3N-5EK2FtA" target="_blank" rel="external">https://t.me/joinchat/DnJ2K0An6XhI3N-5EK2FtA</a></p>
+<p>Spotify Addict Group:<a href="https://t.me/spotifyaddict" target="_blank" rel="external">https://t.me/spotifyaddict</a></p>
+<p>Spotify使用者:<a href="https://t.me/joinchat/DlW6BkAiT7ReIIADtANzYw" target="_blank" rel="external">https://t.me/joinchat/DlW6BkAiT7ReIIADtANzYw</a></p>
+<p>Apple Music:<a href="https://t.me/amthings" target="_blank" rel="external">https://t.me/amthings</a></p>
+<p>远鉴字幕组官方交流群:<a href="https://t.me/joinchat/KmUaGRU5OgWsuv27BABIDg" target="_blank" rel="external">https://t.me/joinchat/KmUaGRU5OgWsuv27BABIDg</a></p>
+<p>奈菲影视求片专用群:<a href="https://t.me/joinchat/KmUaGRMWdO29JVd3wcCHCg" target="_blank" rel="external">https://t.me/joinchat/KmUaGRMWdO29JVd3wcCHCg</a></p>
+<p>峰哥分享技术交流超级群:<a href="https://t.me/fengsharegroup" target="_blank" rel="external">https://t.me/fengsharegroup</a></p>
+<p>TG技术党:<a href="https://t.me/MRHXPJ" target="_blank" rel="external">https://t.me/MRHXPJ</a></p>
+<p>真是药丸:<a href="https://t.me/joinchat/L5ipUhYff4tk98bOrdqutQ" target="_blank" rel="external">https://t.me/joinchat/L5ipUhYff4tk98bOrdqutQ</a></p>
+<p>Telegram中文:<a href="https://t.me/Chat_CN" target="_blank" rel="external">https://t.me/Chat_CN</a></p>
+<p>网络中文圈:<a href="https://t.me/CN_Internet" target="_blank" rel="external">https://t.me/CN_Internet</a></p>
+<p>Bitcron 中文圈:<a href="https://t.me/bitcron" target="_blank" rel="external">https://t.me/bitcron</a></p>
+<p>小点播放器+m3u8直播源交流群:<a href="https://t.me/conchplayer" target="_blank" rel="external">https://t.me/conchplayer</a></p>
+<p>SaoDaye - TG总群:<a href="https://t.me/saodaye" target="_blank" rel="external">https://t.me/saodaye</a></p>
+<p>SaoDaye - TG飙车:<a href="https://t.me/yiqisao" target="_blank" rel="external">https://t.me/yiqisao</a></p>
+<p>Pi&amp;N1玩家交流群,专业:<a href="https://t.me/PIN1Group" target="_blank" rel="external">https://t.me/PIN1Group</a></p>
+<p>zread 读书会:<a href="https://t.me/zread" target="_blank" rel="external">https://t.me/zread</a></p>
+<p>Chinese Developers:<a href="https://t.me/ChineseDevelopers" target="_blank" rel="external">https://t.me/ChineseDevelopers</a></p>
+<p>BAT 大家庭:<a href="https://t.me/china_net_group" target="_blank" rel="external">https://t.me/china_net_group</a></p>
+<p>三人行中文群(工作生活学习交流平台):<a href="https://t.me/three001" target="_blank" rel="external">https://t.me/three001</a></p>
+<p>996.ICU:<a href="https://t.me/anti996" target="_blank" rel="external">https://t.me/anti996</a></p>
+<p>流浪防区 /r/China_irl 官方群:<a href="https://t.me/China_irl" target="_blank" rel="external">https://t.me/China_irl</a></p>
+<p>流浪防区 666游戏厅:<a href="https://t.me/China_irl_Games" target="_blank" rel="external">https://t.me/China_irl_Games</a></p>
+<p>Mi Video feedback group:<a href="https://t.me/MiVideoFeedback" target="_blank" rel="external">https://t.me/MiVideoFeedback</a></p>
+<p>Telegramd中文技术交流群:<a href="https://t.me/cntelegramd" target="_blank" rel="external">https://t.me/cntelegramd</a></p>
+<p>Newlearner水群:<a href="https://t.me/NewlearnerGroup" target="_blank" rel="external">https://t.me/NewlearnerGroup</a></p>
+<p>主机贴士:<a href="https://t.me/BWH1NET" target="_blank" rel="external">https://t.me/BWH1NET</a></p>
+<p>二进制/sudo:<a href="https://t.me/huochesiji" target="_blank" rel="external">https://t.me/huochesiji</a></p>
+<p>Google Voice讨论组:<a href="https://t.me/swatpc1" target="_blank" rel="external">https://t.me/swatpc1</a></p>
+<p>Ssrconnect:<a href="https://t.me/ssrconnect" target="_blank" rel="external">https://t.me/ssrconnect</a></p>
+<p>专业Linux/运维/虚拟化讨论:<a href="https://t.me/professionallinux" target="_blank" rel="external">https://t.me/professionallinux</a></p>
+<p>酸奶ssr2.0:<a href="https://t.me/ssruSSR" target="_blank" rel="external">https://t.me/ssruSSR</a></p>
+<p>悟空的日常粉丝:<a href="https://t.me/wkongsvlog" target="_blank" rel="external">https://t.me/wkongsvlog</a></p>
+<p>synology/黑群晖用户交流群:<a href="https://t.me/nasfan" target="_blank" rel="external">https://t.me/nasfan</a></p>
+<p>浪漫生活群:<a href="https://t.me/llmsh" target="_blank" rel="external">https://t.me/llmsh</a></p>
+<p>软件源TG:<a href="https://t.me/appcgntg" target="_blank" rel="external">https://t.me/appcgntg</a></p>
+<p>趣·享:<a href="https://t.me/peekfun" target="_blank" rel="external">https://t.me/peekfun</a></p>
+<p>免费DDOS群:<a href="https://t.me/joinchat/Ma3VglCDtwnOGNPbKAl5Mw" target="_blank" rel="external">https://t.me/joinchat/Ma3VglCDtwnOGNPbKAl5Mw</a></p>
+<p>TYPCN Group:<a href="https://t.me/joinchat/BoV2zj_WY5j8BxC98_6MCQ" target="_blank" rel="external">https://t.me/joinchat/BoV2zj_WY5j8BxC98_6MCQ</a></p>
+<p>黑苹果与白苹果用户交流群:<a href="https://t.me/Balancer996" target="_blank" rel="external">https://t.me/Balancer996</a></p>
+<p>今天的砼与钢(建筑群):<a href="https://t.me/jintiandetongyugang" target="_blank" rel="external">https://t.me/jintiandetongyugang</a></p>
+<p>苹果旧版交流:<a href="https://t.me/xinapp" target="_blank" rel="external">https://t.me/xinapp</a></p>
+<p>特斯拉 Tesla 交流群:<a href="https://t.me/teslafast" target="_blank" rel="external">https://t.me/teslafast</a></p>
+<p>网络技术交流–AE:<a href="https://t.me/joinchat/KvkGoxAJywGVPq7LVUAXug" target="_blank" rel="external">https://t.me/joinchat/KvkGoxAJywGVPq7LVUAXug</a></p>
+<p>Amazon 海淘购物交流群:<a href="https://t.me/firstAmazon" target="_blank" rel="external">https://t.me/firstAmazon</a></p>
+<p>Apple Boy:<a href="https://t.me/joinchat/BJpk_BFL2deF7841fGKEbQ" target="_blank" rel="external">https://t.me/joinchat/BJpk_BFL2deF7841fGKEbQ</a></p>
+<p>Google Suite 交流群:<a href="http://t.me/googlesuite" target="_blank" rel="external">http://t.me/googlesuite</a></p>
+<p>libra 区块链大中华交流:<a href="https://t.me/joinchat/Lfx59xaZjZfOm8BEJXgSGQ" target="_blank" rel="external">https://t.me/joinchat/Lfx59xaZjZfOm8BEJXgSGQ</a></p>
+<p>Technical Blog 技術博客:<a href="https://t.me/Technical_Blog" target="_blank" rel="external">https://t.me/Technical_Blog</a></p>
+<p>夸吧·夸夸群:<a href="https://t.me/kuaba" target="_blank" rel="external">https://t.me/kuaba</a></p>
+<p>谷歌云端GCP交流群:<a href="http://t.me/Google_CloudPlatform" target="_blank" rel="external">http://t.me/Google_CloudPlatform</a></p>
+<p>Cloudflare在中国:<a href="https://t.me/CN_Cloudflare" target="_blank" rel="external">https://t.me/CN_Cloudflare</a></p>
+<p>主机百科:<a href="https://t.me/zhujiwiki" target="_blank" rel="external">https://t.me/zhujiwiki</a></p>
+<p>月光博客IT技术交流群:<a href="https://t.me/yueguangqun" target="_blank" rel="external">https://t.me/yueguangqun</a></p>
+<p>Pixel 3 小窝:<a href="https://t.me/Pixel3House" target="_blank" rel="external">https://t.me/Pixel3House</a></p>
+<p>戒赌吧2.0:<a href="https://t.me/joinchat/FHxB4lkIZ3IjoCt3_Yh3aw" target="_blank" rel="external">https://t.me/joinchat/FHxB4lkIZ3IjoCt3_Yh3aw</a></p>
+<p>Tbo 粉丝群:<a href="https://t.me/TboJiangGroup" target="_blank" rel="external">https://t.me/TboJiangGroup</a></p>
+<p>GDrive , INFUSE , SYNOLOGY , PLEX:<a href="https://t.me/infusetv" target="_blank" rel="external">https://t.me/infusetv</a></p>
+<p>Our Bittorrents Club:<a href="https://t.me/joinchat/IST_uFF7P-u5oecKl3uvFg" target="_blank" rel="external">https://t.me/joinchat/IST_uFF7P-u5oecKl3uvFg</a></p>
+<p>戒赌吧2.0:<a href="https://t.me/joinchat/L6o3d1kIZ3JCcg2ki2SGsg" target="_blank" rel="external">https://t.me/joinchat/L6o3d1kIZ3JCcg2ki2SGsg</a></p>
+<p>群组检索导航:<a href="https://t.me/Groups_cn" target="_blank" rel="external">https://t.me/Groups_cn</a></p>
+<p>日本語学習Japanese Study:<a href="https://t.me/joinchat/BGDV_Qcq7MTcpiFkB2n7Fw" target="_blank" rel="external">https://t.me/joinchat/BGDV_Qcq7MTcpiFkB2n7Fw</a></p>
+<p>ZUOLUOTV 专属交流群:<a href="https://t.me/zuoluotv" target="_blank" rel="external">https://t.me/zuoluotv</a></p>
+<p><strong>播客</strong></p>
+<p>Checked.FM 听众群:<a href="https://t.me/joinchat/Ag98Fw0TEeBh2Xz8s0d9mg" target="_blank" rel="external">https://t.me/joinchat/Ag98Fw0TEeBh2Xz8s0d9mg</a></p>
+<p>一天世界:<a href="https://t.me/ipn_yitianshijie" target="_blank" rel="external">https://t.me/ipn_yitianshijie</a></p>
+<p>○△□（不鳥萬通讯）:<a href="https://t.me/igiveafuck" target="_blank" rel="external">https://t.me/igiveafuck</a></p>
+<p>灭茶苦茶 听众群:<a href="https://t.me/ipn_miechakucha" target="_blank" rel="external">https://t.me/ipn_miechakucha</a></p>
+<p>选・美 听众群:<a href="https://t.me/joinchat/At5ANzwvTWoETwagE5S09w" target="_blank" rel="external">https://t.me/joinchat/At5ANzwvTWoETwagE5S09w</a></p>
+<p>内核恐慌 听众群:<a href="https://t.me/ipn_kernelpanic" target="_blank" rel="external">https://t.me/ipn_kernelpanic</a></p>
+<p>博物志 听众群:<a href="https://t.me/museelogue" target="_blank" rel="external">https://t.me/museelogue</a></p>
+<p>太医来了 听众群:<a href="https://t.me/taiyilaile" target="_blank" rel="external">https://t.me/taiyilaile</a></p>
+<p>味之道 听众群:<a href="https://t.me/joinchat/At5ANzuy5JM9yhPrmuGrcQ" target="_blank" rel="external">https://t.me/joinchat/At5ANzuy5JM9yhPrmuGrcQ</a></p>
+<p>流行通信 听众群:<a href="https://t.me/joinchat/At5ANzuiD519i5bvwvZprA" target="_blank" rel="external">https://t.me/joinchat/At5ANzuiD519i5bvwvZprA</a></p>
+<p>硬影像 听众群:<a href="https://t.me/joinchat/BpH28D58cUGp1jXFHWvpww" target="_blank" rel="external">https://t.me/joinchat/BpH28D58cUGp1jXFHWvpww</a></p>
+<p>無次元 听众群:<a href="https://t.me/joinchat/A4fzlAC1AatZACa_NSKqwg" target="_blank" rel="external">https://t.me/joinchat/A4fzlAC1AatZACa_NSKqwg</a></p>
+<p>(Hi)story 听众群:<a href="https://t.me/HistoryCheap" target="_blank" rel="external">https://t.me/HistoryCheap</a></p>
+<p>壁下观 听众群:<a href="https://t.me/ipn_bixiaguan" target="_blank" rel="external">https://t.me/ipn_bixiaguan</a></p>
+<p>疯投圈 听众群:<a href="https://t.me/crazycapital" target="_blank" rel="external">https://t.me/crazycapital</a></p>
+<p>时尚怪物 听众群:<a href="https://t.me/ipn_fashionmonster" target="_blank" rel="external">https://t.me/ipn_fashionmonster</a></p>
+<p>科技聚变 TechFusion 听众群:<a href="https://t.me/TechFusionChat" target="_blank" rel="external">https://t.me/TechFusionChat</a></p>
+<p>播客大家谈:<a href="https://t.me/bokecn" target="_blank" rel="external">https://t.me/bokecn</a></p>
+<p>「得意忘形」听众群:<a href="https://t.me/joinchat/Bx8JqQ33oVCrKSul-cHJGQ" target="_blank" rel="external">https://t.me/joinchat/Bx8JqQ33oVCrKSul-cHJGQ</a></p>
+<p>津津乐道听友交流:<a href="https://t.me/htnpodcast" target="_blank" rel="external">https://t.me/htnpodcast</a></p>
+<p><strong>Telegram官方翻译</strong></p>
+<p>官方翻译支持群 English:<a href="https://t.me/translation_en" target="_blank" rel="external">https://t.me/translation_en</a></p>
+<p>官方翻译支持群 简体中文 (聪聪):<a href="https://t.me/translation_zhcncc" target="_blank" rel="external">https://t.me/translation_zhcncc</a></p>
+<p>官方翻译支持群 简体中文:<a href="https://t.me/translation_zh_hans" target="_blank" rel="external">https://t.me/translation_zh_hans</a></p>
+<p>官方翻译支持群 简体中文(@zh_CN 版):<a href="https://t.me/translation_classic_zh_cn" target="_blank" rel="external">https://t.me/translation_classic_zh_cn</a></p>
+<p>官方翻译支持群 简体中文(langCN):<a href="https://t.me/translation_zhlangcn" target="_blank" rel="external">https://t.me/translation_zhlangcn</a></p>
+<p>官方翻译支持群 瓜体中文:<a href="https://t.me/translation_duang_zh_cn" target="_blank" rel="external">https://t.me/translation_duang_zh_cn</a></p>
+<p>官方翻译支持群 繁体中文(香港):<a href="https://t.me/translation_zh_hant" target="_blank" rel="external">https://t.me/translation_zh_hant</a></p>
+<p>官方翻译支持群 繁体中文(台湾):<a href="https://t.me/translation_taiwan" target="_blank" rel="external">https://t.me/translation_taiwan</a></p>
+<p>TG 简中交流（水）群:<a href="https://t.me/cnpub" target="_blank" rel="external">https://t.me/cnpub</a></p>
+<p>Telegram 討論區:<a href="https://t.me/PublicGroupForzh" target="_blank" rel="external">https://t.me/PublicGroupForzh</a></p>
+<p>Telegram 新手帮助:<a href="https://t.me/newbie_chat" target="_blank" rel="external">https://t.me/newbie_chat</a></p>
+<p>Telegram X iOS:<a href="https://t.me/tgiostests" target="_blank" rel="external">https://t.me/tgiostests</a></p>
+<p>Telegram iOS Talk:<a href="https://t.me/TelegramiOStalk" target="_blank" rel="external">https://t.me/TelegramiOStalk</a></p>
+<p>Telegram Android Talk:<a href="https://t.me/TelegramAndroidTalk" target="_blank" rel="external">https://t.me/TelegramAndroidTalk</a></p>
+<p>Telegram X Android:<a href="https://t.me/tgandroidtests" target="_blank" rel="external">https://t.me/tgandroidtests</a></p>
+<p>Telegram macOS:<a href="https://t.me/macswift" target="_blank" rel="external">https://t.me/macswift</a></p>
+<p>Telegram macOS Talk:<a href="https://t.me/TelegramMacOsTalk" target="_blank" rel="external">https://t.me/TelegramMacOsTalk</a></p>
+<p>Telegram Desktop Talk:<a href="https://t.me/TelegramDesktopTalk" target="_blank" rel="external">https://t.me/TelegramDesktopTalk</a></p>
+<p>Telegram Windows Phone Talk:<a href="https://t.me/TelegramWPtalk" target="_blank" rel="external">https://t.me/TelegramWPtalk</a></p>
+<p>Telegram Bot Talk:<a href="https://t.me/BotTalk" target="_blank" rel="external">https://t.me/BotTalk</a></p>
+<p>Telegram Party:<a href="https://t.me/PublicTestGroup" target="_blank" rel="external">https://t.me/PublicTestGroup</a></p>
+<p>Telegram Android Themes:<a href="https://t.me/AndroidThemesGroup" target="_blank" rel="external">https://t.me/AndroidThemesGroup</a></p>
+<p>Telegram Desktop Themes:<a href="https://t.me/TelegramThemes" target="_blank" rel="external">https://t.me/TelegramThemes</a></p>
+<p>Telegram X: Themes:<a href="http://t.me/tgx_perfection" target="_blank" rel="external">http://t.me/tgx_perfection</a></p>
+<p>Telegram Beta Chat:<a href="https://t.me/tgbetachat" target="_blank" rel="external">https://t.me/tgbetachat</a></p>
+<p>Tentang Telegram:<a href="https://t.me/tentangtelegram" target="_blank" rel="external">https://t.me/tentangtelegram</a></p>
+<p>Instant View Platform Chat:<a href="https://t.me/IVpublic" target="_blank" rel="external">https://t.me/IVpublic</a></p>
+<p>Telegram 新手問答區:<a href="https://t.me/TGQNA" target="_blank" rel="external">https://t.me/TGQNA</a></p>
+<p>電報群推廣:<a href="https://t.me/joinchat/FAir4j15AV8Q_x5zzoc8yw" target="_blank" rel="external">https://t.me/joinchat/FAir4j15AV8Q_x5zzoc8yw</a></p>
+<p>CNBlacklistR 交流群:<a href="https://t.me/joinchat/FfbG_g9eWFL1-8vEhY4xlQ" target="_blank" rel="external">https://t.me/joinchat/FfbG_g9eWFL1-8vEhY4xlQ</a></p>
+<p><strong>地区群</strong></p>
+<p>深圳:<a href="https://t.me/shenzhenbot?start=join" target="_blank" rel="external">https://t.me/shenzhenbot?start=join</a></p>
+<p>深圳:<a href="https://t.me/shenzhentg" target="_blank" rel="external">https://t.me/shenzhentg</a></p>
+<p>北京:<a href="https://t.me/beijingz" target="_blank" rel="external">https://t.me/beijingz</a></p>
+<p>上海:<a href="https://t.me/shanghai_tg" target="_blank" rel="external">https://t.me/shanghai_tg</a></p>
+<p>广州:<a href="https://t.me/GuangzhouIT" target="_blank" rel="external">https://t.me/GuangzhouIT</a></p>
+<p>四川:<a href="https://t.me/civhuanglaoxiao" target="_blank" rel="external">https://t.me/civhuanglaoxiao</a></p>
+<p>川渝:<a href="https://t.me/chongqing_sichuang" target="_blank" rel="external">https://t.me/chongqing_sichuang</a></p>
+<p>武汉:<a href="https://t.me/joinchat/AAAAAEPsBibY4oIaHgjIwg" target="_blank" rel="external">https://t.me/joinchat/AAAAAEPsBibY4oIaHgjIwg</a></p>
+<p>西安:<a href="https://t.me/XianCity" target="_blank" rel="external">https://t.me/XianCity</a></p>
+<p>西安:<a href="https://t.me/joinchat/FY1SJkRF6ubEQzU-3Mq3cw" target="_blank" rel="external">https://t.me/joinchat/FY1SJkRF6ubEQzU-3Mq3cw</a></p>
+<p>南宁:<a href="https://t.me/NanNingTG" target="_blank" rel="external">https://t.me/NanNingTG</a></p>
+<p>滕州:<a href="https://t.me/tengzhou" target="_blank" rel="external">https://t.me/tengzhou</a></p>
+<p>温州:<a href="https://t.me/joinchat/AAAAAApGjPVlDbXwYSj1IA" target="_blank" rel="external">https://t.me/joinchat/AAAAAApGjPVlDbXwYSj1IA</a></p>
+<p>徐州:<a href="https://t.me/tgdxz" target="_blank" rel="external">https://t.me/tgdxz</a></p>
+<p>烟台:<a href="https://t.me/yantaiinfo" target="_blank" rel="external">https://t.me/yantaiinfo</a></p>
+<p>湖南:<a href="https://t.me/hunantg" target="_blank" rel="external">https://t.me/hunantg</a></p>
+<p>宁波:<a href="https://t.me/joinchat/IDzvnxAU9yCEh6vx4RQrPg" target="_blank" rel="external">https://t.me/joinchat/IDzvnxAU9yCEh6vx4RQrPg</a></p>
+<p>济南:<a href="https://t.me/jinan_tg" target="_blank" rel="external">https://t.me/jinan_tg</a></p>
+<p>郑州:<a href="https://t.me/zhengzhoutg" target="_blank" rel="external">https://t.me/zhengzhoutg</a></p>
+<p>其他</p>
+<p>中文频道群组导航:<a href="https://t.me/hao123f" target="_blank" rel="external">https://t.me/hao123f</a></p>
+<p>Telegram频道群组大全:<a href="https://t.me/hao1234fuck" target="_blank" rel="external">https://t.me/hao1234fuck</a></p>
+<p>群組導航 - 分享/推廣:<a href="https://t.me/navi_group_share" target="_blank" rel="external">https://t.me/navi_group_share</a></p>
+<p>Telegram Channels(以英文居多):<a href="https://en.tgchannels.org/categories" target="_blank" rel="external">https://en.tgchannels.org/categories</a></p>
+<p>联盟世界:<a href="https://t.me/lmzhpd" target="_blank" rel="external">https://t.me/lmzhpd</a></p>
+<p>暗网联盟:<a href="https://t.me/awlmq" target="_blank" rel="external">https://t.me/awlmq</a></p>
+<p>亚洲联盟:<a href="https://t.me/bcrmq" target="_blank" rel="external">https://t.me/bcrmq</a></p>
+<p>摄影联盟:<a href="https://t.me/sylmq" target="_blank" rel="external">https://t.me/sylmq</a></p>
+<p>摄影联盟作品馆:<a href="https://t.me/sylmzpg" target="_blank" rel="external">https://t.me/sylmzpg</a></p>
+<p>藏书联盟:<a href="https://t.me/cslmq" target="_blank" rel="external">https://t.me/cslmq</a></p>
+<p>联盟藏书阁:<a href="https://t.me/lmcsg" target="_blank" rel="external">https://t.me/lmcsg</a></p>
+<p>联盟音乐馆:<a href="https://t.me/lmyyg" target="_blank" rel="external">https://t.me/lmyyg</a></p>
+<p>音乐联盟:<a href="https://t.me/joinchat/KQva3kroHfHyJPhuO1PVUg" target="_blank" rel="external">https://t.me/joinchat/KQva3kroHfHyJPhuO1PVUg</a></p>
+<p>幻想联盟:<a href="https://t.me/hrzyq" target="_blank" rel="external">https://t.me/hrzyq</a></p>
+<p>亚洲事业联盟:<a href="https://t.me/joinchat/KQva3hMKNAPrWu4z4utU4w" target="_blank" rel="external">https://t.me/joinchat/KQva3hMKNAPrWu4z4utU4w</a></p>
+<p>友情联盟群组:<a href="https://t.me/coder_zh" target="_blank" rel="external">https://t.me/coder_zh</a></p>
+<p>中文telegram 群组:<a href="https://t.me/cn1949" target="_blank" rel="external">https://t.me/cn1949</a></p>
+<p>Coder Offtopic 中文群:<a href="https://t.me/coder_ot" target="_blank" rel="external">https://t.me/coder_ot</a></p>
+<p>BoastTG:<a href="https://t.me/BoastTG" target="_blank" rel="external">https://t.me/BoastTG</a></p>
+<p>deep web 暗网交流:<a href="https://t.me/deepwebchina" target="_blank" rel="external">https://t.me/deepwebchina</a></p>
+<p>中文维基百科:<a href="https://t.me/wikipedia_zh" target="_blank" rel="external">https://t.me/wikipedia_zh</a></p>
+<p>Steam&amp;PlayStation&amp;Xbox&amp;Switch:<a href="https://t.me/ps4cn2" target="_blank" rel="external">https://t.me/ps4cn2</a></p>
+<p>维基百科公开群组 wikipedia-zh:<a href="https://t.me/wikipedia_zh" target="_blank" rel="external">https://t.me/wikipedia_zh</a></p>
+<p>數字權利 Digital rights:<a href="https://t.me/digital_rights" target="_blank" rel="external">https://t.me/digital_rights</a></p>
+<p>绿岛之谜:<a href="https://t.me/joinchat/AAAAAELn2imDDoj2w9ueMQ" target="_blank" rel="external">https://t.me/joinchat/AAAAAELn2imDDoj2w9ueMQ</a></p>
+<p>KoolProxy:<a href="https://t.me/joinchat/AAAAAD-tO7GPvfOU131_vg" target="_blank" rel="external">https://t.me/joinchat/AAAAAD-tO7GPvfOU131_vg</a></p>
+<p>图话天下:<a href="https://t.me/joinchat/Ap7Q_zvEXX48wixHbtg79A" target="_blank" rel="external">https://t.me/joinchat/Ap7Q_zvEXX48wixHbtg79A</a></p>
+<p>要開/做/做開IT Projects嘅人:<a href="https://t.me/IT_projects_people" target="_blank" rel="external">https://t.me/IT_projects_people</a></p>
+<p>烧饼博客粉丝群:<a href="https://t.me/sbfans" target="_blank" rel="external">https://t.me/sbfans</a></p>
+<p>圍觀設計師現場:<a href="https://t.me/lookingforqoli" target="_blank" rel="external">https://t.me/lookingforqoli</a></p>
+<p>PureWriter’s Friends:<a href="https://t.me/joinchat/BSLnXkP8kEMg66CBcsUNGQ" target="_blank" rel="external">https://t.me/joinchat/BSLnXkP8kEMg66CBcsUNGQ</a></p>
+<p>Cryptocurrency:<a href="https://t.me/joinchat/AAAAAENKOpO9tmbe5etMnA" target="_blank" rel="external">https://t.me/joinchat/AAAAAENKOpO9tmbe5etMnA</a></p>
+<p>Rabi Coffee:<a href="https://t.me/rabicoffee" target="_blank" rel="external">https://t.me/rabicoffee</a></p>
+<p>Official Counterparty Chat:<a href="https://t.me/Counterparty_XCP" target="_blank" rel="external">https://t.me/Counterparty_XCP</a></p>
+<p>Casual ENGLISH Chat:<a href="https://t.me/joinchat/AAAAAEBz8Owuzgri6kB2UA" target="_blank" rel="external">https://t.me/joinchat/AAAAAEBz8Owuzgri6kB2UA</a></p>
+<p>一起玩「狼人」:<a href="https://t.me/cnwolf" target="_blank" rel="external">https://t.me/cnwolf</a></p>
+<p>愚民小鎮:<a href="https://t.me/twWolf" target="_blank" rel="external">https://t.me/twWolf</a></p>
+<p>GPlusCard 交流群（非官方）:<a href="https://t.me/GPluscard" target="_blank" rel="external">https://t.me/GPluscard</a></p>
+<p>IT之家:<a href="https://t.me/joinchat/0575a16a008fa17ec5457b81a4f15abe" target="_blank" rel="external">https://t.me/joinchat/0575a16a008fa17ec5457b81a4f15abe</a></p>
+<p>Gentoo-zh:<a href="https://t.me/joinchat/0557494901586680e50d77eebd2986d2" target="_blank" rel="external">https://t.me/joinchat/0557494901586680e50d77eebd2986d2</a></p>
+<p>PDA 的Discovery版块:<a href="https://t.me/discoverys" target="_blank" rel="external">https://t.me/discoverys</a></p>
+<p>元朗區Pokemon:<a href="https://t.me/joinchat/DGASnj7QdwuW1LIo-5-80g" target="_blank" rel="external">https://t.me/joinchat/DGASnj7QdwuW1LIo-5-80g</a></p>
+<p>今天你健身了吗:<a href="https://t.me/joinchat/AAAAAA6h4cV3PLgFQYrnCA" target="_blank" rel="external">https://t.me/joinchat/AAAAAA6h4cV3PLgFQYrnCA</a></p>
+<p>骇客邦:<a href="https://t.me/hihackers" target="_blank" rel="external">https://t.me/hihackers</a></p>
+<p>S&amp;D两位先生:<a href="https://t.me/Science_Democracy" target="_blank" rel="external">https://t.me/Science_Democracy</a></p>
+<p>欧美生活影视音乐圈Europe America:<a href="https://t.me/AJSCIEAA" target="_blank" rel="external">https://t.me/AJSCIEAA</a></p>
+<p>读书会众议院:<a href="https://t.me/readingclubhouse" target="_blank" rel="external">https://t.me/readingclubhouse</a></p>
+<p>RDR2 Group:<a href="https://t.me/HKRDR2" target="_blank" rel="external">https://t.me/HKRDR2</a></p>
+<p>抽奖机器人交流、反馈:<a href="https://t.me/BotFeedback" target="_blank" rel="external">https://t.me/BotFeedback</a></p>
+<p>共享资源站点翻车群:<a href="https://t.me/gxzyzd" target="_blank" rel="external">https://t.me/gxzyzd</a></p>
+<p>Sdorica 萬象物語:<a href="https://t.me/sdorica" target="_blank" rel="external">https://t.me/sdorica</a></p>
+<p>Sit and Date:<a href="https://t.me/SitandRelaxGroup" target="_blank" rel="external">https://t.me/SitandRelaxGroup</a></p>
+<p>红米Note3交流群:<a href="https://t.me/Kenzo_CN" target="_blank" rel="external">https://t.me/Kenzo_CN</a></p>
+<p>CuniqUK电话卡交流群:<a href="https://t.me/CuniqUK" target="_blank" rel="external">https://t.me/CuniqUK</a></p>
+<p>MTP代理自助分享群:<a href="https://t.me/mtppubg" target="_blank" rel="external">https://t.me/mtppubg</a></p>
+<p>MTP代理服务聊天吹水防走失群:<a href="https://t.me/joinchat/Li3nUVe9NvfwCsxZIhUtkQ" target="_blank" rel="external">https://t.me/joinchat/Li3nUVe9NvfwCsxZIhUtkQ</a></p>
+<p>tg夸夸群:<a href="http://t.me/tgkkq" target="_blank" rel="external">http://t.me/tgkkq</a></p>
+<p>黑产市场资源项目:<a href="https://t.me/heise888" target="_blank" rel="external">https://t.me/heise888</a></p>
+<p>ACGN☆Taiwan:<a href="http://t.me/TaiwanAnime" target="_blank" rel="external">http://t.me/TaiwanAnime</a></p>
+<p>真是药丸:<a href="https://t.me/Allshadiao" target="_blank" rel="external">https://t.me/Allshadiao</a></p>
+<p>UpperDoc Group:<a href="https://t.me/UpperDocGroup" target="_blank" rel="external">https://t.me/UpperDocGroup</a></p>
+<p>倒水,然后吹:<a href="https://t.me/joinchat/K5hKwle9NvfbSLOViD7M7g" target="_blank" rel="external">https://t.me/joinchat/K5hKwle9NvfbSLOViD7M7g</a></p>
+<p>iBreaking:<a href="https://t.me/iBreaking" target="_blank" rel="external">https://t.me/iBreaking</a></p>
+<p>内涵段子之狼人杀:<a href="https://t.me/werewolfcn" target="_blank" rel="external">https://t.me/werewolfcn</a></p>
+<p>Telegram 狼人杀群:<a href="https://t.me/langrensha888" target="_blank" rel="external">https://t.me/langrensha888</a></p>
+<p>For Work 系列-裙子群:<a href="https://t.me/DressFW" target="_blank" rel="external">https://t.me/DressFW</a></p>
+<p>For Work 系列-日麻群:<a href="https://t.me/MahjongFW" target="_blank" rel="external">https://t.me/MahjongFW</a></p>
+<p>For Work 系列-反馈投稿摸鱼群:<a href="https://t.me/FishingFW" target="_blank" rel="external">https://t.me/FishingFW</a></p>
+<p>闲聊NBA:<a href="http://t.me/bbNBA" target="_blank" rel="external">http://t.me/bbNBA</a></p>
+<p>TSU守望者调度交流群:<a href="https://t.me/yy688go_2019" target="_blank" rel="external">https://t.me/yy688go_2019</a></p>
+<p>RSS屋:<a href="https://t.me/joinchat/HiIOAxV7g9JwNuLuThUsyQ" target="_blank" rel="external">https://t.me/joinchat/HiIOAxV7g9JwNuLuThUsyQ</a></p>
+<p>@igapps 绿色应用:<a href="https://t.me/igapps" target="_blank" rel="external">https://t.me/igapps</a></p>
+<p>Tg音乐站:<a href="https://t.me/konghou" target="_blank" rel="external">https://t.me/konghou</a></p>
+<p>Tg云音乐:<a href="https://t.me/TgGeQu" target="_blank" rel="external">https://t.me/TgGeQu</a></p>
+<p>电报唱吧:<a href="https://t.me/changba_tg" target="_blank" rel="external">https://t.me/changba_tg</a></p>
+<p>海量音乐库:<a href="https://t.me/konghou" target="_blank" rel="external">https://t.me/konghou</a></p>
+<p>你自己的歌单群:<a href="https://t.me/laitingge" target="_blank" rel="external">https://t.me/laitingge</a></p>
+<p>柚酱的小屋:<a href="https://t.me/joinchat/I4oUNxLdCH4yj1cI7cvx-w" target="_blank" rel="external">https://t.me/joinchat/I4oUNxLdCH4yj1cI7cvx-w</a></p>
+<p>THKPGM’s 聊天群:<a href="https://t.me/thkpgmchat" target="_blank" rel="external">https://t.me/thkpgmchat</a></p>
+<p>SPhard交流群:<a href="https://t.me/sphard" target="_blank" rel="external">https://t.me/sphard</a></p>
+<p>Leonn的博客-相关群组:<a href="https://t.me/zhenggui" target="_blank" rel="external">https://t.me/zhenggui</a></p>
+<p>LoreFree知识共享社区(CN/EN):<a href="https://t.me/lorefreecom" target="_blank" rel="external">https://t.me/lorefreecom</a></p>
+<p>ios黑科技交流群:<a href="http://t.me/iosX007" target="_blank" rel="external">http://t.me/iosX007</a></p>
+<p>Netflix卡片小站:<a href="https://t.me/Leye166" target="_blank" rel="external">https://t.me/Leye166</a></p>
+<p>回形针PaperClip粉丝群:<a href="https://t.me/paperclipfans" target="_blank" rel="external">https://t.me/paperclipfans</a></p>
+<p>瘟疫难民254营:<a href="https://t.me/ckhunter254" target="_blank" rel="external">https://t.me/ckhunter254</a></p>
+<p>iShare 爱分享:<a href="https://t.me/iShareTG" target="_blank" rel="external">https://t.me/iShareTG</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;推荐&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;印象笔记 科技 NEWS:&lt;a href=&quot;https://t.me/YinxiangBiji_News&quot;&gt;https://t.me/YinxiangBiji_News&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;印象笔记 Evernote 社群:&lt;a href=&quot;https://t.me/YinxiangBiji&quot;&gt;https://t.me/YinxiangBiji&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Telegram 中文圈:&lt;a href=&quot;https://t.me/tgzhcn&quot;&gt;https://t.me/tgzhcn&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;RSS 交流群:&lt;a href=&quot;https://t.me/joinchat/Ag98F0evTbZwY8HB7oH4fA&quot;&gt;https://t.me/joinchat/Ag98F0evTbZwY8HB7oH4fA&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Notion 用户群:&lt;a href=&quot;https://t.me/joinchat/Ag98F0DdcZr1X1xS6lJsyA&quot;&gt;https://t.me/joinchat/Ag98F0DdcZr1X1xS6lJsyA&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;幕布用户群:&lt;a href=&quot;https://t.me/joinchat/Ag98F01tRQ2RIk_icHhiyA&quot;&gt;https://t.me/joinchat/Ag98F01tRQ2RIk_icHhiyA&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;为知笔记用户群:&lt;a href=&quot;https://t.me/joinchat/Ag98F1MLJji5WC5OpjAcHQ&quot;&gt;https://t.me/joinchat/Ag98F1MLJji5WC5OpjAcHQ&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;有道云笔记用户群:&lt;a href=&quot;https://t.me/joinchat/Ag98F1C2ip5g0Bac_KCJ2A&quot;&gt;https://t.me/joinchat/Ag98F1C2ip5g0Bac_KCJ2A&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Todoist 用户群:&lt;a href=&quot;https://t.me/joinchat/Ag98F1DuGqE_dIiNkeM2uA&quot;&gt;https://t.me/joinchat/Ag98F1DuGqE_dIiNkeM2uA&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Simplenote 用户群:&lt;a href=&quot;https://t.me/joinchat/Ag98F0f7fjEKqZKVHNW0aA&quot;&gt;https://t.me/joinchat/Ag98F0f7fjEKqZKVHNW0aA&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;MarginNote 用户群:&lt;a href=&quot;https://t.me/joinchat/Ag98F0ZLDrJZOSBWXAEiow&quot;&gt;https://t.me/joinchat/Ag98F0ZLDrJZOSBWXAEiow&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;iMazing 用户群:&lt;a href=&quot;https://t.me/joinchat/Ag98F07KJmIlmwSCfTOKxQ&quot;&gt;https://t.me/joinchat/Ag98F07KJmIlmwSCfTOKxQ&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Typora 用户群:&lt;a href=&quot;https://t.me/joinchat/Ag98FxBSO7eJ9mMwxxUIPw&quot;&gt;https://t.me/joinchat/Ag98FxBSO7eJ9mMwxxUIPw&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Telegram" scheme="http://cuiqingwei.github.io/tags/Telegram/"/>
+    
+  </entry>
+  
+  <entry>
     <title>大疆“御”Mavic系列教程</title>
     <link href="http://cuiqingwei.github.io/2018/06/27/2018-06-27-%E5%A4%A7%E7%96%86%E2%80%9C%E5%BE%A1%E2%80%9DMavic%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/"/>
     <id>http://cuiqingwei.github.io/2018/06/27/2018-06-27-大疆“御”Mavic系列教程/</id>
@@ -804,39 +1553,6 @@ make V=s
   </entry>
   
   <entry>
-    <title>OpenWRT的WiFi带机量修改方法</title>
-    <link href="http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/"/>
-    <id>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT的WiFi带机量修改方法/</id>
-    <published>2018-05-14T04:12:08.000Z</published>
-    <updated>2019-12-19T10:31:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>WiFi带机量的修改</p>
-<p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
-<p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
-<a id="more"></a>
-<blockquote>
-<p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="external">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="external">MTK_Ralink_ApSoc_SDK编译总结</a><br><a href="http://www.right.com.cn/forum/thread-208204-1-1.html" target="_blank" rel="external">openwrt wifi用户连接数限制</a></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;WiFi带机量的修改&lt;/p&gt;
-&lt;p&gt;(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;#define MAX_NUMBER_OF_MAC                64 // 原始值32&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
-    
-      <category term="电子书包" scheme="http://cuiqingwei.github.io/tags/%E7%94%B5%E5%AD%90%E4%B9%A6%E5%8C%85/"/>
-    
-  </entry>
-  
-  <entry>
     <title>WiFi探针的工作原理</title>
     <link href="http://cuiqingwei.github.io/2018/05/14/2018-06-18-WiFi%E6%8E%A2%E9%92%88%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"/>
     <id>http://cuiqingwei.github.io/2018/05/14/2018-06-18-WiFi探针的工作原理/</id>
@@ -886,6 +1602,39 @@ make V=s
     
     
       <category term="Wi-Fi" scheme="http://cuiqingwei.github.io/tags/Wi-Fi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OpenWRT的WiFi带机量修改方法</title>
+    <link href="http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/"/>
+    <id>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT的WiFi带机量修改方法/</id>
+    <published>2018-05-14T04:12:08.000Z</published>
+    <updated>2019-12-19T10:31:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>WiFi带机量的修改</p>
+<p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
+<p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
+<a id="more"></a>
+<blockquote>
+<p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="external">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="external">MTK_Ralink_ApSoc_SDK编译总结</a><br><a href="http://www.right.com.cn/forum/thread-208204-1-1.html" target="_blank" rel="external">openwrt wifi用户连接数限制</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;WiFi带机量的修改&lt;/p&gt;
+&lt;p&gt;(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;#define MAX_NUMBER_OF_MAC                64 // 原始值32&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
+    
+      <category term="电子书包" scheme="http://cuiqingwei.github.io/tags/%E7%94%B5%E5%AD%90%E4%B9%A6%E5%8C%85/"/>
     
   </entry>
   
@@ -1103,338 +1852,6 @@ make V=s
     
     
       <category term="DCS、PLC" scheme="http://cuiqingwei.github.io/tags/DCS%E3%80%81PLC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SSH与SSM对比</title>
-    <link href="http://cuiqingwei.github.io/2017/12/26/2017-12-26-SSH%E4%B8%8ESSM%E5%AF%B9%E6%AF%94/"/>
-    <id>http://cuiqingwei.github.io/2017/12/26/2017-12-26-SSH与SSM对比/</id>
-    <published>2017-12-26T06:12:08.000Z</published>
-    <updated>2017-12-26T06:09:34.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>当下流行的两种企业开发MVC开源框架，是我们Java程序猿必备知识能力。MVC，即模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。框架之所以流行，在于其易复用和简化开发，精髓在思想，掌握了核心思想，我们掌握其他类似框架也不会有问题，建议大家有精力的话读一下框架源码，尤其是Spring。</p>
-<a id="more"></a>
-<h1 id="SSH和SSM定义"><a href="#SSH和SSM定义" class="headerlink" title="SSH和SSM定义"></a>SSH和SSM定义</h1><p><strong>SSH</strong> 通常指的是 Struts2 做控制器(controller)，spring 管理各层的组件，hibernate 负责持久化层。</p>
-<p><strong>SSM</strong> 则指的是 SpringMVC 做控制器(controller)，Spring 管理各层的组件，MyBatis 负责持久化层。</p>
-<p><strong>共同点</strong>：</p>
-<ul>
-<li>1.Spring依赖注入DI来管理各层的组件；</li>
-<li>2.使用面向切面编程AOP管理事物、日志、权限等。</li>
-</ul>
-<p><strong>不同点</strong>：Struts2 和 SpringMVC 控制器(controller)控制视图和模型的交互机制的不同，Struts2是Action类级别，SpringMVC是方法级别，更容易实现RESTful风格。</p>
-<h1 id="SSH-和-SSM-的实现原理"><a href="#SSH-和-SSM-的实现原理" class="headerlink" title="SSH 和 SSM 的实现原理"></a>SSH 和 SSM 的实现原理</h1><h2 id="1-Struts2-的实现原理"><a href="#1-Struts2-的实现原理" class="headerlink" title="1.Struts2 的实现原理"></a>1.Struts2 的实现原理</h2><p><img src="/img/20171226/f740001068a5c16f544.jpg" alt=""></p>
-<p>Struts2框架执行步骤（Struts2使用Filter嵌入）：</p>
-<ul>
-<li>1、客户端初始化一个指向Servlet容器（例如Tomcat）的请求；</li>
-<li>2、这个请求经过一系列的过滤器（Filter）（这些过滤器中有一个叫做ActionContextCleanUp的可选过滤器，这个过滤器对于Struts2和其他框架的集成很有帮助；</li>
-<li>3、接着FilterDispatcher被调用，FilterDispatcher询问ActionMapper来决定这个请求是否需要调用某个Action；</li>
-<li>4、如果ActionMapper决定需要调用某个Action，FilterDispatcher把请求的处理交给ActionProxy；</li>
-<li>5、ActionProxy通过Configuration Manager询问框架的配置文件，找到需要调用的Action类；</li>
-<li>6、ActionProxy创建一个ActionInvocation的实例；</li>
-<li>7、ActionInvocation实例使用命名模式来调用，在调用Action的过程前后，涉及到相关拦截器（Intercepter）的调用；</li>
-<li>8、一旦Action执行完毕，ActionInvocation负责根据struts.xml中的配置找到对应的返回结果。返回结果通常是（但不总是，也可 能是另外的一个Action链）一个需要被表示的JSP或者FreeMarker的模版；</li>
-<li>9、将处理结果返回给客户端。</li>
-</ul>
-<h2 id="2-SpringMVC-的实现原理"><a href="#2-SpringMVC-的实现原理" class="headerlink" title="2.SpringMVC 的实现原理"></a>2.SpringMVC 的实现原理</h2><p><img src="/img/20171226/f7500089dc67ac93a17.jpg" alt=""></p>
-<p>SpringMVC框架执行步骤（SpringMVC使用Servlet嵌入）：</p>
-<ul>
-<li>1、客户端发出一个http请求给web服务器，web服务器对http请求进行解析，如果匹配DispatcherServlet的请求映射路径（在web.xml中指定），web容器将请求转交给DispatcherServlet；</li>
-<li>2、DipatcherServlet接收到这个请求之后将根据请求的信息（包括URL、Http方法、请求报文头和请求参数Cookie等）以及HandlerMapping的配置找到处理请求的处理器（Handler）；</li>
-<li>3-4、DispatcherServlet根据HandlerMapping找到对应的Handler,将处理权交给Handler（Handler将具体的处理进行封装），再由具体的HandlerAdapter对Handler进行具体的调用；</li>
-<li>5、Handler对数据处理完成以后将返回一个ModelAndView()对象给DispatcherServlet；</li>
-<li>6、Handler返回的ModelAndView()只是一个逻辑视图并不是一个正式的视图，DispatcherSevlet通过ViewResolver将逻辑视图转化为真正的视图View；</li>
-<li>7、Dispatcher通过model解析出ModelAndView()中的参数进行解析最终展现出完整的view并返回给客户端。</li>
-</ul>
-<h1 id="Hibernate-和-MyBatis-两种ORM框架对比"><a href="#Hibernate-和-MyBatis-两种ORM框架对比" class="headerlink" title="Hibernate 和 MyBatis 两种ORM框架对比"></a>Hibernate 和 MyBatis 两种ORM框架对比</h1><p><strong>两者的相同点</strong></p>
-<ul>
-<li>Hibernate与MyBatis都可以是通过SessionFactoryBuider由XML配置文件生成SessionFactory，然后由SessionFactory 生成Session，最后由Session来开启执行事务和SQL语句。其中SessionFactoryBuider，SessionFactory，Session的生命周期都是差不多的。</li>
-<li>Hibernate和MyBatis都支持JDBC和JTA事务处理。</li>
-</ul>
-<p><strong>两者各自优势</strong></p>
-<ul>
-<li>MyBatis可以进行更为细致的SQL优化，可以减少查询字段。</li>
-<li>MyBatis容易掌握，而Hibernate门槛较高。</li>
-<li>Hibernate的DAO层开发比MyBatis简单，Mybatis需要维护SQL和结果映射。</li>
-<li>Hibernate对对象的维护和缓存要比MyBatis好，对增删改查的对象的维护要方便。</li>
-<li>Hibernate数据库移植性很好，MyBatis的数据库移植性不好，不同的数据库需要写不同SQL。</li>
-<li>Hibernate有更好的二级缓存机制，可以使用第三方缓存。MyBatis本身提供的缓存机制不佳，更新操作不能指定刷新指定记录，会清空整个表，但是也可以使用第三方缓存。</li>
-<li>Hibernate 封装性好，屏蔽了数据库差异，自动生成SQL语句，应对数据库变化能力较弱，SQL语句优化困难。</li>
-<li>MyBatis仅实现了SQL语句和对象的映射，需要针对具体的数据库写SQL语句，应对数据库变化能力较强，SQL语句优化较为方便。</li>
-</ul>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>SSM和SSH不同主要在MVC实现方式，以及ORM持久化方面不同（Hiibernate与Mybatis）。SSM越来越轻量级配置，将注解开发发挥到极致，且ORM实现更加灵活，SQL优化更简便；而SSH较注重配置开发，其中的Hiibernate对JDBC的完整封装更面向对象，对增删改查的数据维护更自动化，但SQL优化方面较弱，且入门门槛稍高。</p>
-<blockquote>
-<p>附Spring家族：</p>
-</blockquote>
-<p><img src="/img/20171226/f750008ad20260cf3f2.jpg" alt=""></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;当下流行的两种企业开发MVC开源框架，是我们Java程序猿必备知识能力。MVC，即模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。框架之所以流行，在于其易复用和简化开发，精髓在思想，掌握了核心思想，我们掌握其他类似框架也不会有问题，建议大家有精力的话读一下框架源码，尤其是Spring。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://cuiqingwei.github.io/tags/Java/"/>
-    
-      <category term="SSH" scheme="http://cuiqingwei.github.io/tags/SSH/"/>
-    
-      <category term="SSM" scheme="http://cuiqingwei.github.io/tags/SSM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>curl模拟http发送get或post接口测试</title>
-    <link href="http://cuiqingwei.github.io/2017/12/05/2017-12-05-curl%E6%A8%A1%E6%8B%9Fhttp%E5%8F%91%E9%80%81get%E6%88%96post%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/"/>
-    <id>http://cuiqingwei.github.io/2017/12/05/2017-12-05-curl模拟http发送get或post接口测试/</id>
-    <published>2017-12-05T06:12:08.000Z</published>
-    <updated>2017-12-05T07:04:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="一、get请求"><a href="#一、get请求" class="headerlink" title="一、get请求"></a>一、get请求</h1><p>curl “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地<br>curl -i “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示全部信息<br>curl -l “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  只显示头部信息<br>curl -v “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“  显示get请求全过程解析<br>wget “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“     也可以</p>
-<a id="more"></a>
-<h1 id="二、post请求"><a href="#二、post请求" class="headerlink" title="二、post请求"></a>二、post请求</h1><p>curl -d “param1=value1&amp;param2=value2” “<a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>“</p>
-<h1 id="三、json格式的post请求"><a href="#三、json格式的post请求" class="headerlink" title="三、json格式的post请求"></a>三、json格式的post请求</h1><p>curl -l -H “Content-type: application/json” -X POST -d ‘{“phone”:”13521389587”,”password”:”test”}’ <a href="http://domain/apis/users.json" target="_blank" rel="external">http://domain/apis/users.json</a></p>
-<blockquote>
-<p>例如：curl -l -H “Content-type: application/json” -X POST -d ‘{“ver”: “1.0”,”soa”:{“req”:”123”},”iface”:”me.ele.lpdinfra.prediction.service.PredictionService”,”method”:”restaurant_make_order_time”,”args”:{“arg2”:”\”stable\””,”arg1”:”{\”code\”:[\”WIND\”],\”temperature\”:11.11}”,”arg0”:”{\”tracking_id\”:\”100000000331770936\”,\”eleme_order_id\”:\”100000000331770936\”,\”platform_id\”:\”4\”,\”restaurant_id\”:\”482571\”,\”dish_num\”:1,\”dish_info\”:[{\”entity_id\”:142547763,\”quantity\”:1,\”category_id\”:1,\”dish_name\”:\”[0xe7][0x89][0xb9][0xe4][0xbb][0xb7][0xe8][0x85][0x8a][0xe5][0x91][0xb3][0xe5][0x8f][0x89][0xe7][0x83][0xa7][0xe5][0x8f][0x8c][0xe6][0x8b][0xbc][0xe7][0x85][0xb2][0xe4][0xbb][0x94][0xe9][0xa5][0xad]\”,\”price\”:31.0}],\”merchant_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”customer_location\”:{\”longitude\”:\”121.47831425\”,\”latitude\”:\”31.27576153\”},\”created_at\”:1477896550,\”confirmed_at\”:1477896550,\”dishes_total_price\”:0.0,\”food_boxes_total_price\”:2.0,\”delivery_total_price\”:2.0,\”pay_amount\”:35.0,\”city_id\”:\”1\”}”}}’ <a href="http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc" target="_blank" rel="external">http://vpcb-lpdinfra-stream-1.vm.elenet.me:8989/rpc</a></p>
-</blockquote>
-<p>ps：json串内层参数需要格式化</p>
-<h1 id="四、高级功能"><a href="#四、高级功能" class="headerlink" title="四、高级功能"></a>四、高级功能</h1><p>curl命令是一个功能强大的网络工具，它能够通过http、ftp等方式下载文件，也能够上传文件。其实curl远不止前面所说的那些功能，大家可以通过man curl阅读手册页获取更多的信息。类似的工具还有wget。</p>
-<p>curl命令使用了libcurl库来实现，libcurl库常用在C程序中用来处理HTTP请求，curlpp是libcurl的一个C++封装，这几个东西可以用在抓取网页、网络监控等方面的开发，而curl命令可以帮助来解决开发过程中遇到的问题。</p>
-<ul>
-<li>1，抓取页面内容到一个文件中</li>
-</ul>
-<p>curl -o home.html <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a>   –将百度首页内容抓下到home.html中<br>curl -o #2_#1.jpg<a href="http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~{A,B}/[001-201].JPG</a></p>
-<p>由于A/B下的文件名都是001，002…，201，下载下来的文件重名，这样，自定义出来下载下来的文件名，就变成了这样：原来： A/001.JPG —-&gt; 下载后： 001-A.JPG 原来： B/001.JPG —&gt; 下载后： 001-B.JPG</p>
-<ul>
-<li>2，用-O（大写的），后面的url要具体到某个文件，不然抓不下来。还可以用正则来抓取东西</li>
-</ul>
-<p>curl -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<p>运行结果如下：</p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  1575  100  1575    0     0  14940      0 –:–:– –:–:– –:–:– 1538k<br>会在当前执行目录中生成一张bdlogo.gif的图片。</p>
-<p>curl -O <a href="http://XXXXX/screen[1-10].JPG" target="_blank" rel="external">http://XXXXX/screen[1-10].JPG</a>  –下载screen1.jpg~screen10.jpg</p>
-<ul>
-<li>3，模拟表单信息，模拟登录，保存cookie信息</li>
-</ul>
-<p>curl -c ./cookie_c.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>4，模拟表单信息，模拟登录，保存头信息</li>
-</ul>
-<p>curl -D ./cookie_D.txt -F log=aaaa -F pwd=<strong>**</strong><a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<p>-c(小写)产生的cookie和-D里面的cookie是不一样的。</p>
-<ul>
-<li>5，使用cookie文件</li>
-</ul>
-<p>curl -b ./cookie_c.txt <a href="http://www.XXXX.com/wp-admin" target="_blank" rel="external">http://www.XXXX.com/wp-admin</a></p>
-<ul>
-<li>6，断点续传，-C(大写)</li>
-</ul>
-<p>curl -C -O <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<ul>
-<li>7，传送数据,最好用登录页面测试，因为你传值过去后，curl回抓数据，你可以看到你传值有没有成功</li>
-</ul>
-<p>curl -d log=aaaa <a href="http://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>8，显示抓取错误，下面这个例子，很清楚的表明了。</li>
-</ul>
-<p>curl -f<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
-<p>curl: (22) The requested URL returned error: 404</p>
-<p>curl<a href="http://www.XXXX.com/asdf" target="_blank" rel="external">http://www.XXXX.com/asdf</a></p>
-<p><html><head><title>404,not found</title></head></html></p>
-<ul>
-<li>9，伪造来源地址，有的网站会判断，请求来源地址，防止盗链。</li>
-</ul>
-<p>curl -e<a href="http://localhosthttp://www.XXXX.com/wp-login.php" target="_blank" rel="external">http://localhosthttp://www.XXXX.com/wp-login.php</a></p>
-<ul>
-<li>10，当我们经常用curl去搞人家东西的时候，人家会把你的IP给屏蔽掉的,这个时候,我们可以用代理</li>
-</ul>
-<p>curl -x 24.10.28.84:32779 -o home.html<a href="http://www.XXXX.com" target="_blank" rel="external">http://www.XXXX.com</a></p>
-<ul>
-<li>11，比较大的东西，我们可以分段下载</li>
-</ul>
-<p>curl -r 0-100 -o img.part1<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0    105      0 –:–:– –:–:– –:–:–     0<br>curl -r 100-200 -o img.part2<a href="http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-ontent/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100   101  100   101    0     0     57      0  0:00:01  0:00:01 –:–:–     0<br>curl -r 200- -o img.part3<a href="http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg" target="_blank" rel="external">http://www.XXXX.com/wp-content/uploads/2010/09/compare_varnish.jpg</a><br>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>100  104k  100  104k    0     0  52793      0  0:00:02  0:00:02 –:–:– 88961</p>
-<p>ls |grep part | xargs du -sh</p>
-<p>4.0K    one.part1<br>112K    three.part3<br>4.0K    two.part2</p>
-<p>用的时候，把他们cat一下就OK,cat img.part* &gt;img.jpg</p>
-<ul>
-<li>12，不会显示下载进度信息</li>
-</ul>
-<p>curl -s -o aaa.jpg <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a></p>
-<ul>
-<li>13，显示下载进度条</li>
-</ul>
-<p>curl  -0 <a href="http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif" target="_blank" rel="external">http://img.voidcn.com/vcimg/000/000/767/511_420_fe4.gif</a>     (以http1.0协议请求)</p>
-<p>####################################################################### 100.0%</p>
-<ul>
-<li>14,通过ftp下载文件</li>
-</ul>
-<p>curl -u用户名:密码 -O<a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
-<p>curl -u 用户名:密码 -O <a href="http://www.XXXX.com/demo/curtain/bbstudy_files/style.css" target="_blank" rel="external">http://www.XXXX.com/demo/curtain/bbstudy_files/style.css</a></p>
-<p>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>Dload  Upload   Total   Spent    Left  Speed<br>101  1934  101  1934    0     0   3184      0 –:–:– –:–:– –:–:–  7136</p>
-<p>或者用下面的方式</p>
-<p>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css<br>curl -O ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/style.css</p>
-<ul>
-<li>15，通过ftp上传</li>
-</ul>
-<p>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/<br>curl -T test.sql ftp://用户名:密码@ip:port/demo/curtain/bbstudy_files/</p>
-<ul>
-<li>15,模拟浏览器头</li>
-</ul>
-<p>curl -A “Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)” -x 123.45.67.89:1080 -o page.html -D cookie0001.txt<a href="http://www.www.baidu.com" target="_blank" rel="external">http://www.www.baidu.com</a></p>
-<ul>
-<li>16,PUT、GET、POST</li>
-</ul>
-<p>比如 curl -T localfile <a href="http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT" target="_blank" rel="external">http://cgi2.tky.3web.ne.jp/~zz/abc.cgi，这时候，使用的协议是HTTP的PUT</a> method<br>刚才说到PUT，自然想起来了其他几种methos－－GET和POST。<br>http提交一个表单，比较常用的是POST模式和GET模式<br>GET模式什么option都不用，只需要把变量写在url里面就可以了<br>比如：<br>curl <a href="http://www.yahoo.com/login.cgi?user=nick&amp;password=12345" target="_blank" rel="external">http://www.yahoo.com/login.cgi?user=nick&amp;password=12345</a><br>而POST模式的option则是 -d<br>比如，curl -d “user=nick&amp;password=12345” <a href="http://www.yahoo.com/login.cgi" target="_blank" rel="external">http://www.yahoo.com/login.cgi</a><br>就相当于向这个站点发出一次登陆申请<del>~</del><br>到底该用GET模式还是POST模式，要看对面服务器的程序设定。<br>一点需要注意的是，POST模式下的文件上的文件上传，比如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;form method=&quot;POST&quot; enctype=&quot;multipar/form-data&quot; action=&quot;http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi&quot;&gt;</div><div class="line">&lt;input type=file name=upload&gt;</div><div class="line">&lt;input type=submit name=nick value=&quot;go&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
-<p>这样一个HTTP表单，我们要用curl进行模拟，就该是这样的语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -F upload=@localfile -F nick=go http://cgi2.tky.3web.ne.jp/~zz/up_file.cgi</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;一、get请求&quot;&gt;&lt;a href=&quot;#一、get请求&quot; class=&quot;headerlink&quot; title=&quot;一、get请求&quot;&gt;&lt;/a&gt;一、get请求&lt;/h1&gt;&lt;p&gt;curl “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“     如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地&lt;br&gt;curl -i “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  显示全部信息&lt;br&gt;curl -l “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  只显示头部信息&lt;br&gt;curl -v “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“  显示get请求全过程解析&lt;br&gt;wget “&lt;a href=&quot;http://www.baidu.com&quot;&gt;http://www.baidu.com&lt;/a&gt;“     也可以&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="curl" scheme="http://cuiqingwei.github.io/tags/curl/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>分布式文件系统 FastDFS 5 &amp; Linux CentOS 7 搭建</title>
-    <link href="http://cuiqingwei.github.io/2017/12/05/2017-12-22-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F-FastDFS-5-Linux-CentOS-7-%E6%90%AD%E5%BB%BA/"/>
-    <id>http://cuiqingwei.github.io/2017/12/05/2017-12-22-分布式文件系统-FastDFS-5-Linux-CentOS-7-搭建/</id>
-    <published>2017-12-05T06:12:08.000Z</published>
-    <updated>2019-12-19T10:36:37.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>FastDFS是一个开源的轻量级分布式文件系统，由跟踪服务器（tracker server）、存储服务器（storage server）和客户端（client）三个部分组成，主要解决了海量数据存储问题，特别适合以中小文件（建议范围：<strong>4KB &lt; file_size &lt;500MB</strong> ）为载体的在线服务。</p>
-<a id="more"></a>
-<p>FastDFS的系统结构图如下：</p>
-<p><img src="/img/20171222/20160922105102336.jpg" alt=""></p>
-<p>如上图，FastDFS的两个核心概念分别是：</p>
-<ul>
-<li>Tracker（跟踪器）</li>
-<li>Storage（存储节点）</li>
-</ul>
-<blockquote>
-<p>Tracker主要做调度工作，相当于mvc中的controller的角色，在访问上起负载均衡的作用。跟踪器和存储节点都可以由一台或多台服务器构成，跟踪器和存储节点中的服务器均可以随时增加或下线而不会影响线上服务，其中跟踪器中的所有服务器都是对等的，可以根据服务器的压力情况随时增加或减少。Tracker负责管理所有的Storage和group，每个storage在启动后会连接Tracker，告知自己所属的group等信息，并保持周期性的心跳，tracker根据storage的心跳信息，建立group==&gt;[storage server list]的映射表，Tracker需要管理的元信息很少，会全部存储在内存中；另外tracker上的元信息都是由storage汇报的信息生成的，本身不需要持久化任何数据，这样使得tracker非常容易扩展，直接增加tracker机器即可扩展为tracker cluster来服务，cluster里每个tracker之间是完全对等的，所有的tracker都接受stroage的心跳信息，生成元数据信息来提供读写服务。</p>
-<p>Storage采用了分卷[Volume]（或分组[group]）的组织方式，存储系统由一个或多个组组成，组与组之间的文件是相互独立的，所有组的文件容量累加就是整个存储系统中的文件容量。一个卷[Volume]（组[group]）可以由一台或多台存储服务器组成，一个组中的存储服务器中的文件都是相同的，组中的多台存储服务器起到了冗余备份和负载均衡的作用，数据互为备份，存储空间以group内容量最小的storage为准，所以建议group内的多个storage尽量配置相同，以免造成存储空间的浪费。更多原理性的内容可以参考这篇blog，介绍的很详细：<a href="http://blog.chinaunix.net/uid-20196318-id-4058561.html" target="_blank" rel="external">分布式文件系统FastDFS设计原理</a></p>
-</blockquote>
-<p>Parallels安装Centos7</p>
-<p><img src="/img/20171222/WX20171222-173110@2x.png" alt=""></p>
-<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/happyfish100/fastdfs/archive/V5.11.tar.gz</div><div class="line">wget https://github.com/happyfish100/libfastcommon/archive/V1.0.36.tar.gz</div></pre></td></tr></table></figure>
-<p><img src="/img/20171222/WX20171222-143233@2x.png" alt=""></p>
-<p>如上图，由于FastDFS是纯C语言实现，只支持Linux、FreeBSD等UNIX系统，所以我们直接下载tar.gz的压缩包，同时FastDFS 5.11同以前版本相比将公共的一些函数等单独封装成了libfastcommon包，所以在安装FastDFS之前我们还必须安装libfastcommon，在余的GitHub首页可以看到：</p>
-<p><img src="/img/20171222/20160922114506577.png" alt=""></p>
-<p>下载完成后，就可以开始解压安装了：</p>
-<p><img src="/img/20171222/WX20171222-143631@2x.png" alt=""></p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>先要安装gcc编译器：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install gcc-c++</div></pre></td></tr></table></figure>
-<h2 id="libfastcommon"><a href="#libfastcommon" class="headerlink" title="libfastcommon"></a>libfastcommon</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tar -zxvf V1.0.36.tar.gz</div><div class="line">cd libfastcommon-1.0.36</div><div class="line">./make.sh</div><div class="line">./make.sh install</div></pre></td></tr></table></figure>
-<h2 id="FastDFS"><a href="#FastDFS" class="headerlink" title="FastDFS"></a>FastDFS</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tar -zxvf V5.11.tar.gz</div><div class="line">cd fastdfs-5.11</div><div class="line">./make.sh</div><div class="line">./make.sh install</div></pre></td></tr></table></figure>
-<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>安装成功后就会生成如上的3个.sample文件（示例配置文件），拷贝出3个后面用的配置文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd /etc/fdfs</div><div class="line">cp client.conf.sample client.conf</div><div class="line">cp storage.conf.sample storage.conf</div><div class="line">cp tracker.conf.sample tracker.conf</div></pre></td></tr></table></figure>
-<p>至此FastDFS已经安装完毕，接下来的工作就是依次配置Tracker和Storage了。</p>
-<h1 id="Tracker"><a href="#Tracker" class="headerlink" title="Tracker"></a>Tracker</h1><p>在配置Tracker之前，首先需要创建Tracker服务器的文件路径，即用于存储Tracker的数据文件和日志文件等，我这里选择在 <strong>/opt</strong> 目录下创建一个 <strong>fastdfs_tracker</strong> 目录用于存放Tracker服务器的相关文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir /opt/fastdfs_tracker</div></pre></td></tr></table></figure>
-<p>接下来就要重新编辑上一步准备好的 <strong>/etc/fdfs</strong> 目录下的 <strong>tracker.conf</strong> 配置文件，打开文件后依次做以下修改：</p>
-<blockquote>
-<p>disabled=false                  #启用配置文件（默认启用）<br>port=22122                      #设置tracker的端口号，通常采用22122这个默认端口<br>base_path=/opt/fastdfs_tracker  #设置tracker的数据文件和日志目录<br>http.server_port=6666           #设置http端口号，默认为8080</p>
-</blockquote>
-<p>配置完成后就可以启动Tracker服务器了，但首先依然要为启动脚本创建软引用，因为fdfs_trackerd等命令在/usr/local/bin中并没有，而是在/usr/bin路径下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ln -s /usr/bin/fdfs_trackerd /usr/local/bin</div><div class="line">ln -s /usr/bin/stop.sh /usr/local/bin</div><div class="line">ln -s /usr/bin/restart.sh /usr/local/bin</div></pre></td></tr></table></figure>
-<p>最后通过命令启动Tracker服务器：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service fdfs_trackerd start</div></pre></td></tr></table></figure>
-<p>如果启动命令执行成功，那么同时在刚才创建的tracker文件目录 <strong>/opt/fastdfs_tracker</strong> 中就可以看到启动后新生成的data和logs目录，tracker服务的端口也应当被正常监听，最后再通过netstat命令查看一下端口监听情况.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -unltp|grep fdfs</div></pre></td></tr></table></figure>
-<p>Tracker至此就配置好了，接下来就可以配置FastDFS的另一核心——Storage。</p>
-<h1 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h1><p>同理，步骤基本与配置Tracker一致，首先是创建Storage服务器的文件目录，需要注意的是同Tracker相比我多建了一个目录，因为Storage还需要一个文件存储路径，用于存放接收的文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir /opt/fastdfs_storage</div><div class="line">mkdir /opt/fastdfs_storage_data</div></pre></td></tr></table></figure>
-<p>接下来修改/etc/fdfs目录下的storage.conf配置文件，打开文件后依次做以下修改：</p>
-<blockquote>
-<p>disabled=false    #启用配置文件（默认启用）<br>group_name=group1 #组名，根据实际情况修改<br>port=23000        #设置storage的端口号，默认是23000，同一个组的storage端口号必须一致<br>base_path=/opt/fastdfs_storage  #设置storage数据文件和日志目录<br>store_path_count=1              #存储路径个数，需要和store_path个数匹配<br>store_path0=/opt/fastdfs_storage_data #实际文件存储路径<br>tracker_server=10.211.55.8:22122   #tracker 服务器的 IP地址和端口号，如果是单机搭建，IP不要写127.0.0.1，否则启动不成功（此处的ip是我的CentOS虚拟机ip）<br>http.server_port=8888           #设置 http 端口号</p>
-</blockquote>
-<p>配置完成后同样要为Storage服务器的启动脚本设置软引用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ln -s /usr/bin/fdfs_storaged /usr/local/bin</div></pre></td></tr></table></figure>
-<p>接下来就可以启动Storage服务了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service fdfs_storaged start</div></pre></td></tr></table></figure>
-<p>同理，如果启动成功，/opt/fastdfs_storage中就可以看到启动后新生成的 <strong>data</strong> 和 <strong>logs</strong> 目录，端口23000也应被正常监听，还有一点就是文件存储路径下会生成多级存储目录，那么接下来看看是否启动成功.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -unltp|grep fdfs</div></pre></td></tr></table></figure>
-<p><img src="/img/20171222/WX20171222-162905@2x.png" alt=""></p>
-<p>如上图，可以看到此时已经正常监听tracker的22122端口和storage的23000端口，至此storage服务器就已经配置完成，确定了storage服务器启动成功后，还有一项工作就是看看storage服务器是否已经登记到 tracker服务器（也可以理解为tracker与storage是否整合成功），运行以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/fdfs_monitor /etc/fdfs/storage.conf</div></pre></td></tr></table></figure>
-<p><img src="/img/20171222/WX20171222-163212@2x.png" alt=""></p>
-<p>如上所示，看到 <strong>ip_addr = 10.211.55.8 (centos-7.shared)  ACTIVE</strong> 字样即可说明storage服务器已经成功登记到了tracker服务器.</p>
-<p>添加开机启动，检查一下rc.local是否具备可执行权限，若是无可执行权限则通过</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod +x /etc/rc.d/rc.local</div></pre></td></tr></table></figure>
-<p>进行授权，如下图：</p>
-<p><img src="/img/20171222/WX20171222-163634@2x.png" alt=""></p>
-<p>至此我们就已经完成了fastdfs的全部配置，此时也就可以用客户端工具进行文件上传下载的测试了。</p>
-<h1 id="上传测试"><a href="#上传测试" class="headerlink" title="上传测试"></a>上传测试</h1><p>测试时需要设置客户端的配置文件，编辑 <strong>/etc/fdfs</strong> 目录下的 <strong>client.conf</strong> 文件，打开文件后依次做以下修改：</p>
-<blockquote>
-<p>base_path=/opt/fastdfs_tracker      #tracker服务器文件路径<br>tracker_server=10.211.55.8:22122    #tracker服务器IP地址和端口号<br>http.tracker_server_port=6666       #tracker服务器的http端口号，必须和tracker的设置对应起来</p>
-</blockquote>
-<p>配置完成后就可以模拟文件上传了，先通过scp向 <strong>/tmp</strong> 目录下传一下文件。</p>
-<p>然后通过执行客户端上传命令尝试上传：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/bin/fdfs_upload_file /etc/fdfs/client.conf /tmp/big.jpg</div></pre></td></tr></table></figure>
-<p>运行后可以发现给我们返回了一个路径：</p>
-<p><img src="/img/20171222/WX20171222-164154@2x.png" alt=""></p>
-<p>这就表示我们的文件已经上传成功了，当文件存储到某个子目录后，即认为该文件存储成功，接下来会为该文件生成一个文件名，文件名由group、存储目录、两级子目录、fileid、文件后缀名（由客户端指定，主要用于区分文件类型）拼接而成，如下图：</p>
-<p><img src="/img/20171222/20160923132829236.jpg" alt=""></p>
-<p>同时在之前配置的storage服务器的实际文件存储路径中也可以根据返回的路径找到实际文件：</p>
-<h1 id="HTTP访问文件"><a href="#HTTP访问文件" class="headerlink" title="HTTP访问文件"></a>HTTP访问文件</h1><p>因为FastDFS目前已不支持http协议，<strong>4.0.5</strong> 版本开始移除了自带的HTTP支持（因为之前自带的HTTP服务较为简单，无法提供负载均衡等高性能服务），所以余大提供了nginx上使用FastDFS的模块fastdfs-nginx-module，下载地址如下：<a href="https://github.com/happyfish100/fastdfs-nginx-module" target="_blank" rel="external">https://github.com/happyfish100/fastdfs-nginx-module</a>，这样做最大的好处就是提供了HTTP服务并且解决了group中storage服务器的同步延迟问题，接下是fastdfs-nginx-module的安装配置过程.</p>
-<h2 id="fastdfs-nginx-module"><a href="#fastdfs-nginx-module" class="headerlink" title="fastdfs-nginx-module"></a>fastdfs-nginx-module</h2><p>先安装系统依赖</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum -y install pcre pcre-devel zlib zlib-devel openssl openssl-devel git</div></pre></td></tr></table></figure>
-<p>下载所需组件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/src/</div><div class="line">git clone https://github.com/happyfish100/fastdfs-nginx-module.git</div><div class="line">wget http://nginx.org/download/nginx-1.8.1.tar.gz</div></pre></td></tr></table></figure>
-<h2 id="storage-nginx"><a href="#storage-nginx" class="headerlink" title="storage nginx"></a>storage nginx</h2><p>首先是为storage服务器安装nginx</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tar -zxvf nginx-1.8.1.tar.gz</div><div class="line">cd nginx-1.8.1</div><div class="line">./configure --prefix=/usr/local/nginx --add-module=/usr/local/src/fastdfs-nginx-module/src</div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
-<p>接下来要修改一下nginx的配置文件，进入conf目录并打开 <strong>nginx.conf</strong> 修改，如下图：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /usr/local/nginx/conf/nginx.conf</div></pre></td></tr></table></figure>
-<p><img src="/img/20171222/WX20171222-165331@2x.png" alt=""></p>
-<p>然后进入FastDFS的安装目录 <strong>/usr/local/src/fastdfs-5.11</strong> 目录下的conf目录，将http.conf和mime.types拷贝到 <strong>/etc/fdfs</strong> 目录下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cp -r /usr/local/src/fastdfs-5.11/conf/http.conf /etc/fdfs/</div><div class="line">cp -r /usr/local/src/fastdfs-5.11/conf/mime.types /etc/fdfs/</div></pre></td></tr></table></figure>
-<p>接下来还需要把fastdfs-nginx-module安装目录中src目录下的mod_fastdfs.conf也拷贝到 <strong>/etc/fdfs</strong> 目录下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp -r /usr/local/src/fastdfs-nginx-module/src/mod_fastdfs.conf /etc/fdfs/</div></pre></td></tr></table></figure>
-<p>就需要编辑刚拷贝的这个mod_fastdfs.conf文件了，打开mod_fastdfs.conf并按顺序依次编译以下内容：</p>
-<blockquote>
-<p>base_path=/opt/fastdfs_storage        #保存日志目录<br>tracker_server=10.211.55.8:22122   #tracker服务器的IP地址以及端口号<br>storage_server_port=23000             #storage服务器的端口号<br>url_have_group_name = true            #文件 url 中是否有 group 名<br>store_path0=/opt/fastdfs_storage_data #存储路径<br>group_count = 3                       #设置组的个数，事实上这次只使用了group1</p>
-</blockquote>
-<p>设置了group_count = 3，接下来就需要在文件尾部追加这3个group setting：</p>
-<blockquote>
-<p>[group1]<br>group_name=group1<br>storage_server_port=23000<br>store_path_count=1<br>store_path0=/opt/fastdfs_storage_data</p>
-<p>[group2]<br>group_name=group2<br>storage_server_port=23000<br>store_path_count=1<br>store_path0=/opt/fastdfs_storage_data</p>
-<p>[group3]<br>group_name=group3<br>storage_server_port=23000<br>store_path_count=1<br>store_path0=/opt/fastdfs_storage_data</p>
-</blockquote>
-<p>接下来还需要建立 M00 至存储目录的符号连接：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ln  -s  /opt/fastdfs_storage_data/data  /opt/fastdfs_storage_data/data/M00</div></pre></td></tr></table></figure>
-<p>最后启动nginx：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/nginx/sbin/nginx</div></pre></td></tr></table></figure>
-<p>通过浏览器访问 <a href="http://10.211.55.8:9999/" target="_blank" rel="external">http://10.211.55.8:9999/</a> 也可以看到nginx的主页：</p>
-<h2 id="tracker-nginx"><a href="#tracker-nginx" class="headerlink" title="tracker nginx"></a>tracker nginx</h2><p>同理，再装一个nginx，目录命名为 <strong>nginx2</strong> ，安装路径依旧放在 <strong>/usr/local</strong> 下，由于和之前一样，此处就不再做详细解释：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /usr/loca/src/nginx-1.8.1</div><div class="line">./configure --prefix=/usr/local/nginx2 --add-module=/usr/local/src/fastdfs-nginx-module/src</div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
-<p>接下来依然是修改nginx2的配置文件，进入conf目录并打开nginx.conf文件加入以下配置，storage的nginx无需修改listen端口，即默认的80端口，并将upstream指向tracker的nginx地址：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /usr/local/nginx2/conf/nginx.conf</div></pre></td></tr></table></figure>
-<p><img src="/img/20171222/WX20171222-170041@2x.png" alt=""></p>
-<p>至此关于fastdfs就已经全部配置完毕了，再一次进行测试看看是否能正常上传文件并通过http访问文件。</p>
-<p>上传文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">scp big.jpg root@10.211.55.8:/tmp/</div><div class="line">cd /tmp/</div><div class="line">/usr/bin/fdfs_upload_file /etc/fdfs/client.conf big.jpg</div><div class="line">/usr/bin/fdfs_upload_file /etc/fdfs/client.conf CADENCE+SPB+15.7工程实例入门.pdf</div><div class="line">/usr/bin/fdfs_upload_file /etc/fdfs/client.conf Step\ by\ Step_\ How\ to\ easily\ tie\ the\ FG\ Knot.mp4</div></pre></td></tr></table></figure></p>
-<p>接下来的关键就是通过HTTP测试文件访问，打开浏览器输入ip地址+文件名看看是否能正常访问该图片：</p>
-<p><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ysuALXURAAyIkvltU0w661.jpg" target="_blank" rel="external">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ysuALXURAAyIkvltU0w661.jpg</a><br><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytGABqkAAnhI9lHEHhw379.pdf" target="_blank" rel="external">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytGABqkAAnhI9lHEHhw379.pdf</a><br><a href="http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytaAZqEqA8pGTvhXcBQ424.mp4" target="_blank" rel="external">http://10.211.55.8:9999/group1/M00/00/00/CtM3CFo8ytaAZqEqA8pGTvhXcBQ424.mp4</a></p>
-<p><img src="/img/20171222/WX20171222-170825@2x.png" alt=""></p>
-<p>一切正常~ 至此关于FastDFS在CentOS 7下的部署测试就已经全部完成。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;FastDFS是一个开源的轻量级分布式文件系统，由跟踪服务器（tracker server）、存储服务器（storage server）和客户端（client）三个部分组成，主要解决了海量数据存储问题，特别适合以中小文件（建议范围：&lt;strong&gt;4KB &amp;lt; file_size &amp;lt;500MB&lt;/strong&gt; ）为载体的在线服务。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="FastDFS" scheme="http://cuiqingwei.github.io/tags/FastDFS/"/>
     
   </entry>
   
