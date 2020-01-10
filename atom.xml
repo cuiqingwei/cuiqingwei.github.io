@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2020-01-10T11:37:25.000Z</updated>
+  <updated>2020-01-10T11:44:49.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://cuiqingwei.github.io/2019/12/24/2019-12-24-%E4%BD%BF%E7%94%A8GitHub-Actions%E7%BC%96%E8%AF%91OpenWRT/"/>
     <id>http://cuiqingwei.github.io/2019/12/24/2019-12-24-使用GitHub-Actions编译OpenWRT/</id>
     <published>2019-12-24T04:07:00.000Z</published>
-    <updated>2020-01-10T11:37:25.000Z</updated>
+    <updated>2020-01-10T11:44:49.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="../img/20191224/Actions.jpeg" alt="《使用 GitHub Actions 编译 OpenWrt》"></p>
+    <content type="html"><![CDATA[<p><img src="/img/20191224/Actions.jpeg" alt="《使用 GitHub Actions 编译 OpenWrt》"></p>
 <p><strong>Github Ac­tions</strong> 是 GitHub 推出的持续集成 (Con­tin­u­ous in­te­gra­tion，简称 <strong>CI</strong>) 服务，它提供了配置非常不错的虚拟服务器环境（E5 2vCPU/7G RAM），基于它可以进行构建、测试、打包、部署项目。这篇文章就是介绍如何使用P3TERX 项目（work­flow文件），进行云编译 OpenWrt固件。该方法免费，快速，无需消耗自己的计算机资源，每次编译都是全新环境。</p>
 <a id="more"></a>
 <p>项目地址：</p>
@@ -72,12 +72,12 @@
 <p>如固化你的network设置： 首先提取路由固件下的\etc\config\network 然后在项目根目录下创建files目录并push 到到 \files\etc\config\network ，最后编译出来的固件就是你自己配置好的network。</p>
 <p>定制化编译的方法可以搭配使用，自己需要的功能一般也是固定的，就可以在 make menuconfig 选好后执行 ./scripts/diffconfig.sh &gt; seed.config 复制一下这个seed.config的文本内容到项目根目录的.config文件中，这样就不用每次都SSH 连接到 Actions生成编译配置，真正一键编译。另外如果，使用“files 大法”仓库最好设为私有，否则你的配置信息，如宽带账号等会公开在网上。</p>
 <h2 id="四、下载编译好的固件·"><a href="#四、下载编译好的固件·" class="headerlink" title="四、下载编译好的固件·"></a>四、下载编译好的固件·</h2><p>编译时间<em>1-2</em>小时，编译完成点击 <code>Actions</code> 页面右上角的<code>Artifacts</code>按钮下载固件。</p>
-<p><img src="../img/20191224/githubaction.png" alt="githubaction"></p>
+<p><img src="/img/20191224/githubaction.png" alt="githubaction"></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;../img/20191224/Actions.jpeg&quot; alt=&quot;《使用 GitHub Actions 编译 OpenWrt》&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;/img/20191224/Actions.jpeg&quot; alt=&quot;《使用 GitHub Actions 编译 OpenWrt》&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Github Ac­tions&lt;/strong&gt; 是 GitHub 推出的持续集成 (Con­tin­u­ous in­te­gra­tion，简称 &lt;strong&gt;CI&lt;/strong&gt;) 服务，它提供了配置非常不错的虚拟服务器环境（E5 2vCPU/7G RAM），基于它可以进行构建、测试、打包、部署项目。这篇文章就是介绍如何使用P3TERX 项目（work­flow文件），进行云编译 OpenWrt固件。该方法免费，快速，无需消耗自己的计算机资源，每次编译都是全新环境。&lt;/p&gt;
     
     </summary>
@@ -1544,6 +1544,39 @@ make V=s
   </entry>
   
   <entry>
+    <title>OpenWRT的WiFi带机量修改方法</title>
+    <link href="http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/"/>
+    <id>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT的WiFi带机量修改方法/</id>
+    <published>2018-05-14T04:12:08.000Z</published>
+    <updated>2019-12-19T10:31:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>WiFi带机量的修改</p>
+<p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
+<p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
+<a id="more"></a>
+<blockquote>
+<p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="external">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="external">MTK_Ralink_ApSoc_SDK编译总结</a><br><a href="http://www.right.com.cn/forum/thread-208204-1-1.html" target="_blank" rel="external">openwrt wifi用户连接数限制</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;WiFi带机量的修改&lt;/p&gt;
+&lt;p&gt;(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;#define MAX_NUMBER_OF_MAC                64 // 原始值32&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
+    
+      <category term="电子书包" scheme="http://cuiqingwei.github.io/tags/%E7%94%B5%E5%AD%90%E4%B9%A6%E5%8C%85/"/>
+    
+  </entry>
+  
+  <entry>
     <title>WiFi探针的工作原理</title>
     <link href="http://cuiqingwei.github.io/2018/05/14/2018-06-18-WiFi%E6%8E%A2%E9%92%88%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"/>
     <id>http://cuiqingwei.github.io/2018/05/14/2018-06-18-WiFi探针的工作原理/</id>
@@ -1593,39 +1626,6 @@ make V=s
     
     
       <category term="Wi-Fi" scheme="http://cuiqingwei.github.io/tags/Wi-Fi/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OpenWRT的WiFi带机量修改方法</title>
-    <link href="http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/"/>
-    <id>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT的WiFi带机量修改方法/</id>
-    <published>2018-05-14T04:12:08.000Z</published>
-    <updated>2019-12-19T10:31:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>WiFi带机量的修改</p>
-<p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
-<p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
-<a id="more"></a>
-<blockquote>
-<p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="external">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="external">MTK_Ralink_ApSoc_SDK编译总结</a><br><a href="http://www.right.com.cn/forum/thread-208204-1-1.html" target="_blank" rel="external">openwrt wifi用户连接数限制</a></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;WiFi带机量的修改&lt;/p&gt;
-&lt;p&gt;(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;#define MAX_NUMBER_OF_MAC                64 // 原始值32&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
-    
-      <category term="电子书包" scheme="http://cuiqingwei.github.io/tags/%E7%94%B5%E5%AD%90%E4%B9%A6%E5%8C%85/"/>
     
   </entry>
   
