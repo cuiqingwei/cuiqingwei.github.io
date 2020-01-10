@@ -340,7 +340,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p><img src="../img/20191224/Actions.png" alt="《使用 GitHub Actions 编译 OpenWrt》"></p>
+              <p><img src="../img/20191224/Actions.jpeg" alt="《使用 GitHub Actions 编译 OpenWrt》"></p>
 <p><strong>Github Ac­tions</strong> 是 GitHub 推出的持续集成 (Con­tin­u­ous in­te­gra­tion，简称 <strong>CI</strong>) 服务，它提供了配置非常不错的虚拟服务器环境（E5 2vCPU/7G RAM），基于它可以进行构建、测试、打包、部署项目。这篇文章就是介绍如何使用P3TERX 项目（work­flow文件），进行云编译 OpenWrt固件。该方法免费，快速，无需消耗自己的计算机资源，每次编译都是全新环境。</p>
           
       
@@ -432,80 +432,6 @@
         <p class="article-more-link">
           <a href="/2019/12/22/2019-12-22-在Ubuntu-18-04-LTS中使用Katoolin安装Kali-Linux-Tools/#more">阅读全文 >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2019-12-24-在Mac上制作Ubuntu启动U盘" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/12/22/2019-12-24-在Mac上制作Ubuntu启动U盘/" class="article-date">
-      <time datetime="2019-12-22T13:07:00.000Z" itemprop="datePublished">2019-12-22</time>
-</a>
-
- 
-    <a href="/2019/12/22/2019-12-24-在Mac上制作Ubuntu启动U盘/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2019/12/22/2019-12-24-在Mac上制作Ubuntu启动U盘/"></span>
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/22/2019-12-24-在Mac上制作Ubuntu启动U盘/">在Mac上制作Ubuntu启动U盘</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Mac的<code>diskutil</code>命令非常强大，可以格式化U盘，也可以直接制作系统安装启动盘。</p>
-<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>县列表看看你的U盘是哪个，千万别选错了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">diskutil list</div><div class="line">sudo diskutil eraseDisk FAT32 UBUNTU18 MBRFormat /dev/disk5</div></pre></td></tr></table></figure>
-<h2 id="卸载U盘"><a href="#卸载U盘" class="headerlink" title="卸载U盘"></a>卸载U盘</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil unmountDisk /dev/disk5</div></pre></td></tr></table></figure>
-<h2 id="刻录"><a href="#刻录" class="headerlink" title="刻录"></a>刻录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo dd <span class="keyword">if</span>=./ubuntu-18.04.3-desktop-amd64.iso of=/dev/disk5 bs=1m</div></pre></td></tr></table></figure>
-<p>备选<br> <code>pv -petr ubuntu-18.04.3-desktop-amd64.iso | dd of=/dev/disk2 bs=1m</code></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
-    </div>
-
       
       <div class="clearfix"></div>
     </div>
@@ -960,20 +886,37 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p><strong>推荐</strong></p>
-<p>印象笔记 科技 NEWS:<a href="https://t.me/YinxiangBiji_News">https://t.me/YinxiangBiji_News</a></p>
-<p>印象笔记 Evernote 社群:<a href="https://t.me/YinxiangBiji">https://t.me/YinxiangBiji</a></p>
-<p>Telegram 中文圈:<a href="https://t.me/tgzhcn">https://t.me/tgzhcn</a></p>
-<p>RSS 交流群:<a href="https://t.me/joinchat/Ag98F0evTbZwY8HB7oH4fA">https://t.me/joinchat/Ag98F0evTbZwY8HB7oH4fA</a></p>
-<p>Notion 用户群:<a href="https://t.me/joinchat/Ag98F0DdcZr1X1xS6lJsyA">https://t.me/joinchat/Ag98F0DdcZr1X1xS6lJsyA</a></p>
-<p>幕布用户群:<a href="https://t.me/joinchat/Ag98F01tRQ2RIk_icHhiyA">https://t.me/joinchat/Ag98F01tRQ2RIk_icHhiyA</a></p>
-<p>为知笔记用户群:<a href="https://t.me/joinchat/Ag98F1MLJji5WC5OpjAcHQ">https://t.me/joinchat/Ag98F1MLJji5WC5OpjAcHQ</a></p>
-<p>有道云笔记用户群:<a href="https://t.me/joinchat/Ag98F1C2ip5g0Bac_KCJ2A">https://t.me/joinchat/Ag98F1C2ip5g0Bac_KCJ2A</a></p>
-<p>Todoist 用户群:<a href="https://t.me/joinchat/Ag98F1DuGqE_dIiNkeM2uA">https://t.me/joinchat/Ag98F1DuGqE_dIiNkeM2uA</a></p>
-<p>Simplenote 用户群:<a href="https://t.me/joinchat/Ag98F0f7fjEKqZKVHNW0aA">https://t.me/joinchat/Ag98F0f7fjEKqZKVHNW0aA</a></p>
-<p>MarginNote 用户群:<a href="https://t.me/joinchat/Ag98F0ZLDrJZOSBWXAEiow">https://t.me/joinchat/Ag98F0ZLDrJZOSBWXAEiow</a></p>
-<p>iMazing 用户群:<a href="https://t.me/joinchat/Ag98F07KJmIlmwSCfTOKxQ">https://t.me/joinchat/Ag98F07KJmIlmwSCfTOKxQ</a></p>
-<p>Typora 用户群:<a href="https://t.me/joinchat/Ag98FxBSO7eJ9mMwxxUIPw">https://t.me/joinchat/Ag98FxBSO7eJ9mMwxxUIPw</a></p>
+              <p><strong>Telegram官方翻译</strong></p>
+<p>官方翻译支持群 English:<a href="https://t.me/translation_en">https://t.me/translation_en</a></p>
+<p>官方翻译支持群 简体中文 (聪聪):<a href="https://t.me/translation_zhcncc">https://t.me/translation_zhcncc</a></p>
+<p>官方翻译支持群 简体中文:<a href="https://t.me/translation_zh_hans">https://t.me/translation_zh_hans</a></p>
+<p>官方翻译支持群 简体中文(@zh_CN 版):<a href="https://t.me/translation_classic_zh_cn">https://t.me/translation_classic_zh_cn</a></p>
+<p>官方翻译支持群 简体中文(langCN):<a href="https://t.me/translation_zhlangcn">https://t.me/translation_zhlangcn</a></p>
+<p>官方翻译支持群 瓜体中文:<a href="https://t.me/translation_duang_zh_cn">https://t.me/translation_duang_zh_cn</a></p>
+<p>官方翻译支持群 繁体中文(香港):<a href="https://t.me/translation_zh_hant">https://t.me/translation_zh_hant</a></p>
+<p>官方翻译支持群 繁体中文(台湾):<a href="https://t.me/translation_taiwan">https://t.me/translation_taiwan</a></p>
+<p>TG 简中交流（水）群:<a href="https://t.me/cnpub">https://t.me/cnpub</a></p>
+<p>Telegram 討論區:<a href="https://t.me/PublicGroupForzh">https://t.me/PublicGroupForzh</a></p>
+<p>Telegram 新手帮助:<a href="https://t.me/newbie_chat">https://t.me/newbie_chat</a></p>
+<p>Telegram X iOS:<a href="https://t.me/tgiostests">https://t.me/tgiostests</a></p>
+<p>Telegram iOS Talk:<a href="https://t.me/TelegramiOStalk">https://t.me/TelegramiOStalk</a></p>
+<p>Telegram Android Talk:<a href="https://t.me/TelegramAndroidTalk">https://t.me/TelegramAndroidTalk</a></p>
+<p>Telegram X Android:<a href="https://t.me/tgandroidtests">https://t.me/tgandroidtests</a></p>
+<p>Telegram macOS:<a href="https://t.me/macswift">https://t.me/macswift</a></p>
+<p>Telegram macOS Talk:<a href="https://t.me/TelegramMacOsTalk">https://t.me/TelegramMacOsTalk</a></p>
+<p>Telegram Desktop Talk:<a href="https://t.me/TelegramDesktopTalk">https://t.me/TelegramDesktopTalk</a></p>
+<p>Telegram Windows Phone Talk:<a href="https://t.me/TelegramWPtalk">https://t.me/TelegramWPtalk</a></p>
+<p>Telegram Bot Talk:<a href="https://t.me/BotTalk">https://t.me/BotTalk</a></p>
+<p>Telegram Party:<a href="https://t.me/PublicTestGroup">https://t.me/PublicTestGroup</a></p>
+<p>Telegram Android Themes:<a href="https://t.me/AndroidThemesGroup">https://t.me/AndroidThemesGroup</a></p>
+<p>Telegram Desktop Themes:<a href="https://t.me/TelegramThemes">https://t.me/TelegramThemes</a></p>
+<p>Telegram X: Themes:<a href="http://t.me/tgx_perfection">http://t.me/tgx_perfection</a></p>
+<p>Telegram Beta Chat:<a href="https://t.me/tgbetachat">https://t.me/tgbetachat</a></p>
+<p>Tentang Telegram:<a href="https://t.me/tentangtelegram">https://t.me/tentangtelegram</a></p>
+<p>Instant View Platform Chat:<a href="https://t.me/IVpublic">https://t.me/IVpublic</a></p>
+<p>Telegram 新手問答區:<a href="https://t.me/TGQNA">https://t.me/TGQNA</a></p>
+<p>電報群推廣:<a href="https://t.me/joinchat/FAir4j15AV8Q_x5zzoc8yw">https://t.me/joinchat/FAir4j15AV8Q_x5zzoc8yw</a></p>
+<p>CNBlacklistR 交流群:<a href="https://t.me/joinchat/FfbG_g9eWFL1-8vEhY4xlQ">https://t.me/joinchat/FfbG_g9eWFL1-8vEhY4xlQ</a></p>
           
       
     </div>
@@ -1156,6 +1099,88 @@
 
 
   
+    <article id="post-2018-06-20-QSDK编译" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/06/20/2018-06-20-QSDK编译/" class="article-date">
+      <time datetime="2018-06-20T07:12:08.000Z" itemprop="datePublished">2018-06-20</time>
+</a>
+
+ 
+    <a href="/2018/06/20/2018-06-20-QSDK编译/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2018/06/20/2018-06-20-QSDK编译/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/20/2018-06-20-QSDK编译/">QSDK编译</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p><strong>QSDK</strong> 是一种在openwrt的基础上，加入了高通atheros芯片相关资料的一种环境。</p>
+<p>QSDK与OpenWRT的区别主要在如下几个方面：</p>
+<ul>
+<li>arch/mips/ath79/* – updated QCA base platform device support – GPLv2</li>
+<li>sound/soc/ath79/* – new ALSA-compliant QCA soundcard driver – ISC</li>
+<li>drivers/net/ethernet/atheros/ag71xx/* – updated QCA Ethernet switch driver – GPLv2</li>
+<li>net/core/* – performance enhancement updates to Linux sk_buff management – GPL v2</li>
+<li>drivers/spi – added modes to QCA spi driver – GPLv2</li>
+<li>drivers/mtd/nand/ – new QCA NAND flash controller driver – ISC</li>
+</ul>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenWRT/">OpenWRT</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/06/20/2018-06-20-QSDK编译/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1167,7 +1192,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i>
-                2016-2019 cuiqingwei
+                2016-2020 cuiqingwei
             </div>
             <div class="footer-right">
                 <!-- <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i> -->

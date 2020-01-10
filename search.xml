@@ -6,7 +6,7 @@
     <entry>
       <title><![CDATA[使用GitHub Actions编译OpenWRT]]></title>
       <url>http://cuiqingwei.github.io/2019/12/24/2019-12-24-%E4%BD%BF%E7%94%A8GitHub-Actions%E7%BC%96%E8%AF%91OpenWRT/</url>
-      <content type="html"><![CDATA[<p><img src="../img/20191224/Actions.png" alt="《使用 GitHub Actions 编译 OpenWrt》"></p>
+      <content type="html"><![CDATA[<p><img src="../img/20191224/Actions.jpeg" alt="《使用 GitHub Actions 编译 OpenWrt》"></p>
 <p><strong>Github Ac­tions</strong> 是 GitHub 推出的持续集成 (Con­tin­u­ous in­te­gra­tion，简称 <strong>CI</strong>) 服务，它提供了配置非常不错的虚拟服务器环境（E5 2vCPU/7G RAM），基于它可以进行构建、测试、打包、部署项目。这篇文章就是介绍如何使用P3TERX 项目（work­flow文件），进行云编译 OpenWrt固件。该方法免费，快速，无需消耗自己的计算机资源，每次编译都是全新环境。</p>
 <a id="more"></a>
 <p>项目地址：</p>
@@ -118,18 +118,6 @@
 <p>使用Katoolin完成操作后，按 <strong>“ Ctrl + C”</strong>退出。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">kat &gt; ^CShutdown requested...Goodbye...</div></pre></td></tr></table></figure>
 <p>就这样。如您所见，Katoolin是非常简单易用的工具，它提供了一种在Ubuntu Linux盒子中安装Kali Linux工具的简便方法。您并不总是需要Kali Linux来尝试所有取证，渗透和安全测试工具。Katoolin将在任何基于DEB的Linux系统中轻松为您完成此任务。试试看，您不会失望的。</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[在Mac上制作Ubuntu启动U盘]]></title>
-      <url>http://cuiqingwei.github.io/2019/12/22/2019-12-24-%E5%9C%A8Mac%E4%B8%8A%E5%88%B6%E4%BD%9CUbuntu%E5%90%AF%E5%8A%A8U%E7%9B%98/</url>
-      <content type="html"><![CDATA[<p>Mac的<code>diskutil</code>命令非常强大，可以格式化U盘，也可以直接制作系统安装启动盘。</p>
-<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>县列表看看你的U盘是哪个，千万别选错了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">diskutil list</div><div class="line">sudo diskutil eraseDisk FAT32 UBUNTU18 MBRFormat /dev/disk5</div></pre></td></tr></table></figure>
-<h2 id="卸载U盘"><a href="#卸载U盘" class="headerlink" title="卸载U盘"></a>卸载U盘</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil unmountDisk /dev/disk5</div></pre></td></tr></table></figure>
-<h2 id="刻录"><a href="#刻录" class="headerlink" title="刻录"></a>刻录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo dd <span class="keyword">if</span>=./ubuntu-18.04.3-desktop-amd64.iso of=/dev/disk5 bs=1m</div></pre></td></tr></table></figure>
-<p>备选<br> <code>pv -petr ubuntu-18.04.3-desktop-amd64.iso | dd of=/dev/disk2 bs=1m</code></p>
 ]]></content>
     </entry>
     
@@ -533,7 +521,39 @@
     <entry>
       <title><![CDATA[Telegram好玩实用的群组]]></title>
       <url>http://cuiqingwei.github.io/2019/09/21/2019-09-21-Telegram%E5%A5%BD%E7%8E%A9%E5%AE%9E%E7%94%A8%E7%9A%84%E7%BE%A4%E7%BB%84/</url>
-      <content type="html"><![CDATA[<p><strong>推荐</strong></p>
+      <content type="html"><![CDATA[<p><strong>Telegram官方翻译</strong></p>
+<p>官方翻译支持群 English:<a href="https://t.me/translation_en" target="_blank" rel="external">https://t.me/translation_en</a></p>
+<p>官方翻译支持群 简体中文 (聪聪):<a href="https://t.me/translation_zhcncc" target="_blank" rel="external">https://t.me/translation_zhcncc</a></p>
+<p>官方翻译支持群 简体中文:<a href="https://t.me/translation_zh_hans" target="_blank" rel="external">https://t.me/translation_zh_hans</a></p>
+<p>官方翻译支持群 简体中文(@zh_CN 版):<a href="https://t.me/translation_classic_zh_cn" target="_blank" rel="external">https://t.me/translation_classic_zh_cn</a></p>
+<p>官方翻译支持群 简体中文(langCN):<a href="https://t.me/translation_zhlangcn" target="_blank" rel="external">https://t.me/translation_zhlangcn</a></p>
+<p>官方翻译支持群 瓜体中文:<a href="https://t.me/translation_duang_zh_cn" target="_blank" rel="external">https://t.me/translation_duang_zh_cn</a></p>
+<p>官方翻译支持群 繁体中文(香港):<a href="https://t.me/translation_zh_hant" target="_blank" rel="external">https://t.me/translation_zh_hant</a></p>
+<p>官方翻译支持群 繁体中文(台湾):<a href="https://t.me/translation_taiwan" target="_blank" rel="external">https://t.me/translation_taiwan</a></p>
+<p>TG 简中交流（水）群:<a href="https://t.me/cnpub" target="_blank" rel="external">https://t.me/cnpub</a></p>
+<p>Telegram 討論區:<a href="https://t.me/PublicGroupForzh" target="_blank" rel="external">https://t.me/PublicGroupForzh</a></p>
+<p>Telegram 新手帮助:<a href="https://t.me/newbie_chat" target="_blank" rel="external">https://t.me/newbie_chat</a></p>
+<p>Telegram X iOS:<a href="https://t.me/tgiostests" target="_blank" rel="external">https://t.me/tgiostests</a></p>
+<p>Telegram iOS Talk:<a href="https://t.me/TelegramiOStalk" target="_blank" rel="external">https://t.me/TelegramiOStalk</a></p>
+<p>Telegram Android Talk:<a href="https://t.me/TelegramAndroidTalk" target="_blank" rel="external">https://t.me/TelegramAndroidTalk</a></p>
+<p>Telegram X Android:<a href="https://t.me/tgandroidtests" target="_blank" rel="external">https://t.me/tgandroidtests</a></p>
+<p>Telegram macOS:<a href="https://t.me/macswift" target="_blank" rel="external">https://t.me/macswift</a></p>
+<p>Telegram macOS Talk:<a href="https://t.me/TelegramMacOsTalk" target="_blank" rel="external">https://t.me/TelegramMacOsTalk</a></p>
+<p>Telegram Desktop Talk:<a href="https://t.me/TelegramDesktopTalk" target="_blank" rel="external">https://t.me/TelegramDesktopTalk</a></p>
+<p>Telegram Windows Phone Talk:<a href="https://t.me/TelegramWPtalk" target="_blank" rel="external">https://t.me/TelegramWPtalk</a></p>
+<p>Telegram Bot Talk:<a href="https://t.me/BotTalk" target="_blank" rel="external">https://t.me/BotTalk</a></p>
+<p>Telegram Party:<a href="https://t.me/PublicTestGroup" target="_blank" rel="external">https://t.me/PublicTestGroup</a></p>
+<p>Telegram Android Themes:<a href="https://t.me/AndroidThemesGroup" target="_blank" rel="external">https://t.me/AndroidThemesGroup</a></p>
+<p>Telegram Desktop Themes:<a href="https://t.me/TelegramThemes" target="_blank" rel="external">https://t.me/TelegramThemes</a></p>
+<p>Telegram X: Themes:<a href="http://t.me/tgx_perfection" target="_blank" rel="external">http://t.me/tgx_perfection</a></p>
+<p>Telegram Beta Chat:<a href="https://t.me/tgbetachat" target="_blank" rel="external">https://t.me/tgbetachat</a></p>
+<p>Tentang Telegram:<a href="https://t.me/tentangtelegram" target="_blank" rel="external">https://t.me/tentangtelegram</a></p>
+<p>Instant View Platform Chat:<a href="https://t.me/IVpublic" target="_blank" rel="external">https://t.me/IVpublic</a></p>
+<p>Telegram 新手問答區:<a href="https://t.me/TGQNA" target="_blank" rel="external">https://t.me/TGQNA</a></p>
+<p>電報群推廣:<a href="https://t.me/joinchat/FAir4j15AV8Q_x5zzoc8yw" target="_blank" rel="external">https://t.me/joinchat/FAir4j15AV8Q_x5zzoc8yw</a></p>
+<p>CNBlacklistR 交流群:<a href="https://t.me/joinchat/FfbG_g9eWFL1-8vEhY4xlQ" target="_blank" rel="external">https://t.me/joinchat/FfbG_g9eWFL1-8vEhY4xlQ</a></p>
+<a id="more"></a>
+<p><strong>软件用户</strong></p>
 <p>印象笔记 科技 NEWS:<a href="https://t.me/YinxiangBiji_News" target="_blank" rel="external">https://t.me/YinxiangBiji_News</a></p>
 <p>印象笔记 Evernote 社群:<a href="https://t.me/YinxiangBiji" target="_blank" rel="external">https://t.me/YinxiangBiji</a></p>
 <p>Telegram 中文圈:<a href="https://t.me/tgzhcn" target="_blank" rel="external">https://t.me/tgzhcn</a></p>
@@ -547,7 +567,6 @@
 <p>MarginNote 用户群:<a href="https://t.me/joinchat/Ag98F0ZLDrJZOSBWXAEiow" target="_blank" rel="external">https://t.me/joinchat/Ag98F0ZLDrJZOSBWXAEiow</a></p>
 <p>iMazing 用户群:<a href="https://t.me/joinchat/Ag98F07KJmIlmwSCfTOKxQ" target="_blank" rel="external">https://t.me/joinchat/Ag98F07KJmIlmwSCfTOKxQ</a></p>
 <p>Typora 用户群:<a href="https://t.me/joinchat/Ag98FxBSO7eJ9mMwxxUIPw" target="_blank" rel="external">https://t.me/joinchat/Ag98FxBSO7eJ9mMwxxUIPw</a></p>
-<a id="more"></a>
 <p><strong>软件</strong></p>
 <p>落格输入法:<a href="https://t.me/joinchat/DGZalT6pMAHNNg8JyfPLXw" target="_blank" rel="external">https://t.me/joinchat/DGZalT6pMAHNNg8JyfPLXw</a></p>
 <p>Microsoft users:<a href="https://t.me/Microsofthelp" target="_blank" rel="external">https://t.me/Microsofthelp</a></p>
@@ -1009,37 +1028,6 @@
 <p>播客大家谈:<a href="https://t.me/bokecn" target="_blank" rel="external">https://t.me/bokecn</a></p>
 <p>「得意忘形」听众群:<a href="https://t.me/joinchat/Bx8JqQ33oVCrKSul-cHJGQ" target="_blank" rel="external">https://t.me/joinchat/Bx8JqQ33oVCrKSul-cHJGQ</a></p>
 <p>津津乐道听友交流:<a href="https://t.me/htnpodcast" target="_blank" rel="external">https://t.me/htnpodcast</a></p>
-<p><strong>Telegram官方翻译</strong></p>
-<p>官方翻译支持群 English:<a href="https://t.me/translation_en" target="_blank" rel="external">https://t.me/translation_en</a></p>
-<p>官方翻译支持群 简体中文 (聪聪):<a href="https://t.me/translation_zhcncc" target="_blank" rel="external">https://t.me/translation_zhcncc</a></p>
-<p>官方翻译支持群 简体中文:<a href="https://t.me/translation_zh_hans" target="_blank" rel="external">https://t.me/translation_zh_hans</a></p>
-<p>官方翻译支持群 简体中文(@zh_CN 版):<a href="https://t.me/translation_classic_zh_cn" target="_blank" rel="external">https://t.me/translation_classic_zh_cn</a></p>
-<p>官方翻译支持群 简体中文(langCN):<a href="https://t.me/translation_zhlangcn" target="_blank" rel="external">https://t.me/translation_zhlangcn</a></p>
-<p>官方翻译支持群 瓜体中文:<a href="https://t.me/translation_duang_zh_cn" target="_blank" rel="external">https://t.me/translation_duang_zh_cn</a></p>
-<p>官方翻译支持群 繁体中文(香港):<a href="https://t.me/translation_zh_hant" target="_blank" rel="external">https://t.me/translation_zh_hant</a></p>
-<p>官方翻译支持群 繁体中文(台湾):<a href="https://t.me/translation_taiwan" target="_blank" rel="external">https://t.me/translation_taiwan</a></p>
-<p>TG 简中交流（水）群:<a href="https://t.me/cnpub" target="_blank" rel="external">https://t.me/cnpub</a></p>
-<p>Telegram 討論區:<a href="https://t.me/PublicGroupForzh" target="_blank" rel="external">https://t.me/PublicGroupForzh</a></p>
-<p>Telegram 新手帮助:<a href="https://t.me/newbie_chat" target="_blank" rel="external">https://t.me/newbie_chat</a></p>
-<p>Telegram X iOS:<a href="https://t.me/tgiostests" target="_blank" rel="external">https://t.me/tgiostests</a></p>
-<p>Telegram iOS Talk:<a href="https://t.me/TelegramiOStalk" target="_blank" rel="external">https://t.me/TelegramiOStalk</a></p>
-<p>Telegram Android Talk:<a href="https://t.me/TelegramAndroidTalk" target="_blank" rel="external">https://t.me/TelegramAndroidTalk</a></p>
-<p>Telegram X Android:<a href="https://t.me/tgandroidtests" target="_blank" rel="external">https://t.me/tgandroidtests</a></p>
-<p>Telegram macOS:<a href="https://t.me/macswift" target="_blank" rel="external">https://t.me/macswift</a></p>
-<p>Telegram macOS Talk:<a href="https://t.me/TelegramMacOsTalk" target="_blank" rel="external">https://t.me/TelegramMacOsTalk</a></p>
-<p>Telegram Desktop Talk:<a href="https://t.me/TelegramDesktopTalk" target="_blank" rel="external">https://t.me/TelegramDesktopTalk</a></p>
-<p>Telegram Windows Phone Talk:<a href="https://t.me/TelegramWPtalk" target="_blank" rel="external">https://t.me/TelegramWPtalk</a></p>
-<p>Telegram Bot Talk:<a href="https://t.me/BotTalk" target="_blank" rel="external">https://t.me/BotTalk</a></p>
-<p>Telegram Party:<a href="https://t.me/PublicTestGroup" target="_blank" rel="external">https://t.me/PublicTestGroup</a></p>
-<p>Telegram Android Themes:<a href="https://t.me/AndroidThemesGroup" target="_blank" rel="external">https://t.me/AndroidThemesGroup</a></p>
-<p>Telegram Desktop Themes:<a href="https://t.me/TelegramThemes" target="_blank" rel="external">https://t.me/TelegramThemes</a></p>
-<p>Telegram X: Themes:<a href="http://t.me/tgx_perfection" target="_blank" rel="external">http://t.me/tgx_perfection</a></p>
-<p>Telegram Beta Chat:<a href="https://t.me/tgbetachat" target="_blank" rel="external">https://t.me/tgbetachat</a></p>
-<p>Tentang Telegram:<a href="https://t.me/tentangtelegram" target="_blank" rel="external">https://t.me/tentangtelegram</a></p>
-<p>Instant View Platform Chat:<a href="https://t.me/IVpublic" target="_blank" rel="external">https://t.me/IVpublic</a></p>
-<p>Telegram 新手問答區:<a href="https://t.me/TGQNA" target="_blank" rel="external">https://t.me/TGQNA</a></p>
-<p>電報群推廣:<a href="https://t.me/joinchat/FAir4j15AV8Q_x5zzoc8yw" target="_blank" rel="external">https://t.me/joinchat/FAir4j15AV8Q_x5zzoc8yw</a></p>
-<p>CNBlacklistR 交流群:<a href="https://t.me/joinchat/FfbG_g9eWFL1-8vEhY4xlQ" target="_blank" rel="external">https://t.me/joinchat/FfbG_g9eWFL1-8vEhY4xlQ</a></p>
 <p><strong>地区群</strong></p>
 <p>深圳:<a href="https://t.me/shenzhenbot?start=join" target="_blank" rel="external">https://t.me/shenzhenbot?start=join</a></p>
 <p>深圳:<a href="https://t.me/shenzhentg" target="_blank" rel="external">https://t.me/shenzhentg</a></p>
@@ -1148,6 +1136,7 @@
 <p>回形针PaperClip粉丝群:<a href="https://t.me/paperclipfans" target="_blank" rel="external">https://t.me/paperclipfans</a></p>
 <p>瘟疫难民254营:<a href="https://t.me/ckhunter254" target="_blank" rel="external">https://t.me/ckhunter254</a></p>
 <p>iShare 爱分享:<a href="https://t.me/iShareTG" target="_blank" rel="external">https://t.me/iShareTG</a></p>
+<p><a href="http://blog.liyuans.com/archives/telegram-recommendation.html" target="_blank" rel="external">Telegram: 一份更完整的群组推荐，包含社群 / 频道 / 机器人</a></p>
 ]]></content>
     </entry>
     
@@ -1293,20 +1282,6 @@ make V=s
     </entry>
     
     <entry>
-      <title><![CDATA[OpenWRT的WiFi带机量修改方法]]></title>
-      <url>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/</url>
-      <content type="html"><![CDATA[<p>WiFi带机量的修改</p>
-<p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
-<p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
-<a id="more"></a>
-<blockquote>
-<p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="external">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="external">MTK_Ralink_ApSoc_SDK编译总结</a><br><a href="http://www.right.com.cn/forum/thread-208204-1-1.html" target="_blank" rel="external">openwrt wifi用户连接数限制</a></p>
-</blockquote>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[WiFi探针的工作原理]]></title>
       <url>http://cuiqingwei.github.io/2018/05/14/2018-06-18-WiFi%E6%8E%A2%E9%92%88%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</url>
       <content type="html"><![CDATA[<p><strong>WiFi探针</strong> 技术是指基于WiFi探测技术来识别AP（无线访问接入点）附近已开启WiFi的智能手机或者WiFi终端（笔记本，平板电脑等），无需用户接入WiFi，WiFi探针就能够识别用户的信息。</p>
@@ -1340,6 +1315,20 @@ make V=s
 <h1 id="数据释义"><a href="#数据释义" class="headerlink" title="数据释义"></a>数据释义</h1><p>　　“探针MAC”就是探针本身的MAC地址；<br>　　“抓取的设备MAC”指探针抓取到的WiFi信号的发射设备的MAC地址，一般为手机；<br>　　“信号强度”指探针抓取到的WiFi信号的强度，最小值为“-100”，一般来说，此值越大表示发射设备离探针越近；<br>　　“设备发送的WiFi包的类型”指探针抓取到的WiFi信号的类别，其末位数的值为0、4、8时，分别表示抓取到的WiFi信号为“管理”帧、“控制”帧、“数据”帧；<br>　　“时间戳”指探针抓取到WiFi信号的时间，如果探针在局域网内使用而没有接入广域网的话，时间戳可能是不准确的。</p>
 <blockquote>
 <p>WiFi探针数据可以同哪些数据融合？<br>数据的应用核心在于融合，如何将各成一派数据巧妙的组合在一起，让数据驱动商业的发展，是现在与未来的议题。虽然线上大数据已经经历过互联网的洗礼，但是线下数据仍有较长的路要走，那么WiFi探针可以同哪些数据做融合呢？<br>MAC数据可以同支付数据、会员数据、消费数据、营销数据、地理数据及线上数据做深度的融合，将多维度的数据集成一起勾画出完整的用户画像，如用户的姓名、年龄、兴趣偏好、消费特征、过往消费记录、学历等。基于这些数据再结合具体的应用，这样才能让线下商户有据可依，释放出数据的价值。</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[OpenWRT的WiFi带机量修改方法]]></title>
+      <url>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/</url>
+      <content type="html"><![CDATA[<p>WiFi带机量的修改</p>
+<p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
+<p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
+<a id="more"></a>
+<blockquote>
+<p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="external">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="external">MTK_Ralink_ApSoc_SDK编译总结</a><br><a href="http://www.right.com.cn/forum/thread-208204-1-1.html" target="_blank" rel="external">openwrt wifi用户连接数限制</a></p>
 </blockquote>
 ]]></content>
     </entry>
@@ -2220,6 +2209,18 @@ make V=s
     </entry>
     
     <entry>
+      <title><![CDATA[在Mac上制作Ubuntu启动U盘]]></title>
+      <url>http://cuiqingwei.github.io/2017/03/22/2017-03-24-%E5%9C%A8Mac%E4%B8%8A%E5%88%B6%E4%BD%9CUbuntu%E5%90%AF%E5%8A%A8U%E7%9B%98/</url>
+      <content type="html"><![CDATA[<p>Mac的<code>diskutil</code>命令非常强大，可以格式化U盘，也可以直接制作系统安装启动盘。</p>
+<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>县列表看看你的U盘是哪个，千万别选错了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">diskutil list</div><div class="line">sudo diskutil eraseDisk FAT32 UBUNTU18 MBRFormat /dev/disk5</div></pre></td></tr></table></figure>
+<h2 id="卸载U盘"><a href="#卸载U盘" class="headerlink" title="卸载U盘"></a>卸载U盘</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil unmountDisk /dev/disk5</div></pre></td></tr></table></figure>
+<h2 id="刻录"><a href="#刻录" class="headerlink" title="刻录"></a>刻录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo dd <span class="keyword">if</span>=./ubuntu-18.04.3-desktop-amd64.iso of=/dev/disk5 bs=1m</div></pre></td></tr></table></figure>
+<p>备选<br> <code>pv -petr ubuntu-18.04.3-desktop-amd64.iso | dd of=/dev/disk2 bs=1m</code></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[HomeKit初体验]]></title>
       <url>http://cuiqingwei.github.io/2017/02/09/2017-02-09-Homekit%E5%88%9D%E4%BD%93%E9%AA%8C/</url>
       <content type="html"><![CDATA[<h1 id="对话Siri"><a href="#对话Siri" class="headerlink" title="对话Siri"></a>对话Siri</h1><p><iframe height="498" width="510" src="http://player.youku.com/embed/XMjUwMzIyMjEyMA==" frameborder="0" 'allowfullscreen'=""></iframe><br><a id="more"></a></p>
@@ -2617,6 +2618,19 @@ make V=s
     </entry>
     
     <entry>
+      <title><![CDATA[GoAhead移植到OpenWRT]]></title>
+      <url>http://cuiqingwei.github.io/2016/12/15/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/</url>
+      <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
+<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
+<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
+<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
+<blockquote>
+<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[GitHub中的watch、star、fork的作用]]></title>
       <url>http://cuiqingwei.github.io/2016/12/15/2016-12-16-GitHub%E4%B8%AD%E7%9A%84watch%E3%80%81star%E3%80%81fork%E7%9A%84%E4%BD%9C%E7%94%A8/</url>
       <content type="html"><![CDATA[<blockquote>
@@ -2673,19 +2687,6 @@ make V=s
 <h2 id="小细节"><a href="#小细节" class="headerlink" title="小细节"></a>小细节</h2><p>有些时候，你看到一个项目的 star 数有很多，你就想知道到底都有那些人 star 了这个项目，或者 fork 了这个项目，</p>
 <p>但是环顾一圈，你却找不到一个入口，后来自己不经意的发现，只要<code>点击 star 傍边的数字</code>，就可以查看有哪些人 star 了这个项目。</p>
 <p>是不是有点意思，现在你就可以去试试，watch、fork上面的数字都是可以点击的，道理一样。</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[GoAhead移植到OpenWRT]]></title>
-      <url>http://cuiqingwei.github.io/2016/12/15/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/</url>
-      <content type="html"><![CDATA[<h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg" alt=""><br><a id="more"></a></p>
-<h1 id="ipk"><a href="#ipk" class="headerlink" title="ipk"></a>ipk</h1><p><img src="/img/20161215/goahead-ipk.jpg" alt=""></p>
-<h1 id="run"><a href="#run" class="headerlink" title="run"></a>run</h1><p><img src="/img/20161215/openwrt.jpg" alt=""></p>
-<h1 id="goahead运行效果"><a href="#goahead运行效果" class="headerlink" title="goahead运行效果"></a>goahead运行效果</h1><p><img src="/img/20161215/goahead2.5.jpg" alt=""></p>
-<blockquote>
-<p><a href="http://www.right.com.cn/forum/thread-203861-1-1.html" target="_blank" rel="external">http://www.right.com.cn/forum/thread-203861-1-1.html</a><br><a href="http://www.amobbs.com/thread-5665404-1-1.html" target="_blank" rel="external">http://www.amobbs.com/thread-5665404-1-1.html</a></p>
-</blockquote>
 ]]></content>
     </entry>
     
@@ -2981,37 +2982,6 @@ make V=s
     </entry>
     
     <entry>
-      <title><![CDATA[常用路亚线的区别]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%B8%B8%E7%94%A8%E8%B7%AF%E4%BA%9A%E7%BA%BF%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-      <content type="html"><![CDATA[<h2 id="尼龙线"><a href="#尼龙线" class="headerlink" title="尼龙线"></a>尼龙线</h2><p>台钓中使用最多的也是尼龙线。尼龙的化工原料为PA，和PE一样是石油的下游产品。与PE不同的是，尼龙线一般为单股线，这种线的特点刚好与PE线相反。尼龙线的优点是由于有一定的延展性，抛投和中鱼的时候不易断线，由于生产技术已经发展了近70年的历史，成本低，产量大，相比PE线要便宜很多。最后一点是尼龙表面圆滑，对线环的磨损可以降到最低。</p>
-<a id="more"></a>
-<p>延展性同样也是尼龙线的缺点，在某些鱼讯轻微的场合，尼龙线不能及时将中鱼信号传达给钓手，从而失去最佳的起杆机会。另外，同样拉力的情况下，尼龙线比PE的线径更粗，从而影响路亚的抛投距离（<em>当然这个问题并不一定完全适用，需要根据具体的情况来，不过在高磅数的尼龙线与高磅数PE线做对比的话，高磅数的PE占些优势，因其相同的高磅数的线，高磅数PE线径更细一些，也就可以更加节省线杯的空间容下更多的线，并且线径也更细利于高磅数线的抛投</em>）。</p>
-<p><img src="/img/20161013/fishing-line.jpg" alt=""></p>
-<h2 id="PE线"><a href="#PE线" class="headerlink" title="PE线"></a>PE线</h2><p>PE线是指用多股化纤编织后浸胶制成的钓线，俗称编织线(BRAIDED OR CORD LINE)，最早见的就是“大力马”。<br>这种钓线的生产方式是：将多条微细纤维(如：达克龙纤维、功夫龙纤维或大力马纤维或其它聚乙烯化合物的PE纤维…等)以机器来编织而成，所以这种钓线的线体呈现纤维规则交叉的纹路，只要你将线体取出审视一番就可以清楚的发现其线体结构上的特色。<br>这种线的优点是，相同拉力的的情况下线径比尼龙要细很多，同样我们使用12磅的尼龙和12 磅的PE，因为PE的线径更细，能够抛投的更远。在实际钓场中，风力是影响路亚抛投距离的重要因素，PE同样因为相同拉力下线径更细的特点，能够将风阻的影响减小。除此之外，PE几乎没有延展性，在中鱼的时候能够在第一时间将信号传达给钓手。还有就是PE线更加耐磨。<br>但正像所有事物都有其两面性一样，PE并不是没有任何缺点。PE第一个缺点是没有延展性。这个特性在能够将中鱼信号迅速传达给钓手的同时，也经常导致跑鱼或放枪。玩过台钓的朋友都知道，中鱼后钓竿上要保持一定的力量，鱼才不易脱钩，杆软不易断线跑鱼，但是起鱼慢；杆硬起鱼快，但是容易断线跑鱼。同样，你可以把线看作杆的延伸，鱼线有一定的延展性，就像钓竿比较软一样，能够保证在鱼左冲右突的时候始终保持一定的力量，而PE就像比较硬的杆，遛鱼的余地比较小从而导致脱钩或断线。另外现在有厂家为了使用更细的线径达到更强的拉力，在PE中掺加金属丝，虽然拉力得到了加强，但是线的延展性和柔软度进一步降低，同时还容易磨损导环。</p>
-<h2 id="碳线（氟碳线）"><a href="#碳线（氟碳线）" class="headerlink" title="碳线（氟碳线）"></a>碳线（氟碳线）</h2><p>碳线是由含有氟和碳成分的树脂抽丝加工而成，碳线的特性是高比重、切水快、光的折射率非常低几乎看不到，没有吸水性，抗紫外线和耐久性要比尼龙线强很多，因为碳线的物理特性为非常低的延展性和高比重，可以让饵迅速到达所需要的水层，并且因延展性很低所以也就提供了良好的灵敏度。因碳线对光的折射率几乎为0，所以会降低鱼的敏感性，让鱼能放心的将饵食入口中。碳线适合搭配软饵钓组使用，比如：无铅钓组、WACKY、德州钓组，却不太适合搭配某一些特殊的硬饵或水面系的路亚。不过碳线也不是没有缺点，因为通常比较硬（特别是高磅数的碳线），如果作为主线使用要注意纺车轮上建议使用的主线不要超过10磅，水滴轮或鼓轮如有特殊需要最好也不要超过20磅（当然特殊情况下可以用到更高的磅数作为主线，并不是完全不可以），碳线也可以当做前导线来使用，因为碳线比较耐磨，可以搭配PE线，弥补PE不耐磨的缺点。</p>
-<p><img src="/img/20161013/钓线攻略.jpg" alt=""></p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[路亚水滴轮的速比的选择]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E8%B7%AF%E4%BA%9A%E6%B0%B4%E6%BB%B4%E8%BD%AE%E7%9A%84%E9%80%9F%E6%AF%94%E7%9A%84%E9%80%89%E6%8B%A9/</url>
-      <content type="html"><![CDATA[<blockquote>
-<p>大家在购买轮子时，估计很多人都是首先关注轮子的价格，再关注轮子的牌子、外观、线容量、轴承数等，然后在各论坛到处问“XX的轮怎样？用过的说说！”结果，最后听了一大堆意见后最终还是进了一个价格自己可以接受的轮而不管轮子怎样了；或者受一些钓友的影响，入了一个超出了预算的牌子轮子却不是最适合自己的；或者入了一个价格差不多，只是多了一个或几个轴承的杂牌三无轮子而其它质量极差。鲜少有人（特别是新人）关注轮子的齿轮转速比，或者有关注，但却不是先决条件。</p>
-</blockquote>
-<a id="more"></a>
-<h3 id="在此抛砖引玉，聊聊轮子的转速比。"><a href="#在此抛砖引玉，聊聊轮子的转速比。" class="headerlink" title="在此抛砖引玉，聊聊轮子的转速比。"></a>在此抛砖引玉，聊聊轮子的转速比。</h3><p>转速比，通俗的来讲就是轮子的主副齿轮的转速比；例如6.3:1，意思就是：摇柄轴上的大齿轮转一圈，轮轴上的小齿轮就要转6.3圈。速比的设计除可以快速收线外，还有“四两拨千斤”的功能。大概可以这样理解：我用1牛的力来转把手，那么鱼要用出6.3牛的力才能不让我转动。<br>高转速比，可以快速收紧余线；中鱼时快速拉出障碍区；大水域快速搜索等有无可比拟的优势；但在控制一些硬饵泳姿时，或要求慢拖时，不如低转速比好控制。此外，转速比越高，同样拉力的情况下，摇起来就越费力；原因是高转速比把力量转换成高速，道理正如变速自行车一样。你别不相信，不用很大的鱼就让你发现，再多的轴承都是转不动了。（想象一下，你一定见过有人在溜鱼时做抽竿动作，为什么要做抽竿的动作呢？）<br>说到这里，大家每次钓鱼都在用到转速比，但你真正的了解过它吗？例如一些钓友在说操作手法时，“慢收+轻抖”。这个当中的“慢收”实在太笼统了。有些会说的具体一些，屁如“一秒转动一圈摇把”，还是没人具体意义；只有说到“我的轮子转速比是6.3:1，每秒转一圈摇把”才算是具体化。好，说到这里，我估计99.9%的人都不知自己转一圈摇把到底卷了多少线回来，也即是你的饵游动的速度是多少米每秒？</p>
-<p>当然，实际钓鱼时也不用真的精确到零点几米每秒。只要粗略的知道，天长日久后，不管什么时候，需要什么速度，才最可能上鱼，已经深深的铬在你的潜意识里了。随便拿起一套装备，看看转速比就清楚自己该怎样操作了。</p>
-<p>看似很复杂，其实也很简单。一般人的装备都不多，常见的轮子的转速比也就是那几个。以纺车轮为例，我的一个纺车转速比是6.2:1，线杯最大外径是40mm；2号尼龙线在绕线器转一圈时卷的线长度约为126mm(40<em>3.14),实测为130.8mm；摇把转一圈时收线约130</em>6.3=825mm；即0.825米；一米有多长大家总有个概念吧？经过这样一个计算，你是不是心里清楚自己的饵是“受伤的小鱼”还是“水中潜艇”呢？</p>
-<blockquote>
-<p><strong>摘要</strong>：进来有些朋友在网上询问关于双轴卷线器（水滴轮、鼓型轮）应该如何搭配竿子，速比快慢该如何选择的问题。关于选择双轴卷线器（水滴or鼓型轮）速比的常识进来有些朋友在网上询问关于双轴卷线器（水滴轮、鼓型轮）应该如何搭配竿子，速比快慢该如何选择的问题</p>
-</blockquote>
-<p><img src="/img/20161013/Lipless-Baits-Ready-to-Rock.jpg" alt=""></p>
-<h3 id="何谓速比？何谓高速比？何谓低速比呢？"><a href="#何谓速比？何谓高速比？何谓低速比呢？" class="headerlink" title="何谓速比？何谓高速比？何谓低速比呢？"></a>何谓速比？何谓高速比？何谓低速比呢？</h3><p>通常速比标识的参数代表了：我们手柄摇一圈线杯转动几圈，例如：7.0：1那么就是手柄转动一圈线杯转动7圈。<br><strong>高速比、低速比：一般高速比低速比没有明显的界限，通常6.3：1（含）以下我们称为低速比，7.0：1以上的算作高速比。</strong><br>低速比的优势：通常职业钓手使用Swimbait、spinnerbait、crank、minnow时候会选择低速比轮子。因为在操控诸如上述所谓搜索饵时候，低速比可以更好更均匀的控制拟饵的回收速度，并且就我们通常所使用的浮水CRANK、水面popper等等在特定的时候也会去做一些点对点的攻击，并不是一味的大面积快速搜索。所以这个时候低速比的轮子就体现出了拟饵在局域水面上的优势，不至于手柄轻轻一动就窜出老远。<br>高速比的优势：高速比轮子的特点就是回收拟饵的速度较快，在作合的一瞬间具有相当的爆发力。这个特点刚好符合我们用jighead或Texas在障碍区里作钓中鱼时要强调刺鱼的爆发力和迅速将于带离标点的要求。所以在大多数钓手软虫作钓障碍区时都会选用较快速比的轮子。但是也有特殊情况，例如在重障碍的草区：通常唠叨中障碍的草区都会使用比较大号的jig，并且中鱼时难免会连鱼带草一起搂。类似于雷强。这个时候为保证轮子足够的绞力已经能容纳更多的强力钓线，在这种地方作钓JIGhead或者大型Texas时很多钓手会选用低速比的较大容线量轮子。<br>以上是双轴卷线器的最基本的实用的常识，但愿对于初学的朋友们会选择轮子时候会有所帮助。但是也不排除在一些特殊情况时候对于轮子的选择会遇到一些特殊的变化。这里我不多赘述。等到大家遇到了新的问题时候我们再共同探讨。</p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[如何选择一根适合自己的BASS竿]]></title>
       <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E4%B8%80%E6%A0%B9%E9%80%82%E5%90%88%E8%87%AA%E5%B7%B1%E7%9A%84BASS%E7%AB%BF/</url>
       <content type="html"><![CDATA[<blockquote>
@@ -3076,6 +3046,37 @@ make V=s
     </entry>
     
     <entry>
+      <title><![CDATA[常用路亚线的区别]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E5%B8%B8%E7%94%A8%E8%B7%AF%E4%BA%9A%E7%BA%BF%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      <content type="html"><![CDATA[<h2 id="尼龙线"><a href="#尼龙线" class="headerlink" title="尼龙线"></a>尼龙线</h2><p>台钓中使用最多的也是尼龙线。尼龙的化工原料为PA，和PE一样是石油的下游产品。与PE不同的是，尼龙线一般为单股线，这种线的特点刚好与PE线相反。尼龙线的优点是由于有一定的延展性，抛投和中鱼的时候不易断线，由于生产技术已经发展了近70年的历史，成本低，产量大，相比PE线要便宜很多。最后一点是尼龙表面圆滑，对线环的磨损可以降到最低。</p>
+<a id="more"></a>
+<p>延展性同样也是尼龙线的缺点，在某些鱼讯轻微的场合，尼龙线不能及时将中鱼信号传达给钓手，从而失去最佳的起杆机会。另外，同样拉力的情况下，尼龙线比PE的线径更粗，从而影响路亚的抛投距离（<em>当然这个问题并不一定完全适用，需要根据具体的情况来，不过在高磅数的尼龙线与高磅数PE线做对比的话，高磅数的PE占些优势，因其相同的高磅数的线，高磅数PE线径更细一些，也就可以更加节省线杯的空间容下更多的线，并且线径也更细利于高磅数线的抛投</em>）。</p>
+<p><img src="/img/20161013/fishing-line.jpg" alt=""></p>
+<h2 id="PE线"><a href="#PE线" class="headerlink" title="PE线"></a>PE线</h2><p>PE线是指用多股化纤编织后浸胶制成的钓线，俗称编织线(BRAIDED OR CORD LINE)，最早见的就是“大力马”。<br>这种钓线的生产方式是：将多条微细纤维(如：达克龙纤维、功夫龙纤维或大力马纤维或其它聚乙烯化合物的PE纤维…等)以机器来编织而成，所以这种钓线的线体呈现纤维规则交叉的纹路，只要你将线体取出审视一番就可以清楚的发现其线体结构上的特色。<br>这种线的优点是，相同拉力的的情况下线径比尼龙要细很多，同样我们使用12磅的尼龙和12 磅的PE，因为PE的线径更细，能够抛投的更远。在实际钓场中，风力是影响路亚抛投距离的重要因素，PE同样因为相同拉力下线径更细的特点，能够将风阻的影响减小。除此之外，PE几乎没有延展性，在中鱼的时候能够在第一时间将信号传达给钓手。还有就是PE线更加耐磨。<br>但正像所有事物都有其两面性一样，PE并不是没有任何缺点。PE第一个缺点是没有延展性。这个特性在能够将中鱼信号迅速传达给钓手的同时，也经常导致跑鱼或放枪。玩过台钓的朋友都知道，中鱼后钓竿上要保持一定的力量，鱼才不易脱钩，杆软不易断线跑鱼，但是起鱼慢；杆硬起鱼快，但是容易断线跑鱼。同样，你可以把线看作杆的延伸，鱼线有一定的延展性，就像钓竿比较软一样，能够保证在鱼左冲右突的时候始终保持一定的力量，而PE就像比较硬的杆，遛鱼的余地比较小从而导致脱钩或断线。另外现在有厂家为了使用更细的线径达到更强的拉力，在PE中掺加金属丝，虽然拉力得到了加强，但是线的延展性和柔软度进一步降低，同时还容易磨损导环。</p>
+<h2 id="碳线（氟碳线）"><a href="#碳线（氟碳线）" class="headerlink" title="碳线（氟碳线）"></a>碳线（氟碳线）</h2><p>碳线是由含有氟和碳成分的树脂抽丝加工而成，碳线的特性是高比重、切水快、光的折射率非常低几乎看不到，没有吸水性，抗紫外线和耐久性要比尼龙线强很多，因为碳线的物理特性为非常低的延展性和高比重，可以让饵迅速到达所需要的水层，并且因延展性很低所以也就提供了良好的灵敏度。因碳线对光的折射率几乎为0，所以会降低鱼的敏感性，让鱼能放心的将饵食入口中。碳线适合搭配软饵钓组使用，比如：无铅钓组、WACKY、德州钓组，却不太适合搭配某一些特殊的硬饵或水面系的路亚。不过碳线也不是没有缺点，因为通常比较硬（特别是高磅数的碳线），如果作为主线使用要注意纺车轮上建议使用的主线不要超过10磅，水滴轮或鼓轮如有特殊需要最好也不要超过20磅（当然特殊情况下可以用到更高的磅数作为主线，并不是完全不可以），碳线也可以当做前导线来使用，因为碳线比较耐磨，可以搭配PE线，弥补PE不耐磨的缺点。</p>
+<p><img src="/img/20161013/钓线攻略.jpg" alt=""></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[路亚水滴轮的速比的选择]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/13/2016-10-13-%E8%B7%AF%E4%BA%9A%E6%B0%B4%E6%BB%B4%E8%BD%AE%E7%9A%84%E9%80%9F%E6%AF%94%E7%9A%84%E9%80%89%E6%8B%A9/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>大家在购买轮子时，估计很多人都是首先关注轮子的价格，再关注轮子的牌子、外观、线容量、轴承数等，然后在各论坛到处问“XX的轮怎样？用过的说说！”结果，最后听了一大堆意见后最终还是进了一个价格自己可以接受的轮而不管轮子怎样了；或者受一些钓友的影响，入了一个超出了预算的牌子轮子却不是最适合自己的；或者入了一个价格差不多，只是多了一个或几个轴承的杂牌三无轮子而其它质量极差。鲜少有人（特别是新人）关注轮子的齿轮转速比，或者有关注，但却不是先决条件。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="在此抛砖引玉，聊聊轮子的转速比。"><a href="#在此抛砖引玉，聊聊轮子的转速比。" class="headerlink" title="在此抛砖引玉，聊聊轮子的转速比。"></a>在此抛砖引玉，聊聊轮子的转速比。</h3><p>转速比，通俗的来讲就是轮子的主副齿轮的转速比；例如6.3:1，意思就是：摇柄轴上的大齿轮转一圈，轮轴上的小齿轮就要转6.3圈。速比的设计除可以快速收线外，还有“四两拨千斤”的功能。大概可以这样理解：我用1牛的力来转把手，那么鱼要用出6.3牛的力才能不让我转动。<br>高转速比，可以快速收紧余线；中鱼时快速拉出障碍区；大水域快速搜索等有无可比拟的优势；但在控制一些硬饵泳姿时，或要求慢拖时，不如低转速比好控制。此外，转速比越高，同样拉力的情况下，摇起来就越费力；原因是高转速比把力量转换成高速，道理正如变速自行车一样。你别不相信，不用很大的鱼就让你发现，再多的轴承都是转不动了。（想象一下，你一定见过有人在溜鱼时做抽竿动作，为什么要做抽竿的动作呢？）<br>说到这里，大家每次钓鱼都在用到转速比，但你真正的了解过它吗？例如一些钓友在说操作手法时，“慢收+轻抖”。这个当中的“慢收”实在太笼统了。有些会说的具体一些，屁如“一秒转动一圈摇把”，还是没人具体意义；只有说到“我的轮子转速比是6.3:1，每秒转一圈摇把”才算是具体化。好，说到这里，我估计99.9%的人都不知自己转一圈摇把到底卷了多少线回来，也即是你的饵游动的速度是多少米每秒？</p>
+<p>当然，实际钓鱼时也不用真的精确到零点几米每秒。只要粗略的知道，天长日久后，不管什么时候，需要什么速度，才最可能上鱼，已经深深的铬在你的潜意识里了。随便拿起一套装备，看看转速比就清楚自己该怎样操作了。</p>
+<p>看似很复杂，其实也很简单。一般人的装备都不多，常见的轮子的转速比也就是那几个。以纺车轮为例，我的一个纺车转速比是6.2:1，线杯最大外径是40mm；2号尼龙线在绕线器转一圈时卷的线长度约为126mm(40<em>3.14),实测为130.8mm；摇把转一圈时收线约130</em>6.3=825mm；即0.825米；一米有多长大家总有个概念吧？经过这样一个计算，你是不是心里清楚自己的饵是“受伤的小鱼”还是“水中潜艇”呢？</p>
+<blockquote>
+<p><strong>摘要</strong>：进来有些朋友在网上询问关于双轴卷线器（水滴轮、鼓型轮）应该如何搭配竿子，速比快慢该如何选择的问题。关于选择双轴卷线器（水滴or鼓型轮）速比的常识进来有些朋友在网上询问关于双轴卷线器（水滴轮、鼓型轮）应该如何搭配竿子，速比快慢该如何选择的问题</p>
+</blockquote>
+<p><img src="/img/20161013/Lipless-Baits-Ready-to-Rock.jpg" alt=""></p>
+<h3 id="何谓速比？何谓高速比？何谓低速比呢？"><a href="#何谓速比？何谓高速比？何谓低速比呢？" class="headerlink" title="何谓速比？何谓高速比？何谓低速比呢？"></a>何谓速比？何谓高速比？何谓低速比呢？</h3><p>通常速比标识的参数代表了：我们手柄摇一圈线杯转动几圈，例如：7.0：1那么就是手柄转动一圈线杯转动7圈。<br><strong>高速比、低速比：一般高速比低速比没有明显的界限，通常6.3：1（含）以下我们称为低速比，7.0：1以上的算作高速比。</strong><br>低速比的优势：通常职业钓手使用Swimbait、spinnerbait、crank、minnow时候会选择低速比轮子。因为在操控诸如上述所谓搜索饵时候，低速比可以更好更均匀的控制拟饵的回收速度，并且就我们通常所使用的浮水CRANK、水面popper等等在特定的时候也会去做一些点对点的攻击，并不是一味的大面积快速搜索。所以这个时候低速比的轮子就体现出了拟饵在局域水面上的优势，不至于手柄轻轻一动就窜出老远。<br>高速比的优势：高速比轮子的特点就是回收拟饵的速度较快，在作合的一瞬间具有相当的爆发力。这个特点刚好符合我们用jighead或Texas在障碍区里作钓中鱼时要强调刺鱼的爆发力和迅速将于带离标点的要求。所以在大多数钓手软虫作钓障碍区时都会选用较快速比的轮子。但是也有特殊情况，例如在重障碍的草区：通常唠叨中障碍的草区都会使用比较大号的jig，并且中鱼时难免会连鱼带草一起搂。类似于雷强。这个时候为保证轮子足够的绞力已经能容纳更多的强力钓线，在这种地方作钓JIGhead或者大型Texas时很多钓手会选用低速比的较大容线量轮子。<br>以上是双轴卷线器的最基本的实用的常识，但愿对于初学的朋友们会选择轮子时候会有所帮助。但是也不排除在一些特殊情况时候对于轮子的选择会遇到一些特殊的变化。这里我不多赘述。等到大家遇到了新的问题时候我们再共同探讨。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[路亚竿的硬度与调性你是否混淆]]></title>
       <url>http://cuiqingwei.github.io/2016/10/12/2016-10-12-%E8%B7%AF%E4%BA%9A%E7%AB%BF%E7%9A%84%E7%A1%AC%E5%BA%A6%E4%B8%8E%E8%B0%83%E6%80%A7%E4%BD%A0%E6%98%AF%E5%90%A6%E6%B7%B7%E6%B7%86/</url>
       <content type="html"><![CDATA[<h2 id="路亚竿的硬度"><a href="#路亚竿的硬度" class="headerlink" title="路亚竿的硬度"></a>路亚竿的硬度</h2><p>选择路亚竿的时候大部分钓友会关注：长度、调性、外观做工质量、品牌与价格。其中“调性”普遍会被大家想到“M、ML、MH”等英文缩写，也经常有卖家或者钓友这样称呼：“这支竿是M调的，那支竿是MH调的”等等，实际上这些英文缩写说的不是路亚竿的调性而是硬度，英文称“<font color="red"><strong>Power</strong> <em>（最大负荷）</em></font>” 。</p>
@@ -3105,56 +3106,6 @@ make V=s
     </entry>
     
     <entry>
-      <title><![CDATA[个人路亚装备]]></title>
-      <url>http://cuiqingwei.github.io/2016/10/10/2016-10-10-%E4%B8%AA%E4%BA%BA%E8%B7%AF%E4%BA%9A%E8%A3%85%E5%A4%87/</url>
-      <content type="html"><![CDATA[<h2 id="路亚竿"><a href="#路亚竿" class="headerlink" title="路亚竿"></a>路亚竿</h2><p>1.<strong><a href="https://detail.tmall.com/item.htm?id=36807472493&amp;spm=a1z09.2.0.0.uapaU2&amp;_u=c154cj1d09c" target="_blank" rel="external">LMS001-662M</a></strong> <em>鱼猎人征途系列</em></p>
-<a id="more"></a>
-<p><img src="/img/20161010/LMS001-662M.jpg" alt=""></p>
-<p>2.<strong><a href="https://item.taobao.com/item.htm?spm=a1z0k.6846577.0.0.lvKUtC&amp;id=38551093007&amp;_u=t2dmg8j26111" target="_blank" rel="external">CWS702MH</a></strong> <em>Berkley /美国贝克力</em></p>
-<p> <img src="/img/20161010/CWS702MH.jpg" alt=""></p>
-<p>3.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.Jvl32R&amp;id=520196909891&amp;_u=c154cj1987f" target="_blank" rel="external">LRT702MHC</a></strong>  <em>领峰 2015款 魂系列  订制版一体式软木柄</em></p>
-<blockquote>
-<p>真正意义上的软饵以及岸钓远投竿，拥有超敏锐的快调竿尖和强有力的竿身不单只是精确抛投，<br>更是拥有良好感知水底结构的能力和从咬口开始一气呵成将鱼从水底拔出来的迸发力。<br>并且拥有20克亮片80+直线距离的远投能力。</p>
-</blockquote>
-<p><img src="/img/20161010/LRT702MHC.jpg" alt=""></p>
-<p>4.<strong><a href="https://item.taobao.com/item.htm?spm=a1z0d.6639537.1997196601.113.Q7PwbK&amp;id=522011254955" target="_blank" rel="external">LYNN FISHING LURE/小林路亚 2.03米枪柄</a></strong></p>
-<p><img src="/img/20161010/LYNN-L.jpg" alt=""></p>
-<p>5.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.HzLi42&amp;id=534294970180&amp;_u=s154cj11be9" target="_blank" rel="external">Major SKR-B862ML</a></strong> <em>马牌</em></p>
-<p>钓竿长度：2米58 节数：2节 饵重：10-30克 线重：8-14磅 PE:0.8-2号 调性：中调</p>
-<p><img src="/img/20161010/SKR-B862ML.png" alt=""></p>
-<p>6.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.HzLi42&amp;id=17264821075&amp;_u=s154cj10d82" target="_blank" rel="external">LRC664M</a></strong> <em>贝克力四节便携竿</em></p>
-<p>全长：1.98m节数：4收缩长度：52.5cm饵重：7-21g适合线重：8-20LB含碳量：95% 自重：136g</p>
-<p><img src="/img/20161010/LRC664M.jpg" alt=""></p>
-<p>7.<strong><a href="https://item.jd.com/12301115424.html" target="_blank" rel="external">SHIMANO EXPRIDE 1016M-2</a></strong> <em>17款EXPRIDE FUJI富士SIC导环 路亚竿 2.08米M枪柄(1610M-2)</em></p>
-<p><img src="/img/20161010/EXP-1610M-2.jpg" alt=""></p>
-<p>8.<strong><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.20.5837fb3dByxCz2&amp;id=560983810039" target="_blank" rel="external">MEGABASS OROCHI F2.1/2-67K</a></strong> <em>17款蟒蛇枪柄路亚竿 2.00米M枪柄(F2.1/2-67K)</em></p>
-<p><img src="/img/20161010/OROCHI-F2.1.jpg" alt=""></p>
-<p>9.<strong><a href="https://item.jd.com/10926358721.html" target="_blank" rel="external">NS BAS-672L</a></strong> <em>NS梅河AVENGER复仇者淡水路亚枪柄超强碳素钓竿BAS-672L</em></p>
-<p><img src="/img/20161010/NS-BAC672L.jpg" alt=""></p>
-<h2 id="渔线轮"><a href="#渔线轮" class="headerlink" title="渔线轮"></a>渔线轮</h2><p>1.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.uapaU2&amp;id=14816583709&amp;_u=c154cj143ab" target="_blank" rel="external">SIENNA 2500FD</a></strong> <em>禧玛诺4轴纺车渔轮 马来西亚产</em></p>
-<p><img src="/img/20161010/SN2500FD.jpg" alt=""></p>
-<p>2.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.uapaU2&amp;id=525599654852&amp;_u=c154cj1c6bf" target="_blank" rel="external">TATULA CT TYPE R 100HS</a></strong>  <em>DAIWA大蜘蛛美版水滴轮</em></p>
-<p><img src="/img/20161010/TATULA-CT-100HS.jpg" alt=""></p>
-<p>3.<strong><a href="https://item.taobao.com/item.htm?spm=a1z0d.6639537.1997196601.42.Q7PwbK&amp;id=7704001910" target="_blank" rel="external">RYOGA 1016</a></strong> <em>DAIWA达瓦顶级鼓轮</em></p>
-<blockquote>
-<p>可选替换部件：</p>
-<ol>
-<li>Daiwa (达亿瓦) RCSB线杯 鼓式轮适用</li>
-<li>Daiwa (达亿瓦) RCSB 单柄摇柄 鼓式轮适用</li>
-<li>Daiwa (达亿瓦) RCSB 双柄摇柄 鼓式轮适用</li>
-</ol>
-</blockquote>
-<p><img src="/img/20161010/RYOGA.png" alt=""></p>
-<p>4.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.HzLi42&amp;id=520734861061&amp;_u=s154cj10930" target="_blank" rel="external">Mentaniu DC HG</a></strong> <em>禧玛诺蒙塔尼DC 2015</em></p>
-<p><img src="/img/20161010/MetaniumDC.png" alt=""><br><img src="/img/20161010/MetaniumDC1.png" alt=""></p>
-<p>5.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.6c818473iizZfR&amp;id=545441440003&amp;_u=m154cj14da2" target="_blank" rel="external">NEW EXSENCE DC XG</a></strong> <em>禧玛诺海水DC 2017</em></p>
-<p><img src="/img/20161010/EXSENCE DC.png" alt=""></p>
-<p>6.<strong><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.21.1fec70ba8afRYR&amp;id=563408219126&amp;ns=1&amp;abbucket=12#detail" target="_blank" rel="external">COMPLEX CI4+ C2500S F4 HG</a></strong> <em>禧玛诺COMPLEX CI4+ C2500S F4高速淡水海纺车轮</em></p>
-<p><img src="/img/20161010/C2500sHG.jpg" alt=""></p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[高田路亚视频]]></title>
       <url>http://cuiqingwei.github.io/2016/10/10/2016-10-10-%E9%AB%98%E7%94%B0%E8%B7%AF%E4%BA%9A%E8%A7%86%E9%A2%91/</url>
       <content type="html"><![CDATA[<p>路亚教学视频很多，但个人还是认为这个最详细，而且很专业、纯洁无商业气氛。<br>是新手学习路亚知识的典范视频，讲得非常细！</p>
@@ -3174,6 +3125,64 @@ make V=s
 <h1 id="米诺-Minnow"><a href="#米诺-Minnow" class="headerlink" title="米诺-Minnow-"></a>米诺-Minnow-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzNDAzMDQ4" frameborder="0" 'allowfullscreen'=""></iframe>
 
 <h1 id="小胖子-Crank-Bait"><a href="#小胖子-Crank-Bait" class="headerlink" title="小胖子-Crank Bait-"></a>小胖子-Crank Bait-</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XODQzMjE5ODI0" frameborder="0" 'allowfullscreen'=""></iframe>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[路亚装备]]></title>
+      <url>http://cuiqingwei.github.io/2016/10/10/2016-10-10-%E8%B7%AF%E4%BA%9A%E8%A3%85%E5%A4%87/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>个人路亚装备参数备忘！</p>
+</blockquote>
+<h2 id="路亚竿"><a href="#路亚竿" class="headerlink" title="路亚竿"></a>路亚竿</h2><p>1.<strong><a href="https://detail.tmall.com/item.htm?id=36807472493&amp;spm=a1z09.2.0.0.uapaU2&amp;_u=c154cj1d09c" target="_blank" rel="external">LMS001-662M</a></strong> <em>鱼猎人征途系列</em></p>
+<a id="more"></a>
+<p><img src="../img/20161010/LMS001-662M.jpg" alt=""></p>
+<p>2.<strong><a href="https://item.taobao.com/item.htm?spm=a1z0k.6846577.0.0.lvKUtC&amp;id=38551093007&amp;_u=t2dmg8j26111" target="_blank" rel="external">CWS702MH</a></strong> <em>Berkley /美国贝克力</em></p>
+<p> <img src="../img/20161010/CWS702MH.jpg" alt=""></p>
+<p>3.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.Jvl32R&amp;id=520196909891&amp;_u=c154cj1987f" target="_blank" rel="external">LRT702MHC</a></strong>  <em>领峰 2015款 魂系列  订制版一体式软木柄</em></p>
+<blockquote>
+<p>真正意义上的软饵以及岸钓远投竿，拥有超敏锐的快调竿尖和强有力的竿身不单只是精确抛投，<br>更是拥有良好感知水底结构的能力和从咬口开始一气呵成将鱼从水底拔出来的迸发力。<br>并且拥有20克亮片80+直线距离的远投能力。</p>
+</blockquote>
+<p><img src="../img/20161010/LRT702MHC.jpg" alt=""></p>
+<p>4.<strong><a href="https://item.taobao.com/item.htm?spm=a1z0d.6639537.1997196601.113.Q7PwbK&amp;id=522011254955" target="_blank" rel="external">LYNN FISHING LURE/小林路亚 2.03米枪柄</a></strong></p>
+<p><img src="../img/20161010/LYNN-L.jpg" alt=""></p>
+<p>5.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.HzLi42&amp;id=534294970180&amp;_u=s154cj11be9" target="_blank" rel="external">Major SKR-B862ML</a></strong> <em>马牌</em></p>
+<p>钓竿长度：2米58 节数：2节 饵重：10-30克 线重：8-14磅 PE:0.8-2号 调性：中调</p>
+<p><img src="../img/20161010/SKR-B862ML.png" alt=""></p>
+<p>6.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.HzLi42&amp;id=17264821075&amp;_u=s154cj10d82" target="_blank" rel="external">LRC664M</a></strong> <em>贝克力四节便携竿</em></p>
+<p>全长：1.98m节数：4收缩长度：52.5cm饵重：7-21g适合线重：8-20LB含碳量：95% 自重：136g</p>
+<p><img src="../img/20161010/LRC664M.jpg" alt=""></p>
+<p>7.<strong><a href="https://item.jd.com/12301115424.html" target="_blank" rel="external">SHIMANO EXPRIDE 1016M-2</a></strong> <em>17款EXPRIDE FUJI富士SIC导环 路亚竿 2.08米M枪柄(1610M-2)</em></p>
+<p><img src="../img/20161010/EXP-1610M-2.jpg" alt=""></p>
+<p>8.<strong><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.20.5837fb3dByxCz2&amp;id=560983810039" target="_blank" rel="external">MEGABASS OROCHI F2.1/2-67K</a></strong> <em>17款蟒蛇枪柄路亚竿 2.00米M枪柄(F2.1/2-67K)</em></p>
+<p><img src="../img/20161010/OROCHI-F2.1.jpg" alt=""></p>
+<p>9.<strong><a href="https://item.jd.com/10926358721.html" target="_blank" rel="external">NS BAS-672L</a></strong> <em>NS梅河AVENGER复仇者淡水路亚枪柄超强碳素钓竿BAS-672L</em></p>
+<p><img src="../img/20161010/NS-BAC672L.jpg" alt=""></p>
+<p>10.<strong><a href="https://item.taobao.com/item.htm?spm=a1z10.3-c.w4002-22391429806.9.11fd6856kzhlOU&amp;id=590333621921" target="_blank" rel="external">LUNAMIS B806L</a></strong> <em>禧玛诺海鲈竿露娜米斯远投枪柄路亚竿</em></p>
+<p><img src="../img/20161010/lunamisB806L.jpeg" alt="lunamisB806L"></p>
+<p>11.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.37732e8dI3YG4p&amp;id=596818134238&amp;_u=a154cj186dc" target="_blank" rel="external"> LEGIT DIESIGN WSC60ML</a></strong> <em>LEGIT DESIGNWILD SILD泛用便携5节行路亚竿</em></p>
+<p><img src="../img/20161010/WSC60ML.jpeg" alt="WSC60ML"></p>
+<h2 id="渔线轮"><a href="#渔线轮" class="headerlink" title="渔线轮"></a>渔线轮</h2><p>1.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.uapaU2&amp;id=14816583709&amp;_u=c154cj143ab" target="_blank" rel="external">SIENNA 2500FD</a></strong> <em>禧玛诺4轴纺车渔轮 马来西亚产</em></p>
+<p><img src="../img/20161010/SN2500FD.jpg" alt=""></p>
+<p>2.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.uapaU2&amp;id=525599654852&amp;_u=c154cj1c6bf" target="_blank" rel="external">TATULA CT TYPE R 100HS</a></strong>  <em>DAIWA大蜘蛛美版水滴轮</em></p>
+<p><img src="../img/20161010/TATULA-CT-100HS.jpg" alt=""></p>
+<p>3.<strong><a href="https://item.taobao.com/item.htm?spm=a1z0d.6639537.1997196601.42.Q7PwbK&amp;id=7704001910" target="_blank" rel="external">RYOGA 1016</a></strong> <em>DAIWA达瓦顶级鼓轮</em></p>
+<blockquote>
+<p>可选替换部件：</p>
+<ol>
+<li>Daiwa (达亿瓦) RCSB线杯 鼓式轮适用</li>
+<li>Daiwa (达亿瓦) RCSB 单柄摇柄 鼓式轮适用</li>
+<li>Daiwa (达亿瓦) RCSB 双柄摇柄 鼓式轮适用</li>
+</ol>
+</blockquote>
+<p><img src="../img/20161010/RYOGA.png" alt=""></p>
+<p>4.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.HzLi42&amp;id=520734861061&amp;_u=s154cj10930" target="_blank" rel="external">Mentaniu DC HG</a></strong> <em>禧玛诺蒙塔尼DC 2015</em></p>
+<p><img src="../img/20161010/MetaniumDC.png" alt=""><br><img src="../img/20161010/MetaniumDC1.png" alt=""></p>
+<p>5.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.6c818473iizZfR&amp;id=545441440003&amp;_u=m154cj14da2" target="_blank" rel="external">NEW EXSENCE DC XG</a></strong> <em>禧玛诺海水DC 2017</em></p>
+<p><img src="../img/20161010/EXSENCE DC.png" alt=""></p>
+<p>6.<strong><a href="https://item.taobao.com/item.htm?spm=a230r.1.14.21.1fec70ba8afRYR&amp;id=563408219126&amp;ns=1&amp;abbucket=12#detail" target="_blank" rel="external">COMPLEX CI4+ C2500S F4 HG</a></strong> <em>禧玛诺COMPLEX CI4+ C2500S F4高速淡水海纺车轮</em></p>
+<p><img src="../img/20161010/C2500sHG.jpg" alt=""></p>
+<p>7.<strong><a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.48e42e8diM9fw9&amp;id=589812083272&amp;_u=a154cj1a72e" target="_blank" rel="external">杂牌斜口浅线杯远投纺车轮</a></strong> <em>微物马口翘嘴鳜鱼矶钓渔线轮</em></p>
 ]]></content>
     </entry>
     

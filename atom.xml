@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://cuiqingwei.github.io/"/>
-  <updated>2019-12-24T11:00:39.000Z</updated>
+  <updated>2020-01-10T11:37:25.000Z</updated>
   <id>http://cuiqingwei.github.io/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://cuiqingwei.github.io/2019/12/24/2019-12-24-%E4%BD%BF%E7%94%A8GitHub-Actions%E7%BC%96%E8%AF%91OpenWRT/"/>
     <id>http://cuiqingwei.github.io/2019/12/24/2019-12-24-使用GitHub-Actions编译OpenWRT/</id>
     <published>2019-12-24T04:07:00.000Z</published>
-    <updated>2019-12-24T11:00:39.000Z</updated>
+    <updated>2020-01-10T11:37:25.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="../img/20191224/Actions.png" alt="《使用 GitHub Actions 编译 OpenWrt》"></p>
+    <content type="html"><![CDATA[<p><img src="../img/20191224/Actions.jpeg" alt="《使用 GitHub Actions 编译 OpenWrt》"></p>
 <p><strong>Github Ac­tions</strong> 是 GitHub 推出的持续集成 (Con­tin­u­ous in­te­gra­tion，简称 <strong>CI</strong>) 服务，它提供了配置非常不错的虚拟服务器环境（E5 2vCPU/7G RAM），基于它可以进行构建、测试、打包、部署项目。这篇文章就是介绍如何使用P3TERX 项目（work­flow文件），进行云编译 OpenWrt固件。该方法免费，快速，无需消耗自己的计算机资源，每次编译都是全新环境。</p>
 <a id="more"></a>
 <p>项目地址：</p>
@@ -77,7 +77,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;../img/20191224/Actions.png&quot; alt=&quot;《使用 GitHub Actions 编译 OpenWrt》&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;../img/20191224/Actions.jpeg&quot; alt=&quot;《使用 GitHub Actions 编译 OpenWrt》&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Github Ac­tions&lt;/strong&gt; 是 GitHub 推出的持续集成 (Con­tin­u­ous in­te­gra­tion，简称 &lt;strong&gt;CI&lt;/strong&gt;) 服务，它提供了配置非常不错的虚拟服务器环境（E5 2vCPU/7G RAM），基于它可以进行构建、测试、打包、部署项目。这篇文章就是介绍如何使用P3TERX 项目（work­flow文件），进行云编译 OpenWrt固件。该方法免费，快速，无需消耗自己的计算机资源，每次编译都是全新环境。&lt;/p&gt;
     
     </summary>
@@ -163,33 +163,6 @@
       <category term="ubuntu" scheme="http://cuiqingwei.github.io/tags/ubuntu/"/>
     
       <category term="Kali" scheme="http://cuiqingwei.github.io/tags/Kali/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在Mac上制作Ubuntu启动U盘</title>
-    <link href="http://cuiqingwei.github.io/2019/12/22/2019-12-24-%E5%9C%A8Mac%E4%B8%8A%E5%88%B6%E4%BD%9CUbuntu%E5%90%AF%E5%8A%A8U%E7%9B%98/"/>
-    <id>http://cuiqingwei.github.io/2019/12/22/2019-12-24-在Mac上制作Ubuntu启动U盘/</id>
-    <published>2019-12-22T13:07:00.000Z</published>
-    <updated>2019-12-24T14:24:21.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Mac的<code>diskutil</code>命令非常强大，可以格式化U盘，也可以直接制作系统安装启动盘。</p>
-<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>县列表看看你的U盘是哪个，千万别选错了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">diskutil list</div><div class="line">sudo diskutil eraseDisk FAT32 UBUNTU18 MBRFormat /dev/disk5</div></pre></td></tr></table></figure>
-<h2 id="卸载U盘"><a href="#卸载U盘" class="headerlink" title="卸载U盘"></a>卸载U盘</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">diskutil unmountDisk /dev/disk5</div></pre></td></tr></table></figure>
-<h2 id="刻录"><a href="#刻录" class="headerlink" title="刻录"></a>刻录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo dd <span class="keyword">if</span>=./ubuntu-18.04.3-desktop-amd64.iso of=/dev/disk5 bs=1m</div></pre></td></tr></table></figure>
-<p>备选<br> <code>pv -petr ubuntu-18.04.3-desktop-amd64.iso | dd of=/dev/disk2 bs=1m</code></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Mac的&lt;code&gt;diskutil&lt;/code&gt;命令非常强大，可以格式化U盘，也可以直接制作系统安装启动盘。&lt;/p&gt;
-&lt;h2 id=&quot;格式化&quot;&gt;&lt;a href=&quot;#格式化&quot; class=&quot;headerlink&quot; title=&quot;格式化&quot;&gt;&lt;/a&gt;格式化&lt;/h2&gt;&lt;p&gt;县列表
-    
-    </summary>
-    
-    
-      <category term="ubuntu" scheme="http://cuiqingwei.github.io/tags/ubuntu/"/>
     
   </entry>
   
@@ -701,9 +674,41 @@
     <link href="http://cuiqingwei.github.io/2019/09/21/2019-09-21-Telegram%E5%A5%BD%E7%8E%A9%E5%AE%9E%E7%94%A8%E7%9A%84%E7%BE%A4%E7%BB%84/"/>
     <id>http://cuiqingwei.github.io/2019/09/21/2019-09-21-Telegram好玩实用的群组/</id>
     <published>2019-09-21T01:12:08.000Z</published>
-    <updated>2019-12-24T01:23:03.000Z</updated>
+    <updated>2020-01-10T11:04:09.000Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>推荐</strong></p>
+    <content type="html"><![CDATA[<p><strong>Telegram官方翻译</strong></p>
+<p>官方翻译支持群 English:<a href="https://t.me/translation_en" target="_blank" rel="external">https://t.me/translation_en</a></p>
+<p>官方翻译支持群 简体中文 (聪聪):<a href="https://t.me/translation_zhcncc" target="_blank" rel="external">https://t.me/translation_zhcncc</a></p>
+<p>官方翻译支持群 简体中文:<a href="https://t.me/translation_zh_hans" target="_blank" rel="external">https://t.me/translation_zh_hans</a></p>
+<p>官方翻译支持群 简体中文(@zh_CN 版):<a href="https://t.me/translation_classic_zh_cn" target="_blank" rel="external">https://t.me/translation_classic_zh_cn</a></p>
+<p>官方翻译支持群 简体中文(langCN):<a href="https://t.me/translation_zhlangcn" target="_blank" rel="external">https://t.me/translation_zhlangcn</a></p>
+<p>官方翻译支持群 瓜体中文:<a href="https://t.me/translation_duang_zh_cn" target="_blank" rel="external">https://t.me/translation_duang_zh_cn</a></p>
+<p>官方翻译支持群 繁体中文(香港):<a href="https://t.me/translation_zh_hant" target="_blank" rel="external">https://t.me/translation_zh_hant</a></p>
+<p>官方翻译支持群 繁体中文(台湾):<a href="https://t.me/translation_taiwan" target="_blank" rel="external">https://t.me/translation_taiwan</a></p>
+<p>TG 简中交流（水）群:<a href="https://t.me/cnpub" target="_blank" rel="external">https://t.me/cnpub</a></p>
+<p>Telegram 討論區:<a href="https://t.me/PublicGroupForzh" target="_blank" rel="external">https://t.me/PublicGroupForzh</a></p>
+<p>Telegram 新手帮助:<a href="https://t.me/newbie_chat" target="_blank" rel="external">https://t.me/newbie_chat</a></p>
+<p>Telegram X iOS:<a href="https://t.me/tgiostests" target="_blank" rel="external">https://t.me/tgiostests</a></p>
+<p>Telegram iOS Talk:<a href="https://t.me/TelegramiOStalk" target="_blank" rel="external">https://t.me/TelegramiOStalk</a></p>
+<p>Telegram Android Talk:<a href="https://t.me/TelegramAndroidTalk" target="_blank" rel="external">https://t.me/TelegramAndroidTalk</a></p>
+<p>Telegram X Android:<a href="https://t.me/tgandroidtests" target="_blank" rel="external">https://t.me/tgandroidtests</a></p>
+<p>Telegram macOS:<a href="https://t.me/macswift" target="_blank" rel="external">https://t.me/macswift</a></p>
+<p>Telegram macOS Talk:<a href="https://t.me/TelegramMacOsTalk" target="_blank" rel="external">https://t.me/TelegramMacOsTalk</a></p>
+<p>Telegram Desktop Talk:<a href="https://t.me/TelegramDesktopTalk" target="_blank" rel="external">https://t.me/TelegramDesktopTalk</a></p>
+<p>Telegram Windows Phone Talk:<a href="https://t.me/TelegramWPtalk" target="_blank" rel="external">https://t.me/TelegramWPtalk</a></p>
+<p>Telegram Bot Talk:<a href="https://t.me/BotTalk" target="_blank" rel="external">https://t.me/BotTalk</a></p>
+<p>Telegram Party:<a href="https://t.me/PublicTestGroup" target="_blank" rel="external">https://t.me/PublicTestGroup</a></p>
+<p>Telegram Android Themes:<a href="https://t.me/AndroidThemesGroup" target="_blank" rel="external">https://t.me/AndroidThemesGroup</a></p>
+<p>Telegram Desktop Themes:<a href="https://t.me/TelegramThemes" target="_blank" rel="external">https://t.me/TelegramThemes</a></p>
+<p>Telegram X: Themes:<a href="http://t.me/tgx_perfection" target="_blank" rel="external">http://t.me/tgx_perfection</a></p>
+<p>Telegram Beta Chat:<a href="https://t.me/tgbetachat" target="_blank" rel="external">https://t.me/tgbetachat</a></p>
+<p>Tentang Telegram:<a href="https://t.me/tentangtelegram" target="_blank" rel="external">https://t.me/tentangtelegram</a></p>
+<p>Instant View Platform Chat:<a href="https://t.me/IVpublic" target="_blank" rel="external">https://t.me/IVpublic</a></p>
+<p>Telegram 新手問答區:<a href="https://t.me/TGQNA" target="_blank" rel="external">https://t.me/TGQNA</a></p>
+<p>電報群推廣:<a href="https://t.me/joinchat/FAir4j15AV8Q_x5zzoc8yw" target="_blank" rel="external">https://t.me/joinchat/FAir4j15AV8Q_x5zzoc8yw</a></p>
+<p>CNBlacklistR 交流群:<a href="https://t.me/joinchat/FfbG_g9eWFL1-8vEhY4xlQ" target="_blank" rel="external">https://t.me/joinchat/FfbG_g9eWFL1-8vEhY4xlQ</a></p>
+<a id="more"></a>
+<p><strong>软件用户</strong></p>
 <p>印象笔记 科技 NEWS:<a href="https://t.me/YinxiangBiji_News" target="_blank" rel="external">https://t.me/YinxiangBiji_News</a></p>
 <p>印象笔记 Evernote 社群:<a href="https://t.me/YinxiangBiji" target="_blank" rel="external">https://t.me/YinxiangBiji</a></p>
 <p>Telegram 中文圈:<a href="https://t.me/tgzhcn" target="_blank" rel="external">https://t.me/tgzhcn</a></p>
@@ -717,7 +722,6 @@
 <p>MarginNote 用户群:<a href="https://t.me/joinchat/Ag98F0ZLDrJZOSBWXAEiow" target="_blank" rel="external">https://t.me/joinchat/Ag98F0ZLDrJZOSBWXAEiow</a></p>
 <p>iMazing 用户群:<a href="https://t.me/joinchat/Ag98F07KJmIlmwSCfTOKxQ" target="_blank" rel="external">https://t.me/joinchat/Ag98F07KJmIlmwSCfTOKxQ</a></p>
 <p>Typora 用户群:<a href="https://t.me/joinchat/Ag98FxBSO7eJ9mMwxxUIPw" target="_blank" rel="external">https://t.me/joinchat/Ag98FxBSO7eJ9mMwxxUIPw</a></p>
-<a id="more"></a>
 <p><strong>软件</strong></p>
 <p>落格输入法:<a href="https://t.me/joinchat/DGZalT6pMAHNNg8JyfPLXw" target="_blank" rel="external">https://t.me/joinchat/DGZalT6pMAHNNg8JyfPLXw</a></p>
 <p>Microsoft users:<a href="https://t.me/Microsofthelp" target="_blank" rel="external">https://t.me/Microsofthelp</a></p>
@@ -1179,37 +1183,6 @@
 <p>播客大家谈:<a href="https://t.me/bokecn" target="_blank" rel="external">https://t.me/bokecn</a></p>
 <p>「得意忘形」听众群:<a href="https://t.me/joinchat/Bx8JqQ33oVCrKSul-cHJGQ" target="_blank" rel="external">https://t.me/joinchat/Bx8JqQ33oVCrKSul-cHJGQ</a></p>
 <p>津津乐道听友交流:<a href="https://t.me/htnpodcast" target="_blank" rel="external">https://t.me/htnpodcast</a></p>
-<p><strong>Telegram官方翻译</strong></p>
-<p>官方翻译支持群 English:<a href="https://t.me/translation_en" target="_blank" rel="external">https://t.me/translation_en</a></p>
-<p>官方翻译支持群 简体中文 (聪聪):<a href="https://t.me/translation_zhcncc" target="_blank" rel="external">https://t.me/translation_zhcncc</a></p>
-<p>官方翻译支持群 简体中文:<a href="https://t.me/translation_zh_hans" target="_blank" rel="external">https://t.me/translation_zh_hans</a></p>
-<p>官方翻译支持群 简体中文(@zh_CN 版):<a href="https://t.me/translation_classic_zh_cn" target="_blank" rel="external">https://t.me/translation_classic_zh_cn</a></p>
-<p>官方翻译支持群 简体中文(langCN):<a href="https://t.me/translation_zhlangcn" target="_blank" rel="external">https://t.me/translation_zhlangcn</a></p>
-<p>官方翻译支持群 瓜体中文:<a href="https://t.me/translation_duang_zh_cn" target="_blank" rel="external">https://t.me/translation_duang_zh_cn</a></p>
-<p>官方翻译支持群 繁体中文(香港):<a href="https://t.me/translation_zh_hant" target="_blank" rel="external">https://t.me/translation_zh_hant</a></p>
-<p>官方翻译支持群 繁体中文(台湾):<a href="https://t.me/translation_taiwan" target="_blank" rel="external">https://t.me/translation_taiwan</a></p>
-<p>TG 简中交流（水）群:<a href="https://t.me/cnpub" target="_blank" rel="external">https://t.me/cnpub</a></p>
-<p>Telegram 討論區:<a href="https://t.me/PublicGroupForzh" target="_blank" rel="external">https://t.me/PublicGroupForzh</a></p>
-<p>Telegram 新手帮助:<a href="https://t.me/newbie_chat" target="_blank" rel="external">https://t.me/newbie_chat</a></p>
-<p>Telegram X iOS:<a href="https://t.me/tgiostests" target="_blank" rel="external">https://t.me/tgiostests</a></p>
-<p>Telegram iOS Talk:<a href="https://t.me/TelegramiOStalk" target="_blank" rel="external">https://t.me/TelegramiOStalk</a></p>
-<p>Telegram Android Talk:<a href="https://t.me/TelegramAndroidTalk" target="_blank" rel="external">https://t.me/TelegramAndroidTalk</a></p>
-<p>Telegram X Android:<a href="https://t.me/tgandroidtests" target="_blank" rel="external">https://t.me/tgandroidtests</a></p>
-<p>Telegram macOS:<a href="https://t.me/macswift" target="_blank" rel="external">https://t.me/macswift</a></p>
-<p>Telegram macOS Talk:<a href="https://t.me/TelegramMacOsTalk" target="_blank" rel="external">https://t.me/TelegramMacOsTalk</a></p>
-<p>Telegram Desktop Talk:<a href="https://t.me/TelegramDesktopTalk" target="_blank" rel="external">https://t.me/TelegramDesktopTalk</a></p>
-<p>Telegram Windows Phone Talk:<a href="https://t.me/TelegramWPtalk" target="_blank" rel="external">https://t.me/TelegramWPtalk</a></p>
-<p>Telegram Bot Talk:<a href="https://t.me/BotTalk" target="_blank" rel="external">https://t.me/BotTalk</a></p>
-<p>Telegram Party:<a href="https://t.me/PublicTestGroup" target="_blank" rel="external">https://t.me/PublicTestGroup</a></p>
-<p>Telegram Android Themes:<a href="https://t.me/AndroidThemesGroup" target="_blank" rel="external">https://t.me/AndroidThemesGroup</a></p>
-<p>Telegram Desktop Themes:<a href="https://t.me/TelegramThemes" target="_blank" rel="external">https://t.me/TelegramThemes</a></p>
-<p>Telegram X: Themes:<a href="http://t.me/tgx_perfection" target="_blank" rel="external">http://t.me/tgx_perfection</a></p>
-<p>Telegram Beta Chat:<a href="https://t.me/tgbetachat" target="_blank" rel="external">https://t.me/tgbetachat</a></p>
-<p>Tentang Telegram:<a href="https://t.me/tentangtelegram" target="_blank" rel="external">https://t.me/tentangtelegram</a></p>
-<p>Instant View Platform Chat:<a href="https://t.me/IVpublic" target="_blank" rel="external">https://t.me/IVpublic</a></p>
-<p>Telegram 新手問答區:<a href="https://t.me/TGQNA" target="_blank" rel="external">https://t.me/TGQNA</a></p>
-<p>電報群推廣:<a href="https://t.me/joinchat/FAir4j15AV8Q_x5zzoc8yw" target="_blank" rel="external">https://t.me/joinchat/FAir4j15AV8Q_x5zzoc8yw</a></p>
-<p>CNBlacklistR 交流群:<a href="https://t.me/joinchat/FfbG_g9eWFL1-8vEhY4xlQ" target="_blank" rel="external">https://t.me/joinchat/FfbG_g9eWFL1-8vEhY4xlQ</a></p>
 <p><strong>地区群</strong></p>
 <p>深圳:<a href="https://t.me/shenzhenbot?start=join" target="_blank" rel="external">https://t.me/shenzhenbot?start=join</a></p>
 <p>深圳:<a href="https://t.me/shenzhentg" target="_blank" rel="external">https://t.me/shenzhentg</a></p>
@@ -1318,24 +1291,42 @@
 <p>回形针PaperClip粉丝群:<a href="https://t.me/paperclipfans" target="_blank" rel="external">https://t.me/paperclipfans</a></p>
 <p>瘟疫难民254营:<a href="https://t.me/ckhunter254" target="_blank" rel="external">https://t.me/ckhunter254</a></p>
 <p>iShare 爱分享:<a href="https://t.me/iShareTG" target="_blank" rel="external">https://t.me/iShareTG</a></p>
+<p><a href="http://blog.liyuans.com/archives/telegram-recommendation.html" target="_blank" rel="external">Telegram: 一份更完整的群组推荐，包含社群 / 频道 / 机器人</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt;推荐&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;印象笔记 科技 NEWS:&lt;a href=&quot;https://t.me/YinxiangBiji_News&quot;&gt;https://t.me/YinxiangBiji_News&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;印象笔记 Evernote 社群:&lt;a href=&quot;https://t.me/YinxiangBiji&quot;&gt;https://t.me/YinxiangBiji&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Telegram 中文圈:&lt;a href=&quot;https://t.me/tgzhcn&quot;&gt;https://t.me/tgzhcn&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;RSS 交流群:&lt;a href=&quot;https://t.me/joinchat/Ag98F0evTbZwY8HB7oH4fA&quot;&gt;https://t.me/joinchat/Ag98F0evTbZwY8HB7oH4fA&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Notion 用户群:&lt;a href=&quot;https://t.me/joinchat/Ag98F0DdcZr1X1xS6lJsyA&quot;&gt;https://t.me/joinchat/Ag98F0DdcZr1X1xS6lJsyA&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;幕布用户群:&lt;a href=&quot;https://t.me/joinchat/Ag98F01tRQ2RIk_icHhiyA&quot;&gt;https://t.me/joinchat/Ag98F01tRQ2RIk_icHhiyA&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;为知笔记用户群:&lt;a href=&quot;https://t.me/joinchat/Ag98F1MLJji5WC5OpjAcHQ&quot;&gt;https://t.me/joinchat/Ag98F1MLJji5WC5OpjAcHQ&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;有道云笔记用户群:&lt;a href=&quot;https://t.me/joinchat/Ag98F1C2ip5g0Bac_KCJ2A&quot;&gt;https://t.me/joinchat/Ag98F1C2ip5g0Bac_KCJ2A&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Todoist 用户群:&lt;a href=&quot;https://t.me/joinchat/Ag98F1DuGqE_dIiNkeM2uA&quot;&gt;https://t.me/joinchat/Ag98F1DuGqE_dIiNkeM2uA&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Simplenote 用户群:&lt;a href=&quot;https://t.me/joinchat/Ag98F0f7fjEKqZKVHNW0aA&quot;&gt;https://t.me/joinchat/Ag98F0f7fjEKqZKVHNW0aA&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;MarginNote 用户群:&lt;a href=&quot;https://t.me/joinchat/Ag98F0ZLDrJZOSBWXAEiow&quot;&gt;https://t.me/joinchat/Ag98F0ZLDrJZOSBWXAEiow&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;iMazing 用户群:&lt;a href=&quot;https://t.me/joinchat/Ag98F07KJmIlmwSCfTOKxQ&quot;&gt;https://t.me/joinchat/Ag98F07KJmIlmwSCfTOKxQ&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Typora 用户群:&lt;a href=&quot;https://t.me/joinchat/Ag98FxBSO7eJ9mMwxxUIPw&quot;&gt;https://t.me/joinchat/Ag98FxBSO7eJ9mMwxxUIPw&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Telegram官方翻译&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;官方翻译支持群 English:&lt;a href=&quot;https://t.me/translation_en&quot;&gt;https://t.me/translation_en&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;官方翻译支持群 简体中文 (聪聪):&lt;a href=&quot;https://t.me/translation_zhcncc&quot;&gt;https://t.me/translation_zhcncc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;官方翻译支持群 简体中文:&lt;a href=&quot;https://t.me/translation_zh_hans&quot;&gt;https://t.me/translation_zh_hans&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;官方翻译支持群 简体中文(@zh_CN 版):&lt;a href=&quot;https://t.me/translation_classic_zh_cn&quot;&gt;https://t.me/translation_classic_zh_cn&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;官方翻译支持群 简体中文(langCN):&lt;a href=&quot;https://t.me/translation_zhlangcn&quot;&gt;https://t.me/translation_zhlangcn&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;官方翻译支持群 瓜体中文:&lt;a href=&quot;https://t.me/translation_duang_zh_cn&quot;&gt;https://t.me/translation_duang_zh_cn&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;官方翻译支持群 繁体中文(香港):&lt;a href=&quot;https://t.me/translation_zh_hant&quot;&gt;https://t.me/translation_zh_hant&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;官方翻译支持群 繁体中文(台湾):&lt;a href=&quot;https://t.me/translation_taiwan&quot;&gt;https://t.me/translation_taiwan&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;TG 简中交流（水）群:&lt;a href=&quot;https://t.me/cnpub&quot;&gt;https://t.me/cnpub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Telegram 討論區:&lt;a href=&quot;https://t.me/PublicGroupForzh&quot;&gt;https://t.me/PublicGroupForzh&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Telegram 新手帮助:&lt;a href=&quot;https://t.me/newbie_chat&quot;&gt;https://t.me/newbie_chat&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Telegram X iOS:&lt;a href=&quot;https://t.me/tgiostests&quot;&gt;https://t.me/tgiostests&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Telegram iOS Talk:&lt;a href=&quot;https://t.me/TelegramiOStalk&quot;&gt;https://t.me/TelegramiOStalk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Telegram Android Talk:&lt;a href=&quot;https://t.me/TelegramAndroidTalk&quot;&gt;https://t.me/TelegramAndroidTalk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Telegram X Android:&lt;a href=&quot;https://t.me/tgandroidtests&quot;&gt;https://t.me/tgandroidtests&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Telegram macOS:&lt;a href=&quot;https://t.me/macswift&quot;&gt;https://t.me/macswift&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Telegram macOS Talk:&lt;a href=&quot;https://t.me/TelegramMacOsTalk&quot;&gt;https://t.me/TelegramMacOsTalk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Telegram Desktop Talk:&lt;a href=&quot;https://t.me/TelegramDesktopTalk&quot;&gt;https://t.me/TelegramDesktopTalk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Telegram Windows Phone Talk:&lt;a href=&quot;https://t.me/TelegramWPtalk&quot;&gt;https://t.me/TelegramWPtalk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Telegram Bot Talk:&lt;a href=&quot;https://t.me/BotTalk&quot;&gt;https://t.me/BotTalk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Telegram Party:&lt;a href=&quot;https://t.me/PublicTestGroup&quot;&gt;https://t.me/PublicTestGroup&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Telegram Android Themes:&lt;a href=&quot;https://t.me/AndroidThemesGroup&quot;&gt;https://t.me/AndroidThemesGroup&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Telegram Desktop Themes:&lt;a href=&quot;https://t.me/TelegramThemes&quot;&gt;https://t.me/TelegramThemes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Telegram X: Themes:&lt;a href=&quot;http://t.me/tgx_perfection&quot;&gt;http://t.me/tgx_perfection&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Telegram Beta Chat:&lt;a href=&quot;https://t.me/tgbetachat&quot;&gt;https://t.me/tgbetachat&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Tentang Telegram:&lt;a href=&quot;https://t.me/tentangtelegram&quot;&gt;https://t.me/tentangtelegram&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Instant View Platform Chat:&lt;a href=&quot;https://t.me/IVpublic&quot;&gt;https://t.me/IVpublic&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Telegram 新手問答區:&lt;a href=&quot;https://t.me/TGQNA&quot;&gt;https://t.me/TGQNA&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;電報群推廣:&lt;a href=&quot;https://t.me/joinchat/FAir4j15AV8Q_x5zzoc8yw&quot;&gt;https://t.me/joinchat/FAir4j15AV8Q_x5zzoc8yw&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;CNBlacklistR 交流群:&lt;a href=&quot;https://t.me/joinchat/FfbG_g9eWFL1-8vEhY4xlQ&quot;&gt;https://t.me/joinchat/FfbG_g9eWFL1-8vEhY4xlQ&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1553,39 +1544,6 @@ make V=s
   </entry>
   
   <entry>
-    <title>OpenWRT的WiFi带机量修改方法</title>
-    <link href="http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/"/>
-    <id>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT的WiFi带机量修改方法/</id>
-    <published>2018-05-14T04:12:08.000Z</published>
-    <updated>2019-12-19T10:31:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>WiFi带机量的修改</p>
-<p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
-<p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
-<a id="more"></a>
-<blockquote>
-<p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="external">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="external">MTK_Ralink_ApSoc_SDK编译总结</a><br><a href="http://www.right.com.cn/forum/thread-208204-1-1.html" target="_blank" rel="external">openwrt wifi用户连接数限制</a></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;WiFi带机量的修改&lt;/p&gt;
-&lt;p&gt;(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;#define MAX_NUMBER_OF_MAC                64 // 原始值32&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
-    
-      <category term="电子书包" scheme="http://cuiqingwei.github.io/tags/%E7%94%B5%E5%AD%90%E4%B9%A6%E5%8C%85/"/>
-    
-  </entry>
-  
-  <entry>
     <title>WiFi探针的工作原理</title>
     <link href="http://cuiqingwei.github.io/2018/05/14/2018-06-18-WiFi%E6%8E%A2%E9%92%88%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"/>
     <id>http://cuiqingwei.github.io/2018/05/14/2018-06-18-WiFi探针的工作原理/</id>
@@ -1635,6 +1593,39 @@ make V=s
     
     
       <category term="Wi-Fi" scheme="http://cuiqingwei.github.io/tags/Wi-Fi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OpenWRT的WiFi带机量修改方法</title>
+    <link href="http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/"/>
+    <id>http://cuiqingwei.github.io/2018/05/14/2018-05-14-OpenWRT的WiFi带机量修改方法/</id>
+    <published>2018-05-14T04:12:08.000Z</published>
+    <updated>2019-12-19T10:31:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>WiFi带机量的修改</p>
+<p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</div></pre></td></tr></table></figure>
+<p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
+<a id="more"></a>
+<blockquote>
+<p>参考:<br><a href="https://blog.csdn.net/mcusun2000/article/details/50875488" target="_blank" rel="external">MT7620的WIFI带机量</a><br><a href="https://blog.csdn.net/manfeel/article/details/38356727" target="_blank" rel="external">MTK_Ralink_ApSoc_SDK编译总结</a><br><a href="http://www.right.com.cn/forum/thread-208204-1-1.html" target="_blank" rel="external">openwrt wifi用户连接数限制</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;WiFi带机量的修改&lt;/p&gt;
+&lt;p&gt;(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;#define MAX_NUMBER_OF_MAC                64 // 原始值32&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="OpenWRT" scheme="http://cuiqingwei.github.io/tags/OpenWRT/"/>
+    
+      <category term="电子书包" scheme="http://cuiqingwei.github.io/tags/%E7%94%B5%E5%AD%90%E4%B9%A6%E5%8C%85/"/>
     
   </entry>
   
@@ -1852,6 +1843,84 @@ make V=s
     
     
       <category term="DCS、PLC" scheme="http://cuiqingwei.github.io/tags/DCS%E3%80%81PLC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SSH与SSM对比</title>
+    <link href="http://cuiqingwei.github.io/2017/12/26/2017-12-26-SSH%E4%B8%8ESSM%E5%AF%B9%E6%AF%94/"/>
+    <id>http://cuiqingwei.github.io/2017/12/26/2017-12-26-SSH与SSM对比/</id>
+    <published>2017-12-26T06:12:08.000Z</published>
+    <updated>2017-12-26T06:09:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>当下流行的两种企业开发MVC开源框架，是我们Java程序猿必备知识能力。MVC，即模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。框架之所以流行，在于其易复用和简化开发，精髓在思想，掌握了核心思想，我们掌握其他类似框架也不会有问题，建议大家有精力的话读一下框架源码，尤其是Spring。</p>
+<a id="more"></a>
+<h1 id="SSH和SSM定义"><a href="#SSH和SSM定义" class="headerlink" title="SSH和SSM定义"></a>SSH和SSM定义</h1><p><strong>SSH</strong> 通常指的是 Struts2 做控制器(controller)，spring 管理各层的组件，hibernate 负责持久化层。</p>
+<p><strong>SSM</strong> 则指的是 SpringMVC 做控制器(controller)，Spring 管理各层的组件，MyBatis 负责持久化层。</p>
+<p><strong>共同点</strong>：</p>
+<ul>
+<li>1.Spring依赖注入DI来管理各层的组件；</li>
+<li>2.使用面向切面编程AOP管理事物、日志、权限等。</li>
+</ul>
+<p><strong>不同点</strong>：Struts2 和 SpringMVC 控制器(controller)控制视图和模型的交互机制的不同，Struts2是Action类级别，SpringMVC是方法级别，更容易实现RESTful风格。</p>
+<h1 id="SSH-和-SSM-的实现原理"><a href="#SSH-和-SSM-的实现原理" class="headerlink" title="SSH 和 SSM 的实现原理"></a>SSH 和 SSM 的实现原理</h1><h2 id="1-Struts2-的实现原理"><a href="#1-Struts2-的实现原理" class="headerlink" title="1.Struts2 的实现原理"></a>1.Struts2 的实现原理</h2><p><img src="/img/20171226/f740001068a5c16f544.jpg" alt=""></p>
+<p>Struts2框架执行步骤（Struts2使用Filter嵌入）：</p>
+<ul>
+<li>1、客户端初始化一个指向Servlet容器（例如Tomcat）的请求；</li>
+<li>2、这个请求经过一系列的过滤器（Filter）（这些过滤器中有一个叫做ActionContextCleanUp的可选过滤器，这个过滤器对于Struts2和其他框架的集成很有帮助；</li>
+<li>3、接着FilterDispatcher被调用，FilterDispatcher询问ActionMapper来决定这个请求是否需要调用某个Action；</li>
+<li>4、如果ActionMapper决定需要调用某个Action，FilterDispatcher把请求的处理交给ActionProxy；</li>
+<li>5、ActionProxy通过Configuration Manager询问框架的配置文件，找到需要调用的Action类；</li>
+<li>6、ActionProxy创建一个ActionInvocation的实例；</li>
+<li>7、ActionInvocation实例使用命名模式来调用，在调用Action的过程前后，涉及到相关拦截器（Intercepter）的调用；</li>
+<li>8、一旦Action执行完毕，ActionInvocation负责根据struts.xml中的配置找到对应的返回结果。返回结果通常是（但不总是，也可 能是另外的一个Action链）一个需要被表示的JSP或者FreeMarker的模版；</li>
+<li>9、将处理结果返回给客户端。</li>
+</ul>
+<h2 id="2-SpringMVC-的实现原理"><a href="#2-SpringMVC-的实现原理" class="headerlink" title="2.SpringMVC 的实现原理"></a>2.SpringMVC 的实现原理</h2><p><img src="/img/20171226/f7500089dc67ac93a17.jpg" alt=""></p>
+<p>SpringMVC框架执行步骤（SpringMVC使用Servlet嵌入）：</p>
+<ul>
+<li>1、客户端发出一个http请求给web服务器，web服务器对http请求进行解析，如果匹配DispatcherServlet的请求映射路径（在web.xml中指定），web容器将请求转交给DispatcherServlet；</li>
+<li>2、DipatcherServlet接收到这个请求之后将根据请求的信息（包括URL、Http方法、请求报文头和请求参数Cookie等）以及HandlerMapping的配置找到处理请求的处理器（Handler）；</li>
+<li>3-4、DispatcherServlet根据HandlerMapping找到对应的Handler,将处理权交给Handler（Handler将具体的处理进行封装），再由具体的HandlerAdapter对Handler进行具体的调用；</li>
+<li>5、Handler对数据处理完成以后将返回一个ModelAndView()对象给DispatcherServlet；</li>
+<li>6、Handler返回的ModelAndView()只是一个逻辑视图并不是一个正式的视图，DispatcherSevlet通过ViewResolver将逻辑视图转化为真正的视图View；</li>
+<li>7、Dispatcher通过model解析出ModelAndView()中的参数进行解析最终展现出完整的view并返回给客户端。</li>
+</ul>
+<h1 id="Hibernate-和-MyBatis-两种ORM框架对比"><a href="#Hibernate-和-MyBatis-两种ORM框架对比" class="headerlink" title="Hibernate 和 MyBatis 两种ORM框架对比"></a>Hibernate 和 MyBatis 两种ORM框架对比</h1><p><strong>两者的相同点</strong></p>
+<ul>
+<li>Hibernate与MyBatis都可以是通过SessionFactoryBuider由XML配置文件生成SessionFactory，然后由SessionFactory 生成Session，最后由Session来开启执行事务和SQL语句。其中SessionFactoryBuider，SessionFactory，Session的生命周期都是差不多的。</li>
+<li>Hibernate和MyBatis都支持JDBC和JTA事务处理。</li>
+</ul>
+<p><strong>两者各自优势</strong></p>
+<ul>
+<li>MyBatis可以进行更为细致的SQL优化，可以减少查询字段。</li>
+<li>MyBatis容易掌握，而Hibernate门槛较高。</li>
+<li>Hibernate的DAO层开发比MyBatis简单，Mybatis需要维护SQL和结果映射。</li>
+<li>Hibernate对对象的维护和缓存要比MyBatis好，对增删改查的对象的维护要方便。</li>
+<li>Hibernate数据库移植性很好，MyBatis的数据库移植性不好，不同的数据库需要写不同SQL。</li>
+<li>Hibernate有更好的二级缓存机制，可以使用第三方缓存。MyBatis本身提供的缓存机制不佳，更新操作不能指定刷新指定记录，会清空整个表，但是也可以使用第三方缓存。</li>
+<li>Hibernate 封装性好，屏蔽了数据库差异，自动生成SQL语句，应对数据库变化能力较弱，SQL语句优化困难。</li>
+<li>MyBatis仅实现了SQL语句和对象的映射，需要针对具体的数据库写SQL语句，应对数据库变化能力较强，SQL语句优化较为方便。</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>SSM和SSH不同主要在MVC实现方式，以及ORM持久化方面不同（Hiibernate与Mybatis）。SSM越来越轻量级配置，将注解开发发挥到极致，且ORM实现更加灵活，SQL优化更简便；而SSH较注重配置开发，其中的Hiibernate对JDBC的完整封装更面向对象，对增删改查的数据维护更自动化，但SQL优化方面较弱，且入门门槛稍高。</p>
+<blockquote>
+<p>附Spring家族：</p>
+</blockquote>
+<p><img src="/img/20171226/f750008ad20260cf3f2.jpg" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;当下流行的两种企业开发MVC开源框架，是我们Java程序猿必备知识能力。MVC，即模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。框架之所以流行，在于其易复用和简化开发，精髓在思想，掌握了核心思想，我们掌握其他类似框架也不会有问题，建议大家有精力的话读一下框架源码，尤其是Spring。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="http://cuiqingwei.github.io/tags/Java/"/>
+    
+      <category term="SSH" scheme="http://cuiqingwei.github.io/tags/SSH/"/>
+    
+      <category term="SSM" scheme="http://cuiqingwei.github.io/tags/SSM/"/>
     
   </entry>
   
