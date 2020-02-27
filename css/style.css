@@ -551,7 +551,6 @@ a {
 .header-author {
   text-align: center;
   margin: 13px 0;
-  font-family: Times, Georgia, serif;
   font-size: 30px;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -562,7 +561,7 @@ a {
   width: 100%;
 }
 #header a {
-  color: #696969;
+  color: #332d2c;
 }
 #header a:hover {
   color: #b0a0aa;
