@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="iZheteng">
 <meta property="og:description" content="先决条件本指南介绍了如何在Ubuntu Server 14.04 LTS上安装ThingsBoard。硬件要求取决于选择的数据库和连接到系统的设备数量。要在一台机器上运行ThingsBoard和PostgreSQL，您将至少需要1Gb RAM。要在单台计算机上运行ThingsBoard和Cassandra，您至少需要8Gb RAM。 步骤1.安装Java 8（OpenJDK）ThingsBoard">
 <meta property="article:published_time" content="2018-06-21T07:12:08.000Z">
-<meta property="article:modified_time" content="2020-02-28T14:08:28.000Z">
+<meta property="article:modified_time" content="2020-02-29T06:19:24.000Z">
 <meta property="article:author" content="iZheteng">
 <meta property="article:tag" content="thingsboard">
 <meta name="twitter:card" content="summary">
@@ -413,11 +413,13 @@
 <p>如果在执行安装脚本期间指定了<em>–loadDemo</em>，则可以使用以下默认凭据：</p>
 <ul>
 <li><strong>Systen管理员</strong>：sysadmin@thingsboard.org / sysadmin</li>
-<li><strong>租户管理员</strong>：tenant@thingsboard.org /租户</li>
-<li><strong>客户用户</strong>：customer@thingsboard.org /客户</li>
+<li><strong>租户管理员</strong>：tenant@thingsboard.org / tenant</li>
+<li><strong>客户用户</strong>：customer@thingsboard.org / customer</li>
 </ul>
 <p>您始终可以在帐户资料页面中更改每个帐户的密码。</p>
 <p>请等待90秒以启动Web UI。这仅适用于具有1-2 CPU或1-2 GB RAM的慢速计算机。</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -v -X POST -d <span class="string">"[&#123;\"temperature\": 25&#125;,&#123;\"humidity\":60&#125;]"</span> http://localhost:8080/api/v1/DHT11_DEMO_TOKEN/telemetry --header <span class="string">"Content-Type:application/json"</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="安装后步骤"><a href="#安装后步骤" class="headerlink" title="安装后步骤"></a>安装后步骤</h3><p><strong>配置HAProxy以启用HTTPS</strong></p>
 <p>您可能要使用HAProxy配置HTTPS访问。如果您在云端托管ThingsBoard并为您的实例分配了有效的DNS名称，则可以这样做。请按照本<a href="https://thingsboard.io/docs/user-guide/install/pe/add-haproxy-ubuntu" target="_blank" rel="noopener">指南</a>安装HAProxy并使用Let’s Encrypt生成有效的SSL证书。</p>
 <h3 id="故障排除"><a href="#故障排除" class="headerlink" title="故障排除"></a>故障排除</h3><p>ThingsBoard日志存储在以下目录中：</p>
@@ -425,6 +427,11 @@
 
 <p>您可以发出以下命令以检查后端是否有任何错误：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat &#x2F;var&#x2F;log&#x2F;thingsboard&#x2F;thingsboard.log | grep ERROR</span><br></pre></td></tr></table></figure>
+
+
+
+<p>curl -v -X POST -d “[{&quot;temperature&quot;: 25},{&quot;humidity&quot;:60}]” <a href="http://192.168.199.246:8080/api/v1/DHT11_DEMO_TOKEN/telemetry" target="_blank" rel="noopener">http://192.168.199.246:8080/api/v1/DHT11_DEMO_TOKEN/telemetry</a> –header “Content-Type:application/json”</p>
+
       
     </div>
     
@@ -435,7 +442,7 @@
         <p><span>本文标题:</span><a href="/2018/06/21/2018-06-21-%E5%9C%A8ubuntu%E4%B8%8A%E9%83%A8%E7%BD%B2thingsboard/">在ubuntu上部署thingsboard</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">iZheteng</a></p>
         <p><span>发布时间:</span>2018-06-21, 15:12:08</p>
-        <p><span>最后更新:</span>2020-02-28, 22:08:28</p>
+        <p><span>最后更新:</span>2020-02-29, 14:19:24</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/06/21/2018-06-21-%E5%9C%A8ubuntu%E4%B8%8A%E9%83%A8%E7%BD%B2thingsboard/" title="在ubuntu上部署thingsboard">http://cuiqingwei.github.io/2018/06/21/2018-06-21-%E5%9C%A8ubuntu%E4%B8%8A%E9%83%A8%E7%BD%B2thingsboard/</a>
             <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2018/06/21/2018-06-21-%E5%9C%A8ubuntu%E4%B8%8A%E9%83%A8%E7%BD%B2thingsboard/　　作者: iZheteng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -471,7 +478,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#先决条件"><span class="toc-number">1.</span> <span class="toc-text">先决条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤1-安装Java-8（OpenJDK）"><span class="toc-number">2.</span> <span class="toc-text">步骤1.安装Java 8（OpenJDK）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第2步。ThingsBoard服务安装"><span class="toc-number">3.</span> <span class="toc-text">第2步。ThingsBoard服务安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤3-配置ThingsBoard数据库"><span class="toc-number">4.</span> <span class="toc-text">步骤3.配置ThingsBoard数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#PostgreSQL安装"><span class="toc-number">4.0.1.</span> <span class="toc-text">PostgreSQL安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ThingsBoard配置"><span class="toc-number">4.0.2.</span> <span class="toc-text">ThingsBoard配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤4-可选-慢速计算机的内存更新（1GB-RAM）"><span class="toc-number">5.</span> <span class="toc-text">步骤4. [可选]慢速计算机的内存更新（1GB RAM）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤5-运行安装脚本"><span class="toc-number">6.</span> <span class="toc-text">步骤5.运行安装脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤6-启动ThingsBoard服务"><span class="toc-number">7.</span> <span class="toc-text">步骤6.启动ThingsBoard服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装后步骤"><span class="toc-number">8.</span> <span class="toc-text">安装后步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#故障排除"><span class="toc-number">9.</span> <span class="toc-text">故障排除</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#先决条件"><span class="toc-number">1.</span> <span class="toc-text">先决条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤1-安装Java-8（OpenJDK）"><span class="toc-number">2.</span> <span class="toc-text">步骤1.安装Java 8（OpenJDK）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第2步。ThingsBoard服务安装"><span class="toc-number">3.</span> <span class="toc-text">第2步。ThingsBoard服务安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤3-配置ThingsBoard数据库"><span class="toc-number">4.</span> <span class="toc-text">步骤3.配置ThingsBoard数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#PostgreSQL安装"><span class="toc-number">4.0.1.</span> <span class="toc-text">PostgreSQL安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ThingsBoard配置"><span class="toc-number">4.0.2.</span> <span class="toc-text">ThingsBoard配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤4-可选-慢速计算机的内存更新（1GB-RAM）"><span class="toc-number">5.</span> <span class="toc-text">步骤4. [可选]慢速计算机的内存更新（1GB RAM）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤5-运行安装脚本"><span class="toc-number">6.</span> <span class="toc-text">步骤5.运行安装脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤6-启动ThingsBoard服务"><span class="toc-number">7.</span> <span class="toc-text">步骤6.启动ThingsBoard服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试"><span class="toc-number">8.</span> <span class="toc-text">测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装后步骤"><span class="toc-number">9.</span> <span class="toc-text">安装后步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#故障排除"><span class="toc-number">10.</span> <span class="toc-text">故障排除</span></a></li></ol>
         
     </div>
     <style>

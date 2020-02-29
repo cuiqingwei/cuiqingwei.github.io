@@ -1200,11 +1200,13 @@
 <p>如果在执行安装脚本期间指定了<em>–loadDemo</em>，则可以使用以下默认凭据：</p>
 <ul>
 <li><strong>Systen管理员</strong>：sysadmin@thingsboard.org / sysadmin</li>
-<li><strong>租户管理员</strong>：tenant@thingsboard.org /租户</li>
-<li><strong>客户用户</strong>：customer@thingsboard.org /客户</li>
+<li><strong>租户管理员</strong>：tenant@thingsboard.org / tenant</li>
+<li><strong>客户用户</strong>：customer@thingsboard.org / customer</li>
 </ul>
 <p>您始终可以在帐户资料页面中更改每个帐户的密码。</p>
 <p>请等待90秒以启动Web UI。这仅适用于具有1-2 CPU或1-2 GB RAM的慢速计算机。</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -v -X POST -d <span class="string">"[&#123;\"temperature\": 25&#125;,&#123;\"humidity\":60&#125;]"</span> http://localhost:8080/api/v1/DHT11_DEMO_TOKEN/telemetry --header <span class="string">"Content-Type:application/json"</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="安装后步骤"><a href="#安装后步骤" class="headerlink" title="安装后步骤"></a>安装后步骤</h3><p><strong>配置HAProxy以启用HTTPS</strong></p>
 <p>您可能要使用HAProxy配置HTTPS访问。如果您在云端托管ThingsBoard并为您的实例分配了有效的DNS名称，则可以这样做。请按照本<a href="https://thingsboard.io/docs/user-guide/install/pe/add-haproxy-ubuntu" target="_blank" rel="noopener">指南</a>安装HAProxy并使用Let’s Encrypt生成有效的SSL证书。</p>
 <h3 id="故障排除"><a href="#故障排除" class="headerlink" title="故障排除"></a>故障排除</h3><p>ThingsBoard日志存储在以下目录中：</p>
@@ -1212,6 +1214,11 @@
 
 <p>您可以发出以下命令以检查后端是否有任何错误：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat &#x2F;var&#x2F;log&#x2F;thingsboard&#x2F;thingsboard.log | grep ERROR</span><br></pre></td></tr></table></figure>
+
+
+
+<p>curl -v -X POST -d “[{&quot;temperature&quot;: 25},{&quot;humidity&quot;:60}]” <a href="http://192.168.199.246:8080/api/v1/DHT11_DEMO_TOKEN/telemetry" target="_blank" rel="noopener">http://192.168.199.246:8080/api/v1/DHT11_DEMO_TOKEN/telemetry</a> –header “Content-Type:application/json”</p>
+
       
     </div>
     
