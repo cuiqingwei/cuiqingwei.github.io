@@ -923,7 +923,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h1><ul>
+              <h1 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h1><ul>
 <li>通过终端命令修改</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"xxx"</span></span><br><span class="line">git config --global user.email <span class="string">"xxx@gmail.com"</span></span><br><span class="line">git config --global <span class="built_in">alias</span> ci commit</span><br><span class="line">git config --global <span class="built_in">alias</span> dog  <span class="built_in">log</span> --all --decorate --oneline --graph</span><br><span class="line">git config --global <span class="built_in">alias</span> mg merge</span><br></pre></td></tr></table></figure>
@@ -932,51 +932,7 @@
 <li><code>vi ~/.gitconfig</code> 直接修改文件配置也可以</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[user]</span><br><span class="line">	name = xxx</span><br><span class="line">	email = xxx@gmail.com</span><br><span class="line">[<span class="built_in">alias</span>]</span><br><span class="line">	co = checkout</span><br><span class="line">	br = branch</span><br><span class="line">	ci = commit</span><br><span class="line">	st = status</span><br><span class="line">	dog = <span class="built_in">log</span> --all --decorate --oneline --graph</span><br><span class="line">	mg = merge</span><br></pre></td></tr></table></figure>
-
-<h1 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add -A</span><br><span class="line">git commit -m <span class="string">"备注"</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="分支、合并"><a href="#分支、合并" class="headerlink" title="分支、合并"></a>分支、合并</h1><p>创建分支：<code>git branch f1</code></p>
-<p>删除分支：<code>git branch -d f1</code>  <em>强制</em>：<code>git branch -D f1</code></p>
-<p>查看所有：<code>git branch -a</code> <em>查看远程分支</em>：<code>git branch -r</code></p>
-<p>切换分支：<code>git checkout f1</code></p>
-<p>创建并切换到：<code>git checkout -b f2</code></p>
-<p>远端添加分支：<code>git push origin f1</code>  <em>新命名</em>：<code>git push origin f1：newname</code></p>
-<p>删除远端分支：<code>git push origin :f1</code></p>
-<p>合并：<code>git merge f1</code></p>
-<h1 id="回滚、撤销"><a href="#回滚、撤销" class="headerlink" title="回滚、撤销"></a>回滚、撤销</h1><h3 id="git-reset"><a href="#git-reset" class="headerlink" title="git reset"></a><code>git reset</code></h3><ul>
-<li><p>相对回滚</p>
-<p><code>git reset mater^</code></p>
-</li>
-</ul>
-<p>回退两次： <code>git reset mate^^</code></p>
-<p>回退n次： <code>git reset mater~n</code></p>
-<ul>
-<li>绝对回滚</li>
-</ul>
-<p>回退到指定版本对应ID：<code>git reset 96147bff8</code></p>
-<ul>
-<li>放弃本地所有变更，回滚到指定版本</li>
-</ul>
-<p><code>git reset --hard 96147bff8</code></p>
-<h4 id="reset三种模式区别"><a href="#reset三种模式区别" class="headerlink" title="reset三种模式区别"></a>reset三种模式区别</h4><ol>
-<li><strong>–hard</strong>：重置位置的同时，直接将 working Tree工作目录、 index 暂存区及 repository都重置成目标Reset节点的內容,所以效果看起来等同于<strong>清空暂存区和工作区</strong>。</li>
-<li><strong>–soft</strong>：重置位置的同时，保留working Tree工作目录和index暂存区的内容，只让repository中的内容和 reset目标节点保持一致，因此原节点和reset节点之间的【差异变更集】会放入index暂存区中(Staged files)。所以效果看起来就是工作目录的内容不变，暂存区原有的内容也不变，只是原节点和Reset节点之间的<strong>所有差异都会放到暂存区中</strong>。</li>
-<li><strong>–mixed（默认）</strong>：重置位置的同时，只保留<strong>Working Tree工作目录</strong>的內容，但会将 <strong>Index暂存区</strong> 和 <strong>Repository</strong> 中的內容更改和reset目标节点一致，因此原节点和<strong>Reset</strong>节点之间的【差异变更集】会放入<strong>Working Tree工作目录</strong>中。所以效果看起来就是原节点和<strong>Reset</strong>节点之间的<strong>所有差异都会放到工作目录中</strong>。</li>
-</ol>
-<h2 id="git-revert"><a href="#git-revert" class="headerlink" title="git revert"></a><code>git revert</code></h2><p>撤销一次： <code>git revert HEAD^</code></p>
-<p>回退n次： <code>git revert HEAD~n</code></p>
-<p>回退到指定版本对应ID：<code>git revert 96147bff8</code></p>
-<blockquote>
-<p>git revert 撤销某次操作，此次操作之前和之后的 commit 和 history 都会保留，并且把这次撤销作为一次最新的提交。git revert是提交一个新的版本，将需要revert的版本的内容再反向修改回去，版本会递增，不影响之前提交的内容。相比 git reset，它不会改变现在的提交历史。</p>
-<p><strong>git revert</strong> 可以用在公共分支上，<strong>git reset</strong> 应该用在私有分支上。</p>
-</blockquote>
-<h1 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h1><p>添加：<code>git remote add origin &lt;url&gt;</code> <em>上游</em>：``git remote add upstream <url>`</p>
-<p>修改：<code>git remote set-url origin &lt;url&gt;</code></p>
-<p>查看：<code>git remote -v</code></p>
-<p>删除：<code>git remote rm upstream</code> </p>
-<h1 id="图形工具"><a href="#图形工具" class="headerlink" title="图形工具"></a>图形工具</h1><p><a href="https://www.sourcetreeapp.com/" target="_blank" rel="noopener">Sourcetree</a> - A free Git client for Windows and Mac<br><a href="https://www.git-tower.com/mac" target="_blank" rel="noopener">Tower</a> - the most powerful Git client for Mac and Windows.<br><a href="https://git-scm.com/downloads/guis" target="_blank" rel="noopener">GUI Clients</a> - 更多客户端信息</p>
-<h1 id="优秀教程"><a href="#优秀教程" class="headerlink" title="优秀教程"></a>优秀教程</h1><p><a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="noopener">git - 简明指南l</a><br><a href="https://backlog.com/git-tutorial/cn/" target="_blank" rel="noopener">猴子都能懂的GIT入门</a></p>
-
+          
       
     </div>
     
@@ -989,6 +945,10 @@
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%87%E5%BF%98/" rel="tag">备忘</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2020/03/01/2020-03-01-git%E6%8C%87%E4%BB%A4%E5%A4%87%E5%BF%98/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
