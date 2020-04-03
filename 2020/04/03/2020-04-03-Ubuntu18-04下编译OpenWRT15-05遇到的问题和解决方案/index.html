@@ -15,16 +15,15 @@
 
 
 
-<meta name="description" content="1.sl 命令首先，安装1$ sudo apt-get install sl 然后，输入1$ sl 我们看到了动画蒸汽机机头从屏幕右边开往左边。这个火车头是用ASCLL字符绘制。">
+<meta name="description" content="最近，OpenWRT开发主战场，从ubuntu16.04 LTS 虚拟机环境迁移到了ubuntu18.04LTS，水土不服，各种不适。不多说，折腾！！！  1. 初检git出错依赖提示 Please install Git (git-core) &gt;&#x3D; 1.6.5 1234567891011121314151617➜  openwrt git:(master) ✗ make menuconf">
 <meta property="og:type" content="article">
-<meta property="og:title" content="有趣的Linux命令行功效">
-<meta property="og:url" content="http://cuiqingwei.github.io/2015/07/16/2015-07-16-%E6%9C%89%E8%B6%A3%E7%9A%84Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8A%9F%E6%95%88/index.html">
+<meta property="og:title" content="Ubuntu18.04下编译OpenWRT15.05遇到的问题和解决方案">
+<meta property="og:url" content="http://cuiqingwei.github.io/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.html">
 <meta property="og:site_name" content="iZheteng">
-<meta property="og:description" content="1.sl 命令首先，安装1$ sudo apt-get install sl 然后，输入1$ sl 我们看到了动画蒸汽机机头从屏幕右边开往左边。这个火车头是用ASCLL字符绘制。">
-<meta property="article:published_time" content="2015-07-16T01:08:00.000Z">
-<meta property="article:modified_time" content="2018-03-08T15:05:16.000Z">
+<meta property="og:description" content="最近，OpenWRT开发主战场，从ubuntu16.04 LTS 虚拟机环境迁移到了ubuntu18.04LTS，水土不服，各种不适。不多说，折腾！！！  1. 初检git出错依赖提示 Please install Git (git-core) &gt;&#x3D; 1.6.5 1234567891011121314151617➜  openwrt git:(master) ✗ make menuconf">
+<meta property="article:published_time" content="2020-04-03T13:37:00.000Z">
+<meta property="article:modified_time" content="2020-04-03T16:14:34.000Z">
 <meta property="article:author" content="iZheteng">
-<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -59,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>有趣的Linux命令行功效 | iZheteng</title>
+<title>Ubuntu18.04下编译OpenWRT15.05遇到的问题和解决方案 | iZheteng</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -305,20 +304,20 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
-<article id="post-2015-07-16-有趣的Linux命令行功效" class="article article-type-post" itemscope itemprop="blogPost">
+<article id="post-2020-04-03-Ubuntu18-04下编译OpenWRT15-05遇到的问题和解决方案" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/07/16/2015-07-16-%E6%9C%89%E8%B6%A3%E7%9A%84Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8A%9F%E6%95%88/" class="article-date">
-      <time datetime="2015-07-16T01:08:00.000Z" itemprop="datePublished">2015-07-16</time>
+      <a href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="article-date">
+      <time datetime="2020-04-03T13:37:00.000Z" itemprop="datePublished">2020-04-03</time>
 </a>
 
  
-    <a href="/2015/07/16/2015-07-16-%E6%9C%89%E8%B6%A3%E7%9A%84Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8A%9F%E6%95%88/#comments" title="查看评论">
+    <a href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#comments" title="查看评论">
         <i class="fa fa-comments-o" aria-hidden="true"></i>
         <span class="count-comment"></span>
         
         
-            <span class="disqus-comment-count" data-disqus-identifier="2015/07/16/2015-07-16-有趣的Linux命令行功效/"></span>
+            <span class="disqus-comment-count" data-disqus-identifier="2020/04/03/2020-04-03-Ubuntu18-04下编译OpenWRT15-05遇到的问题和解决方案/"></span>
         
     </a>
 
@@ -333,7 +332,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      有趣的Linux命令行功效
+      Ubuntu18.04下编译OpenWRT15.05遇到的问题和解决方案
     </h1>
   
 
@@ -343,10 +342,6 @@
         
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -354,31 +349,91 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="1-sl-命令"><a href="#1-sl-命令" class="headerlink" title="1.sl 命令"></a>1.sl 命令</h1><p>首先，安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install sl</div></pre></td></tr></table></figure></p>
-<p>然后，输入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sl</div></pre></td></tr></table></figure></p>
-<p>我们看到了动画蒸汽机机头从屏幕右边开往左边。这个火车头是用ASCLL字符绘制。<br><a id="more"></a><br>提供特定的选项如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">SYNOPSIS</div><div class="line">sl [ -alFe ]</div><div class="line">DESCRIPTION</div><div class="line">sl Displays animations aimed to correct users who accidentally enter sl instead of ls. SL stands <span class="keyword">for</span> Steam Locomotive.</div><div class="line">OPTIONS</div><div class="line"><span class="_">-a</span> An accident seems to happen. You\<span class="string">'ll feel pity for people who cry for help.</span></div><div class="line">-l shows little one.</div><div class="line">-F It flies.</div><div class="line">-e Allow interrupt by Ctrl+C.</div></pre></td></tr></table></figure></p>
-<h1 id="2-rev-命令（reverse）"><a href="#2-rev-命令（reverse）" class="headerlink" title="2. rev 命令（reverse）"></a>2. rev 命令（reverse）</h1><p>它会颠倒所输入的字符串。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$rev</span></div></pre></td></tr></table></figure></p>
-<p>终端会提示我们通过标准输入提供一个字符串。那么在每行后面我们就可以同时看到输出。<br>比如，我们输入”mylinuxbook”然后按回车。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mylinuxbook</div><div class="line">koobxunilym</div><div class="line">$ cat strings.txt</div><div class="line">MyLinuxBook</div><div class="line">Linux is so much fun!</div><div class="line">Happy Birthday</div><div class="line">$ rev strings.txt</div><div class="line">kooBxuniLyM</div><div class="line">!nuf hcum os si xuniL</div><div class="line">yadhtriB yppaH</div></pre></td></tr></table></figure></p>
-<h1 id="3-fortune-命令"><a href="#3-fortune-命令" class="headerlink" title="3. fortune  命令"></a>3. fortune  命令</h1><p>我们运行这个命令的时候随机找了一条谚语或信息。<br>首先要对其进行安装：$sudo apt-get install fortune<br>运行这个命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ fortune</div><div class="line">You have the power to influence all with whom you come <span class="keyword">in</span> contact.</div></pre></td></tr></table></figure></p>
-<h1 id="4-figlet-命令"><a href="#4-figlet-命令" class="headerlink" title="4. figlet 命令"></a>4. figlet 命令</h1><p>这个命令会用大写方式把我们输入的字符串显示在标题栏，显示效果由ASCII字符组成。<br>先安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$sudo</span> apt-get install figlet</div></pre></td></tr></table></figure></p>
-<p>输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ figlet mylinuxbook</div></pre></td></tr></table></figure></p>
-<p>你可以试着用”figlet”在脚本标头或源代码中添加标题栏。</p>
-<h1 id="5-toilet-命令"><a href="#5-toilet-命令" class="headerlink" title="5.toilet 命令"></a>5.toilet 命令</h1><p>它是个五颜六色的命令。与figlet一样，它会把文本显示称标题栏，但是效果更好。<br>安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$sudo</span> apt-get install toilet</div></pre></td></tr></table></figure></p>
-<p>输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$toilet</span> mylinuxbook</div></pre></td></tr></table></figure></p>
-<p>它比figlet命令的效果更有艺术感。<br>不过，它还可以添加颜色。我们可以运行下列命令看到颜色：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$toilet</span> <span class="_">-f</span> mono12 -F metal mylinuxbook</div></pre></td></tr></table></figure></p>
-<h1 id="6-cowsay-命令"><a href="#6-cowsay-命令" class="headerlink" title="6. cowsay 命令"></a>6. cowsay 命令</h1><p>它会用ASCII字符描绘牛，羊和许多其他动物。但是不是每个Linux发行版都带有这个命令。<br>使用下面的命令安装此命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$sudo</span> apt-get install cowsay</div></pre></td></tr></table></figure></p>
-<p>现在，运行命令，并在命令中给出一个信息字符串。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$cowsay</span> “Linux is fun”</div></pre></td></tr></table></figure></p>
-<p>我们会看到了一个有趣的图像<br>基本上，我们会看到一头牛告诉我们所输入的信息。<br>尽管这个命令中只出现了cow，但其实它还可以有羊的效果。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$cowsay</span> <span class="_">-f</span> sheep “I too love linux”</div><div class="line">```　</div><div class="line">只需用 <span class="string">'-l 就能看到它能提供的所有动物。输入：</span></div><div class="line">```bash</div><div class="line">$cowsay -l</div></pre></td></tr></table></figure></p>
-<p>系统会弹出下列信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Cow files <span class="keyword">in</span> /usr/share/cowsay/cows:</div><div class="line">apt beavis.zen bong bud-frogs bunny calvin cheese cock cower daemon default</div><div class="line">dragon dragon-and-cow duck elephant elephant-in-snake eyes flaming-sheep</div><div class="line">ghostbusters gnu head-in hellokitty kiss kitty koala kosh luke-koala</div><div class="line">mech-and-cow meow milk moofasa moose mutilated pony pony-smaller ren sheep</div><div class="line">skeleton snowman sodomized-sheep stegosaurus stimpy suse three-eyes turkey</div><div class="line">turtle tux unipony unipony-smaller vader vader-koala www</div></pre></td></tr></table></figure></p>
-<p>因此，我们可以用 ‘-f’ 输入以上信息中的任何动物。如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cowsay <span class="_">-f</span> milk <span class="string">"Do you want to drink?"</span></div></pre></td></tr></table></figure></p>
-<p>为了使之更有趣，你可以让cowsay说出fortune信息，如输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$fortune</span> | cowsay</div></pre></td></tr></table></figure></p>
-<h1 id="7-cmatrix-命令"><a href="#7-cmatrix-命令" class="headerlink" title="7. cmatrix 命令"></a>7. cmatrix 命令</h1><p>这个命令会在终端生成ASCII字符组成的矩阵风格的动画效果。<br>先安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install cmatrix</div></pre></td></tr></table></figure></p>
-<p>现在运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cmatrix</div></pre></td></tr></table></figure></p>
-<p>用”ctrl+c” 结束，生成动画。</p>
-<h1 id="8-oneko-命令"><a href="#8-oneko-命令" class="headerlink" title="8. oneko 命令"></a>8. oneko 命令</h1><p>我们都知道”猫和老鼠”的动画，这个命令会让我们想起他们的追逐游戏。<br>有了这行命令，我们可以看到一只猫在追老鼠（鼠标指示器）的效果。<br>先安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$sudo</span> apt-get install oneko</div></pre></td></tr></table></figure></p>
-<p>运行这个命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ oneko</div></pre></td></tr></table></figure></p>
-<p>然后你就可以看到不管鼠标指示器放到哪里，Tom猫都会追着跑。下面是截图，不过不足以显示动态的效果.</p>
-<p>即便我们切换应用，猫也不会离开老鼠。它甚至没有局限于终端。<br>想关掉这个的时候，只需在终端里用ctrl+c 结束进程即可。</p>
+        <blockquote>
+<p>最近，OpenWRT开发主战场，从ubuntu16.04 LTS 虚拟机环境迁移到了ubuntu18.04LTS，水土不服，各种不适。不多说，折腾！！！</p>
+</blockquote>
+<h1 id="1-初检git出错"><a href="#1-初检git出错" class="headerlink" title="1. 初检git出错"></a>1. 初检git出错</h1><p>依赖提示 Please install Git (git-core) &gt;= 1.6.5</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">➜  openwrt git:(master) ✗ make menuconfig</span><br><span class="line">Checking <span class="string">'working-make'</span>... ok.</span><br><span class="line">         .</span><br><span class="line">         .</span><br><span class="line">         .</span><br><span class="line">Checking <span class="string">'svn'</span>... ok.</span><br><span class="line">Checking <span class="string">'git'</span>... failed.</span><br><span class="line">Checking <span class="string">'file'</span>... ok.</span><br><span class="line">Checking <span class="string">'openssl'</span>... ok.</span><br><span class="line">Checking <span class="string">'ldconfig-stub'</span>... ok.</span><br><span class="line"></span><br><span class="line">Build dependency: Please install Git (git-core) &gt;= 1.6.5</span><br><span class="line"></span><br><span class="line">/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/include/prereq.mk:12: recipe <span class="keyword">for</span> target <span class="string">'prereq'</span> failed</span><br><span class="line">Prerequisite check failed. Use FORCE=1 to override.</span><br><span class="line">/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/include/toplevel.mk:140: recipe <span class="keyword">for</span> target <span class="string">'staging_dir/host/.prereq-build'</span> failed</span><br><span class="line">make: *** [staging_dir/host/.prereq-build] Error 1</span><br></pre></td></tr></table></figure>
+
+<p>明明已经安装了git，却提示我们安装git，只是openwrt里面prereq-build.mk的一个bug，可以通过打patch的方法来修复它。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>进到xxx/chaos_calmer/include目录,就是toplevel.mk所在的目录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://gitlab.labs.nic.cz/turris/openwrt/uploads/0673001b14ab1d1769604ff0ce7d8781/git-version-check-fix.patch</span><br><span class="line">patch &lt; git-version-check-fix.patch</span><br></pre></td></tr></table></figure>
+
+<p>回到openwrt根目录，再次检查依赖，发现没，没有问题了。</p>
+<a id="more"></a>
+
+<h1 id="2-gdate-c错误"><a href="#2-gdate-c错误" class="headerlink" title="2. gdate.c错误"></a>2. gdate.c错误</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gdate.c: In <span class="keyword">function</span> <span class="string">'g_date_strftime'</span>:</span><br><span class="line">       tmplen = strftime (tmpbuf, tmpbufsize, locale_format, &amp;tm);</span><br><span class="line">       ^~~~~~</span><br></pre></td></tr></table></figure>
+
+<h2 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h2><p>单独改源码方式不好，下次重新编译有可能又要重新改， 所以新建个patch一劳永逸.</p>
+<p>在tools/pkg-config/目录下创建目录patches并在patches目录中新建文件 <code>001-glib-gdate-suppress-string-format-literal-warning.patch</code></p>
+<p>内容如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">--- a/glib/glib/gdate.c</span><br><span class="line">+++ b/glib/glib/gdate.c</span><br><span class="line">@@ -2439,6 +2439,9 @@ win32_strftime_helper (const GDate     *d,</span><br><span class="line">  *</span><br><span class="line">  * Returns: number of characters written to the buffer, or 0 the buffer was too small</span><br><span class="line">  */</span><br><span class="line">+<span class="comment">#pragma GCC diagnostic push</span></span><br><span class="line">+<span class="comment">#pragma GCC diagnostic ignored "-Wformat-nonliteral"</span></span><br><span class="line">+</span><br><span class="line"> gsize     </span><br><span class="line"> g_date_strftime (gchar       *s, </span><br><span class="line">                  gsize        slen, </span><br><span class="line">@@ -2549,3 +2552,5 @@ g_date_strftime (gchar       *s,</span><br><span class="line">   <span class="built_in">return</span> retval;</span><br><span class="line"> <span class="comment">#endif</span></span><br><span class="line"> &#125;</span><br><span class="line">+</span><br><span class="line">+<span class="comment">#pragma GCC diagnostic pop</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="3-automake错误-与perl版本有关"><a href="#3-automake错误-与perl版本有关" class="headerlink" title="3. automake错误,与perl版本有关"></a>3. automake错误,与perl版本有关</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Makefile:50: recipe <span class="keyword">for</span> target <span class="string">'/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/build_dir/host/automake-1.15/.configured'</span> failed</span><br><span class="line">make[3]: *** [/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/build_dir/host/automake-1.15/.configured] Error 255</span><br><span class="line">make[3]: Leaving directory <span class="string">'/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/tools/automake'</span></span><br><span class="line">tools/Makefile:122: recipe <span class="keyword">for</span> target <span class="string">'tools/automake/compile'</span> failed</span><br><span class="line">make[2]: *** [tools/automake/compile] Error 2</span><br><span class="line">make[2]: Leaving directory <span class="string">'/home/ubuntu/buildbot/compex/chaos_calmer/openwrt'</span></span><br><span class="line">tools/Makefile:121: recipe <span class="keyword">for</span> target <span class="string">'/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/staging_dir/target-mips_34kc_uClibc-0.9.33.2/stamp/.tools_install_yynyynynynyyyyyyyyyyyyyyyyyyynyyyyynnyyynyyynnnyy'</span> failed</span><br><span class="line">make[1]: *** [/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/staging_dir/target-mips_34kc_uClibc-0.9.33.2/stamp/.tools_install_yynyynynynyyyyyyyyyyyyyyyyyyynyyyyynnyyynyyynnnyy] Error 2</span><br><span class="line">make[1]: Leaving directory <span class="string">'/home/ubuntu/buildbot/compex/chaos_calmer/openwrt'</span></span><br><span class="line">/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/include/toplevel.mk:181: recipe <span class="keyword">for</span> target <span class="string">'world'</span> failed</span><br><span class="line">make: *** [world] Error 2</span><br></pre></td></tr></table></figure>
+
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>查看perl版本</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">perl -v</span><br><span class="line">This is perl <span class="number">5</span>, version <span class="number">26</span>, subversion <span class="number">1</span> (v5.<span class="number">26.1</span>) built <span class="keyword">for</span> x86_64-linux-gnu-thread-multi</span><br></pre></td></tr></table></figure>
+<p>新版本perl对一些写法不支持,需要增加一个插件</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>在 <em>tools/automake/patchs/</em> 目录下创建新文件 <code>210_automake_perl_5.26.1_ver.patch</code></p>
+<p>内容如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">diff --git a/bin/automake.in b/bin/automake.in</span><br><span class="line">index a3a0aa318..2c8f31e14 100644</span><br><span class="line">--- a/bin/automake.in</span><br><span class="line">+++ b/bin/automake.in</span><br><span class="line">@@ -3878,7 +3878,7 @@ sub substitute_ac_subst_variables_worker</span><br><span class="line"> sub substitute_ac_subst_variables</span><br><span class="line"> &#123;</span><br><span class="line">   my (<span class="variable">$text</span>) = @_;</span><br><span class="line">-  <span class="variable">$text</span> =~ s/\<span class="variable">$&#123;([^ \t=:+&#123;&#125;</span>]+)&#125;/substitute_ac_subst_variables_worker (<span class="variable">$1</span>)/ge;</span><br><span class="line">+  <span class="variable">$text</span> =~ s/\$[&#123;]([^ \t=:+&#123;&#125;]+)&#125;/substitute_ac_subst_variables_worker (<span class="variable">$1</span>)/ge;</span><br><span class="line">   <span class="built_in">return</span> <span class="variable">$text</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-gcc版本问题"><a href="#4-gcc版本问题" class="headerlink" title="4. gcc版本问题"></a>4. gcc版本问题</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">include/linux/compiler-gcc.h:114:1: fatal error: linux/compiler-gcc7.h: No such file or directory</span><br><span class="line"> <span class="comment">#include gcc_header(__GNUC__)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="原因-1"><a href="#原因-1" class="headerlink" title="原因"></a>原因</h2><p>ubuntu18.04默认安装的gcc版本较高，为gcc7；</p>
+<h2 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案"></a>解决方案</h2><p>参考<a href="https://github.com/openwrt/openwrt/blob/70b104f98c0657323b28fce140b73a94bf3eb756/tools/mkimage/patches/200-compiler-support.patch" target="_blank" rel="noopener">https://github.com/openwrt/openwrt/blob/70b104f98c0657323b28fce140b73a94bf3eb756/tools/mkimage/patches/200-compiler-support.patch</a></p>
+<p>给mkimage打个patch,</p>
+<p>在 <em>tools/mkimage/patches/</em> 目录下wget <code>200-compiler-support.patch</code></p>
+<p>如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://raw.githubusercontent.com/openwrt/openwrt/70b104f98c0657323b28fce140b73a94bf3eb756/tools/mkimage/patches/200-compiler-support.patch</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-模块-mkimage（u-boot-2014-10）-出错"><a href="#5-模块-mkimage（u-boot-2014-10）-出错" class="headerlink" title="5. 模块 mkimage（u-boot-2014.10） 出错"></a>5. 模块 mkimage（u-boot-2014.10） 出错</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">u-boot-2014.10/lib/rsa/rsa-sign.c:279:21: error: dereferencing pointer to incomplete <span class="built_in">type</span> <span class="string">'RSA &#123;aka struct rsa_st&#125;'</span></span><br><span class="line">  <span class="keyword">if</span> (BN_num_bits(key-&gt;e) &gt; 64)</span><br></pre></td></tr></table></figure>
+
+<h2 id="原因-2"><a href="#原因-2" class="headerlink" title="原因"></a>原因</h2><p>OpenSSL版本是1.1x，OpenSSL 1.1.x对一些API做了改动，因此出现错误信息。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">➜  openssl version</span><br><span class="line">OpenSSL 1.1.1  11 Sep 2018</span><br></pre></td></tr></table></figure>
+
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>参考<a href="https://github.com/openwrt/openwrt/commit/70b104f98c0657323b28fce140b73a94bf3eb756" target="_blank" rel="noopener">https://github.com/openwrt/openwrt/commit/70b104f98c0657323b28fce140b73a94bf3eb756</a></p>
+<p>在 <em>tools/mkimage/patches/</em> 目录下wget <code>210-openssl-1.1.x-compat.patch</code></p>
+<p>如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://raw.githubusercontent.com/openwrt/openwrt/70b104f98c0657323b28fce140b73a94bf3eb756/tools/mkimage/patches/210-openssl-1.1.x-compat.patch</span><br></pre></td></tr></table></figure>
+
+<h1 id="6-gcc4-8编译出错"><a href="#6-gcc4-8编译出错" class="headerlink" title="6. gcc4.8编译出错"></a>6. gcc4.8编译出错</h1><p>到这一步，一些哥们干脆把系统gcc降级回到gcc4.8，解决问题。坚决不妥协，继续。。。</p>
+<h2 id="解决方案-3"><a href="#解决方案-3" class="headerlink" title="解决方案"></a>解决方案</h2><p>添加条件编译宏定义</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#ifdef __GNUC_STDC_INLINE__</span><br><span class="line">__attribute__ ((__gnu_inline__))</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+<p>到目录openwrt/build_dir/toolchain-mips_34kc_gcc-4.8-linaro_uClibc-0.9.33.2/gcc-linaro-4.8-2014.04/gcc/cp/下的cfns.gperf（25行）和cfns.h文件（50行）如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#ifdef __GNUC__</span><br><span class="line">__inline</span><br><span class="line">#endif</span><br><span class="line">static unsigned int hash (const char *, unsigned int);</span><br><span class="line">#ifdef __GNUC__</span><br><span class="line">__inline</span><br><span class="line">#ifdef __GNUC_STDC_INLINE__</span><br><span class="line">__attribute__ ((__gnu_inline__))</span><br><span class="line">#endif</span><br><span class="line">#endif</span><br><span class="line">const char * libc_name_p (const char *, unsigned int);</span><br></pre></td></tr></table></figure>
+
+<h1 id="Enjoy"><a href="#Enjoy" class="headerlink" title="Enjoy!"></a>Enjoy!</h1><h1 id="附-gcc多版本切换方法"><a href="#附-gcc多版本切换方法" class="headerlink" title="附 gcc多版本切换方法"></a>附 gcc多版本切换方法</h1><p>Ubuntu18.04操作系统默认预装GCC 7.3版本，不过有时候在编译时是需要用不同gcc的版本，本文介绍怎样安装不同的gcc和g++，并设置根据不同的需要在不同版本之间转换。</p>
+<p> <strong>1、可以通过如下命令查看当前安装的版本：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ll /usr/bin/gcc*</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>将ubuntu-toolchain-r/test PPA添加到您的系统</p>
+<p>sudo add-apt-repository ppa:ubuntu-toolchain-r/test</p>
+</blockquote>
+<p> <strong>2、安装gcc-4.8和gcc-5.2：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install gcc-4.8 gcc-4.8-multilib g++-4.8 g++-4.8-multilib</span><br><span class="line"></span><br><span class="line">sudo apt install gcc-5 gcc-5-multilib g++-5 g++-5-multilib</span><br></pre></td></tr></table></figure>
+
+<p><strong>3、使用update-alternatives设置gcc和g++：</strong></p>
+<p>update-alternatives是ubuntu系统中专门维护系统命令链接符的工具，通过它可以很方便的设置系统默认使用哪个命令、哪个软件版本。</p>
+<p>其中40 ，50 ，70是优先级数值可以自己设定，–slave能保证gcc和g++保持相同的版本。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 40 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8</span><br><span class="line">sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 50 --slave /usr/bin/g++ g++ /usr/bin/g++-5</span><br><span class="line">sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70 --slave /usr/bin/g++ g++ /usr/bin/g++-7</span><br></pre></td></tr></table></figure>
+
+<p><strong>4、使用如下命令选择gcc的版本：</strong></p>
+<p>运行如下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --config gcc</span><br></pre></td></tr></table></figure>
+
+
+<p>可以看到当前gcc默认的版本是gcc-7，下面我们修改为gcc-4.8，直接选择编号即可。</p>
+<p><strong>5、验证是否修改成功，运行命令：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc -v</span><br><span class="line">g++ -v</span><br></pre></td></tr></table></figure>
+
+<p><strong>6、删除的方法</strong></p>
+<p>删除某个gcc版本的选项的话，可以使用命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --remove gcc /usr/bin/*（*为gcc版本号，比如gcc-4.8）</span><br></pre></td></tr></table></figure>
+
+<p>再使用<code>apt-remove</code>删除即可。</p>
 
       
     </div>
@@ -387,13 +442,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2015/07/16/2015-07-16-%E6%9C%89%E8%B6%A3%E7%9A%84Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8A%9F%E6%95%88/">有趣的Linux命令行功效</a></p>
+        <p><span>本文标题:</span><a href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">Ubuntu18.04下编译OpenWRT15.05遇到的问题和解决方案</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">iZheteng</a></p>
-        <p><span>发布时间:</span>2015-07-16, 09:08:00</p>
-        <p><span>最后更新:</span>2018-03-08, 23:05:16</p>
+        <p><span>发布时间:</span>2020-04-03, 21:37:00</p>
+        <p><span>最后更新:</span>2020-04-04, 00:14:34</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2015/07/16/2015-07-16-%E6%9C%89%E8%B6%A3%E7%9A%84Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8A%9F%E6%95%88/" title="有趣的Linux命令行功效">http://cuiqingwei.github.io/2015/07/16/2015-07-16-%E6%9C%89%E8%B6%A3%E7%9A%84Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8A%9F%E6%95%88/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2015/07/16/2015-07-16-%E6%9C%89%E8%B6%A3%E7%9A%84Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8A%9F%E6%95%88/　　作者: iZheteng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="Ubuntu18.04下编译OpenWRT15.05遇到的问题和解决方案">http://cuiqingwei.github.io/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/　　作者: iZheteng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -405,16 +460,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2015/07/23/2015-07-23-%E5%B8%B8%E7%94%A8Wi-Fi%E7%BD%91%E7%BB%9C%E8%AF%84%E6%B5%8B%E5%B7%A5%E5%85%B7/">
-                    常用Wi-Fi网络评测工具
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2015/07/09/2015-07-09-OpenWRT-usefull-commands/">
-                    OpenWRT usefull commands
+                <a href="/2020/04/02/2020-04-02-Mac%E4%BD%BF%E7%94%A8zsh%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80SublimeText/">
+                    Mac使用zsh快速打开SublimeText
                 </a>
             </div>
         
@@ -426,7 +475,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-sl-命令"><span class="toc-number">1.</span> <span class="toc-text">1.sl 命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-rev-命令（reverse）"><span class="toc-number">2.</span> <span class="toc-text">2. rev 命令（reverse）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-fortune-命令"><span class="toc-number">3.</span> <span class="toc-text">3. fortune  命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-figlet-命令"><span class="toc-number">4.</span> <span class="toc-text">4. figlet 命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-toilet-命令"><span class="toc-number">5.</span> <span class="toc-text">5.toilet 命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-cowsay-命令"><span class="toc-number">6.</span> <span class="toc-text">6. cowsay 命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-cmatrix-命令"><span class="toc-number">7.</span> <span class="toc-text">7. cmatrix 命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-oneko-命令"><span class="toc-number">8.</span> <span class="toc-text">8. oneko 命令</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-初检git出错"><span class="toc-number">1.</span> <span class="toc-text">1. 初检git出错</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-number">1.1.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-gdate-c错误"><span class="toc-number">2.</span> <span class="toc-text">2. gdate.c错误</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案-1"><span class="toc-number">2.1.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-automake错误-与perl版本有关"><span class="toc-number">3.</span> <span class="toc-text">3. automake错误,与perl版本有关</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#原因"><span class="toc-number">3.1.</span> <span class="toc-text">原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决办法"><span class="toc-number">3.2.</span> <span class="toc-text">解决办法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-gcc版本问题"><span class="toc-number">4.</span> <span class="toc-text">4. gcc版本问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#原因-1"><span class="toc-number">4.1.</span> <span class="toc-text">原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案-2"><span class="toc-number">4.2.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-模块-mkimage（u-boot-2014-10）-出错"><span class="toc-number">5.</span> <span class="toc-text">5. 模块 mkimage（u-boot-2014.10） 出错</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#原因-2"><span class="toc-number">5.1.</span> <span class="toc-text">原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方法"><span class="toc-number">5.2.</span> <span class="toc-text">解决方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-gcc4-8编译出错"><span class="toc-number">6.</span> <span class="toc-text">6. gcc4.8编译出错</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案-3"><span class="toc-number">6.1.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Enjoy"><span class="toc-number">7.</span> <span class="toc-text">Enjoy!</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#附-gcc多版本切换方法"><span class="toc-number">8.</span> <span class="toc-text">附 gcc多版本切换方法</span></a></li></ol>
         
     </div>
     <style>
@@ -462,7 +511,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"有趣的Linux命令行功效　| iZheteng　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Ubuntu18.04下编译OpenWRT15.05遇到的问题和解决方案　| iZheteng　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -481,8 +530,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://cuiqingwei.github.io/2015/07/16/2015-07-16-%E6%9C%89%E8%B6%A3%E7%9A%84Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8A%9F%E6%95%88/';
-            this.page.identifier = '2015/07/16/2015-07-16-有趣的Linux命令行功效/';
+            this.page.url = 'http://cuiqingwei.github.io/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/';
+            this.page.identifier = '2020/04/03/2020-04-03-Ubuntu18-04下编译OpenWRT15-05遇到的问题和解决方案/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -521,8 +570,8 @@
 
 
     <script id="dsq-count-scr" src="//cuiqingwei.disqus.com/count.js" async></script>
-    <span class="disqus-comment-count" data-disqus-identifier="2015/07/16/2015-07-16-有趣的Linux命令行功效/"></span>
-    <span class="disqus-comment-count" data-disqus-url="http://cuiqingwei.github.io/2015/07/16/2015-07-16-%E6%9C%89%E8%B6%A3%E7%9A%84Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8A%9F%E6%95%88/"></span>
+    <span class="disqus-comment-count" data-disqus-identifier="2020/04/03/2020-04-03-Ubuntu18-04下编译OpenWRT15-05遇到的问题和解决方案/"></span>
+    <span class="disqus-comment-count" data-disqus-url="http://cuiqingwei.github.io/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"></span>
     <script>
         $(".disqus-comment-count").hide();
         var $disqusCount = $(".disqus-comment-count");
@@ -541,15 +590,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2015/07/23/2015-07-23-%E5%B8%B8%E7%94%A8Wi-Fi%E7%BD%91%E7%BB%9C%E8%AF%84%E6%B5%8B%E5%B7%A5%E5%85%B7/" title="上一篇: 常用Wi-Fi网络评测工具">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2015/07/09/2015-07-09-OpenWRT-usefull-commands/" title="下一篇: OpenWRT usefull commands">
+            <a href="/2020/04/02/2020-04-02-Mac%E4%BD%BF%E7%94%A8zsh%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80SublimeText/" title="下一篇: Mac使用zsh快速打开SublimeText">
                 <i class="fa fa-angle-right"></i>
             </a>
         
