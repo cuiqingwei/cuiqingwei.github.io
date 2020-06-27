@@ -306,6 +306,99 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-2020-04-02-Mac使用zsh快速打开SublimeText" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/04/02/2020-04-02-Mac%E4%BD%BF%E7%94%A8zsh%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80SublimeText/" class="article-date">
+      <time datetime="2020-04-02T13:37:00.000Z" itemprop="datePublished">2020-04-02</time>
+</a>
+
+ 
+    <a href="/2020/04/02/2020-04-02-Mac%E4%BD%BF%E7%94%A8zsh%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80SublimeText/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2020/04/02/2020-04-02-Mac使用zsh快速打开SublimeText/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/02/2020-04-02-Mac%E4%BD%BF%E7%94%A8zsh%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80SublimeText/">Mac使用zsh快速打开SublimeText</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>通过配置~/.zshrc加入alias来通过命令行启动sublime。</p>
+<ol>
+<li>打开 .zshr</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~&#x2F;.zshrc</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>在 .zshrc增加别名</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias subl&#x3D;&quot;&#x2F;Applications&#x2F;Sublime\ Text.app&#x2F;Contents&#x2F;SharedSupport&#x2F;bin&#x2F;subl&quot;</span><br></pre></td></tr></table></figure>
+
+<p>其中 Sublime\ Text可以按照你系统上安装的Sublime版本的情况被替换成Sublime\ Text\ 2或是其他。取决于你的Sublime Text.app在~/Application里的实际名称。</p>
+<ol start="3">
+<li>更新改动，生效</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~&#x2F;.zshrc</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>即可使用sublime在命令行中创建和编辑文件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subl hello.c</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>即可使用sublime在命令行中打开当前文件夹</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subl .</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%87%E5%BF%98/" rel="tag">备忘</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2020-03-16-在线文件共享服务" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1330,81 +1423,6 @@
       
         <p class="article-more-link">
           <a href="/2019/12/22/2019-12-22-%E5%9C%A8Ubuntu-18-04-LTS%E4%B8%AD%E4%BD%BF%E7%94%A8Katoolin%E5%AE%89%E8%A3%85Kali-Linux-Tools/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2019-12-22-动画大师华特•迪士尼关于梦想的10堂课" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/12/22/2019-12-22-%E5%8A%A8%E7%94%BB%E5%A4%A7%E5%B8%88%E5%8D%8E%E7%89%B9%E2%80%A2%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%85%B3%E4%BA%8E%E6%A2%A6%E6%83%B3%E7%9A%8410%E5%A0%82%E8%AF%BE/" class="article-date">
-      <time datetime="2019-12-22T06:04:00.000Z" itemprop="datePublished">2019-12-22</time>
-</a>
-
- 
-    <a href="/2019/12/22/2019-12-22-%E5%8A%A8%E7%94%BB%E5%A4%A7%E5%B8%88%E5%8D%8E%E7%89%B9%E2%80%A2%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%85%B3%E4%BA%8E%E6%A2%A6%E6%83%B3%E7%9A%8410%E5%A0%82%E8%AF%BE/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2019/12/22/2019-12-22-动画大师华特•迪士尼关于梦想的10堂课/"></span>
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/22/2019-12-22-%E5%8A%A8%E7%94%BB%E5%A4%A7%E5%B8%88%E5%8D%8E%E7%89%B9%E2%80%A2%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%85%B3%E4%BA%8E%E6%A2%A6%E6%83%B3%E7%9A%8410%E5%A0%82%E8%AF%BE/">动画大师华特•迪士尼关于梦想的10堂课</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <blockquote>
-<p><em>Walt Disney was a showman. According to Time, he “received more Academy Awards and nominations than any other person in history.” The Disneyland theme parks are truly magical kingdoms, for adults, as well as for children.</em><br>华特·迪士尼是位表演者。据《时代》报道，他“收到的奥斯卡奖项和提名是史上最多的。” 迪士尼主题公园对成年人来说都是魔幻王国，更别提孩子们了。<br><em>Here are some Walt Disney lessons in making your dreams come true, courtesy of the master of imagination, dreaming, and achievement himself.</em><br>下面的这些华特·迪士尼的人生课能让你的梦想成真，让你成为想象力和梦想的大师，并有所成就。</p>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A2%A6%E6%83%B3/" rel="tag">梦想</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/12/22/2019-12-22-%E5%8A%A8%E7%94%BB%E5%A4%A7%E5%B8%88%E5%8D%8E%E7%89%B9%E2%80%A2%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%85%B3%E4%BA%8E%E6%A2%A6%E6%83%B3%E7%9A%8410%E5%A0%82%E8%AF%BE/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>

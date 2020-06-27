@@ -890,6 +890,155 @@
 
 
   
+    <article id="post-2020-06-27-使用Laravel-adminlte-vue-js构建项目" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/06/27/2020-06-27-%E4%BD%BF%E7%94%A8Laravel-adminlte-vue-js%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/" class="article-date">
+      <time datetime="2020-06-27T13:37:00.000Z" itemprop="datePublished">2020-06-27</time>
+</a>
+
+ 
+    <a href="/2020/06/27/2020-06-27-%E4%BD%BF%E7%94%A8Laravel-adminlte-vue-js%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2020/06/27/2020-06-27-使用Laravel-adminlte-vue-js构建项目/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/27/2020-06-27-%E4%BD%BF%E7%94%A8Laravel-adminlte-vue-js%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/">使用Laravel+Adminlte+Vue.js构建项目</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>英文原文地址：<a href="https://medium.com/@lojorider/prepare-project-by-laravel-adminlte-vue-js-644cab072909" target="_blank" rel="noopener">https://medium.com/@lojorider/prepare-project-by-laravel-adminlte-vue-js-644cab072909</a></p>
+<h2 id="本地开发环境"><a href="#本地开发环境" class="headerlink" title="本地开发环境"></a>本地开发环境</h2><ul>
+<li>Laravel 5.6.16</li>
+<li>PHP 7.1.13<ul>
+<li>extension=php_openssl.dll</li>
+<li>extension=php_pdo_mysql.dll</li>
+</ul>
+</li>
+<li>MySQL 5.7.30</li>
+<li>Laravel Packages<ul>
+<li><a href="https://github.com/acacha/adminlte-laravel" target="_blank" rel="noopener">acacha/adminlte-laravel</a></li>
+<li><a href="https://github.com/laravel/dusk" target="_blank" rel="noopener">laravel/dusk</a></li>
+<li><a href="https://github.com/laravelcollective/html" target="_blank" rel="noopener">laravelcollective/html</a></li>
+<li><a href="https://github.com/Maatwebsite/Laravel-Excel" target="_blank" rel="noopener">Maatwebsite/Laravel-Excel</a></li>
+<li><a href="https://github.com/Intervention/image" target="_blank" rel="noopener">intervention/image</a></li>
+<li><a href="https://github.com/tymondesigns/jwt-auth" target="_blank" rel="noopener">tymondesigns/jwt-auth</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer create-project --prefer-dist laravel&#x2F;laravel adminlte-laravel &quot;5.6.*&quot;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>执行完上面的命令将生成一个以<code>adminlte-laravel</code>为目录的laravel项目</p>
+</blockquote>
+<h2 id="设置admin-lte包"><a href="#设置admin-lte包" class="headerlink" title="设置admin-lte包"></a>设置admin-lte包</h2><p>在项目<code>adminlte-laravel</code>根目录下执行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">composer require &quot;acacha&#x2F;admin-lte-template-laravel&quot; \</span><br><span class="line">&amp;&amp; php artisan vendor:publish --tag&#x3D;adminlte --force \</span><br><span class="line">&amp;&amp; composer require &quot;laravel&#x2F;dusk&quot; --dev \</span><br><span class="line">&amp;&amp; php artisan make:adminUserSeeder \</span><br><span class="line">&amp;&amp; composer require &quot;laravelcollective&#x2F;html&quot; \</span><br><span class="line">&amp;&amp; composer dump-autoload</span><br></pre></td></tr></table></figure>
+
+<h3 id="编辑config-app-php配置文件"><a href="#编辑config-app-php配置文件" class="headerlink" title="编辑config/app.php配置文件"></a>编辑<code>config/app.php</code>配置文件</h3><p>添加如下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#39;aliases&#39; &#x3D;&gt; [</span><br><span class="line">&#39;Html&#39; &#x3D;&gt; Spatie\Menu\Laravel\Html::class,</span><br><span class="line">&#39;Link&#39; &#x3D;&gt; Spatie\Menu\Laravel\Link::class,</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
+<h3 id="执行命令"><a href="#执行命令" class="headerlink" title="执行命令"></a>执行命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan adminlte:menu</span><br></pre></td></tr></table></figure>
+
+<h2 id="升级Excel包-可选"><a href="#升级Excel包-可选" class="headerlink" title="升级Excel包(可选)"></a>升级Excel包(可选)</h2><h3 id="执行命令-1"><a href="#执行命令-1" class="headerlink" title="执行命令"></a>执行命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require &quot;maatwebsite&#x2F;excel&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="编辑config-app-php配置文件-1"><a href="#编辑config-app-php配置文件-1" class="headerlink" title="编辑config/app.php配置文件"></a>编辑<code>config/app.php</code>配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#39;aliases&#39; &#x3D;&gt; [</span><br><span class="line">    &#39;Excel&#39; &#x3D;&gt; Maatwebsite\Excel\Facades\Excel::class,</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
+<h2 id="升级图片管理-可选"><a href="#升级图片管理-可选" class="headerlink" title="升级图片管理(可选)"></a>升级图片管理(可选)</h2><h3 id="执行命令-2"><a href="#执行命令-2" class="headerlink" title="执行命令"></a>执行命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require &quot;intervention&#x2F;image&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="编辑config-app-php配置文件-2"><a href="#编辑config-app-php配置文件-2" class="headerlink" title="编辑config/app.php配置文件"></a>编辑<code>config/app.php</code>配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#39;aliases&#39; &#x3D;&gt; [</span><br><span class="line">    &#39;Image&#39; &#x3D;&gt; Intervention\Image\Facades\Image::class,</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
+<h3 id="执行命令-3"><a href="#执行命令-3" class="headerlink" title="执行命令"></a>执行命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan vendor:publish --provider&#x3D;&quot;Intervention\Image\ImageServiceProviderLaravel5&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="升级jwt-auth包"><a href="#升级jwt-auth包" class="headerlink" title="升级jwt-auth包"></a>升级jwt-auth包</h2><h3 id="执行命令-4"><a href="#执行命令-4" class="headerlink" title="执行命令"></a>执行命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require &quot;tymon&#x2F;jwt-auth&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="编辑config-app-php配置文件-3"><a href="#编辑config-app-php配置文件-3" class="headerlink" title="编辑config/app.php配置文件"></a>编辑<code>config/app.php</code>配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#39;aliases&#39; &#x3D;&gt; [</span><br><span class="line">    &#39;JWTAuth&#39; &#x3D;&gt; Tymon\JWTAuth\Facades\JWTAuth::class,</span><br><span class="line">    &#39;JWTFactory&#39; &#x3D;&gt; Tymon\JWTAuth\Facades\JWTFactory::class,</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改数据库配置"><a href="#修改数据库配置" class="headerlink" title="修改数据库配置"></a>修改数据库配置</h2><p>数据库配置文件为：<code>config\database.php</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#39;charset&#39; &#x3D;&gt; env(&#39;DB_CHARSET&#39;, &#39;utf8mb4&#39;),</span><br><span class="line">&#39;collation&#39; &#x3D;&gt; env(&#39;DB_COLLATION&#39;, &#39;utf8mb4_unicode_ci&#39;),</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置本地-env"><a href="#配置本地-env" class="headerlink" title="配置本地.env"></a>配置本地<code>.env</code></h3><p>mysql数据库的配置不支持utf8mb4</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DB_CHARSET&#x3D;utf8</span><br><span class="line">DB_COLLATION&#x3D;utf8_unicode_ci</span><br></pre></td></tr></table></figure>
+
+<p>同时修改其他数据库配置信息，如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">DB_CONNECTION&#x3D;mysql</span><br><span class="line">DB_HOST&#x3D;127.0.0.1</span><br><span class="line">DB_PORT&#x3D;3306</span><br><span class="line">DB_DATABASE&#x3D;homestead</span><br><span class="line">DB_USERNAME&#x3D;homestead</span><br><span class="line">DB_PASSWORD&#x3D;secret</span><br></pre></td></tr></table></figure>
+
+<h3 id="生成数据"><a href="#生成数据" class="headerlink" title="生成数据"></a>生成数据</h3><p>编辑<code>.\database\seeds\DatabaseSeeder.php</code>，添加<code>$this-&gt;call(AdminUserSeeder::class);</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public function run()</span><br><span class="line">&#123;</span><br><span class="line">    $this-&gt;call(AdminUserSeeder::class);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="运行命令"><a href="#运行命令" class="headerlink" title="运行命令"></a>运行命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan migrate --seed</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动本地服务器"><a href="#启动本地服务器" class="headerlink" title="启动本地服务器"></a>启动本地服务器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan serv</span><br></pre></td></tr></table></figure>
+
+<p>地址: <code>http://127.0.0.1:8000/login</code> 邮箱: <code>admin@example.com</code> 密码：<code>123456</code></p>
+<blockquote>
+<p>邮箱和密码在迁移文件<code>database\seeds\AdminUserSeeder.php</code>中定义。</p>
+</blockquote>
+<h2 id="使用vuejs开发"><a href="#使用vuejs开发" class="headerlink" title="使用vuejs开发"></a>使用vuejs开发</h2><p>用于在文件夹资源<code>resources/assets/js</code>上自动编译<code>*.vue</code>来编写vuejs文件。</p>
+<h3 id="执行命令-5"><a href="#执行命令-5" class="headerlink" title="执行命令"></a>执行命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm run watch</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="命令行运行命令"><a href="#命令行运行命令" class="headerlink" title="命令行运行命令"></a>命令行运行命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">composer create-project --prefer-dist laravel&#x2F;laravel adminlte-laravel &quot;5.6.*&quot; \</span><br><span class="line">&amp;&amp; cd adminlte-laravel \</span><br><span class="line">&amp;&amp; touch config&#x2F;menu.php \</span><br><span class="line">&amp;&amp; composer require &quot;laravel&#x2F;dusk&quot; \</span><br><span class="line">&amp;&amp; composer require &quot;acacha&#x2F;admin-lte-template-laravel&quot; &quot;maatwebsite&#x2F;excel&quot; &quot;intervention&#x2F;image&quot; &quot;tymon&#x2F;jwt-auth&quot; &quot;laravelcollective&#x2F;html&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="编辑config-app-php"><a href="#编辑config-app-php" class="headerlink" title="编辑config/app.php"></a>编辑<code>config/app.php</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#39;aliases&#39; &#x3D;&gt; [</span><br><span class="line">    &#39;AdminLTE&#39; &#x3D;&gt; Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,</span><br><span class="line">    &#39;Excel&#39; &#x3D;&gt; Maatwebsite\Excel\Facades\Excel::class,</span><br><span class="line">    &#39;Image&#39; &#x3D;&gt; Intervention\Image\Facades\Image::class, </span><br><span class="line">    &#39;JWTAuth&#39; &#x3D;&gt; Tymon\JWTAuth\Facades\JWTAuth::class,</span><br><span class="line">    &#39;JWTFactory&#39; &#x3D;&gt; Tymon\JWTAuth\Facades\JWTFactory::class,</span><br><span class="line">    &#39;Html&#39; &#x3D;&gt; Spatie\Menu\Laravel\Html::class,</span><br><span class="line">    &#39;Link&#39; &#x3D;&gt; Spatie\Menu\Laravel\Link::class,</span><br><span class="line">    &#39;Menu&#39; &#x3D;&gt; Spatie\Menu\Laravel\Menu::class,</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
+<h3 id="执行命令-6"><a href="#执行命令-6" class="headerlink" title="执行命令"></a>执行命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">php artisan vendor:publish --tag&#x3D;adminlte --force \</span><br><span class="line">&amp;&amp; php artisan vendor:publish --provider&#x3D;&quot;Intervention\Image\ImageServiceProviderLaravel5&quot; \</span><br><span class="line">&amp;&amp; php artisan adminlte:menu \</span><br><span class="line">&amp;&amp; php artisan make:adminUserSeeder \</span><br><span class="line">&amp;&amp; composer dump</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>编辑<code>.\database\seeds\DatabaseSeeder.php</code>文件，添加<code>$this-&gt;call(AdminUserSeeder::class);</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public function run()</span><br><span class="line">&#123;</span><br><span class="line">    $this-&gt;call(AdminUserSeeder::class);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>编辑<code>.env</code>数据库配置信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">DB_CONNECTION&#x3D;mysql</span><br><span class="line">DB_HOST&#x3D;127.0.0.1</span><br><span class="line">DB_PORT&#x3D;3306</span><br><span class="line">DB_DATABASE&#x3D;homestead</span><br><span class="line">DB_USERNAME&#x3D;homestead</span><br><span class="line">DB_PASSWORD&#x3D;secret</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置用户"><a href="#设置用户" class="headerlink" title="设置用户"></a>设置用户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan migrate --seed</span><br></pre></td></tr></table></figure>
+
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install node-sass sass-loader node-less less-loader --save-dev</span><br></pre></td></tr></table></figure>
+
+<h3 id="开发命令"><a href="#开发命令" class="headerlink" title="开发命令"></a>开发命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm run watch</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2020-06-27-云主机常用基本操作" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -928,7 +1077,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h2 id="安装检查"><a href="#安装检查" class="headerlink" title="安装检查"></a>安装检查</h2><p>在安装之前，请进行一些快速的配置检查，以确保您的服务器满足最低要求。</p>
+              <h2 id="预检"><a href="#预检" class="headerlink" title="预检"></a>预检</h2><p>在安装之前，请进行一些快速的配置检查，以确保您的服务器满足最低要求。</p>
 <p>花一点时间进行这些检查，将大大减少您在安装过程中遇到问题所浪费的时间。</p>
 <p>首先，检查服务器的语言环境为<code>en_US.UTF-8</code>。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cat &#x2F;etc&#x2F;default&#x2F;locale</span><br><span class="line">LANG&#x3D;&quot;en_US.UTF-8&quot;</span><br></pre></td></tr></table></figure>
@@ -1143,99 +1292,6 @@
       
 
       
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2020-04-02-Mac使用zsh快速打开SublimeText" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/04/02/2020-04-02-Mac%E4%BD%BF%E7%94%A8zsh%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80SublimeText/" class="article-date">
-      <time datetime="2020-04-02T13:37:00.000Z" itemprop="datePublished">2020-04-02</time>
-</a>
-
- 
-    <a href="/2020/04/02/2020-04-02-Mac%E4%BD%BF%E7%94%A8zsh%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80SublimeText/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2020/04/02/2020-04-02-Mac使用zsh快速打开SublimeText/"></span>
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/02/2020-04-02-Mac%E4%BD%BF%E7%94%A8zsh%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80SublimeText/">Mac使用zsh快速打开SublimeText</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>通过配置~/.zshrc加入alias来通过命令行启动sublime。</p>
-<ol>
-<li>打开 .zshr</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~&#x2F;.zshrc</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>在 .zshrc增加别名</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias subl&#x3D;&quot;&#x2F;Applications&#x2F;Sublime\ Text.app&#x2F;Contents&#x2F;SharedSupport&#x2F;bin&#x2F;subl&quot;</span><br></pre></td></tr></table></figure>
-
-<p>其中 Sublime\ Text可以按照你系统上安装的Sublime版本的情况被替换成Sublime\ Text\ 2或是其他。取决于你的Sublime Text.app在~/Application里的实际名称。</p>
-<ol start="3">
-<li>更新改动，生效</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~&#x2F;.zshrc</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>即可使用sublime在命令行中创建和编辑文件</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subl hello.c</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>即可使用sublime在命令行中打开当前文件夹</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subl .</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%87%E5%BF%98/" rel="tag">备忘</a></li></ul>
-    </div>
-
       
       <div class="clearfix"></div>
     </div>
