@@ -306,6 +306,125 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-2020-04-05-Ubuntu18-04安装docker并使用portainer" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/04/03/2020-04-05-Ubuntu18-04%E5%AE%89%E8%A3%85docker%E5%B9%B6%E4%BD%BF%E7%94%A8portainer/" class="article-date">
+      <time datetime="2020-04-03T13:37:00.000Z" itemprop="datePublished">2020-04-03</time>
+</a>
+
+ 
+    <a href="/2020/04/03/2020-04-05-Ubuntu18-04%E5%AE%89%E8%A3%85docker%E5%B9%B6%E4%BD%BF%E7%94%A8portainer/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2020/04/03/2020-04-05-Ubuntu18-04安装docker并使用portainer/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/03/2020-04-05-Ubuntu18-04%E5%AE%89%E8%A3%85docker%E5%B9%B6%E4%BD%BF%E7%94%A8portainer/">Ubuntu18.04安装docker并使用portainer</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>1、安装docker</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install docker.io</span><br></pre></td></tr></table></figure>
+
+<p>2、修改成国内镜像源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/docker</span><br><span class="line">vim daemon.json</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">   <span class="string">"registry-mirrors"</span>: [<span class="string">"http://hub-mirror.c.163.com"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>重启docker服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service docker restart</span><br></pre></td></tr></table></figure>
+
+<p>3、docker安装portainer</p>
+<p>搜索portainer</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search portainer</span><br></pre></td></tr></table></figure>
+
+<p>拉取portainer</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull portainer/portainer</span><br></pre></td></tr></table></figure>
+
+<p>创建portainer容器并启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name portainerUI -p 8000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer</span><br></pre></td></tr></table></figure>
+
+<p>4、访问portainer界面<br><a href="http://192.168.1.102:8000" target="_blank" rel="noopener">http://192.168.1.102:8000</a></p>
+<p>首次登陆时,初始化设置密码。</p>
+<hr>
+<ul>
+<li>安装docker<ol>
+<li><code>apt install docker.io</code></li>
+<li><code>sudo systemctl enable docker</code></li>
+<li><code>sudo systemctl start docker</code></li>
+<li><code>sudo systemctl restart docker</code></li>
+<li>测试： <code>docker run hello-world</code></li>
+</ol>
+</li>
+<li>通过Dockerfile构建docker image<ol>
+<li>获取镜像：<code>sudo docker pull ubuntu:18.04</code></li>
+<li>运行镜像：<code>sudo docker run --net host -t -i ubuntu:18.04 /bin/bash</code></li>
+<li>查看镜像：<code>sudo docker images</code></li>
+<li>查看镜像：<code>sudo docker image ls</code></li>
+<li>查看容器：<code>sudo docker ps -a</code></li>
+<li>查看当前工作容器：<code>sudo docker ps</code></li>
+<li>删除容器：<code>sudo docker rm &lt;容器id&gt;</code></li>
+<li>删除镜像：<code>sudo docker image rm &lt;镜像id&gt;</code></li>
+<li>Dockerfile 创建镜像：<code>sudo docker build -t &lt;镜像名称&gt;</code> .</li>
+<li>flask 启动服务： python manager.py runserver –host 0.0.0.0 –port 5000</li>
+<li>commit: sudo docker commit -a “liutao” -m “face_detection_v1.0” &lt;容器id&gt; face_detection</li>
+<li>save: sudo docker save -o face_detection.tar face_detection</li>
+<li>load: sudo docker load &lt; face_detection.tar</li>
+<li>进入容器：<code>sudo docker exec -it IMAGE ID或者NAMES /bin/bash</code></li>
+<li>从容器拷贝文件到宿主机: <code>sudo docker cp mycontainer:/face_detection/upload ~/upload</code></li>
+<li>从宿主机拷贝文件到容器: <code>sudo docker cp ~/upload mycontainer:/face_detection/upload</code></li>
+</ol>
+</li>
+<li>多次测试，待程序在docker image正常运行后，可进行服务器部署</li>
+</ul>
+<p>Docker ubuntu镜像更换apt-get</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list</span><br><span class="line">apt-get clean</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2020-04-02-Mac使用zsh快速打开SublimeText" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1350,79 +1469,6 @@
       
         <p class="article-more-link">
           <a href="/2019/12/24/2019-12-24-%E4%BD%BF%E7%94%A8GitHub-Actions%E7%BC%96%E8%AF%91OpenWRT/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2019-12-22-在Ubuntu-18-04-LTS中使用Katoolin安装Kali-Linux-Tools" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/12/22/2019-12-22-%E5%9C%A8Ubuntu-18-04-LTS%E4%B8%AD%E4%BD%BF%E7%94%A8Katoolin%E5%AE%89%E8%A3%85Kali-Linux-Tools/" class="article-date">
-      <time datetime="2019-12-22T13:07:00.000Z" itemprop="datePublished">2019-12-22</time>
-</a>
-
- 
-    <a href="/2019/12/22/2019-12-22-%E5%9C%A8Ubuntu-18-04-LTS%E4%B8%AD%E4%BD%BF%E7%94%A8Katoolin%E5%AE%89%E8%A3%85Kali-Linux-Tools/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2019/12/22/2019-12-22-在Ubuntu-18-04-LTS中使用Katoolin安装Kali-Linux-Tools/"></span>
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/22/2019-12-22-%E5%9C%A8Ubuntu-18-04-LTS%E4%B8%AD%E4%BD%BF%E7%94%A8Katoolin%E5%AE%89%E8%A3%85Kali-Linux-Tools/">在Ubuntu 18.04 LTS中使用Katoolin安装Kali Linux Tools</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>本文将引导您逐步在Ubuntu中使用Katoolin安装Kali Linux Tools。对于那些不知道的人，<strong>Katoolin</strong>是一个Python脚本，可用于一次安装所有Kali Linux工具或手动一次安装。Kali Linux具有300多种渗透测试工具。除了安装所有工具，您还可以使用Katoolin在Linux框中仅安装您选择的选择性工具。如果您想在Ubuntu或任何其他基于DEB的系统上尝试使用Kali Linux工具，则应该尝试一下Katoolin。它将在您的Ubuntu系统中添加Kali Linux存储库，以便您可以一次安装所有渗透测试工具，也可以仅安装必要的工具。Katoolin是完全免费的开源软件，并已在基于Debian的系统上经过正式测试。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kali/" rel="tag">Kali</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/" rel="tag">ubuntu</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/12/22/2019-12-22-%E5%9C%A8Ubuntu-18-04-LTS%E4%B8%AD%E4%BD%BF%E7%94%A8Katoolin%E5%AE%89%E8%A3%85Kali-Linux-Tools/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>

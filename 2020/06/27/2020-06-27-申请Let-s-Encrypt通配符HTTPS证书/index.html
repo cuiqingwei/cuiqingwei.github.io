@@ -15,25 +15,16 @@
 
 
 
-<meta name="description" content="inSSIDer2http:&#x2F;&#x2F;inssider.en.softonic.com&#x2F;">
+<meta name="description" content="通配符证书是一个SSL证书，可用于为给定域上的所有子域提供https，例如，*.&lt;domain&gt;.com 意味着任何子域名（如www.example.com或links.example.com）会使用相同的SSL证书。 使用通配符证书对于允许用户选择子域的应用程序非常有用，例如，wordpress.com子域下的所有博客。 acme.sh 实现了 acme 协议, 可以从 letsen">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常用Wi-Fi网络评测工具">
-<meta property="og:url" content="http://cuiqingwei.github.io/2015/07/23/2015-07-23-%E5%B8%B8%E7%94%A8Wi-Fi%E7%BD%91%E7%BB%9C%E8%AF%84%E6%B5%8B%E5%B7%A5%E5%85%B7/index.html">
+<meta property="og:title" content="申请Let&#39;s Encrypt通配符HTTPS证书">
+<meta property="og:url" content="http://cuiqingwei.github.io/2020/06/27/2020-06-27-%E7%94%B3%E8%AF%B7Let-s-Encrypt%E9%80%9A%E9%85%8D%E7%AC%A6HTTPS%E8%AF%81%E4%B9%A6/index.html">
 <meta property="og:site_name" content="iZheteng">
-<meta property="og:description" content="inSSIDer2http:&#x2F;&#x2F;inssider.en.softonic.com&#x2F;">
-<meta property="og:image" content="http://cuiqingwei.github.io/img/20150723/1.png">
-<meta property="og:image" content="http://cuiqingwei.github.io/img/20150723/2.jpg">
-<meta property="og:image" content="http://cuiqingwei.github.io/img/20150723/3.jpg">
-<meta property="og:image" content="http://cuiqingwei.github.io/img/20150723/4.jpeg">
-<meta property="og:image" content="http://cuiqingwei.github.io/img/20150723/5.jpg">
-<meta property="og:image" content="http://cuiqingwei.github.io/img/20150723/6.jpg">
-<meta property="article:published_time" content="2015-07-23T15:33:00.000Z">
-<meta property="article:modified_time" content="2020-02-13T03:53:22.000Z">
+<meta property="og:description" content="通配符证书是一个SSL证书，可用于为给定域上的所有子域提供https，例如，*.&lt;domain&gt;.com 意味着任何子域名（如www.example.com或links.example.com）会使用相同的SSL证书。 使用通配符证书对于允许用户选择子域的应用程序非常有用，例如，wordpress.com子域下的所有博客。 acme.sh 实现了 acme 协议, 可以从 letsen">
+<meta property="article:published_time" content="2020-06-27T12:37:00.000Z">
+<meta property="article:modified_time" content="2020-06-27T13:43:44.000Z">
 <meta property="article:author" content="iZheteng">
-<meta property="article:tag" content="WiFi评测工具">
-<meta property="article:tag" content="备忘">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://cuiqingwei.github.io/img/20150723/1.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -67,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>常用Wi-Fi网络评测工具 | iZheteng</title>
+<title>申请Let&#39;s Encrypt通配符HTTPS证书 | iZheteng</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -313,20 +304,20 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
-<article id="post-2015-07-23-常用Wi-Fi网络评测工具" class="article article-type-post" itemscope itemprop="blogPost">
+<article id="post-2020-06-27-申请Let-s-Encrypt通配符HTTPS证书" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/07/23/2015-07-23-%E5%B8%B8%E7%94%A8Wi-Fi%E7%BD%91%E7%BB%9C%E8%AF%84%E6%B5%8B%E5%B7%A5%E5%85%B7/" class="article-date">
-      <time datetime="2015-07-23T15:33:00.000Z" itemprop="datePublished">2015-07-23</time>
+      <a href="/2020/06/27/2020-06-27-%E7%94%B3%E8%AF%B7Let-s-Encrypt%E9%80%9A%E9%85%8D%E7%AC%A6HTTPS%E8%AF%81%E4%B9%A6/" class="article-date">
+      <time datetime="2020-06-27T12:37:00.000Z" itemprop="datePublished">2020-06-27</time>
 </a>
 
  
-    <a href="/2015/07/23/2015-07-23-%E5%B8%B8%E7%94%A8Wi-Fi%E7%BD%91%E7%BB%9C%E8%AF%84%E6%B5%8B%E5%B7%A5%E5%85%B7/#comments" title="查看评论">
+    <a href="/2020/06/27/2020-06-27-%E7%94%B3%E8%AF%B7Let-s-Encrypt%E9%80%9A%E9%85%8D%E7%AC%A6HTTPS%E8%AF%81%E4%B9%A6/#comments" title="查看评论">
         <i class="fa fa-comments-o" aria-hidden="true"></i>
         <span class="count-comment"></span>
         
         
-            <span class="disqus-comment-count" data-disqus-identifier="2015/07/23/2015-07-23-常用Wi-Fi网络评测工具/"></span>
+            <span class="disqus-comment-count" data-disqus-identifier="2020/06/27/2020-06-27-申请Let-s-Encrypt通配符HTTPS证书/"></span>
         
     </a>
 
@@ -341,7 +332,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      常用Wi-Fi网络评测工具
+      申请Let&#39;s Encrypt通配符HTTPS证书
     </h1>
   
 
@@ -351,10 +342,6 @@
         
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WiFi%E8%AF%84%E6%B5%8B%E5%B7%A5%E5%85%B7/" rel="tag">WiFi评测工具</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%87%E5%BF%98/" rel="tag">备忘</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -362,14 +349,111 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="inSSIDer2"><a href="#inSSIDer2" class="headerlink" title="inSSIDer2"></a>inSSIDer2</h1><p><a href="http://inssider.en.softonic.com/" target="_blank" rel="external">http://inssider.en.softonic.com/</a><br><img src="/img/20150723/1.png" alt=""><br><a id="more"></a></p>
-<h1 id="WirelessMon"><a href="#WirelessMon" class="headerlink" title="WirelessMon"></a>WirelessMon</h1><p><a href="http://wirelessmon.com/" target="_blank" rel="external">http://wirelessmon.com/</a><br><a href="http://www.greenxiazai.com/soft/8567.html" target="_blank" rel="external">http://www.greenxiazai.com/soft/8567.html</a><br><img src="/img/20150723/2.jpg" alt=""></p>
-<h1 id="NetIQ-Chariot"><a href="#NetIQ-Chariot" class="headerlink" title="NetIQ Chariot"></a>NetIQ Chariot</h1><p><a href="http://www.piaodown.com/soft/292.htm" target="_blank" rel="external">http://www.piaodown.com/soft/292.htm</a><br><img src="/img/20150723/3.jpg" alt=""></p>
-<h1 id="IxChariot"><a href="#IxChariot" class="headerlink" title="IxChariot"></a>IxChariot</h1><p><a href="http://www.wandoujia.com/apps/com.ixia.ixchariot" target="_blank" rel="external">http://www.wandoujia.com/apps/com.ixia.ixchariot</a><br><img src="/img/20150723/4.jpeg" alt=""></p>
-<p><a href="http://www.doc88.com/p-61963991908.html" target="_blank" rel="external">http://www.doc88.com/p-61963991908.html</a><br><a href="http://bbs.zol.com.cn/quanzi/d14_2.html" target="_blank" rel="external">http://bbs.zol.com.cn/quanzi/d14_2.html</a></p>
-<h1 id="Omnipeek-抓包软件加D-Link-DWA-160抓包分析"><a href="#Omnipeek-抓包软件加D-Link-DWA-160抓包分析" class="headerlink" title="Omnipeek 抓包软件加D-Link DWA-160抓包分析"></a>Omnipeek 抓包软件加D-Link DWA-160抓包分析</h1><p>Omnipeek软件下载链接<br><a href="http://www.pc0359.cn/downinfo/18889.html" target="_blank" rel="external">http://www.pc0359.cn/downinfo/18889.html</a><br><img src="/img/20150723/5.jpg" alt=""></p>
-<h1 id="D-Link-DWA-160购买链接"><a href="#D-Link-DWA-160购买链接" class="headerlink" title="D-Link DWA-160购买链接"></a>D-Link DWA-160购买链接</h1><p><a href="http://s.taobao.com/search?ie=utf8&amp;initiative_id=staobaoz_20150714&amp;stats_click=search_radio_all%3A1&amp;js=1&amp;;imgfile=&amp;q=dwa-160&amp;suggest=0_1&amp;_input_charset=utf-8&amp;wq=dwa160&amp;suggest_query=dwa160&amp;source=suggest&amp;sort=sale-desc" target="_blank" rel="external">http://s.taobao.com/search?ie=utf8&amp;initiative_id=staobaoz_20150714&amp;stats_click=search_radio_all%3A1&amp;js=1&amp;;imgfile=&amp;q=dwa-160&amp;suggest=0_1&amp;_input_charset=utf-8&amp;wq=dwa160&amp;suggest_query=dwa160&amp;source=suggest&amp;sort=sale-desc</a><br><img src="/img/20150723/6.jpg" alt=""></p>
-<h1 id="最新OmniPeek无线驱动详细列表与下载说明"><a href="#最新OmniPeek无线驱动详细列表与下载说明" class="headerlink" title="最新OmniPeek无线驱动详细列表与下载说明"></a>最新OmniPeek无线驱动详细列表与下载说明</h1><p><a href="http://chenjiji.com/post/2721.html" target="_blank" rel="external">http://chenjiji.com/post/2721.html</a></p>
+        <p>通配符证书是一个SSL证书，可用于为给定域上的所有子域提供https，例如，<code>*.&lt;domain&gt;.com</code> 意味着任何子域名（如<code>www.example.com</code>或<code>links.example.com</code>）会使用相同的SSL证书。</p>
+<p>使用通配符证书对于允许用户选择子域的应用程序非常有用，例如，<code>wordpress.com</code>子域下的所有博客。</p>
+<p><a href="https://github.com/Neilpang/acme.sh" target="_blank" rel="noopener">acme.sh</a> 实现了 <code>acme</code> 协议, 可以从 letsencrypt 生成免费的证书。</p>
+<a id="more"></a>
+
+<p>主要步骤:</p>
+<ol>
+<li>安装依赖</li>
+<li>安装 <code>acme.sh</code></li>
+<li>生成证书</li>
+<li>拷贝安装证书到 <code>nginx/apache</code> 或者其他web服务器</li>
+<li>更新证书</li>
+<li>更新 acme.sh</li>
+<li>更改web服务器启用https</li>
+</ol>
+<blockquote>
+<p>记得在操作具体的命令之前将一些域名变量<code>&lt;domain&gt;.com</code>替换成你当前要操作的域名信息。</p>
+</blockquote>
+<h2 id="安装依赖程序"><a href="#安装依赖程序" class="headerlink" title="安装依赖程序"></a>安装依赖程序</h2><ul>
+<li><p><code>Debian/Ubuntu</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install curl -y &amp;&amp; apt-get install cron -y &amp;&amp; apt-get install socat -y</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Centos</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install curl -y &amp;&amp; yum install cron -y &amp;&amp; yum install socat -y</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="安装acme-sh"><a href="#安装acme-sh" class="headerlink" title="安装acme.sh"></a>安装<code>acme.sh</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https:&#x2F;&#x2F;get.acme.sh | sh</span><br></pre></td></tr></table></figure>
+
+<p>输出如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">$ curl https:&#x2F;&#x2F;get.acme.sh | sh</span><br><span class="line">% Total % Received % Xferd Average Speed Time Time Time Current</span><br><span class="line">Dload Upload Total Spent Left Speed</span><br><span class="line">100 705 100 705 0 0 2426 0 --:--:-- --:--:-- --:--:-- 2422</span><br><span class="line">% Total % Received % Xferd Average Speed Time Time Time Current</span><br><span class="line">Dload Upload Total Spent Left Speed</span><br><span class="line">100 163k 100 163k 0 0 400k 0 --:--:-- --:--:-- --:--:-- 401k</span><br><span class="line">[Sun Mar 18 20:11:01 CST 2018] Installing from online archive.</span><br><span class="line">[Sun Mar 18 20:11:01 CST 2018] Downloading https:&#x2F;&#x2F;github.com&#x2F;Neilpang&#x2F;acme.sh&#x2F;archive&#x2F;master.tar.gz</span><br><span class="line">[Sun Mar 18 20:11:03 CST 2018] Extracting master.tar.gz</span><br><span class="line">[Sun Mar 18 20:11:03 CST 2018] It is recommended to install socat first.</span><br><span class="line">[Sun Mar 18 20:11:03 CST 2018] We use socat for standalone server if you use standalone mode.</span><br><span class="line">[Sun Mar 18 20:11:03 CST 2018] If you don&#39;t use standalone mode, just ignore this warning.</span><br><span class="line">[Sun Mar 18 20:11:03 CST 2018] Installing to &#x2F;root&#x2F;.acme.sh</span><br><span class="line">[Sun Mar 18 20:11:03 CST 2018] Installed to &#x2F;root&#x2F;.acme.sh&#x2F;acme.sh</span><br><span class="line">[Sun Mar 18 20:11:03 CST 2018] Installing alias to &#39;&#x2F;root&#x2F;.bashrc&#39;</span><br><span class="line">[Sun Mar 18 20:11:03 CST 2018] OK, Close and reopen your terminal to start using acme.sh</span><br><span class="line">[Sun Mar 18 20:11:03 CST 2018] Installing alias to &#39;&#x2F;root&#x2F;.cshrc&#39;</span><br><span class="line">[Sun Mar 18 20:11:03 CST 2018] Installing alias to &#39;&#x2F;root&#x2F;.tcshrc&#39;</span><br><span class="line">[Sun Mar 18 20:11:03 CST 2018] Installing cron job</span><br><span class="line">[Sun Mar 18 20:11:03 CST 2018] Good, bash is found, so change the shebang to use bash as preferred.</span><br><span class="line">[Sun Mar 18 20:11:03 CST 2018] OK</span><br><span class="line">[Sun Mar 18 20:11:03 CST 2018] Install success!</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>脚本会自动为当前用户创建定时任务, 每天 <code>00:19</code> 自动检测所有的证书。<strong>如果快过期了, 需要更新, 则会自动更新证书。</strong></p>
+</blockquote>
+<p><strong>安装过程不会污染已有的系统任何功能和文件</strong>, 所有的修改都限制在安装目录中: <code>~/.acme.sh/</code></p>
+<h2 id="生成证书"><a href="#生成证书" class="headerlink" title="生成证书"></a>生成证书</h2><p><code>acme.sh</code> 实现了 <strong>acme</strong> 协议支持的所有验证协议. 一般有两种方式验证: <code>http</code> 和 <code>dns</code> 验证.</p>
+<h3 id="http验证"><a href="#http验证" class="headerlink" title="http验证"></a>http验证</h3><h4 id="通用方式"><a href="#通用方式" class="headerlink" title="通用方式"></a>通用方式</h4><p><code>http</code> 方式需要在你的网站根目录下放置一个文件, 来验证你的域名所有权,完成验证. 然后就可以生成证书了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~&#x2F;.acme.sh&#x2F;acme.sh --issue -d &lt;domain&gt;.com -d www.&lt;domain&gt;.com --webroot &#x2F;home&#x2F;wwwroot&#x2F;&lt;domain&gt;.com&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>只需要指定域名, 并指定域名所在的网站根目录。 <code>acme.sh</code> 会全自动的生成验证文件, 并放到网站的根目录。然后自动完成验证，最后会聪明的删除验证文件，整个过程没有任何副作用。</p>
+<h4 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h4><p>如果当前使用的是<code>nginx</code>服务器或者反代, <code>acme.sh</code> 还可以智能的从 <code>nginx</code>的配置中自动完成验证, 将不需要指定网站根目录:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~&#x2F;.acme.sh&#x2F;acme.sh --issue -d &lt;domain&gt;.com --nginx</span><br></pre></td></tr></table></figure>
+
+<h4 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h4><p>如果你用的 <code>apache</code>服务器, <code>acme.sh</code> 还可以智能的从 <code>apache</code>的配置中自动完成验证, 你不需要指定网站根目录:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~&#x2F;.acme.sh&#x2F;acme.sh --issue -d &lt;domain&gt;.com --apache</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：无论是 <code>apache</code> 还是 <code>nginx</code> 模式, <code>acme.sh</code>在完成验证之后, 会恢复到之前的状态, 都不会私自更改你本身的配置. 好处是你不用担心配置被搞坏, 也有一个缺点, 你需要自己配置 <code>ssl</code> 的配置, 否则只能成功生成证书, 你的网站还是无法访问<code>https</code>。</p>
+</blockquote>
+<h4 id="standalone"><a href="#standalone" class="headerlink" title="standalone"></a>standalone</h4><p>如果你还没有运行任何 web 服务, 80 端口是空闲的, 那么 acme.sh 还能假装自己是一个webserver, 临时听在80 端口, 完成验证:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~&#x2F;.acme.sh&#x2F;acme.sh --issue -d &lt;domain&gt;.com --standalone</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>以上命令都将ssl相关数据写入到文件地址<code>~/USER/.acme.sh/&lt;domain&gt;.com/</code>下，包含<code>ca.cer</code>、<code>&lt;domain&gt;.com.conf</code>、<code>&lt;domain&gt;.com.key</code>、<code>fullchain.cer</code>、<code>&lt;domain&gt;.com.csr</code><br>、<code>&lt;domain&gt;.com.cer</code>和<code>&lt;domain&gt;.com.csr.conf</code>。</p>
+</blockquote>
+<h3 id="DNS验证"><a href="#DNS验证" class="headerlink" title="DNS验证"></a>DNS验证</h3><p><code>dns</code> 方式, 在域名上添加一条 <code>txt</code> 解析记录, 验证域名所有权。</p>
+<p>这里以aliyun获取api为例，可以访问此地址获取：<a href="https://ak-console.aliyun.com/#/accesskey。" target="_blank" rel="noopener">https://ak-console.aliyun.com/#/accesskey。</a><br>然后输入下面命令。其中 <code>Ali_Key=&quot;&quot;</code>中输入个人在阿里云后台的<strong>Access Key ID</strong>信息，<code>Ali_Secret=&quot;&quot;</code>输入你的<strong>Access Key Secret</strong>信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export Ali_Key&#x3D;&quot;soamdagfqweaf&quot;</span><br><span class="line">export Ali_Secret&#x3D;&quot;asd213dfas&quot;</span><br></pre></td></tr></table></figure>
+
+<p>接下来再输入下面命令申请<code>Let’s Encrypt</code>泛域名免费SSL证书。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~&#x2F;.acme.sh&#x2F;acme.sh --issue --dns dns_ali -d &lt;domain&gt;.com -d *.&lt;domain&gt;.com</span><br></pre></td></tr></table></figure>
+
+<p>第一次成功之后，<code>acme.sh</code>会记录下<code>App_Key</code>和<code>App_Secret</code>，并且生成一个定时任务，每天凌晨0：00自动检测过期域名并且自动续期。对这种方式有顾虑的，请慎重，不过也可以自行删掉用户级的定时任务，并且清理掉<code>~/.acme.sh</code>文件夹就行。</p>
+<h2 id="拷贝安装证书"><a href="#拷贝安装证书" class="headerlink" title="拷贝安装证书"></a>拷贝安装证书</h2><p>前面证书生成以后, 接下来需要使用命令把证书拷贝到真正需要用它的地方。</p>
+<p><strong>注意,</strong> 默认生成的证书都放在安装目录下: <code>~/.acme.sh/</code>，不要直接使用此目录下的文件。例如: 不要直接让 <code>nginx/apache</code> 的配置文件使用这下面的文件. 这里面的文件都是内部使用, 而且目录结构可能会变化.</p>
+<p>正确的使用方法是使用 <code>--installcert</code> 命令,并指定目标位置, 然后证书文件会被copy到相应的位置，如果 <code>/etc/nginx/ssl</code> 不存在需要使用<code>mkdir</code>命令创建<code>mkdir -p /etc/nginx/ssl</code>， 例如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~&#x2F;.acme.sh&#x2F;acme.sh --installcert -d &lt;domain&gt;.com \</span><br><span class="line">--key-file &#x2F;etc&#x2F;nginx&#x2F;ssl&#x2F;&lt;domain&gt;.com.key \</span><br><span class="line">--fullchain-file &#x2F;etc&#x2F;nginx&#x2F;ssl&#x2F;fullchain.cer \</span><br><span class="line">--reloadcmd &quot;service nginx force-reload&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Nginx 的配置 <code>ssl_certificate</code> 使用 <code>/etc/nginx/ssl/fullchain.cer</code> ，而非 <code>/etc/nginx/ssl/&lt;domain&gt;.cer</code> ，否则 SSL Labs 的测试会报 Chain issues Incomplete 错误。</p>
+<p><code>--installcert</code> 命令可以携带很多参数, 来指定目标文件. 并且可以指定 <code>reloadcmd</code>, 当证书更新以后, <code>reloadcmd</code>会被自动调用,让服务器生效.</p>
+<p>详细参数请参考: <a href="https://github.com/Neilpang/acme.sh#3-install-the-issued-cert-to-apachenginx-etc" target="_blank" rel="noopener">https://github.com/Neilpang/acme.sh#3-install-the-issued-cert-to-apachenginx-etc</a></p>
+<p>值得注意的是, 这里指定的所有参数都会被自动记录下来, 并在将来证书自动更新以后, 被再次自动调用。</p>
+<h2 id="更新证书"><a href="#更新证书" class="headerlink" title="更新证书"></a>更新证书</h2><p>目前证书在 60 天以后会自动更新, 无需任何操作. 今后有可能会缩短这个时间, 不过都是自动的, 作为使用者不用关心。</p>
+<h2 id="更新-acme-sh"><a href="#更新-acme-sh" class="headerlink" title="更新 acme.sh"></a>更新 acme.sh</h2><p>目前由于 acme 协议和 letsencrypt CA 都在频繁的更新, 因此 <code>acme.sh</code> 也经常更新以保持同步</p>
+<ul>
+<li>升级 acme.sh 到最新版</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acme.sh --upgrade</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>如果你不想手动升级, 可以开启自动升级</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acme.sh --upgrade --auto-upgrade</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>之后, acme.sh 就会自动保持更新了.</p>
+<ul>
+<li><p>你也可以随时关闭自动更新</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acme.sh --upgrade --auto-upgrade 0</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="更改web服务器启用https"><a href="#更改web服务器启用https" class="headerlink" title="更改web服务器启用https"></a>更改web服务器启用https</h2><p>这里以Nginx应用为例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen      80; ## listen for ipv4</span><br><span class="line">    server_name   &lt;domain&gt;.com;</span><br><span class="line">    return      301 https:&#x2F;&#x2F;$server_name$request_uri;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    charset utf-8;</span><br><span class="line">    client_max_body_size 128M;</span><br><span class="line"></span><br><span class="line">    listen 443;</span><br><span class="line"></span><br><span class="line">    # SSL support</span><br><span class="line">     ssl on;</span><br><span class="line">     ssl_certificate      ..&#x2F;ssl&#x2F;fullchain.cer;</span><br><span class="line">     ssl_certificate_key  ..&#x2F;ssl&#x2F;&lt;domain&gt;.com.key;</span><br><span class="line"></span><br><span class="line">    server_name &lt;domain&gt;.com;</span><br><span class="line">    root        &#x2F;web_path&#x2F;public;</span><br><span class="line">    index       index.php;</span><br><span class="line"></span><br><span class="line">... ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>更改完之后重启服务器<code>sudo systemctl reload nginx</code>，访问<code>&lt;domain&gt;.com</code>即可看到效果了。</p>
+<blockquote>
+<p>如果你使用的是aliyun等云服务器，可能还需要配置云服务器的<strong>安全组配置</strong>，将443端口开放访问。</p>
+</blockquote>
+<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><ul>
+<li><a href="https://github.com/Neilpang/acme.sh/wiki/说明" target="_blank" rel="noopener">Neilpang/acme.sh</a></li>
+<li><a href="https://my.oschina.net/kimver/blog/1634575#comment-list" target="_blank" rel="noopener">申请Let’s Encrypt通配符HTTPS证书</a></li>
+<li><a href="https://www.wn789.com/15510.html" target="_blank" rel="noopener">使用阿里云域名API申请Let’s Encrypt泛域名免费SSL证书教程</a></li>
+</ul>
 
       
     </div>
@@ -378,13 +462,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2015/07/23/2015-07-23-%E5%B8%B8%E7%94%A8Wi-Fi%E7%BD%91%E7%BB%9C%E8%AF%84%E6%B5%8B%E5%B7%A5%E5%85%B7/">常用Wi-Fi网络评测工具</a></p>
+        <p><span>本文标题:</span><a href="/2020/06/27/2020-06-27-%E7%94%B3%E8%AF%B7Let-s-Encrypt%E9%80%9A%E9%85%8D%E7%AC%A6HTTPS%E8%AF%81%E4%B9%A6/">申请Let&#39;s Encrypt通配符HTTPS证书</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">iZheteng</a></p>
-        <p><span>发布时间:</span>2015-07-23, 23:33:00</p>
-        <p><span>最后更新:</span>2020-02-13, 11:53:22</p>
+        <p><span>发布时间:</span>2020-06-27, 20:37:00</p>
+        <p><span>最后更新:</span>2020-06-27, 21:43:44</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2015/07/23/2015-07-23-%E5%B8%B8%E7%94%A8Wi-Fi%E7%BD%91%E7%BB%9C%E8%AF%84%E6%B5%8B%E5%B7%A5%E5%85%B7/" title="常用Wi-Fi网络评测工具">http://cuiqingwei.github.io/2015/07/23/2015-07-23-%E5%B8%B8%E7%94%A8Wi-Fi%E7%BD%91%E7%BB%9C%E8%AF%84%E6%B5%8B%E5%B7%A5%E5%85%B7/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2015/07/23/2015-07-23-%E5%B8%B8%E7%94%A8Wi-Fi%E7%BD%91%E7%BB%9C%E8%AF%84%E6%B5%8B%E5%B7%A5%E5%85%B7/　　作者: iZheteng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/06/27/2020-06-27-%E7%94%B3%E8%AF%B7Let-s-Encrypt%E9%80%9A%E9%85%8D%E7%AC%A6HTTPS%E8%AF%81%E4%B9%A6/" title="申请Let&#39;s Encrypt通配符HTTPS证书">http://cuiqingwei.github.io/2020/06/27/2020-06-27-%E7%94%B3%E8%AF%B7Let-s-Encrypt%E9%80%9A%E9%85%8D%E7%AC%A6HTTPS%E8%AF%81%E4%B9%A6/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2020/06/27/2020-06-27-%E7%94%B3%E8%AF%B7Let-s-Encrypt%E9%80%9A%E9%85%8D%E7%AC%A6HTTPS%E8%AF%81%E4%B9%A6/　　作者: iZheteng" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -397,15 +481,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2015/08/15/2015-08-15-%E4%BA%9A%E9%A9%AC%E9%80%8A%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%85%8D%E8%B4%B9%E4%B8%80%E5%B9%B4VPS%E4%B8%BB%E6%9C%BA%E7%BF%BB%E5%A2%99%E6%9C%AF/">
-                    亚马逊云服务免费一年VPS主机翻墙术
+                <a href="/2020/06/27/2020-06-27-%E4%BD%BF%E7%94%A8Laravel-Adminlte-Vue-js%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/">
+                    使用Laravel+Adminlte+Vue.js构建项目
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2015/07/16/2015-07-16-%E6%9C%89%E8%B6%A3%E7%9A%84Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8A%9F%E6%95%88/">
-                    有趣的Linux命令行功效
+                <a href="/2020/06/27/2020-06-27-%E4%BA%91%E4%B8%BB%E6%9C%BA%E5%B8%B8%E7%94%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">
+                    云主机常用基本操作
                 </a>
             </div>
         
@@ -417,7 +501,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#inSSIDer2"><span class="toc-number">1.</span> <span class="toc-text">inSSIDer2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#WirelessMon"><span class="toc-number">2.</span> <span class="toc-text">WirelessMon</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NetIQ-Chariot"><span class="toc-number">3.</span> <span class="toc-text">NetIQ Chariot</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IxChariot"><span class="toc-number">4.</span> <span class="toc-text">IxChariot</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Omnipeek-抓包软件加D-Link-DWA-160抓包分析"><span class="toc-number">5.</span> <span class="toc-text">Omnipeek 抓包软件加D-Link DWA-160抓包分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#D-Link-DWA-160购买链接"><span class="toc-number">6.</span> <span class="toc-text">D-Link DWA-160购买链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#最新OmniPeek无线驱动详细列表与下载说明"><span class="toc-number">7.</span> <span class="toc-text">最新OmniPeek无线驱动详细列表与下载说明</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装依赖程序"><span class="toc-number">1.</span> <span class="toc-text">安装依赖程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装acme-sh"><span class="toc-number">2.</span> <span class="toc-text">安装acme.sh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成证书"><span class="toc-number">3.</span> <span class="toc-text">生成证书</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#http验证"><span class="toc-number">3.1.</span> <span class="toc-text">http验证</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#通用方式"><span class="toc-number">3.1.1.</span> <span class="toc-text">通用方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Nginx"><span class="toc-number">3.1.2.</span> <span class="toc-text">Nginx</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Apache"><span class="toc-number">3.1.3.</span> <span class="toc-text">Apache</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#standalone"><span class="toc-number">3.1.4.</span> <span class="toc-text">standalone</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS验证"><span class="toc-number">3.2.</span> <span class="toc-text">DNS验证</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拷贝安装证书"><span class="toc-number">4.</span> <span class="toc-text">拷贝安装证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新证书"><span class="toc-number">5.</span> <span class="toc-text">更新证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更新-acme-sh"><span class="toc-number">6.</span> <span class="toc-text">更新 acme.sh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更改web服务器启用https"><span class="toc-number">7.</span> <span class="toc-text">更改web服务器启用https</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考地址"><span class="toc-number">8.</span> <span class="toc-text">参考地址</span></a></li></ol>
         
     </div>
     <style>
@@ -453,7 +537,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"常用Wi-Fi网络评测工具　| iZheteng　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"申请Let's Encrypt通配符HTTPS证书　| iZheteng　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -472,8 +556,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://cuiqingwei.github.io/2015/07/23/2015-07-23-%E5%B8%B8%E7%94%A8Wi-Fi%E7%BD%91%E7%BB%9C%E8%AF%84%E6%B5%8B%E5%B7%A5%E5%85%B7/';
-            this.page.identifier = '2015/07/23/2015-07-23-常用Wi-Fi网络评测工具/';
+            this.page.url = 'http://cuiqingwei.github.io/2020/06/27/2020-06-27-%E7%94%B3%E8%AF%B7Let-s-Encrypt%E9%80%9A%E9%85%8D%E7%AC%A6HTTPS%E8%AF%81%E4%B9%A6/';
+            this.page.identifier = '2020/06/27/2020-06-27-申请Let-s-Encrypt通配符HTTPS证书/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -512,8 +596,8 @@
 
 
     <script id="dsq-count-scr" src="//cuiqingwei.disqus.com/count.js" async></script>
-    <span class="disqus-comment-count" data-disqus-identifier="2015/07/23/2015-07-23-常用Wi-Fi网络评测工具/"></span>
-    <span class="disqus-comment-count" data-disqus-url="http://cuiqingwei.github.io/2015/07/23/2015-07-23-%E5%B8%B8%E7%94%A8Wi-Fi%E7%BD%91%E7%BB%9C%E8%AF%84%E6%B5%8B%E5%B7%A5%E5%85%B7/"></span>
+    <span class="disqus-comment-count" data-disqus-identifier="2020/06/27/2020-06-27-申请Let-s-Encrypt通配符HTTPS证书/"></span>
+    <span class="disqus-comment-count" data-disqus-url="http://cuiqingwei.github.io/2020/06/27/2020-06-27-%E7%94%B3%E8%AF%B7Let-s-Encrypt%E9%80%9A%E9%85%8D%E7%AC%A6HTTPS%E8%AF%81%E4%B9%A6/"></span>
     <script>
         $(".disqus-comment-count").hide();
         var $disqusCount = $(".disqus-comment-count");
@@ -532,7 +616,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2015/08/15/2015-08-15-%E4%BA%9A%E9%A9%AC%E9%80%8A%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%85%8D%E8%B4%B9%E4%B8%80%E5%B9%B4VPS%E4%B8%BB%E6%9C%BA%E7%BF%BB%E5%A2%99%E6%9C%AF/" title="上一篇: 亚马逊云服务免费一年VPS主机翻墙术">
+            <a href="/2020/06/27/2020-06-27-%E4%BD%BF%E7%94%A8Laravel-Adminlte-Vue-js%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/" title="上一篇: 使用Laravel+Adminlte+Vue.js构建项目">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -540,7 +624,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2015/07/16/2015-07-16-%E6%9C%89%E8%B6%A3%E7%9A%84Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8A%9F%E6%95%88/" title="下一篇: 有趣的Linux命令行功效">
+            <a href="/2020/06/27/2020-06-27-%E4%BA%91%E4%B8%BB%E6%9C%BA%E5%B8%B8%E7%94%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" title="下一篇: 云主机常用基本操作">
                 <i class="fa fa-angle-right"></i>
             </a>
         
