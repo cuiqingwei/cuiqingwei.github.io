@@ -809,6 +809,219 @@
 
 
   
+    <article id="post-2020-06-27-SDKman管理利器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/06/27/2020-06-27-SDKman%E7%AE%A1%E7%90%86%E5%88%A9%E5%99%A8/" class="article-date">
+      <time datetime="2020-06-27T13:37:00.000Z" itemprop="datePublished">2020-06-27</time>
+</a>
+
+ 
+    <a href="/2020/06/27/2020-06-27-SDKman%E7%AE%A1%E7%90%86%E5%88%A9%E5%99%A8/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2020/06/27/2020-06-27-SDKman管理利器/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/27/2020-06-27-SDKman%E7%AE%A1%E7%90%86%E5%88%A9%E5%99%A8/">SDKman管理利器</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <blockquote>
+<p>项目使用java的开发者一定会为新配环境变量而头大，sdkman很好的解决了系统sdk管理的痛点，仅需简单的几行命令就可以完成sdk的安装，更改默认版本。再也不用担心环境变量的问题。</p>
+</blockquote>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>既然是命令行工具，就只能用命令行方式来安装(linux，mac直接用shell，windows用powerShell)<br> 第一步、下载</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -s <span class="string">"https://get.sdkman.io"</span> | bash</span><br></pre></td></tr></table></figure>
+
+<p>第二步、执行脚本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> <span class="string">"<span class="variable">$HOME</span>/.sdkman/bin/sdkman-init.sh"</span></span><br></pre></td></tr></table></figure>
+
+<p>第三步、检查是否安装成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sdk version</span><br></pre></td></tr></table></figure>
+
+<p>输出版本信息即安装成功</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ol>
+<li><p>输入<code>sdk list</code>可以查看有那些sdk可以安装，系统已经安装那些sdk</p>
+</li>
+<li><p>安装jdk（其他sdk安装类似）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sdk install java</span><br></pre></td></tr></table></figure>
+<p>接下来会看到</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Downloading: java 8u111</span><br><span class="line">In progress...</span><br><span class="line"><span class="comment">######################################################################## 100.0%</span></span><br><span class="line">Installing: java 8u111</span><br><span class="line">Done installing!</span><br></pre></td></tr></table></figure>
+
+<p>接下来会询问是否作为默认版本</p>
+<ol start="3">
+<li>安装特定版本sdk<br>列出可安装版本,如果本地已经安装也会看到标记<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sdk list java</span><br></pre></td></tr></table></figure>
+安装8u131版本jdk</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sdk install java 8u131</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sdk install maven</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>移除SDK<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sdk uninstall java</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">sdk rm java</span><br></pre></td></tr></table></figure></li>
+<li>查看当前安装的sdk版本<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sdk current java</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2020-06-27-云主机常用基本操作" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/06/27/2020-06-27-%E4%BA%91%E4%B8%BB%E6%9C%BA%E5%B8%B8%E7%94%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="article-date">
+      <time datetime="2020-06-27T09:37:00.000Z" itemprop="datePublished">2020-06-27</time>
+</a>
+
+ 
+    <a href="/2020/06/27/2020-06-27-%E4%BA%91%E4%B8%BB%E6%9C%BA%E5%B8%B8%E7%94%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2020/06/27/2020-06-27-云主机常用基本操作/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/27/2020-06-27-%E4%BA%91%E4%B8%BB%E6%9C%BA%E5%B8%B8%E7%94%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">云主机常用基本操作</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="安装检查"><a href="#安装检查" class="headerlink" title="安装检查"></a>安装检查</h2><p>在安装之前，请进行一些快速的配置检查，以确保您的服务器满足最低要求。</p>
+<p>花一点时间进行这些检查，将大大减少您在安装过程中遇到问题所浪费的时间。</p>
+<p>首先，检查服务器的语言环境为<code>en_US.UTF-8</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cat &#x2F;etc&#x2F;default&#x2F;locale</span><br><span class="line">LANG&#x3D;&quot;en_US.UTF-8&quot;</span><br></pre></td></tr></table></figure>
+
+<p>如果看不到<code>LANG=&quot;en_US.UTF-8&quot;</code>，请输入以下命令将本地设置为<code>en_US.UTF-8</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install language-pack-en</span><br><span class="line">$ sudo update-locale LANG&#x3D;en_US.UTF-8</span><br></pre></td></tr></table></figure>
+
+<p>然后注销并再次登录到您的SSH会话–这将为您的会话重新加载区域设置。<code>cat /etc/default/locale</code>再次运行以上命令。验证您仅看到单行<code>LANG=&quot;en_US.UTF-8&quot;</code>。</p>
+<p>注意：如果看到其他行<code>LC_ALL=en_US.UTF-8</code>，请<code>LC_ALL</code>从删除条目<code>/etc/default/locale</code>并注销，然后再次登录。</p>
+<p>接下来，执行<code>sudo systemctl show-environment</code>并确保您<code>LANG=en_US.UTF-8</code>在输出中看到。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl show-environment</span><br><span class="line">LANG&#x3D;en_US.UTF-8</span><br><span class="line">PATH&#x3D;&#x2F;usr&#x2F;local&#x2F;sbin:&#x2F;usr&#x2F;local&#x2F;bin:&#x2F;usr&#x2F;sbin:&#x2F;usr&#x2F;bin:&#x2F;sbin:&#x2F;bin</span><br></pre></td></tr></table></figure>
+
+<p>如果看不到，请再次<code>sudo systemctl set-environment LANG=en_US.UTF-8</code>执行以上操作<code>sudo systemctl show-environment</code>并确认您<code>LANG=en_US.UTF-8</code>在输出中看到了。</p>
+<p>接下来，使用命令检查服务器（至少）有4G内存<code>free -h</code>。这是我们其中一台测试服务器的输出。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ free -h</span><br><span class="line">              total        used        free      shared  buff&#x2F;cache   available</span><br><span class="line">Mem:            31G        5.9G        314M        1.8G         25G         21G</span><br><span class="line">Swap:           31G        360M         31G</span><br></pre></td></tr></table></figure>
+
+<p>这里显示的是31G的内存（这是一台具有32 GB内存的服务器）。</p>
+<p>如果<code>Mem:</code>在<code>total</code>列中看到小于4G的值（上面的示例显示31G），则您的服务器没有足够的内存来运行BigBlueButton。您需要将服务器的内存增加到（至少）4G。</p>
+<p>接下来，检查服务器是否具有Ubuntu 16.04。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$  cat &#x2F;etc&#x2F;lsb-release</span><br><span class="line">DISTRIB_ID&#x3D;Ubuntu</span><br><span class="line">DISTRIB_RELEASE&#x3D;16.04</span><br><span class="line">DISTRIB_CODENAME&#x3D;xenial</span><br><span class="line">DISTRIB_DESCRIPTION&#x3D;&quot;Ubuntu 16.04.x LTS&quot;</span><br></pre></td></tr></table></figure>
+
+<p>接下来，检查您的服务器是否正在运行64位版本的Ubuntu 16.04。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ uname -m</span><br><span class="line">x86_64</span><br></pre></td></tr></table></figure>
+
+<p>接下来，检查您的服务器是否支持IPV6。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ip addr | grep inet6</span><br><span class="line">inet6 ::1&#x2F;128 scope host</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>如果没有看到该行，<code>inet6 ::1/128 scope host</code>则在安装BigBlueButton之后，您需要修改FreeSWITCH的配置以<a href="http://docs.bigbluebutton.org/2.2/troubleshooting.html#freeswitch-fails-to-bind-to-port-8021" target="_blank" rel="noopener">禁用对IPV6的支持</a>。</p>
+<p>接下来，检查您的服务器是否正在运行Linux 4.x内核。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ uname -r</span><br><span class="line">4.15.0-38-generic</span><br></pre></td></tr></table></figure>
+
+<p>接下来，检查您的服务器是否具有（至少）4个CPU内核</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cat &#x2F;proc&#x2F;cpuinfo | awk &#39;&#x2F;^processor&#x2F;&#123;print $3&#125;&#39; | wc -l</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+
+<h2 id="宝塔"><a href="#宝塔" class="headerlink" title="宝塔"></a>宝塔</h2><p> <a href="https://www.bt.cn/bbs/thread-19376-1-1.html" target="_blank" rel="noopener">查看详细教程</a></p>
+<blockquote>
+<p>使用 SSH 连接工具，如<a href="https://download.bt.cn/ssh/BT-Term.exe" target="_blank" rel="noopener">堡塔SSH终端</a>连接到您的 Linux 服务器后，<a href="https://www.bt.cn/bbs/thread-5166-1-1.html" target="_blank" rel="noopener">挂载磁盘</a>，根据系统执行相应命令开始安装（大约2分钟完成面板安装）：</p>
+<p>Centos安装脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http:&#x2F;&#x2F;download.bt.cn&#x2F;install&#x2F;install_6.0.sh &amp;&amp; sh install.sh</span><br></pre></td></tr></table></figure>
+
+<p>Ubuntu/Deepin安装脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http:&#x2F;&#x2F;download.bt.cn&#x2F;install&#x2F;install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh</span><br></pre></td></tr></table></figure>
+
+<p>Debian安装脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http:&#x2F;&#x2F;download.bt.cn&#x2F;install&#x2F;install-ubuntu_6.0.sh &amp;&amp; bash install.sh</span><br></pre></td></tr></table></figure>
+
+<p>Fedora安装脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http:&#x2F;&#x2F;download.bt.cn&#x2F;install&#x2F;install_6.0.sh &amp;&amp; bash install.sh</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="OneinStack"><a href="#OneinStack" class="headerlink" title="OneinStack"></a>OneinStack</h2><p><a href="https://oneinstack.com/auto/" target="_blank" rel="noopener">https://oneinstack.com/auto/</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2020-04-03-Ubuntu18-04下编译OpenWRT15-05遇到的问题和解决方案" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1083,163 +1296,6 @@
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%87%E5%BF%98/" rel="tag">备忘</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2020-03-16-在线文件共享服务" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/03/16/2020-03-16-%E5%9C%A8%E7%BA%BF%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB%E6%9C%8D%E5%8A%A1/" class="article-date">
-      <time datetime="2020-03-16T13:37:00.000Z" itemprop="datePublished">2020-03-16</time>
-</a>
-
- 
-    <a href="/2020/03/16/2020-03-16-%E5%9C%A8%E7%BA%BF%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB%E6%9C%8D%E5%8A%A1/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2020/03/16/2020-03-16-在线文件共享服务/"></span>
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/16/2020-03-16-%E5%9C%A8%E7%BA%BF%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB%E6%9C%8D%E5%8A%A1/">在线文件共享服务</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p> 9 个免费的在线文件共享服务，满足你在网络上分享文件的各种需求。</p>
-<p><strong>奶牛快传</strong>：<a href="https://www.youtube.com/redirect?v=7hNxIj8e1HA&redir_token=MVQz3PwsVb8gs6I8oFlqI4_6cpx8MTU4NDQ0NDk4M0AxNTg0MzU4NTgz&event=video_description&q=https%3A%2F%2Fcowtransfer.com%2F" target="_blank" rel="noopener">https://cowtransfer.com/</a> </p>
-<p>上传最大容量：2GB </p>
-<p>免费用户可以保存7天 </p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%87%E5%BF%98/" rel="tag">备忘</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/03/16/2020-03-16-%E5%9C%A8%E7%BA%BF%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB%E6%9C%8D%E5%8A%A1/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2020-03-01-git指令备忘" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/03/01/2020-03-01-git%E6%8C%87%E4%BB%A4%E5%A4%87%E5%BF%98/" class="article-date">
-      <time datetime="2020-03-01T13:37:00.000Z" itemprop="datePublished">2020-03-01</time>
-</a>
-
- 
-    <a href="/2020/03/01/2020-03-01-git%E6%8C%87%E4%BB%A4%E5%A4%87%E5%BF%98/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2020/03/01/2020-03-01-git指令备忘/"></span>
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/01/2020-03-01-git%E6%8C%87%E4%BB%A4%E5%A4%87%E5%BF%98/">git指令备忘</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h1><ul>
-<li>通过终端命令修改</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"xxx"</span></span><br><span class="line">git config --global user.email <span class="string">"xxx@gmail.com"</span></span><br><span class="line">git config --global <span class="built_in">alias</span> ci commit</span><br><span class="line">git config --global <span class="built_in">alias</span> dog  <span class="built_in">log</span> --all --decorate --oneline --graph</span><br><span class="line">git config --global <span class="built_in">alias</span> mg merge</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>vi ~/.gitconfig</code> 直接修改文件配置也可以</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[user]</span><br><span class="line">	name = xxx</span><br><span class="line">	email = xxx@gmail.com</span><br><span class="line">[<span class="built_in">alias</span>]</span><br><span class="line">	co = checkout</span><br><span class="line">	br = branch</span><br><span class="line">	ci = commit</span><br><span class="line">	st = status</span><br><span class="line">	dog = <span class="built_in">log</span> --all --decorate --oneline --graph</span><br><span class="line">	mg = merge</span><br></pre></td></tr></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%87%E5%BF%98/" rel="tag">备忘</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/03/01/2020-03-01-git%E6%8C%87%E4%BB%A4%E5%A4%87%E5%BF%98/#more">阅读全文 >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
