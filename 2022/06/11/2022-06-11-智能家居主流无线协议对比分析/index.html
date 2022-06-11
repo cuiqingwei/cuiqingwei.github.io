@@ -15,28 +15,17 @@
 
 
 
-<meta name="description" content="InstantContiki3.0 for CC2538dk继 2013 年InstantContiki2.6 for cc2530dk,再写个关于cc2538dk的。 环境 下载安装预装有Contiki的 InstantContiki3.0 Ubuntu虚拟机   可参考 -&gt;InstantContiki2.6 for cc2530dk 也可见官网 -&gt; http:&#x2F;&#x2F;www.con">
+<meta name="description" content="从市场角度分析，目前智能家居两极分化比较严重：   toB的智能家居品牌，很多都是采用Zigbee的协议，但是这些品牌的通病是toC的知名度并不高。  toC的智能家居品牌，用蓝牙和Wi-Fi的协议比较多，比如小米，现在绝大部分都是蓝牙mesh和Wi-Fi的智能设备。   对于通信协议来说，肯定是Wi-Fi和蓝牙更容易让人理解，也更容易让人接受。Wi-Fi家里都有，蓝牙手机上都有，但是解释起来，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Contiki-CC2538">
-<meta property="og:url" content="http://cuiqingwei.github.io/2016/11/09/2016-11-09-Contiki-CC2538/index.html">
+<meta property="og:title" content="智能家居主流无线协议对比分析">
+<meta property="og:url" content="http://cuiqingwei.github.io/2022/06/11/2022-06-11-%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E4%B8%BB%E6%B5%81%E6%97%A0%E7%BA%BF%E5%8D%8F%E8%AE%AE%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="iZheteng">
-<meta property="og:description" content="InstantContiki3.0 for CC2538dk继 2013 年InstantContiki2.6 for cc2530dk,再写个关于cc2538dk的。 环境 下载安装预装有Contiki的 InstantContiki3.0 Ubuntu虚拟机   可参考 -&gt;InstantContiki2.6 for cc2530dk 也可见官网 -&gt; http:&#x2F;&#x2F;www.con">
+<meta property="og:description" content="从市场角度分析，目前智能家居两极分化比较严重：   toB的智能家居品牌，很多都是采用Zigbee的协议，但是这些品牌的通病是toC的知名度并不高。  toC的智能家居品牌，用蓝牙和Wi-Fi的协议比较多，比如小米，现在绝大部分都是蓝牙mesh和Wi-Fi的智能设备。   对于通信协议来说，肯定是Wi-Fi和蓝牙更容易让人理解，也更容易让人接受。Wi-Fi家里都有，蓝牙手机上都有，但是解释起来，">
 <meta property="og:locale">
-<meta property="og:image" content="http://cuiqingwei.github.io/img/20161109/contiki4.png">
-<meta property="og:image" content="http://cuiqingwei.github.io/img/20161109/contiki0.png">
-<meta property="og:image" content="http://cuiqingwei.github.io/img/20161109/contiki1.png">
-<meta property="og:image" content="http://cuiqingwei.github.io/img/20161109/contiki2.png">
-<meta property="og:image" content="http://cuiqingwei.github.io/img/20161109/contiki5.png">
-<meta property="og:image" content="http://cuiqingwei.github.io/img/20161109/contiki6.png">
-<meta property="og:image" content="http://cuiqingwei.github.io/img/20161109/contiki7.png">
-<meta property="og:image" content="http://cuiqingwei.github.io/img/20161109/contiki8.png">
-<meta property="article:published_time" content="2016-11-09T13:04:40.000Z">
-<meta property="article:modified_time" content="2022-06-05T12:36:40.963Z">
+<meta property="article:published_time" content="2022-06-11T12:08:00.000Z">
+<meta property="article:modified_time" content="2022-06-11T12:09:06.025Z">
 <meta property="article:author" content="iZheteng">
-<meta property="article:tag" content="Contiki">
-<meta property="article:tag" content="CC2538">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://cuiqingwei.github.io/img/20161109/contiki4.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -70,7 +59,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Contiki-CC2538 | iZheteng</title>
+<title>智能家居主流无线协议对比分析 | iZheteng</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -311,20 +300,20 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-2016-11-09-Contiki-CC2538" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-2022-06-11-智能家居主流无线协议对比分析" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/11/09/2016-11-09-Contiki-CC2538/" class="article-date">
-      <time datetime="2016-11-09T13:04:40.000Z" itemprop="datePublished">2016-11-09</time>
+      <a href="/2022/06/11/2022-06-11-%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E4%B8%BB%E6%B5%81%E6%97%A0%E7%BA%BF%E5%8D%8F%E8%AE%AE%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90/" class="article-date">
+      <time datetime="2022-06-11T12:08:00.000Z" itemprop="datePublished">2022-06-11</time>
 </a>
 
  
-    <a href="/2016/11/09/2016-11-09-Contiki-CC2538/#comments" title="查看评论">
+    <a href="/2022/06/11/2022-06-11-%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E4%B8%BB%E6%B5%81%E6%97%A0%E7%BA%BF%E5%8D%8F%E8%AE%AE%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90/#comments" title="查看评论">
         <i class="fa fa-comments-o" aria-hidden="true"></i>
         <span class="count-comment"></span>
         
         
-            <span class="disqus-comment-count" data-disqus-identifier="2016/11/09/2016-11-09-Contiki-CC2538/"></span>
+            <span class="disqus-comment-count" data-disqus-identifier="2022/06/11/2022-06-11-智能家居主流无线协议对比分析/"></span>
         
     </a>
 
@@ -339,7 +328,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Contiki-CC2538
+      智能家居主流无线协议对比分析
     </h1>
   
 
@@ -349,10 +338,6 @@
         
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CC2538/" rel="tag">CC2538</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Contiki/" rel="tag">Contiki</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -360,74 +345,121 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="InstantContiki3-0-for-CC2538dk"><a href="#InstantContiki3-0-for-CC2538dk" class="headerlink" title="InstantContiki3.0 for CC2538dk"></a>InstantContiki3.0 for CC2538dk</h1><p>继 <strong>2013</strong> 年<a target="_blank" rel="noopener" href="http://www.amobbs.com/thread-5515866-1-1.html">InstantContiki2.6 for cc2530dk</a>,再写个关于<strong>cc2538dk</strong>的。</p>
-<h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><ol>
-<li>下载安装预装有Contiki的 <em>InstantContiki3.0</em> Ubuntu虚拟机</li>
+        <ol>
+<li>从市场角度分析，目前智能家居两极分化比较严重：</li>
 </ol>
 <ul>
-<li>可参考 -&gt;<a target="_blank" rel="noopener" href="http://www.amobbs.com/thread-5515866-1-1.html">InstantContiki2.6 for cc2530dk</a></li>
-<li>也可见官网 -&gt; <a target="_blank" rel="noopener" href="http://www.contiki-os.org/start.html">http://www.contiki-os.org/start.html</a></li>
+<li><p>toB的智能家居品牌，很多都是采用Zigbee的协议，但是这些品牌的通病是toC的知名度并不高。</p>
+</li>
+<li><p>toC的智能家居品牌，用蓝牙和Wi-Fi的协议比较多，比如小米，现在绝大部分都是蓝牙mesh和Wi-Fi的智能设备。</p>
+</li>
 </ul>
-<ol start="2">
-<li>安装驱动，一般插上板子后会自动安装（无非cp210x、pl2303、ft232、ch341），可以通过以下命令查看：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lsusb</span><br></pre></td></tr></table></figure>
-一般会得到：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">user@instant-contiki:~&#x2F;contiki$ lsusb</span><br><span class="line">Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br><span class="line">Bus 002 Device 014: ID 10c4:ea60 Cygnal Integrated Products, Inc. CP210x UART Bridge &#x2F; myAVR mySmartUSB light</span><br><span class="line">Bus 002 Device 013: ID 0e0f:0008 VMware, Inc.</span><br><span class="line">Bus 002 Device 003: ID 0e0f:0002 VMware, Inc. Virtual USB Hub</span><br><span class="line">Bus 002 Device 002: ID 0e0f:0003 VMware, Inc. Virtual Mouse</span><br><span class="line">Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub</span><br></pre></td></tr></table></figure>
+<p>对于通信协议来说，肯定是Wi-Fi和蓝牙更容易让人理解，也更容易让人接受。Wi-Fi家里都有，蓝牙手机上都有，但是解释起来，蓝牙mesh肯定比Zigbee更让人容易理解就对了。</p>
+<ul>
+<li><p>对于toC而言，不管你愿意不愿意，Wi-Fi和蓝牙mesh协议目前就是设备应用比较多的通信协议。</p>
+</li>
+<li><p>对于toB而言，直接合作的并不是客户，而是房地产开发商，以及各种当地的装修品牌。这个时候又难过zigbee协议，是专业的人一对一的针对性的讲解和普及好坏。所以zigbee通信在toB的品牌比较盛行。</p>
+</li>
+</ul>
 <a id="more"></a>
-<h1 id="cc2538demo"><a href="#cc2538demo" class="headerlink" title="cc2538demo"></a><strong>cc2538demo</strong></h1></li>
+
+
+
+<ol start="2">
+<li>从技术优缺点分析，目前Zigbee是最适合智能家居的技术：</li>
 </ol>
-<p>官方原网址：<br><a target="_blank" rel="noopener" href="https://github.com/contiki-os/contiki/blob/master/platform/cc2538dk/README.md">https://github.com/contiki-os/contiki/blob/master/platform/cc2538dk/README.md</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~&#x2F;contiki&#x2F;examples&#x2F;cc2538dk</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
-<h1 id="下载烧录-cc2538-demo-bin"><a href="#下载烧录-cc2538-demo-bin" class="headerlink" title="下载烧录 cc2538-demo.bin"></a>下载烧录 cc2538-demo.bin</h1><p><img src="/img/20161109/contiki4.png"></p>
-<p>所用工具</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="http://www.ti.com/tool/flash-programmer">SmartRF Flash Programmer 2</a></li>
-<li><a target="_blank" rel="noopener" href="http://www.ghostyu.com/product/41">XDS110-Lite</a></li>
-</ul>
-<p>可以在window下通过smartRF Flash programmer 2来下载border-router.bin文件到cc2538中</p>
-<p><img src="/img/20161109/contiki0.png"></p>
-<p>也可以在Linux下通过串口bootloader安装border-router.elf，其中波特率要设置为115200,8N1。<br>如果想通过串口直接下载，需要手动的设置使能 bootloader，然后使用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ makecc2538-demo.upload</span><br></pre></td></tr></table></figure>
-<p>对于官方demo板的方法：按住select键，并复位板子。</p>
-<p>另外，通过make cc2538-demo.lst 可以看到编译的信息，有助于调试代码。</p>
-<h1 id="串口打印"><a href="#串口打印" class="headerlink" title="串口打印"></a>串口打印</h1><p>由于linux中换行以 <strong>\n</strong> 结尾（用minicom的可忽略）。而windows以 <strong>\r\n</strong> 结尾，在Windows中调试例程需要修改串口调试工具中的设置。</p>
-<p>例如 <strong>putty</strong> 中,[ <strong>\n</strong> 转换为 <strong>\r\n</strong> ]修改设置见下图：</p>
-<p><img src="/img/20161109/contiki1.png"></p>
-<p>当然，还有最爱 <strong>SecureCRT</strong> 设置如下：</p>
-<p><img src="/img/20161109/contiki2.png"></p>
-<h1 id="rpl-border-router-边界路由器"><a href="#rpl-border-router-边界路由器" class="headerlink" title="rpl-border-router 边界路由器"></a><strong>rpl-border-router</strong> 边界路由器</h1><h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~&#x2F;contiki&#x2F;examples&#x2F;ipv6&#x2F;rpl-border-router</span><br><span class="line">make TARGET&#x3D;cc2538dk</span><br></pre></td></tr></table></figure>
-<p>##3 2.节点IEEE/RIME/IPv6地址</p>
-<p>节点一般会根据它们的IEEE地址（MAC地址）来确定它们的IPV6地址，这个IEEE地址可能直接从cc2538的info页读取到，也可以通过硬编码得到，用户可以在编译的时候定义一个2字节的的值，这个值将用于IEEE地址的两个最低有效位。</p>
-<p>设置IEEE地址来源——info页或者硬编码，可以通过定义 <strong>~/contiki/platform/cc2538dk/contiki-conf.h</strong> 中的 <strong>IEEE_ADDR_CONF_HARDCODED</strong> 设定<br><em>如果为0</em> ——从info页中得到；<br><em>如果为1</em> ——从硬编码中得到，即从IEEE_ADDR_CONF_ADDRESS得到。</p>
-<p>当然，也可以重新定义IEEE的最低两位地址，通过：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ make NODEID&#x3D;0x8888</span><br></pre></td></tr></table></figure>
-<p>此外，还可以设置使不同的节点具有不同的IEEE地址。<strong>IPv6中MAC地址不可以重复</strong>！</p>
-<h2 id="测试ipv6-border-router"><a href="#测试ipv6-border-router" class="headerlink" title="测试ipv6 border router"></a>测试ipv6 border router</h2><p>（1）修改border-router.c</p>
-<p>将#define DEBUG <em>DEBUG_NONE</em> 改为 #define DEBUG <strong>DEBUG_PRINT</strong></p>
-<p>（2）在project-conf.h中定义了UIP的最大缓冲值（UIP_CONF_BUFFER_SIZE），可以将它改为更大或删除这句话，从而允许更多的的值。</p>
-<p>（3）编译：<strong>make TARGET=cc2538dk</strong>，<em>因为不是在cc2538的工程中编译，所以需要加上目标平台</em>。</p>
-<p>（4）下载烧录，参考上面。</p>
-<p>（5）编译<a target="_blank" rel="noopener" href="http://blog.csdn.net/gulansheng/article/details/43062191">tunslip6</a>,测试</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd  ~&#x2F;contiki&#x2F;tools&#x2F;</span><br><span class="line">make tunslip6</span><br><span class="line">sudo .&#x2F;tunslip6 aaaa::1&#x2F;64 -s &#x2F;dev&#x2F;ttyUSB0</span><br></pre></td></tr></table></figure>
-<p>执行后，不出意外的话看到router的IPV6地址：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">user@instant-contiki:~&#x2F;contiki&#x2F;tools$ sudo .&#x2F;tunslip6 aaaa::1&#x2F;64 -s &#x2F;dev&#x2F;ttyUSB0</span><br><span class="line">[sudo] password for user:</span><br><span class="line">********SLIP started on &#96;&#96;&#x2F;dev&#x2F;ttyUSB0&#39;&#39;</span><br><span class="line">opened tun device &#96;&#96;&#x2F;dev&#x2F;tun0&#39;&#39;</span><br><span class="line">ifconfig tun0 inet &#96;hostname&#96; mtu 1500 up</span><br><span class="line">ifconfig tun0 add aaaa::1&#x2F;64</span><br><span class="line">ifconfig tun0 add fe80::0:0:0:1&#x2F;64</span><br><span class="line">ifconfig tun0</span><br><span class="line">tun0      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  </span><br><span class="line">          inet addr:127.0.1.1  P-t-P:127.0.1.1  Mask:255.255.255.255</span><br><span class="line">          inet6 addr: fe80::1&#x2F;64 Scope:Link</span><br><span class="line">          inet6 addr: aaaa::1&#x2F;64 Scope:Global</span><br><span class="line">          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1</span><br><span class="line">          RX packets:0 errors:0 dropped:0 overruns:0 frame:0</span><br><span class="line">          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0</span><br><span class="line">          collisions:0 txqueuelen:500</span><br><span class="line">          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)</span><br><span class="line">*** Address:aaaa::1 &#x3D;&gt; aaaa:0000:0000:0000</span><br><span class="line">Got configuration message of type P</span><br><span class="line">Setting prefix aaaa::</span><br><span class="line">created a new RPL dag</span><br><span class="line">Server IPv6 addresses:</span><br><span class="line"> aaaa::212:4b00:5af:84e0</span><br><span class="line"> fe80::212:4b00:5af:84e0</span><br></pre></td></tr></table></figure>
-<p>（6）通信测试</p>
-<p><strong>Ping6</strong> 测试</p>
-<p><em><font color="red">ping6 aaaa::212:4b00:5af:84e0</font></em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">user@instant-contiki:~&#x2F;6lbr&#x2F;examples&#x2F;cc2538dk$ ping6 aaaa::212:4b00:5af:84e0</span><br><span class="line">PING aaaa::212:4b00:5af:84e0(aaaa::212:4b00:5af:84e0) 56 data bytes</span><br><span class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq&#x3D;1 ttl&#x3D;64 time&#x3D;21.1 ms</span><br><span class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq&#x3D;2 ttl&#x3D;64 time&#x3D;21.5 ms</span><br><span class="line">64 bytes from aaaa::212:4b00:5af:84e0: icmp_seq&#x3D;3 ttl&#x3D;64 time&#x3D;21.1 ms</span><br></pre></td></tr></table></figure>
-<p>打开浏览器，地址栏输入 http://[aaaa::212:4b00:5af:84e0]/ 网页访问测试：</p>
-<h2 id="节点联网"><a href="#节点联网" class="headerlink" title="节点联网"></a>节点联网</h2><p>（1）编译，下载烧录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~&#x2F;contiki&#x2F;examples&#x2F;webserver-ipv6</span><br><span class="line">make TARGET&#x3D;cc2538dk NODEID&#x3D;&lt;value&gt;</span><br></pre></td></tr></table></figure>
-<p>（2）查看</p>
-<p>打开浏览器，地址栏输入 http://[aaaa::212:4b00:5af:84e0]/ 查看节点：</p>
-<p>Neighbors<br>fe80::212:4b00:5af:8444<br>Routes<br><strong>aaaa::212:4b00:5af:8444</strong> /128 (via fe80::212:4b00:5af:8444) 1792s</p>
-<p><img src="/img/20161109/contiki5.png"></p>
-<p>（3）ping6测</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">user@instant-contiki:~&#x2F;6lbr&#x2F;examples&#x2F;cc2538dk$ ping6 aaaa::212:4b00:5af:8444</span><br><span class="line">PING aaaa::212:4b00:5af:8444(aaaa::212:4b00:5af:8444) 56 data bytes</span><br><span class="line">64 bytes from aaaa::212:4b00:5af:8444: icmp_seq&#x3D;2 ttl&#x3D;63 time&#x3D;95.9 ms</span><br><span class="line">64 bytes from aaaa::212:4b00:5af:8444: icmp_seq&#x3D;3 ttl&#x3D;63 time&#x3D;340 ms</span><br><span class="line">64 bytes from aaaa::212:4b00:5af:8444: icmp_seq&#x3D;4 ttl&#x3D;63 time&#x3D;91.2 ms</span><br><span class="line">64 bytes from aaaa::212:4b00:5af:8444: icmp_seq&#x3D;5 ttl&#x3D;63 time&#x3D;90.9 ms</span><br><span class="line">64 bytes from aaaa::212:4b00:5af:8444: icmp_seq&#x3D;6 ttl&#x3D;63 time&#x3D;86.7 ms</span><br><span class="line">64 bytes from aaaa::212:4b00:5af:8444: icmp_seq&#x3D;7 ttl&#x3D;63 time&#x3D;82.2 ms</span><br><span class="line">64 bytes from aaaa::212:4b00:5af:8444: icmp_seq&#x3D;8 ttl&#x3D;63 time&#x3D;82.3 ms</span><br><span class="line">64 bytes from aaaa::212:4b00:5af:8444: icmp_seq&#x3D;9 ttl&#x3D;63 time&#x3D;82.0 ms</span><br><span class="line">64 bytes from aaaa::212:4b00:5af:8444: icmp_seq&#x3D;10 ttl&#x3D;63 time&#x3D;77.3 ms</span><br><span class="line">64 bytes from aaaa::212:4b00:5af:8444: icmp_seq&#x3D;11 ttl&#x3D;63 time&#x3D;77.4 ms</span><br></pre></td></tr></table></figure>
-<p>（4）也可 <strong>curl</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">user@instant-contiki:~&#x2F;6lbr&#x2F;examples&#x2F;cc2538dk$ curl -g http:&#x2F;&#x2F;[aaaa::212:4b00:5af:84e0]&#x2F;</span><br><span class="line">&lt;html&gt;&lt;head&gt;&lt;title&gt;ContikiRPL&lt;&#x2F;title&gt;&lt;&#x2F;head&gt;&lt;body&gt;</span><br><span class="line">Neighbors&lt;pre&gt;fe80::212:4b00:5af:8444</span><br><span class="line">&lt;&#x2F;pre&gt;Routes&lt;pre&gt;</span><br><span class="line">aaaa::212:4b00:5af:8444&#x2F;128 (via fe80::212:4b00:5af:8444) 1773s</span><br></pre></td></tr></table></figure>
-<p>（5）<strong>wget</strong> 下载 <em>index.html</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">user@instant-contiki:~&#x2F;6lbr&#x2F;examples&#x2F;cc2538dk$ wget http:&#x2F;&#x2F;[aaaa::212:4b00:5af:84e0]&#x2F;</span><br><span class="line">--2016-11-09 07:27:24--  http:&#x2F;&#x2F;[aaaa::212:4b00:5af:84e0]&#x2F;</span><br><span class="line">Connecting to [aaaa::212:4b00:5af:84e0]:80... connected.</span><br><span class="line">HTTP request sent, awaiting response... 200 OK</span><br><span class="line">Length: unspecified [text&#x2F;html]</span><br><span class="line">Saving to: ‘index.html’</span><br><span class="line"></span><br><span class="line">    [ &lt;&#x3D;&gt;                                   ] 192         --.-K&#x2F;s   in 0.1s    </span><br><span class="line"></span><br><span class="line">2016-11-09 07:27:24 (1.59 KB&#x2F;s) - ‘index.html’ saved [192]</span><br></pre></td></tr></table></figure>
-<p> （6）半导体芯片越做越小，性能越强悍；系统协议越精减，越精简优化。webserver跑在单芯片上也就不稀奇了！</p>
-<p> <img src="/img/20161109/contiki6.png"><br> <img src="/img/20161109/contiki7.png"><br> <img src="/img/20161109/contiki8.png"></p>
+<p><strong>Wi-Fi</strong>：</p>
+<p>Wi-Fi是目前应用最广泛的无线通信技术，传输距离在100-300M，速率可达300Mbps，功耗10-50mA。</p>
+<p>优点：普及最广，接受度最高，传输数据量比较大。</p>
+<p>缺点：也很明显，依赖网络和电力资源，能耗高，一旦断网和断电智能家居就不能用了。当然Wi-Fi模块的成本也是比较高的。</p>
+<p><strong>Zigbee</strong>：</p>
+<p>Zigbee，传输距离50-300M，速率250kbps，功耗5mA，最大特点是可自组网，网络节点数最大可达65000个。</p>
+<p>优点：最大的优点就是可以在断网的情况下自组网。智能家居设备依然可以使用。这个是我们感受最强的，而且延迟小，稳定性也比较好。至于说能耗小，我们是感受不强的，一年换一次电池和三年换一次电池其实我们体感并不强。</p>
+<p>缺点：Zigbee协议的数据传输带宽比较小，穿墙性也不咋地。模块的成本比蓝牙还高。</p>
+<p><strong>蓝牙Mesh</strong>：</p>
+<p> 蓝牙，传输距离2-30M，速率1Mbps，功耗介于Zigbee和Wi-Fi之间。</p>
+<p>优点：成本低，普及度高。</p>
+<p>缺点：就是带宽和稳定性。最致命的是网络节点多的情况下，延发非常大。但是蓝牙mesh这么长时间的发展，稳定性在多个网关加持的情况下，还算是可以的。</p>
+<ol start="3">
+<li>从主要关注点量化分析，单项1-3分评比：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>优势\协议</th>
+<th align="center">Wi-Fi</th>
+<th align="center">蓝牙Mesh</th>
+<th align="center">Zigbee（Thread）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>模块成本</td>
+<td align="center">1</td>
+<td align="center">3</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td>小数据包省电性能</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td>传输带宽</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td>穿墙性能</td>
+<td align="center">3</td>
+<td align="center">1</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td>延迟性能</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td>抗干扰性能</td>
+<td align="center">2</td>
+<td align="center">1</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td>不依赖专用网关</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td>不依赖云执行指令</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td>跨厂家直接互操作性</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td>大数据包省电新年</td>
+<td align="center">3</td>
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td>综合平方</td>
+<td align="center">20分</td>
+<td align="center">18分</td>
+<td align="center">22分</td>
+</tr>
+</tbody></table>
+<p>最后，目前最受业内关注的两个新生态：华为PLC-Iot，还有CSA主推的Matter，虽说PLC-IoT是有线窄带电力猫，传输稳定性上更具优势，但是现在每个家庭中无线产品已经占据主流，成为多数，因此Zigbee更加适合未来方向。而且Matter标准很多互操作性，都将依附Zigbee在行业中的积累为保障。</p>
 
       
     </div>
@@ -436,13 +468,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/11/09/2016-11-09-Contiki-CC2538/">Contiki-CC2538</a></p>
+        <p><span>本文标题:</span><a href="/2022/06/11/2022-06-11-%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E4%B8%BB%E6%B5%81%E6%97%A0%E7%BA%BF%E5%8D%8F%E8%AE%AE%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90/">智能家居主流无线协议对比分析</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页"></a></p>
-        <p><span>发布时间:</span>2016-11-09, 21:04:40</p>
-        <p><span>最后更新:</span>2022-06-05, 20:36:40</p>
+        <p><span>发布时间:</span>2022-06-11, 20:08:00</p>
+        <p><span>最后更新:</span>2022-06-11, 20:09:06</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/11/09/2016-11-09-Contiki-CC2538/" title="Contiki-CC2538">http://cuiqingwei.github.io/2016/11/09/2016-11-09-Contiki-CC2538/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2016/11/09/2016-11-09-Contiki-CC2538/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2022/06/11/2022-06-11-%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E4%B8%BB%E6%B5%81%E6%97%A0%E7%BA%BF%E5%8D%8F%E8%AE%AE%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90/" title="智能家居主流无线协议对比分析">http://cuiqingwei.github.io/2022/06/11/2022-06-11-%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E4%B8%BB%E6%B5%81%E6%97%A0%E7%BA%BF%E5%8D%8F%E8%AE%AE%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2022/06/11/2022-06-11-%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E4%B8%BB%E6%B5%81%E6%97%A0%E7%BA%BF%E5%8D%8F%E8%AE%AE%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -454,16 +486,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/">
-                    Contiki-CC2538-CoAP
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/10/29/2016-10-29-%E5%9F%BA%E4%BA%8EContiki%E7%9A%846lbr%E6%A8%A1%E6%8B%9F%E4%BB%BF%E7%9C%9F/">
-                    基于Contiki的6lbr模拟仿真
+                <a href="/2022/06/08/2022-06-08-%E5%BC%80%E5%A7%8B%E6%8A%98%E8%85%BEiPad%E7%A7%BB%E5%8A%A8%E8%BF%9C%E7%A8%8B%E5%8A%9E%E5%85%AC/">
+                    开始折腾iPad移动远程办公
                 </a>
             </div>
         
@@ -475,7 +501,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#InstantContiki3-0-for-CC2538dk"><span class="toc-number">1.</span> <span class="toc-text">InstantContiki3.0 for CC2538dk</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83"><span class="toc-number">2.</span> <span class="toc-text">环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cc2538demo"><span class="toc-number">3.</span> <span class="toc-text">cc2538demo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E7%83%A7%E5%BD%95-cc2538-demo-bin"><span class="toc-number">4.</span> <span class="toc-text">下载烧录 cc2538-demo.bin</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%B2%E5%8F%A3%E6%89%93%E5%8D%B0"><span class="toc-number">5.</span> <span class="toc-text">串口打印</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rpl-border-router-%E8%BE%B9%E7%95%8C%E8%B7%AF%E7%94%B1%E5%99%A8"><span class="toc-number">6.</span> <span class="toc-text">rpl-border-router 边界路由器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91"><span class="toc-number">6.1.</span> <span class="toc-text">编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95ipv6-border-router"><span class="toc-number">6.2.</span> <span class="toc-text">测试ipv6 border router</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E8%81%94%E7%BD%91"><span class="toc-number">6.3.</span> <span class="toc-text">节点联网</span></a></li></ol></li></ol>
+            
         
     </div>
     <style>
@@ -505,8 +531,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://cuiqingwei.github.io/2016/11/09/2016-11-09-Contiki-CC2538/';
-            this.page.identifier = '2016/11/09/2016-11-09-Contiki-CC2538/';
+            this.page.url = 'http://cuiqingwei.github.io/2022/06/11/2022-06-11-%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E4%B8%BB%E6%B5%81%E6%97%A0%E7%BA%BF%E5%8D%8F%E8%AE%AE%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90/';
+            this.page.identifier = '2022/06/11/2022-06-11-智能家居主流无线协议对比分析/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -545,8 +571,8 @@
 
 
     <script id="dsq-count-scr" src="//cuiqingwei.disqus.com/count.js" async></script>
-    <span class="disqus-comment-count" data-disqus-identifier="2016/11/09/2016-11-09-Contiki-CC2538/"></span>
-    <span class="disqus-comment-count" data-disqus-url="http://cuiqingwei.github.io/2016/11/09/2016-11-09-Contiki-CC2538/"></span>
+    <span class="disqus-comment-count" data-disqus-identifier="2022/06/11/2022-06-11-智能家居主流无线协议对比分析/"></span>
+    <span class="disqus-comment-count" data-disqus-url="http://cuiqingwei.github.io/2022/06/11/2022-06-11-%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E4%B8%BB%E6%B5%81%E6%97%A0%E7%BA%BF%E5%8D%8F%E8%AE%AE%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90/"></span>
     <script>
         $(".disqus-comment-count").hide();
         var $disqusCount = $(".disqus-comment-count");
@@ -565,15 +591,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/" title="上一篇: Contiki-CC2538-CoAP">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/10/29/2016-10-29-%E5%9F%BA%E4%BA%8EContiki%E7%9A%846lbr%E6%A8%A1%E6%8B%9F%E4%BB%BF%E7%9C%9F/" title="下一篇: 基于Contiki的6lbr模拟仿真">
+            <a href="/2022/06/08/2022-06-08-%E5%BC%80%E5%A7%8B%E6%8A%98%E8%85%BEiPad%E7%A7%BB%E5%8A%A8%E8%BF%9C%E7%A8%8B%E5%8A%9E%E5%85%AC/" title="下一篇: 开始折腾iPad移动远程办公">
                 <i class="fa fa-angle-right"></i>
             </a>
         
