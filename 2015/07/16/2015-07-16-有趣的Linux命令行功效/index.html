@@ -15,12 +15,12 @@
 
 
 
-<meta name="description" content="1.sl 命令首先，安装 1$ sudo apt-get install sl  然后，输入 1$ sl  我们看到了动画蒸汽机机头从屏幕右边开往左边。这个火车头是用ASCLL字符绘制。">
+<meta name="description" content="1.sl 命令首先，安装 1$ sudo apt-get install sl 然后，输入 1$ sl 我们看到了动画蒸汽机机头从屏幕右边开往左边。这个火车头是用ASCLL字符绘制。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="有趣的Linux命令行功效">
 <meta property="og:url" content="http://cuiqingwei.github.io/2015/07/16/2015-07-16-%E6%9C%89%E8%B6%A3%E7%9A%84Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8A%9F%E6%95%88/index.html">
 <meta property="og:site_name" content="iZheteng">
-<meta property="og:description" content="1.sl 命令首先，安装 1$ sudo apt-get install sl  然后，输入 1$ sl  我们看到了动画蒸汽机机头从屏幕右边开往左边。这个火车头是用ASCLL字符绘制。">
+<meta property="og:description" content="1.sl 命令首先，安装 1$ sudo apt-get install sl 然后，输入 1$ sl 我们看到了动画蒸汽机机头从屏幕右边开往左边。这个火车头是用ASCLL字符绘制。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2015-07-16T01:08:00.000Z">
 <meta property="article:modified_time" content="2026-02-13T15:58:20.507Z">
@@ -351,73 +351,52 @@
       
           
         <h1 id="1-sl-命令"><a href="#1-sl-命令" class="headerlink" title="1.sl 命令"></a>1.sl 命令</h1><p>首先，安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt-get install sl</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install sl</span><br></pre></td></tr></table></figure>
 <p>然后，输入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sl</span><br></pre></td></tr></table></figure>
-
 <p>我们看到了动画蒸汽机机头从屏幕右边开往左边。这个火车头是用ASCLL字符绘制。</p>
-<span id="more"></span>
+<a id="more"></a>
 
 <p>提供特定的选项如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SYNOPSIS</span><br><span class="line">sl [ -alFe ]</span><br><span class="line">DESCRIPTION</span><br><span class="line">sl Displays animations aimed to correct <span class="built_in">users</span> <span class="built_in">who</span> accidentally enter sl instead of <span class="built_in">ls</span>. SL stands <span class="keyword">for</span> Steam Locomotive.</span><br><span class="line">OPTIONS</span><br><span class="line">-a An accident seems to happen. You\&#x27;ll feel pity <span class="keyword">for</span> people <span class="built_in">who</span> cry <span class="keyword">for</span> <span class="built_in">help</span>.</span><br><span class="line">-l shows little one.</span><br><span class="line">-F It flies.</span><br><span class="line">-e Allow interrupt by Ctrl+C.</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SYNOPSIS</span><br><span class="line">sl [ -alFe ]</span><br><span class="line">DESCRIPTION</span><br><span class="line">sl Displays animations aimed to correct users who accidentally enter sl instead of ls. SL stands <span class="keyword">for</span> Steam Locomotive.</span><br><span class="line">OPTIONS</span><br><span class="line">-a An accident seems to happen. You\<span class="string">&#x27;ll feel pity for people who cry for help.</span></span><br><span class="line"><span class="string">-l shows little one.</span></span><br><span class="line"><span class="string">-F It flies.</span></span><br><span class="line"><span class="string">-e Allow interrupt by Ctrl+C.</span></span><br></pre></td></tr></table></figure>
 <h1 id="2-rev-命令（reverse）"><a href="#2-rev-命令（reverse）" class="headerlink" title="2. rev 命令（reverse）"></a>2. rev 命令（reverse）</h1><p>它会颠倒所输入的字符串。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$rev</span></span><br></pre></td></tr></table></figure>
-
 <p>终端会提示我们通过标准输入提供一个字符串。那么在每行后面我们就可以同时看到输出。<br>比如，我们输入”mylinuxbook”然后按回车。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mylinuxbook</span><br><span class="line">koobxunilym</span><br><span class="line">$ <span class="built_in">cat</span> strings.txt</span><br><span class="line">MyLinuxBook</span><br><span class="line">Linux is so much fun!</span><br><span class="line">Happy Birthday</span><br><span class="line">$ rev strings.txt</span><br><span class="line">kooBxuniLyM</span><br><span class="line">!nuf hcum os si xuniL</span><br><span class="line">yadhtriB yppaH</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mylinuxbook</span><br><span class="line">koobxunilym</span><br><span class="line">$ cat strings.txt</span><br><span class="line">MyLinuxBook</span><br><span class="line">Linux is so much fun!</span><br><span class="line">Happy Birthday</span><br><span class="line">$ rev strings.txt</span><br><span class="line">kooBxuniLyM</span><br><span class="line">!nuf hcum os si xuniL</span><br><span class="line">yadhtriB yppaH</span><br></pre></td></tr></table></figure>
 <h1 id="3-fortune-命令"><a href="#3-fortune-命令" class="headerlink" title="3. fortune 命令"></a>3. fortune 命令</h1><p>我们运行这个命令的时候随机找了一条谚语或信息。<br>首先要对其进行安装：$sudo apt-get install fortune<br>运行这个命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ fortune</span><br><span class="line">You have the power to influence all with whom you come <span class="keyword">in</span> contact.</span><br></pre></td></tr></table></figure>
-
 <h1 id="4-figlet-命令"><a href="#4-figlet-命令" class="headerlink" title="4. figlet 命令"></a>4. figlet 命令</h1><p>这个命令会用大写方式把我们输入的字符串显示在标题栏，显示效果由ASCII字符组成。<br>先安装：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-get install figlet</span><br></pre></td></tr></table></figure>
-
 <p>输入：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ figlet mylinuxbook</span><br></pre></td></tr></table></figure>
-
 <p>你可以试着用”figlet”在脚本标头或源代码中添加标题栏。</p>
 <h1 id="5-toilet-命令"><a href="#5-toilet-命令" class="headerlink" title="5.toilet 命令"></a>5.toilet 命令</h1><p>它是个五颜六色的命令。与figlet一样，它会把文本显示称标题栏，但是效果更好。<br>安装：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-get install toilet</span><br></pre></td></tr></table></figure>
-
 <p>输入：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$toilet</span> mylinuxbook</span><br></pre></td></tr></table></figure>
-
 <p>它比figlet命令的效果更有艺术感。<br>不过，它还可以添加颜色。我们可以运行下列命令看到颜色：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$toilet</span> -f mono12 -F metal mylinuxbook</span><br></pre></td></tr></table></figure>
-
 <h1 id="6-cowsay-命令"><a href="#6-cowsay-命令" class="headerlink" title="6. cowsay 命令"></a>6. cowsay 命令</h1><p>它会用ASCII字符描绘牛，羊和许多其他动物。但是不是每个Linux发行版都带有这个命令。<br>使用下面的命令安装此命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-get install cowsay</span><br></pre></td></tr></table></figure>
-
 <p>现在，运行命令，并在命令中给出一个信息字符串。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$cowsay</span> “Linux is fun”</span><br></pre></td></tr></table></figure>
-
 <p>我们会看到了一个有趣的图像<br>基本上，我们会看到一头牛告诉我们所输入的信息。<br>尽管这个命令中只出现了cow，但其实它还可以有羊的效果。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$cowsay</span> -f sheep “I too love linux”</span><br><span class="line">```　</span><br><span class="line">只需用 <span class="string">&#x27;-l 就能看到它能提供的所有动物。输入：</span></span><br><span class="line"><span class="string">```bash</span></span><br><span class="line"><span class="string">$cowsay -l</span></span><br></pre></td></tr></table></figure>
-
 <p>系统会弹出下列信息：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Cow files <span class="keyword">in</span> /usr/share/cowsay/cows:</span><br><span class="line">apt beavis.zen bong bud-frogs bunny calvin cheese cock cower daemon default</span><br><span class="line">dragon dragon-and-cow duck elephant elephant-in-snake eyes flaming-sheep</span><br><span class="line">ghostbusters gnu head-in hellokitty kiss kitty koala kosh luke-koala</span><br><span class="line">mech-and-cow meow milk moofasa moose mutilated pony pony-smaller ren sheep</span><br><span class="line">skeleton snowman sodomized-sheep stegosaurus stimpy suse three-eyes turkey</span><br><span class="line">turtle tux unipony unipony-smaller vader vader-koala www</span><br></pre></td></tr></table></figure>
-
 <p>因此，我们可以用 ‘-f’ 输入以上信息中的任何动物。如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cowsay -f milk <span class="string">&quot;Do you want to drink?&quot;</span></span><br></pre></td></tr></table></figure>
-
 <p>为了使之更有趣，你可以让cowsay说出fortune信息，如输入：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$fortune</span> | cowsay</span><br></pre></td></tr></table></figure>
-
 <h1 id="7-cmatrix-命令"><a href="#7-cmatrix-命令" class="headerlink" title="7. cmatrix 命令"></a>7. cmatrix 命令</h1><p>这个命令会在终端生成ASCII字符组成的矩阵风格的动画效果。<br>先安装：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt-get install cmatrix</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install cmatrix</span><br></pre></td></tr></table></figure>
 <p>现在运行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cmatrix</span><br></pre></td></tr></table></figure>
-
 <p>用”ctrl+c” 结束，生成动画。</p>
 <h1 id="8-oneko-命令"><a href="#8-oneko-命令" class="headerlink" title="8. oneko 命令"></a>8. oneko 命令</h1><p>我们都知道”猫和老鼠”的动画，这个命令会让我们想起他们的追逐游戏。<br>有了这行命令，我们可以看到一只猫在追老鼠（鼠标指示器）的效果。<br>先安装：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-get install oneko</span><br></pre></td></tr></table></figure>
-
 <p>运行这个命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ oneko</span><br></pre></td></tr></table></figure>
-
 <p>然后你就可以看到不管鼠标指示器放到哪里，Tom猫都会追着跑。下面是截图，不过不足以显示动态的效果.</p>
 <p>即便我们切换应用，猫也不会离开老鼠。它甚至没有局限于终端。<br>想关掉这个的时候，只需在终端里用ctrl+c 结束进程即可。</p>
 

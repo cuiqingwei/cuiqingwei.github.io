@@ -355,16 +355,13 @@
 <li>通过终端命令修改</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;xxx&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;xxx@gmail.com&quot;</span></span><br><span class="line">git config --global <span class="built_in">alias</span> ci commit</span><br><span class="line">git config --global <span class="built_in">alias</span> dog  <span class="built_in">log</span> --all --decorate --oneline --graph</span><br><span class="line">git config --global <span class="built_in">alias</span> mg merge</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li><code>vi ~/.gitconfig</code> 直接修改文件配置也可以</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[user]</span><br><span class="line">	name = xxx</span><br><span class="line">	email = xxx@gmail.com</span><br><span class="line">[<span class="built_in">alias</span>]</span><br><span class="line">	co = checkout</span><br><span class="line">	br = branch</span><br><span class="line">	ci = commit</span><br><span class="line">	st = status</span><br><span class="line">	dog = <span class="built_in">log</span> --all --decorate --oneline --graph</span><br><span class="line">	mg = merge</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
+<a id="more"></a>
 
 <h1 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add -A</span><br><span class="line">git commit -m <span class="string">&quot;备注&quot;</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="分支、合并"><a href="#分支、合并" class="headerlink" title="分支、合并"></a>分支、合并</h1><p>创建分支：<code>git branch f1</code></p>
 <p>删除分支：<code>git branch -d f1</code> _强制_：<code>git branch -D f1</code></p>
 <p>查看所有：<code>git branch -a</code> _查看远程分支_：<code>git branch -r</code></p>

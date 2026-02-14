@@ -15,12 +15,12 @@
 
 
 
-<meta name="description" content="不得不说在命令行，按两次TAB键，列出所有命令！ 硬件信息 CPU:  1cat &#x2F;proc&#x2F;cpuinfo   Memory:  12freecat &#x2F;proc&#x2F;meminfo   Disk Space:  123df -hcat &#x2F;proc&#x2F;mtdcat &#x2F;proc&#x2F;partitions  当然还可以通过dmesg配合grep查看！">
+<meta name="description" content="不得不说在命令行，按两次TAB键，列出所有命令！ 硬件信息 CPU:  1cat &#x2F;proc&#x2F;cpuinfo  Memory:  12freecat &#x2F;proc&#x2F;meminfo  Disk Space:  123df -hcat &#x2F;proc&#x2F;mtdcat &#x2F;proc&#x2F;partitions 当然还可以通过dmesg配合grep查看！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenWRT usefull commands">
 <meta property="og:url" content="http://cuiqingwei.github.io/2015/07/09/2015-07-09-OpenWRT-usefull-commands/index.html">
 <meta property="og:site_name" content="iZheteng">
-<meta property="og:description" content="不得不说在命令行，按两次TAB键，列出所有命令！ 硬件信息 CPU:  1cat &#x2F;proc&#x2F;cpuinfo   Memory:  12freecat &#x2F;proc&#x2F;meminfo   Disk Space:  123df -hcat &#x2F;proc&#x2F;mtdcat &#x2F;proc&#x2F;partitions  当然还可以通过dmesg配合grep查看！">
+<meta property="og:description" content="不得不说在命令行，按两次TAB键，列出所有命令！ 硬件信息 CPU:  1cat &#x2F;proc&#x2F;cpuinfo  Memory:  12freecat &#x2F;proc&#x2F;meminfo  Disk Space:  123df -hcat &#x2F;proc&#x2F;mtdcat &#x2F;proc&#x2F;partitions 当然还可以通过dmesg配合grep查看！">
 <meta property="og:locale">
 <meta property="article:published_time" content="2015-07-09T10:00:00.000Z">
 <meta property="article:modified_time" content="2026-02-13T15:58:20.496Z">
@@ -355,126 +355,100 @@
 <h1 id="硬件信息"><a href="#硬件信息" class="headerlink" title="硬件信息"></a>硬件信息</h1><ul>
 <li>CPU:</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/cpuinfo</span><br></pre></td></tr></table></figure>
 <ul>
 <li>Memory:</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">free</span><br><span class="line"><span class="built_in">cat</span> /proc/meminfo</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">free</span><br><span class="line">cat /proc/meminfo</span><br></pre></td></tr></table></figure>
 <ul>
 <li>Disk Space:</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">df</span> -h</span><br><span class="line"><span class="built_in">cat</span> /proc/mtd</span><br><span class="line"><span class="built_in">cat</span> /proc/partitions</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br><span class="line">cat /proc/mtd</span><br><span class="line">cat /proc/partitions</span><br></pre></td></tr></table></figure>
 <p>当然还可以通过<strong>dmesg</strong>配合grep查看！</p>
-<span id="more"></span>
+<a id="more"></a>
 
 <h1 id="其他信息"><a href="#其他信息" class="headerlink" title="其他信息"></a>其他信息</h1><ul>
 <li>内核信息</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">uname</span> -a</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -a</span><br></pre></td></tr></table></figure>
 <ul>
 <li>内核版本</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">uname</span> -r</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure>
 <ul>
 <li>kernel信息</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dmesg</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>系统日志</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logread</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>进程列表</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>获取运行时间，系统负载率</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">uptime</span></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uptime</span><br></pre></td></tr></table></figure>
 <p><strong>11:45:37 up 3 days, 10:46, load average: 0.00, 0.01, 0.04</strong><br>1、11:45:37 // 系统当前时间<br>2、up 3 days, 10:46 // 主机已运行时间,时间越大，说明你的机器越稳定。<br>3、load average // 系统平均负载，统计最近1，5，15分钟的系统平均负载</p>
 <ul>
 <li>查看环境变量</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">env</span> <span class="comment"># lists environmental variables</span></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">env <span class="comment"># lists environmental variables</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>查找某正在运行进程的进程号</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pidof watchdog</span><br></pre></td></tr></table></figure>
-
 <h1 id="Package管理"><a href="#Package管理" class="headerlink" title="Package管理"></a>Package管理</h1><p><strong>opkg</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg list | grep ppp    <span class="comment">#shows available modules grep filters out name</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>列出已安装</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg list-installed</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>打个包查看</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opkg info firewall</span><br><span class="line">opkg files firewall</span><br></pre></td></tr></table></figure>
-
 <h1 id="web管理"><a href="#web管理" class="headerlink" title="web管理"></a>web管理</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opkg info luci</span><br><span class="line">opkg info luci-ssl</span><br></pre></td></tr></table></figure>
-
-<h1 id="查看DHCP客户端IP"><a href="#查看DHCP客户端IP" class="headerlink" title="查看DHCP客户端IP"></a>查看DHCP客户端IP</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /tmp/dhcp.leases</span><br></pre></td></tr></table></figure>
-
+<h1 id="查看DHCP客户端IP"><a href="#查看DHCP客户端IP" class="headerlink" title="查看DHCP客户端IP"></a>查看DHCP客户端IP</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /tmp/dhcp.leases</span><br></pre></td></tr></table></figure>
 <h1 id="无线信息"><a href="#无线信息" class="headerlink" title="无线信息"></a>无线信息</h1><ul>
 <li>帮助</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iw <span class="built_in">help</span></span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>获取设备的功能</li>
 </ul>
 <p>使用以下方法来获得所有设备的功能，如带宽信息（2.4GHz，和5GHz），和802.11n的信息：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iw list</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>扫描无线路由器/AP</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iw dev wlan0 scan</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>查看连接Openwrt路由的无线客户端：</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iwinfo wlan0 assoclist</span><br><span class="line">iw dev wlan0 station dump</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>查看Openwrt路由无线信息：</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iwinfo wlan0 info</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li>重启无线：</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wifi down &amp;&amp; <span class="built_in">sleep</span> 5 &amp;&amp; wifi</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wifi down &amp;&amp; sleep 5 &amp;&amp; wifi</span><br></pre></td></tr></table></figure>
 <ul>
 <li>一个bash脚本，输出当前无线客户端IP/MAC/名称/速率：</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;# IP address\tname\tMAC address\ttx bit\trx bit&quot;</span></span><br><span class="line"><span class="keyword">for</span> interface <span class="keyword">in</span> `iw dev | grep Interface | <span class="built_in">cut</span> -f 2 -s -d<span class="string">&quot; &quot;</span>`</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  maclist=(`iw dev <span class="variable">$interface</span> station dump | grep Station | <span class="built_in">cut</span> -f 2 -s -d<span class="string">&quot; &quot;</span>`)</span><br><span class="line">  txlist=(`iw dev wlan0 station dump|grep <span class="string">&#x27;tx bitrate&#x27;</span>|awk <span class="string">&#x27;&#123;print $3$4&#125;&#x27;</span>`)</span><br><span class="line">  rxlist=(`iw dev wlan0 station dump|grep <span class="string">&#x27;rx bitrate&#x27;</span>|awk <span class="string">&#x27;&#123;print $3$4&#125;&#x27;</span>`)</span><br><span class="line">  len=<span class="variable">$&#123;#maclist[@]&#125;</span></span><br><span class="line">  <span class="keyword">for</span> ((i=<span class="number">0</span>;i&lt;<span class="variable">$len</span>;i++))</span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">    mac=<span class="variable">$&#123;maclist[$i]&#125;</span></span><br><span class="line">    tx=<span class="variable">$&#123;txlist[$i]&#125;</span></span><br><span class="line">    rx=<span class="variable">$&#123;rxlist[$i]&#125;</span></span><br><span class="line">    ip=<span class="string">&quot;UNKN&quot;</span></span><br><span class="line">    host=<span class="string">&quot;&quot;</span></span><br><span class="line">    ip=`<span class="built_in">cat</span> /tmp/dhcp.leases | <span class="built_in">cut</span> -f 2,3,4 -s -d<span class="string">&quot; &quot;</span> | grep <span class="variable">$mac</span> | <span class="built_in">cut</span> -f 2 -s -d<span class="string">&quot; &quot;</span>`</span><br><span class="line">    host=`<span class="built_in">cat</span> /tmp/dhcp.leases | <span class="built_in">cut</span> -f 2,3,4 -s -d<span class="string">&quot; &quot;</span> | grep <span class="variable">$mac</span> | <span class="built_in">cut</span> -f 3 -s -d<span class="string">&quot; &quot;</span>`</span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$ip</span>\t<span class="variable">$host</span>\t<span class="variable">$mac</span>\t<span class="variable">$tx</span>\t<span class="variable">$rx</span>&quot;</span>|awk <span class="string">&#x27;&#123;printf &quot;%-15s %-25s %-15s %-10s %-10s\n&quot;,$1,$2,$3,$4,$5&#125;&#x27;</span></span><br><span class="line">  <span class="keyword">done</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="查看gpio口的信息"><a href="#查看gpio口的信息" class="headerlink" title="查看gpio口的信息"></a>查看gpio口的信息</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /sys/kernel/debug/gpio</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">&quot;# IP address\tname\tMAC address\ttx bit\trx bit&quot;</span></span><br><span class="line"><span class="keyword">for</span> interface <span class="keyword">in</span> `iw dev | grep Interface | cut -f 2 -s -d<span class="string">&quot; &quot;</span>`</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  maclist=(`iw dev <span class="variable">$interface</span> station dump | grep Station | cut -f 2 -s -d<span class="string">&quot; &quot;</span>`)</span><br><span class="line">  txlist=(`iw dev wlan0 station dump|grep <span class="string">&#x27;tx bitrate&#x27;</span>|awk <span class="string">&#x27;&#123;print $3$4&#125;&#x27;</span>`)</span><br><span class="line">  rxlist=(`iw dev wlan0 station dump|grep <span class="string">&#x27;rx bitrate&#x27;</span>|awk <span class="string">&#x27;&#123;print $3$4&#125;&#x27;</span>`)</span><br><span class="line">  len=<span class="variable">$&#123;#maclist[@]&#125;</span></span><br><span class="line">  <span class="keyword">for</span> ((i=0;i&lt;<span class="variable">$len</span>;i++))</span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">    mac=<span class="variable">$&#123;maclist[$i]&#125;</span></span><br><span class="line">    tx=<span class="variable">$&#123;txlist[$i]&#125;</span></span><br><span class="line">    rx=<span class="variable">$&#123;rxlist[$i]&#125;</span></span><br><span class="line">    ip=<span class="string">&quot;UNKN&quot;</span></span><br><span class="line">    host=<span class="string">&quot;&quot;</span></span><br><span class="line">    ip=`cat /tmp/dhcp.leases | cut -f 2,3,4 -s -d<span class="string">&quot; &quot;</span> | grep <span class="variable">$mac</span> | cut -f 2 -s -d<span class="string">&quot; &quot;</span>`</span><br><span class="line">    host=`cat /tmp/dhcp.leases | cut -f 2,3,4 -s -d<span class="string">&quot; &quot;</span> | grep <span class="variable">$mac</span> | cut -f 3 -s -d<span class="string">&quot; &quot;</span>`</span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$ip</span>\t<span class="variable">$host</span>\t<span class="variable">$mac</span>\t<span class="variable">$tx</span>\t<span class="variable">$rx</span>&quot;</span>|awk <span class="string">&#x27;&#123;printf &quot;%-15s %-25s %-15s %-10s %-10s\n&quot;,$1,$2,$3,$4,$5&#125;&#x27;</span></span><br><span class="line">  <span class="keyword">done</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h1 id="查看gpio口的信息"><a href="#查看gpio口的信息" class="headerlink" title="查看gpio口的信息"></a>查看gpio口的信息</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /sys/kernel/debug/gpio</span><br></pre></td></tr></table></figure>
 <h1 id="USB"><a href="#USB" class="headerlink" title="USB"></a>USB</h1><ul>
 <li>查看USB连接设备</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /sys/kernel/debug/usb/devices</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /sys/kernel/debug/usb/devices</span><br></pre></td></tr></table></figure>
 <h1 id="uci"><a href="#uci" class="headerlink" title="uci"></a>uci</h1><p><strong>uci (command) [arguments]</strong></p>
 <p><em>Example:</em></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">uci <span class="built_in">set</span> dhcp.lan.leasetime=4h</span><br><span class="line">uci get dhcp.lan.leasetime</span><br><span class="line">uci show dhcp</span><br><span class="line">uci changes</span><br><span class="line">uci commit</span><br></pre></td></tr></table></figure>
-
 <h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p><strong>swconfig</strong> 配置交换机;</p>
 <p><strong>iwinfo</strong> 是OpenWrt中提供无线相关信息读取的软件.其中内置了诸如WEXT NL80211 madwifi等等驱动的各种信息读取方式.把不同类型的驱动整合出一个统一的接口供luci等使用;</p>
 <p><strong>iwpriv iwlist iwconfig</strong> 是WEXT类型无线驱动专用的操作程序.</p>

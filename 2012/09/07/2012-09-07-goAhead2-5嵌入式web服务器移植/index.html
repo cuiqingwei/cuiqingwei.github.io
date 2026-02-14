@@ -352,14 +352,13 @@
       
           
         <h1 id="1-GoAhead-Web服务器介绍"><a href="#1-GoAhead-Web服务器介绍" class="headerlink" title="1. GoAhead Web服务器介绍"></a>1. GoAhead Web服务器介绍</h1><p>goAhead Web服务器，小巧、精致，提供了值得称道的性能，特别适合于嵌入式系统，因此，在很多嵌入式产品如路由器中都用到了goAhead作为嵌入式web服务器。</p>
-<span id="more"></span>
+<a id="more"></a>
 
 <p>goAhead Web服务器，具有如下特点：<br>支持ASP；<br>嵌入式的JavaScript，即Ejscript；<br>支持内存中的CGI处理；<br>快速响应，每秒中可处理超过65个请求；<br>符合HTTP1.0/HTTP1.1标准；<br>拥有众多扩展API，方便用户开发；<br>支持SSL3.0（Secure Sockets Layer），如MatrixSSL（最新版本为：MatrixSSL 3-2）；<br>支持用户群组管理；<br>支持DAA访问认证；<br>占用很小内存，如果不包含SSL，仅要求60K内存；包含SSL，要求500K内存；<br>Web页面可存在于ROM或文件系统中；<br>支持多种操作系统，如linux、wince、vxworks等等；</p>
 <p>当前最新版本为：WebServer 2.5，本次移植即是这个版本。</p>
 <h1 id="2-获取Goahead源码包"><a href="#2-获取Goahead源码包" class="headerlink" title="2. 获取Goahead源码包"></a>2. 获取Goahead源码包</h1><p>地址为：<br><a target="_blank" rel="noopener" href="http://velep.com/archives/321.html">http://velep.com/archives/321.html</a><br><a target="_blank" rel="noopener" href="http://velep.com/download/webs-2-5.tar.gz">http://velep.com/download/webs-2-5.tar.gz</a><br>当前最新版本为：WebServer 2.5</p>
 <p>下载后，解压压缩包：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#tar -xzvf webs-2-5.tar.gz</span></span><br><span class="line"><span class="comment">#cd webs-2-5/</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="3-goAhead源码结构"><a href="#3-goAhead源码结构" class="headerlink" title="3. goAhead源码结构"></a>3. goAhead源码结构</h1><p>进入goAhead的源码目录webs-2-5/，很容易了解其源码结构。<br>webs-2-5/</p>
 <pre><code>    | 各种OS移植子目录，分别有：CE、ECOS、LINUX、LYNX、MACOSX、NW、QNX4、VXWORKS、WIN
 
@@ -369,8 +368,7 @@
 
     | wwwdemo：goAhead带的demo网页，里面包含了goAhead的一些文档
 
-    | goAhead服务器源程序文件(C程序文件)
-</code></pre>
+    | goAhead服务器源程序文件(C程序文件)</code></pre>
 <p>从上面可以看到，goAhead支持window系统的，有兴趣的可以在PC机上移植试试。<br>得到源码后，建议用source insight等工具建一个goAhead工程，便于代码的阅读或者查询API函数等。</p>
 <h1 id="4-goAhead自带帮助文档"><a href="#4-goAhead自带帮助文档" class="headerlink" title="4. goAhead自带帮助文档"></a>4. goAhead自带帮助文档</h1><p>进入goAhead的wwwdemo目录，找到Webs25GettingStarted.pdf文件，这就是goAhead带的帮助文档，移植前，建议先看下。</p>
 <h1 id="5-GoAhead-Web服务器移植到arm-linux步骤"><a href="#5-GoAhead-Web服务器移植到arm-linux步骤" class="headerlink" title="5. GoAhead Web服务器移植到arm-linux步骤"></a>5. GoAhead Web服务器移植到arm-linux步骤</h1><p>在获取源码包并解压后，现在把goAhead移植到arm-linux中，arm指at91sam9g35，linux-2.6.39。<br>移植步骤很简单，基本上在编译阶段不会出现什么问题，而且这几个步骤在网上诸多博客中都有说明。但在测试服务器的时候，遇到了问题，在浏览器死活都打不开网页，不过，最终还是解决了，请看下面说明。</p>
@@ -378,22 +376,15 @@
 
 Makefile文件默认是虚拟机的本身的GCC编译器，因此，指定其交叉编译器，注意，交叉编译器的版本应与你的文件系统用的交叉编译器一致。
 
-在Makefile文件开头添加如下信息：
-</code></pre>
+在Makefile文件开头添加如下信息：</code></pre>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># add by: cuiqingwei</span></span><br><span class="line">CROSS_COMPILE   =/opt/arm-2007q1/bin/arm-none-linux-gnueabi-</span><br><span class="line">AS      = $(CROSS_COMPILE)as</span><br><span class="line">LD      = $(CROSS_COMPILE)ld</span><br><span class="line">CC      = $(CROSS_COMPILE)gcc</span><br><span class="line">CPP     = $(CC) -E</span><br><span class="line">AR      = $(CROSS_COMPILE)ar</span><br><span class="line">NM      = $(CROSS_COMPILE)nm</span><br><span class="line">STRIP   = $(CROSS_COMPILE)strip</span><br><span class="line">OBJCOPY = $(CROSS_COMPILE)objcopy</span><br><span class="line">OBJDUMP = $(CROSS_COMPILE)objdump</span><br></pre></td></tr></table></figure>
-
-<pre><code>同时把Makefile中的语句：
-</code></pre>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">matrixsslDir:=$(shell <span class="built_in">ls</span> -d ../matrixssl-3-1*/)</span><br></pre></td></tr></table></figure>
-
-<pre><code>屏蔽掉。这一句是用来启动SSL matrixssl的，具体参考Webs25GettingStarted.pdf文档中的说明（Page8）。
-</code></pre>
+<pre><code>同时把Makefile中的语句：</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">matrixsslDir:=$(shell ls -d ../matrixssl-3-1*/)</span><br></pre></td></tr></table></figure>
+<pre><code>屏蔽掉。这一句是用来启动SSL matrixssl的，具体参考Webs25GettingStarted.pdf文档中的说明（Page8）。</code></pre>
 <h2 id="5-2-修改LINUX-main-c文件：initWebs-函数中指定IP地址"><a href="#5-2-修改LINUX-main-c文件：initWebs-函数中指定IP地址" class="headerlink" title="5.2 修改LINUX/main.c文件：initWebs()函数中指定IP地址"></a>5.2 修改LINUX/main.c文件：initWebs()函数中指定IP地址</h2><pre><code>由于LINUX/main.c文件：initWebs()函数中原程序无法正确获得服务器IP；因此置服务器一个静态IP地址。
 
-修改如下：
-</code></pre>
+修改如下：</code></pre>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *	Define the local Ip address, host name, default home page and the</span></span><br><span class="line"><span class="comment"> *	root web directory.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/* del by: cuiqingwei</span></span><br><span class="line"><span class="comment">	if (gethostname(host, sizeof(host)) &lt; 0) &#123;</span></span><br><span class="line"><span class="comment">		error(E_L, E_LOG, T(&quot;Can&#x27;t get hostname&quot;));</span></span><br><span class="line"><span class="comment">		return -1;</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">	if ((hp = gethostbyname(host)) == NULL) &#123;</span></span><br><span class="line"><span class="comment">		error(E_L, E_LOG, T(&quot;Can&#x27;t get host address&quot;));</span></span><br><span class="line"><span class="comment">		return -1;</span></span><br><span class="line"><span class="comment">	&#125;</span></span><br><span class="line"><span class="comment">	memcpy((char *) &amp;intaddr, (char *) hp-&gt;h_addr_list[0],</span></span><br><span class="line"><span class="comment">		(size_t) hp-&gt;h_length);</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">	intaddr.s_addr = inet_addr(T(<span class="string">&quot;192.168.1.159&quot;</span>));     <span class="comment">// add by: cuiqnigwei</span></span><br></pre></td></tr></table></figure>
-
 <h2 id="5-3-编译：make-clean-make"><a href="#5-3-编译：make-clean-make" class="headerlink" title="5.3 编译：make clean;make"></a>5.3 编译：make clean;make</h2><pre><code>在shell中进入LINUX目录下，执行命令
 make clean
 make
@@ -405,69 +396,42 @@ arm-none-linux-gnueabi-readelf -a webs &gt;a.txt
 
 其中，arm-none-linux-gnueabi-依你用的交叉编译器而定。
 
-查看得到a.txt,如下信息：
-</code></pre>
+查看得到a.txt,如下信息：</code></pre>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">Program Headers:</span><br><span class="line">  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align</span><br><span class="line">  EXIDX          0x00f074 0x00017074 0x00017074 0x00008 0x00008 R   0x4</span><br><span class="line">  PHDR           0x000034 0x00008034 0x00008034 0x00100 0x00100 R E 0x4</span><br><span class="line">  INTERP         0x000134 0x00008134 0x00008134 0x00013 0x00013 R   0x1</span><br><span class="line">	  [Requesting program interpreter: /lib/ld-linux.so.3]</span><br><span class="line">  LOAD           0x000000 0x00008000 0x00008000 0x0f080 0x0f080 R E 0x8000</span><br><span class="line">  LOAD           0x00f080 0x0001f080 0x0001f080 0x0063c 0x007e0 RW  0x8000</span><br><span class="line">  DYNAMIC        0x00f08c 0x0001f08c 0x0001f08c 0x000e8 0x000e8 RW  0x4</span><br><span class="line">  NOTE           0x000148 0x00008148 0x00008148 0x00020 0x00020 R   0x4</span><br><span class="line">  GNU_STACK      0x000000 0x00000000 0x00000000 0x00000 0x00000 RW  0x4</span><br><span class="line">....</span><br><span class="line">Dynamic section at offset 0xf08c contains 24 entries:</span><br><span class="line">  Tag        Type                         Name/Value</span><br><span class="line"> 0x00000001 (NEEDED)                     Shared library: [libc.so.6]</span><br><span class="line"> 0x0000000c (INIT)                       0x8ddc</span><br><span class="line"> 0x0000000d (FINI)                       0x158f0</span><br><span class="line"> 0x00000019 (INIT_ARRAY)                 0x1f080</span><br><span class="line"> 0x0000001b (INIT_ARRAYSZ)               4 (bytes)</span><br><span class="line"> 0x0000001a (FINI_ARRAY)                 0x1f084</span><br><span class="line"> 0x0000001c (FINI_ARRAYSZ)               4 (bytes)</span><br><span class="line"> 0x00000004 (HASH)                       0x8168</span><br><span class="line"> 0x00000005 (STRTAB)                     0x886c</span><br><span class="line"> 0x00000006 (SYMTAB)                     0x83ac</span><br><span class="line"> 0x0000000a (STRSZ)                      615 (bytes)</span><br><span class="line"> 0x0000000b (SYMENT)                     16 (bytes)</span><br><span class="line"> 0x00000015 (DEBUG)                      0x0</span><br><span class="line"> 0x00000003 (PLTGOT)                     0x1f174</span><br><span class="line"> 0x00000002 (PLTRELSZ)                   584 (bytes)</span><br><span class="line"> 0x00000014 (PLTREL)                     REL</span><br><span class="line"> 0x00000017 (JMPREL)                     0x8b94</span><br><span class="line"> 0x00000011 (REL)                        0x8b8c</span><br><span class="line"> 0x00000012 (RELSZ)                      8 (bytes)</span><br><span class="line"> 0x00000013 (RELENT)                     8 (bytes)</span><br><span class="line"> 0x6ffffffe (VERNEED)                    0x8b6c</span><br><span class="line"> 0x6fffffff (VERNEEDNUM)                 1</span><br><span class="line"> 0x6ffffff0 (VERSYM)                     0x8ad4</span><br><span class="line"> 0x00000000 (NULL)                       0x0</span><br></pre></td></tr></table></figure>
-
-<pre><code>从上面可看到，webs依赖ld-linux.so.3和libc.so.6两个动态文件，查看文件系统中lib目录下是否包含了这动态文件，如果没有，则需从交叉编译器安装路径中获取这个动态库文件到文件系统lib目录中。
-</code></pre>
+<pre><code>从上面可看到，webs依赖ld-linux.so.3和libc.so.6两个动态文件，查看文件系统中lib目录下是否包含了这动态文件，如果没有，则需从交叉编译器安装路径中获取这个动态库文件到文件系统lib目录中。</code></pre>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /opt/arm-2007q1</span><br></pre></td></tr></table></figure>
-
-<pre><code>查找文件
-</code></pre>
+<pre><code>查找文件</code></pre>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find -name ld-linux.so.3</span><br></pre></td></tr></table></figure>
-
-<pre><code>得出结果
-</code></pre>
+<pre><code>得出结果</code></pre>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">./arm-none-linux-gnueabi/libc/thumb2/lib/ld-linux.so.3</span><br><span class="line">./arm-none-linux-gnueabi/libc/lib/ld-linux.so.3</span><br><span class="line">./arm-none-linux-gnueabi/libc/armv4t/lib/ld-linux.so.3</span><br><span class="line">./arm-none-linux-gnueabi/libc/marvell-f/lib/ld-linux.so.3</span><br></pre></td></tr></table></figure>
-
-<pre><code>复制ld-linux.so.3
-</code></pre>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> arm-none-linux-gnueabi/libc/armv4t/lib/ld-linux.so.3 开发板/lib</span><br></pre></td></tr></table></figure>
-
-<pre><code>查找文件
-</code></pre>
+<pre><code>复制ld-linux.so.3</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp arm-none-linux-gnueabi/libc/armv4t/lib/ld-linux.so.3 开发板/lib</span><br></pre></td></tr></table></figure>
+<pre><code>查找文件</code></pre>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find -name libc.so.6</span><br></pre></td></tr></table></figure>
-
-<pre><code>得出结果
-</code></pre>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">./arm-none-linux-gnueabi/libc/thumb2/lib/libc.so.6</span><br><span class="line">./arm-none-linux-gnueabi/libc/lib/libc.so.6</span><br><span class="line">./arm-none-linux-gnueabi/libc/armv4t/lib/libc.so.6</span><br><span class="line">./arm-none-linux-gnueabi/libc/marvell-f/lib/libc.so.6</span><br><span class="line">复制libc.so.6</span><br><span class="line"><span class="built_in">cp</span> arm-none-linux-gnueabi/libc/armv4t/lib/libc.so.6 开发板/lib</span><br></pre></td></tr></table></figure>
-
+<pre><code>得出结果</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">./arm-none-linux-gnueabi/libc/thumb2/lib/libc.so.6</span><br><span class="line">./arm-none-linux-gnueabi/libc/lib/libc.so.6</span><br><span class="line">./arm-none-linux-gnueabi/libc/armv4t/lib/libc.so.6</span><br><span class="line">./arm-none-linux-gnueabi/libc/marvell-f/lib/libc.so.6</span><br><span class="line">复制libc.so.6</span><br><span class="line">cp arm-none-linux-gnueabi/libc/armv4t/lib/libc.so.6 开发板/lib</span><br></pre></td></tr></table></figure>
 <h2 id="5-4-测试webs服务器"><a href="#5-4-测试webs服务器" class="headerlink" title="5.4 测试webs服务器"></a>5.4 测试webs服务器</h2><pre><code>用FTP把webs执行文件传到目标板中，本人把其放到了/mnt/webs/目录中。
 
-配置开发版IP地址
-</code></pre>
+配置开发版IP地址</code></pre>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig eth0 192.168.1.159</span><br></pre></td></tr></table></figure>
-
-<pre><code>挂载NFS
-</code></pre>
+<pre><code>挂载NFS</code></pre>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount 192.168.1.158:/srv/nfs /mnt</span><br></pre></td></tr></table></figure>
-
-<pre><code>运行web服务
-</code></pre>
+<pre><code>运行web服务</code></pre>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./webs &amp;</span><br></pre></td></tr></table></figure>
-
-<pre><code>杀死web服务
-</code></pre>
+<pre><code>杀死web服务</code></pre>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">killall webs</span><br></pre></td></tr></table></figure>
-
 <pre><code>在PC机用IE浏览器浏览goAhead服务器的网页，输入http://192.168.1.159:8080/
 
-运行webdemo服务
-</code></pre>
+运行webdemo服务</code></pre>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./webs -demo &amp;</span><br></pre></td></tr></table></figure>
-
-<pre><code>杀死web服务
-</code></pre>
+<pre><code>杀死web服务</code></pre>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">killall webs</span><br></pre></td></tr></table></figure>
-
 <pre><code>需要注意的是，在goAhead2.5版本中，web网页的根目录是在webs程序的../www或../wwwdemo(webs执行时带-demo参数)中，
 这一点可查看LINUX/main.c    文件中190行处代码和注释。因此，把goAhead源码目录下的www和wwwdemo两文件夹传用FTP传到/mnt/目录下。
 
 在PC机用IE浏览器浏览goAhead服务器的网页，输入http://192.168.1.159:8080/
 
-192.168.1.159是目标板的IP地址即goAhead服务器的地址，8080是goAhead用的端口号，这是默认的端口号，定义在webs.h文件。
-</code></pre>
+192.168.1.159是目标板的IP地址即goAhead服务器的地址，8080是goAhead用的端口号，这是默认的端口号，定义在webs.h文件。</code></pre>
 
       
     </div>

@@ -342,8 +342,7 @@
       
           
               <h2 id="2016-04-23-Openwrt-Yun"><a href="#2016-04-23-Openwrt-Yun" class="headerlink" title="2016-04-23 Openwrt Yun"></a>2016-04-23 Openwrt Yun</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash -ex</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="FEEDS"><a href="#FEEDS" class="headerlink" title="FEEDS"></a>FEEDS</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./scripts/feeds uninstall -a</span><br><span class="line"><span class="built_in">rm</span> -rf feeds</span><br><span class="line">./scripts/feeds update -a</span><br><span class="line">./scripts/feeds install -a</span><br><span class="line">./scripts/feeds uninstall erlang freeswitch remotefs libzstream shflags opensips pulseaudio xmlrpc-c rtorrent sox umurmur-polarssl freecwmp-zstream osirisd logtrigger libplist libimobiledevice cmus mxml boost wt etherpuppet php4 aprx n2n pdnsd crtmpserver kissdx openconnect telepathy-python alljoyn</span><br></pre></td></tr></table></figure>
+<h3 id="FEEDS"><a href="#FEEDS" class="headerlink" title="FEEDS"></a>FEEDS</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./scripts/feeds uninstall -a</span><br><span class="line">rm -rf feeds</span><br><span class="line">./scripts/feeds update -a</span><br><span class="line">./scripts/feeds install -a</span><br><span class="line">./scripts/feeds uninstall erlang freeswitch remotefs libzstream shflags opensips pulseaudio xmlrpc-c rtorrent sox umurmur-polarssl freecwmp-zstream osirisd logtrigger libplist libimobiledevice cmus mxml boost wt etherpuppet php4 aprx n2n pdnsd crtmpserver kissdx openconnect telepathy-python alljoyn</span><br></pre></td></tr></table></figure>
           
       
     </div>
@@ -864,9 +863,8 @@
               <h3 id="1-Mac"><a href="#1-Mac" class="headerlink" title="1.Mac"></a>1.Mac</h3><p>使用<strong>pbcopy</strong>命令。 # 对应有个<strong>pbpaste</strong>命令。</p>
 <p>示例：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;Hello World!&#x27;</span> | pbcopy</span><br></pre></td></tr></table></figure>
-
 <p>将字符串Hello World放入剪贴板</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> myFile.txt | pbcopy</span><br><span class="line">pbpaste &gt; file.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat myFile.txt | pbcopy</span><br><span class="line">pbpaste &gt; file.txt</span><br></pre></td></tr></table></figure>
           
       
     </div>
@@ -942,7 +940,6 @@
               <h3 id="Mac入门"><a href="#Mac入门" class="headerlink" title="Mac入门"></a>Mac入门</h3><p><a target="_blank" rel="noopener" href="http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html">http://www.cnblogs.com/TankXiao/archive/2013/01/05/2845413.html</a></p>
 <p><em>改launchpad图标大小,如下改成8行,8列：</em></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.dock springboard-columns -int 8</span><br><span class="line">defaults write com.apple.dock springboard-rows -int 8</span><br><span class="line">killall Dock</span><br></pre></td></tr></table></figure>
-
 <h3 id="1-AppStore"><a href="#1-AppStore" class="headerlink" title="1. AppStore"></a>1. AppStore</h3><p><a target="_blank" rel="noopener" href="http://www.tuicool.com/articles/yeyIfuu">Go2Shell</a>、Chrome、The Unarchiver、Xcode、Easy New File Creator…</p>
 <h3 id="2-dmg安装"><a href="#2-dmg安装" class="headerlink" title="2. dmg安装"></a>2. dmg安装</h3><p>Alfred <a target="_blank" rel="noopener" href="https://www.alfredapp.com/">https://www.alfredapp.com/</a><br>go2shell <a target="_blank" rel="noopener" href="https://zipzapmac.com/go2shell">https://zipzapmac.com/go2shell</a><br>cheatsheet <a target="_blank" rel="noopener" href="https://cheatsheet-mac.en.softonic.com/mac#tab-review">https://cheatsheet-mac.en.softonic.co…</a><br>IINA: <a target="_blank" rel="noopener" href="https://iina.io/">https://iina.io/</a><br>Magnet <a target="_blank" rel="noopener" href="https://magnet.crowdcafe.com/index.html">https://magnet.crowdcafe.com/index.html</a></p>
           
@@ -1019,8 +1016,7 @@
           
               <h3 id="1-常用指令"><a href="#1-常用指令" class="headerlink" title="1.常用指令"></a>1.常用指令</h3><pre><code> 版本查看：
        cat /etc/issue
-       sudo lsb_release -a
-</code></pre>
+       sudo lsb_release -a</code></pre>
           
       
     </div>

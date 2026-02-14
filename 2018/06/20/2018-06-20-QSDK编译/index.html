@@ -360,17 +360,15 @@
 <li>drivers/spi – added modes to QCA spi driver – GPLv2</li>
 <li>drivers/mtd/nand/ – new QCA NAND flash controller driver – ISC</li>
 </ul>
-<span id="more"></span>
+<a id="more"></a>
 
 <p>编译步骤如下：（基于debian服务器）</p>
 <p>1、安装开发所需软件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gcc g++ binutils patch bzip2 flex make gettext pkg-config unzip zlib1g-dev libc6-dev subversion libncurses5-dev</span><br><span class="line">sudo apt-get install gawk sharutils curl libxml-parser-perl ocaml-nox</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gcc g++ binutils patch bzip2 flex make gettext pkg-config unzip zlib1g-dev libc6-dev subversion libncurses5-dev</span><br><span class="line">sudo apt-get install gawk sharutils curl libxml-parser-perl ocaml-nox</span><br></pre></td></tr></table></figure>
 <p>2、安装repo和git</p>
 <p>见 <a target="_blank" rel="noopener" href="http://www.cnblogs.com/rohens-hbg/p/4916452.html">http://www.cnblogs.com/rohens-hbg/p/4916452.html</a></p>
 <p>3、下载qsdk相关文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">repo init -u git://codeaurora.org/quic/qsdk/releases/manifest/qstak -b release -m  caf_AU_LINUX_QSDK_RELEASE_BANANA_SW_TARGET_ALL.2.7.029.xml</span><br><span class="line">repo sync</span><br><span class="line">mkdir -p qsdk/dl</span><br><span class="line">tar xjvf qsdk-qca-wifi-2.7.029.tar.bz2 -C qsdk</span><br><span class="line">tar xjvf qsdk-qca-wlan-2.7.029.tar.bz2 -C qsdk</span><br><span class="line">tar xjvf qsdk-qca-shortcut-fe-2.7.029.tar.bz2 -c qsdk</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">repo init -u git:&#x2F;&#x2F;codeaurora.org&#x2F;quic&#x2F;qsdk&#x2F;releases&#x2F;manifest&#x2F;qstak -b release -m  caf_AU_LINUX_QSDK_RELEASE_BANANA_SW_TARGET_ALL.2.7.029.xml</span><br><span class="line">repo sync</span><br><span class="line">mkdir -p qsdk&#x2F;dl</span><br><span class="line">tar xjvf qsdk-qca-wifi-2.7.029.tar.bz2 -C qsdk</span><br><span class="line">tar xjvf qsdk-qca-wlan-2.7.029.tar.bz2 -C qsdk</span><br><span class="line">tar xjvf qsdk-qca-shortcut-fe-2.7.029.tar.bz2 -c qsdk</span><br></pre></td></tr></table></figure>
 <p>4、编译</p>
 <ol>
 <li><p>cd qsdk</p>

@@ -713,17 +713,15 @@
               <h1 id="一、linux打补丁方法"><a href="#一、linux打补丁方法" class="headerlink" title="一、linux打补丁方法"></a>一、linux打补丁方法</h1><h2 id="1、处理单个文件补丁的方法："><a href="#1、处理单个文件补丁的方法：" class="headerlink" title="1、处理单个文件补丁的方法："></a>1、处理单个文件补丁的方法：</h2><ul>
 <li>产生补丁</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diff -uN from-file to-file &gt;to-file.patch</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diff -uN from-file to-file &gt;to-file.patch</span><br></pre></td></tr></table></figure>
 <ul>
 <li>打补丁</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">patch -p0 &lt; to-file.patch</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">patch -p0 &lt; to-file.patch</span><br></pre></td></tr></table></figure>
 <ul>
 <li>取消补丁</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">patch -RE -p0 &lt; to-file.patch</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">patch -RE -p0 &lt; to-file.patch</span><br></pre></td></tr></table></figure>
           
       
     </div>
@@ -797,10 +795,9 @@
       
           
               <p><strong>Tab</strong> 键自动补全<br>管道符命令　</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> | grep really</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls | grep really</span><br></pre></td></tr></table></figure>
 <p>通配符</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> really*name</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm really*name</span><br></pre></td></tr></table></figure>
           
       
     </div>
@@ -1021,11 +1018,9 @@
       
           
               <h1 id="1-sl-命令"><a href="#1-sl-命令" class="headerlink" title="1.sl 命令"></a>1.sl 命令</h1><p>首先，安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt-get install sl</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install sl</span><br></pre></td></tr></table></figure>
 <p>然后，输入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sl</span><br></pre></td></tr></table></figure>
-
 <p>我们看到了动画蒸汽机机头从屏幕右边开往左边。这个火车头是用ASCLL字符绘制。</p>
           
       
@@ -1103,18 +1098,15 @@
 <h1 id="硬件信息"><a href="#硬件信息" class="headerlink" title="硬件信息"></a>硬件信息</h1><ul>
 <li>CPU:</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /proc/cpuinfo</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/cpuinfo</span><br></pre></td></tr></table></figure>
 <ul>
 <li>Memory:</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">free</span><br><span class="line"><span class="built_in">cat</span> /proc/meminfo</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">free</span><br><span class="line">cat /proc/meminfo</span><br></pre></td></tr></table></figure>
 <ul>
 <li>Disk Space:</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">df</span> -h</span><br><span class="line"><span class="built_in">cat</span> /proc/mtd</span><br><span class="line"><span class="built_in">cat</span> /proc/partitions</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br><span class="line">cat /proc/mtd</span><br><span class="line">cat /proc/partitions</span><br></pre></td></tr></table></figure>
 <p>当然还可以通过<strong>dmesg</strong>配合grep查看！</p>
           
       

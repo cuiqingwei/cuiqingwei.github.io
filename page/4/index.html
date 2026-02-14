@@ -498,8 +498,7 @@
           
               <p>WiFi带机量的修改</p>
 <p>(1)修改MAX_NUMBER_OF_MAC(rt2860v2/include/oid.h)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define MAX_NUMBER_OF_MAC                64 // 原始值32</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define MAX_NUMBER_OF_MAC                64 &#x2F;&#x2F; 原始值32</span><br></pre></td></tr></table></figure>
 <p>(2)需要同时增大RX_RING_SIZE和TX_RING_SIZE，否则连接客户端一多就会掉包(rt2860v2/include/os/rt_linux_cmm.h中)</p>
           
       
@@ -804,7 +803,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h1 id="1-安装brew"><a href="#1-安装brew" class="headerlink" title="1.安装brew"></a>1.安装brew</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br><span class="line">如果安装后, 想要卸载</span><br><span class="line">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)&quot;</span><br></pre></td></tr></table></figure>
+              <h1 id="1-安装brew"><a href="#1-安装brew" class="headerlink" title="1.安装brew"></a>1.安装brew</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install)&quot;</span><br><span class="line">如果安装后, 想要卸载</span><br><span class="line">ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;uninstall)&quot;</span><br></pre></td></tr></table></figure>
           
       
     </div>

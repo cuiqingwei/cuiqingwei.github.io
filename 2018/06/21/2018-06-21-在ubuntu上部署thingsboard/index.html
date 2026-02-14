@@ -352,54 +352,38 @@
           
         <h3 id="先决条件"><a href="#先决条件" class="headerlink" title="先决条件"></a>先决条件</h3><p>本指南介绍了如何在Ubuntu Server 14.04 LTS上安装ThingsBoard。硬件要求取决于选择的数据库和连接到系统的设备数量。要在一台机器上运行ThingsBoard和PostgreSQL，您将至少需要1Gb RAM。要在单台计算机上运行ThingsBoard和Cassandra，您至少需要8Gb RAM。</p>
 <h3 id="步骤1-安装Java-8（OpenJDK）"><a href="#步骤1-安装Java-8（OpenJDK）" class="headerlink" title="步骤1.安装Java 8（OpenJDK）"></a>步骤1.安装Java 8（OpenJDK）</h3><p>ThingsBoard服务正在Java 8上运行。请按照以下说明安装OpenJDK 8：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install openjdk-8-jdk</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install openjdk-8-jdk</span><br></pre></td></tr></table></figure>
 <p>请不要忘记将操作系统配置为默认使用OpenJDK 8。您可以使用以下命令配置哪个版本是默认版本：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --config java</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --config java</span><br></pre></td></tr></table></figure>
 <p>您可以使用以下命令检查安装：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
 <p>预期的命令输出为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">openjdk version &quot;1.8.0_xxx&quot;</span><br><span class="line">OpenJDK Runtime Environment (...)</span><br><span class="line">OpenJDK 64-Bit Server VM (build ...)</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">openjdk version &quot;1.8.0_xxx&quot;</span><br><span class="line">OpenJDK Runtime Environment (...)</span><br><span class="line">OpenJDK 64-Bit Server VM (build ...)</span><br></pre></td></tr></table></figure>
 <h3 id="第2步。ThingsBoard服务安装"><a href="#第2步。ThingsBoard服务安装" class="headerlink" title="第2步。ThingsBoard服务安装"></a>第2步。ThingsBoard服务安装</h3><p>下载安装包。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/thingsboard/thingsboard/releases/download/v2.4.3/thingsboard-2.4.3.deb</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;github.com&#x2F;thingsboard&#x2F;thingsboard&#x2F;releases&#x2F;download&#x2F;v2.4.3&#x2F;thingsboard-2.4.3.deb</span><br></pre></td></tr></table></figure>
 <p>将ThingsBoard作为服务安装</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i thingsboard-2.4.3.deb</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i thingsboard-2.4.3.deb</span><br></pre></td></tr></table></figure>
 <h3 id="步骤3-配置ThingsBoard数据库"><a href="#步骤3-配置ThingsBoard数据库" class="headerlink" title="步骤3.配置ThingsBoard数据库"></a>步骤3.配置ThingsBoard数据库</h3><p>ThingsBoard能够使用SQL或混合数据库(PostgreSQL+Cassandra)方法。本机测试数据量不大，选择PostgreSQL。</p>
 <h5 id="PostgreSQL安装"><a href="#PostgreSQL安装" class="headerlink" title="PostgreSQL安装"></a>PostgreSQL安装</h5><p>下面列出的说明将帮助您安装PostgreSQL。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install postgresql postgresql-contrib</span><br><span class="line">sudo service postgresql start</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install postgresql postgresql-contrib</span><br><span class="line">sudo service postgresql start</span><br></pre></td></tr></table></figure>
 <p>一旦安装了PostgreSQL，您可能想要创建一个新用户或为主要用户设置密码。以下说明将有助于为主要PostgreSQL用户设置密码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo su - postgres</span><br><span class="line">psql</span><br><span class="line">\password</span><br><span class="line">\q</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo su - postgres</span><br><span class="line">psql</span><br><span class="line">\password</span><br><span class="line">\q</span><br></pre></td></tr></table></figure>
 <p>然后，按“ Ctrl + D”返回主用户控制台并连接到数据库以创建Thingsboard DB：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">psql -U postgres -d postgres -h 127.0.0.1 -W</span><br><span class="line">CREATE DATABASE thingsboard;</span><br><span class="line">\q</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">psql -U postgres -d postgres -h 127.0.0.1 -W</span><br><span class="line">CREATE DATABASE thingsboard;</span><br><span class="line">\q</span><br></pre></td></tr></table></figure>
 <h5 id="ThingsBoard配置"><a href="#ThingsBoard配置" class="headerlink" title="ThingsBoard配置"></a>ThingsBoard配置</h5><p>编辑ThingsBoard配置文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/thingsboard/conf/thingsboard.conf</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;thingsboard&#x2F;conf&#x2F;thingsboard.conf</span><br></pre></td></tr></table></figure>
 <p>将以下行添加到配置文件。不要忘记用您的<strong>真实postgres用户密码**</strong>替换** “ PUT_YOUR_POSTGRESQL_PASSWORD_HERE” ：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># DB Configuration</span><br><span class="line">export DATABASE_ENTITIES_TYPE=sql</span><br><span class="line">export DATABASE_TS_TYPE=sql</span><br><span class="line">export SPRING_JPA_DATABASE_PLATFORM=org.hibernate.dialect.PostgreSQLDialect</span><br><span class="line">export SPRING_DRIVER_CLASS_NAME=org.postgresql.Driver</span><br><span class="line">export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/thingsboard</span><br><span class="line">export SPRING_DATASOURCE_USERNAME=postgres</span><br><span class="line">export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># DB Configuration</span><br><span class="line">export DATABASE_ENTITIES_TYPE&#x3D;sql</span><br><span class="line">export DATABASE_TS_TYPE&#x3D;sql</span><br><span class="line">export SPRING_JPA_DATABASE_PLATFORM&#x3D;org.hibernate.dialect.PostgreSQLDialect</span><br><span class="line">export SPRING_DRIVER_CLASS_NAME&#x3D;org.postgresql.Driver</span><br><span class="line">export SPRING_DATASOURCE_URL&#x3D;jdbc:postgresql:&#x2F;&#x2F;localhost:5432&#x2F;thingsboard</span><br><span class="line">export SPRING_DATASOURCE_USERNAME&#x3D;postgres</span><br><span class="line">export SPRING_DATASOURCE_PASSWORD&#x3D;PUT_YOUR_POSTGRESQL_PASSWORD_HERE</span><br></pre></td></tr></table></figure>
 <h3 id="步骤4-可选-慢速计算机的内存更新（1GB-RAM）"><a href="#步骤4-可选-慢速计算机的内存更新（1GB-RAM）" class="headerlink" title="步骤4. [可选]慢速计算机的内存更新（1GB RAM）"></a>步骤4. [可选]慢速计算机的内存更新（1GB RAM）</h3><p>编辑ThingsBoard配置文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/thingsboard/conf/thingsboard.conf</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;thingsboard&#x2F;conf&#x2F;thingsboard.conf</span><br></pre></td></tr></table></figure>
 <p>将以下行添加到配置文件。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Update ThingsBoard memory usage and restrict it to 256MB in /etc/thingsboard/conf/thingsboard.conf</span><br><span class="line">export JAVA_OPTS=&quot;$JAVA_OPTS -Xms256M -Xmx256M&quot;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Update ThingsBoard memory usage and restrict it to 256MB in &#x2F;etc&#x2F;thingsboard&#x2F;conf&#x2F;thingsboard.conf</span><br><span class="line">export JAVA_OPTS&#x3D;&quot;$JAVA_OPTS -Xms256M -Xmx256M&quot;</span><br></pre></td></tr></table></figure>
 <h3 id="步骤5-运行安装脚本"><a href="#步骤5-运行安装脚本" class="headerlink" title="步骤5.运行安装脚本"></a>步骤5.运行安装脚本</h3><p>安装ThingsBoard服务并更新数据库配置后，您可以执行以下脚本：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># --loadDemo option will load demo data: users, devices, assets, rules, widgets.</span><br><span class="line">sudo /usr/share/thingsboard/bin/install/install.sh --loadDemo</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># --loadDemo option will load demo data: users, devices, assets, rules, widgets.</span><br><span class="line">sudo &#x2F;usr&#x2F;share&#x2F;thingsboard&#x2F;bin&#x2F;install&#x2F;install.sh --loadDemo</span><br></pre></td></tr></table></figure>
 <h3 id="步骤6-启动ThingsBoard服务"><a href="#步骤6-启动ThingsBoard服务" class="headerlink" title="步骤6.启动ThingsBoard服务"></a>步骤6.启动ThingsBoard服务</h3><p>执行以下命令以启动ThingsBoard：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service thingsboard start</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service thingsboard start</span><br></pre></td></tr></table></figure>
 <p>启动后，您将可以使用以下链接打开Web UI：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8080/</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;localhost:8080&#x2F;</span><br></pre></td></tr></table></figure>
 <p>如果在执行安装脚本期间指定了<em>–loadDemo</em>，则可以使用以下默认凭据：</p>
 <ul>
 <li><strong>Systen管理员</strong>：sysadmin@thingsboard.org / sysadmin</li>
@@ -408,16 +392,13 @@
 </ul>
 <p>您始终可以在帐户资料页面中更改每个帐户的密码。</p>
 <p>请等待90秒以启动Web UI。这仅适用于具有1-2 CPU或1-2 GB RAM的慢速计算机。</p>
-<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -v -X POST -d &quot;[&#123;\&quot;temperature\&quot;: 25&#125;,&#123;\&quot;humidity\&quot;:60&#125;]&quot; http://localhost:8080/api/v1/DHT11_DEMO_TOKEN/telemetry --header &quot;Content-Type:application/json&quot;</span><br></pre></td></tr></table></figure>
-
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -v -X POST -d &quot;[&#123;\&quot;temperature\&quot;: 25&#125;,&#123;\&quot;humidity\&quot;:60&#125;]&quot; http:&#x2F;&#x2F;localhost:8080&#x2F;api&#x2F;v1&#x2F;DHT11_DEMO_TOKEN&#x2F;telemetry --header &quot;Content-Type:application&#x2F;json&quot;</span><br></pre></td></tr></table></figure>
 <h3 id="安装后步骤"><a href="#安装后步骤" class="headerlink" title="安装后步骤"></a>安装后步骤</h3><p><strong>配置HAProxy以启用HTTPS</strong></p>
 <p>您可能要使用HAProxy配置HTTPS访问。如果您在云端托管ThingsBoard并为您的实例分配了有效的DNS名称，则可以这样做。请按照本<a target="_blank" rel="noopener" href="https://thingsboard.io/docs/user-guide/install/pe/add-haproxy-ubuntu">指南</a>安装HAProxy并使用Let’s Encrypt生成有效的SSL证书。</p>
 <h3 id="故障排除"><a href="#故障排除" class="headerlink" title="故障排除"></a>故障排除</h3><p>ThingsBoard日志存储在以下目录中：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/var/log/thingsboard</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;var&#x2F;log&#x2F;thingsboard</span><br></pre></td></tr></table></figure>
 <p>您可以发出以下命令以检查后端是否有任何错误：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /var/log/thingsboard/thingsboard.log | grep ERROR</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat &#x2F;var&#x2F;log&#x2F;thingsboard&#x2F;thingsboard.log | grep ERROR</span><br></pre></td></tr></table></figure>
       
     </div>
     

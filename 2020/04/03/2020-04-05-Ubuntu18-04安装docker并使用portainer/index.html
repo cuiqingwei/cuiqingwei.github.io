@@ -15,12 +15,12 @@
 
 
 
-<meta name="description" content="1、安装docker 1apt install docker.io  2、修改成国内镜像源 123456cd &#x2F;etc&#x2F;dockervim daemon.json&amp;#123;   &quot;registry-mirrors&quot;: [&quot;http:&#x2F;&#x2F;hub-mirror.c.163.com&quot;]&amp;#125;  重启docker服务 1service docker rest">
+<meta name="description" content="1、安装docker 1apt install docker.io 2、修改成国内镜像源 123456cd &#x2F;etc&#x2F;dockervim daemon.json&amp;#123;   &quot;registry-mirrors&quot;: [&quot;http:&#x2F;&#x2F;hub-mirror.c.163.com&quot;]&amp;#125; 重启docker服务 1service docker restar">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu18.04安装docker并使用portainer">
 <meta property="og:url" content="http://cuiqingwei.github.io/2020/04/03/2020-04-05-Ubuntu18-04%E5%AE%89%E8%A3%85docker%E5%B9%B6%E4%BD%BF%E7%94%A8portainer/index.html">
 <meta property="og:site_name" content="iZheteng">
-<meta property="og:description" content="1、安装docker 1apt install docker.io  2、修改成国内镜像源 123456cd &#x2F;etc&#x2F;dockervim daemon.json&amp;#123;   &quot;registry-mirrors&quot;: [&quot;http:&#x2F;&#x2F;hub-mirror.c.163.com&quot;]&amp;#125;  重启docker服务 1service docker rest">
+<meta property="og:description" content="1、安装docker 1apt install docker.io 2、修改成国内镜像源 123456cd &#x2F;etc&#x2F;dockervim daemon.json&amp;#123;   &quot;registry-mirrors&quot;: [&quot;http:&#x2F;&#x2F;hub-mirror.c.163.com&quot;]&amp;#125; 重启docker服务 1service docker restar">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-04-03T13:37:00.000Z">
 <meta property="article:modified_time" content="2026-02-13T15:58:21.587Z">
@@ -347,23 +347,17 @@
           
         <p>1、安装docker</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install docker.io</span><br></pre></td></tr></table></figure>
-
 <p>2、修改成国内镜像源</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/docker</span><br><span class="line">vim daemon.json</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">   <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;http://hub-mirror.c.163.com&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>重启docker服务</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service docker restart</span><br></pre></td></tr></table></figure>
-
 <p>3、docker安装portainer</p>
 <p>搜索portainer</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search portainer</span><br></pre></td></tr></table></figure>
-
 <p>拉取portainer</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull portainer/portainer</span><br></pre></td></tr></table></figure>
-
 <p>创建portainer容器并启动</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name portainerUI -p 8000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer</span><br></pre></td></tr></table></figure>
-
 <p>4、访问portainer界面<br><a target="_blank" rel="noopener" href="http://192.168.1.102:8000/">http://192.168.1.102:8000</a></p>
 <p>首次登陆时,初始化设置密码。</p>
 <hr>
@@ -399,7 +393,6 @@
 </ul>
 <p>Docker ubuntu镜像更换apt-get</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list</span><br><span class="line">apt-get clean</span><br></pre></td></tr></table></figure>
-
       
     </div>
     

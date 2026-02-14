@@ -15,12 +15,12 @@
 
 
 
-<meta name="description" content="一、linux打补丁方法1、处理单个文件补丁的方法： 产生补丁  1diff -uN from-file to-file &gt;to-file.patch   打补丁  1patch -p0 &lt; to-file.patch   取消补丁  1patch -RE -p0 &lt; to-file.patch">
+<meta name="description" content="一、linux打补丁方法1、处理单个文件补丁的方法： 产生补丁  1diff -uN from-file to-file &gt;to-file.patch  打补丁  1patch -p0 &lt; to-file.patch  取消补丁  1patch -RE -p0 &lt; to-file.patch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux打补丁和git打patch方法 ">
 <meta property="og:url" content="http://cuiqingwei.github.io/2015/08/19/2015-08-19-Linux%E6%89%93%E8%A1%A5%E4%B8%81%E5%92%8Cgit%E6%89%93patch%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="iZheteng">
-<meta property="og:description" content="一、linux打补丁方法1、处理单个文件补丁的方法： 产生补丁  1diff -uN from-file to-file &gt;to-file.patch   打补丁  1patch -p0 &lt; to-file.patch   取消补丁  1patch -RE -p0 &lt; to-file.patch">
+<meta property="og:description" content="一、linux打补丁方法1、处理单个文件补丁的方法： 产生补丁  1diff -uN from-file to-file &gt;to-file.patch  打补丁  1patch -p0 &lt; to-file.patch  取消补丁  1patch -RE -p0 &lt; to-file.patch">
 <meta property="og:locale">
 <meta property="article:published_time" content="2015-08-19T06:50:00.000Z">
 <meta property="article:modified_time" content="2026-02-13T15:58:20.526Z">
@@ -356,41 +356,33 @@
         <h1 id="一、linux打补丁方法"><a href="#一、linux打补丁方法" class="headerlink" title="一、linux打补丁方法"></a>一、linux打补丁方法</h1><h2 id="1、处理单个文件补丁的方法："><a href="#1、处理单个文件补丁的方法：" class="headerlink" title="1、处理单个文件补丁的方法："></a>1、处理单个文件补丁的方法：</h2><ul>
 <li>产生补丁</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diff -uN from-file to-file &gt;to-file.patch</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diff -uN from-file to-file &gt;to-file.patch</span><br></pre></td></tr></table></figure>
 <ul>
 <li>打补丁</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">patch -p0 &lt; to-file.patch</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">patch -p0 &lt; to-file.patch</span><br></pre></td></tr></table></figure>
 <ul>
 <li>取消补丁</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">patch -RE -p0 &lt; to-file.patch</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">patch -RE -p0 &lt; to-file.patch</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 
 <h2 id="2、对整个文件夹打补丁的情况"><a href="#2、对整个文件夹打补丁的情况" class="headerlink" title="2、对整个文件夹打补丁的情况:"></a>2、对整个文件夹打补丁的情况:</h2><ul>
 <li>产生补丁</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diff -uNr  from-docu  to-docu  &gt;to-docu.patch</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diff -uNr  from-docu  to-docu  &gt;to-docu.patch</span><br></pre></td></tr></table></figure>
 <ul>
 <li>打补丁</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd to-docu</span><br><span class="line">patch -p1 &lt; to-docu.patch</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd to-docu</span><br><span class="line">patch -p1 &lt; to-docu.patch</span><br></pre></td></tr></table></figure>
 <ul>
 <li>取消补丁</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">patch -R -p1 &lt; to-docu.patch</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">patch -R -p1 &lt; to-docu.patch</span><br></pre></td></tr></table></figure>
 <h1 id="二、git打patch方法"><a href="#二、git打patch方法" class="headerlink" title="二、git打patch方法"></a>二、git打patch方法</h1><h2 id="1、git-format-patch-（推荐）"><a href="#1、git-format-patch-（推荐）" class="headerlink" title="1、git format-patch （推荐）"></a>1、git format-patch （推荐）</h2><p>只适用于git的patch<br>包含diff信息，包含提交人，提交时间等<br>如果git format-patch 生成的补丁不能打到当前分支，git am会给出提示，并协助你完成打补丁工作<br>例：从master checkout一个新分支修改然后与master对比生成patch。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git format-patch -M master //-M选项表示这个patch要和那个分支比对</span><br><span class="line">git am 001-xxx.patch（不必重新commit）</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git format-patch -M master &#x2F;&#x2F;-M选项表示这个patch要和那个分支比对</span><br><span class="line">git am 001-xxx.patch（不必重新commit）</span><br></pre></td></tr></table></figure>
 <h2 id="2、git-diff"><a href="#2、git-diff" class="headerlink" title="2、git diff"></a>2、git diff</h2><p>生成标准的patch，只包含diff信息<br>git diff生成的Patch兼容性强，可以用git apply –check 查看补丁是否能够干净顺利地应用到当前分支中。<br>例：从master checkout一个新分支修改然后与master对比生成patch。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git diff master &gt; patch</span><br><span class="line">git apply xxx.patch（需要重新commit）</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git diff master &gt; patch</span><br><span class="line">git apply xxx.patch（需要重新commit）</span><br></pre></td></tr></table></figure>
       
     </div>
     

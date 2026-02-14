@@ -365,7 +365,7 @@
 <p>mysqldump -u 用户名 -p 数据库名 表名&gt; 导出的文件名</p>
 </blockquote>
 <p><code>mysqldump -u root -p dbname tablename&gt; dbname_tablename.sql；</code></p>
-<span id="more"></span>
+<a id="more"></a>
 
 <ul>
 <li>导出一个数据库结构</li>
@@ -427,16 +427,14 @@
 <blockquote>
 <p>命令：create table &lt;表名&gt; ( &lt;字段名&gt; &lt;类型&gt; [,..&lt;字段名n&gt; &lt;类型n&gt;]);</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;create table MyClass(</span><br><span class="line"></span><br><span class="line">&gt;id int(4) not null primary key auto_increment,</span><br><span class="line"></span><br><span class="line">&gt;name char(20) not null,</span><br><span class="line"></span><br><span class="line">&gt;sex int(4) not null default ’′,</span><br><span class="line"></span><br><span class="line">&gt;degree double(16,2));</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;create table MyClass(</span><br><span class="line"></span><br><span class="line">&gt;id int(4) not null primary key auto_increment,</span><br><span class="line"></span><br><span class="line">&gt;name char(20) not null,</span><br><span class="line"></span><br><span class="line">&gt;sex int(4) not null default ’′,</span><br><span class="line"></span><br><span class="line">&gt;degree double(16,2));</span><br></pre></td></tr></table></figure>
 <ul>
 <li>获取表结构</li>
 </ul>
 <blockquote>
 <p>命令：desc 表名，或者show columns from 表名</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;DESCRIBE MyClass</span><br><span class="line"></span><br><span class="line">mysql&gt; desc MyClass;</span><br><span class="line"></span><br><span class="line">mysql&gt; show columns from MyClass;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;DESCRIBE MyClass</span><br><span class="line"></span><br><span class="line">mysql&gt; desc MyClass;</span><br><span class="line"></span><br><span class="line">mysql&gt; show columns from MyClass;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>删除表</li>
 </ul>

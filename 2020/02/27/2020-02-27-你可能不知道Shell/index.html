@@ -356,7 +356,7 @@
         <p>1、 <code>sudo !!</code></p>
 <p>以root的身份执行上一条命令 。</p>
 <p>场景举例：比如Ubuntu里用apt-get安装软件包的时候是需要root身份的，我们经常会忘记在apt-get前加sudo。每次不得不加上sudo再重新键入这行命令，这时可以很方便的用sudo !!完事。</p>
-<span id="more"></span>
+<a id="more"></a>
 
 <p>2、<code>cd –</code></p>
 <p>回到上一次的目录 。</p>
@@ -388,7 +388,7 @@
 <p>13、 <code>python -m SimpleHTTPServer</code></p>
 <p>一句话实现一个HTTP server，把当前目录设为HTTP服务目录，可以通过 <a target="_blank" rel="noopener" href="http://localhost:8000/">http://localhost:8000</a> 访问 这也许是这个星球上最简单的HTTP服务器的实现了。</p>
 <p>最后来个复杂的——</p>
-<p>14、 <code>history | awk &#39;{CMD[$2]++;count++;} END { for (a in CMD )print CMD[a] &quot; &quot; CMD[a]/count*100 &quot;% &quot; a }&#39; | grep -v &quot;./&quot; | column -c3 -s &quot; &quot; -t | sort -nr | nl | head -n10</code></p>
+<p>14、 <code>history | awk &#39;&#123;CMD[$2]++;count++;&#125; END &#123; for (a in CMD )print CMD[a] &quot; &quot; CMD[a]/count*100 &quot;% &quot; a &#125;&#39; | grep -v &quot;./&quot; | column -c3 -s &quot; &quot; -t | sort -nr | nl | head -n10</code></p>
 <p><img src="https://s2.ax1x.com/2020/02/27/3w5Kln.png" alt="3w5Kln.png"></p>
 <p>— 转自·<a target="_blank" rel="noopener" href="https://www.ituring.com.cn/">图灵社区</a>·免费电子书《<a target="_blank" rel="noopener" href="https://www.ituring.com.cn/book/1501">码农增刊·Linus与Linux</a>》</p>
 

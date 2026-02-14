@@ -350,15 +350,12 @@
 </blockquote>
 <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>既然是命令行工具，就只能用命令行方式来安装(linux，mac直接用shell，windows用powerShell)<br>第一步、下载</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -s <span class="string">&quot;https://get.sdkman.io&quot;</span> | bash</span><br></pre></td></tr></table></figure>
-
 <p>第二步、执行脚本</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> <span class="string">&quot;<span class="variable">$HOME</span>/.sdkman/bin/sdkman-init.sh&quot;</span></span><br></pre></td></tr></table></figure>
-
 <p>第三步、检查是否安装成功</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sdk version</span><br></pre></td></tr></table></figure>
-
 <p>输出版本信息即安装成功</p>
-<span id="more"></span>
+<a id="more"></a>
 
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ol>
 <li><p>输入<code>sdk list</code>可以查看有那些sdk可以安装，系统已经安装那些sdk</p>
@@ -367,31 +364,24 @@
 </li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sdk install java</span><br></pre></td></tr></table></figure>
-
 <p>接下来会看到</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Downloading: java 8u111</span><br><span class="line">In progress...</span><br><span class="line"><span class="comment">######################################################################## 100.0%</span></span><br><span class="line">Installing: java 8u111</span><br><span class="line">Done installing!</span><br></pre></td></tr></table></figure>
-
 <p>接下来会询问是否作为默认版本</p>
 <ol start="3">
 <li>安装特定版本sdk<br>列出可安装版本,如果本地已经安装也会看到标记</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sdk list java</span><br></pre></td></tr></table></figure>
-
 <p>安装8u131版本jdk</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sdk install java 8u131</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sdk install maven</span><br></pre></td></tr></table></figure>
-
 <ol start="4">
 <li>移除SDK</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sdk uninstall java</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">sdk <span class="built_in">rm</span> java</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sdk uninstall java</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">sdk rm java</span><br></pre></td></tr></table></figure>
 <ol start="5">
 <li>查看当前安装的sdk版本</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sdk current java</span><br></pre></td></tr></table></figure>
-
       
     </div>
     

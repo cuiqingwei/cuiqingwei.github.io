@@ -15,12 +15,12 @@
 
 
 
-<meta name="description" content="1.制备openwrt系统镜像预编译的openwrt是musl的toolchain，而homebridge需要glibc的toolchain所以需要自己编译系统。 建议安装完成后开启ssh，直接用putty和winscp来传送文件和操作虚拟机更方便。以下所有命令都是通过putty登陆虚拟机或使用虚拟机的terminal来执行的。 1sudo apt update  安装编译系统需要的软件包: 1s">
+<meta name="description" content="1.制备openwrt系统镜像预编译的openwrt是musl的toolchain，而homebridge需要glibc的toolchain所以需要自己编译系统。 建议安装完成后开启ssh，直接用putty和winscp来传送文件和操作虚拟机更方便。以下所有命令都是通过putty登陆虚拟机或使用虚拟机的terminal来执行的。 1sudo apt update 安装编译系统需要的软件包: 1su">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenWRT之HomeKit">
 <meta property="og:url" content="http://cuiqingwei.github.io/2017/02/08/2017-02-08-OpenWRT%E4%B9%8BHomeKit/index.html">
 <meta property="og:site_name" content="iZheteng">
-<meta property="og:description" content="1.制备openwrt系统镜像预编译的openwrt是musl的toolchain，而homebridge需要glibc的toolchain所以需要自己编译系统。 建议安装完成后开启ssh，直接用putty和winscp来传送文件和操作虚拟机更方便。以下所有命令都是通过putty登陆虚拟机或使用虚拟机的terminal来执行的。 1sudo apt update  安装编译系统需要的软件包: 1s">
+<meta property="og:description" content="1.制备openwrt系统镜像预编译的openwrt是musl的toolchain，而homebridge需要glibc的toolchain所以需要自己编译系统。 建议安装完成后开启ssh，直接用putty和winscp来传送文件和操作虚拟机更方便。以下所有命令都是通过putty登陆虚拟机或使用虚拟机的terminal来执行的。 1sudo apt update 安装编译系统需要的软件包: 1su">
 <meta property="og:locale">
 <meta property="article:published_time" content="2017-02-08T08:20:56.000Z">
 <meta property="article:modified_time" content="2026-02-13T15:58:21.000Z">
@@ -353,30 +353,24 @@
           
         <h1 id="1-制备openwrt系统镜像"><a href="#1-制备openwrt系统镜像" class="headerlink" title="1.制备openwrt系统镜像"></a>1.制备openwrt系统镜像</h1><p>预编译的openwrt是musl的toolchain，而homebridge需要glibc的toolchain所以需要自己编译系统。</p>
 <p>建议安装完成后开启ssh，直接用putty和winscp来传送文件和操作虚拟机更方便。<br>以下所有命令都是通过putty登陆虚拟机或使用虚拟机的terminal来执行的。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
 <p>安装编译系统需要的软件包:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
 <p>下载openwrt最新代码，</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git://github.com/openwrt/openwrt.git</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git:&#x2F;&#x2F;github.com&#x2F;openwrt&#x2F;openwrt.git</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 
 <p>将feeds.conf.default改名为feeds.conf</p>
 <p>更新feeds部分的代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./scripts/feeds update -a</span><br><span class="line">./scripts/feeds install -a</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;scripts&#x2F;feeds update -a</span><br><span class="line">.&#x2F;scripts&#x2F;feeds install -a</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>使用feeds文件夹替换掉openwrt，原版代码不带avahi的dev库，需要自己添加支持；<br>另外自带nodejs的版本低于5.0启动homebridge的时候会有个warning，一并更换成最新版。</p>
 </blockquote>
 <p>openwrt编译配置：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make menuconfig</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make menuconfig</span><br></pre></td></tr></table></figure>
 <p>需要的软件包：<br>Advanced configuration options (for developers) —&gt;<br>Toolchain Options —&gt;<br>C Library implementation (Use musl) —&gt;<br>[X] Use (e)glibc<br>Base system —&gt;<br>block-mount、ca-certificates<br>Development —&gt;<br><M> gcc<br><M> make<br>Kernel modules —&gt;<br> Filesystems —&gt;<br>kmod-fs-exfat、kmod-fs-ext4、kmod-fs-ntfs、kmod-fs-vfat<br>USB Support —&gt;<br>kmod-usb-storage-extras、kmod-usb2、kmod-usb3<br>Languages —&gt;<br>Node.js —&gt;<br><M> node<br>Python —&gt;<br><M> python<br>Libraries —&gt;<br>libavahi-compat-libdnssd-dev<br>Network —&gt;<br>mosquitto<br>LuCi —&gt; 1. Collections —&gt;<br>luci</p>
 <p>保存后开始编译</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make V=s</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make V&#x3D;s</span><br></pre></td></tr></table></figure>
 <p>趁着时候没事干把准备好的U盘连入虚拟机，格式化成ext3/ext4格式，插到路由器的USB接口上。</p>
 <p>刷入系统不再详述，不会搞的可以百度，这方面的教程遍地。<br>成功后进入路由器管理界面luci，system下将语言改为中文。设置路由器登陆密码，然后使用putty和winscp即可连接到路由器文件系统了。<br>将U盘查到路由器上等一会以后，从路由器管理界面找到如下位置，看到U盘的大小说明成功。</p>
 <h1 id="2-openwrt-挂载overlay到U盘"><a href="#2-openwrt-挂载overlay到U盘" class="headerlink" title="2. openwrt 挂载overlay到U盘"></a>2. openwrt 挂载overlay到U盘</h1><ul>
@@ -396,23 +390,19 @@
 <ul>
 <li>2.4.格式化各分区</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/sda1 　　#将第一个分区格式化为ext3格式</span><br><span class="line">mkswap /dev/sda2    　　#将第二个分区格式化为swap交换分区</span><br><span class="line">mkfs.ext4 /dev/sda3 　　#将第三个分区格式化为ext3格式</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 &#x2F;dev&#x2F;sda1 　　#将第一个分区格式化为ext3格式</span><br><span class="line">mkswap &#x2F;dev&#x2F;sda2    　　#将第二个分区格式化为swap交换分区</span><br><span class="line">mkfs.ext4 &#x2F;dev&#x2F;sda3 　　#将第三个分区格式化为ext3格式</span><br></pre></td></tr></table></figure>
 <ul>
 <li>2.5.安装完成以后,挂载u盘.如下命令将默认的系统盘转移到u盘中.</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sda1 /mnt</span><br><span class="line">mkdir /tmp/root</span><br><span class="line">mount -o bind / /tmp/root</span><br><span class="line">cp /tmp/root/* /mnt -a</span><br><span class="line">umount /tmp/root</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mount &#x2F;dev&#x2F;sda1 &#x2F;mnt</span><br><span class="line">mkdir &#x2F;tmp&#x2F;root</span><br><span class="line">mount -o bind &#x2F; &#x2F;tmp&#x2F;root</span><br><span class="line">cp &#x2F;tmp&#x2F;root&#x2F;* &#x2F;mnt -a</span><br><span class="line">umount &#x2F;tmp&#x2F;root</span><br></pre></td></tr></table></figure>
 <ul>
 <li>2.6.修改 /etc/config/fstab 文件,让系统启动自动挂载,修改成如下</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">config mount</span><br><span class="line">        option target   /overlay</span><br><span class="line">        option device   /dev/sda1</span><br><span class="line">        option fstype   ext4</span><br><span class="line">        option options  rw,sync</span><br><span class="line">        option enabled  1</span><br><span class="line">        option enabled_fsck 0</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">config mount</span><br><span class="line">        option target   &#x2F;overlay</span><br><span class="line">        option device   &#x2F;dev&#x2F;sda1</span><br><span class="line">        option fstype   ext4</span><br><span class="line">        option options  rw,sync</span><br><span class="line">        option enabled  1</span><br><span class="line">        option enabled_fsck 0</span><br></pre></td></tr></table></figure>
 <ul>
 <li>2.7.执行如下命令让其生效</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/fstab enable</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;etc&#x2F;init.d&#x2F;fstab enable</span><br></pre></td></tr></table></figure>
 <ul>
 <li>2.8.重启后，执行df -h后如果发现/overlay挂载在/tmp/overlay-disabled上的解决方案：</li>
 </ul>

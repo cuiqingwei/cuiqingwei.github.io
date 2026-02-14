@@ -354,20 +354,17 @@
         <p><em>Step1</em> 下载SDK<br>下载地址：<a target="_blank" rel="noopener" href="http://developer.nordicsemi.com/">http://developer.nordicsemi.com/</a><br>当前最高版本是 <a target="_blank" rel="noopener" href="http://developer.nordicsemi.com/nRF5_SDK/nRF51_SDK_v10.x.x/nRF51_SDK_10.0.0_dc26b5e.zip">V10</a><br>解压zip包到某个项目目录</p>
 <p><em>Step2</em> 下载交叉编译工具<br>即 <code>gcc-arm-none-eabi-9-2019-q4-major-mac.tar.bz2</code><br>下载地址 <a target="_blank" rel="noopener" href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads">https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads</a></p>
 <p>我解压到了 <code>/usr/local/gcc-arm-none-eabi-9-2019-q4-major</code></p>
-<span id="more"></span>
+<a id="more"></a>
 
 <p><em>Step3</em> 下载安装Nordic官方nrfjprog<br>下载地址 <a target="_blank" rel="noopener" href="https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Command-Line-Tools/Download">https://www.nordicsemi.com/Software-and-tools/Development-Tools/nRF-Command-Line-Tools/Download</a><br>下载的是 <code>nRF-Command-Line-Tools_10_5_0_OSX.tar</code></p>
 <p><em>Step4</em> 配置编译工具路径<br>打开 <code>/..../nRF51_SDK_10.0.0_dc26b5e/components/toolchain/gcc/Makefile.posix</code><br>改为：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GNU_INSTALL_ROOT := /usr/local/gcc-arm-none-eabi-9-2019-q4-major</span><br><span class="line">GNU_VERSION := 9.2.1</span><br><span class="line">GNU_PREFIX := arm-none-eabi</span><br></pre></td></tr></table></figure>
-
 <p><em>编译例程代码</em><br>进入demo目录</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">...../nRF51_SDK_10.0.0_dc26b5e/examples/ble_peripheral/ble_app_template/pca10028/s110/armgcc</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
-
 <p><em>烧录</em></p>
 <p>清空数据<br><code>nrfjprog --eraseall</code></p>
 <p>烧录hex文件<br><code>nrfjprog --program /path-to-hex-file.hex</code><br>出现以下表示烧录成功</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Parsing hex file.</span><br><span class="line">Reading flash area to program to guarantee it is erased.</span><br><span class="line">Checking that the area to write is not protected.</span><br><span class="line">Programing device.</span><br></pre></td></tr></table></figure>
-
 <p>也可以使用Makefile中提供的方法</p>
 <p>#烧录 softdevice<br><code>make flash_softdevice</code></p>
 <p>#烧录application<br><code>make flash</code></p>

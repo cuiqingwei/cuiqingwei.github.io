@@ -356,7 +356,7 @@
       
           
         <p>现象是MulticastSocket发送组播消息,一些安卓平板上可以发送、接收组播消息,个别安卓不可用。</p>
-<span id="more"></span>
+<a id="more"></a>
 
 <p>1.能正常发送接收的安卓平板,向组播地址发送了组播消息后,同时会向组播地址发送一个 <strong>IGMPv2</strong> 的协议</p>
 <p><img src="/img/20180508/7820e355de8f7e4065c08b677e8fb41b.jpg"></p>
@@ -365,8 +365,7 @@
 <p>3.而查看安卓平板,在 <strong>/proc/net/</strong> 目录下,有igmp文件的设备会发送IGMP协议,能正常完成组播消息收发,而没有igmp文件的,就是不能完成组播消息收发的。<strong>igmp</strong> 是IPv4下的协议文件, <strong>igmp6</strong> 是IPv6的协议。可以看到所有设备都支持IPv6的igmp</p>
 <p><img src="/img/20180508/2b61d0bd7c6a7742160c4a7aa1fd85c8.jpg"></p>
 <p>4.在Android系统下,编译Linux kernel时有一config CONFIG_IP_MULTICAST ,如果是定制系统在编译系统的时候配置这个选项 <strong>CONFIG_IP_MULTICAST=y</strong> ,就能enable组播功能。但是有很多系统厂商在编译的时候都默认把这个config给disable了。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CONFIG_IP_MULTICAST</span><br><span class="line">adb shell netcfg</span><br><span class="line">adb shell ifconfig eth0</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CONFIG_IP_MULTICAST</span><br><span class="line">adb shell netcfg</span><br><span class="line">adb shell ifconfig eth0</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>参考:<br><a target="_blank" rel="noopener" href="https://unix.stackexchange.com/questions/25872/how-can-i-know-if-ip-multicast-is-enabled">How can I know if IP Multicast is enabled</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/inkheart0124/p/5508420.html">Android App用MulticastSocket监听组播，为什么连接到不同路由、在不同手机上跑，有的能收到有的收不到</a><br><a target="_blank" rel="noopener" href="https://code.google.com/p/android/issues/detail?id=51195">Many devices have multicast disabled in the kernel</a></p>
 </blockquote>

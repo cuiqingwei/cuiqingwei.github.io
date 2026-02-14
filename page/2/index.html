@@ -346,11 +346,9 @@
 </blockquote>
 <h1 id="1-初检git出错"><a href="#1-初检git出错" class="headerlink" title="1. 初检git出错"></a>1. 初检git出错</h1><p>依赖提示 Please install Git (git-core) &gt;= 1.6.5</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">➜  openwrt git:(master) ✗ make menuconfig</span><br><span class="line">Checking <span class="string">&#x27;working-make&#x27;</span>... ok.</span><br><span class="line">         .</span><br><span class="line">         .</span><br><span class="line">         .</span><br><span class="line">Checking <span class="string">&#x27;svn&#x27;</span>... ok.</span><br><span class="line">Checking <span class="string">&#x27;git&#x27;</span>... failed.</span><br><span class="line">Checking <span class="string">&#x27;file&#x27;</span>... ok.</span><br><span class="line">Checking <span class="string">&#x27;openssl&#x27;</span>... ok.</span><br><span class="line">Checking <span class="string">&#x27;ldconfig-stub&#x27;</span>... ok.</span><br><span class="line"></span><br><span class="line">Build dependency: Please install Git (git-core) &gt;= 1.6.5</span><br><span class="line"></span><br><span class="line">/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/include/prereq.mk:12: recipe <span class="keyword">for</span> target <span class="string">&#x27;prereq&#x27;</span> failed</span><br><span class="line">Prerequisite check failed. Use FORCE=1 to override.</span><br><span class="line">/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/include/toplevel.mk:140: recipe <span class="keyword">for</span> target <span class="string">&#x27;staging_dir/host/.prereq-build&#x27;</span> failed</span><br><span class="line">make: *** [staging_dir/host/.prereq-build] Error 1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <p>明明已经安装了git，却提示我们安装git，只是openwrt里面prereq-build.mk的一个bug，可以通过打patch的方法来修复它。</p>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>进到xxx/chaos_calmer/include目录,就是toplevel.mk所在的目录。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://gitlab.labs.nic.cz/turris/openwrt/uploads/0673001b14ab1d1769604ff0ce7d8781/git-version-check-fix.patch</span><br><span class="line">patch &lt; git-version-check-fix.patch</span><br></pre></td></tr></table></figure>
-
 <p>回到openwrt根目录，再次检查依赖，发现没，没有问题了。</p>
           
       
@@ -422,23 +420,17 @@
           
         <p>1、安装docker</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install docker.io</span><br></pre></td></tr></table></figure>
-
 <p>2、修改成国内镜像源</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/docker</span><br><span class="line">vim daemon.json</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">   <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;http://hub-mirror.c.163.com&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>重启docker服务</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service docker restart</span><br></pre></td></tr></table></figure>
-
 <p>3、docker安装portainer</p>
 <p>搜索portainer</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search portainer</span><br></pre></td></tr></table></figure>
-
 <p>拉取portainer</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull portainer/portainer</span><br></pre></td></tr></table></figure>
-
 <p>创建portainer容器并启动</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name portainerUI -p 8000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer</span><br></pre></td></tr></table></figure>
-
 <p>4、访问portainer界面<br><a target="_blank" rel="noopener" href="http://192.168.1.102:8000/">http://192.168.1.102:8000</a></p>
 <p>首次登陆时,初始化设置密码。</p>
 <hr>
@@ -474,7 +466,6 @@
 </ul>
 <p>Docker ubuntu镜像更换apt-get</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list</span><br><span class="line">apt-get clean</span><br></pre></td></tr></table></figure>
-
       
     </div>
     
@@ -542,29 +533,24 @@
 <ol>
 <li>打开 .zshr</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.zshrc</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~&#x2F;.zshrc</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>在 .zshrc增加别名</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias subl=&quot;/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl&quot;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias subl&#x3D;&quot;&#x2F;Applications&#x2F;Sublime\ Text.app&#x2F;Contents&#x2F;SharedSupport&#x2F;bin&#x2F;subl&quot;</span><br></pre></td></tr></table></figure>
 <p>其中 Sublime\ Text可以按照你系统上安装的Sublime版本的情况被替换成Sublime\ Text\ 2或是其他。取决于你的Sublime Text.app在~/Application里的实际名称。</p>
 <ol start="3">
 <li>更新改动，生效</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.zshrc</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~&#x2F;.zshrc</span><br></pre></td></tr></table></figure>
 <ol start="4">
 <li>即可使用sublime在命令行中创建和编辑文件</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subl hello.c</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subl hello.c</span><br></pre></td></tr></table></figure>
 <ol start="5">
 <li>即可使用sublime在命令行中打开当前文件夹</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subl .</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subl .</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -712,7 +698,6 @@
 <li>通过终端命令修改</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;xxx&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;xxx@gmail.com&quot;</span></span><br><span class="line">git config --global <span class="built_in">alias</span> ci commit</span><br><span class="line">git config --global <span class="built_in">alias</span> dog  <span class="built_in">log</span> --all --decorate --oneline --graph</span><br><span class="line">git config --global <span class="built_in">alias</span> mg merge</span><br></pre></td></tr></table></figure>
-
 <ul>
 <li><code>vi ~/.gitconfig</code> 直接修改文件配置也可以</li>
 </ul>
@@ -1294,11 +1279,8 @@
       
           
               <h3 id="Preparing-configuring-and-building-the-necessary-tools"><a href="#Preparing-configuring-and-building-the-necessary-tools" class="headerlink" title="Preparing, configuring and building the necessary tools"></a>Preparing, configuring and building the necessary tools</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">mkdir buidbot</span><br><span class="line">cd ~/buildbot</span><br><span class="line">git clone https://git.openwrt.org/openwrt/openwrt.git source</span><br><span class="line">cd /home/buildbot/source</span><br><span class="line">git checkout v17.01.2</span><br><span class="line">make distclean</span><br><span class="line">./scripts/feeds update -a</span><br><span class="line">./scripts/feeds install -a</span><br><span class="line">make menuconfig</span><br><span class="line">make toolchain/install</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/home/buildbot/source/staging_dir/host/bin:$PATH</span><br></pre></td></tr></table></figure>
-
-<h3 id="Creating-a-package-feed-for-your-packages"><a href="#Creating-a-package-feed-for-your-packages" class="headerlink" title="Creating a package feed for your packages"></a>Creating a package feed for your packages</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p mypackages/examples/helloworld</span><br></pre></td></tr></table></figure>
-
+<h3 id="Creating-a-package-feed-for-your-packages"><a href="#Creating-a-package-feed-for-your-packages" class="headerlink" title="Creating a package feed for your packages"></a>Creating a package feed for your packages</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p mypackages/examples/helloworld</span><br></pre></td></tr></table></figure>
 <h3 id="Creating-the-package-manifest-file"><a href="#Creating-the-package-manifest-file" class="headerlink" title="Creating the package manifest file"></a>Creating the package manifest file</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd home/buildbot/mypackages/examples/helloworld</span><br><span class="line">touch Makefile</span><br></pre></td></tr></table></figure>
           
       

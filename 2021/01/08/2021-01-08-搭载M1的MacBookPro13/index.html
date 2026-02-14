@@ -22,14 +22,14 @@
 <meta property="og:site_name" content="iZheteng">
 <meta property="og:description" content="MacBook只用Pro，MBP2016到M1的MBP2020。 因为蝶式键盘实在是个问题，Unshaky 解决按键粘连问题。 新的MBP秒控键盘很妙，最重要的是ESC键独立成传统键，Vi党不可缺少的一个键。  VSMBP2016(X64) 👈 👉 MBP2020(M1)">
 <meta property="og:locale">
-<meta property="og:image" content="http://izheteng.gitee.io/blogimg/iZheteng/20210108-X64toM1.jpg">
-<meta property="og:image" content="http://izheteng.gitee.io/blogimg/iZheteng/20210108-X64toM1one.jpg">
-<meta property="og:image" content="http://izheteng.gitee.io/blogimg/iZheteng/20210109-MBP2016apps.jpg">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20210108/X64toM1.jpg">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20210108/X64toM1one.jpg">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20210109/MBP2016apps.jpg">
 <meta property="article:published_time" content="2021-01-08T12:39:00.000Z">
-<meta property="article:modified_time" content="2026-02-13T15:58:21.627Z">
+<meta property="article:modified_time" content="2026-02-14T07:15:44.057Z">
 <meta property="article:author" content="iZheteng">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://izheteng.gitee.io/blogimg/iZheteng/20210108-X64toM1.jpg">
+<meta name="twitter:image" content="http://cuiqingwei.github.io/img/20210108/X64toM1.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -355,32 +355,26 @@
 <p>新的MBP秒控键盘很妙，最重要的是ESC键独立成传统键，<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Vi/5043202">Vi</a>党不可缺少的一个键。</p>
 </blockquote>
 <h3 id="VS"><a href="#VS" class="headerlink" title="VS"></a>VS</h3><p>MBP2016(X64) 👈 👉 MBP2020(M1)</p>
-<p><img src="http://izheteng.gitee.io/blogimg/iZheteng/20210108-X64toM1.jpg" alt="X64toM1"></p>
-<span id="more"></span>
+<p><img src="/img/20210108/X64toM1.jpg" alt="X64toM1"></p>
+<a id="more"></a>
 
-<p><img src="http://izheteng.gitee.io/blogimg/iZheteng/20210108-X64toM1one.jpg" alt="X64toM1one"></p>
-<h3 id="MBP2016纪念"><a href="#MBP2016纪念" class="headerlink" title="MBP2016纪念"></a>MBP2016纪念</h3><p><img src="http://izheteng.gitee.io/blogimg/iZheteng/20210109-MBP2016apps.jpg" alt="MBP2016apps"></p>
+<p><img src="/img/20210108/X64toM1one.jpg" alt="X64toM1one"></p>
+<h3 id="MBP2016纪念"><a href="#MBP2016纪念" class="headerlink" title="MBP2016纪念"></a>MBP2016纪念</h3><p><img src="/img/20210109/MBP2016apps.jpg" alt="MBP2016apps"></p>
 <h3 id="M1-install"><a href="#M1-install" class="headerlink" title="M1 install"></a>M1 install</h3><p>Alfred4</p>
 <blockquote>
 <p>可以安装使用，但是Powerpack没有和谐。</p>
 </blockquote>
 <p>brew、wget</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;eval $(/opt/homebrew/bin/brew shellenv)&#x27;</span> &gt;&gt; /Users/gary/.zprofile</span><br><span class="line"><span class="built_in">eval</span> $(/opt/homebrew/bin/brew shellenv)</span><br><span class="line">brew install wget</span><br></pre></td></tr></table></figure>
-
 <p>iterm2及autojump插件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask iterm2</span><br><span class="line">brew install autojump</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.zshrc</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set name of the theme to load --- if set to &quot;random&quot;, it will</span></span><br><span class="line"><span class="comment"># load a random theme each time oh-my-zsh is loaded, in which case,</span></span><br><span class="line"><span class="comment"># to know which specific one was loaded, run: echo $RANDOM_THEME</span></span><br><span class="line"><span class="comment"># See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes</span></span><br><span class="line"><span class="comment">#ZSH_THEME=&quot;robbyrussell&quot;</span></span><br><span class="line">ZSH_THEME=<span class="string">&quot;ys&quot;</span></span><br><span class="line"><span class="comment"># Which plugins would you like to load?</span></span><br><span class="line"><span class="comment"># Standard plugins can be found in $ZSH/plugins/</span></span><br><span class="line"><span class="comment"># Custom plugins may be added to $ZSH_CUSTOM/plugins/</span></span><br><span class="line"><span class="comment"># Example format: plugins=(rails git textmate ruby lighthouse)</span></span><br><span class="line"><span class="comment"># Add wisely, as too many plugins slow down shell startup.</span></span><br><span class="line">plugins=(</span><br><span class="line">        git</span><br><span class="line">        autojump</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
 <p>当前文件夹打开终端</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask openinterminal</span><br></pre></td></tr></table></figure>
-
 <p>窗口布局管理</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask rectangle</span><br></pre></td></tr></table></figure>
-
 <p>图床</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask upic</span><br></pre></td></tr></table></figure>
-
 <p>APP Store</p>
 <p>The Unarchiver、iShot、</p>
 <p>iOS APP</p>
@@ -396,7 +390,7 @@
         <p><span>本文标题:</span><a href="/2021/01/08/2021-01-08-%E6%90%AD%E8%BD%BDM1%E7%9A%84MacBookPro13/">搭载M1的MacBookPro13</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页"></a></p>
         <p><span>发布时间:</span>2021-01-08, 20:39:00</p>
-        <p><span>最后更新:</span>2026-02-13, 23:58:21</p>
+        <p><span>最后更新:</span>2026-02-14, 15:15:44</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2021/01/08/2021-01-08-%E6%90%AD%E8%BD%BDM1%E7%9A%84MacBookPro13/" title="搭载M1的MacBookPro13">http://cuiqingwei.github.io/2021/01/08/2021-01-08-%E6%90%AD%E8%BD%BDM1%E7%9A%84MacBookPro13/</a>
             <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2021/01/08/2021-01-08-%E6%90%AD%E8%BD%BDM1%E7%9A%84MacBookPro13/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

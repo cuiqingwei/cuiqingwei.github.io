@@ -15,12 +15,12 @@
 
 
 
-<meta name="description" content="下载 Raspbianhttps:&#x2F;&#x2F;www.raspberrypi.org&#x2F;downloads&#x2F;raspbian&#x2F; 制作 TF card12345df -hdiskutil unmount &#x2F;dev&#x2F;disk2s1diskutil listdd bs&#x3D;4m if&#x3D;2017-01-11-raspbian-jessie.img of&#x3D;&#x2F;dev&#x2F;rdisk2diskutil unmountdisk &#x2F;">
+<meta name="description" content="下载 Raspbianhttps:&#x2F;&#x2F;www.raspberrypi.org&#x2F;downloads&#x2F;raspbian&#x2F; 制作 TF card12345df -hdiskutil unmount &#x2F;dev&#x2F;disk2s1diskutil listdd bs&#x3D;4m if&#x3D;2017-01-11-raspbian-jessie.img of&#x3D;&#x2F;de">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Raspberry安装HAP-NodeJS">
 <meta property="og:url" content="http://cuiqingwei.github.io/2017/02/08/2017-02-08-Raspberry%E5%AE%89%E8%A3%85HAP-NodeJS/index.html">
 <meta property="og:site_name" content="iZheteng">
-<meta property="og:description" content="下载 Raspbianhttps:&#x2F;&#x2F;www.raspberrypi.org&#x2F;downloads&#x2F;raspbian&#x2F; 制作 TF card12345df -hdiskutil unmount &#x2F;dev&#x2F;disk2s1diskutil listdd bs&#x3D;4m if&#x3D;2017-01-11-raspbian-jessie.img of&#x3D;&#x2F;dev&#x2F;rdisk2diskutil unmountdisk &#x2F;">
+<meta property="og:description" content="下载 Raspbianhttps:&#x2F;&#x2F;www.raspberrypi.org&#x2F;downloads&#x2F;raspbian&#x2F; 制作 TF card12345df -hdiskutil unmount &#x2F;dev&#x2F;disk2s1diskutil listdd bs&#x3D;4m if&#x3D;2017-01-11-raspbian-jessie.img of&#x3D;&#x2F;de">
 <meta property="og:locale">
 <meta property="article:published_time" content="2017-02-07T16:27:40.000Z">
 <meta property="article:modified_time" content="2026-02-13T15:58:21.004Z">
@@ -353,34 +353,23 @@
       
           
         <h1 id="下载-Raspbian"><a href="#下载-Raspbian" class="headerlink" title="下载 Raspbian"></a>下载 Raspbian</h1><p><a target="_blank" rel="noopener" href="https://www.raspberrypi.org/downloads/raspbian/">https://www.raspberrypi.org/downloads/raspbian/</a></p>
-<h1 id="制作-TF-card"><a href="#制作-TF-card" class="headerlink" title="制作 TF card"></a>制作 TF card</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br><span class="line">diskutil unmount /dev/disk2s1</span><br><span class="line">diskutil list</span><br><span class="line">dd bs=4m if=2017-01-11-raspbian-jessie.img of=/dev/rdisk2</span><br><span class="line">diskutil unmountdisk /dev/disk2</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
+<h1 id="制作-TF-card"><a href="#制作-TF-card" class="headerlink" title="制作 TF card"></a>制作 TF card</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br><span class="line">diskutil unmount &#x2F;dev&#x2F;disk2s1</span><br><span class="line">diskutil list</span><br><span class="line">dd bs&#x3D;4m if&#x3D;2017-01-11-raspbian-jessie.img of&#x3D;&#x2F;dev&#x2F;rdisk2</span><br><span class="line">diskutil unmountdisk &#x2F;dev&#x2F;disk2</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 
 <blockquote>
 <p>note：新的img默认没有打开ssh，在tf卡根目录新建名称为 ssh 的文件夹解决</p>
 </blockquote>
-<h1 id="登录树莓派"><a href="#登录树莓派" class="headerlink" title="登录树莓派"></a>登录树莓派</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh pi@raspberrypi.local</span><br></pre></td></tr></table></figure>
-
-<h1 id="更新源"><a href="#更新源" class="headerlink" title="更新源"></a>更新源</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br><span class="line">sudo vi /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
-
+<h1 id="登录树莓派"><a href="#登录树莓派" class="headerlink" title="登录树莓派"></a>登录树莓派</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh pi@raspberrypi.local</span><br></pre></td></tr></table></figure>
+<h1 id="更新源"><a href="#更新源" class="headerlink" title="更新源"></a>更新源</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo cp &#x2F;etc&#x2F;apt&#x2F;sources.list &#x2F;etc&#x2F;apt&#x2F;sources.list.bak</span><br><span class="line">sudo vi &#x2F;etc&#x2F;apt&#x2F;sources.list</span><br></pre></td></tr></table></figure>
 <p>进入编辑界面，用 <strong>#</strong> 注释掉原来的源，添加下方的源。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.neusoft.edu.cn/raspbian/raspbian jessie main contrib non-free rpi</span><br></pre></td></tr></table></figure>
-
-<h1 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade -y</span><br></pre></td></tr></table></figure>
-
-<h1 id="安装解决依赖"><a href="#安装解决依赖" class="headerlink" title="安装解决依赖"></a>安装解决依赖</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install avahi-daemon avahi-discover libnss-mdns libavahi-compat-libdnssd-dev  build-essential -y</span><br><span class="line">service avahi-daemon start</span><br></pre></td></tr></table></figure>
-
-<h1 id="增加nodejs源"><a href="#增加nodejs源" class="headerlink" title="增加nodejs源"></a>增加nodejs源</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -</span><br></pre></td></tr></table></figure>
-
-<h1 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Downloads</span><br><span class="line">wget http://nodejs.org/dist/v7.6.0/node-v7.6.0.tar.gz</span><br><span class="line">tar -xzf node-v7.6.0.tar.gz</span><br><span class="line">cd node-v7.6.0</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
-
-<h1 id="克隆HAP-NodeJS源码"><a href="#克隆HAP-NodeJS源码" class="headerlink" title="克隆HAP-NodeJS源码"></a>克隆HAP-NodeJS源码</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/KhaosT/HAP-NodeJS.git</span><br></pre></td></tr></table></figure>
-
-<h1 id="安装node-gyp"><a href="#安装node-gyp" class="headerlink" title="安装node-gyp"></a>安装node-gyp</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g node-gyp</span><br></pre></td></tr></table></figure>
-
-<h1 id="切换到HAP-NodeJS文件夹下，运行"><a href="#切换到HAP-NodeJS文件夹下，运行" class="headerlink" title="切换到HAP-NodeJS文件夹下，运行"></a>切换到HAP-NodeJS文件夹下，运行</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo npm istall</span><br><span class="line">node Core.js</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb http:&#x2F;&#x2F;mirrors.neusoft.edu.cn&#x2F;raspbian&#x2F;raspbian jessie main contrib non-free rpi</span><br></pre></td></tr></table></figure>
+<h1 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade -y</span><br></pre></td></tr></table></figure>
+<h1 id="安装解决依赖"><a href="#安装解决依赖" class="headerlink" title="安装解决依赖"></a>安装解决依赖</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install avahi-daemon avahi-discover libnss-mdns libavahi-compat-libdnssd-dev  build-essential -y</span><br><span class="line">service avahi-daemon start</span><br></pre></td></tr></table></figure>
+<h1 id="增加nodejs源"><a href="#增加nodejs源" class="headerlink" title="增加nodejs源"></a>增加nodejs源</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">curl -sL https:&#x2F;&#x2F;deb.nodesource.com&#x2F;setup_6.x | sudo -E bash -</span><br></pre></td></tr></table></figure>
+<h1 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd ~&#x2F;Downloads</span><br><span class="line">wget http:&#x2F;&#x2F;nodejs.org&#x2F;dist&#x2F;v7.6.0&#x2F;node-v7.6.0.tar.gz</span><br><span class="line">tar -xzf node-v7.6.0.tar.gz</span><br><span class="line">cd node-v7.6.0</span><br><span class="line">.&#x2F;configure</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+<h1 id="克隆HAP-NodeJS源码"><a href="#克隆HAP-NodeJS源码" class="headerlink" title="克隆HAP-NodeJS源码"></a>克隆HAP-NodeJS源码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;KhaosT&#x2F;HAP-NodeJS.git</span><br></pre></td></tr></table></figure>
+<h1 id="安装node-gyp"><a href="#安装node-gyp" class="headerlink" title="安装node-gyp"></a>安装node-gyp</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g node-gyp</span><br></pre></td></tr></table></figure>
+<h1 id="切换到HAP-NodeJS文件夹下，运行"><a href="#切换到HAP-NodeJS文件夹下，运行" class="headerlink" title="切换到HAP-NodeJS文件夹下，运行"></a>切换到HAP-NodeJS文件夹下，运行</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo npm istall</span><br><span class="line">node Core.js</span><br></pre></td></tr></table></figure>
       
     </div>
     
