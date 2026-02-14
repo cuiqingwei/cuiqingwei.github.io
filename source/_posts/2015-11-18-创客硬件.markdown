@@ -1,0 +1,75 @@
+---
+layout: post
+title:  "创客硬件"
+date:   2015-11-18 00:26:00
+comments: true
+tags:
+  - 创客
+  - 开源硬件
+  - 经典网站
+---
+
+SparkFun Electronics
+[https://www.sparkfun.com/](https://www.sparkfun.com/)
+美国Sparkfun是世界最具盛名的电子零配件供应商，主要面向产品原型开发以及项目设计。电子产品种类相当齐全多大上万种，有许多国内少见的电子产品都可以在这里觅寻到。
+
+Adafruit Industries, Unique & fun DIY electronics and kits
+[http://www.adafruit.com/](http://www.adafruit.com/)
+
+美国纽约的Adafruit是一家DIY公司，网上对此公司评价为创意无底限。该公司在智能穿戴设备、物联网上有很好的创意与发展。Adafruit的CEO是MIT工程硕士毕业的 Limor Fried，是创客浪潮里的扛旗人物，提起她的花名“Ladyada”，大概创客圈里无人不知。
+<!--more-->
+哈尔滨奥松机器人
+[http://www.alsrobot.cn/index.php](http://www.alsrobot.cn/index.php)
+
+dfrobot - DF创客社区-分享创造的喜悦
+[http://www.dfrobot.com.cn/](http://www.dfrobot.com.cn/)
+
+DFRobot-开源硬件和机器人
+[http://www.dfrobot.cn/](http://www.dfrobot.cn/)
+
+DFRobot 官方旗舰
+[https://dfrobot.taobao.com/](https://dfrobot.taobao.com/)
+
+DUINOPEAK-开源硬件社区-创客基地 | 将想法变为现实
+[http://duinopeak.cn/wiki/index.php?title=%E9%A6%96%E9%A1%B5](http://duinopeak.cn/wiki/index.php?title=%E9%A6%96%E9%A1%B5)
+
+DuinoPeak商城
+[https://makeshields.taobao.com/](https://makeshields.taobao.com/)
+
+Duinopeak
+[http://www.duinopeak.com/store/](http://www.duinopeak.com/store/)
+
+Seeed Studio! 深圳矽递科技
+成立于2008年，是一家致力于促进开源硬件发展的服务型企业。我们通过提供模块化的快速开发工具，使设计者能根据创意，简单快速地开发出产品原型。此外，我们还通过提供从研发辅助，采购生产到渠道分销的一站式配套服务，帮助设计者实现从创意到产品的转换。3年以来，我们不断加大技术和研发投入，努力优化供应链和销售渠道，使得企业的服务能力一直处于行业领先状态。此外，为鼓励民族自主创新精神，我们还投资建立了深圳第一家Hackerspace——柴火，努力为设计者的创造和创业打造一个良好环境。坚持不懈的努力为我们赢得了行业尊重和客户信任。目前，我们已经与众多设计者建立了紧密的合作关系，其中包括Google, MICROSOFT, MIT, NASA, MAKEZINE等知名企业和组织。在开源硬件的框架下，合作推出了涉及新媒体艺术、嵌入式平台、物联网、智能家居、便携式仪器等领域的一系列明星产品和方案。基于对行业的深厚理解，以及不断的自我完善，我们正加快步伐，为实现"以促进开源硬件发展来推动创新精神传播"的愿景目标而前进。
+
+淘宝商城
+[https://shop105412212.taobao.com/](https://shop105412212.taobao.com/)
+
+Arduino 是一款便捷灵活、方便上手的开源电子原型平台，包含硬件（各种型号的arduino板）和软件（arduino IDE)。它适用于艺术家、设计师、爱好者和对于“互动”有兴趣的朋友们。Arduino，是一个基于开放原始码的软硬体平台，构建于开放原始码simple I/O介面版，并且具有使用类似Java，C语言的Processing/Wiring开发环境
+
+pcDuino是一种高性能，高性价比的迷你PC的平台，能够运行PC操作系统，如Ubuntu和Android的ICS等。它可以通过内置HDMI接口输出视频到电视或显示器屏幕。 pcDuino专门针对开源社区快速增长的需求，即希望有一个平台可以运行完整的PC操作系统，容易使用的工具链和兼容流行的Arduino开放的生态系统，如Arduino shield和开源项目等。
+pcDuino的硬件性能指标远超树莓派，性能稳定，做工精良。pcDuino迷你计算机的CPU采用1GHz ARM Cortex A8内核，DRAM为1GB，板载存储达到2GB Flash, 完全兼容Arduino接口。另外，pcDuino 可以从NAND或者从mini-SD卡(TF卡)启动，在NAND Flash内有出厂预装了ubuntu系统，您拿到手即可使用。
+
+Raspberry Pi是一款基于Linux系统的只有一张信用卡大小的单板机计算机。它由英国的树莓派基金会所开发，目的是以低价硬件及自由软件刺激在学校的基本的电脑科学教育。
+
+Pololu是美国第一大机器人零件巨头公司，电子产品制造商和在线零售商。Pololu的主要产品是操控机器人各种运动的小型电子模块。从传感器和运动控制电子产品到电机和车轮来完成机器人的组装。
+[https://www.pololu.com/](https://www.pololu.com/)
+
+香港云雀视维技术有限公司 Skylark FPV Technologies Co., Ltd. 简称云雀视维（Skylark FPV）是业界领先的FPV飞行解决供应商，一直以来，我们基于客户需求持续创新，致力于为客户提供优质、安全、稳定的FPV配套设备和系统完善的解决方案。目前可以提供包含视频叠加(OSD)系统、自动天线跟踪、飞行姿态与控制、高精度抗干扰GPS等十余款系列产品，以及全系统的FPV飞行解决方案
+
+三大主流开源硬件对比：Arduino vs BeagleBone vs Raspberry Pi
+[http://www.csdn.net/article/2013-05-02/2815109-arduinouno-vs-beaglebone-vs-raspberrypi](http://www.csdn.net/article/2013-05-02/2815109-arduinouno-vs-beaglebone-vs-raspberrypi
+)
+
+MIT 工程硕士毕业的 Limor Fried是创客浪潮里的扛旗人物，提起她的花名“Ladyada”，大概创客圈里无人不知。
+[http://www.leiphone.com/news/201406/ladyada-maker.html](http://www.leiphone.com/news/201406/ladyada-maker.html)
+
+
+永不消逝的电波——Arduino制作BCD码电波钟
+[http://www.geek-workshop.com/thread-7797-1-1.html](http://www.geek-workshop.com/thread-7797-1-1.html)
+
+3D打印笔作品
+[http://www.3dyaya.com/](http://www.3dyaya.com/)
+
+创客利器——关注3D打印
+[http://segmentfault.com/a/1190000000458980](http://segmentfault.com/a/1190000000458980)

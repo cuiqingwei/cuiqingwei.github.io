@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "在TI-CC1111&CC25111上搞定USBHID"
+date:    2009-3-13 00:42:08
+comments: true
+tags:
+  - C++Builder6.0
+  - USBHID
+---
+
+![效果图](http://cache.amobbs.com/bbs_upload782111/files_13/ourdev_425633.png)
+
+---
+
+*发表链接*
+
+amoBBS 阿莫电子论坛 [http://www.amobbs.com/thread-3240297-1-1.html](http://www.amobbs.com/thread-3240297-1-1.html)

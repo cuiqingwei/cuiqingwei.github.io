@@ -1,0 +1,89 @@
+---
+layout: post
+title:  "CC2430模块自测程序"
+date:    2007-10-12 13:22:02
+comments: true
+tags:
+  - CC2430
+  - ZigBee
+---
+
+ModuleTest V1.0 Written: 崔庆伟 [gary]
+
+可以用指令控制选择信道，设置发射功率，发送数据包（长度可选），接收数据包（接收时延可设），CC2430复位，MCU温度读取等。底层函数基本做好，如果要加入新功能，可自行更改。
+<!--more-->
+``` bash
+文件目录
+│  MT.eww
+│  Serial.ht
+│
+├─app
+│      includes.h
+│      ver.h
+│      mt.h
+│      mt.c
+│      MT.lib
+│
+├─hal
+│      hal.h
+│      rfConfig.h
+│      rfPacket.h
+│      wait.h
+│      timerSet.h
+│      uart.h
+│      tSensor.h
+│
+├─proj
+│  │  MT.ewd
+│  │  MT.ewp
+│  │  MT.IMB
+│  │  MT.IMD
+│  │  MT.IAB
+│  │  MT.IAD
+│  │  MT.PR
+│  │  MT.PS
+│  │  MT.PFI
+│  │  MT.PO
+│  │  MT.dep
+│  │  MT.SearchResults
+│  │  MT.WK3
+│  │  MT.PRI
+│  │
+│  ├─settings
+│  │      MT.dni
+│  │      MT.dbgdt
+│  │
+│  └─Debug
+│      ├─Exe
+│      │      MT.d51
+│      │
+│      ├─Obj
+│      │      uart.r51
+│      │      hal_uart.r51
+│      │      wait.r51
+│      │      rfConfig.r51
+│      │      rfPacket.r51
+│      │      timerSet.r51
+│      │      lcd.pbi
+│      │      lcd.r51
+│      │      rfPacketTransceiver.pbi
+│      │      MT.pbd
+│      │      mt.pbi
+│      │      mt.r51
+│      │
+│      └─List
+│              MT.map
+│
+└─settings
+        MT.wsdt
+```
+- [MT.rar(文件大小:143K)](http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_176232.rar)
+
+超级终端连接界面：        
+![效果图](http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_176234.jpg)
+
+---
+
+*发表链接*
+
+amoBBS 阿莫电子论坛 [http://www.amobbs.com/forum.php?mod=viewthread&tid=831670](http://www.amobbs.com/forum.php?mod=viewthread&tid=831670)

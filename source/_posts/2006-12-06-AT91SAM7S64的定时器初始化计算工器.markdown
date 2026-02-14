@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "AT91SAM7S64的定时器初始化计算器"
+subtitle: "基于C++Builder6.0开发"
+date:    2006-12-06 15:25:34
+comments: true
+tags:
+  - C++Builder6.0
+---
+
+AT91SAM7S系列ARM初始化计算工具
+
+此软件将会不断加入新的功能，请多支持，如发现bug,请回贴指正，谢谢
+
+软件界面如下：
+![效果图](http://cache.amobbs.com/bbs_upload782111/files_6/armok01137511.jpg)
+<!--more-->
+![效果图](http://cache.amobbs.com/bbs_upload782111/files_6/armok01137512.jpg)
+
+---
+
+*发表链接*
+
+amoBBS 阿莫电子论坛 [http://www.amobbs.com/thread-697466-1-1.html](http://www.amobbs.com/thread-697466-1-1.html)

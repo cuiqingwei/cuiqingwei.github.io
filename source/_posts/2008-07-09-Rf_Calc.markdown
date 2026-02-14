@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "Rf_Calc"
+date:    2008-07-09 12:42:45
+comments: true
+tags:
+  - C++Builder6.0
+---
+
+昨晚搞了个小工具，方便大家计算！不用动笔了！欢迎使用，有bug请斧正，谢谢！
+Rf Calc 包含功能：
+               ① mW换算为dBm；
+               ② dBm换算为mW；
+               ③ 空间损耗计算；
+               ④ 链路裕量；
+               ⑤ 传输距离计算。
+
+软件界面如下：
+![效果图](http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_343345.jpg)
+<!--more-->
+![效果图](http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_343346.jpg)
+
+- [Rf_Calc.rar(文件大小:553K)](http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_343348.rar)
+
+---
+
+*发表链接*
+
+amoBBS 阿莫电子论坛 [http://www.amobbs.com/thread-1320348-1-1.html](http://www.amobbs.com/thread-1320348-1-1.html)

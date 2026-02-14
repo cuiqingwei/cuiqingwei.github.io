@@ -1,0 +1,23 @@
+---
+layout: post
+title:  "EAGLE3D终于搞定了!"
+date:   2007-11-19 20:07:41
+comments: true
+tags:
+  - Eagle
+---
+
+# 3D效果
+![3d](http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_182056.png)
+<!--more-->
+# 实物
+![实物](http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_185116.JPG)
+
+# 再传一下，我实验阶段的手工作品，看起来还是洗板的效果好啊，呵呵。
+![手工](http://cache.amobbs.com/bbs_upload782111/files_8/ourdev_185117.JPG)
+
+---
+
+*发表链接*
+
+amoBBS 阿莫电子论坛 [http://www.amobbs.com/thread-854275-1-1.html](http://www.amobbs.com/thread-854275-1-1.html)

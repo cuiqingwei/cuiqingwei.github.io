@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "Proteus产品仿真"
+subtitle: "产品仿真[源码＋电路]：LCD图形显示_菜单管理_PCF8583_TWI_SPI所有C代码公开"
+date:    2008-05-11 10:20:19
+comments: true
+tags:
+  - Proteus
+---
+
+现将2006在一家公司做的一个产品的仿真部分所有源码资料公布，供大家学习和参考！包括参菜单管理算法。菜单翻页可像手机菜单一下，可滚动翻页，并有进度条指示。另还有TWI读写PCF8563的程序。不多说大家看看就知道。以前只公布过proteus和hex，反映还可以。今天是源码也公布，希望对大家有帮助。传播请注明作者及出处，谢谢！
+
+# 图示效果一
+![效果图](http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_274222.png)
+<!--more-->
+# 图示效果二
+![效果图](http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_274223.png)
+
+# 使用手册截图
+![手册图](http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_274224.PNG)
+
+![手册图](http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_274282.PNG)
+
+# 所有资料打包
+- [debug.rar(文件大小:1.52M)](http://cache.amobbs.com/bbs_upload782111/files_10/ourdev_274225.rar)
+
+# 资料包文件目录
+``` bash
+E:\debug>tree /f
+卷 WORK 的文件夹 PATH 列表
+卷序列号码为 000007BC E4BD:002B
+E:.
+│  效果_1.png
+│  效果_2.png
+│  效果_1.jpg
+│  效果_2.jpg
+│  使用手册V1_0.pdf
+│
+├─source
+│      Main.h
+│      Display.c
+│      DotLib.c
+│      SPI.h
+│      SPI.c
+│      Display.h
+│      Dotlib.h
+│      TWI.h
+│      PCF8563.c
+│      PCF8563.h
+│      TWI.c
+│      Includes.h
+│      Main.c
+│
+└─protues
+        LCDBoard.DSN
+        Debug.cof
+        Debug.hex
+        LCDBoard.PWI
+```
+
+---
+
+*发表链接*
+
+amoBBS 阿莫电子论坛 [http://www.amobbs.com/thread-1054447-1-1.html](http://www.amobbs.com/thread-1054447-1-1.html)
