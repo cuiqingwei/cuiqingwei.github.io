@@ -532,85 +532,6 @@
 
 
   
-    <article id="post-2020-04-03-Ubuntu18-04下编译OpenWRT15-05遇到的问题和解决方案" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="article-date">
-      <time datetime="2020-04-03T13:37:00.000Z" itemprop="datePublished">2020-04-03</time>
-</a>
-
- 
-    <a href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2020/04/03/2020-04-03-Ubuntu18-04下编译OpenWRT15-05遇到的问题和解决方案/"></span>
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">Ubuntu18.04下编译OpenWRT15.05遇到的问题和解决方案</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <blockquote>
-<p>最近，OpenWRT开发主战场，从ubuntu16.04 LTS 虚拟机环境迁移到了ubuntu18.04LTS，水土不服，各种不适。不多说，折腾！！！</p>
-</blockquote>
-<h1 id="1-初检git出错"><a href="#1-初检git出错" class="headerlink" title="1. 初检git出错"></a>1. 初检git出错</h1><p>依赖提示 Please install Git (git-core) &gt;= 1.6.5</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">➜  openwrt git:(master) ✗ make menuconfig</span><br><span class="line">Checking <span class="string">&#x27;working-make&#x27;</span>... ok.</span><br><span class="line">         .</span><br><span class="line">         .</span><br><span class="line">         .</span><br><span class="line">Checking <span class="string">&#x27;svn&#x27;</span>... ok.</span><br><span class="line">Checking <span class="string">&#x27;git&#x27;</span>... failed.</span><br><span class="line">Checking <span class="string">&#x27;file&#x27;</span>... ok.</span><br><span class="line">Checking <span class="string">&#x27;openssl&#x27;</span>... ok.</span><br><span class="line">Checking <span class="string">&#x27;ldconfig-stub&#x27;</span>... ok.</span><br><span class="line"></span><br><span class="line">Build dependency: Please install Git (git-core) &gt;= 1.6.5</span><br><span class="line"></span><br><span class="line">/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/include/prereq.mk:12: recipe <span class="keyword">for</span> target <span class="string">&#x27;prereq&#x27;</span> failed</span><br><span class="line">Prerequisite check failed. Use FORCE=1 to override.</span><br><span class="line">/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/include/toplevel.mk:140: recipe <span class="keyword">for</span> target <span class="string">&#x27;staging_dir/host/.prereq-build&#x27;</span> failed</span><br><span class="line">make: *** [staging_dir/host/.prereq-build] Error 1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>明明已经安装了git，却提示我们安装git，只是openwrt里面prereq-build.mk的一个bug，可以通过打patch的方法来修复它。</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>进到xxx/chaos_calmer/include目录,就是toplevel.mk所在的目录。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://gitlab.labs.nic.cz/turris/openwrt/uploads/0673001b14ab1d1769604ff0ce7d8781/git-version-check-fix.patch</span><br><span class="line">patch &lt; git-version-check-fix.patch</span><br></pre></td></tr></table></figure>
-
-<p>回到openwrt根目录，再次检查依赖，发现没，没有问题了。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-2020-04-05-Ubuntu18-04安装docker并使用portainer" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -712,6 +633,85 @@
       
 
       
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2020-04-03-Ubuntu18-04下编译OpenWRT15-05遇到的问题和解决方案" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="article-date">
+      <time datetime="2020-04-03T13:37:00.000Z" itemprop="datePublished">2020-04-03</time>
+</a>
+
+ 
+    <a href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2020/04/03/2020-04-03-Ubuntu18-04下编译OpenWRT15-05遇到的问题和解决方案/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">Ubuntu18.04下编译OpenWRT15.05遇到的问题和解决方案</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <blockquote>
+<p>最近，OpenWRT开发主战场，从ubuntu16.04 LTS 虚拟机环境迁移到了ubuntu18.04LTS，水土不服，各种不适。不多说，折腾！！！</p>
+</blockquote>
+<h1 id="1-初检git出错"><a href="#1-初检git出错" class="headerlink" title="1. 初检git出错"></a>1. 初检git出错</h1><p>依赖提示 Please install Git (git-core) &gt;= 1.6.5</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">➜  openwrt git:(master) ✗ make menuconfig</span><br><span class="line">Checking <span class="string">&#x27;working-make&#x27;</span>... ok.</span><br><span class="line">         .</span><br><span class="line">         .</span><br><span class="line">         .</span><br><span class="line">Checking <span class="string">&#x27;svn&#x27;</span>... ok.</span><br><span class="line">Checking <span class="string">&#x27;git&#x27;</span>... failed.</span><br><span class="line">Checking <span class="string">&#x27;file&#x27;</span>... ok.</span><br><span class="line">Checking <span class="string">&#x27;openssl&#x27;</span>... ok.</span><br><span class="line">Checking <span class="string">&#x27;ldconfig-stub&#x27;</span>... ok.</span><br><span class="line"></span><br><span class="line">Build dependency: Please install Git (git-core) &gt;= 1.6.5</span><br><span class="line"></span><br><span class="line">/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/include/prereq.mk:12: recipe <span class="keyword">for</span> target <span class="string">&#x27;prereq&#x27;</span> failed</span><br><span class="line">Prerequisite check failed. Use FORCE=1 to override.</span><br><span class="line">/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/include/toplevel.mk:140: recipe <span class="keyword">for</span> target <span class="string">&#x27;staging_dir/host/.prereq-build&#x27;</span> failed</span><br><span class="line">make: *** [staging_dir/host/.prereq-build] Error 1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>明明已经安装了git，却提示我们安装git，只是openwrt里面prereq-build.mk的一个bug，可以通过打patch的方法来修复它。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>进到xxx/chaos_calmer/include目录,就是toplevel.mk所在的目录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://gitlab.labs.nic.cz/turris/openwrt/uploads/0673001b14ab1d1769604ff0ce7d8781/git-version-check-fix.patch</span><br><span class="line">patch &lt; git-version-check-fix.patch</span><br></pre></td></tr></table></figure>
+
+<p>回到openwrt根目录，再次检查依赖，发现没，没有问题了。</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+        <p class="article-more-link">
+          <a href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
