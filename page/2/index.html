@@ -301,6 +301,94 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-2024-11-26-Raspberry-Pi入门指南" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2024/11/26/2024-11-26-Raspberry-Pi%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/" class="article-date">
+      <time datetime="2024-11-26T07:26:00.000Z" itemprop="datePublished">2024-11-26</time>
+</a>
+
+ 
+    <a href="/2024/11/26/2024-11-26-Raspberry-Pi%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2024/11/26/2024-11-26-Raspberry-Pi入门指南/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/11/26/2024-11-26-Raspberry-Pi%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/">Raspberry Pi入门指南</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <blockquote>
+<p>本文整理了Raspberry Pi的入门使用指南。</p>
+</blockquote>
+<h2 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.raspberrypi.com/">https://www.raspberrypi.com/</a></li>
+</ul>
+<h2 id="局域网查找设备"><a href="#局域网查找设备" class="headerlink" title="局域网查找设备"></a>局域网查找设备</h2><h3 id="Mac-Linux"><a href="#Mac-Linux" class="headerlink" title="Mac/Linux"></a>Mac/Linux</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arp -n | awk <span class="string">'/b8:27:eb/ {print $1}'</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arp -a | findstr e4-5f-01</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="开启SSH"><a href="#开启SSH" class="headerlink" title="开启SSH"></a>开启SSH</h2><p>将SD卡连接到电脑，在根目录新建名为”SSH”的文件（无后缀）。</p>
+<h2 id="修改时区"><a href="#修改时区" class="headerlink" title="修改时区"></a>修改时区</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dpkg-reconfigure tzdata</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="GPIO"><a href="#GPIO" class="headerlink" title="GPIO"></a>GPIO</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看引脚</span></span><br><span class="line">pinout</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看详细状态</span></span><br><span class="line">gpio readall</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="教程资源"><a href="#教程资源" class="headerlink" title="教程资源"></a>教程资源</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://naturepi.com/2020/09/raspberry-pi-sha-gua-jiao-cheng/">https://naturepi.com/2020/09/raspberry-pi-sha-gua-jiao-cheng/</a></li>
+<li><a target="_blank" rel="noopener" href="https://projects.raspberrypi.org/en/pathways/getting-started-with-raspberry-pi">https://projects.raspberrypi.org/en/pathways/getting-started-with-raspberry-pi</a></li>
+<li><a target="_blank" rel="noopener" href="https://thepihut.com/">https://thepihut.com/</a></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Raspberry-Pi/" rel="tag">Raspberry Pi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" rel="tag">嵌入式Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" rel="tag">树莓派</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2024-09-25-Ollama" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -1153,91 +1241,6 @@ registry:latest:这个是刚才pull下来的镜像</p>
         <p class="article-more-link">
           <a href="/2022/09/29/2022-09-30-Docker%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C%E5%8F%8A%E5%8F%91%E5%B8%83/#more">阅读全文 &gt;&gt;</a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2022-09-11-挂载网盘-1Fichier" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/09/10/2022-09-11-%E6%8C%82%E8%BD%BD%E7%BD%91%E7%9B%98-1Fichier/" class="article-date">
-      <time datetime="2022-09-10T16:00:00.000Z" itemprop="datePublished">2022-09-11</time>
-</a>
-
- 
-    <a href="/2022/09/10/2022-09-11-%E6%8C%82%E8%BD%BD%E7%BD%91%E7%9B%98-1Fichier/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2022/09/10/2022-09-11-挂载网盘-1Fichier/"></span>
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/10/2022-09-11-%E6%8C%82%E8%BD%BD%E7%BD%91%E7%9B%98-1Fichier/">挂载网盘-1Fichier</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>参考：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.veidc.com/28143.html">https://www.veidc.com/28143.html</a></li>
-<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1778090?from=15425">https://cloud.tencent.com/developer/article/1778090?from=15425</a></li>
-</ul>
-<h2 id="注册1Fichier"><a href="#注册1Fichier" class="headerlink" title="注册1Fichier"></a>注册1Fichier</h2><p>访问下面的链接注册1Fichier后可获得1Tb容量，免费用户的文件仅保存30天。</p>
-<ul>
-<li>1Fichier官网：<a target="_blank" rel="noopener" href="https://1fichier.com/?af=3477749">https://1fichier.com/?af=3477749</a></li>
-</ul>
-<h2 id="上传到1Fichier"><a href="#上传到1Fichier" class="headerlink" title="上传到1Fichier"></a>上传到1Fichier</h2><p>1Fichier支持FTP上传、网页上传、远程上传（离线下载），我们这里分别介绍一下。</p>
-<h3 id="FTP上传"><a href="#FTP上传" class="headerlink" title="FTP上传"></a>FTP上传</h3><p>使用过FTP工具的同学应该都很熟悉，这里不做过多介绍，上传信息如下：</p>
-<ul>
-<li>FTP上传地址：ftp.1fichier.com</li>
-<li>FTP用户名：您的注册邮箱</li>
-<li>FTP密码：您1Fichier所使用的密码</li>
-<li>端口：21</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/1fichier/" rel="tag">1fichier</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li></ul>
-    </div>
-
       
       <div class="clearfix"></div>
     </div>

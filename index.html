@@ -391,121 +391,6 @@
 
 
   
-    <article id="post-2026-02-17-博客发布流程" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2026/01/29/2026-02-17-%E5%8D%9A%E5%AE%A2%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B/" class="article-date">
-      <time datetime="2026-01-29T01:09:00.000Z" itemprop="datePublished">2026-01-29</time>
-</a>
-
- 
-    <a href="/2026/01/29/2026-02-17-%E5%8D%9A%E5%AE%A2%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2026/01/29/2026-02-17-博客发布流程/"></span>
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2026/01/29/2026-02-17-%E5%8D%9A%E5%AE%A2%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B/">博客发布流程</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="发布流程"><a href="#发布流程" class="headerlink" title="发布流程"></a>发布流程</h2><pre class="mermaid">graph TD
-    Start[本地撰写/修改博文markdown] --&gt; Push[Git Push 提交代码]
-    Push --&gt; Gitee["<b>Gitee 仓库 (主库)</b><br>izheteng/hexo-yelee"]
-    
-    subgraph 同步与自动化阶段
-    Gitee --&gt;|镜像同步 Mirror| GitHub_Src["<b>GitHub 源码仓库</b><br>cuiqingwei/hexo-yelee"]
-    GitHub_Src --&gt;|触发 GitHub Actions| Workflow[GitHub Workflow]
-    end
-
-    subgraph 静态页面部署终端
-    Workflow --&gt; Netlify["<b>Netlify</b><br>izheteng.netlify.app"]
-    Workflow --&gt; Vercel["<b>Vercel</b><br>izheteng.vercel.app"]
-	  Workflow --&gt; Render["<b>Render</b><br>izheteng.onrender.com"]
-	  Workflow --&gt; CF_Pages["<b>Cloudflare Pages</b><br>izheteng.pages.dev"]
-    Workflow --&gt; GH_Pages["<b>GitHub Pages</b><br>cuiqingwei.github.io"]
-    end
-
-    style Gitee fill:#f96,stroke:#333,stroke-width:2px
-    style GitHub_Src fill:#f9f,stroke:#333,stroke-width:2px
-    style Workflow fill:#bbf,stroke:#333,stroke-width:2px
-</pre>
-
-<p><strong>流程步骤深度解析：</strong></p>
-<ol>
-<li><p><strong>代码提交与托管：</strong> 您将基于 <strong>Hexo</strong> 框架和 <strong>Yelee</strong> 主题的源代码首先提交至 <strong>Gitee</strong>。这通常是为了兼顾国内开发的访问速度。</p>
-</li>
-<li><p><strong>镜像同步 (Mirroring)：</strong> 资料中提到“Mirror”这一技术标签。通过镜像机制，Gitee 上的更新会自动同步到 <strong>GitHub</strong> 的源码仓库，确保两个平台的代码版本一致。</p>
-</li>
-<li><p><strong>自动化部署 (CI/CD)：</strong> 一旦 GitHub 源码仓库接收到更新，会触发 <strong>GitHub Workflow</strong>（即 CI/CD 流程）。</p>
-<p> ◦ 该工作流会自动运行 <code>hexo generate</code> 生成静态 HTML 页面。</p>
-<p> ◦ 随后运行 <code>hexo deploy</code> 或相关的 Action 脚本。</p>
-</li>
-<li><p><strong>多云分发：</strong></p>
-<p> ◦ <strong>GitHub Pages</strong> 是主要的展示平台。</p>
-<p> ◦ 同时同步部署到 <strong>Netlify</strong>、<strong>Vercel、Render</strong>和 <strong>Cloudflare Pages、Github Pages</strong>。这种做法可以实现<strong>容灾备份</strong>和<strong>全球加速</strong>，确保无论用户身处何地都能快速访问您的博客。</p>
-</li>
-</ol>
-<p>这种“<strong>一次提交，到处发布</strong>”的折腾精神，非常契合“活着，就要折腾”以及“态度决定一切”的信条。</p>
-<h2 id="站点链接"><a href="#站点链接" class="headerlink" title="站点链接"></a>站点链接</h2><p><strong>主站</strong>：<a target="_blank" rel="noopener" href="http://www.izheteng.site/">http://www.izheteng.site/</a>
-Vercel 镜像站：<a target="_blank" rel="noopener" href="https://izheteng.vercel.app/">https://izheteng.vercel.app/</a>
-Netlify 镜像站：<a target="_blank" rel="noopener" href="https://izheteng.netlify.app/">https://izheteng.netlify.app/</a>
-Cloudflare 镜像站：<a target="_blank" rel="noopener" href="https://izheteng.pages.dev/">https://izheteng.pages.dev/</a>
-Render 镜像站：<a target="_blank" rel="noopener" href="https://izheteng.onrender.com/">https://izheteng.onrender.com</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-        <div class="article-pop-out tagcloud">
-          <a class="">置顶</a>
-        </div>
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub-Pages/" rel="tag">GitHub Pages</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-2012-10-14-曾经折腾过的那些" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -565,6 +450,176 @@ Render 镜像站：<a target="_blank" rel="noopener" href="https://izheteng.onre
       
         <p class="article-more-link">
           <a href="/2012/10/14/2012-10-14-%E6%9B%BE%E7%BB%8F%E6%8A%98%E8%85%BE%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B/#more">阅读全文 &gt;&gt;</a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2026-02-17-博客发布流程" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2026/01/29/2026-02-17-%E5%8D%9A%E5%AE%A2%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B/" class="article-date">
+      <time datetime="2026-01-29T01:09:00.000Z" itemprop="datePublished">2026-01-29</time>
+</a>
+
+ 
+    <a href="/2026/01/29/2026-02-17-%E5%8D%9A%E5%AE%A2%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2026/01/29/2026-02-17-博客发布流程/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/01/29/2026-02-17-%E5%8D%9A%E5%AE%A2%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B/">博客发布流程</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="Blog发布过程（Gitee-gt-Github-gt-GitHub-Pages）"><a href="#Blog发布过程（Gitee-gt-Github-gt-GitHub-Pages）" class="headerlink" title="Blog发布过程（Gitee -> Github -> GitHub Pages）"></a>Blog发布过程（<strong>Gitee -&gt; Github -&gt; GitHub Pages</strong>）</h2><ol>
+<li><p><strong>代码提交与托管：</strong> 您将基于 <strong>Hexo</strong> 框架和 <strong>Yelee</strong> 主题的源代码首先提交至 <strong>Gitee</strong>。这通常是为了兼顾国内开发的访问速度。</p>
+</li>
+<li><p><strong>镜像同步 (Mirroring)：</strong> 资料中提到“Mirror”这一技术标签。通过镜像机制，Gitee 上的更新会自动同步到 <strong>GitHub</strong> 的源码仓库，确保两个平台的代码版本一致。</p>
+</li>
+<li><p><strong>自动化部署 (CI/CD)：</strong> 一旦 GitHub 源码仓库接收到更新，会触发 <strong>GitHub Workflow</strong>（即 CI/CD 流程）。</p>
+<p> ◦ 该工作流会自动运行 <code>hexo generate</code> 生成静态 HTML 页面。</p>
+<p> ◦ 随后运行 <code>hexo deploy</code> 或相关的 Action 脚本。</p>
+</li>
+<li><p><strong>多云分发：</strong></p>
+<p> ◦ <strong>GitHub Pages</strong> 是主要的展示平台。</p>
+<p> ◦ 同时同步部署到 <strong>Netlify</strong>、<strong>Vercel、Render</strong>和 <strong>Cloudflare Pages、Github Pages</strong>。这种做法可以实现<strong>容灾备份</strong>和<strong>全球加速</strong>，确保无论用户身处何地都能快速访问您的博客。</p>
+</li>
+</ol>
+<p>这种“<strong>一次提交，到处发布</strong>”的折腾精神，非常契合“活着，就要折腾”以及“态度决定一切”的信条。</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <a class="">置顶</a>
+        </div>
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub-Pages/" rel="tag">GitHub Pages</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2026/01/29/2026-02-17-%E5%8D%9A%E5%AE%A2%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B/#more">阅读全文 &gt;&gt;</a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2022-05-14-Github开源软件" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/05/14/2022-05-14-Github%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/" class="article-date">
+      <time datetime="2022-05-14T02:00:00.000Z" itemprop="datePublished">2022-05-14</time>
+</a>
+
+ 
+    <a href="/2022/05/14/2022-05-14-Github%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2022/05/14/2022-05-14-Github开源软件/"></span>
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/14/2022-05-14-Github%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/">Github开源软件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <blockquote>
+<p>收藏的一些常用的GitHub开源软件，持续更新中…</p>
+</blockquote>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <a class="">置顶</a>
+        </div>
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tools/" rel="tag">Tools</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2022/05/14/2022-05-14-Github%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/#more">阅读全文 &gt;&gt;</a>
         </p>
       
       <div class="clearfix"></div>
@@ -1148,94 +1203,6 @@ Tailscale 会自动选择离目标节点最近的 DERP server 来中继流量。
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LVGL/" rel="tag">LVGL</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2024-11-26-Raspberry-Pi入门指南" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2024/11/26/2024-11-26-Raspberry-Pi%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/" class="article-date">
-      <time datetime="2024-11-26T07:26:00.000Z" itemprop="datePublished">2024-11-26</time>
-</a>
-
- 
-    <a href="/2024/11/26/2024-11-26-Raspberry-Pi%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2024/11/26/2024-11-26-Raspberry-Pi入门指南/"></span>
-        
-    </a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/11/26/2024-11-26-Raspberry-Pi%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/">Raspberry Pi入门指南</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <blockquote>
-<p>本文整理了Raspberry Pi的入门使用指南。</p>
-</blockquote>
-<h2 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://www.raspberrypi.com/">https://www.raspberrypi.com/</a></li>
-</ul>
-<h2 id="局域网查找设备"><a href="#局域网查找设备" class="headerlink" title="局域网查找设备"></a>局域网查找设备</h2><h3 id="Mac-Linux"><a href="#Mac-Linux" class="headerlink" title="Mac/Linux"></a>Mac/Linux</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arp -n | awk <span class="string">'/b8:27:eb/ {print $1}'</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arp -a | findstr e4-5f-01</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="开启SSH"><a href="#开启SSH" class="headerlink" title="开启SSH"></a>开启SSH</h2><p>将SD卡连接到电脑，在根目录新建名为”SSH”的文件（无后缀）。</p>
-<h2 id="修改时区"><a href="#修改时区" class="headerlink" title="修改时区"></a>修改时区</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dpkg-reconfigure tzdata</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="GPIO"><a href="#GPIO" class="headerlink" title="GPIO"></a>GPIO</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看引脚</span></span><br><span class="line">pinout</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看详细状态</span></span><br><span class="line">gpio readall</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="教程资源"><a href="#教程资源" class="headerlink" title="教程资源"></a>教程资源</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://naturepi.com/2020/09/raspberry-pi-sha-gua-jiao-cheng/">https://naturepi.com/2020/09/raspberry-pi-sha-gua-jiao-cheng/</a></li>
-<li><a target="_blank" rel="noopener" href="https://projects.raspberrypi.org/en/pathways/getting-started-with-raspberry-pi">https://projects.raspberrypi.org/en/pathways/getting-started-with-raspberry-pi</a></li>
-<li><a target="_blank" rel="noopener" href="https://thepihut.com/">https://thepihut.com/</a></li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Raspberry-Pi/" rel="tag">Raspberry Pi</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" rel="tag">嵌入式Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" rel="tag">树莓派</a></li></ul>
     </div>
 
       
