@@ -429,7 +429,27 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="发布流程"><a href="#发布流程" class="headerlink" title="发布流程"></a>发布流程</h2><pre class="mermaid">graph TD    Start[本地撰写/修改博文markdown] --&gt; Push[Git Push 提交代码]    Push --&gt; Gitee["<b>Gitee 仓库 (主库)</b><br>izheteng/hexo-yelee"]        subgraph 同步与自动化阶段    Gitee --&gt;|镜像同步 Mirror| GitHub_Src["<b>GitHub 源码仓库</b><br>cuiqingwei/hexo-yelee"]    GitHub_Src --&gt;|触发 GitHub Actions| Workflow[GitHub Workflow]    end    subgraph 静态页面部署终端    Workflow --&gt; Netlify["<b>Netlify</b><br>izheteng.netlify.app"]    Workflow --&gt; Vercel["<b>Vercel</b><br>izheteng.vercel.app"]	  Workflow --&gt; Render["<b>Render</b><br>izheteng.onrender.com"]	  Workflow --&gt; CF_Pages["<b>Cloudflare Pages</b><br>izheteng.pages.dev"]    Workflow --&gt; GH_Pages["<b>GitHub Pages</b><br>cuiqingwei.github.io"]    end    style Gitee fill:#f96,stroke:#333,stroke-width:2px    style GitHub_Src fill:#f9f,stroke:#333,stroke-width:2px    style Workflow fill:#bbf,stroke:#333,stroke-width:2px</pre>
+        <h2 id="发布流程"><a href="#发布流程" class="headerlink" title="发布流程"></a>发布流程</h2><pre class="mermaid">graph TD
+    Start[本地撰写/修改博文markdown] --&gt; Push[Git Push 提交代码]
+    Push --&gt; Gitee["<b>Gitee 仓库 (主库)</b><br>izheteng/hexo-yelee"]
+    
+    subgraph 同步与自动化阶段
+    Gitee --&gt;|镜像同步 Mirror| GitHub_Src["<b>GitHub 源码仓库</b><br>cuiqingwei/hexo-yelee"]
+    GitHub_Src --&gt;|触发 GitHub Actions| Workflow[GitHub Workflow]
+    end
+
+    subgraph 静态页面部署终端
+    Workflow --&gt; Netlify["<b>Netlify</b><br>izheteng.netlify.app"]
+    Workflow --&gt; Vercel["<b>Vercel</b><br>izheteng.vercel.app"]
+	  Workflow --&gt; Render["<b>Render</b><br>izheteng.onrender.com"]
+	  Workflow --&gt; CF_Pages["<b>Cloudflare Pages</b><br>izheteng.pages.dev"]
+    Workflow --&gt; GH_Pages["<b>GitHub Pages</b><br>cuiqingwei.github.io"]
+    end
+
+    style Gitee fill:#f96,stroke:#333,stroke-width:2px
+    style GitHub_Src fill:#f9f,stroke:#333,stroke-width:2px
+    style Workflow fill:#bbf,stroke:#333,stroke-width:2px
+</pre>
 
 <p><strong>流程步骤深度解析：</strong></p>
 <ol>
