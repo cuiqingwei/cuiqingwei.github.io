@@ -816,9 +816,11 @@ MathJax.Hub.Queue(function() {
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script defer="" src="/js/mermaid.min.js"></script>
 <script>
-    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    document.addEventListener('DOMContentLoaded', function() {
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    });
 </script>
 
 <div class="scroll" id="scroll">
