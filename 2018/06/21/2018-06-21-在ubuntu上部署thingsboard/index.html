@@ -21,7 +21,7 @@
 <meta property="og:description" content="先决条件本指南介绍了如何在Ubuntu Server 14.04 LTS上安装ThingsBoard。硬件要求取决于选择的数据库和连接到系统的设备数量。要在一台机器上运行ThingsBoard和PostgreSQL，您将至少需要1Gb RAM。要在单台计算机上运行ThingsBoard和Cassandra，您至少需要8Gb RAM。 步骤1.安装Java 8（OpenJDK）ThingsBoard">
 <meta property="og:locale">
 <meta property="article:published_time" content="2018-06-21T07:12:08.000Z">
-<meta property="article:modified_time" content="2026-03-17T12:54:51.485Z">
+<meta property="article:modified_time" content="2026-03-17T13:21:53.599Z">
 <meta property="article:author" content="iZheteng">
 <meta property="article:tag" content="thingsboard">
 <meta name="twitter:card" content="summary">
@@ -37,15 +37,15 @@
 
 
 
-    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet">
 
 
 
-    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
 
 
 
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
 
 
@@ -55,13 +55,13 @@
 
 
 
-<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
 <title>在ubuntu上部署thingsboard | iZheteng</title>
 
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+<script defer="" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script defer="" src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
 
 <script>
     var yiliaConfig = {
@@ -72,15 +72,15 @@
         isArchive: false,
         isTag: false,
         isCategory: false,
-        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
-        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        fancybox_js: "//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.1.4/scrollreveal.min.js",
         search: true
     }
 </script>
 
 
     <script>
-        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+        yiliaConfig.jquery_ui = [true, "//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js", "//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/css/jquery-ui.min.css"];
     </script>
 
 
@@ -430,7 +430,7 @@
         <p><span>本文标题:</span><a href="/2018/06/21/2018-06-21-%E5%9C%A8ubuntu%E4%B8%8A%E9%83%A8%E7%BD%B2thingsboard/">在ubuntu上部署thingsboard</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页"></a></p>
         <p><span>发布时间:</span>2018-06-21, 15:12:08</p>
-        <p><span>最后更新:</span>2026-03-17, 12:54:51</p>
+        <p><span>最后更新:</span>2026-03-17, 13:21:53</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/06/21/2018-06-21-%E5%9C%A8ubuntu%E4%B8%8A%E9%83%A8%E7%BD%B2thingsboard/" title="在ubuntu上部署thingsboard">http://cuiqingwei.github.io/2018/06/21/2018-06-21-%E5%9C%A8ubuntu%E4%B8%8A%E9%83%A8%E7%BD%B2thingsboard/</a>
             <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2018/06/21/2018-06-21-%E5%9C%A8ubuntu%E4%B8%8A%E9%83%A8%E7%BD%B2thingsboard/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -621,7 +621,7 @@
 </script>
 
 
-<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script data-main="/js/main.js" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js"></script>
 
 
 
@@ -638,27 +638,6 @@ ga('send', 'pageview');
 </script>
 <!-- End Google Analytics -->
 
-
-
-    <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 
 <div class="scroll" id="scroll">

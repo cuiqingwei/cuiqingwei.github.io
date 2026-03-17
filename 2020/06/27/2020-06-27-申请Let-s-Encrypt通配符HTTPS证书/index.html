@@ -21,7 +21,7 @@
 <meta property="og:description" content="通配符证书是一个SSL证书，可用于为给定域上的所有子域提供https，例如，*.<domain>.com 意味着任何子域名（如www.example.com或links.example.com）会使用相同的SSL证书。 使用通配符证书对于允许用户选择子域的应用程序非常有用，例如，wordpress.com子域下的所有博客。 acme.sh 实现了 acme 协议, 可以从 letsen">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-06-27T12:37:00.000Z">
-<meta property="article:modified_time" content="2026-03-17T12:54:51.486Z">
+<meta property="article:modified_time" content="2026-03-17T13:21:53.601Z">
 <meta property="article:author" content="iZheteng">
 <meta name="twitter:card" content="summary">
 
@@ -36,15 +36,15 @@
 
 
 
-    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet">
 
 
 
-    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
 
 
 
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
 
 
@@ -54,13 +54,13 @@
 
 
 
-<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
 <title>申请Let's Encrypt通配符HTTPS证书 | iZheteng</title>
 
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+<script defer="" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script defer="" src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
 
 <script>
     var yiliaConfig = {
@@ -71,15 +71,15 @@
         isArchive: false,
         isTag: false,
         isCategory: false,
-        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
-        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        fancybox_js: "//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.1.4/scrollreveal.min.js",
         search: true
     }
 </script>
 
 
     <script>
-        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+        yiliaConfig.jquery_ui = [true, "//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js", "//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/css/jquery-ui.min.css"];
     </script>
 
 
@@ -465,7 +465,7 @@
         <p><span>本文标题:</span><a href="/2020/06/27/2020-06-27-%E7%94%B3%E8%AF%B7Let-s-Encrypt%E9%80%9A%E9%85%8D%E7%AC%A6HTTPS%E8%AF%81%E4%B9%A6/">申请Let's Encrypt通配符HTTPS证书</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页"></a></p>
         <p><span>发布时间:</span>2020-06-27, 20:37:00</p>
-        <p><span>最后更新:</span>2026-03-17, 12:54:51</p>
+        <p><span>最后更新:</span>2026-03-17, 13:21:53</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/06/27/2020-06-27-%E7%94%B3%E8%AF%B7Let-s-Encrypt%E9%80%9A%E9%85%8D%E7%AC%A6HTTPS%E8%AF%81%E4%B9%A6/" title="申请Let's Encrypt通配符HTTPS证书">http://cuiqingwei.github.io/2020/06/27/2020-06-27-%E7%94%B3%E8%AF%B7Let-s-Encrypt%E9%80%9A%E9%85%8D%E7%AC%A6HTTPS%E8%AF%81%E4%B9%A6/</a>
             <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2020/06/27/2020-06-27-%E7%94%B3%E8%AF%B7Let-s-Encrypt%E9%80%9A%E9%85%8D%E7%AC%A6HTTPS%E8%AF%81%E4%B9%A6/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -656,7 +656,7 @@
 </script>
 
 
-<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<script data-main="/js/main.js" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js"></script>
 
 
 
@@ -673,27 +673,6 @@ ga('send', 'pageview');
 </script>
 <!-- End Google Analytics -->
 
-
-
-    <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 
 
 <div class="scroll" id="scroll">
