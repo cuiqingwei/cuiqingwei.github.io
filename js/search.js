@@ -1,1 +1,106 @@
-var searchFunc=function(t,r,a){$.ajax({url:t,dataType:"xml",success:function(t){var e=$("entry",t).map(function(){return{title:$("title",this).text(),content:$("content",this).text(),url:$("url",this).text()}}).get(),t=document.getElementById(r),n=document.getElementById(a);t.addEventListener("input",function(){var o='<ul class="search-result-list">',h=this.value.trim().toLowerCase().split(/[\s\-]+/);n.innerHTML="",this.value.trim().length<=0||(e.forEach(function(t){var n,e,r,a=!0,s=t.title.trim().toLowerCase(),c=t.content.trim().replace(/<[^>]+>/g,"").toLowerCase(),i=t.url,l=-1,u=-1;""!=s&&""!=c&&h.forEach(function(t,e){n=s.indexOf(t),l=c.indexOf(t),n<0&&l<0?a=!1:(l<0&&(l=0),0==e&&(u=l))}),a&&(o+="<li><a href='"+i+"' class='search-result-title' target='_blank'>> "+s+"</a>",i=t.content.trim().replace(/<[^>]+>/g,""),0<=u)&&(t=u+6,(t=0==(e=(e=u-6)<0?0:e)?10:t)>i.length&&(t=i.length),r=i.substr(e,t),h.forEach(function(t){var e=new RegExp(t,"gi");r=r.replace(e,'<em class="search-keyword">'+t+"</em>")}),o+='<p class="search-result">'+r+"...</p>")}),n.innerHTML=o)})}})};
+// A local search script with the help of [hexo-generator-search](https://github.com/PaicHyperionDev/hexo-generator-search)
+// Copyright (C) 2015
+// Joseph Pan <http://github.com/wzpan>
+// Shuhao Mao <http://github.com/maoshuhao>
+// Edited by MOxFIVE <http://github.com/MOxFIVE>
+
+var searchFunc = function (path, search_id, content_id) {
+  'use strict';
+  $.ajax({
+    url: path,
+    dataType: 'xml',
+    success: function (xmlResponse) {
+      // get the contents from search data
+      var datas = $('entry', xmlResponse)
+        .map(function () {
+          return {
+            title: $('title', this).text(),
+            content: $('content', this).text(),
+            url: $('url', this).text(),
+          };
+        })
+        .get();
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $input.addEventListener('input', function () {
+        var str = '<ul class=\"search-result-list\">';
+        var keywords = this.value
+          .trim()
+          .toLowerCase()
+          .split(/[\s\-]+/);
+        $resultContent.innerHTML = '';
+        if (this.value.trim().length <= 0) {
+          return;
+        }
+        // perform local searching
+        datas.forEach(function (data) {
+          var isMatch = true;
+          var content_index = [];
+          var data_title = data.title.trim().toLowerCase();
+          var data_content = data.content
+            .trim()
+            .replace(/<[^>]+>/g, '')
+            .toLowerCase();
+          var data_url = data.url;
+          var index_title = -1;
+          var index_content = -1;
+          var first_occur = -1;
+          // only match artiles with not empty titles and contents
+          if (data_title != '' && data_content != '') {
+            keywords.forEach(function (keyword, i) {
+              index_title = data_title.indexOf(keyword);
+              index_content = data_content.indexOf(keyword);
+              if (index_title < 0 && index_content < 0) {
+                isMatch = false;
+              } else {
+                if (index_content < 0) {
+                  index_content = 0;
+                }
+                if (i == 0) {
+                  first_occur = index_content;
+                }
+              }
+            });
+          }
+          // show search results
+          if (isMatch) {
+            str +=
+              "<li><a href='" +
+              data_url +
+              "' class='search-result-title' target='_blank'>" +
+              '> ' +
+              data_title +
+              '</a>';
+            var content = data.content.trim().replace(/<[^>]+>/g, '');
+            if (first_occur >= 0) {
+              // cut out characters
+              var start = first_occur - 6;
+              var end = first_occur + 6;
+              if (start < 0) {
+                start = 0;
+              }
+              if (start == 0) {
+                end = 10;
+              }
+              if (end > content.length) {
+                end = content.length;
+              }
+              var match_content = content.substr(start, end);
+              // highlight all keywords
+              keywords.forEach(function (keyword) {
+                var regS = new RegExp(keyword, 'gi');
+                match_content = match_content.replace(
+                  regS,
+                  '<em class="search-keyword">' + keyword + '</em>'
+                );
+              });
+
+              str += '<p class="search-result">' + match_content + '...</p>';
+            }
+          }
+        });
+        $resultContent.innerHTML = str;
+      });
+    },
+  });
+};
