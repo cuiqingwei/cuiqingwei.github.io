@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
-<meta name="author" content="iZheteng">
+<meta name="author" content="Gary">
 
 
     
@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://cuiqingwei.github.io/page/5/index.html">
 <meta property="og:site_name" content="iZheteng">
 <meta property="og:locale">
-<meta property="article:author" content="iZheteng">
+<meta property="article:author" content="Gary">
 <meta name="twitter:card" content="summary">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -301,20 +301,20 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-2021-03-21-IPcheck-IP地址变化监控脚本" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-2021-03-21-WSL配置" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2021/03/20/2021-03-21-IPcheck-IP%E5%9C%B0%E5%9D%80%E5%8F%98%E5%8C%96%E7%9B%91%E6%8E%A7%E8%84%9A%E6%9C%AC/" class="article-date">
+      <a href="/2021/03/20/2021-03-21-WSL%E9%85%8D%E7%BD%AE/" class="article-date">
       <time datetime="2021-03-20T16:00:00.000Z" itemprop="datePublished">2021-03-21</time>
 </a>
 
  
-    <a href="/2021/03/20/2021-03-21-IPcheck-IP%E5%9C%B0%E5%9D%80%E5%8F%98%E5%8C%96%E7%9B%91%E6%8E%A7%E8%84%9A%E6%9C%AC/#comments" title="查看评论">
+    <a href="/2021/03/20/2021-03-21-WSL%E9%85%8D%E7%BD%AE/#comments" title="查看评论">
         <i class="fa fa-comments-o" aria-hidden="true"></i>
         <span class="count-comment"></span>
         
         
-            <span class="disqus-comment-count" data-disqus-identifier="2021/03/20/2021-03-21-IPcheck-IP地址变化监控脚本/"></span>
+            <span class="disqus-comment-count" data-disqus-identifier="2021/03/20/2021-03-21-WSL配置/"></span>
         
     </a>
 
@@ -330,7 +330,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/20/2021-03-21-IPcheck-IP%E5%9C%B0%E5%9D%80%E5%8F%98%E5%8C%96%E7%9B%91%E6%8E%A7%E8%84%9A%E6%9C%AC/">IPcheck-IP地址变化监控脚本</a>
+      <a class="article-title" href="/2021/03/20/2021-03-21-WSL%E9%85%8D%E7%BD%AE/">WSL配置</a>
     </h1>
   
 
@@ -340,13 +340,19 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get install mutt</span><br><span class="line"><span class="built_in">sudo</span> apt-get install msmtp</span><br></pre></td></tr></tbody></table></figure>
+              <h1 id="WSL-Windows-Subsystem-配置"><a href="#WSL-Windows-Subsystem-配置" class="headerlink" title="WSL(Windows Subsystem) 配置"></a>WSL(Windows Subsystem) 配置</h1><p>参考：<a target="_blank" rel="noopener" href="https://aisoa.cn/post-2904.html">https://aisoa.cn/post-2904.html</a></p>
+<h2 id="Windows10子系统Ubuntu18-04LTS更换国内源"><a href="#Windows10子系统Ubuntu18-04LTS更换国内源" class="headerlink" title="Windows10子系统Ubuntu18.04LTS更换国内源"></a>Windows10子系统Ubuntu18.04LTS更换国内源</h2><p>1.查看Linux版本</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lsb_release -a</span><br></pre></td></tr></tbody></table></figure>
 
-<p>安装好了这两个包之后，就是进行相关配置文件的配置了：</p>
-<h2 id="首先配置-mutt"><a href="#首先配置-mutt" class="headerlink" title="首先配置 mutt"></a>首先配置 mutt</h2><p>系统全局设置配置文件在 /etc/Muttrc,如果使用某个系统用户，可以在~/.muttc中设置，没有该文件，就自己创建。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi .muttrc</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Distributor ID: Ubuntu</span><br><span class="line">Description:    Ubuntu 18.04.2 LTS</span><br><span class="line">Release:        18.04</span><br><span class="line">Codename:       bionic</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> sendmail=<span class="string">"/usr/bin/msmtp"</span></span><br><span class="line"><span class="built_in">set</span> use_from=<span class="built_in">yes</span></span><br><span class="line"><span class="built_in">set</span> realname=<span class="string">"qingwei_cui@163.com"</span></span><br><span class="line"><span class="built_in">set</span> from=<span class="string">"qingwei_cui@163.com"</span></span><br><span class="line"><span class="built_in">set</span> envelope_from=<span class="built_in">yes</span></span><br><span class="line"><span class="built_in">set</span> copy=no</span><br></pre></td></tr></tbody></table></figure>
+<p>注意：Codename为bionic
+当前Ubuntu的版本为Bionic Beaver（仿生海狸）</p>
+<p>2.备份数据源</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> <span class="built_in">cp</span> /etc/apt/sources.list /etc/apt/sources-backup.list</span><br></pre></td></tr></tbody></table></figure>
+
+<p>3.更换数据源</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> vim /etc/apt/sources.list</span><br></pre></td></tr></tbody></table></figure>
           
       
     </div>
@@ -361,12 +367,12 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/2021/03/20/2021-03-21-IPcheck-IP%E5%9C%B0%E5%9D%80%E5%8F%98%E5%8C%96%E7%9B%91%E6%8E%A7%E8%84%9A%E6%9C%AC/#more">阅读全文 &gt;&gt;</a>
+          <a href="/2021/03/20/2021-03-21-WSL%E9%85%8D%E7%BD%AE/#more">阅读全文 &gt;&gt;</a>
         </p>
       
       <div class="clearfix"></div>
@@ -796,6 +802,90 @@
 
 
   
+    <article id="post-2020-04-03-Ubuntu18-04下编译OpenWRT15-05遇到的问题和解决方案" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="article-date">
+      <time datetime="2020-04-03T13:37:00.000Z" itemprop="datePublished">2020-04-03</time>
+</a>
+
+ 
+    <a href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2020/04/03/2020-04-03-Ubuntu18-04下编译OpenWRT15-05遇到的问题和解决方案/"></span>
+        
+    </a>
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">Ubuntu18.04下编译OpenWRT15.05遇到的问题和解决方案</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <blockquote>
+<p>最近，OpenWRT开发主战场，从ubuntu16.04 LTS 虚拟机环境迁移到了ubuntu18.04LTS，水土不服，各种不适。不多说，折腾！！！</p>
+</blockquote>
+<h1 id="1-初检git出错"><a href="#1-初检git出错" class="headerlink" title="1. 初检git出错"></a>1. 初检git出错</h1><p>依赖提示 Please install Git (git-core) &gt;= 1.6.5</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">➜  openwrt git:(master) ✗ make menuconfig</span><br><span class="line">Checking <span class="string">'working-make'</span>... ok.</span><br><span class="line">         .</span><br><span class="line">         .</span><br><span class="line">         .</span><br><span class="line">Checking <span class="string">'svn'</span>... ok.</span><br><span class="line">Checking <span class="string">'git'</span>... failed.</span><br><span class="line">Checking <span class="string">'file'</span>... ok.</span><br><span class="line">Checking <span class="string">'openssl'</span>... ok.</span><br><span class="line">Checking <span class="string">'ldconfig-stub'</span>... ok.</span><br><span class="line"></span><br><span class="line">Build dependency: Please install Git (git-core) &gt;= 1.6.5</span><br><span class="line"></span><br><span class="line">/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/include/prereq.mk:12: recipe <span class="keyword">for</span> target <span class="string">'prereq'</span> failed</span><br><span class="line">Prerequisite check failed. Use FORCE=1 to override.</span><br><span class="line">/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/include/toplevel.mk:140: recipe <span class="keyword">for</span> target <span class="string">'staging_dir/host/.prereq-build'</span> failed</span><br><span class="line">make: *** [staging_dir/host/.prereq-build] Error 1</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p>明明已经安装了git，却提示我们安装git，只是openwrt里面prereq-build.mk的一个bug，可以通过打patch的方法来修复它。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>进到xxx/chaos_calmer/include目录,就是toplevel.mk所在的目录。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://gitlab.labs.nic.cz/turris/openwrt/uploads/0673001b14ab1d1769604ff0ce7d8781/git-version-check-fix.patch</span><br><span class="line">patch &lt; git-version-check-fix.patch</span><br></pre></td></tr></tbody></table></figure>
+
+<p>回到openwrt根目录，再次检查依赖，发现没，没有问题了。</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">嵌入式开发</a>
+    </div>
+
+
+      
+      
+        <p class="article-more-link">
+          <a href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#more">阅读全文 &gt;&gt;</a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2020-04-05-Ubuntu18-04安装docker并使用portainer" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -903,90 +993,6 @@
 
 
       
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2020-04-03-Ubuntu18-04下编译OpenWRT15-05遇到的问题和解决方案" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="article-date">
-      <time datetime="2020-04-03T13:37:00.000Z" itemprop="datePublished">2020-04-03</time>
-</a>
-
- 
-    <a href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2020/04/03/2020-04-03-Ubuntu18-04下编译OpenWRT15-05遇到的问题和解决方案/"></span>
-        
-    </a>
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">Ubuntu18.04下编译OpenWRT15.05遇到的问题和解决方案</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <blockquote>
-<p>最近，OpenWRT开发主战场，从ubuntu16.04 LTS 虚拟机环境迁移到了ubuntu18.04LTS，水土不服，各种不适。不多说，折腾！！！</p>
-</blockquote>
-<h1 id="1-初检git出错"><a href="#1-初检git出错" class="headerlink" title="1. 初检git出错"></a>1. 初检git出错</h1><p>依赖提示 Please install Git (git-core) &gt;= 1.6.5</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">➜  openwrt git:(master) ✗ make menuconfig</span><br><span class="line">Checking <span class="string">'working-make'</span>... ok.</span><br><span class="line">         .</span><br><span class="line">         .</span><br><span class="line">         .</span><br><span class="line">Checking <span class="string">'svn'</span>... ok.</span><br><span class="line">Checking <span class="string">'git'</span>... failed.</span><br><span class="line">Checking <span class="string">'file'</span>... ok.</span><br><span class="line">Checking <span class="string">'openssl'</span>... ok.</span><br><span class="line">Checking <span class="string">'ldconfig-stub'</span>... ok.</span><br><span class="line"></span><br><span class="line">Build dependency: Please install Git (git-core) &gt;= 1.6.5</span><br><span class="line"></span><br><span class="line">/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/include/prereq.mk:12: recipe <span class="keyword">for</span> target <span class="string">'prereq'</span> failed</span><br><span class="line">Prerequisite check failed. Use FORCE=1 to override.</span><br><span class="line">/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/include/toplevel.mk:140: recipe <span class="keyword">for</span> target <span class="string">'staging_dir/host/.prereq-build'</span> failed</span><br><span class="line">make: *** [staging_dir/host/.prereq-build] Error 1</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<p>明明已经安装了git，却提示我们安装git，只是openwrt里面prereq-build.mk的一个bug，可以通过打patch的方法来修复它。</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>进到xxx/chaos_calmer/include目录,就是toplevel.mk所在的目录。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://gitlab.labs.nic.cz/turris/openwrt/uploads/0673001b14ab1d1769604ff0ce7d8781/git-version-check-fix.patch</span><br><span class="line">patch &lt; git-version-check-fix.patch</span><br></pre></td></tr></tbody></table></figure>
-
-<p>回到openwrt根目录，再次检查依赖，发现没，没有问题了。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">嵌入式开发</a>
-    </div>
-
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#more">阅读全文 &gt;&gt;</a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -1283,7 +1289,7 @@
                 <i class="fa fa-copyright"></i>
                 2016-
                             2026
-                                iZheteng
+                                Gary
                                     
                                         <a href="https://beian.miit.gov.cn/" target="_blank" style="color: #999; ">沪ICP备2022030735号</a>
                                         
