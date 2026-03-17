@@ -1,8 +1,11 @@
 require([], function () {
   var initMermaid = function () {
-    if (window.mermaid) {
-      mermaid.initialize({ startOnLoad: false, theme: window.mermaidTheme || 'default' });
-      mermaid.run({ querySelector: '.mermaid' });
+    var $mermaid = $('.mermaid');
+    if ($mermaid.length > 0) {
+      require([yiliaConfig.mermaid_js], function () {
+        mermaid.initialize({ startOnLoad: false, theme: window.mermaidTheme || 'default' });
+        mermaid.run({ querySelector: '.mermaid' });
+      });
     }
   };
 
