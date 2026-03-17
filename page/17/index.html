@@ -74,8 +74,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: true,
-        mermaid_js: "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"
+        search: true
     }
 </script>
 
@@ -813,6 +812,12 @@
 
     </div>
     
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+</script>
+
+
 <script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 
 
@@ -872,11 +877,6 @@ MathJax.Hub.Queue(function() {
 <script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
-
-
-<script>
-    window.mermaidTheme = 'default';
-</script>
 
 <div class="scroll" id="scroll">
     <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>

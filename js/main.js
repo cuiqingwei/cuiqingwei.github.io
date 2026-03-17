@@ -1,20 +1,12 @@
 require([], function () {
-  var initMermaid = function () {
-    var $mermaid = $('.mermaid');
-    if ($mermaid.length > 0) {
-      require([yiliaConfig.mermaid_js], function () {
-        mermaid.initialize({ startOnLoad: false, theme: window.mermaidTheme || 'default' });
-        mermaid.run({ querySelector: '.mermaid' });
-      });
-    }
-  };
-
   var isMobileInit = false;
   var loadMobile = function () {
     require([yiliaConfig.rootUrl + 'js/mobile.js'], function (mobile) {
       mobile.init();
       isMobileInit = true;
-      initMermaid();
+      if (window.mermaid) {
+        mermaid.run({ querySelector: '.mermaid' });
+      }
     });
   };
   var isPCInit = false;
@@ -22,7 +14,9 @@ require([], function () {
     require([yiliaConfig.rootUrl + 'js/pc.js'], function (pc) {
       pc.init();
       isPCInit = true;
-      initMermaid();
+      if (window.mermaid) {
+        mermaid.run({ querySelector: '.mermaid' });
+      }
     });
   };
 
