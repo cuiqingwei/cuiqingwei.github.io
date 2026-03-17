@@ -1,9 +1,17 @@
 require([], function () {
+  var initMermaid = function () {
+    if (window.mermaid) {
+      mermaid.initialize({ startOnLoad: false, theme: window.mermaidTheme || 'default' });
+      mermaid.run({ querySelector: '.mermaid' });
+    }
+  };
+
   var isMobileInit = false;
   var loadMobile = function () {
     require([yiliaConfig.rootUrl + 'js/mobile.js'], function (mobile) {
       mobile.init();
       isMobileInit = true;
+      initMermaid();
     });
   };
   var isPCInit = false;
@@ -11,6 +19,7 @@ require([], function () {
     require([yiliaConfig.rootUrl + 'js/pc.js'], function (pc) {
       pc.init();
       isPCInit = true;
+      initMermaid();
     });
   };
 
