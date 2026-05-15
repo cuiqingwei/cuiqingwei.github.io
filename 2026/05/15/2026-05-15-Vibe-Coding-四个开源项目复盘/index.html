@@ -1,0 +1,838 @@
+<!DOCTYPE html><html lang="zh-Hans"><head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="Gary">
+
+
+
+<meta name="description" content="核心结论：Vibe Coding 真正有价值的地方，不是“让 AI 替你写代码”，而是把一个模糊想法快速推到可运行、可复现、可维护的状态。最近我借助这种方式连续做了四个开源项目：daily-ai、term-cheat、html-ppt、claude-desktop-buddy-bridge。它们看起来方向不同，本质上都在解决同一个问题：把个人工作流里反复出现的痛点，沉淀成可以复用的工具。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vibe Coding 四个开源项目复盘：从想法到可运行产品的 AI 协作方法">
+<meta property="og:url" content="http://cuiqingwei.github.io/2026/05/15/2026-05-15-Vibe-Coding-%E5%9B%9B%E4%B8%AA%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98/index.html">
+<meta property="og:site_name" content="iZheteng">
+<meta property="og:description" content="核心结论：Vibe Coding 真正有价值的地方，不是“让 AI 替你写代码”，而是把一个模糊想法快速推到可运行、可复现、可维护的状态。最近我借助这种方式连续做了四个开源项目：daily-ai、term-cheat、html-ppt、claude-desktop-buddy-bridge。它们看起来方向不同，本质上都在解决同一个问题：把个人工作流里反复出现的痛点，沉淀成可以复用的工具。">
+<meta property="og:locale">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20260515/vibe-coding-project-map.svg">
+<meta property="og:image" content="http://cuiqingwei.github.io/img/20260515/vibe-coding-loop.svg">
+<meta property="article:published_time" content="2026-05-15T01:30:00.000Z">
+<meta property="article:modified_time" content="2026-05-15T07:45:53.955Z">
+<meta property="article:author" content="Gary">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="Claude Code">
+<meta property="article:tag" content="GitHub">
+<meta property="article:tag" content="Vibe Coding">
+<meta property="article:tag" content="开源项目">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cuiqingwei.github.io/img/20260515/vibe-coding-project-map.svg">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="iZheteng" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+
+<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Vibe Coding 四个开源项目复盘：从想法到可运行产品的 AI 协作方法 | iZheteng</title>
+
+<script defer="" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script defer="" src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js", "//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9648942fbef87fb71c7420365857d971";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false">
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class="no-result">No results found <i class="fa fa-spinner fa-pulse"></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                            <li><a href="/404.html">404公益</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:qingwei_cui@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" rel="noopener" href="https://github.com/cuiqingwei" title="GitHub"></a>
+                            
+                                <a class="fa Facebook" target="_blank" rel="noopener" href="https://www.facebook.com/gary.cui.9421" title="Facebook"></a>
+                            
+                                <a class="fa Twitter" target="_blank" rel="noopener" href="https://twitter.com/cuiqingwei" title="Twitter"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" rel="noopener" href="https://cn.linkedin.com/in/庆伟-崔-63b69aa9" title="LinkedIn"></a>
+                            
+                                <a class="fa Instagram" target="_blank" rel="noopener" href="https://www.instagram.com/gary.cqw/" title="Instagram"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/1fichier/" rel="tag">1fichier</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/6lbr/" rel="tag">6lbr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/6lowpan/" rel="tag">6lowpan</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ASP-NET/" rel="tag">ASP.NET</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Altium-Designer/" rel="tag">Altium Designer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-Builder6-0/" rel="tag">C++Builder6.0</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2430/" rel="tag">CC2430</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2530/" rel="tag">CC2530</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CC2538/" rel="tag">CC2538</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CI-CD/" rel="tag">CI/CD</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Claude-Code/" rel="tag">Claude Code</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CoAP/" rel="tag">CoAP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Contiki/" rel="tag">Contiki</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cooja/" rel="tag">Cooja</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DCS%E3%80%81PLC/" rel="tag">DCS、PLC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DIY/" rel="tag">DIY</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DNSmasq/" rel="tag">DNSmasq</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Delphi/" rel="tag">Delphi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Eagle/" rel="tag">Eagle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FastDFS/" rel="tag">FastDFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GPL/" rel="tag">GPL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub-Pages/" rel="tag">GitHub Pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GoAhead/" rel="tag">GoAhead</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HAP-NodeJS/" rel="tag">HAP-NodeJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HomeKit/" rel="tag">HomeKit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hybrid/" rel="tag">Hybrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IIS/" rel="tag">IIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoT/" rel="tag">IoT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ionic/" rel="tag">Ionic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JIRA/" rel="tag">JIRA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jekyll/" rel="tag">Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jupyter/" rel="tag">Jupyter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kali/" rel="tag">Kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LVGL/" rel="tag">LVGL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MEAN/" rel="tag">MEAN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mirror/" rel="tag">Mirror</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MkDocs/" rel="tag">MkDocs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mono/" rel="tag">Mono</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NextCloud/" rel="tag">NextCloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ollama/" rel="tag">Ollama</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenClaw/" rel="tag">OpenClaw</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenVPN/" rel="tag">OpenVPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenWRT/" rel="tag">OpenWRT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PMS/" rel="tag">PMS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Proteus/" rel="tag">Proteus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry-Pi/" rel="tag">Raspberry Pi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLite/" rel="tag">SQLite</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/" rel="tag">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSM/" rel="tag">SSM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STEAM/" rel="tag">STEAM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Seafile/" rel="tag">Seafile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/" rel="tag">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ShowDoc/" rel="tag">ShowDoc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SmartHome/" rel="tag">SmartHome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SmartHotel/" rel="tag">SmartHotel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Socket/" rel="tag">Socket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tailscale/" rel="tag">Tailscale</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Telegram/" rel="tag">Telegram</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/" rel="tag">TensorFlow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/" rel="tag">Tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Travis-CI/" rel="tag">Travis CI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/USBHID/" rel="tag">USBHID</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unity/" rel="tag">Unity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VR-AR-MR/" rel="tag">VR/AR/MR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vibe-Coding/" rel="tag">Vibe Coding</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Wi-Fi/" rel="tag">Wi-Fi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WiFi%E8%AF%84%E6%B5%8B%E5%B7%A5%E5%85%B7/" rel="tag">WiFi评测工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/YOLO/" rel="tag">YOLO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ZigBee/" rel="tag">ZigBee</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/awtrix/" rel="tag">awtrix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/curl/" rel="tag">curl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/" rel="tag">eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/goAhead/" rel="tag">goAhead</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iTerm/" rel="tag">iTerm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali-linux/" rel="tag">kali-linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linkit-smart-7688/" rel="tag">linkit-smart-7688</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/macOS/" rel="tag">macOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nRF51822/" rel="tag">nRF51822</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/" rel="tag">nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/patch/" rel="tag">patch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/rtmp/" rel="tag">rtmp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsocks/" rel="tag">shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thingsboard/" rel="tag">thingsboard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/" rel="tag">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vLLM/" rel="tag">vLLM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vi-vim/" rel="tag">vi/vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yilia/" rel="tag">yilia</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%89%E6%98%9F%E5%B9%B3%E6%9D%BF/" rel="tag">三星平板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%B2%E5%8F%A3%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/" rel="tag">串口调试工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="tag">人工智能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/" rel="tag">传感器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%93%E4%BC%9A/" rel="tag">体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%9B%E5%AE%A2/" rel="tag">创客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E8%BD%A6/" rel="tag">单车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%87%E5%BF%98/" rel="tag">备忘</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="tag">嵌入式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" rel="tag">嵌入式Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/" rel="tag">常用技术工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80/" rel="tag">开发语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6/" rel="tag">开源硬件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" rel="tag">开源项目</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%98%E5%8F%A0%E5%85%AC%E8%B7%AF%E8%BD%A6/" rel="tag">折叠公路车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%98%E8%85%BE/" rel="tag">折腾</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A0%E4%BA%BA%E6%9C%BA/" rel="tag">无人机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%99%B6%E6%8C%AF/" rel="tag">晶振</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%80%E7%AE%80%E4%B8%BB%E4%B9%89/" rel="tag">最简主义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" rel="tag">树莓派</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A2%A6%E6%83%B3/" rel="tag">梦想</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6%E5%8C%85/" rel="tag">电子书包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%8F%E5%85%B8%E7%BD%91%E7%AB%99/" rel="tag">经典网站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/" rel="tag">网络命令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%AF%E4%BA%9A/" rel="tag">路亚</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8SDK/" rel="tag">路由器SDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AA%91%E8%A1%8C/" rel="tag">骑行</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://xaoxuu.com/">XAOXUU</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="http://suzhigao66.top/">男神</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://cuiqingwei1981.github.io/">QW1981</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://pages.github.com/">GitHub Pages</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://moxfive.xyz/">Yelee</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">工作16年，10年管理经验，管理幅度50-100人。团队管理经验丰富，擅长技术团队建设和培养; 统筹把握公司的整体技术方向，精于产品系统模块与系统架构设计。ZigBee中国第一代实践者；精通ZigBee、6LowPAN等无线通讯技术，并整合创新物联网、互联网应用技术！</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                    <li><a href="/404.html">404公益</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:qingwei_cui@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/cuiqingwei" title="GitHub"></a>
+                            
+                                <a class="fa Facebook" target="_blank" href="https://www.facebook.com/gary.cui.9421" title="Facebook"></a>
+                            
+                                <a class="fa Twitter" target="_blank" href="https://twitter.com/cuiqingwei" title="Twitter"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" href="https://cn.linkedin.com/in/庆伟-崔-63b69aa9" title="LinkedIn"></a>
+                            
+                                <a class="fa Instagram" target="_blank" href="https://www.instagram.com/gary.cqw/" title="Instagram"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
+</nav>
+      <div class="body-wrap"><article id="post-2026-05-15-Vibe-Coding-四个开源项目复盘" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2026/05/15/2026-05-15-Vibe-Coding-%E5%9B%9B%E4%B8%AA%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98/" class="article-date">
+      <time datetime="2026-05-15T01:30:00.000Z" itemprop="datePublished">2026-05-15</time>
+</a>
+
+ 
+    <a href="/2026/05/15/2026-05-15-Vibe-Coding-%E5%9B%9B%E4%B8%AA%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2026/05/15/2026-05-15-Vibe-Coding-四个开源项目复盘/"></span>
+        
+    </a>
+
+      
+        <div class="article-wordcount">
+          <span class="post-wordcount" title="文章字数">
+            <i class="fa fa-file-word-o"></i> 5k 字
+          </span>
+          <span class="post-readtime" title="阅读预计时长">
+            <i class="fa fa-clock-o"></i> 8 
+          </span>
+        </div>
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vibe Coding 四个开源项目复盘：从想法到可运行产品的 AI 协作方法
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/AI-%E5%A4%A7%E6%A8%A1%E5%9E%8B/">AI/大模型</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Claude-Code/" rel="tag">Claude Code</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vibe-Coding/" rel="tag">Vibe Coding</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" rel="tag">开源项目</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <blockquote>
+<p>核心结论：Vibe Coding 真正有价值的地方，不是“让 AI 替你写代码”，而是把一个模糊想法快速推到可运行、可复现、可维护的状态。最近我借助这种方式连续做了四个开源项目：<code>daily-ai</code>、<code>term-cheat</code>、<code>html-ppt</code>、<code>claude-desktop-buddy-bridge</code>。它们看起来方向不同，本质上都在解决同一个问题：把个人工作流里反复出现的痛点，沉淀成可以复用的工具。</p>
+</blockquote>
+<p><img src="/img/20260515/vibe-coding-project-map.svg" alt="Vibe Coding 四个开源项目地图"></p>
+<span id="more"></span>
+
+<style>
+.article-entry pre.mermaid,
+.post-content pre.mermaid {
+  text-align: center;
+}
+
+.article-entry pre.mermaid svg,
+.post-content pre.mermaid svg {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+</style>
+
+<h2 id="为什么要把这四个项目放在一起讲"><a href="#为什么要把这四个项目放在一起讲" class="headerlink" title="为什么要把这四个项目放在一起讲"></a>为什么要把这四个项目放在一起讲</h2><p>这四个项目不是一次性规划出来的“产品矩阵”，更像是连续几次真实需求驱动下的工程实验。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/cuiqingwei/daily-ai">daily-ai</a>：每天自动抓 GitHub 热门 AI 项目，用本地 LLM 总结后推送到微信。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/cuiqingwei/term-cheat">term-cheat</a>：把 Vim、tmux、kitty 的常用快捷键做成一个可搜索、可收藏、可复制的在线速查表。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/cuiqingwei/html-ppt">html-ppt</a>：用纯 HTML/CSS/JavaScript 做技术培训课件，浏览器打开即可演示。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/cuiqingwei/claude-desktop-buddy-bridge">claude-desktop-buddy-bridge</a>：把 Claude Code CLI 的敏感操作审批接到 M5StickC Plus 实体设备上，用按键 approve / deny。</li>
+</ul>
+<p>它们分别覆盖了信息获取、终端效率、知识表达、AI 安全控制四个场景。对我来说，这正好构成了个人 AI 工程化工作流的四个侧面：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>解决的问题</th>
+<th>技术关键词</th>
+<th>最适合借鉴的点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>daily-ai</code></td>
+<td>每天跟踪开源动态太耗时间</td>
+<td>GitHub Actions、本地 LLM、Tailscale、PushPlus、uv</td>
+<td>自动化信息摄取与本地模型总结</td>
+</tr>
+<tr>
+<td><code>term-cheat</code></td>
+<td>终端工具快捷键记不住、查找效率低</td>
+<td>单页 HTML、localStorage、搜索过滤、复制</td>
+<td>小工具产品化，离线可用</td>
+</tr>
+<tr>
+<td><code>html-ppt</code></td>
+<td>技术培训课件制作成本高、复用性差</td>
+<td>HTML、CSS、JavaScript、GitHub Pages</td>
+<td>把课程变成可交互网页资产</td>
+</tr>
+<tr>
+<td><code>claude-desktop-buddy-bridge</code></td>
+<td>CLI Agent 敏感操作审批体验割裂</td>
+<td>Claude Code Hook、BLE、M5StickC Plus、Python daemon</td>
+<td>AI 权限控制的硬件化与 fail-open 设计</td>
+</tr>
+</tbody></table>
+<h2 id="项目一：daily-ai，每天自动生成开源项目早报"><a href="#项目一：daily-ai，每天自动生成开源项目早报" class="headerlink" title="项目一：daily-ai，每天自动生成开源项目早报"></a>项目一：daily-ai，每天自动生成开源项目早报</h2><p><code>daily-ai</code> 的动机很直接：GitHub 上每天都有大量新项目，靠人工刷 Trending、搜索 topic、看 README，效率很低，而且容易遗漏。</p>
+<p>这个项目做了一条自动化链路：</p>
+<pre class="mermaid">graph LR
+    GA[Actions 定时] --&gt; GS[GitHub Search]
+    GS --&gt; PY[筛选项目]
+    PY --&gt; TS[Tailscale]
+    TS --&gt; LLM[本地 LLM]
+    LLM --&gt; SUM[中文摘要]
+    SUM --&gt; PP[微信推送]
+</pre>
+
+<p>它的价值不只是“定时推送”，而是把三个关键点打通了：</p>
+<ol>
+<li>信息源可配置：通过 GitHub Search 查询语法控制主题，例如 <code>topic:ai</code>、<code>language:rust</code>、<code>created:&gt;=2026-03-01</code>。</li>
+<li>总结在本地完成：模型跑在自己的机器上，GitHub Actions 只通过 Tailscale 访问本地服务。</li>
+<li>交付到熟悉入口：PushPlus 直接推送到微信，不需要每天打开额外 dashboard。</li>
+</ol>
+<p>我比较看重的是它的可调试性。项目里不只放了主脚本，还配了 <code>debug_chat.py</code>、<code>debug_speed.py</code>、<code>debug_native.py</code> 这类连接/API 调试脚本。很多自动化项目真正难的不是主流程，而是网络、token、模型服务、限流这些边缘问题。把调试工具也一起沉淀下来，后面复用成本会低很多。</p>
+<p>适合扩展的方向：</p>
+<ul>
+<li>增加多主题订阅，例如 AI Agent、Local LLM、DevOps、IoT。</li>
+<li>对项目做去重和历史趋势统计，避免每天重复推送。</li>
+<li>把摘要分成“值得关注”“可试用”“仅观察”三个等级。</li>
+<li>接入 Notion，把高价值项目自动归档到知识库。</li>
+</ul>
+<h2 id="项目二：term-cheat，把终端快捷键变成可搜索工具"><a href="#项目二：term-cheat，把终端快捷键变成可搜索工具" class="headerlink" title="项目二：term-cheat，把终端快捷键变成可搜索工具"></a>项目二：term-cheat，把终端快捷键变成可搜索工具</h2><p><code>term-cheat</code> 是一个典型的小而实用的 Vibe Coding 项目。需求很简单：做一个 Vim、tmux、kitty 快捷键速查表。</p>
+<p>如果只是 Markdown 表格，当然也能用。但真正影响体验的是这些细节：</p>
+<ul>
+<li>顶部 Tab 切换三类工具。</li>
+<li>搜索框实时过滤快捷键和说明。</li>
+<li>常用项可以点星收藏，并保存到 <code>localStorage</code>。</li>
+<li>点击快捷键行即可复制。</li>
+<li>分组可以折叠，搜索时自动展开。</li>
+<li>Vim 条目带模式标签，例如 Normal、Insert、Visual、Command。</li>
+</ul>
+<p>这个项目说明了一个很重要的点：很多个人工具不需要后端、不需要数据库、不需要复杂框架，单文件 HTML 就足够交付。</p>
+<p>Vibe Coding 在这种场景下非常合适，因为 UI 结构、数据组织和交互逻辑都比较明确。人的重点应该放在“到底哪些快捷键值得收录”“分组是否符合使用习惯”“搜索结果是否足够快”这些产品判断上，而不是一行行写 DOM 操作。</p>
+<p>我会把这类工具归为“个人工作台组件”。它们未必需要做大，但能不断降低日常操作摩擦。</p>
+<h2 id="项目三：html-ppt，用网页方式沉淀培训课件"><a href="#项目三：html-ppt，用网页方式沉淀培训课件" class="headerlink" title="项目三：html-ppt，用网页方式沉淀培训课件"></a>项目三：html-ppt，用网页方式沉淀培训课件</h2><p><code>html-ppt</code> 的定位是“轻量级 HTML 幻灯片演示工具”，用于技术培训讲义和交互式课程。</p>
+<p>它的核心思路是：课件不一定非要用 PowerPoint 或 Keynote。对技术内容来说，HTML 反而有几个明显优势：</p>
+<ul>
+<li>代码、图表、交互演示可以直接放在页面里。</li>
+<li>版本管理天然友好，Git diff 比二进制 PPT 更可控。</li>
+<li>部署简单，GitHub Pages 或任何静态站点都能承载。</li>
+<li>学员无需安装软件，浏览器打开即可。</li>
+<li>同一份材料可以同时作为演示、讲义和归档。</li>
+</ul>
+<p>项目目前已经有主页、课程卡片、<code>ppts/</code> 目录和 <code>htmlppt-prompt.md</code>。更有意思的是，它不只是一个页面项目，也是一套“提示词模板”。也就是说，以后做新课件时，可以让 AI 根据这套规范生成统一风格的 HTML PPT。</p>
+<p>这类项目的长期价值在于内容资产化。一次培训如果只留下一份 PPT，复用空间有限；如果沉淀成网页课件，后面就可以持续补充交互示例、链接、代码块、练习题，甚至接入在线测验。</p>
+<p>适合的使用场景：</p>
+<ul>
+<li>内部技术分享。</li>
+<li>AI 工具使用培训。</li>
+<li>本地大模型部署实战课。</li>
+<li>DevOps、网络、IoT 这类需要图示和命令演示的课程。</li>
+</ul>
+<h2 id="项目四：claude-desktop-buddy-bridge，把-AI-审批搬到实体按钮"><a href="#项目四：claude-desktop-buddy-bridge，把-AI-审批搬到实体按钮" class="headerlink" title="项目四：claude-desktop-buddy-bridge，把 AI 审批搬到实体按钮"></a>项目四：claude-desktop-buddy-bridge，把 AI 审批搬到实体按钮</h2><p><code>claude-desktop-buddy-bridge</code> 是四个项目里工程味最重的一个。</p>
+<p>Anthropic 官方的 <code>claude-desktop-buddy</code> 可以让 M5StickC Plus 变成 Claude 的物理审批按钮，但它主要面向桌面应用。CLI 用户的问题是：Claude Code 在终端里执行敏感操作时，审批仍然发生在命令行上下文里。</p>
+<p>这个 bridge 做的事情是：</p>
+<pre class="mermaid">flowchart LR
+    CC[Claude Code] --&gt; Hook[Permission Hook]
+    Hook --&gt; Daemon[cdbb daemon]
+    Daemon --&gt; BLE[BLE NUS]
+    BLE --&gt; M5[M5StickC Plus]
+    M5 --&gt; Btn[approve / deny]
+    Btn --&gt; Daemon
+    Daemon --&gt; CC
+</pre>
+
+<p>它真正体现工程质量的点在边界处理：</p>
+<ul>
+<li>通过 Claude Code 原生 Hook 接入，不修改业务项目。</li>
+<li>daemon 不运行时 fail-open，回退到 Claude Code 自己的权限对话框。</li>
+<li>自动扫描广播名以 <code>Claude</code> 开头的 BLE 设备。</li>
+<li>多个并发 hook 请求串行排队，避免抢设备。</li>
+<li>处理中文和非 ASCII 字符，规避固件点阵字体导致的崩溃。</li>
+<li>检测 EOF 竞争，Claude Code 提前终止 hook 时能清空设备显示。</li>
+<li>BLE 链路异常后退出，由 launchd/systemd 接管重启。</li>
+</ul>
+<p>这不是一个“炫技硬件小玩具”。它解决的是 AI Agent 越来越常见的权限边界问题：当模型可以读文件、写文件、执行 shell、调用网络时，人类审批不能只停留在终端里一行 <code>y/N</code>。把审批动作放到实体按钮上，会让“我正在授权什么”这件事更有仪式感，也更不容易误触。</p>
+<h2 id="这四个项目背后的共同方法"><a href="#这四个项目背后的共同方法" class="headerlink" title="这四个项目背后的共同方法"></a>这四个项目背后的共同方法</h2><p><img src="/img/20260515/vibe-coding-loop.svg" alt="Vibe Coding 工程闭环"></p>
+<p>复盘下来，我认为 Vibe Coding 要想真正落地，关键不是模型多强，而是人的工程约束是否明确。</p>
+<h3 id="1-先把问题说窄"><a href="#1-先把问题说窄" class="headerlink" title="1. 先把问题说窄"></a>1. 先把问题说窄</h3><p>不要一开始就说“帮我做一个平台”。这四个项目的起点都很窄：</p>
+<ul>
+<li>每天推送 GitHub AI 项目。</li>
+<li>查 Vim/tmux/kitty 快捷键。</li>
+<li>用网页做培训课件。</li>
+<li>用 M5StickC Plus 审批 Claude Code 操作。</li>
+</ul>
+<p>问题越窄，AI 越容易一次生成可运行原型；原型越早跑起来，后面调试和迭代越有抓手。</p>
+<h3 id="2-明确运行环境"><a href="#2-明确运行环境" class="headerlink" title="2. 明确运行环境"></a>2. 明确运行环境</h3><p>个人项目最容易翻车的地方是环境假设不清楚。比如：</p>
+<ul>
+<li><code>daily-ai</code> 要考虑 GitHub Actions、Tailscale、本地 LLM 服务、PushPlus token。</li>
+<li><code>term-cheat</code> 要保证纯前端、离线可用、浏览器兼容。</li>
+<li><code>html-ppt</code> 要能直接部署到 GitHub Pages。</li>
+<li><code>claude-desktop-buddy-bridge</code> 要面对 macOS/Linux、BLE 权限、Claude Code Hook、launchd/systemd。</li>
+</ul>
+<p>给 AI 的提示词里，如果不写这些边界，它会默认选择“看起来最顺手”的实现，而不是你真正能长期维护的实现。</p>
+<h3 id="3-原型之后必须工程化"><a href="#3-原型之后必须工程化" class="headerlink" title="3. 原型之后必须工程化"></a>3. 原型之后必须工程化</h3><p>Vibe Coding 最容易造成一种错觉：页面出来了、脚本跑通了，就算完成了。实际不是。</p>
+<p>一个项目真正可用，至少还要补上：</p>
+<ul>
+<li>README：别人能不能 10 分钟内跑起来。</li>
+<li>配置：token、环境变量、端口、路径能不能清楚说明。</li>
+<li>错误处理：网络失败、权限不足、服务未启动时怎么表现。</li>
+<li>调试入口：出问题时有没有最小化排查命令。</li>
+<li>部署方式：本地运行、GitHub Pages、GitHub Actions、launchd/systemd 是否清晰。</li>
+<li>安全边界：涉及 token、文件写入、shell 执行、蓝牙权限时，默认行为是否保守。</li>
+</ul>
+<p>这里 AI 可以帮你补很多样板，但判断是否足够可靠，仍然要靠工程经验。</p>
+<h3 id="4-把提示词也当资产管理"><a href="#4-把提示词也当资产管理" class="headerlink" title="4. 把提示词也当资产管理"></a>4. 把提示词也当资产管理</h3><p><code>html-ppt</code> 里专门保留了 <code>htmlppt-prompt.md</code>，这件事值得长期坚持。</p>
+<p>提示词不是一次性对话，它应该像脚本、配置和 README 一样被版本管理。因为真正可复用的不是某一次 AI 生成的代码，而是“以后如何稳定生成同类代码”的方法。</p>
+<p>建议每个 Vibe Coding 项目都保留：</p>
+<ul>
+<li>初始需求提示词。</li>
+<li>关键约束提示词。</li>
+<li>代码审查提示词。</li>
+<li>README 生成提示词。</li>
+<li>发布检查提示词。</li>
+</ul>
+<p>当这些内容沉淀下来，下一个项目会明显更快。</p>
+<h2 id="我的实践清单"><a href="#我的实践清单" class="headerlink" title="我的实践清单"></a>我的实践清单</h2><p>以后继续用 Vibe Coding 做小工具，我会按这个顺序推进：</p>
+<ol>
+<li>用 5 行话写清楚项目目标、用户、运行环境、不能做什么、完成标准。</li>
+<li>先让 AI 生成最小可运行版本，不急着加复杂功能。</li>
+<li>本地跑起来，记录所有报错，不凭感觉修改。</li>
+<li>让 AI 根据报错做定点修复，而不是整段重写。</li>
+<li>补 README、配置说明、调试命令和部署方式。</li>
+<li>做一次“安全与失败路径”检查：token、权限、网络、超时、回退。</li>
+<li>把提示词和经验沉淀到项目文档里。</li>
+</ol>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>这四个项目给我的最大感受是：AI 编程真正提高效率的地方，不是把程序员变成旁观者，而是把很多“从 0 到 1 的摩擦”压低了。</p>
+<p>以前一个想法可能会停在 Notion 里；现在可以在半天到几天内变成可运行的工具。只要选题足够具体、边界足够清楚、工程收口足够认真，Vibe Coding 就不是玩具，而是一种很适合个人开发者和技术管理者的生产方式。</p>
+<p>更重要的是，这些小项目会反过来强化自己的工作流：<code>daily-ai</code> 帮我发现新项目，<code>term-cheat</code> 降低终端操作成本，<code>html-ppt</code> 提升知识输出效率，<code>claude-desktop-buddy-bridge</code> 让 AI Agent 的敏感操作更可控。</p>
+<p>这就是我认为最值得投入的方向：不是追逐每一个新模型，而是持续把 AI 能力接到自己的真实工作系统里。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>
+                本文标题:
+            </span><a href="/2026/05/15/2026-05-15-Vibe-Coding-%E5%9B%9B%E4%B8%AA%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98/">
+                Vibe Coding 四个开源项目复盘：从想法到可运行产品的 AI 协作方法
+            </a></p>
+        <p><span>
+                文章作者:
+            </span><a href="/" title="回到主页">
+                Gary
+            </a></p>
+        <p><span>
+                发布时间:
+            </span>
+            2026-05-15, 09:30:00
+        </p>
+        <p><span>
+                最后更新:
+            </span>
+            2026-05-15, 07:45:53
+        </p>
+        <p>
+            <span>
+                原始链接:
+            </span><a class="post-url" href="/2026/05/15/2026-05-15-Vibe-Coding-%E5%9B%9B%E4%B8%AA%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98/" title="Vibe Coding 四个开源项目复盘：从想法到可运行产品的 AI 协作方法">
+                http://cuiqingwei.github.io/2026/05/15/2026-05-15-Vibe-Coding-%E5%9B%9B%E4%B8%AA%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98/
+            </a>
+            <span class="copy-path" data-clipboard-text="原文: http://cuiqingwei.github.io/2026/05/15/2026-05-15-Vibe-Coding-%E5%9B%9B%E4%B8%AA%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98/　　作者: Gary" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>
+                许可协议:
+            </span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a>
+            转载请保留原文链接及作者。
+        </p>
+    </div>
+    
+
+        
+            <nav id="article-nav">auto
+                
+                        
+                            <div id="article-nav-older" class="article-nav-title">
+                                <a href="/2026/03/16/2026-03-16-GitHub-Daily-%E6%AF%8F%E6%97%A5%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%8E%A8%E9%80%81/">
+                                    GitHub Daily - 每日开源项目推送
+                                </a>
+                            </div>
+                            
+            </nav>
+            
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%8A%8A%E8%BF%99%E5%9B%9B%E4%B8%AA%E9%A1%B9%E7%9B%AE%E6%94%BE%E5%9C%A8%E4%B8%80%E8%B5%B7%E8%AE%B2"><span class="toc-number">1.</span> <span class="toc-text">为什么要把这四个项目放在一起讲</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E4%B8%80%EF%BC%9Adaily-ai%EF%BC%8C%E6%AF%8F%E5%A4%A9%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%97%A9%E6%8A%A5"><span class="toc-number">2.</span> <span class="toc-text">项目一：daily-ai，每天自动生成开源项目早报</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E4%BA%8C%EF%BC%9Aterm-cheat%EF%BC%8C%E6%8A%8A%E7%BB%88%E7%AB%AF%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%8F%98%E6%88%90%E5%8F%AF%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7"><span class="toc-number">3.</span> <span class="toc-text">项目二：term-cheat，把终端快捷键变成可搜索工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E4%B8%89%EF%BC%9Ahtml-ppt%EF%BC%8C%E7%94%A8%E7%BD%91%E9%A1%B5%E6%96%B9%E5%BC%8F%E6%B2%89%E6%B7%80%E5%9F%B9%E8%AE%AD%E8%AF%BE%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">项目三：html-ppt，用网页方式沉淀培训课件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%9B%9B%EF%BC%9Aclaude-desktop-buddy-bridge%EF%BC%8C%E6%8A%8A-AI-%E5%AE%A1%E6%89%B9%E6%90%AC%E5%88%B0%E5%AE%9E%E4%BD%93%E6%8C%89%E9%92%AE"><span class="toc-number">5.</span> <span class="toc-text">项目四：claude-desktop-buddy-bridge，把 AI 审批搬到实体按钮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%99%E5%9B%9B%E4%B8%AA%E9%A1%B9%E7%9B%AE%E8%83%8C%E5%90%8E%E7%9A%84%E5%85%B1%E5%90%8C%E6%96%B9%E6%B3%95"><span class="toc-number">6.</span> <span class="toc-text">这四个项目背后的共同方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%85%88%E6%8A%8A%E9%97%AE%E9%A2%98%E8%AF%B4%E7%AA%84"><span class="toc-number">6.1.</span> <span class="toc-text">1. 先把问题说窄</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%98%8E%E7%A1%AE%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="toc-number">6.2.</span> <span class="toc-text">2. 明确运行环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8E%9F%E5%9E%8B%E4%B9%8B%E5%90%8E%E5%BF%85%E9%A1%BB%E5%B7%A5%E7%A8%8B%E5%8C%96"><span class="toc-number">6.3.</span> <span class="toc-text">3. 原型之后必须工程化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%8A%8A%E6%8F%90%E7%A4%BA%E8%AF%8D%E4%B9%9F%E5%BD%93%E8%B5%84%E4%BA%A7%E7%AE%A1%E7%90%86"><span class="toc-number">6.4.</span> <span class="toc-text">4. 把提示词也当资产管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%91%E7%9A%84%E5%AE%9E%E8%B7%B5%E6%B8%85%E5%8D%95"><span class="toc-number">7.</span> <span class="toc-text">我的实践清单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">8.</span> <span class="toc-text">结语</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'http://cuiqingwei.github.io/2026/05/15/2026-05-15-Vibe-Coding-%E5%9B%9B%E4%B8%AA%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98/';
+            this.page.identifier = '2026/05/15/2026-05-15-Vibe-Coding-四个开源项目复盘/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//cuiqingwei.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+</section>
+
+
+    <script id="dsq-count-scr" src="//cuiqingwei.disqus.com/count.js" async=""></script>
+    <span class="disqus-comment-count" data-disqus-identifier="2026/05/15/2026-05-15-Vibe-Coding-四个开源项目复盘/"></span>
+    <span class="disqus-comment-count" data-disqus-url="http://cuiqingwei.github.io/2026/05/15/2026-05-15-Vibe-Coding-%E5%9B%9B%E4%B8%AA%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98/"></span>
+    <script>
+        $(".disqus-comment-count").hide();
+        var $disqusCount = $(".disqus-comment-count");
+        $disqusCount.bind("DOMNodeInserted", function(e) {
+            $(".count-comment").text(
+                $(this).text().replace(/[^0-9]/ig,"")
+            )
+            DISQUSWIDGETS.getCount({reset: true});
+        })
+    </script>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2026/03/16/2026-03-16-GitHub-Daily-%E6%AF%8F%E6%97%A5%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%8E%A8%E9%80%81/" title="下一篇: GitHub Daily - 每日开源项目推送">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2026/05/15/2026-05-15-Vibe-Coding-%E5%9B%9B%E4%B8%AA%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98/">Vibe Coding 四个开源项目复盘：从想法到可运行产品的 AI 协作方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2026/03/16/2026-03-16-GitHub-Daily-%E6%AF%8F%E6%97%A5%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%8E%A8%E9%80%81/">GitHub Daily - 每日开源项目推送</a></li><li class="post-list-item"><a class="post-list-link" href="/2026/02/05/2026-02-06-Tailscale%E8%87%AA%E5%BB%BADERP%E6%9C%8D%E5%8A%A1%E5%99%A8/">Tailscale自建DERP服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2026/01/31/2026-01-31-OpenClaw%E9%85%8D%E7%BD%AENVIDIA-GLM-4-7-plus-MiniMax-M2-1-API-%E5%9B%BD%E5%86%85%E9%9B%B6%E9%97%A8%E6%A7%9B%E7%9B%B4%E8%BF%9E%E6%95%99%E7%A8%8B/">OpenClaw配置 NVIDIA GLM-4.7 + MiniMax M2.1 API，国内零门槛直连教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2026/01/29/2026-02-17-%E5%8D%9A%E5%AE%A2%E5%8F%91%E5%B8%83%E8%BF%87%E7%A8%8B/">博客发布过程</a></li><li class="post-list-item"><a class="post-list-link" href="/2026/01/29/2026-01-29-vLLM%E9%83%A8%E7%BD%B2/">vLLM部署</a></li><li class="post-list-item"><a class="post-list-link" href="/2026/01/10/2026-01-10-Jupyter%E6%93%8D%E4%BD%9C%E6%96%87%E6%A1%A3/">Jupyter操作文档</a></li><li class="post-list-item"><a class="post-list-link" href="/2026/01/08/2026-01-09-%E8%AE%AD%E7%BB%83%E7%A7%81%E6%9C%89%E5%A4%A7%E6%A8%A1%E5%9E%8B/">训练私有大模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2025/02/19/2025-02-20-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8U%E7%9B%98%E5%88%B6%E4%BD%9C/">系统启动U盘制作</a></li><li class="post-list-item"><a class="post-list-link" href="/2025/01/06/2025-01-06-LVGL%E5%9B%BE%E5%BD%A2%E5%BA%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">LVGL图形库学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/11/26/2024-11-26-Raspberry-Pi%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/">Raspberry Pi入门指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/09/25/2024-09-25-Ollama/">Ollama</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/08/20/2024-08-21-IoT%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2%E7%AB%99%E7%82%B9%E6%B1%87%E6%80%BB/">IoT资源搜索站点汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/02/28/2024-02-29-RKrepo%E4%BB%A3%E7%A0%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/">RKrepo代码服务器搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2024/01/11/2024-01-12-CI-CD%E4%BD%93%E7%B3%BB/">CI/CD体系</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/23/2023-07-24-Ultralytics/">Ultralytics</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/07/18/2023-07-19-OpenVPN%E9%83%A8%E7%BD%B2/">OpenVPN部署</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/05/07/2023-05-08-%E6%99%BA%E6%85%A7%E9%85%92%E5%BA%97%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%A1%88/">智慧酒店系统方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/04/21/2023-04-22-DevOps%E5%B7%A5%E5%85%B7%E9%93%BE%E6%A6%82%E8%A7%88/">DevOps工具链概览</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/03/23/2023-03-24-JenkinsCI-CD%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/">JenkinsCI-CD自动化部署</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/09/29/2022-09-30-Docker%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C%E5%8F%8A%E5%8F%91%E5%B8%83/">Docker镜像制作及发布</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/09/10/2022-09-11-%E6%8C%82%E8%BD%BD%E7%BD%91%E7%9B%98-1Fichier/">挂载网盘-1Fichier</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/06/11/2022-06-11-%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E4%B8%BB%E6%B5%81%E6%97%A0%E7%BA%BF%E5%8D%8F%E8%AE%AE%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90/">智能家居主流无线协议对比分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/06/08/2022-06-08-%E5%BC%80%E5%A7%8B%E6%8A%98%E8%85%BEiPad%E7%A7%BB%E5%8A%A8%E8%BF%9C%E7%A8%8B%E5%8A%9E%E5%85%AC/">开始折腾iPad移动远程办公</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/06/05/2022-06-05-%E6%89%93%E9%80%A0MAC%E9%AB%98%E6%95%88%E7%94%9F%E4%BA%A7%E5%8A%9B/">打造MAC高效生产力</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/05/26/2022-05-27-%E8%BF%9C%E7%A8%8B%E5%BC%80-%E5%85%B3%E6%9C%BA%E9%85%8D%E7%BD%AE/">远程开/关机配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/05/14/2022-05-14-Github%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/">Github开源软件</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/04/29/2022-04-29-%E6%BA%90/">源</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/04/11/2022-04-12-M1Mac%E5%AE%89%E8%A3%85MediaPipe/">M1 Mac 安装 MediaPipe</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/31/2022-02-01-%E7%AE%80%E6%98%93HTTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2/">HTTPServer-简易HTTP服务器</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/17/2022-01-18-gitstats-Git%E7%BB%9F%E8%AE%A1%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/">gitstats-Git统计工具安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/06/2022-01-07-Zulip%E5%9B%A2%E9%98%9F%E5%8D%8F%E4%BD%9C%E8%81%8A%E5%A4%A9%E5%B7%A5%E5%85%B7%E9%83%A8%E7%BD%B2/">Zulip团队协作聊天工具部署</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/24/2021-12-25-ArchLinux%E5%AE%89%E8%A3%85%E4%BA%8E%E9%85%8D%E7%BD%AE/">Arch Linux 安装与配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/12/17/2021-12-18-ArchWSL%E5%AE%89%E8%A3%85/">ArchWSL - Windows下的Arch Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/06/22/2021-06-23-Awtrix%E6%99%BA%E8%83%BD%E5%83%8F%E7%B4%A0%E7%81%AF%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%83%A8%E7%BD%B2/">Awtrix智能像素灯服务端部署</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/06/19/2021-06-20-DNSmasq-webproc-Web%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2%E9%83%A8%E7%BD%B2/">DNSmasq+webproc-Web管理界面部署</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/21/2021-03-21-Unity-2019-4-Mono/">Unity 2019.4 Mono</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/20/2021-03-21-Atlassian-JIRA%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E6%90%AD%E5%BB%BA/">Atlassian-JIRA项目管理搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/20/2021-03-21-DNSmasq%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/">DNSmasq搭建与配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/20/2021-03-21-IPcheck-IP%E5%9C%B0%E5%9D%80%E5%8F%98%E5%8C%96%E7%9B%91%E6%8E%A7%E8%84%9A%E6%9C%AC/">IPcheck-IP地址变化监控脚本</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/20/2021-03-21-NextCloud%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98%E9%83%A8%E7%BD%B2/">NextCloud私有云盘部署</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/20/2021-03-21-Seafile%E7%A7%81%E6%9C%89%E4%BA%91%E5%AD%98%E5%82%A8%E9%83%A8%E7%BD%B2/">Seafile私有云存储部署</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/20/2021-03-21-WSL%E9%85%8D%E7%BD%AE/">WSL配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/20/2021-03-21-ShowDoc%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E9%83%A8%E7%BD%B2/">ShowDoc文档管理工具部署</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/01/08/2021-01-08-%E6%90%AD%E8%BD%BDM1%E7%9A%84MacBookPro13/">搭载M1的MacBookPro13</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/27/2020-06-27-SDKman%E7%AE%A1%E7%90%86%E5%88%A9%E5%99%A8/">SDKman管理利器</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/27/2020-06-27-%E4%BD%BF%E7%94%A8Laravel-Adminlte-Vue-js%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/">使用Laravel+Adminlte+Vue.js构建项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/27/2020-06-27-%E7%94%B3%E8%AF%B7Let-s-Encrypt%E9%80%9A%E9%85%8D%E7%AC%A6HTTPS%E8%AF%81%E4%B9%A6/">申请Let's Encrypt通配符HTTPS证书</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/27/2020-06-27-%E4%BA%91%E4%B8%BB%E6%9C%BA%E5%B8%B8%E7%94%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">云主机常用基本操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">Ubuntu18.04下编译OpenWRT15.05遇到的问题和解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/03/2020-04-05-Ubuntu18-04%E5%AE%89%E8%A3%85docker%E5%B9%B6%E4%BD%BF%E7%94%A8portainer/">Ubuntu18.04安装docker并使用portainer</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/02/2020-04-02-Mac%E4%BD%BF%E7%94%A8zsh%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80SublimeText/">Mac使用zsh快速打开SublimeText</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/16/2020-03-16-%E5%9C%A8%E7%BA%BF%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB%E6%9C%8D%E5%8A%A1/">在线文件共享服务</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/01/2020-03-01-git%E6%8C%87%E4%BB%A4%E5%A4%87%E5%BF%98/">git指令备忘</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/27/2020-02-27-%E4%BD%A0%E5%8F%AF%E8%83%BD%E4%B8%8D%E7%9F%A5%E9%81%93Shell/">你可能不知道的Shell</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/20/2020-02-20-%E5%B8%B8%E7%94%A8%E4%BA%92%E8%81%94%E7%BD%91%E6%8A%80%E6%9C%AF%E5%B7%A5%E5%85%B7/">常用互联网技术工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/16/2020-02-16-%E5%9C%A8Mac%E4%B8%8A%E8%BF%90%E8%A1%8CTensorFlow%E7%9A%84PoseNet/">在Mac上运行TensorFlow的PoseNet</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/12/2020-02-12-OpenWRT%E8%87%AA%E5%AE%9A%E4%B9%89ipk%E7%BC%96%E8%AF%91/">OpenWRT自定义ipk编译</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/30/2020-01-30-MAC%E5%8E%9F%E7%94%9F%E8%BE%93%E5%85%A5%E6%B3%95/">MAC原生输入法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/13/2020-01-13-VR%E3%80%81AR%E3%80%81MR/">VR、AR、MR</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/24/2019-12-24-%E4%BD%BF%E7%94%A8GitHub-Actions%E7%BC%96%E8%AF%91OpenWRT/">使用GitHub Actions编译OpenWRT</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/22/2019-12-22-%E5%9C%A8Ubuntu-18-04-LTS%E4%B8%AD%E4%BD%BF%E7%94%A8Katoolin%E5%AE%89%E8%A3%85Kali-Linux-Tools/">在Ubuntu 18.04 LTS中使用Katoolin安装Kali Linux Tools</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/22/2019-12-22-%E5%8A%A8%E7%94%BB%E5%A4%A7%E5%B8%88%E5%8D%8E%E7%89%B9%E2%80%A2%E8%BF%AA%E5%A3%AB%E5%B0%BC%E5%85%B3%E4%BA%8E%E6%A2%A6%E6%83%B3%E7%9A%8410%E5%A0%82%E8%AF%BE/">动画大师华特•迪士尼关于梦想的10堂课</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/19/2019-12-19-MySQL%E5%91%BD%E4%BB%A4/">MySQL命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/15/2019-12-15-Typora%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">Typora使用说明</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/06/2019-12-06-Mac-OS-X-%E4%B8%8B%E6%90%AD%E5%BB%BAnRF51822%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">Mac OS X 下搭建nRF51822开发环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/03/2019-12-03-%E6%9C%89%E5%85%B3%E8%B7%AF%E4%BA%9A%E8%B5%B7%E6%BA%90%E7%9A%84%E6%95%85%E4%BA%8B/">有关路亚起源的故事</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/21/2019-09-21-Telegram%E5%A5%BD%E7%8E%A9%E5%AE%9E%E7%94%A8%E7%9A%84%E7%BE%A4%E7%BB%84/">Telegram好玩实用的群组</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/27/2018-06-27-%E5%A4%A7%E7%96%86%E2%80%9C%E5%BE%A1%E2%80%9DMavic%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/">大疆“御”Mavic系列教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/27/2018-06-27-DJI%E5%A4%A7%E7%96%86%E5%88%9B%E6%96%B0%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%A6%81%E9%A3%9E%E5%8C%BA%E7%AD%96%E7%95%A5/">DJI大疆创新发布多边形禁飞区策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/21/2018-06-21-%E5%9C%A8ubuntu%E4%B8%8A%E9%83%A8%E7%BD%B2thingsboard/">在ubuntu上部署thingsboard</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/20/2018-06-20-QSDK%E7%BC%96%E8%AF%91/">QSDK编译</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/20/2018-06-20-%E4%BB%80%E4%B9%88%E6%98%AFLEDE/">什么是LEDE?</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/14/2018-05-14-OpenWRT%E7%9A%84WiFi%E5%B8%A6%E6%9C%BA%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%B9%E6%B3%95/">OpenWRT的WiFi带机量修改方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/14/2018-06-18-WiFi%E6%8E%A2%E9%92%88%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">WiFi探针的工作原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/08/2018-05-08-Android-MulticastSocket-%E7%BB%84%E6%92%AD/">Android MulticastSocket 组播</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/27/2018-04-28-STEAM%E5%88%9B%E5%AE%A2%E4%BC%81%E4%B8%9A/">STEAM创客企业</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/24/2018-04-24-OSX%E5%AE%89%E8%A3%85nginx%E5%92%8Crtmp%E6%A8%A1%E5%9D%97/">OSX安装nginx和rtmp模块</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/24/2018-04-24-Proguard-And-DexGuard/">Proguard And DexGuard</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/16/2018-03-16-802-11ac-Wave2%E5%88%B0%E5%BA%95%E5%A5%BD%E5%9C%A8%E5%93%AA/">802.11ac Wave2到底好在哪?</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/05/2018-02-05-DCS%E5%92%8CPLC%E7%9A%84%E5%8C%BA%E5%88%AB/">DCS和PLC的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/26/2017-12-26-SSH%E4%B8%8ESSM%E5%AF%B9%E6%AF%94/">SSH与SSM对比</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/05/2017-12-05-curl%E6%A8%A1%E6%8B%9Fhttp%E5%8F%91%E9%80%81get%E6%88%96post%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/">curl模拟http发送get或post接口测试</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/05/2017-12-22-%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F-FastDFS-5-Linux-CentOS-7-%E6%90%AD%E5%BB%BA/">分布式文件系统 FastDFS 5 &amp; Linux CentOS 7 搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/04/2017-12-04-%E6%80%8E%E6%A0%B7%E7%9A%84%E5%AE%B6%E5%B1%85%E7%85%A7%E6%98%8E%E6%89%8D%E6%9C%89%E8%B4%A8%E6%84%9F/">怎样的家居照明才有质感?</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/29/2017-11-29-CentOS7%E6%B7%BB%E5%8A%A0%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E8%84%9A%E6%9C%AC/">CentOS7添加开机启动服务脚本</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/2017-11-27-%E5%9F%BA%E4%BA%8E%E7%BA%A2%E5%A4%96%E9%98%B5%E5%88%97%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F/">基于红外阵列传感器的检测系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/26/2017-11-26-%E6%9D%BE%E4%B8%8BGrid-EYE%E7%BA%A2%E5%A4%96%E9%98%B5%E5%88%97%E5%8C%BB%E7%96%97%E4%BC%A0%E6%84%9F%E5%99%A8%E8%A7%A3%E6%9E%90/">松下Grid-EYE红外阵列传感器解析</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/23/2017-11-23-git%E4%B8%AD%E9%81%BF%E5%85%8D%E6%8F%90%E4%BA%A4-DS-Store%E6%96%87%E4%BB%B6/">git中避免提交.DS_Store文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/31/2017-10-31-%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%AB%99%E6%98%AF%E7%94%A8%E4%BB%80%E4%B9%88%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91%E7%9A%84/">如何查看网站是用什么语言开发的?</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/01/2017-10-01-%E6%89%93%E9%80%A0MAC%E4%BC%98%E9%9B%85%E7%BB%88%E7%AB%AF-iTerm2-oh-my-zsh-fortune/">打造MAC优雅终端(iTerm2+oh-my-zsh+fortune)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/20/2017-09-21-%E9%85%92%E5%BA%97PMS/">酒店PMS</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/18/2017-09-19-%E4%BD%BF%E7%94%A8Ionic%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91Hybird%E5%BA%94%E7%94%A8/">使用Ionic框架开发Hybrid应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/22/2017-03-24-%E5%9C%A8Mac%E4%B8%8A%E5%88%B6%E4%BD%9CUbuntu%E5%90%AF%E5%8A%A8U%E7%9B%98/">在Mac上制作Ubuntu启动U盘</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/08/2017-02-09-Homekit%E5%88%9D%E4%BD%93%E9%AA%8C/">HomeKit初体验</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/08/2017-02-08-OpenWRT%E4%B9%8BHomeKit/">OpenWRT之HomeKit</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/07/2017-02-08-Raspberry%E5%AE%89%E8%A3%85HAP-NodeJS/">Raspberry安装HAP-NodeJS</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/01/2017-02-01-%E5%9B%BE%E6%96%87%E8%A7%A3%E8%AF%B4%E6%B0%B4%E6%BB%B4%E8%BD%AE%E4%B8%89%E5%A4%A7%E5%88%B9%E8%BD%A6%E7%B3%BB%E7%BB%9F/">图文解说水滴轮三大刹车系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/01/2017-01-01-%E8%B7%AF%E4%BA%9A%E8%A3%85%E9%80%BC%E6%8C%87%E5%8D%97/">路亚装逼指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/29/2016-12-30-%E7%94%A8ASP-NET%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%9C%89%E5%93%AA%E4%BA%9B%E6%9E%B6%E6%9E%84%E6%96%B9%E5%BC%8F/">谈谈用ASP.NET开发的大型网站有哪些架构方式</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/29/2016-12-30-%E5%9F%BA%E4%BA%8E%E5%BE%AE%E8%BD%AF%E5%B9%B3%E5%8F%B0IIS-ASP-NET%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%9C%89%E5%93%AA%E4%BA%9B/">基于微软平台IIS/ASP.NET开发的大型网站有哪些?</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/15/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/">GoAhead移植到OpenWRT</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/15/2016-12-16-GitHub%E4%B8%AD%E7%9A%84watch%E3%80%81star%E3%80%81fork%E7%9A%84%E4%BD%9C%E7%94%A8/">GitHub中的watch、star、fork的作用</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/17/2016-11-17-Contiki-CC2538-CoAP/">Contiki-CC2538-CoAP</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/09/2016-11-09-Contiki-CC2538/">Contiki-CC2538</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/29/2016-10-29-%E5%9F%BA%E4%BA%8EContiki%E7%9A%846lbr%E6%A8%A1%E6%8B%9F%E4%BB%BF%E7%9C%9F/">基于Contiki的6lbr模拟仿真</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/27/2016-10-27-%E5%88%A9%E7%94%A8Travis-CI%E3%80%81MkDocs%E8%87%AA%E5%8B%95%E9%83%A8%E7%BD%B2Blog%E8%87%B3GitHub-Pages/">利用Travis CI、MkDocs自动部署Blog至GitHub Pages</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/15/2016-10-16-linkit-smart-7688-build/">linkit-smart-7688-build</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/13/2016-10-13-%E5%87%A0%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%9C%89%E6%95%88%E7%9A%84%E7%BA%BF%E7%BB%93%E4%BB%8B%E7%BB%8D/">几种常用有效的线结介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/13/2016-10-13-%E5%96%84%E7%94%A8%E8%B7%AF%E4%BA%9A%E8%BD%AF%E9%A5%B5/">善用路亚软饵</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/13/2016-10-13-%E5%B8%B8%E7%94%A8%E8%B7%AF%E4%BA%9A%E7%BA%BF%E7%9A%84%E5%8C%BA%E5%88%AB/">常用路亚线的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/13/2016-10-13-%E8%B7%AF%E4%BA%9A%E6%B0%B4%E6%BB%B4%E8%BD%AE%E7%9A%84%E9%80%9F%E6%AF%94%E7%9A%84%E9%80%89%E6%8B%A9/">路亚水滴轮的速比的选择</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/13/2016-10-13-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E4%B8%80%E6%A0%B9%E9%80%82%E5%90%88%E8%87%AA%E5%B7%B1%E7%9A%84BASS%E7%AB%BF/">如何选择一根适合自己的BASS竿</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/12/2016-10-12-%E8%B7%AF%E4%BA%9A%E7%AB%BF%E7%9A%84%E7%A1%AC%E5%BA%A6%E4%B8%8E%E8%B0%83%E6%80%A7%E4%BD%A0%E6%98%AF%E5%90%A6%E6%B7%B7%E6%B7%86/">路亚竿的硬度与调性你是否混淆</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/11/2016-10-11-%E6%B4%BB%E9%B1%BC%E6%94%BE%E8%A1%80/">活鱼放血</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/10/2016-10-10-%E9%AB%98%E7%94%B0%E8%B7%AF%E4%BA%9A%E8%A7%86%E9%A2%91/">高田路亚视频</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/10/2016-10-10-%E8%B7%AF%E4%BA%9A%E8%A3%85%E5%A4%87/">路亚装备</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/09/2016-10-10-Kali-Linux-Live-USB-on-MAC/">Kali Linux Live USB on MAC</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/09/2016-10-09-%E8%B7%AF%E4%BA%9A%E7%BB%91%E6%B3%95/">路亚绑法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/2016-10-08-OpenWRT%E5%BC%80%E6%BA%90%E7%A1%AC%E4%BB%B6%E6%B1%87%E6%80%BB/">OpenWRT开源硬件汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/2016-10-08-%E6%8B%9F%E9%A5%B5%E6%89%8B%E6%B3%95/">拟饵手法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/08/2016-10-08-%E8%B7%AF%E4%BA%9A%E6%9C%AF%E8%AF%AD/">路亚术语</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/15/2016-09-15-Hexo%E4%B8%BB%E9%A2%98Yilia/">Hexo加Yilia搭建博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/13/2016-05-13-IoT%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/">IoT知识点汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/12/2016-05-12-%E7%BD%91%E7%AB%99%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%9C%80%E7%AE%80%E4%B8%BB%E4%B9%89/">网站设计的最简主义</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/09/2016-03-09-MEAN/">MEAN</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/08/2016-03-08-eMaker-Space/">eMaker.Space</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/15/2016-02-15-Raspberry-Pi/">Raspberry Pi</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/17/2015-11-18-%E5%88%9B%E5%AE%A2%E7%A1%AC%E4%BB%B6/">创客硬件</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/03/2015-10-03-%E6%8A%98%E5%8F%A0%E5%85%AC%E8%B7%AF%E8%BD%A6/">折叠公路车</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/19/2015-08-19-Linux%E6%89%93%E8%A1%A5%E4%B8%81%E5%92%8Cgit%E6%89%93patch%E6%96%B9%E6%B3%95/">Linux打补丁和git打patch方法 </a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/18/2015-08-18-Linux/">Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/14/2015-08-15-%E4%BA%9A%E9%A9%AC%E9%80%8A%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%85%8D%E8%B4%B9%E4%B8%80%E5%B9%B4VPS%E4%B8%BB%E6%9C%BA%E7%BF%BB%E5%A2%99%E6%9C%AF/">亚马逊云服务免费一年VPS主机翻墙术</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/23/2015-07-23-%E5%B8%B8%E7%94%A8Wi-Fi%E7%BD%91%E7%BB%9C%E8%AF%84%E6%B5%8B%E5%B7%A5%E5%85%B7/">常用Wi-Fi网络评测工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/16/2015-07-16-%E6%9C%89%E8%B6%A3%E7%9A%84Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8A%9F%E6%95%88/">有趣的Linux命令行功效</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/09/2015-07-09-OpenWRT-usefull-commands/">OpenWRT usefull commands</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/08/2015-07-08-OpenWRT%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0/">OpenWRT折腾日记</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/07/2015-07-07-OpenWRT%E4%B9%8Bdl%E4%B8%8B%E8%BD%BD%E5%88%86%E4%BA%AB/">OpenWRT之dl下载分享</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/06/2015-07-06-OpenWRT%E4%B8%8Bifconfig%E5%90%84%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E/">OpenWRT下ifconfig各接口说明</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/01/2015-07-01-OpenWRT%E7%BB%8F%E5%85%B8%E7%BD%91%E7%AB%99/">OpenWRT经典网站</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/24/2015-06-24-%E6%8A%80%E6%9C%AF%E9%A2%86%E5%9F%9F%E7%9A%84%E6%B7%B1%E5%88%BB%E4%BD%93%E4%BC%9A%E3%80%81%E6%95%99%E8%AE%AD/">技术领域的深刻体会、教训</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/03/2015-06-03-%E4%B8%89%E6%98%9F%E5%B9%B3%E6%9D%BF%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">三星平板工厂模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/28/2015-03-01-ZigBee%E5%B0%84%E9%A2%91%E6%A8%A1%E5%9D%97%E6%99%B6%E6%8C%AF%E9%80%89%E5%9E%8B/">ZigBee射频模块晶振选型</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/15/2015-01-15-xclip-pbcopy-xsel%E7%94%A8%E6%B3%95/">xclip,pbcopy,xsel用法</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/13/2015-01-13-MacOS/">MacOS</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/13/2015-01-13-Ubuntu/">Ubuntu</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/08/2014-12-08-SDK%E4%B9%8BuClinux%E3%80%81Ralink%E3%80%81Atheros%E3%80%81Realtek%E3%80%81Broadcom/">SDK之uClinux、Ralink、Atheros、Realtek、Broadcom</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/07/09/2014-07-09-Altium-Designer%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">Altium Designer常用快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/06/07/2014-06-08-%E9%AA%91%E8%A1%8C7%EF%BC%9A%E6%BB%B4%E6%B0%B4%E6%B9%962014/">骑行7：滴水湖2014</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/05/20/2014-05-21-%E9%AA%91%E8%A1%8C6%EF%BC%9A%E4%B8%8A%E6%B5%B7%E5%8D%97%E4%BA%AC%E8%B7%AF%E6%AD%A5%E8%A1%8C%E8%A1%97/">骑行6：上海南京路步行街</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/04/17/2014-04-17-%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/">网络命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/07/05/2013-07-05-Marketplace-Client/">Marketplace Client</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/06/14/2013-06-15-%E9%AA%91%E8%A1%8C5%EF%BC%9A%E6%B2%AA%E6%9D%AD%E5%85%AC%E8%B7%AF%E5%88%B0%E4%B9%9D%E9%BE%99%E5%B1%B1/">骑行5：沪杭公路到九龙山</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/29/2013-04-29-%E9%AA%91%E8%A1%8C4%EF%BC%9A%E8%80%81%E4%B8%8A%E6%B5%B7-%E6%B5%A6%E8%A5%BF%E4%B8%96%E5%8D%9A%E5%9B%AD/">骑行4：老上海&amp;浦西世博园</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/20/2013-04-20-%E9%AA%91%E8%A1%8C3%EF%BC%9A%E5%A4%A9%E9%A9%AC%E5%B1%B1-%E6%B7%80%E5%B1%B1%E6%B9%96/">骑行3：天马山&amp;淀山湖</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/06/2013-04-06-%E6%88%91%E7%9A%84%E5%8D%95%E8%BD%A6%E8%A3%85%E5%A4%87/">我的单车装备</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/05/2013-04-05-%E9%AA%91%E8%A1%8C2%EF%BC%9A%E6%BB%B4%E6%B0%B4%E6%B9%96/">骑行2：滴水湖</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/04/02/2013-04-02-%E9%AA%91%E8%A1%8C1%EF%BC%9A%E4%BD%98%E5%B1%B1/">骑行1：佘山</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/03/23/2013-03-23-GitHub%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9/">GitHub建立个人站点</a></li><li class="post-list-item"><a class="post-list-link" href="/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/">InstantContiki2.6 for CC2530</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/10/14/2012-10-14-%E6%9B%BE%E7%BB%8F%E6%8A%98%E8%85%BE%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B/">曾经折腾过的那些</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-autoRootfs-sh/">autoRootfs.sh</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-SQLite%E7%A7%BB%E6%A4%8D%E5%88%B0ARM%E5%BC%80%E5%8F%91%E6%9D%BF/">SQLite移植到ARM开发板</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-goAhead2-5%E5%B5%8C%E5%85%A5%E5%BC%8Fweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A7%BB%E6%A4%8D/">goAhead2.5嵌入式web服务器移植</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-jffs2%E6%A0%B9%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%88%B6%E4%BD%9C/">jffs2根文件系统制作</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-at91sam9x5%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/">at91sam9x5编译过程</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-07-ubuntu11-04%E5%AE%89%E8%A3%85arm%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">ubuntu11.04安装arm开发环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/09/07/2012-09-08-Linux%E4%B8%AD%E7%94%9F%E6%88%90shadow%E7%9A%84%E5%8A%A0%E5%AF%86%E5%AF%86%E7%A0%81/">Linux中生成shadow的加密密码</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/08/08/2012-08-08-vim%E5%BE%AA%E5%BA%8F%E6%B8%90%E8%BF%9B/">vim循序渐进</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/08/02/2012-08-02-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E5%BC%80%E6%BA%90%E8%AE%B8%E5%8F%AF%E8%AF%81/">如何选择开源许可证?</a></li><li class="post-list-item"><a class="post-list-link" href="/2012/08/01/2012-08-01-vi%E5%A4%87%E5%BF%98/">vi备忘</a></li><li class="post-list-item"><a class="post-list-link" href="/2010/07/23/2010-07-23-Telnet%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/">Telnet调试工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2009/07/28/2009-07-28-%E5%9F%BA%E4%BA%8EAltium-Designer-Winter-09%E5%9C%A8PCB%E4%B8%AD%E6%94%BE%E7%BD%AELOGO/">基于Altium Designer Winter 09在PCB中放置LOGO</a></li><li class="post-list-item"><a class="post-list-link" href="/2009/03/12/2009-03-13-%E5%9C%A8TI-CC1111-CC25111%E4%B8%8A%E6%90%9E%E5%AE%9AUSBHID/">在TI-CC1111&amp;CC25111上搞定USBHID</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/07/09/2008-07-09-Rf-Calc/">Rf_Calc</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/05/11/2008-05-11-Proteus%E4%BA%A7%E5%93%81%E4%BB%BF%E7%9C%9F/">Proteus产品仿真</a></li><li class="post-list-item"><a class="post-list-link" href="/2008/01/03/2008-01-03-USB-M8-RGBLED%E5%BD%A9%E7%81%AF/">USB_M8_RGBLED彩灯</a></li><li class="post-list-item"><a class="post-list-link" href="/2007/11/19/2007-11-19-EAGLE3D%E7%BB%88%E4%BA%8E%E6%90%9E%E5%AE%9A%E4%BA%86%EF%BC%81/">EAGLE3D终于搞定了!</a></li><li class="post-list-item"><a class="post-list-link" href="/2007/10/12/2007-10-12-CC2430%E6%A8%A1%E5%9D%97%E8%87%AA%E6%B5%8B%E7%A8%8B%E5%BA%8F/">CC2430模块自测程序</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/12/25/2006-12-25-%E5%9F%BA%E4%BA%8ECport%E7%9A%84%E5%A4%9A%E5%8A%9F%E8%83%BD%E4%B8%B2%E5%8F%A3%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/">基于Cport的多功能串口调试工具</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/12/06/2006-12-06-AT91SAM7S64%E7%9A%84%E5%AE%9A%E6%97%B6%E5%99%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E8%AE%A1%E7%AE%97%E5%99%A8/">AT91SAM7S64的定时器初始化计算器</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/10/31/2006-10-31-%E9%97%AA%E5%8A%A8%E7%9A%84%E2%80%9CLOVE%E2%80%9D/">闪动的“LOVE”</a></li><li class="post-list-item"><a class="post-list-link" href="/2006/10/01/2006-10-01-%E6%B4%BB%E7%9D%80%EF%BC%8C%E5%B0%B1%E8%A6%81%E6%8A%98%E8%85%BE/">活着，就要折腾</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i>
+                2016-
+                            2026
+                                Gary
+                                    
+                                        <a href="https://beian.miit.gov.cn/" target="_blank" style="color: #999; ">沪ICP备2022030735号</a>
+                                        
+            </div>
+            <div class="footer-right">
+                <!-- <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i> -->
+                Old Blog <a target="_blank" rel="noopener" href="https://cuiqingwei1981.github.io">https://cuiqingwei1981.github.io</a>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style="display:none">
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span></span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style="display:none">
+                        <span id="page-visit" title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span></span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+</script>
+
+
+<script data-main="/js/main.js" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-42607542-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+
+</body></html>

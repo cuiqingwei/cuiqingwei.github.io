@@ -1,0 +1,60 @@
+<svg width="1200" height="640" viewBox="0 0 1200 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Vibe Coding 工程闭环">
+  <defs>
+    <style>
+      .title{font:700 42px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#111827}
+      .sub{font:400 20px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#475569}
+      .node-title{font:700 25px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#111827}
+      .node-sub{font:500 17px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#475569}
+      .num{font:800 28px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#fff}
+      .note{font:600 19px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#0f172a}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="640" fill="#f8fafc"/>
+  <text x="72" y="82" class="title">Vibe Coding 不是“让 AI 写代码”，而是建立工程闭环</text>
+  <text x="72" y="120" class="sub">关键在于：把需求拆清楚、把边界钉住、让 AI 快速生成，再用工程化手段收口。</text>
+
+  <g>
+    <path d="M269 236 C396 112, 786 112, 916 236" fill="none" stroke="#334155" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M934 406 C806 530, 414 530, 284 406" fill="none" stroke="#334155" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M998 302 C1090 318, 1090 408, 1003 425" fill="none" stroke="#94a3b8" stroke-width="4" marker-end="url(#arrow)"/>
+    <path d="M201 424 C110 408, 110 318, 197 301" fill="none" stroke="#94a3b8" stroke-width="4" marker-end="url(#arrow)"/>
+  </g>
+
+  <g>
+    <rect x="72" y="190" width="250" height="145" rx="18" fill="#e0f2fe" stroke="#7dd3fc"/>
+    <circle cx="112" cy="230" r="24" fill="#0284c7"/><text x="104" y="240" class="num">1</text>
+    <text x="148" y="229" class="node-title">定义问题</text>
+    <text x="100" y="276" class="node-sub">先写目标、用户、约束</text>
+    <text x="100" y="304" class="node-sub">别急着让模型动手</text>
+  </g>
+
+  <g>
+    <rect x="475" y="170" width="250" height="145" rx="18" fill="#dcfce7" stroke="#86efac"/>
+    <circle cx="515" cy="210" r="24" fill="#16a34a"/><text x="507" y="220" class="num">2</text>
+    <text x="551" y="209" class="node-title">生成原型</text>
+    <text x="503" y="256" class="node-sub">先要可运行版本</text>
+    <text x="503" y="284" class="node-sub">再补交互与异常路径</text>
+  </g>
+
+  <g>
+    <rect x="878" y="190" width="250" height="145" rx="18" fill="#fef3c7" stroke="#fcd34d"/>
+    <circle cx="918" cy="230" r="24" fill="#d97706"/><text x="910" y="240" class="num">3</text>
+    <text x="954" y="229" class="node-title">工程收口</text>
+    <text x="906" y="276" class="node-sub">README、配置、部署</text>
+    <text x="906" y="304" class="node-sub">权限、超时、回退机制</text>
+  </g>
+
+  <g>
+    <rect x="475" y="382" width="250" height="145" rx="18" fill="#ede9fe" stroke="#c4b5fd"/>
+    <circle cx="515" cy="422" r="24" fill="#7c3aed"/><text x="507" y="432" class="num">4</text>
+    <text x="551" y="421" class="node-title">复盘沉淀</text>
+    <text x="503" y="468" class="node-sub">把项目变成模板</text>
+    <text x="503" y="496" class="node-sub">把经验变成下一轮提示词</text>
+  </g>
+
+  <rect x="255" y="560" width="690" height="46" rx="23" fill="#e2e8f0"/>
+  <text x="336" y="590" class="note">产出标准：能跑、可复现、可维护、能迁移到下一个问题</text>
+</svg>
