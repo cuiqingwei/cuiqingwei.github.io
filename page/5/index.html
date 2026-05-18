@@ -18,7 +18,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="iZheteng">
-<meta property="og:url" content="http://cuiqingwei.github.io/page/5/index.html">
+<meta property="og:url" content="https://www.izheteng.site/page/5/index.html">
 <meta property="og:site_name" content="iZheteng">
 <meta property="og:locale">
 <meta property="article:author" content="Gary">
@@ -35,16 +35,16 @@
 
 
 
-    <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+    <link href="/lib/cdnjs/animate.css/3.5.1/animate.min.css" rel="stylesheet">
 
 
 
-    <link href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="/lib/cdnjs/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
 
 
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+    <script src="/lib/cdnjs/pace/1.0.2/pace.min.js"></script>
+    <link href="/lib/cdnjs/pace/1.0.2/pace-theme-minimal.css" rel="stylesheet">
 
 
 
@@ -55,13 +55,13 @@
     <style> .article { opacity: 0;} </style>
 
 
-<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<link href="/lib/cdnjs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
 <title>iZheteng</title>
 
-<script defer="" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script defer="" src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+<script src="/lib/cdnjs/jquery/2.2.4/jquery.min.js"></script>
+
 
 <script>
     var yiliaConfig = {
@@ -72,15 +72,15 @@
         isArchive: false,
         isTag: false,
         isCategory: false,
-        fancybox_js: "//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js",
-        scrollreveal: "//cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        fancybox_js: "/lib/cdnjs/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "/lib/cdnjs/scrollReveal.js/3.1.4/scrollreveal.min.js",
         search: true
     }
 </script>
 
 
     <script>
-        yiliaConfig.jquery_ui = [true, "//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js", "//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/css/jquery-ui.min.css"];
+        yiliaConfig.jquery_ui = [true, "/lib/cdnjs/jqueryui/1.10.4/jquery-ui.min.js", "/lib/cdnjs/jqueryui/1.10.4/css/jquery-ui.min.css"];
     </script>
 
 
@@ -91,18 +91,9 @@
 
 
 
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "//hm.baidu.com/hm.js?9648942fbef87fb71c7420365857d971";
-            var s = document.getElementsByTagName("script")[0]; 
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-
 
 <meta name="generator" content="Hexo 8.1.1"></head>
+
 <body>
   <div id="container">
     <div class="left-col">
@@ -301,6 +292,78 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-2021-03-21-ShowDoc文档管理工具部署" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/03/20/2021-03-21-ShowDoc%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E9%83%A8%E7%BD%B2/" class="article-date">
+      <time datetime="2021-03-20T16:00:00.000Z" itemprop="datePublished">2021-03-21</time>
+</a>
+
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/20/2021-03-21-ShowDoc%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E9%83%A8%E7%BD%B2/">ShowDoc文档管理工具部署</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="基础安装"><a href="#基础安装" class="headerlink" title="基础安装"></a>基础安装</h2><p>安装前请确保你的环境已经装好了docker 。docker的安装教程在网上比较多，可以搜索了解下。这里重点介绍showdoc.</p>
+<h3 id="原版官方镜像安装命令-中国大陆用户不建议直接使用原版镜像，可以用后面的加速镜像"><a href="#原版官方镜像安装命令-中国大陆用户不建议直接使用原版镜像，可以用后面的加速镜像" class="headerlink" title="原版官方镜像安装命令(中国大陆用户不建议直接使用原版镜像，可以用后面的加速镜像)"></a>原版官方镜像安装命令(中国大陆用户不建议直接使用原版镜像，可以用后面的加速镜像)</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull star7th/showdoc</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="中国大陆镜像安装命令（安装后记得执行docker-tag命令以进行重命名）"><a href="#中国大陆镜像安装命令（安装后记得执行docker-tag命令以进行重命名）" class="headerlink" title="中国大陆镜像安装命令（安装后记得执行docker tag命令以进行重命名）"></a>中国大陆镜像安装命令（安装后记得执行docker tag命令以进行重命名）</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull registry.cn-shenzhen.aliyuncs.com/star7th/showdoc</span><br><span class="line">docker tag registry.cn-shenzhen.aliyuncs.com/star7th/showdoc:latest star7th/showdoc:latest</span><br></pre></td></tr></tbody></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/">Linux/服务器</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ShowDoc/" rel="tag">ShowDoc</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/03/20/2021-03-21-ShowDoc%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E9%83%A8%E7%BD%B2/#more">阅读全文 &gt;&gt;</a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2021-03-21-WSL配置" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -308,15 +371,6 @@
       <time datetime="2021-03-20T16:00:00.000Z" itemprop="datePublished">2021-03-21</time>
 </a>
 
- 
-    <a href="/2021/03/20/2021-03-21-WSL%E9%85%8D%E7%BD%AE/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2021/03/20/2021-03-21-WSL配置/"></span>
-        
-    </a>
 
       
     </div>
@@ -391,87 +445,6 @@
 
 
   
-    <article id="post-2021-03-21-ShowDoc文档管理工具部署" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/03/20/2021-03-21-ShowDoc%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E9%83%A8%E7%BD%B2/" class="article-date">
-      <time datetime="2021-03-20T16:00:00.000Z" itemprop="datePublished">2021-03-21</time>
-</a>
-
- 
-    <a href="/2021/03/20/2021-03-21-ShowDoc%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E9%83%A8%E7%BD%B2/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2021/03/20/2021-03-21-ShowDoc文档管理工具部署/"></span>
-        
-    </a>
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/20/2021-03-21-ShowDoc%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E9%83%A8%E7%BD%B2/">ShowDoc文档管理工具部署</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="基础安装"><a href="#基础安装" class="headerlink" title="基础安装"></a>基础安装</h2><p>安装前请确保你的环境已经装好了docker 。docker的安装教程在网上比较多，可以搜索了解下。这里重点介绍showdoc.</p>
-<h3 id="原版官方镜像安装命令-中国大陆用户不建议直接使用原版镜像，可以用后面的加速镜像"><a href="#原版官方镜像安装命令-中国大陆用户不建议直接使用原版镜像，可以用后面的加速镜像" class="headerlink" title="原版官方镜像安装命令(中国大陆用户不建议直接使用原版镜像，可以用后面的加速镜像)"></a>原版官方镜像安装命令(中国大陆用户不建议直接使用原版镜像，可以用后面的加速镜像)</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull star7th/showdoc</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="中国大陆镜像安装命令（安装后记得执行docker-tag命令以进行重命名）"><a href="#中国大陆镜像安装命令（安装后记得执行docker-tag命令以进行重命名）" class="headerlink" title="中国大陆镜像安装命令（安装后记得执行docker tag命令以进行重命名）"></a>中国大陆镜像安装命令（安装后记得执行docker tag命令以进行重命名）</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull registry.cn-shenzhen.aliyuncs.com/star7th/showdoc</span><br><span class="line">docker tag registry.cn-shenzhen.aliyuncs.com/star7th/showdoc:latest star7th/showdoc:latest</span><br></pre></td></tr></tbody></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/">Linux/服务器</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ShowDoc/" rel="tag">ShowDoc</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/03/20/2021-03-21-ShowDoc%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E9%83%A8%E7%BD%B2/#more">阅读全文 &gt;&gt;</a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-2021-01-08-搭载M1的MacBookPro13" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -479,15 +452,6 @@
       <time datetime="2021-01-08T12:39:00.000Z" itemprop="datePublished">2021-01-08</time>
 </a>
 
- 
-    <a href="/2021/01/08/2021-01-08-%E6%90%AD%E8%BD%BDM1%E7%9A%84MacBookPro13/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2021/01/08/2021-01-08-搭载M1的MacBookPro13/"></span>
-        
-    </a>
 
       
     </div>
@@ -559,15 +523,6 @@
       <time datetime="2020-06-27T13:37:00.000Z" itemprop="datePublished">2020-06-27</time>
 </a>
 
- 
-    <a href="/2020/06/27/2020-06-27-SDKman%E7%AE%A1%E7%90%86%E5%88%A9%E5%99%A8/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2020/06/27/2020-06-27-SDKman管理利器/"></span>
-        
-    </a>
 
       
     </div>
@@ -646,15 +601,6 @@
       <time datetime="2020-06-27T13:37:00.000Z" itemprop="datePublished">2020-06-27</time>
 </a>
 
- 
-    <a href="/2020/06/27/2020-06-27-%E4%BD%BF%E7%94%A8Laravel-Adminlte-Vue-js%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2020/06/27/2020-06-27-使用Laravel-Adminlte-Vue-js构建项目/"></span>
-        
-    </a>
 
       
     </div>
@@ -737,15 +683,6 @@
       <time datetime="2020-06-27T12:37:00.000Z" itemprop="datePublished">2020-06-27</time>
 </a>
 
- 
-    <a href="/2020/06/27/2020-06-27-%E7%94%B3%E8%AF%B7Let-s-Encrypt%E9%80%9A%E9%85%8D%E7%AC%A6HTTPS%E8%AF%81%E4%B9%A6/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2020/06/27/2020-06-27-申请Let-s-Encrypt通配符HTTPS证书/"></span>
-        
-    </a>
 
       
     </div>
@@ -813,15 +750,6 @@
       <time datetime="2020-06-27T09:37:00.000Z" itemprop="datePublished">2020-06-27</time>
 </a>
 
- 
-    <a href="/2020/06/27/2020-06-27-%E4%BA%91%E4%B8%BB%E6%9C%BA%E5%B8%B8%E7%94%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2020/06/27/2020-06-27-云主机常用基本操作/"></span>
-        
-    </a>
 
       
     </div>
@@ -890,15 +818,6 @@
       <time datetime="2020-04-03T13:37:00.000Z" itemprop="datePublished">2020-04-03</time>
 </a>
 
- 
-    <a href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2020/04/03/2020-04-03-Ubuntu18-04下编译OpenWRT15-05遇到的问题和解决方案/"></span>
-        
-    </a>
 
       
     </div>
@@ -974,15 +893,6 @@
       <time datetime="2020-04-03T13:37:00.000Z" itemprop="datePublished">2020-04-03</time>
 </a>
 
- 
-    <a href="/2020/04/03/2020-04-05-Ubuntu18-04%E5%AE%89%E8%A3%85docker%E5%B9%B6%E4%BD%BF%E7%94%A8portainer/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2020/04/03/2020-04-05-Ubuntu18-04安装docker并使用portainer/"></span>
-        
-    </a>
 
       
     </div>
@@ -1098,15 +1008,6 @@
       <time datetime="2020-04-02T13:37:00.000Z" itemprop="datePublished">2020-04-02</time>
 </a>
 
- 
-    <a href="/2020/04/02/2020-04-02-Mac%E4%BD%BF%E7%94%A8zsh%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80SublimeText/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2020/04/02/2020-04-02-Mac使用zsh快速打开SublimeText/"></span>
-        
-    </a>
 
       
     </div>
@@ -1197,15 +1098,6 @@
       <time datetime="2020-03-16T13:37:00.000Z" itemprop="datePublished">2020-03-16</time>
 </a>
 
- 
-    <a href="/2020/03/16/2020-03-16-%E5%9C%A8%E7%BA%BF%E6%96%87%E4%BB%B6%E5%85%B1%E4%BA%AB%E6%9C%8D%E5%8A%A1/#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-        
-            <span class="disqus-comment-count" data-disqus-identifier="2020/03/16/2020-03-16-在线文件共享服务/"></span>
-        
-    </a>
 
       
     </div>
@@ -1322,42 +1214,9 @@
 </script>
 
 
-<script data-main="/js/main.js" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js"></script>
+<script data-main="/js/main.js" src="/lib/cdnjs/require.js/2.2.0/require.min.js"></script>
 
 
-    
-
-    
-        <script id="dsq-count-scr" src="//cuiqingwei.disqus.com/count.js" async=""></script>
-        <script>
-            if ($(".left-col").is(":visible")) {
-                var $disqusCount = $(".disqus-comment-count");
-                $disqusCount.bind("DOMNodeInserted", function(e) {
-                    var num = $(this).text().replace(/[^0-9]/ig,"");
-                    if (num > 0) {
-                        $(this).siblings(".count-comment").text(num);
-                    }
-                    $(this).remove();
-                })
-            } else {
-                $(".disqus-comment-count").remove();
-            }
-        </script>
-     
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-42607542-2', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
 
 
 
@@ -1388,8 +1247,24 @@ ga('send', 'pageview');
     
 </script>
 
-<script async="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+
+<script>
+    (function () {
+        var loadBusuanzi = function () {
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
+            document.body.appendChild(script);
+        };
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadBusuanzi, { timeout: 3000 });
+        } else {
+            window.setTimeout(loadBusuanzi, 1500);
+        }
+    })();
 </script>
+
+
   </div>
 
 </body></html>
