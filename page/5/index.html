@@ -364,10 +364,10 @@
 
 
   
-    <article id="post-2021-03-21-NextCloud私有云盘部署" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-2021-03-21-WSL配置" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2021/03/20/2021-03-21-NextCloud%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98%E9%83%A8%E7%BD%B2/" class="article-date">
+      <a href="/2021/03/20/2021-03-21-WSL%E9%85%8D%E7%BD%AE/" class="article-date">
       <time datetime="2021-03-20T16:00:00.000Z" itemprop="datePublished">2021-03-21</time>
 </a>
 
@@ -384,7 +384,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/20/2021-03-21-NextCloud%E7%A7%81%E6%9C%89%E4%BA%91%E7%9B%98%E9%83%A8%E7%BD%B2/">NextCloud私有云盘部署</a>
+      <a class="article-title" href="/2021/03/20/2021-03-21-WSL%E9%85%8D%E7%BD%AE/">WSL配置</a>
     </h1>
   
 
@@ -394,22 +394,20 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="1-安装Nextcloud服务端"><a href="#1-安装Nextcloud服务端" class="headerlink" title="1.安装Nextcloud服务端"></a>1.安装Nextcloud服务端</h2><p>docker hub镜像仓库自带有nextcloud的镜像，可以直接拉取</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull nextcloud</span><br></pre></td></tr></tbody></table></figure>
+              <h1 id="WSL-Windows-Subsystem-配置"><a href="#WSL-Windows-Subsystem-配置" class="headerlink" title="WSL(Windows Subsystem) 配置"></a>WSL(Windows Subsystem) 配置</h1><p>参考：<a target="_blank" rel="noopener" href="https://aisoa.cn/post-2904.html">https://aisoa.cn/post-2904.html</a></p>
+<h2 id="Windows10子系统Ubuntu18-04LTS更换国内源"><a href="#Windows10子系统Ubuntu18-04LTS更换国内源" class="headerlink" title="Windows10子系统Ubuntu18.04LTS更换国内源"></a>Windows10子系统Ubuntu18.04LTS更换国内源</h2><p>1.查看Linux版本</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lsb_release -a</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="2-启动Nextcloud服务器端"><a href="#2-启动Nextcloud服务器端" class="headerlink" title="2.启动Nextcloud服务器端"></a>2.启动Nextcloud服务器端</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mkdir /home/gary/nextcloud</span></span><br><span class="line"><span class="comment"># docker run --name nextcloud -p 8096:80 --restart=always -v /home/gary/nextcloud:/var/www/html/data -d nextcloud</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Distributor ID: Ubuntu</span><br><span class="line">Description:    Ubuntu 18.04.2 LTS</span><br><span class="line">Release:        18.04</span><br><span class="line">Codename:       bionic</span><br></pre></td></tr></tbody></table></figure>
 
-<p>参数说明：</p>
-<ul>
-<li>–name：设定容器名称为nextcloud</li>
-<li>-p 8096:80 ：端口映射，将宿主机8080端口映射到容器中的80端口</li>
-<li>-v /data/nextcloud:/var/www/html/data将容器中项目的data目录映射到本地/home/gary/nextcloud目录下方便配置和数据保存</li>
-<li>-d 是以后台形式启动</li>
-</ul>
-<h2 id="3-配置Nextcloud服务器端"><a href="#3-配置Nextcloud服务器端" class="headerlink" title="3.配置Nextcloud服务器端"></a>3.配置Nextcloud服务器端</h2><p>3.1 Nextcloud的数据存储可以选择多种数据库，本文是以MySQL数据库为例，可以使用Docker容器方式启动MySQl数据库并link部署好的nextcloud容器</p>
-<p>3.2 如果有域名的化，可以搭配nginx代理宿主机映射出的8096端口，使用更为简便。</p>
-<h2 id="安装onlyoffice"><a href="#安装onlyoffice" class="headerlink" title="安装onlyoffice"></a>安装onlyoffice</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mkdir /home/gary/onlyoffice</span></span><br><span class="line"></span><br><span class="line">docker run --name onlyoffice -i -t -d -p 9001:80 --restart=always \</span><br><span class="line">-v /home/gary/onlyoffice/DocumentServer/logs:/var/log/onlyoffice \</span><br><span class="line">-v /home/gary/onlyoffice/DocumentServer/data:/var/www/onlyoffice/Data \</span><br><span class="line">-v /home/gary/onlyoffice/DocumentServer/lib:/var/lib/onlyoffice \</span><br><span class="line">-v /home/gary/onlyoffice/DocumentServer/db:/var/lib/postgresql onlyoffice/documentserver</span><br></pre></td></tr></tbody></table></figure>
+<p>注意：Codename为bionic
+当前Ubuntu的版本为Bionic Beaver（仿生海狸）</p>
+<p>2.备份数据源</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> <span class="built_in">cp</span> /etc/apt/sources.list /etc/apt/sources-backup.list</span><br></pre></td></tr></tbody></table></figure>
 
+<p>3.更换数据源</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> vim /etc/apt/sources.list</span><br></pre></td></tr></tbody></table></figure>
+          
       
     </div>
     
@@ -423,9 +421,13 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NextCloud/" rel="tag">NextCloud</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2021/03/20/2021-03-21-WSL%E9%85%8D%E7%BD%AE/#more">阅读全文 &gt;&gt;</a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -809,6 +811,81 @@
 
 
   
+    <article id="post-2020-04-03-Ubuntu18-04下编译OpenWRT15-05遇到的问题和解决方案" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="article-date">
+      <time datetime="2020-04-03T13:37:00.000Z" itemprop="datePublished">2020-04-03</time>
+</a>
+
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">Ubuntu18.04下编译OpenWRT15.05遇到的问题和解决方案</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <blockquote>
+<p>最近，OpenWRT开发主战场，从ubuntu16.04 LTS 虚拟机环境迁移到了ubuntu18.04LTS，水土不服，各种不适。不多说，折腾！！！</p>
+</blockquote>
+<h1 id="1-初检git出错"><a href="#1-初检git出错" class="headerlink" title="1. 初检git出错"></a>1. 初检git出错</h1><p>依赖提示 Please install Git (git-core) &gt;= 1.6.5</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">➜  openwrt git:(master) ✗ make menuconfig</span><br><span class="line">Checking <span class="string">'working-make'</span>... ok.</span><br><span class="line">         .</span><br><span class="line">         .</span><br><span class="line">         .</span><br><span class="line">Checking <span class="string">'svn'</span>... ok.</span><br><span class="line">Checking <span class="string">'git'</span>... failed.</span><br><span class="line">Checking <span class="string">'file'</span>... ok.</span><br><span class="line">Checking <span class="string">'openssl'</span>... ok.</span><br><span class="line">Checking <span class="string">'ldconfig-stub'</span>... ok.</span><br><span class="line"></span><br><span class="line">Build dependency: Please install Git (git-core) &gt;= 1.6.5</span><br><span class="line"></span><br><span class="line">/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/include/prereq.mk:12: recipe <span class="keyword">for</span> target <span class="string">'prereq'</span> failed</span><br><span class="line">Prerequisite check failed. Use FORCE=1 to override.</span><br><span class="line">/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/include/toplevel.mk:140: recipe <span class="keyword">for</span> target <span class="string">'staging_dir/host/.prereq-build'</span> failed</span><br><span class="line">make: *** [staging_dir/host/.prereq-build] Error 1</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p>明明已经安装了git，却提示我们安装git，只是openwrt里面prereq-build.mk的一个bug，可以通过打patch的方法来修复它。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>进到xxx/chaos_calmer/include目录,就是toplevel.mk所在的目录。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://gitlab.labs.nic.cz/turris/openwrt/uploads/0673001b14ab1d1769604ff0ce7d8781/git-version-check-fix.patch</span><br><span class="line">patch &lt; git-version-check-fix.patch</span><br></pre></td></tr></tbody></table></figure>
+
+<p>回到openwrt根目录，再次检查依赖，发现没，没有问题了。</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">嵌入式开发</a>
+    </div>
+
+
+      
+      
+        <p class="article-more-link">
+          <a href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#more">阅读全文 &gt;&gt;</a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2020-04-05-Ubuntu18-04安装docker并使用portainer" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -907,81 +984,6 @@
 
 
       
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2020-04-03-Ubuntu18-04下编译OpenWRT15-05遇到的问题和解决方案" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="article-date">
-      <time datetime="2020-04-03T13:37:00.000Z" itemprop="datePublished">2020-04-03</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">Ubuntu18.04下编译OpenWRT15.05遇到的问题和解决方案</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <blockquote>
-<p>最近，OpenWRT开发主战场，从ubuntu16.04 LTS 虚拟机环境迁移到了ubuntu18.04LTS，水土不服，各种不适。不多说，折腾！！！</p>
-</blockquote>
-<h1 id="1-初检git出错"><a href="#1-初检git出错" class="headerlink" title="1. 初检git出错"></a>1. 初检git出错</h1><p>依赖提示 Please install Git (git-core) &gt;= 1.6.5</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">➜  openwrt git:(master) ✗ make menuconfig</span><br><span class="line">Checking <span class="string">'working-make'</span>... ok.</span><br><span class="line">         .</span><br><span class="line">         .</span><br><span class="line">         .</span><br><span class="line">Checking <span class="string">'svn'</span>... ok.</span><br><span class="line">Checking <span class="string">'git'</span>... failed.</span><br><span class="line">Checking <span class="string">'file'</span>... ok.</span><br><span class="line">Checking <span class="string">'openssl'</span>... ok.</span><br><span class="line">Checking <span class="string">'ldconfig-stub'</span>... ok.</span><br><span class="line"></span><br><span class="line">Build dependency: Please install Git (git-core) &gt;= 1.6.5</span><br><span class="line"></span><br><span class="line">/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/include/prereq.mk:12: recipe <span class="keyword">for</span> target <span class="string">'prereq'</span> failed</span><br><span class="line">Prerequisite check failed. Use FORCE=1 to override.</span><br><span class="line">/home/ubuntu/buildbot/compex/chaos_calmer/openwrt/include/toplevel.mk:140: recipe <span class="keyword">for</span> target <span class="string">'staging_dir/host/.prereq-build'</span> failed</span><br><span class="line">make: *** [staging_dir/host/.prereq-build] Error 1</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<p>明明已经安装了git，却提示我们安装git，只是openwrt里面prereq-build.mk的一个bug，可以通过打patch的方法来修复它。</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>进到xxx/chaos_calmer/include目录,就是toplevel.mk所在的目录。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://gitlab.labs.nic.cz/turris/openwrt/uploads/0673001b14ab1d1769604ff0ce7d8781/git-version-check-fix.patch</span><br><span class="line">patch &lt; git-version-check-fix.patch</span><br></pre></td></tr></tbody></table></figure>
-
-<p>回到openwrt根目录，再次检查依赖，发现没，没有问题了。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">嵌入式开发</a>
-    </div>
-
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2020/04/03/2020-04-03-Ubuntu18-04%E4%B8%8B%E7%BC%96%E8%AF%91OpenWRT15-05%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#more">阅读全文 &gt;&gt;</a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
