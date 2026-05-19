@@ -857,6 +857,92 @@ Version : 7.4.1</p>
 
 
   
+    <article id="post-2021-03-21-DNSmasq搭建与配置" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/03/20/2021-03-21-DNSmasq%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/" class="article-date">
+      <time datetime="2021-03-20T16:00:00.000Z" itemprop="datePublished">2021-03-21</time>
+</a>
+
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/20/2021-03-21-DNSmasq%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/">DNSmasq搭建与配置</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="Docker搭建"><a href="#Docker搭建" class="headerlink" title="Docker搭建"></a>Docker搭建</h2><p>docker-dnsmasq支持通过web页面配置域名映射，镜像地址：
+<a target="_blank" rel="noopener" href="https://hub.docker.com/r/jpillora/dnsmasq">https://hub.docker.com/r/jpillora/dnsmasq</a></p>
+<p>使用步骤如下：</p>
+<p>1、在Docker宿主上创建 /home/gary/dnsmasq.conf 配置文件</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">touch</span> /home/gary/dnsmasq.conf</span><br></pre></td></tr></tbody></table></figure>
+
+<p>2、docker run启动容器</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">docker run \</span><br><span class="line">    --name dnsmasq \</span><br><span class="line">    -d \</span><br><span class="line">    -p 53:53/udp \</span><br><span class="line">    -p 5380:8080 \</span><br><span class="line">    -v /home/gary/dnsmasq/a_dns/dnsmasq.conf:/etc/dnsmasq.conf \</span><br><span class="line">    --log-opt <span class="string">"max-size=100m"</span> \</span><br><span class="line">    -e <span class="string">"HTTP_USER=admin"</span> \</span><br><span class="line">    -e <span class="string">"HTTP_PASS=123456"</span> \</span><br><span class="line">    --restart always \</span><br><span class="line">    jpillora/dnsmasq</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>HTTP_USER：web页面登陆的管理员帐号
+HTTP_PASS：web页面登陆的管理员密码</p>
+</blockquote>
+<p>3、通过 ip:5380 地址访问web页面，使用帐户密码登陆后在线编辑 dnsmasq.conf 文件</p>
+<p>我的dnsmasq.conf配置文件内容如下：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">server=192.168.1.8</span><br><span class="line">address=/www.vlab.syb/192.168.1.8</span><br></pre></td></tr></tbody></table></figure>
+
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/jpillora/docker-dnsmasq">https://github.com/jpillora/docker-dnsmasq</a></p>
+<h2 id="直接安装"><a href="#直接安装" class="headerlink" title="直接安装"></a>直接安装</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y dnsmasq</span><br></pre></td></tr></tbody></table></figure>
+
+<p>web-ui管理界面：<a target="_blank" rel="noopener" href="https://github.com/jpillora/webproc">https://github.com/jpillora/webproc</a></p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webproc --configuration-file /etc/dnsmasq.conf -- dnsmasq --no-daemon</span><br></pre></td></tr></tbody></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/">Linux/服务器</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DNSmasq/" rel="tag">DNSmasq</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2021-03-21-IPcheck-IP地址变化监控脚本" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -1011,10 +1097,10 @@ Version : 7.4.1</p>
 
 
   
-    <article id="post-2021-03-21-ShowDoc文档管理工具部署" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-2021-03-21-Seafile私有云存储部署" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2021/03/20/2021-03-21-ShowDoc%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E9%83%A8%E7%BD%B2/" class="article-date">
+      <a href="/2021/03/20/2021-03-21-Seafile%E7%A7%81%E6%9C%89%E4%BA%91%E5%AD%98%E5%82%A8%E9%83%A8%E7%BD%B2/" class="article-date">
       <time datetime="2021-03-20T16:00:00.000Z" itemprop="datePublished">2021-03-21</time>
 </a>
 
@@ -1031,7 +1117,7 @@ Version : 7.4.1</p>
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/20/2021-03-21-ShowDoc%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E9%83%A8%E7%BD%B2/">ShowDoc文档管理工具部署</a>
+      <a class="article-title" href="/2021/03/20/2021-03-21-Seafile%E7%A7%81%E6%9C%89%E4%BA%91%E5%AD%98%E5%82%A8%E9%83%A8%E7%BD%B2/">Seafile私有云存储部署</a>
     </h1>
   
 
@@ -1041,11 +1127,10 @@ Version : 7.4.1</p>
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h2 id="基础安装"><a href="#基础安装" class="headerlink" title="基础安装"></a>基础安装</h2><p>安装前请确保你的环境已经装好了docker 。docker的安装教程在网上比较多，可以搜索了解下。这里重点介绍showdoc.</p>
-<h3 id="原版官方镜像安装命令-中国大陆用户不建议直接使用原版镜像，可以用后面的加速镜像"><a href="#原版官方镜像安装命令-中国大陆用户不建议直接使用原版镜像，可以用后面的加速镜像" class="headerlink" title="原版官方镜像安装命令(中国大陆用户不建议直接使用原版镜像，可以用后面的加速镜像)"></a>原版官方镜像安装命令(中国大陆用户不建议直接使用原版镜像，可以用后面的加速镜像)</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull star7th/showdoc</span><br></pre></td></tr></tbody></table></figure>
+        <h1 id="Seafile容器安装"><a href="#Seafile容器安装" class="headerlink" title="Seafile容器安装"></a>Seafile容器安装</h1><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name seafile \</span><br><span class="line">--restart unless-stopped \</span><br><span class="line">-p 8000:8000 \</span><br><span class="line">-p 8082:8082 \</span><br><span class="line">-v /home/gary/seafile:/seafile \</span><br><span class="line">-e SEAFILE_ADMIN=<span class="string">"admin@seafile.local"</span> \</span><br><span class="line">-e SEAFILE_ADMIN_PW=<span class="string">"Routon@1981"</span> \</span><br><span class="line">seafileltd/seafile</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="中国大陆镜像安装命令（安装后记得执行docker-tag命令以进行重命名）"><a href="#中国大陆镜像安装命令（安装后记得执行docker-tag命令以进行重命名）" class="headerlink" title="中国大陆镜像安装命令（安装后记得执行docker tag命令以进行重命名）"></a>中国大陆镜像安装命令（安装后记得执行docker tag命令以进行重命名）</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull registry.cn-shenzhen.aliyuncs.com/star7th/showdoc</span><br><span class="line">docker tag registry.cn-shenzhen.aliyuncs.com/star7th/showdoc:latest star7th/showdoc:latest</span><br></pre></td></tr></tbody></table></figure>
-          
+<h2 id="OnlyOffice集成"><a href="#OnlyOffice集成" class="headerlink" title="OnlyOffice集成"></a>OnlyOffice集成</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run --name onlyoffice -i -t -d -p 9001:80 --restart=always \</span><br><span class="line">-v /home/gary/onlyoffice/DocumentServer/logs:/var/log/onlyoffice \</span><br><span class="line">-v /home/gary/onlyoffice/DocumentServer/data:/var/www/onlyoffice/Data \</span><br><span class="line">-v /home/gary/onlyoffice/DocumentServer/lib:/var/lib/onlyoffice \</span><br><span class="line">-v /home/gary/onlyoffice/DocumentServer/db:/var/lib/postgresql onlyoffice/documentserver</span><br></pre></td></tr></tbody></table></figure>
+
       
     </div>
     
@@ -1059,94 +1144,9 @@ Version : 7.4.1</p>
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ShowDoc/" rel="tag">ShowDoc</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Seafile/" rel="tag">Seafile</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a href="/2021/03/20/2021-03-21-ShowDoc%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%E9%83%A8%E7%BD%B2/#more">阅读全文 &gt;&gt;</a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2021-03-21-WSL配置" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/03/20/2021-03-21-WSL%E9%85%8D%E7%BD%AE/" class="article-date">
-      <time datetime="2021-03-20T16:00:00.000Z" itemprop="datePublished">2021-03-21</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/03/20/2021-03-21-WSL%E9%85%8D%E7%BD%AE/">WSL配置</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="WSL-Windows-Subsystem-配置"><a href="#WSL-Windows-Subsystem-配置" class="headerlink" title="WSL(Windows Subsystem) 配置"></a>WSL(Windows Subsystem) 配置</h1><p>参考：<a target="_blank" rel="noopener" href="https://aisoa.cn/post-2904.html">https://aisoa.cn/post-2904.html</a></p>
-<h2 id="Windows10子系统Ubuntu18-04LTS更换国内源"><a href="#Windows10子系统Ubuntu18-04LTS更换国内源" class="headerlink" title="Windows10子系统Ubuntu18.04LTS更换国内源"></a>Windows10子系统Ubuntu18.04LTS更换国内源</h2><p>1.查看Linux版本</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ lsb_release -a</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Distributor ID: Ubuntu</span><br><span class="line">Description:    Ubuntu 18.04.2 LTS</span><br><span class="line">Release:        18.04</span><br><span class="line">Codename:       bionic</span><br></pre></td></tr></tbody></table></figure>
-
-<p>注意：Codename为bionic
-当前Ubuntu的版本为Bionic Beaver（仿生海狸）</p>
-<p>2.备份数据源</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> <span class="built_in">cp</span> /etc/apt/sources.list /etc/apt/sources-backup.list</span><br></pre></td></tr></tbody></table></figure>
-
-<p>3.更换数据源</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> vim /etc/apt/sources.list</span><br></pre></td></tr></tbody></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/">Linux/服务器</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/03/20/2021-03-21-WSL%E9%85%8D%E7%BD%AE/#more">阅读全文 &gt;&gt;</a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
