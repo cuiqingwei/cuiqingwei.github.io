@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://www.izheteng.site/img/20161013/%E8%B0%83%E6%80%A7%E9%85%8D%E9%92%93%E7%BB%84.png">
 <meta property="og:image" content="https://www.izheteng.site/img/20161013/fishing-rod-action.gif">
 <meta property="article:published_time" content="2016-10-13T13:27:40.000Z">
-<meta property="article:modified_time" content="2026-05-19T05:58:00.235Z">
+<meta property="article:modified_time" content="2026-05-24T12:09:25.312Z">
 <meta property="article:author" content="Gary">
 <meta property="article:tag" content="路亚">
 <meta name="twitter:card" content="summary">
@@ -305,6 +305,7 @@
 </a>
 
 
+
       
         <div class="article-wordcount">
           <span class="post-wordcount" title="文章字数">
@@ -450,7 +451,7 @@ Neko钓组是为数较少的一种针对深水作钓的最佳选择，可它以�
         <p><span>
                 最后更新:
             </span>
-            2026-05-19, 05:58:00
+            2026-05-24, 12:09:25
         </p>
         <p>
             <span>
@@ -541,48 +542,30 @@ Neko钓组是为数较少的一种针对深水作钓的最佳选择，可它以�
 
 
     
-        <section id="comments">
+        
+<section id="comments">
     <style> aside.comment-bar { margin: auto 30px; }</style>
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'https://www.izheteng.site/2016/10/13/2016-10-13-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E4%B8%80%E6%A0%B9%E9%80%82%E5%90%88%E8%87%AA%E5%B7%B1%E7%9A%84BASS%E7%AB%BF/';
-            this.page.identifier = '2016/10/13/2016-10-13-如何选择一根适合自己的BASS竿/';
+            this.page.url = "https://www.izheteng.site/2016/10/13/2016-10-13-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E4%B8%80%E6%A0%B9%E9%80%82%E5%90%88%E8%87%AA%E5%B7%B1%E7%9A%84BASS%E7%AB%BF/";
+            this.page.identifier = "_posts/2016-10-13-如何选择一根适合自己的BASS竿.md";
         };
         var loadComment = function(){
+            if (document.getElementById('dsq-embed-scr')) {
+                return;
+            }
             var d = document, s = d.createElement('script');
-            s.src = '//cuiqingwei.disqus.com/embed.js';
+            s.id = 'dsq-embed-scr';
+            s.async = true;
+            s.src = 'https://cuiqingwei.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         }
     </script>
     
-    <aside class="comment-bar">
-        <a href="javascript:void(0);">
-            <i class="fa fa-commenting-o animated infinite pulse"></i>
-            <i class="fa fa-spinner fa-pulse"></i>
-            <span class="count-comment"></span>
-        </a>
-    </aside>
-    <script>
-        var $commentBar = $("aside.comment-bar");
-        var load$hide = function(){
-            $commentBar.find("a > i").toggle();
-            if (typeof loadComment === 'function') {
-                loadComment();
-            }
-            $commentBar.fadeOut(800);
-        }
-        $commentBar.click(function(){
-            load$hide();
-        })
-        $commentBar.children("a").hover(function(){
-            load$hide();
-        })
-        if (window.location.hash === "#comments") {
-            load$hide();
-        }
-    </script>
+    <script> loadComment(); </script>
+
 
 </section>
 

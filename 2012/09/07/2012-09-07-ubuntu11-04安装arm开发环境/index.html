@@ -21,7 +21,7 @@
 <meta property="og:description" content="特别提示：整个过程中计算机必须联网，因为有些程序需要从网络上下载! 一、安装Ubuntu 11.04 1、首先用虚拟机安装ubuntu 11.04版本,建议将硬盘空间设大一点，80G最好，编译linux，根文件系统会占用很多的硬盘空间。 登陆后修改root密码  1sudo passwd root  这里需要输入现在的密码，以及root的新密码 密码更改完毕后，重新启动系统，以root身份登陆。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2012-09-07T07:50:00.000Z">
-<meta property="article:modified_time" content="2026-05-19T05:58:00.233Z">
+<meta property="article:modified_time" content="2026-05-24T12:09:25.310Z">
 <meta property="article:author" content="Gary">
 <meta property="article:tag" content="ubuntu">
 <meta property="article:tag" content="嵌入式">
@@ -299,6 +299,7 @@
 </a>
 
 
+
       
         <div class="article-wordcount">
           <span class="post-wordcount" title="文章字数">
@@ -531,7 +532,7 @@
         <p><span>
                 最后更新:
             </span>
-            2026-05-19, 05:58:00
+            2026-05-24, 12:09:25
         </p>
         <p>
             <span>
@@ -622,48 +623,30 @@
 
 
     
-        <section id="comments">
+        
+<section id="comments">
     <style> aside.comment-bar { margin: auto 30px; }</style>
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'https://www.izheteng.site/2012/09/07/2012-09-07-ubuntu11-04%E5%AE%89%E8%A3%85arm%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/';
-            this.page.identifier = '2012/09/07/2012-09-07-ubuntu11-04安装arm开发环境/';
+            this.page.url = "https://www.izheteng.site/2012/09/07/2012-09-07-ubuntu11-04%E5%AE%89%E8%A3%85arm%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/";
+            this.page.identifier = "_posts/2012-09-07-ubuntu11.04安装arm开发环境.md";
         };
         var loadComment = function(){
+            if (document.getElementById('dsq-embed-scr')) {
+                return;
+            }
             var d = document, s = d.createElement('script');
-            s.src = '//cuiqingwei.disqus.com/embed.js';
+            s.id = 'dsq-embed-scr';
+            s.async = true;
+            s.src = 'https://cuiqingwei.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         }
     </script>
     
-    <aside class="comment-bar">
-        <a href="javascript:void(0);">
-            <i class="fa fa-commenting-o animated infinite pulse"></i>
-            <i class="fa fa-spinner fa-pulse"></i>
-            <span class="count-comment"></span>
-        </a>
-    </aside>
-    <script>
-        var $commentBar = $("aside.comment-bar");
-        var load$hide = function(){
-            $commentBar.find("a > i").toggle();
-            if (typeof loadComment === 'function') {
-                loadComment();
-            }
-            $commentBar.fadeOut(800);
-        }
-        $commentBar.click(function(){
-            load$hide();
-        })
-        $commentBar.children("a").hover(function(){
-            load$hide();
-        })
-        if (window.location.hash === "#comments") {
-            load$hide();
-        }
-    </script>
+    <script> loadComment(); </script>
+
 
 </section>
 

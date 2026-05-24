@@ -21,7 +21,7 @@
 <meta property="og:description" content="1.sl 命令首先，安装 1$ sudo apt-get install sl  然后，输入 1$ sl  我们看到了动画蒸汽机机头从屏幕右边开往左边。这个火车头是用ASCLL字符绘制。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2015-07-16T01:08:00.000Z">
-<meta property="article:modified_time" content="2026-05-19T05:58:00.234Z">
+<meta property="article:modified_time" content="2026-05-24T12:09:25.311Z">
 <meta property="article:author" content="Gary">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
@@ -298,6 +298,7 @@
 </a>
 
 
+
       
         <div class="article-wordcount">
           <span class="post-wordcount" title="文章字数">
@@ -453,7 +454,7 @@
         <p><span>
                 最后更新:
             </span>
-            2026-05-19, 05:58:00
+            2026-05-24, 12:09:25
         </p>
         <p>
             <span>
@@ -544,48 +545,30 @@
 
 
     
-        <section id="comments">
+        
+<section id="comments">
     <style> aside.comment-bar { margin: auto 30px; }</style>
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'https://www.izheteng.site/2015/07/16/2015-07-16-%E6%9C%89%E8%B6%A3%E7%9A%84Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8A%9F%E6%95%88/';
-            this.page.identifier = '2015/07/16/2015-07-16-有趣的Linux命令行功效/';
+            this.page.url = "https://www.izheteng.site/2015/07/16/2015-07-16-%E6%9C%89%E8%B6%A3%E7%9A%84Linux%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8A%9F%E6%95%88/";
+            this.page.identifier = "_posts/2015-07-16-有趣的Linux命令行功效.md";
         };
         var loadComment = function(){
+            if (document.getElementById('dsq-embed-scr')) {
+                return;
+            }
             var d = document, s = d.createElement('script');
-            s.src = '//cuiqingwei.disqus.com/embed.js';
+            s.id = 'dsq-embed-scr';
+            s.async = true;
+            s.src = 'https://cuiqingwei.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         }
     </script>
     
-    <aside class="comment-bar">
-        <a href="javascript:void(0);">
-            <i class="fa fa-commenting-o animated infinite pulse"></i>
-            <i class="fa fa-spinner fa-pulse"></i>
-            <span class="count-comment"></span>
-        </a>
-    </aside>
-    <script>
-        var $commentBar = $("aside.comment-bar");
-        var load$hide = function(){
-            $commentBar.find("a > i").toggle();
-            if (typeof loadComment === 'function') {
-                loadComment();
-            }
-            $commentBar.fadeOut(800);
-        }
-        $commentBar.click(function(){
-            load$hide();
-        })
-        $commentBar.children("a").hover(function(){
-            load$hide();
-        })
-        if (window.location.hash === "#comments") {
-            load$hide();
-        }
-    </script>
+    <script> loadComment(); </script>
+
 
 </section>
 

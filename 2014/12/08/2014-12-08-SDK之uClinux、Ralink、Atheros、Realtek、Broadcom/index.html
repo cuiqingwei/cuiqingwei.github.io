@@ -21,7 +21,7 @@
 <meta property="og:description" content="接触的Linux SDK越来越多，整理整理，分享分享，不求系统全面，对您有帮助便足矣 文中大部分是与AP/Router SoC解决方案（单芯片WIFI 路由器解决方案）相关的Linux SDK SDK（Software Development Kit）软件开发工具包一般是一些被软件工程师用于为特定的软件包、软件框架、硬件平台、操作系统等建立应用软件的开发工具的集合 想想，最早接触到的SDK是在Co">
 <meta property="og:locale">
 <meta property="article:published_time" content="2014-12-08T15:34:00.000Z">
-<meta property="article:modified_time" content="2026-05-19T05:58:00.233Z">
+<meta property="article:modified_time" content="2026-05-24T12:09:25.310Z">
 <meta property="article:author" content="Gary">
 <meta property="article:tag" content="嵌入式">
 <meta property="article:tag" content="路由器SDK">
@@ -299,6 +299,7 @@
 </a>
 
 
+
       
         <div class="article-wordcount">
           <span class="post-wordcount" title="文章字数">
@@ -397,7 +398,7 @@ TP-Link根据GPL协议开放了一些源码，地址：<a target="_blank" rel="n
         <p><span>
                 最后更新:
             </span>
-            2026-05-19, 05:58:00
+            2026-05-24, 12:09:25
         </p>
         <p>
             <span>
@@ -488,48 +489,30 @@ TP-Link根据GPL协议开放了一些源码，地址：<a target="_blank" rel="n
 
 
     
-        <section id="comments">
+        
+<section id="comments">
     <style> aside.comment-bar { margin: auto 30px; }</style>
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'https://www.izheteng.site/2014/12/08/2014-12-08-SDK%E4%B9%8BuClinux%E3%80%81Ralink%E3%80%81Atheros%E3%80%81Realtek%E3%80%81Broadcom/';
-            this.page.identifier = '2014/12/08/2014-12-08-SDK之uClinux、Ralink、Atheros、Realtek、Broadcom/';
+            this.page.url = "https://www.izheteng.site/2014/12/08/2014-12-08-SDK%E4%B9%8BuClinux%E3%80%81Ralink%E3%80%81Atheros%E3%80%81Realtek%E3%80%81Broadcom/";
+            this.page.identifier = "_posts/2014-12-08-SDK之uClinux、Ralink、Atheros、Realtek、Broadcom.md";
         };
         var loadComment = function(){
+            if (document.getElementById('dsq-embed-scr')) {
+                return;
+            }
             var d = document, s = d.createElement('script');
-            s.src = '//cuiqingwei.disqus.com/embed.js';
+            s.id = 'dsq-embed-scr';
+            s.async = true;
+            s.src = 'https://cuiqingwei.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         }
     </script>
     
-    <aside class="comment-bar">
-        <a href="javascript:void(0);">
-            <i class="fa fa-commenting-o animated infinite pulse"></i>
-            <i class="fa fa-spinner fa-pulse"></i>
-            <span class="count-comment"></span>
-        </a>
-    </aside>
-    <script>
-        var $commentBar = $("aside.comment-bar");
-        var load$hide = function(){
-            $commentBar.find("a > i").toggle();
-            if (typeof loadComment === 'function') {
-                loadComment();
-            }
-            $commentBar.fadeOut(800);
-        }
-        $commentBar.click(function(){
-            load$hide();
-        })
-        $commentBar.children("a").hover(function(){
-            load$hide();
-        })
-        if (window.location.hash === "#comments") {
-            load$hide();
-        }
-    </script>
+    <script> loadComment(); </script>
+
 
 </section>
 

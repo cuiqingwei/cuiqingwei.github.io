@@ -21,7 +21,7 @@
 <meta property="og:description" content="1．建立目录1gedit creatRootfs.sh  creatRootfs.sh 内容如下： 1234567891011121314#!/bin/shcd /home/at91sam9/mdk9261/rootfsecho &quot;------Create rootfs directons......&quot;mkdir jffs2cd jffs2echo &quot;--------">
 <meta property="og:locale">
 <meta property="article:published_time" content="2012-09-07T09:50:00.000Z">
-<meta property="article:modified_time" content="2026-05-19T05:58:00.233Z">
+<meta property="article:modified_time" content="2026-05-24T12:09:25.310Z">
 <meta property="article:author" content="Gary">
 <meta property="article:tag" content="嵌入式">
 <meta name="twitter:card" content="summary">
@@ -298,6 +298,7 @@
 </a>
 
 
+
       
         <div class="article-wordcount">
           <span class="post-wordcount" title="文章字数">
@@ -528,7 +529,7 @@ CROSS_COMPILE ?=/opt/arm-2007q1/bin/arm-none-linux-gnueabi- (这个视你的交�
         <p><span>
                 最后更新:
             </span>
-            2026-05-19, 05:58:00
+            2026-05-24, 12:09:25
         </p>
         <p>
             <span>
@@ -619,48 +620,30 @@ CROSS_COMPILE ?=/opt/arm-2007q1/bin/arm-none-linux-gnueabi- (这个视你的交�
 
 
     
-        <section id="comments">
+        
+<section id="comments">
     <style> aside.comment-bar { margin: auto 30px; }</style>
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'https://www.izheteng.site/2012/09/07/2012-09-07-jffs2%E6%A0%B9%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%88%B6%E4%BD%9C/';
-            this.page.identifier = '2012/09/07/2012-09-07-jffs2根文件系统制作/';
+            this.page.url = "https://www.izheteng.site/2012/09/07/2012-09-07-jffs2%E6%A0%B9%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%88%B6%E4%BD%9C/";
+            this.page.identifier = "_posts/2012-09-07-jffs2根文件系统制作.md";
         };
         var loadComment = function(){
+            if (document.getElementById('dsq-embed-scr')) {
+                return;
+            }
             var d = document, s = d.createElement('script');
-            s.src = '//cuiqingwei.disqus.com/embed.js';
+            s.id = 'dsq-embed-scr';
+            s.async = true;
+            s.src = 'https://cuiqingwei.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         }
     </script>
     
-    <aside class="comment-bar">
-        <a href="javascript:void(0);">
-            <i class="fa fa-commenting-o animated infinite pulse"></i>
-            <i class="fa fa-spinner fa-pulse"></i>
-            <span class="count-comment"></span>
-        </a>
-    </aside>
-    <script>
-        var $commentBar = $("aside.comment-bar");
-        var load$hide = function(){
-            $commentBar.find("a > i").toggle();
-            if (typeof loadComment === 'function') {
-                loadComment();
-            }
-            $commentBar.fadeOut(800);
-        }
-        $commentBar.click(function(){
-            load$hide();
-        })
-        $commentBar.children("a").hover(function(){
-            load$hide();
-        })
-        if (window.location.hash === "#comments") {
-            load$hide();
-        }
-    </script>
+    <script> loadComment(); </script>
+
 
 </section>
 

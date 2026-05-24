@@ -21,7 +21,7 @@
 <meta property="og:description" content="下载 Raspbianhttps://www.raspberrypi.org/downloads/raspbian/ 制作 TF card12345df -hdiskutil unmount /dev/disk2s1diskutil listdd bs=4m if=2017-01-11-raspbian-jessie.img of=/dev/rdisk2diskutil unmountdisk /">
 <meta property="og:locale">
 <meta property="article:published_time" content="2017-02-07T16:27:40.000Z">
-<meta property="article:modified_time" content="2026-05-19T05:58:00.236Z">
+<meta property="article:modified_time" content="2026-05-24T12:09:25.313Z">
 <meta property="article:author" content="Gary">
 <meta property="article:tag" content="HAP-NodeJS">
 <meta property="article:tag" content="HomeKit">
@@ -300,6 +300,7 @@
 </a>
 
 
+
       
         <div class="article-wordcount">
           <span class="post-wordcount" title="文章字数">
@@ -400,7 +401,7 @@
         <p><span>
                 最后更新:
             </span>
-            2026-05-19, 05:58:00
+            2026-05-24, 12:09:25
         </p>
         <p>
             <span>
@@ -491,48 +492,30 @@
 
 
     
-        <section id="comments">
+        
+<section id="comments">
     <style> aside.comment-bar { margin: auto 30px; }</style>
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'https://www.izheteng.site/2017/02/07/2017-02-08-Raspberry%E5%AE%89%E8%A3%85HAP-NodeJS/';
-            this.page.identifier = '2017/02/07/2017-02-08-Raspberry安装HAP-NodeJS/';
+            this.page.url = "https://www.izheteng.site/2017/02/07/2017-02-08-Raspberry%E5%AE%89%E8%A3%85HAP-NodeJS/";
+            this.page.identifier = "_posts/2017-02-08-Raspberry安装HAP-NodeJS.md";
         };
         var loadComment = function(){
+            if (document.getElementById('dsq-embed-scr')) {
+                return;
+            }
             var d = document, s = d.createElement('script');
-            s.src = '//cuiqingwei.disqus.com/embed.js';
+            s.id = 'dsq-embed-scr';
+            s.async = true;
+            s.src = 'https://cuiqingwei.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         }
     </script>
     
-    <aside class="comment-bar">
-        <a href="javascript:void(0);">
-            <i class="fa fa-commenting-o animated infinite pulse"></i>
-            <i class="fa fa-spinner fa-pulse"></i>
-            <span class="count-comment"></span>
-        </a>
-    </aside>
-    <script>
-        var $commentBar = $("aside.comment-bar");
-        var load$hide = function(){
-            $commentBar.find("a > i").toggle();
-            if (typeof loadComment === 'function') {
-                loadComment();
-            }
-            $commentBar.fadeOut(800);
-        }
-        $commentBar.click(function(){
-            load$hide();
-        })
-        $commentBar.children("a").hover(function(){
-            load$hide();
-        })
-        if (window.location.hash === "#comments") {
-            load$hide();
-        }
-    </script>
+    <script> loadComment(); </script>
+
 
 </section>
 

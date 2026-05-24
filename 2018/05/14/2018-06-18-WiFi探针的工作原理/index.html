@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://www.izheteng.site/img/20180618/1524574944692277.jpg">
 <meta property="og:image" content="https://www.izheteng.site/img/20180618/1524574945471237.jpg">
 <meta property="article:published_time" content="2018-05-14T04:12:08.000Z">
-<meta property="article:modified_time" content="2026-05-19T05:58:00.238Z">
+<meta property="article:modified_time" content="2026-05-24T12:09:25.314Z">
 <meta property="article:author" content="Gary">
 <meta property="article:tag" content="Wi-Fi">
 <meta name="twitter:card" content="summary">
@@ -306,6 +306,7 @@
 </a>
 
 
+
       
         <div class="article-wordcount">
           <span class="post-wordcount" title="文章字数">
@@ -426,7 +427,7 @@ MAC数据可以同支付数据、会员数据、消费数据、营销数据、�
         <p><span>
                 最后更新:
             </span>
-            2026-05-19, 05:58:00
+            2026-05-24, 12:09:25
         </p>
         <p>
             <span>
@@ -517,48 +518,30 @@ MAC数据可以同支付数据、会员数据、消费数据、营销数据、�
 
 
     
-        <section id="comments">
+        
+<section id="comments">
     <style> aside.comment-bar { margin: auto 30px; }</style>
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'https://www.izheteng.site/2018/05/14/2018-06-18-WiFi%E6%8E%A2%E9%92%88%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/';
-            this.page.identifier = '2018/05/14/2018-06-18-WiFi探针的工作原理/';
+            this.page.url = "https://www.izheteng.site/2018/05/14/2018-06-18-WiFi%E6%8E%A2%E9%92%88%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/";
+            this.page.identifier = "_posts/2018-06-18-WiFi探针的工作原理.md";
         };
         var loadComment = function(){
+            if (document.getElementById('dsq-embed-scr')) {
+                return;
+            }
             var d = document, s = d.createElement('script');
-            s.src = '//cuiqingwei.disqus.com/embed.js';
+            s.id = 'dsq-embed-scr';
+            s.async = true;
+            s.src = 'https://cuiqingwei.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         }
     </script>
     
-    <aside class="comment-bar">
-        <a href="javascript:void(0);">
-            <i class="fa fa-commenting-o animated infinite pulse"></i>
-            <i class="fa fa-spinner fa-pulse"></i>
-            <span class="count-comment"></span>
-        </a>
-    </aside>
-    <script>
-        var $commentBar = $("aside.comment-bar");
-        var load$hide = function(){
-            $commentBar.find("a > i").toggle();
-            if (typeof loadComment === 'function') {
-                loadComment();
-            }
-            $commentBar.fadeOut(800);
-        }
-        $commentBar.click(function(){
-            load$hide();
-        })
-        $commentBar.children("a").hover(function(){
-            load$hide();
-        })
-        if (window.location.hash === "#comments") {
-            load$hide();
-        }
-    </script>
+    <script> loadComment(); </script>
+
 
 </section>
 
