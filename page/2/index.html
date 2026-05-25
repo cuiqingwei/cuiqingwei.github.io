@@ -292,6 +292,314 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-2026-01-31-OpenClaw配置NVIDIA-GLM-4-7-plus-MiniMax-M2-1-API-国内零门槛直连教程" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2026/01/31/2026-01-31-OpenClaw%E9%85%8D%E7%BD%AENVIDIA-GLM-4-7-plus-MiniMax-M2-1-API-%E5%9B%BD%E5%86%85%E9%9B%B6%E9%97%A8%E6%A7%9B%E7%9B%B4%E8%BF%9E%E6%95%99%E7%A8%8B/" class="article-date">
+      <time datetime="2026-01-31T08:30:00.000Z" itemprop="datePublished">2026-01-31</time>
+</a>
+
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/01/31/2026-01-31-OpenClaw%E9%85%8D%E7%BD%AENVIDIA-GLM-4-7-plus-MiniMax-M2-1-API-%E5%9B%BD%E5%86%85%E9%9B%B6%E9%97%A8%E6%A7%9B%E7%9B%B4%E8%BF%9E%E6%95%99%E7%A8%8B/">OpenClaw配置 NVIDIA GLM-4.7 + MiniMax M2.1 API，国内零门槛直连教程</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>闲言碎语不多讲，先上成果：
+<img src="/img/20260131/image.png"></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/AI-%E5%A4%A7%E6%A8%A1%E5%9E%8B/">AI/大模型</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenClaw/" rel="tag">OpenClaw</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2026/01/31/2026-01-31-OpenClaw%E9%85%8D%E7%BD%AENVIDIA-GLM-4-7-plus-MiniMax-M2-1-API-%E5%9B%BD%E5%86%85%E9%9B%B6%E9%97%A8%E6%A7%9B%E7%9B%B4%E8%BF%9E%E6%95%99%E7%A8%8B/#more">阅读全文 &gt;&gt;</a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2026-01-29-vLLM部署" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2026/01/29/2026-01-29-vLLM%E9%83%A8%E7%BD%B2/" class="article-date">
+      <time datetime="2026-01-29T01:09:00.000Z" itemprop="datePublished">2026-01-29</time>
+</a>
+
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/01/29/2026-01-29-vLLM%E9%83%A8%E7%BD%B2/">vLLM部署</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="🦞-GLM-4-9B-vLLM-部署指南"><a href="#🦞-GLM-4-9B-vLLM-部署指南" class="headerlink" title="🦞 GLM-4-9B vLLM 部署指南"></a>🦞 GLM-4-9B vLLM 部署指南</h2><h3 id="📌-前提条件"><a href="#📌-前提条件" class="headerlink" title="📌 前提条件"></a>📌 前提条件</h3><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CUDA</td>
+<td>13.1 ✅</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>3.10+ ✅</td>
+</tr>
+<tr>
+<td>显存</td>
+<td>≥6GB（INT4量化）</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="🚀-部署步骤"><a href="#🚀-部署步骤" class="headerlink" title="🚀 部署步骤"></a>🚀 部署步骤</h3><h4 id="1️⃣-创建虚拟环境"><a href="#1️⃣-创建虚拟环境" class="headerlink" title="1️⃣ 创建虚拟环境"></a>1️⃣ 创建虚拟环境</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n glm4-deploy python=3.10</span><br><span class="line">conda activate glm4-deploy</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="2️⃣-安装-vLLM（支持GLM-4）"><a href="#2️⃣-安装-vLLM（支持GLM-4）" class="headerlink" title="2️⃣ 安装 vLLM（支持GLM-4）"></a>2️⃣ 安装 vLLM（支持GLM-4）</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install vllm&gt;=0.6.0</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="3️⃣-下载模型"><a href="#3️⃣-下载模型" class="headerlink" title="3️⃣ 下载模型"></a>3️⃣ 下载模型</h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方法一：HuggingFace（推荐）</span></span><br><span class="line">pip install modelscope</span><br><span class="line">modelscope download --model ZhipuAI/GLM-4-9B-0414 --local_dir ./glm-4-9b-0414</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者使用 git lfs</span></span><br><span class="line">git lfs install</span><br><span class="line">git <span class="built_in">clone</span> &lt;https://huggingface.co/THUDM/GLM-4-9B-0414&gt; ./glm-4-9b-0414</span><br></pre></td></tr></tbody></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/AI-%E5%A4%A7%E6%A8%A1%E5%9E%8B/">AI/大模型</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vLLM/" rel="tag">vLLM</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2026/01/29/2026-01-29-vLLM%E9%83%A8%E7%BD%B2/#more">阅读全文 &gt;&gt;</a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2026-01-10-Jupyter操作文档" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2026/01/10/2026-01-10-Jupyter%E6%93%8D%E4%BD%9C%E6%96%87%E6%A1%A3/" class="article-date">
+      <time datetime="2026-01-10T02:59:00.000Z" itemprop="datePublished">2026-01-10</time>
+</a>
+
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/01/10/2026-01-10-Jupyter%E6%93%8D%E4%BD%9C%E6%96%87%E6%A1%A3/">Jupyter操作文档</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="1-使用须知"><a href="#1-使用须知" class="headerlink" title="1. 使用须知"></a>1. 使用须知</h2><blockquote>
+<p>目前jupyter运行时长限制只能运行16个小时。<font color="red">16个小时之后将会自动释放所有资源，请提前将所需资源下载到本地或git push到平台中</font>。本平台是开放的学习平台，禁止使用本平台进行商业用途和非法用途或者恶意攻击，一旦发现将依法追究。
+此开发环境是使用的是<code>Jupyter Lab 3.x</code>，并集成了实用的插件。您可以在<code>Jupyter Lab</code>上灵活运行调试代码和编写文档，<code>Jupyter Lab</code>集成了很多编辑器，例如 <code>Jupyter</code> 笔记本、文本编辑器、终端和自定义组件。更多的详细介绍你可以查看 <a target="_blank" rel="noopener" href="https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html#overview">JupyterLab官网文档介绍</a>。
+接下来跟我来一起沉浸式地探索<code>Jupyter Lab</code>吧❗</p>
+</blockquote>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/AI-%E5%A4%A7%E6%A8%A1%E5%9E%8B/">AI/大模型</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jupyter/" rel="tag">Jupyter</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2026/01/10/2026-01-10-Jupyter%E6%93%8D%E4%BD%9C%E6%96%87%E6%A1%A3/#more">阅读全文 &gt;&gt;</a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2026-01-09-训练私有大模型" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2026/01/08/2026-01-09-%E8%AE%AD%E7%BB%83%E7%A7%81%E6%9C%89%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="article-date">
+      <time datetime="2026-01-08T19:39:00.000Z" itemprop="datePublished">2026-01-09</time>
+</a>
+
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2026/01/08/2026-01-09-%E8%AE%AD%E7%BB%83%E7%A7%81%E6%9C%89%E5%A4%A7%E6%A8%A1%E5%9E%8B/">训练私有大模型</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <blockquote>
+<p>核心结论：训练私有专用大模型，核心是<strong>明确目标→数据闭环→基座选型 + 算力匹配→分阶段训练调优→合规部署与迭代</strong>，全程严控数据与安全。</p>
+</blockquote>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/AI-%E5%A4%A7%E6%A8%A1%E5%9E%8B/">AI/大模型</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vLLM/" rel="tag">vLLM</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2026/01/08/2026-01-09-%E8%AE%AD%E7%BB%83%E7%A7%81%E6%9C%89%E5%A4%A7%E6%A8%A1%E5%9E%8B/#more">阅读全文 &gt;&gt;</a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2025-02-20-系统启动U盘制作" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -540,674 +848,9 @@
 
 
   
-    <article id="post-2024-09-25-Ollama" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2024/09/25/2024-09-25-Ollama/" class="article-date">
-      <time datetime="2024-09-25T06:09:00.000Z" itemprop="datePublished">2024-09-25</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/09/25/2024-09-25-Ollama/">Ollama</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong>Ollama</strong></p>
-<blockquote>
-<p>Get up and running with large language models.</p>
-</blockquote>
-<p>shell 安装</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://ollama.com/install.sh | sh</span><br></pre></td></tr></tbody></table></figure>
-
-<p>docker镜像源, /etc/docker/daemon.json</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://docker.registry.cyou</span><br></pre></td></tr></tbody></table></figure>
-
-<p>CPU only , Install</p>
-<figure class="highlight docker"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="language-bash"> -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama</span></span><br></pre></td></tr></tbody></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/AI-%E5%A4%A7%E6%A8%A1%E5%9E%8B/">AI/大模型</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AI/" rel="tag">AI</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2024/09/25/2024-09-25-Ollama/#more">阅读全文 &gt;&gt;</a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2024-08-21-IoT资源搜索站点汇总" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2024/08/20/2024-08-21-IoT%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2%E7%AB%99%E7%82%B9%E6%B1%87%E6%80%BB/" class="article-date">
-      <time datetime="2024-08-20T22:52:00.000Z" itemprop="datePublished">2024-08-21</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/08/20/2024-08-21-IoT%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2%E7%AB%99%E7%82%B9%E6%B1%87%E6%80%BB/">IoT资源搜索站点汇总</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>本文汇总了IoT开发中常用的资源搜索站点，包括FCCID查询、PCB UL查询、电子器件采购等。</p>
-<h2 id="FCCID查询"><a href="#FCCID查询" class="headerlink" title="FCCID查询"></a>FCCID查询</h2><ul>
-<li><strong>FCCID官网</strong>: <a target="_blank" rel="noopener" href="https://fccid.io/">https://fccid.io/</a></li>
-<li><strong>Lumi</strong>: <a target="_blank" rel="noopener" href="https://fccid.io/2AKIT">https://fccid.io/2AKIT</a></li>
-<li><strong>Signify</strong>: <a target="_blank" rel="noopener" href="https://fccid.io/2AGBW">https://fccid.io/2AGBW</a></li>
-<li><strong>Orvibo</strong>: <a target="_blank" rel="noopener" href="https://fccid.io/company.php?search=orvibo">https://fccid.io/company.php?search=orvibo</a></li>
-</ul>
-<h2 id="PCB-UL-查询"><a href="#PCB-UL-查询" class="headerlink" title="PCB UL 查询"></a>PCB UL 查询</h2><ul>
-<li><strong>UL Prospector</strong>: <a target="_blank" rel="noopener" href="https://iq.ulprospector.com/en/">https://iq.ulprospector.com/en/</a></li>
-</ul>
-<h2 id="USB-ID查询"><a href="#USB-ID查询" class="headerlink" title="USB ID查询"></a>USB ID查询</h2><ul>
-<li><strong>Linux USB</strong>: <a target="_blank" rel="noopener" href="http://www.linux-usb.org/usb.ids">http://www.linux-usb.org/usb.ids</a></li>
-</ul>
-<h2 id="射频搜索"><a href="#射频搜索" class="headerlink" title="射频搜索"></a>射频搜索</h2><ul>
-<li><strong>FindRF</strong>: <a target="_blank" rel="noopener" href="http://www.findrf.com/">http://www.findrf.com/</a></li>
-</ul>
-<h2 id="屏库"><a href="#屏库" class="headerlink" title="屏库"></a>屏库</h2><ul>
-<li><strong>Panelook</strong>: <a target="_blank" rel="noopener" href="https://www.panelook.cn/">https://www.panelook.cn/</a></li>
-</ul>
-<h2 id="电子器件采购"><a href="#电子器件采购" class="headerlink" title="电子器件采购"></a>电子器件采购</h2><ul>
-<li><strong>Mouser</strong>: <a target="_blank" rel="noopener" href="https://cn.mouser.com/">https://cn.mouser.com/</a></li>
-<li><strong>DigiKey</strong>: <a target="_blank" rel="noopener" href="https://www.digikey.cn/">https://www.digikey.cn/</a></li>
-<li><strong>Element14</strong>: <a target="_blank" rel="noopener" href="https://cn.element14.com/">https://cn.element14.com/</a></li>
-<li><strong>RS Online</strong>: <a target="_blank" rel="noopener" href="https://rsonline.cn/web/">https://rsonline.cn/web/</a></li>
-</ul>
-<h2 id="数据手册查询"><a href="#数据手册查询" class="headerlink" title="数据手册查询"></a>数据手册查询</h2><ul>
-<li><strong>Semiee</strong>: <a target="_blank" rel="noopener" href="https://semiee.com/">https://semiee.com/</a></li>
-<li><strong>AllDatasheet</strong>: <a target="_blank" rel="noopener" href="https://www.alldatasheet.com/">https://www.alldatasheet.com/</a></li>
-<li><strong>21icsearch</strong>: <a target="_blank" rel="noopener" href="https://www.21icsearch.com/">https://www.21icsearch.com/</a></li>
-</ul>
-<h2 id="PCB打样"><a href="#PCB打样" class="headerlink" title="PCB打样"></a>PCB打样</h2><ul>
-<li>嘉立创（高清字符|高频板）</li>
-<li>猎板（猛男粉）</li>
-<li>捷配（高频板）</li>
-<li>华秋</li>
-<li>捷多邦</li>
-</ul>
-<h2 id="拆解测评"><a href="#拆解测评" class="headerlink" title="拆解测评"></a>拆解测评</h2><ul>
-<li><strong>52audio</strong>: <a target="_blank" rel="noopener" href="https://www.52audio.com/">https://www.52audio.com/</a></li>
-<li><strong>B站拆解</strong>: <a target="_blank" rel="noopener" href="https://space.bilibili.com/427494870">https://space.bilibili.com/427494870</a></li>
-</ul>
-<h2 id="方案平台"><a href="#方案平台" class="headerlink" title="方案平台"></a>方案平台</h2><ul>
-<li><strong>我爱方案网</strong>: <a target="_blank" rel="noopener" href="https://www.52solution.com/">https://www.52solution.com/</a></li>
-</ul>
-<h2 id="公司财报"><a href="#公司财报" class="headerlink" title="公司财报"></a>公司财报</h2><ul>
-<li><strong>Stock.us</strong>: <a target="_blank" rel="noopener" href="https://stock.us/cn/">https://stock.us/cn/</a></li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/">智能家居</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IoT/" rel="tag">IoT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tools/" rel="tag">Tools</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2024-02-29-RKrepo代码服务器搭建" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2024/02/28/2024-02-29-RKrepo%E4%BB%A3%E7%A0%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/" class="article-date">
-      <time datetime="2024-02-28T16:00:00.000Z" itemprop="datePublished">2024-02-29</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/02/28/2024-02-29-RKrepo%E4%BB%A3%E7%A0%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/">RKrepo代码服务器搭建</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <blockquote>
-<p><strong>搭建自己的repo代码服务器</strong></p>
-</blockquote>
-<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p><img src="/img/20240229/Untitled.png"></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/">Linux/服务器</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2024/02/28/2024-02-29-RKrepo%E4%BB%A3%E7%A0%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/#more">阅读全文 &gt;&gt;</a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2024-01-12-CI-CD体系" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2024/01/11/2024-01-12-CI-CD%E4%BD%93%E7%B3%BB/" class="article-date">
-      <time datetime="2024-01-11T16:00:00.000Z" itemprop="datePublished">2024-01-12</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2024/01/11/2024-01-12-CI-CD%E4%BD%93%E7%B3%BB/">CI/CD体系</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <blockquote>
-<p>Gitlab+Gerrit+Jenkins</p>
-</blockquote>
-<h1 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h1><p><img src="/img/20240112/Untitled.png"></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/DevOps/">DevOps</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2024/01/11/2024-01-12-CI-CD%E4%BD%93%E7%B3%BB/#more">阅读全文 &gt;&gt;</a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2023-07-24-Ultralytics" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2023/07/23/2023-07-24-Ultralytics/" class="article-date">
-      <time datetime="2023-07-23T16:00:00.000Z" itemprop="datePublished">2023-07-24</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/23/2023-07-24-Ultralytics/">Ultralytics</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="YOLOv7"><a href="#YOLOv7" class="headerlink" title="YOLOv7"></a>YOLOv7</h2><p><a target="_blank" rel="noopener" href="https://github.com/WongKinYiu/yolov7.git">https://github.com/WongKinYiu/yolov7.git</a></p>
-<p><strong>yolov7搭配环境</strong></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014613075/article/details/127728506">https://blog.csdn.net/u014613075/article/details/127728506</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51963216/article/details/125858784">https://blog.csdn.net/qq_51963216/article/details/125858784</a></p>
-<p><strong>yolov7模型训练结果分析以及如何评估yolov7模型训练的效果</strong></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43397302/article/details/127073824">Bookmark: https://blog.csdn.net/weixin_43397302/article/details/127073824</a></p>
-<p><strong>基于YOLOv5的疲劳驾驶检测系统（Python+清新界面+数据集）</strong></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_32892383/article/details/129368345">https://blog.csdn.net/qq_32892383/article/details/129368345</a></p>
-<p><strong>基于Perclos＆改进YOLOv7的疲劳驾驶DMS检测系统（源码＆教程）</strong></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_73650442/article/details/128001511">https://blog.csdn.net/m0_73650442/article/details/128001511</a></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/AI-%E5%A4%A7%E6%A8%A1%E5%9E%8B/">AI/大模型</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/YOLO/" rel="tag">YOLO</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2023/07/23/2023-07-24-Ultralytics/#more">阅读全文 &gt;&gt;</a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2023-07-19-OpenVPN部署" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2023/07/18/2023-07-19-OpenVPN%E9%83%A8%E7%BD%B2/" class="article-date">
-      <time datetime="2023-07-18T16:00:00.000Z" itemprop="datePublished">2023-07-19</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/07/18/2023-07-19-OpenVPN%E9%83%A8%E7%BD%B2/">OpenVPN部署</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><a target="_blank" rel="noopener" href="https://frps.cn/14.html">Bookmark: https://frps.cn/14.html</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.spacesafe.top/archives/1557">Bookmark: https://www.spacesafe.top/archives/1557</a></p>
-<h1 id="服务端安装"><a href="#服务端安装" class="headerlink" title="服务端安装"></a>服务端安装</h1><p><a target="_blank" rel="noopener" href="https://github.com/Nyr/openvpn-install"><code>https://github.com/Nyr/openvpn-install</code></a></p>
-<h1 id="生成配置文件"><a href="#生成配置文件" class="headerlink" title="生成配置文件"></a>生成配置文件</h1><p>通过</p>
-<p><code>bash openvpn-install.sh</code></p>
-<p>生成客户端配置，管理客户端账号</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@dns ~]# bash openvpn-install.sh</span><br><span class="line"></span><br><span class="line">OpenVPN is already installed.</span><br><span class="line"></span><br><span class="line">Select an option:</span><br><span class="line">   1) Add a new client</span><br><span class="line">   2) Revoke an existing client</span><br><span class="line">   3) Remove OpenVPN</span><br><span class="line">   4) Exit</span><br><span class="line">Option: 1</span><br></pre></td></tr></tbody></table></figure>
-
-<p><em>重启</em></p>
-<p><code>systemctl restart openvpn@service</code></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BD%91%E7%BB%9C-%E5%AE%89%E5%85%A8/">网络/安全</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2023/07/18/2023-07-19-OpenVPN%E9%83%A8%E7%BD%B2/#more">阅读全文 &gt;&gt;</a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2023-05-08-智慧酒店系统方案" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2023/05/07/2023-05-08-%E6%99%BA%E6%85%A7%E9%85%92%E5%BA%97%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%A1%88/" class="article-date">
-      <time datetime="2023-05-07T18:57:00.000Z" itemprop="datePublished">2023-05-08</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/05/07/2023-05-08-%E6%99%BA%E6%85%A7%E9%85%92%E5%BA%97%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%A1%88/">智慧酒店系统方案</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <blockquote>
-<p>本文整理了智慧酒店系统的主要设备和PMS（酒店管理系统）方案。</p>
-</blockquote>
-<h2 id="客房控制设备供应商"><a href="#客房控制设备供应商" class="headerlink" title="客房控制设备供应商"></a>客房控制设备供应商</h2><h3 id="1-爱瑟菲（iisfree）"><a href="#1-爱瑟菲（iisfree）" class="headerlink" title="1. 爱瑟菲（iisfree）"></a>1. 爱瑟菲（iisfree）</h3><ul>
-<li>官网：<a target="_blank" rel="noopener" href="http://www.iisfree.com.cn/">http://www.iisfree.com.cn/</a></li>
-</ul>
-<h3 id="2-广州日顺"><a href="#2-广州日顺" class="headerlink" title="2. 广州日顺"></a>2. 广州日顺</h3><ul>
-<li>官网：<a target="_blank" rel="noopener" href="http://www.gzrishun.com/">http://www.gzrishun.com/</a></li>
-</ul>
-<h3 id="3-惠州尊宝（JoboSmart）"><a href="#3-惠州尊宝（JoboSmart）" class="headerlink" title="3. 惠州尊宝（JoboSmart）"></a>3. 惠州尊宝（JoboSmart）</h3><ul>
-<li>官网：<a target="_blank" rel="noopener" href="https://www.jobosmartech.com/">https://www.jobosmartech.com/</a></li>
-</ul>
-<h3 id="4-南京普杰"><a href="#4-南京普杰" class="headerlink" title="4. 南京普杰"></a>4. 南京普杰</h3><ul>
-<li>官网：<a target="_blank" rel="noopener" href="http://www.pujie88.com/">http://www.pujie88.com/</a></li>
-</ul>
-<h2 id="PMS酒店管理系统"><a href="#PMS酒店管理系统" class="headerlink" title="PMS酒店管理系统"></a>PMS酒店管理系统</h2><h3 id="传统PMS"><a href="#传统PMS" class="headerlink" title="传统PMS"></a>传统PMS</h3><ul>
-<li><strong>Opera</strong>: <a target="_blank" rel="noopener" href="https://www.oracle.com/cn/industries/hospitality/products/opera-sales-catering-services/">https://www.oracle.com/cn/industries/hospitality/products/opera-sales-catering-services/</a></li>
-<li><strong>桑弧</strong>: <a target="_blank" rel="noopener" href="http://www.sanghu.cn/">http://www.sanghu.cn/</a></li>
-<li><strong>千里马</strong>: <a target="_blank" rel="noopener" href="http://www.armitage.com.cn/">http://www.armitage.com.cn/</a></li>
-<li><strong>金天鹅</strong>: <a target="_blank" rel="noopener" href="http://www.jdglrj.com/">http://www.jdglrj.com/</a></li>
-</ul>
-<h3 id="云PMS"><a href="#云PMS" class="headerlink" title="云PMS"></a>云PMS</h3><ul>
-<li><strong>罗盘</strong>: <a target="_blank" rel="noopener" href="https://www.luopan.com/">https://www.luopan.com/</a></li>
-<li><strong>智选云</strong>: <a target="_blank" rel="noopener" href="http://www.ccshis.com/">http://www.ccshis.com/</a></li>
-<li><strong>云天龙</strong>: <a target="_blank" rel="noopener" href="http://pms.yaduo.com/">http://pms.yaduo.com/</a></li>
-<li><strong>住哲</strong>: <a target="_blank" rel="noopener" href="http://www.zhuzher.com/">http://www.zhuzher.com/</a></li>
-<li><strong>民宿云</strong>: <a target="_blank" rel="noopener" href="http://www.minsuyun.com/">http://www.minsuyun.com/</a></li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/">智能家居</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SmartHotel/" rel="tag">SmartHotel</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2023-04-22-DevOps工具链概览" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2023/04/21/2023-04-22-DevOps%E5%B7%A5%E5%85%B7%E9%93%BE%E6%A6%82%E8%A7%88/" class="article-date">
-      <time datetime="2023-04-21T16:00:00.000Z" itemprop="datePublished">2023-04-22</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/04/21/2023-04-22-DevOps%E5%B7%A5%E5%85%B7%E9%93%BE%E6%A6%82%E8%A7%88/">DevOps工具链概览</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="DevOps-工具链概览"><a href="#DevOps-工具链概览" class="headerlink" title="DevOps 工具链概览"></a>DevOps 工具链概览</h1><p>DevOps 工具链有 Jira, Gitlab, 时速云 DevOps 平台，Sonarqube, TestLink, Harbor</p>
-<ul>
-<li>Jira: 项目管理；</li>
-<li>Gitlab: 代码托管、在线 Review；</li>
-<li>时速云 DevOps 平台：基于 Kubernetes 的代码拉取，编译，代码扫描，单元测试，打包，构建镜像、持续部署，审批，邮件；</li>
-<li>Sonarqube：代码静态扫描；</li>
-<li>TestLink: 测试管理；</li>
-<li>Harbor: 镜像托管，镜像安全扫描；</li>
-</ul>
-<p>流程如下图所示。</p>
-<h2 id="DevOps学习路线"><a href="#DevOps学习路线" class="headerlink" title="DevOps学习路线"></a>DevOps学习路线</h2><p><a target="_blank" rel="noopener" href="https://roadmap.sh/devops">https://roadmap.sh/devops</a></p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://community.ops.io/">https://community.ops.io/</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/462977053/answer/2786005121">https://www.zhihu.com/question/462977053/answer/2786005121</a></li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/81213673">https://zhuanlan.zhihu.com/p/81213673</a></li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/517367294">https://zhuanlan.zhihu.com/p/517367294</a></li>
-<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20120986/ironman/2733?page=1">https://ithelp.ithome.com.tw/users/20120986/ironman/2733?page=1</a></li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/DevOps/">DevOps</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenVPN/" rel="tag">OpenVPN</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&lt;&lt; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">…</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/3/">Next &gt;&gt;</a>
+      <a class="extend prev" rel="prev" href="/">&lt;&lt; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">…</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/3/">Next &gt;&gt;</a>
     </nav>
   
 </div>

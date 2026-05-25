@@ -292,11 +292,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-2013-06-15-骑行5：沪杭公路到九龙山" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-2017-02-08-Raspberry安装HAP-NodeJS" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2013/06/14/2013-06-15-%E9%AA%91%E8%A1%8C5%EF%BC%9A%E6%B2%AA%E6%9D%AD%E5%85%AC%E8%B7%AF%E5%88%B0%E4%B9%9D%E9%BE%99%E5%B1%B1/" class="article-date">
-      <time datetime="2013-06-14T17:19:00.000Z" itemprop="datePublished">2013-06-15</time>
+      <a href="/2017/02/07/2017-02-08-Raspberry%E5%AE%89%E8%A3%85HAP-NodeJS/" class="article-date">
+      <time datetime="2017-02-07T16:27:40.000Z" itemprop="datePublished">2017-02-08</time>
 </a>
 
 
@@ -312,7 +312,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2013/06/14/2013-06-15-%E9%AA%91%E8%A1%8C5%EF%BC%9A%E6%B2%AA%E6%9D%AD%E5%85%AC%E8%B7%AF%E5%88%B0%E4%B9%9D%E9%BE%99%E5%B1%B1/">骑行5：沪杭公路到九龙山</a>
+      <a class="article-title" href="/2017/02/07/2017-02-08-Raspberry%E5%AE%89%E8%A3%85HAP-NodeJS/">Raspberry安装HAP-NodeJS</a>
     </h1>
   
 
@@ -322,11 +322,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p><img src="/img/20130429/head.png">
-<img src="/img/20130615/1.png">
-【“老沪杭公路起自上海闵行西渡，南下经奉贤柘林镇，西折沿杭州湾北海岸，蜿蜒如龙，曲折而行，过乔司，九堡进杭州城。一路串联许多江南名镇，人文景观丰富。尽管现代化进程它被渐渐淘汰，但老路的古朴，乡间公路的风味，还是深深吸引我们，每年去徽杭，或观潮，我们总会骑上几趟。弯弯曲曲的老沪路，两排合抱粗的老树，密密的夹着公路，浓密的树荫遮蔽夏日的骄阳，就是盛夏也非常凉爽。春秋季节又仿佛行走在五彩斑斓的树的隧道，这里骑行是享受，这样的美好感觉，在宽广的公路320国道，01东西道是没有的。路的两边连片果园，桑树林，农舍，小桥流水，是典型的江南田园风光。最引人入胜的是，公路大部分路段贴海堤而行，石块砌就的海堤，挡住滔滔海水，上筑宽阔通道，人们都会上海堤骑行。远望迷蒙，一袭烟波粼粼，看着这无限诲景，枯燥的骑行心情随美景变得盈润了。观潮季节一路都能看到”乱石穿空，惊涛拍岸”钱江潮壮观。在与日俱进的今天你还能看到蔚为壮观的跨海大桥，现代化的秦山核电站。南北湖风景，盐官古镇——众多景观我就不一一介绍，你去骑一趟就全知道了。
-老沪杭路是条美丽的路，值得单车骑行的路，它似一条彩练，我们深深喜爱它。“
-<em>—— 引自<a target="_blank" rel="noopener" href="http://bbs.bikehome.net/forum.php?mod=viewthread&amp;tid=72438">http://bbs.bikehome.net/forum.php?mod=viewthread&amp;tid=72438</a></em></p>
+              <h1 id="下载-Raspbian"><a href="#下载-Raspbian" class="headerlink" title="下载 Raspbian"></a>下载 Raspbian</h1><p><a target="_blank" rel="noopener" href="https://www.raspberrypi.org/downloads/raspbian/">https://www.raspberrypi.org/downloads/raspbian/</a></p>
+<h1 id="制作-TF-card"><a href="#制作-TF-card" class="headerlink" title="制作 TF card"></a>制作 TF card</h1><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br><span class="line">diskutil unmount /dev/disk2s1</span><br><span class="line">diskutil list</span><br><span class="line">dd bs=4m if=2017-01-11-raspbian-jessie.img of=/dev/rdisk2</span><br><span class="line">diskutil unmountdisk /dev/disk2</span><br></pre></td></tr></tbody></table></figure>
           
       
     </div>
@@ -335,18 +332,18 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E9%AA%91%E8%A1%8C/">骑行</a>
+    <a class="article-category-link" href="/categories/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/">智能家居</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%AA%91%E8%A1%8C/" rel="tag">骑行</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HAP-NodeJS/" rel="tag">HAP-NodeJS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HomeKit/" rel="tag">HomeKit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Raspberry-Pi/" rel="tag">Raspberry Pi</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/2013/06/14/2013-06-15-%E9%AA%91%E8%A1%8C5%EF%BC%9A%E6%B2%AA%E6%9D%AD%E5%85%AC%E8%B7%AF%E5%88%B0%E4%B9%9D%E9%BE%99%E5%B1%B1/#more">阅读全文 &gt;&gt;</a>
+          <a href="/2017/02/07/2017-02-08-Raspberry%E5%AE%89%E8%A3%85HAP-NodeJS/#more">阅读全文 &gt;&gt;</a>
         </p>
       
       <div class="clearfix"></div>
@@ -365,11 +362,11 @@
 
 
   
-    <article id="post-2013-04-29-骑行4：老上海-浦西世博园" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-2017-02-01-图文解说水滴轮三大刹车系统" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2013/04/29/2013-04-29-%E9%AA%91%E8%A1%8C4%EF%BC%9A%E8%80%81%E4%B8%8A%E6%B5%B7-%E6%B5%A6%E8%A5%BF%E4%B8%96%E5%8D%9A%E5%9B%AD/" class="article-date">
-      <time datetime="2013-04-29T14:25:00.000Z" itemprop="datePublished">2013-04-29</time>
+      <a href="/2017/02/01/2017-02-01-%E5%9B%BE%E6%96%87%E8%A7%A3%E8%AF%B4%E6%B0%B4%E6%BB%B4%E8%BD%AE%E4%B8%89%E5%A4%A7%E5%88%B9%E8%BD%A6%E7%B3%BB%E7%BB%9F/" class="article-date">
+      <time datetime="2017-02-01T15:56:08.000Z" itemprop="datePublished">2017-02-01</time>
 </a>
 
 
@@ -385,7 +382,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2013/04/29/2013-04-29-%E9%AA%91%E8%A1%8C4%EF%BC%9A%E8%80%81%E4%B8%8A%E6%B5%B7-%E6%B5%A6%E8%A5%BF%E4%B8%96%E5%8D%9A%E5%9B%AD/">骑行4：老上海&amp;浦西世博园</a>
+      <a class="article-title" href="/2017/02/01/2017-02-01-%E5%9B%BE%E6%96%87%E8%A7%A3%E8%AF%B4%E6%B0%B4%E6%BB%B4%E8%BD%AE%E4%B8%89%E5%A4%A7%E5%88%B9%E8%BD%A6%E7%B3%BB%E7%BB%9F/">图文解说水滴轮三大刹车系统</a>
     </h1>
   
 
@@ -395,23 +392,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p><img src="/img/20130429/head.png"></p>
-<h1 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h1><p><strong>【目的地点】</strong>：老上海&amp;浦西世博园
-<strong>【全程距离】</strong>：路书测算28.4KM
-<strong>【活动时间】</strong>：未定
-<strong>【集合地点】</strong>：公司
-<strong>【集合时间】</strong>：12:50集合，13:00出发。
-<strong>【解散地点】</strong>：龙华塔
-<strong>【解散时间】</strong>：大约15点
-<strong>【骑行工具】</strong>：任何车型；任何品牌变速车（请保证车况良好） 非快拆车辆请自带扳手!
-<strong>【装备建议】</strong>：头盔必须
-<strong>【配备手台】</strong>：至少2部
-<strong>【休息段】</strong>：约每10公里休息一次。
-<strong>【活动取消条件】</strong>：活动前一天晚上天气预报为准。如取消活动会在活动出发前2小时短息通知！
-<strong>【天气】</strong>：<a target="_blank" rel="noopener" href="http://tianqi.2345.com/shanghai/58362.htm">http://tianqi.2345.com/shanghai/58362.htm</a>
-<strong>【路线】</strong>：<a target="_blank" rel="noopener" href="http://map.sogou.com/lushu/swf/lushu.swf?id=8a8c084d3e2ee224013e3104ab85514d">http://map.sogou.com/lushu/swf/lushu.swf?id=8a8c084d3e2ee224013e3104ab85514d</a>
-<img src="/img/20130429/1.png">
-<img src="/img/20130429/foot.png"></p>
+              <p>水滴轮属于垂钓卷线器中的一种，跟鼓轮一样都属于两轴卷线器。水滴轮主要是用于路亚钓。相比纺车轮，水滴轮抛投精确度更高，体积小，出线容易控制。缺点就是抛投不易掌握，容易炸线，就是大家说的炒粉。但良好的抛投刹车系统能让路亚作钓的过程中操控舒服避免炒粉。</p>
           
       
     </div>
@@ -420,18 +401,18 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E9%AA%91%E8%A1%8C/">骑行</a>
+    <a class="article-category-link" href="/categories/%E8%B7%AF%E4%BA%9A/">路亚</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%AA%91%E8%A1%8C/" rel="tag">骑行</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B7%AF%E4%BA%9A/" rel="tag">路亚</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/2013/04/29/2013-04-29-%E9%AA%91%E8%A1%8C4%EF%BC%9A%E8%80%81%E4%B8%8A%E6%B5%B7-%E6%B5%A6%E8%A5%BF%E4%B8%96%E5%8D%9A%E5%9B%AD/#more">阅读全文 &gt;&gt;</a>
+          <a href="/2017/02/01/2017-02-01-%E5%9B%BE%E6%96%87%E8%A7%A3%E8%AF%B4%E6%B0%B4%E6%BB%B4%E8%BD%AE%E4%B8%89%E5%A4%A7%E5%88%B9%E8%BD%A6%E7%B3%BB%E7%BB%9F/#more">阅读全文 &gt;&gt;</a>
         </p>
       
       <div class="clearfix"></div>
@@ -450,11 +431,11 @@
 
 
   
-    <article id="post-2013-04-20-骑行3：天马山-淀山湖" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-2017-01-01-路亚装逼指南" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2013/04/20/2013-04-20-%E9%AA%91%E8%A1%8C3%EF%BC%9A%E5%A4%A9%E9%A9%AC%E5%B1%B1-%E6%B7%80%E5%B1%B1%E6%B9%96/" class="article-date">
-      <time datetime="2013-04-20T14:25:00.000Z" itemprop="datePublished">2013-04-20</time>
+      <a href="/2017/01/01/2017-01-01-%E8%B7%AF%E4%BA%9A%E8%A3%85%E9%80%BC%E6%8C%87%E5%8D%97/" class="article-date">
+      <time datetime="2017-01-01T15:27:40.000Z" itemprop="datePublished">2017-01-01</time>
 </a>
 
 
@@ -470,7 +451,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2013/04/20/2013-04-20-%E9%AA%91%E8%A1%8C3%EF%BC%9A%E5%A4%A9%E9%A9%AC%E5%B1%B1-%E6%B7%80%E5%B1%B1%E6%B9%96/">骑行3：天马山&amp;淀山湖</a>
+      <a class="article-title" href="/2017/01/01/2017-01-01-%E8%B7%AF%E4%BA%9A%E8%A3%85%E9%80%BC%E6%8C%87%E5%8D%97/">路亚装逼指南</a>
     </h1>
   
 
@@ -480,7 +461,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h1 id="路线"><a href="#路线" class="headerlink" title="路线"></a>路线</h1><p><a target="_blank" rel="noopener" href="http://map.sogou.com/lushu/swf/lushu.swf?id=8a8c07c83e1f7cf5013e205ac8d428be">http://map.sogou.com/lushu/swf/lushu.swf?id=8a8c07c83e1f7cf5013e205ac8d428be</a></p>
+              <p>何为<strong>路亚</strong>？你看有人站水边，竿尖挂个假鱼，抛出去，收回来，抛出去，再收，那就是了。</p>
+<p><img src="/img/20170101/pjlure.jpg"></p>
           
       
     </div>
@@ -489,18 +471,18 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E9%AA%91%E8%A1%8C/">骑行</a>
+    <a class="article-category-link" href="/categories/%E8%B7%AF%E4%BA%9A/">路亚</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%AA%91%E8%A1%8C/" rel="tag">骑行</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B7%AF%E4%BA%9A/" rel="tag">路亚</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/2013/04/20/2013-04-20-%E9%AA%91%E8%A1%8C3%EF%BC%9A%E5%A4%A9%E9%A9%AC%E5%B1%B1-%E6%B7%80%E5%B1%B1%E6%B9%96/#more">阅读全文 &gt;&gt;</a>
+          <a href="/2017/01/01/2017-01-01-%E8%B7%AF%E4%BA%9A%E8%A3%85%E9%80%BC%E6%8C%87%E5%8D%97/#more">阅读全文 &gt;&gt;</a>
         </p>
       
       <div class="clearfix"></div>
@@ -519,11 +501,11 @@
 
 
   
-    <article id="post-2013-04-06-我的单车装备" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-2016-12-30-用ASP-NET开发的大型网站有哪些架构方式" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2013/04/06/2013-04-06-%E6%88%91%E7%9A%84%E5%8D%95%E8%BD%A6%E8%A3%85%E5%A4%87/" class="article-date">
-      <time datetime="2013-04-06T10:34:00.000Z" itemprop="datePublished">2013-04-06</time>
+      <a href="/2016/12/29/2016-12-30-%E7%94%A8ASP-NET%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%9C%89%E5%93%AA%E4%BA%9B%E6%9E%B6%E6%9E%84%E6%96%B9%E5%BC%8F/" class="article-date">
+      <time datetime="2016-12-29T16:27:40.000Z" itemprop="datePublished">2016-12-30</time>
 </a>
 
 
@@ -539,7 +521,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2013/04/06/2013-04-06-%E6%88%91%E7%9A%84%E5%8D%95%E8%BD%A6%E8%A3%85%E5%A4%87/">我的单车装备</a>
+      <a class="article-title" href="/2016/12/29/2016-12-30-%E7%94%A8ASP-NET%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%9C%89%E5%93%AA%E4%BA%9B%E6%9E%B6%E6%9E%84%E6%96%B9%E5%BC%8F/">谈谈用ASP.NET开发的大型网站有哪些架构方式</a>
     </h1>
   
 
@@ -549,10 +531,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>整理自己所买装备，记录备忘。同时，也希望能给准备买车的人做个参考。</p>
-<h1 id="GIANT-ATX777：￥-2998-00-专卖店售价"><a href="#GIANT-ATX777：￥-2998-00-专卖店售价" class="headerlink" title="GIANT ATX777：￥ 2998.00 [专卖店售价]"></a><strong>GIANT ATX777</strong>：￥ 2998.00 [专卖店售价]</h1><p><a target="_blank" rel="noopener" href="http://www.giant.com.cn/Bike/BikeView/972">http://www.giant.com.cn/Bike/BikeView/972</a>
-淘宝推荐<a target="_blank" rel="noopener" href="http://detail.tmall.com/item.htm?spm=a230r.1.14.3.gtHCFG&amp;id=21684276849">http://detail.tmall.com/item.htm?spm=a230r.1.14.3.gtHCFG&amp;id=21684276849</a>
-<img src="/img/20130406/1.png"></p>
+              <p>在<a target="_blank" rel="noopener" href="http://www.cnblogs.com/ms0017/archive/2011/07/26/2117676.html">文章</a>里，列举了国内外用ASP.NET开发的大型网站有哪些。最后提到了用.NET开发的大型网站和LAMP/JAVA平台的成本比较。其实在很多时候，收费的不一定就比免费的成本更高。因为开发一个网站要使用哪个平台的技术更合适，需要考虑很多种情况（除了开发技术本身，还要考虑人工，开发效率，时间，后续的支持，维护等等），要综合计算成本才行。微软平台本身虽然是收费的，但总体的成本并非一定比LAMP/JAVA高，上篇文章列举的国内外的那么多基于ASP.NET开发的大型网站就是例证。尤其是在开发效率上，无论是C#开发语言，还是免费的开发工具（Visual Studio Express，或者MonoDevelop/SharpDevelop），.NET明显比其他两个平台更胜一筹。而这一点正是互联网企业所需要的。效率就是生产力。并且，由于有Mono (<a target="_blank" rel="noopener" href="http://mono-project.org/">http://mono-project.org/</a>) 这个开源平台的存在，.NET技术也可以在linux/BSD等开源服务器上使用。使.NET完全可以实现跨平台应用。据此，我们可以分Windows/Linux两种方式来架构我们的ASP.NET网站：</p>
           
       
     </div>
@@ -561,18 +540,18 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E9%AA%91%E8%A1%8C/">骑行</a>
+    <a class="article-category-link" href="/categories/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/">Linux/服务器</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%95%E8%BD%A6/" rel="tag">单车</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%AA%91%E8%A1%8C/" rel="tag">骑行</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ASP-NET/" rel="tag">ASP.NET</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IIS/" rel="tag">IIS</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/2013/04/06/2013-04-06-%E6%88%91%E7%9A%84%E5%8D%95%E8%BD%A6%E8%A3%85%E5%A4%87/#more">阅读全文 &gt;&gt;</a>
+          <a href="/2016/12/29/2016-12-30-%E7%94%A8ASP-NET%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%9C%89%E5%93%AA%E4%BA%9B%E6%9E%B6%E6%9E%84%E6%96%B9%E5%BC%8F/#more">阅读全文 &gt;&gt;</a>
         </p>
       
       <div class="clearfix"></div>
@@ -591,11 +570,11 @@
 
 
   
-    <article id="post-2013-04-05-骑行2：滴水湖" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-2016-12-30-基于微软平台IIS-ASP-NET开发的大型网站有哪些" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2013/04/05/2013-04-05-%E9%AA%91%E8%A1%8C2%EF%BC%9A%E6%BB%B4%E6%B0%B4%E6%B9%96/" class="article-date">
-      <time datetime="2013-04-05T14:25:00.000Z" itemprop="datePublished">2013-04-05</time>
+      <a href="/2016/12/29/2016-12-30-%E5%9F%BA%E4%BA%8E%E5%BE%AE%E8%BD%AF%E5%B9%B3%E5%8F%B0IIS-ASP-NET%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%9C%89%E5%93%AA%E4%BA%9B/" class="article-date">
+      <time datetime="2016-12-29T16:04:40.000Z" itemprop="datePublished">2016-12-30</time>
 </a>
 
 
@@ -611,7 +590,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2013/04/05/2013-04-05-%E9%AA%91%E8%A1%8C2%EF%BC%9A%E6%BB%B4%E6%B0%B4%E6%B9%96/">骑行2：滴水湖</a>
+      <a class="article-title" href="/2016/12/29/2016-12-30-%E5%9F%BA%E4%BA%8E%E5%BE%AE%E8%BD%AF%E5%B9%B3%E5%8F%B0IIS-ASP-NET%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%9C%89%E5%93%AA%E4%BA%9B/">基于微软平台IIS/ASP.NET开发的大型网站有哪些?</a>
     </h1>
   
 
@@ -621,7 +600,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><img src="/img/20130405/2.png"></p>
+              <p>首先说明一下，本文绝不是要说Microsoft平台多么好，多么强。
+只是要说明一下除了LAMP/JAVA平台，微软平台不至于像有些人说的，和想象的那么不堪！</p>
           
       
     </div>
@@ -630,18 +610,18 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E9%AA%91%E8%A1%8C/">骑行</a>
+    <a class="article-category-link" href="/categories/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/">Linux/服务器</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%AA%91%E8%A1%8C/" rel="tag">骑行</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ASP-NET/" rel="tag">ASP.NET</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IIS/" rel="tag">IIS</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/2013/04/05/2013-04-05-%E9%AA%91%E8%A1%8C2%EF%BC%9A%E6%BB%B4%E6%B0%B4%E6%B9%96/#more">阅读全文 &gt;&gt;</a>
+          <a href="/2016/12/29/2016-12-30-%E5%9F%BA%E4%BA%8E%E5%BE%AE%E8%BD%AF%E5%B9%B3%E5%8F%B0IIS-ASP-NET%E5%BC%80%E5%8F%91%E7%9A%84%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%9C%89%E5%93%AA%E4%BA%9B/#more">阅读全文 &gt;&gt;</a>
         </p>
       
       <div class="clearfix"></div>
@@ -660,11 +640,11 @@
 
 
   
-    <article id="post-2013-04-02-骑行1：佘山" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-2016-12-15-GoAhead移植到OpenWRT" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2013/04/02/2013-04-02-%E9%AA%91%E8%A1%8C1%EF%BC%9A%E4%BD%98%E5%B1%B1/" class="article-date">
-      <time datetime="2013-04-02T14:24:00.000Z" itemprop="datePublished">2013-04-02</time>
+      <a href="/2016/12/15/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/" class="article-date">
+      <time datetime="2016-12-15T13:04:40.000Z" itemprop="datePublished">2016-12-15</time>
 </a>
 
 
@@ -680,7 +660,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2013/04/02/2013-04-02-%E9%AA%91%E8%A1%8C1%EF%BC%9A%E4%BD%98%E5%B1%B1/">骑行1：佘山</a>
+      <a class="article-title" href="/2016/12/15/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/">GoAhead移植到OpenWRT</a>
     </h1>
   
 
@@ -690,166 +670,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><img src="/img/20130402/2.png"></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E9%AA%91%E8%A1%8C/">骑行</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%AA%91%E8%A1%8C/" rel="tag">骑行</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2013/04/02/2013-04-02-%E9%AA%91%E8%A1%8C1%EF%BC%9A%E4%BD%98%E5%B1%B1/#more">阅读全文 &gt;&gt;</a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2013-03-23-GitHub建立个人站点" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2013/03/23/2013-03-23-GitHub%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9/" class="article-date">
-      <time datetime="2013-03-23T03:38:38.000Z" itemprop="datePublished">2013-03-23</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2013/03/23/2013-03-23-GitHub%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9/">GitHub建立个人站点</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>Jekyll-简单的博客、静态网站工具<a target="_blank" rel="noopener" href="http://jekyll.bootcss.om/">http://jekyll.bootcss.com/</a>;</p>
-<h3 id="1-Git简介"><a href="#1-Git简介" class="headerlink" title="1.Git简介"></a>1.Git简介</h3><ul>
-<li>Git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。</li>
-</ul>
-<ul>
-<li>GitHub可以托管各种git库的站点。</li>
-</ul>
-<ul>
-<li>GitHub Pages免费的静态站点，三个特点：免费托管、自带主题、支持自制页面和Jekyll。</li>
-</ul>
-<h3 id="2-为什么使用Github-Pages"><a href="#2-为什么使用Github-Pages" class="headerlink" title="2.为什么使用Github Pages"></a>2.为什么使用Github Pages</h3><ul>
-<li>搭建简单而且免费；</li>
-<li>支持静态脚本；</li>
-<li>可以绑定你的域名；</li>
-<li>DIY自由发挥，动手实践一些有意思的东西git,markdown,bootstrap,jekyll；</li>
-<li>理想写博环境，git+github+markdown+jekyll；
-          
-      
-    </li></ul></div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%BD%91%E7%AB%99-%E5%8D%9A%E5%AE%A2/">网站/博客</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub-Pages/" rel="tag">GitHub Pages</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jekyll/" rel="tag">Jekyll</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2013/03/23/2013-03-23-GitHub%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9/#more">阅读全文 &gt;&gt;</a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2013-01-11-InstantContiki2-6-for-CC2530" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/" class="article-date">
-      <time datetime="2013-01-11T05:14:34.000Z" itemprop="datePublished">2013-01-11</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/">InstantContiki2.6 for CC2530</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>搞zigbee算是国内第一批了，很早就知道6lowpan。用cc2430时，从研究<a target="_blank" rel="noopener" href="http://www.tinyos8051wg.net/">http://www.tinyos8051wg.net</a>，找寻资料了解到 Nanostack1.0.0，直到Nanostack1.1.0 之后就转为contiki了。好久没发帖了，发个帖Mark一下，先！</p>
-<p>1.Download Instant Contiki</p>
-<p><a target="_blank" rel="noopener" href="http://sourceforge.net/projects/contiki/files/Instant%20Contiki/"><font color="#000080">http://sourceforge.net/projects/contiki/files/Instant%20Contiki/</font></a></p>
-<p>2.Install VMWare Player</p>
-<p><a target="_blank" rel="noopener" href="https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/5_0"><font color="#000080">https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/5_0</font></a></p>
-<p>3.Log into Instant Contiki.</p>
-<p>password is: <strong><font color="red">user</font></strong></p>
+              <h1 id="make-menuconfig"><a href="#make-menuconfig" class="headerlink" title="make menuconfig"></a>make menuconfig</h1><p><img src="/img/20161215/menuconfig.jpg"></p>
           
       
     </div>
@@ -864,12 +685,12 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/6lowpan/" rel="tag">6lowpan</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CC2530/" rel="tag">CC2530</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Contiki/" rel="tag">Contiki</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GoAhead/" rel="tag">GoAhead</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenWRT/" rel="tag">OpenWRT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="tag">嵌入式</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/2013/01/11/2013-01-11-InstantContiki2-6-for-CC2530/#more">阅读全文 &gt;&gt;</a>
+          <a href="/2016/12/15/2016-12-15-GoAhead%E7%A7%BB%E6%A4%8D%E5%88%B0OpenWRT/#more">阅读全文 &gt;&gt;</a>
         </p>
       
       <div class="clearfix"></div>
@@ -888,11 +709,11 @@
 
 
   
-    <article id="post-2012-09-07-autoRootfs-sh" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-2016-12-16-GitHub中的watch、star、fork的作用" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2012/09/07/2012-09-07-autoRootfs-sh/" class="article-date">
-      <time datetime="2012-09-07T12:50:00.000Z" itemprop="datePublished">2012-09-07</time>
+      <a href="/2016/12/15/2016-12-16-GitHub%E4%B8%AD%E7%9A%84watch%E3%80%81star%E3%80%81fork%E7%9A%84%E4%BD%9C%E7%94%A8/" class="article-date">
+      <time datetime="2016-12-15T13:04:40.000Z" itemprop="datePublished">2016-12-15</time>
 </a>
 
 
@@ -908,7 +729,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2012/09/07/2012-09-07-autoRootfs-sh/">autoRootfs.sh</a>
+      <a class="article-title" href="/2016/12/15/2016-12-16-GitHub%E4%B8%AD%E7%9A%84watch%E3%80%81star%E3%80%81fork%E7%9A%84%E4%BD%9C%E7%94%A8/">GitHub中的watch、star、fork的作用</a>
     </h1>
   
 
@@ -918,8 +739,61 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>autoRootfs.sh</p>
-          
+        <blockquote>
+<p>转自：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/bibi-feiniaoyuan/p/9519467.html">https://www.cnblogs.com/bibi-feiniaoyuan/p/9519467.html</a></p>
+</blockquote>
+<p>在每个 github 项目的右上角，都有三个按钮,分别是 watch、star、fork，但是有些刚开始使用 github 的同学，可能对这三个按钮的使用却不怎么了解，包括一开始使用 github 的我也是如此，这篇博客，结合自己的理解和使用，说说这三个按钮的用法以及一些个人见解。</p>
+<p>如下图所示这是我们经常看到的三个按钮。</p>
+<p><img src="https://images2018.cnblogs.com/blog/994461/201808/994461-20180822180828688-21227169.png" alt="img"></p>
+<p>从左至右，依次是 watch star fork,下面分别说下他们的具体作用。</p>
+<!--more--->
+
+<h2 id="watch"><a href="#watch" class="headerlink" title="watch"></a><strong>watch</strong></h2><p>watch翻译过来可以称之为观察，点击watch可以看到如下的列表。</p>
+<p><img src="https://images2018.cnblogs.com/blog/994461/201808/994461-20180822180842356-821161803.png" alt="img"></p>
+<p>默认每一个用户都是处于Not watching的状态，当你选择Watching，表示你以后会关注这个项目的所有动态，以后只要这个项目发生变动，如被别人提交了pull request、被别人发起了issue等等情况，</p>
+<p>你都会在自己的个人通知中心，收到一条通知消息，如果你设置了个人邮箱，那么你的邮箱也可能收到相应的邮件</p>
+<p>如下，我 watch 了开源项目<a target="_blank" rel="noopener" href="https://github.com/android-cn/android-discuss">android-cn/android-discuss</a>，那么以后任何人只要在这个项目下提交了 issue 或者在 issue 下面有任何留言，</p>
+<p>我的通知中心就会通知我。如果你配置了邮箱，你还可能会因此不断的收到邮件。</p>
+<p><img src="https://images2018.cnblogs.com/blog/994461/201808/994461-20180822180856110-429138577.png" alt="img"></p>
+<p>如果你不想接受这些通知，那么点击 Not Watching 即可。</p>
+<p>另外这里有一篇文章讲 <a target="_blank" rel="noopener" href="https://github.com/cssmagic/blog/issues/49">如何正确接收 GitHub 的消息邮件</a>，很不错的一篇文章，推荐大家看看。</p>
+<h2 id="star"><a href="#star" class="headerlink" title="star"></a>star</h2><p>star 翻译过来应该是星星，但是这个翻译没任何具体意义，这里解释为<code>关注</code>或者<code>点赞</code>更合适，当你点击 star,表示你喜欢这个项目或者通俗点，可以把他理解成朋友圈的点赞吧，表示对这个项目的支持。</p>
+<p>不过相比朋友圈的点赞，github 里面会有一个列表，专门收集了你所有 start 过的项目，</p>
+<p>点击 github 个人头像，可以看到 your star的条目，点击就可以查看你 star 过的所有项目了。如下图</p>
+<p><img src="https://images2018.cnblogs.com/blog/994461/201808/994461-20180822180927593-1376654966.png" alt="img"></p>
+<p>不过，在你的 star 列表很容易出现这样的问题。就是你可能 star 成百上千个项目怎么办。</p>
+<p>这时，如果 github 可以提供一个分类功能该多好，就像微博网页版的收藏，你在收藏的时候可以设置 tag，</p>
+<p>这样设置的好处是，以后再次查找项目时，可以根据归类查找，但是不知道 github 的产品经理是怎么想的，</p>
+<p>github 本身没有这个功能，但是 github 从来也不缺有思想有执行力的程序员，</p>
+<p>这不，前段时间就有人做了一个 Chrome 插件，这个插件可以对 github 中所有 star 的项目进行分类，</p>
+<p>如下所示，注意看图片右侧，多了一个 Filter by tag 列表。</p>
+<p><img src="https://images2018.cnblogs.com/blog/994461/201808/994461-20180822180956857-1025289775.png" alt="img"></p>
+<p><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/github-stars-tagger/aaihhjepepgajmehjdmfkofegfddcabc">下载地址.</a></p>
+<p>尽管这个插件已经很好了，但是还是有缺点，你只能 star完 项目了，去 star 列表后，才能对项目打 tag，这是很不方便的。</p>
+<p>真心希望，未来 github 可以自己支持对 star 的 tag 处理。憧憬…</p>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h4 id="更新"><a href="#更新" class="headerlink" title="更新"></a><strong>更新</strong></h4><p>也许是 github 自己也发现了检索的问题，现在 github 增加了一个类似的功能，可以给自己给自己的项目设置 topic. 如下图所示。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/588640-9fc3057dca0c0e4e.png" alt="img"></p>
+<p>topic</p>
+<p>给自己的项目设置 topic 后，相当于自己给自己的项目设置了一个 tag ，这样可以方便别人搜索。比如要搜索所有 topic 为 android 的项目，你只需要在 GitHub 搜索时输入 <code>topic android </code> 然后搜索即可。</p>
+<h1 id="fork"><a href="#fork" class="headerlink" title="fork"></a>fork</h1><p>当选择 fork，相当于你自己有了一份原项目的拷贝，当然这个拷贝只是针对当时的项目文件，如果后续原项目文件发生改变，你必须通过其他的方式去同步。</p>
+<p>一般来说，我们不需要使用 fork 这个功能，除非有一些项目，可能存在 bug 或者可以继续优化的地方，你想帮助原项目作者去完善这个项目或者单纯的想在原来项目基础上己维护一个属于自己项目（比如我 fork 的 <a target="_blank" rel="noopener" href="https://link.jianshu.com/?t=https://github.com/maoruibin/AndroidWeekly">AndroidWeekly 客户端</a>，那么你可以 fork 一份项目下来，然后自己对这个项目进行修改完善，当你觉得项目没问题了，你就可以尝试发起 pull request 给原项目作者了。</p>
+<p>然后就静静等待他的 merge 邮件通知了。</p>
+<p>我看到很多人错误的在使用 fork。很多人把 fork 当成了收藏一样的功能，包括一开始使用 github 的我，每次看到一个好的项目就先 fork，</p>
+<p>因为这样，就可以我的 repository(仓库)列表下查看 fork 的项目了。其实你完全可以使用 star 来达到这个目的。</p>
+<h2 id="使用建议"><a href="#使用建议" class="headerlink" title="使用建议"></a>使用建议</h2><p>1、对于一些可能会经常发生变化的会不定期更新的好项目 多使用 watch.</p>
+<p>比如 android-cn 团队的 <a target="_blank" rel="noopener" href="https://link.jianshu.com/?t=https://github.com/android-cn/android-discuss">android-discuss</a> 项目，</p>
+<p>你就可以 watching 它，这里面都是一些关于 Android 技术的交流，如果有任何新问题，你都可以收到通知，你可以查看别人的回答，</p>
+<p>你可以回答别人提出的问题，这是一个很好的学习成长方式。</p>
+<p>其他值得watch的项目还有很多，比如 github 上很多的 Awesome 系列的项目,如 <a target="_blank" rel="noopener" href="https://link.jianshu.com/?t=https://github.com/lightSky/Awesome-MaterialDesign">Awesome-MaterialDesign</a> 等，你 watch 这些项目了，</p>
+<p>只要项目新增一些好玩好用的东西，你就会收到通知。</p>
+<p>我在知乎上看到有人问这样的问题，说 github 上有哪些值得 watch 的项目，其实有很多，我自己也整理了一些，但是没放到 github.</p>
+<p>值得注意的是，如果 watch多了，你可能会被无休止的邮件通知烦死（邮件通知可设置），因为被 watch 项目有任何留言、PR等更新都会触发通知，所以做好权衡。</p>
+<p>2、喜欢一个项目就 star 它吧~</p>
+<p>3、修改开源项目就使用 fork，这样你就可以在原项目的基础上，对项目进行修改提交，现在你是这个项目的主人啦~</p>
+<h2 id="小细节"><a href="#小细节" class="headerlink" title="小细节"></a>小细节</h2><p>有些时候，你看到一个项目的 star 数有很多，你就想知道到底都有那些人 star 了这个项目，或者 fork 了这个项目，</p>
+<p>但是环顾一圈，你却找不到一个入口，后来自己不经意的发现，只要<code>点击 star 傍边的数字</code>，就可以查看有哪些人 star 了这个项目。</p>
+<p>是不是有点意思，现在你就可以去试试，watch、fork上面的数字都是可以点击的，道理一样。</p>
+
       
     </div>
     
@@ -927,158 +801,15 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">嵌入式开发</a>
+    <a class="article-category-link" href="/categories/DevOps/">DevOps</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="tag">嵌入式</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a href="/2012/09/07/2012-09-07-autoRootfs-sh/#more">阅读全文 &gt;&gt;</a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2012-09-07-SQLite移植到ARM开发板" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2012/09/07/2012-09-07-SQLite%E7%A7%BB%E6%A4%8D%E5%88%B0ARM%E5%BC%80%E5%8F%91%E6%9D%BF/" class="article-date">
-      <time datetime="2012-09-07T11:50:00.000Z" itemprop="datePublished">2012-09-07</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/09/07/2012-09-07-SQLite%E7%A7%BB%E6%A4%8D%E5%88%B0ARM%E5%BC%80%E5%8F%91%E6%9D%BF/">SQLite移植到ARM开发板</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="1-下载sqlite3源代码"><a href="#1-下载sqlite3源代码" class="headerlink" title="1.下载sqlite3源代码"></a>1.下载sqlite3源代码</h1><p><a target="_blank" rel="noopener" href="http://www.sqlite.org/sqlite-autoconf-3071400.tar.gz">http://www.sqlite.org/sqlite-autoconf-3071400.tar.gz</a></p>
-<h1 id="2-解压源代码："><a href="#2-解压源代码：" class="headerlink" title="2.解压源代码："></a>2.解压源代码：</h1><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar xvzf sqlite-autoconf-3071400.tar.gz</span><br><span class="line"><span class="built_in">cd</span> sqlite-autoconf-3071400</span><br></pre></td></tr></tbody></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">嵌入式开发</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQLite/" rel="tag">SQLite</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="tag">嵌入式</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2012/09/07/2012-09-07-SQLite%E7%A7%BB%E6%A4%8D%E5%88%B0ARM%E5%BC%80%E5%8F%91%E6%9D%BF/#more">阅读全文 &gt;&gt;</a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2012-09-07-goAhead2-5嵌入式web服务器移植" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2012/09/07/2012-09-07-goAhead2-5%E5%B5%8C%E5%85%A5%E5%BC%8Fweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A7%BB%E6%A4%8D/" class="article-date">
-      <time datetime="2012-09-07T10:50:00.000Z" itemprop="datePublished">2012-09-07</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/09/07/2012-09-07-goAhead2-5%E5%B5%8C%E5%85%A5%E5%BC%8Fweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A7%BB%E6%A4%8D/">goAhead2.5嵌入式web服务器移植</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="1-GoAhead-Web服务器介绍"><a href="#1-GoAhead-Web服务器介绍" class="headerlink" title="1. GoAhead Web服务器介绍"></a>1. GoAhead Web服务器介绍</h1><p>goAhead Web服务器，小巧、精致，提供了值得称道的性能，特别适合于嵌入式系统，因此，在很多嵌入式产品如路由器中都用到了goAhead作为嵌入式web服务器。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/">嵌入式开发</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/goAhead/" rel="tag">goAhead</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/" rel="tag">嵌入式</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2012/09/07/2012-09-07-goAhead2-5%E5%B5%8C%E5%85%A5%E5%BC%8Fweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A7%BB%E6%A4%8D/#more">阅读全文 &gt;&gt;</a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -1098,7 +829,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/14/">&lt;&lt; Prev</a><a class="page-number" href="/">1</a><span class="space">…</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/16/">Next &gt;&gt;</a>
+      <a class="extend prev" rel="prev" href="/page/14/">&lt;&lt; Prev</a><a class="page-number" href="/">1</a><span class="space">…</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">…</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/16/">Next &gt;&gt;</a>
     </nav>
   
 </div>

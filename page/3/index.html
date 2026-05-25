@@ -292,11 +292,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-2023-03-24-JenkinsCI-CD自动化部署" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-2024-09-25-Ollama" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2023/03/23/2023-03-24-JenkinsCI-CD%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/" class="article-date">
-      <time datetime="2023-03-23T16:00:00.000Z" itemprop="datePublished">2023-03-24</time>
+      <a href="/2024/09/25/2024-09-25-Ollama/" class="article-date">
+      <time datetime="2024-09-25T06:09:00.000Z" itemprop="datePublished">2024-09-25</time>
 </a>
 
 
@@ -312,7 +312,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2023/03/23/2023-03-24-JenkinsCI-CD%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/">JenkinsCI-CD自动化部署</a>
+      <a class="article-title" href="/2024/09/25/2024-09-25-Ollama/">Ollama</a>
     </h1>
   
 
@@ -322,665 +322,18 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h1 id="Jenkins-CI-CD-自动化部署"><a href="#Jenkins-CI-CD-自动化部署" class="headerlink" title="Jenkins CI/CD 自动化部署"></a>Jenkins CI/CD 自动化部署</h1><p>官方文档：<a target="_blank" rel="noopener" href="https://www.jenkins.io/zh/doc/">https://www.jenkins.io/zh/doc/</a></p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>参照官网的教程，其实安装是很简单的。有两种安装方式，都是基础的 ubuntu 命令：</p>
-<h3 id="一、添加源的方式安装server"><a href="#一、添加源的方式安装server" class="headerlink" title="一、添加源的方式安装server"></a>一、添加源的方式安装server</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加Jenkins源</span></span><br><span class="line">wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | <span class="built_in">sudo</span> apt-key add -</span><br><span class="line"><span class="built_in">sudo</span> sh -c <span class="string">'echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新并安装</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get update</span><br><span class="line"><span class="built_in">sudo</span> apt-get install jenkins</span><br></pre></td></tr></tbody></table></figure>
-
-<p>这里我选择的是长期支持版本，因此是 debian-stable，若是想用每周更新版，那就用 debian 替换 debian-stable 就好。不过目前这个官方源的速度国内堪忧，后面会说到。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/DevOps/">DevOps</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CI-CD/" rel="tag">CI/CD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2023/03/23/2023-03-24-JenkinsCI-CD%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/#more">阅读全文 &gt;&gt;</a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2022-09-30-Docker镜像制作及发布" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/09/29/2022-09-30-Docker%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C%E5%8F%8A%E5%8F%91%E5%B8%83/" class="article-date">
-      <time datetime="2022-09-29T16:00:00.000Z" itemprop="datePublished">2022-09-30</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/29/2022-09-30-Docker%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C%E5%8F%8A%E5%8F%91%E5%B8%83/">Docker镜像制作及发布</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="Docker镜像制作及发布"><a href="#Docker镜像制作及发布" class="headerlink" title="Docker镜像制作及发布"></a>Docker镜像制作及发布</h1><h2 id="搭建本地私有容器仓库"><a href="#搭建本地私有容器仓库" class="headerlink" title="搭建本地私有容器仓库"></a>搭建本地私有容器仓库</h2><p>服务器：<a target="_blank" rel="noopener" href="http://192.168.31.4:9000/">http://192.168.31.4:9000/</a> admin/Routon@1981</p>
-<p>首先下载registry 镜像</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull registry</span><br></pre></td></tr></tbody></table></figure>
-
-<p>运行registry 容器</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd -v /data/registry:/var/lib/registry -p 5000:5000 --restart=always --name registry registry:latest</span><br></pre></td></tr></tbody></table></figure>
-
+              <p><strong>Ollama</strong></p>
 <blockquote>
-<p>-itd: 在容器中打开一个伪终端进行交互操作，并在后台运行
--v: 把宿主机的/data/ registry目录绑定到容器/var/lib/ registry目录(这个目录是registry容器中存放镜像文件的目录)，来实现数据的持久化;
--p:映射端口;访问宿主机的5000端口就访问到registry容器的服务了
-–restart=always:这是重启的策略，在容器退出时总是重启容器
--name registry: 创建容器命名为registry
-registry:latest:这个是刚才pull下来的镜像</p>
+<p>Get up and running with large language models.</p>
 </blockquote>
-<p>Docker容器的重启策略如下:</p>
-<ul>
-<li>no:默认策略，在容器退出时不重启容器</li>
-<li>on- failure: 在容器非正常退出时(退出状态非0)，才会重启容器</li>
-<li>on-failure:3 :在容器非正常退出时重启容器，最多重启3次</li>
-<li>always:在容器退出时总是重启容器</li>
-<li>unless-stopped:在容器退出时总是重启容器，但是不考虑在Docker守护进程启动时就已经停止了的容器</li>
-</ul>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/">Linux/服务器</a>
-    </div>
+<p>shell 安装</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://ollama.com/install.sh | sh</span><br></pre></td></tr></tbody></table></figure>
 
+<p>docker镜像源, /etc/docker/daemon.json</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://docker.registry.cyou</span><br></pre></td></tr></tbody></table></figure>
 
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2022/09/29/2022-09-30-Docker%E9%95%9C%E5%83%8F%E5%88%B6%E4%BD%9C%E5%8F%8A%E5%8F%91%E5%B8%83/#more">阅读全文 &gt;&gt;</a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2022-09-11-挂载网盘-1Fichier" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/09/10/2022-09-11-%E6%8C%82%E8%BD%BD%E7%BD%91%E7%9B%98-1Fichier/" class="article-date">
-      <time datetime="2022-09-10T16:00:00.000Z" itemprop="datePublished">2022-09-11</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/10/2022-09-11-%E6%8C%82%E8%BD%BD%E7%BD%91%E7%9B%98-1Fichier/">挂载网盘-1Fichier</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>参考：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.veidc.com/28143.html">https://www.veidc.com/28143.html</a></li>
-<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1778090?from=15425">https://cloud.tencent.com/developer/article/1778090?from=15425</a></li>
-</ul>
-<h2 id="注册1Fichier"><a href="#注册1Fichier" class="headerlink" title="注册1Fichier"></a>注册1Fichier</h2><p>访问下面的链接注册1Fichier后可获得1Tb容量，免费用户的文件仅保存30天。</p>
-<ul>
-<li>1Fichier官网：<a target="_blank" rel="noopener" href="https://1fichier.com/?af=3477749">https://1fichier.com/?af=3477749</a></li>
-</ul>
-<h2 id="上传到1Fichier"><a href="#上传到1Fichier" class="headerlink" title="上传到1Fichier"></a>上传到1Fichier</h2><p>1Fichier支持FTP上传、网页上传、远程上传（离线下载），我们这里分别介绍一下。</p>
-<h3 id="FTP上传"><a href="#FTP上传" class="headerlink" title="FTP上传"></a>FTP上传</h3><p>使用过FTP工具的同学应该都很熟悉，这里不做过多介绍，上传信息如下：</p>
-<ul>
-<li>FTP上传地址：ftp.1fichier.com</li>
-<li>FTP用户名：您的注册邮箱</li>
-<li>FTP密码：您1Fichier所使用的密码</li>
-<li>端口：21</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/">Linux/服务器</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/1fichier/" rel="tag">1fichier</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2022-06-11-智能家居主流无线协议对比分析" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/06/11/2022-06-11-%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E4%B8%BB%E6%B5%81%E6%97%A0%E7%BA%BF%E5%8D%8F%E8%AE%AE%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90/" class="article-date">
-      <time datetime="2022-06-11T12:08:00.000Z" itemprop="datePublished">2022-06-11</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/11/2022-06-11-%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E4%B8%BB%E6%B5%81%E6%97%A0%E7%BA%BF%E5%8D%8F%E8%AE%AE%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90/">智能家居主流无线协议对比分析</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <ol>
-<li>从市场角度分析，目前智能家居两极分化比较严重：</li>
-</ol>
-<ul>
-<li><p>toB的智能家居品牌，很多都是采用Zigbee的协议，但是这些品牌的通病是toC的知名度并不高。</p>
-</li>
-<li><p>toC的智能家居品牌，用蓝牙和Wi-Fi的协议比较多，比如小米，现在绝大部分都是蓝牙mesh和Wi-Fi的智能设备。</p>
-</li>
-</ul>
-<p>对于通信协议来说，肯定是Wi-Fi和蓝牙更容易让人理解，也更容易让人接受。Wi-Fi家里都有，蓝牙手机上都有，但是解释起来，蓝牙mesh肯定比Zigbee更让人容易理解就对了。</p>
-<ul>
-<li><p>对于toC而言，不管你愿意不愿意，Wi-Fi和蓝牙mesh协议目前就是设备应用比较多的通信协议。</p>
-</li>
-<li><p>对于toB而言，直接合作的并不是客户，而是房地产开发商，以及各种当地的装修品牌。这个时候又难过zigbee协议，是专业的人一对一的针对性的讲解和普及好坏。所以zigbee通信在toB的品牌比较盛行。</p>
-</li>
-</ul>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/">智能家居</a>
-    </div>
-
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2022/06/11/2022-06-11-%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85%E4%B8%BB%E6%B5%81%E6%97%A0%E7%BA%BF%E5%8D%8F%E8%AE%AE%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90/#more">阅读全文 &gt;&gt;</a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2022-06-08-开始折腾iPad移动远程办公" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/06/08/2022-06-08-%E5%BC%80%E5%A7%8B%E6%8A%98%E8%85%BEiPad%E7%A7%BB%E5%8A%A8%E8%BF%9C%E7%A8%8B%E5%8A%9E%E5%85%AC/" class="article-date">
-      <time datetime="2022-06-08T14:27:00.000Z" itemprop="datePublished">2022-06-08</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/08/2022-06-08-%E5%BC%80%E5%A7%8B%E6%8A%98%E8%85%BEiPad%E7%A7%BB%E5%8A%A8%E8%BF%9C%E7%A8%8B%E5%8A%9E%E5%85%AC/">开始折腾iPad移动远程办公</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="装备"><a href="#装备" class="headerlink" title="装备"></a>装备</h3><ul>
-<li>iPad Air 5 | 256GB | 无线局域网 + 蜂窝网络机型</li>
-<li>Apple Pencil 2代</li>
-<li>罗技（Logitech）| Folio Touch ipad背光键盘保护套 妙控键盘 配备触控板 | IK1094</li>
-<li>类纸膜</li>
-</ul>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Mac-Apple/">Mac/Apple</a>
-    </div>
-
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2022/06/08/2022-06-08-%E5%BC%80%E5%A7%8B%E6%8A%98%E8%85%BEiPad%E7%A7%BB%E5%8A%A8%E8%BF%9C%E7%A8%8B%E5%8A%9E%E5%85%AC/#more">阅读全文 &gt;&gt;</a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2022-06-05-打造MAC高效生产力" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/06/05/2022-06-05-%E6%89%93%E9%80%A0MAC%E9%AB%98%E6%95%88%E7%94%9F%E4%BA%A7%E5%8A%9B/" class="article-date">
-      <time datetime="2022-06-05T12:01:00.000Z" itemprop="datePublished">2022-06-05</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/05/2022-06-05-%E6%89%93%E9%80%A0MAC%E9%AB%98%E6%95%88%E7%94%9F%E4%BA%A7%E5%8A%9B/">打造MAC高效生产力</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <blockquote>
-<p>今年的上海，注定是不平凡的一年。疫情期间，大家只能居家办公。我也在居家办公的同时，不断优化和提升MAC生产力。</p>
-</blockquote>
-<p>Do one thing, and do it well. - A principle of Unix philosophy</p>
-<h3 id="一些提升效率的建议："><a href="#一些提升效率的建议：" class="headerlink" title="一些提升效率的建议："></a>一些提升效率的建议：</h3><ul>
-<li><p>指法用对，掌握盲打，提升敲击数字键的成功率;</p>
-</li>
-<li><p>多用键盘快捷键少用鼠标。修改系统键盘按键，比如 <code>Caps Lock</code>⇪ 使用频率比较低，一般我改成了 <code>Ctrl</code>⌃键，因为用开发工具频繁使用到 Ctrl，改成 Ctrl 之后效率提高不少，小指头不酸啦（推荐通过系统设置-键盘-修饰键盘…修改）;</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/pqrs-org/Karabiner-Elements">Karabiner-Elements</a></p>
-<p><a target="_blank" rel="noopener" href="https://ke-complex-modifications.pqrs.org/">搜索键值配置</a></p>
-<ul>
-<li><p>Ctrl 与 Caps Lock 互换</p>
-</li>
-<li><p>Map ctrl + [ to escape，Change Fn + h/j/k/l to Arrows</p>
-</li>
-</ul>
-</li>
-<li><p>用好终端和命令行工具。</p>
-</li>
-</ul>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Mac-Apple/">Mac/Apple</a>
-    </div>
-
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2022/06/05/2022-06-05-%E6%89%93%E9%80%A0MAC%E9%AB%98%E6%95%88%E7%94%9F%E4%BA%A7%E5%8A%9B/#more">阅读全文 &gt;&gt;</a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2022-05-27-远程开-关机配置" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/05/26/2022-05-27-%E8%BF%9C%E7%A8%8B%E5%BC%80-%E5%85%B3%E6%9C%BA%E9%85%8D%E7%BD%AE/" class="article-date">
-      <time datetime="2022-05-26T16:00:00.000Z" itemprop="datePublished">2022-05-27</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/26/2022-05-27-%E8%BF%9C%E7%A8%8B%E5%BC%80-%E5%85%B3%E6%9C%BA%E9%85%8D%E7%BD%AE/">远程开/关机配置</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="远程开-关机配置"><a href="#远程开-关机配置" class="headerlink" title="远程开/关机配置"></a>远程开/关机配置</h1><h2 id="远程重启-关机"><a href="#远程重启-关机" class="headerlink" title="远程重启/关机"></a>远程重启/关机</h2><p>修改远程pc的”本地安全策略”，为指定的用户开放权限</p>
-<ol>
-<li>Win+R命令行运行gpedit.msc打开”组策略编辑器”；</li>
-<li>进入设置, 添加用户；</li>
-</ol>
-<p>需要在运行shutdown命令前先运行如下命令，不然，有些时候会提示”拒绝访问”，索性先执行了。</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net use \\192.168.31.21\ipc$ password /user:administrator</span><br></pre></td></tr></tbody></table></figure>
-
-<p>其中password为帐号administrator的登陆密码。</p>
-<h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shutdown -r -m \\192.168.31.21 -t 0</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shutdown -s -m \\192.168.31.21 -t 0</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="WakeOnLan-远程开机"><a href="#WakeOnLan-远程开机" class="headerlink" title="WakeOnLan/远程开机"></a>WakeOnLan/远程开机</h2><ol>
-<li><p>推荐软件
-<a target="_blank" rel="noopener" href="http://t.csdn.cn/wjWfS">http://t.csdn.cn/wjWfS</a></p>
-</li>
-<li><p>微星BIOS设置
-<a target="_blank" rel="noopener" href="http://t.csdn.cn/pnbza">http://t.csdn.cn/pnbza</a></p>
-</li>
-<li><p>PC 开源客户端
-<a target="_blank" rel="noopener" href="https://github.com/basildane/WakeOnLAN">https://github.com/basildane/WakeOnLAN</a></p>
-</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/">Linux/服务器</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2022-04-29-源" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/04/29/2022-04-29-%E6%BA%90/" class="article-date">
-      <time datetime="2022-04-29T10:08:00.000Z" itemprop="datePublished">2022-04-29</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/29/2022-04-29-%E6%BA%90/">源</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>国内镜像源下载速度评测：<strong>阿里源、清华源、华为</strong>源对比</p>
-<p><a target="_blank" rel="noopener" href="https://wangshuashua.com/source-contrast/">https://wangshuashua.com/source-contrast/</a></p>
-<p>华为开源镜像站</p>
-<p><a target="_blank" rel="noopener" href="https://mirrors.huaweicloud.com/">华为开源镜像站</a></p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">cp</span> -a /etc/apt/sources.list /etc/apt/sources.list.bak</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> sed -i <span class="string">"s@http://.*archive.ubuntu.com@http://repo.huaweicloud.com@g"</span> /etc/apt/sources.list</span><br><span class="line"><span class="built_in">sudo</span> sed -i <span class="string">"s@http://.*security.ubuntu.com@http://repo.huaweicloud.com@g"</span> /etc/apt/sources.list</span><br></pre></td></tr></tbody></table></figure>
-
-<p>中科大（Kali源）</p>
-<p><a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/help/kali.html">科大 Kali 源</a></p>
-<p><strong><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站</a></strong></p>
-<p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">清华 Ubuntu 源</a></p>
-<p>阿里巴巴开源镜像站</p>
-<p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/mirror/">阿里镜像站</a></p>
-<p>腾讯软件源</p>
-<p><a target="_blank" rel="noopener" href="https://mirrors.tencent.com/">腾讯镜像站</a></p>
-<p><strong>网易开源镜像站</strong></p>
-<p><a target="_blank" rel="noopener" href="http://mirrors.163.com/">网易镜像站</a></p>
-<p><strong><a target="_blank" rel="noopener" href="https://mirrors.bfsu.edu.cn/">北京外国语大学开源软件镜像站</a></strong></p>
-<p><a target="_blank" rel="noopener" href="https://mirrors.bfsu.edu.cn/">北外镜像站</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/">Linux/服务器</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mirror/" rel="tag">Mirror</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2022-04-12-M1Mac安装MediaPipe" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/04/11/2022-04-12-M1Mac%E5%AE%89%E8%A3%85MediaPipe/" class="article-date">
-      <time datetime="2022-04-11T16:00:00.000Z" itemprop="datePublished">2022-04-12</time>
-</a>
-
-
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/11/2022-04-12-M1Mac%E5%AE%89%E8%A3%85MediaPipe/">M1 Mac 安装 MediaPipe</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="M1-Mac-安装-MediaPipe"><a href="#M1-Mac-安装-MediaPipe" class="headerlink" title="M1 Mac 安装 MediaPipe"></a>M1 Mac 安装 MediaPipe</h1><p>更换github镜像站</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global url.<span class="string">"https://hub.fastgit.org/"</span>.insteadOf <span class="string">"https:github.com/"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="第一步-在-访达-Finder-中启用Rosetta"><a href="#第一步-在-访达-Finder-中启用Rosetta" class="headerlink" title="第一步 在 访达(Finder) 中启用Rosetta"></a>第一步 在 访达(Finder) 中启用Rosetta</h2><ol>
-<li>打开访达，搜索”Terminal”</li>
-<li>看见”终端”的图标之后，鼠标右击图标，点选”显示简介”</li>
-<li>勾选”使用Rosetta打开”</li>
-</ol>
+<p>CPU only , Install</p>
+<figure class="highlight docker"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="language-bash"> -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama</span></span><br></pre></td></tr></tbody></table></figure>
           
       
     </div>
@@ -995,12 +348,12 @@ registry:latest:这个是刚才pull下来的镜像</p>
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AI/" rel="tag">AI</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/2022/04/11/2022-04-12-M1Mac%E5%AE%89%E8%A3%85MediaPipe/#more">阅读全文 &gt;&gt;</a>
+          <a href="/2024/09/25/2024-09-25-Ollama/#more">阅读全文 &gt;&gt;</a>
         </p>
       
       <div class="clearfix"></div>
@@ -1019,11 +372,11 @@ registry:latest:这个是刚才pull下来的镜像</p>
 
 
   
-    <article id="post-2022-02-01-简易HTTP服务器快速部署" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-2024-08-21-IoT资源搜索站点汇总" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2022/01/31/2022-02-01-%E7%AE%80%E6%98%93HTTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2/" class="article-date">
-      <time datetime="2022-01-31T16:00:00.000Z" itemprop="datePublished">2022-02-01</time>
+      <a href="/2024/08/20/2024-08-21-IoT%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2%E7%AB%99%E7%82%B9%E6%B1%87%E6%80%BB/" class="article-date">
+      <time datetime="2024-08-20T22:52:00.000Z" itemprop="datePublished">2024-08-21</time>
 </a>
 
 
@@ -1039,7 +392,7 @@ registry:latest:这个是刚才pull下来的镜像</p>
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/01/31/2022-02-01-%E7%AE%80%E6%98%93HTTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2/">HTTPServer-简易HTTP服务器</a>
+      <a class="article-title" href="/2024/08/20/2024-08-21-IoT%E8%B5%84%E6%BA%90%E6%90%9C%E7%B4%A2%E7%AB%99%E7%82%B9%E6%B1%87%E6%80%BB/">IoT资源搜索站点汇总</a>
     </h1>
   
 
@@ -1049,15 +402,53 @@ registry:latest:这个是刚才pull下来的镜像</p>
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="HTTP-Server-简易HTTP服务器"><a href="#HTTP-Server-简易HTTP服务器" class="headerlink" title="HTTP Server 简易HTTP服务器"></a>HTTP Server 简易HTTP服务器</h1><h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><p>Python 3:</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m http.server</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Python 2:</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m SimpleHTTPServer</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install http-server -g</span><br><span class="line">hs</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="Upload-a-File-Using-curl"><a href="#Upload-a-File-Using-curl" class="headerlink" title="Upload a File Using curl"></a>Upload a File Using curl</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -F <span class="string">"file=@/path/to/your/file"</span> http://localhost:8000/upload</span><br></pre></td></tr></tbody></table></figure>
+        <p>本文汇总了IoT开发中常用的资源搜索站点，包括FCCID查询、PCB UL查询、电子器件采购等。</p>
+<h2 id="FCCID查询"><a href="#FCCID查询" class="headerlink" title="FCCID查询"></a>FCCID查询</h2><ul>
+<li><strong>FCCID官网</strong>: <a target="_blank" rel="noopener" href="https://fccid.io/">https://fccid.io/</a></li>
+<li><strong>Lumi</strong>: <a target="_blank" rel="noopener" href="https://fccid.io/2AKIT">https://fccid.io/2AKIT</a></li>
+<li><strong>Signify</strong>: <a target="_blank" rel="noopener" href="https://fccid.io/2AGBW">https://fccid.io/2AGBW</a></li>
+<li><strong>Orvibo</strong>: <a target="_blank" rel="noopener" href="https://fccid.io/company.php?search=orvibo">https://fccid.io/company.php?search=orvibo</a></li>
+</ul>
+<h2 id="PCB-UL-查询"><a href="#PCB-UL-查询" class="headerlink" title="PCB UL 查询"></a>PCB UL 查询</h2><ul>
+<li><strong>UL Prospector</strong>: <a target="_blank" rel="noopener" href="https://iq.ulprospector.com/en/">https://iq.ulprospector.com/en/</a></li>
+</ul>
+<h2 id="USB-ID查询"><a href="#USB-ID查询" class="headerlink" title="USB ID查询"></a>USB ID查询</h2><ul>
+<li><strong>Linux USB</strong>: <a target="_blank" rel="noopener" href="http://www.linux-usb.org/usb.ids">http://www.linux-usb.org/usb.ids</a></li>
+</ul>
+<h2 id="射频搜索"><a href="#射频搜索" class="headerlink" title="射频搜索"></a>射频搜索</h2><ul>
+<li><strong>FindRF</strong>: <a target="_blank" rel="noopener" href="http://www.findrf.com/">http://www.findrf.com/</a></li>
+</ul>
+<h2 id="屏库"><a href="#屏库" class="headerlink" title="屏库"></a>屏库</h2><ul>
+<li><strong>Panelook</strong>: <a target="_blank" rel="noopener" href="https://www.panelook.cn/">https://www.panelook.cn/</a></li>
+</ul>
+<h2 id="电子器件采购"><a href="#电子器件采购" class="headerlink" title="电子器件采购"></a>电子器件采购</h2><ul>
+<li><strong>Mouser</strong>: <a target="_blank" rel="noopener" href="https://cn.mouser.com/">https://cn.mouser.com/</a></li>
+<li><strong>DigiKey</strong>: <a target="_blank" rel="noopener" href="https://www.digikey.cn/">https://www.digikey.cn/</a></li>
+<li><strong>Element14</strong>: <a target="_blank" rel="noopener" href="https://cn.element14.com/">https://cn.element14.com/</a></li>
+<li><strong>RS Online</strong>: <a target="_blank" rel="noopener" href="https://rsonline.cn/web/">https://rsonline.cn/web/</a></li>
+</ul>
+<h2 id="数据手册查询"><a href="#数据手册查询" class="headerlink" title="数据手册查询"></a>数据手册查询</h2><ul>
+<li><strong>Semiee</strong>: <a target="_blank" rel="noopener" href="https://semiee.com/">https://semiee.com/</a></li>
+<li><strong>AllDatasheet</strong>: <a target="_blank" rel="noopener" href="https://www.alldatasheet.com/">https://www.alldatasheet.com/</a></li>
+<li><strong>21icsearch</strong>: <a target="_blank" rel="noopener" href="https://www.21icsearch.com/">https://www.21icsearch.com/</a></li>
+</ul>
+<h2 id="PCB打样"><a href="#PCB打样" class="headerlink" title="PCB打样"></a>PCB打样</h2><ul>
+<li>嘉立创（高清字符|高频板）</li>
+<li>猎板（猛男粉）</li>
+<li>捷配（高频板）</li>
+<li>华秋</li>
+<li>捷多邦</li>
+</ul>
+<h2 id="拆解测评"><a href="#拆解测评" class="headerlink" title="拆解测评"></a>拆解测评</h2><ul>
+<li><strong>52audio</strong>: <a target="_blank" rel="noopener" href="https://www.52audio.com/">https://www.52audio.com/</a></li>
+<li><strong>B站拆解</strong>: <a target="_blank" rel="noopener" href="https://space.bilibili.com/427494870">https://space.bilibili.com/427494870</a></li>
+</ul>
+<h2 id="方案平台"><a href="#方案平台" class="headerlink" title="方案平台"></a>方案平台</h2><ul>
+<li><strong>我爱方案网</strong>: <a target="_blank" rel="noopener" href="https://www.52solution.com/">https://www.52solution.com/</a></li>
+</ul>
+<h2 id="公司财报"><a href="#公司财报" class="headerlink" title="公司财报"></a>公司财报</h2><ul>
+<li><strong>Stock.us</strong>: <a target="_blank" rel="noopener" href="https://stock.us/cn/">https://stock.us/cn/</a></li>
+</ul>
 
       
     </div>
@@ -1066,13 +457,13 @@ registry:latest:这个是刚才pull下来的镜像</p>
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/">Linux/服务器</a>
+    <a class="article-category-link" href="/categories/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/">智能家居</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IoT/" rel="tag">IoT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tools/" rel="tag">Tools</a></li></ul>
     </div>
 
       
@@ -1092,11 +483,11 @@ registry:latest:这个是刚才pull下来的镜像</p>
 
 
   
-    <article id="post-2022-01-18-gitstats-Git统计工具安装" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-2024-02-29-RKrepo代码服务器搭建" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2022/01/17/2022-01-18-gitstats-Git%E7%BB%9F%E8%AE%A1%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/" class="article-date">
-      <time datetime="2022-01-17T16:00:00.000Z" itemprop="datePublished">2022-01-18</time>
+      <a href="/2024/02/28/2024-02-29-RKrepo%E4%BB%A3%E7%A0%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/" class="article-date">
+      <time datetime="2024-02-28T16:00:00.000Z" itemprop="datePublished">2024-02-29</time>
 </a>
 
 
@@ -1112,7 +503,7 @@ registry:latest:这个是刚才pull下来的镜像</p>
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/01/17/2022-01-18-gitstats-Git%E7%BB%9F%E8%AE%A1%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/">gitstats-Git统计工具安装</a>
+      <a class="article-title" href="/2024/02/28/2024-02-29-RKrepo%E4%BB%A3%E7%A0%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/">RKrepo代码服务器搭建</a>
     </h1>
   
 
@@ -1122,12 +513,11 @@ registry:latest:这个是刚才pull下来的镜像</p>
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="gitstats-Git统计工具安装"><a href="#gitstats-Git统计工具安装" class="headerlink" title="gitstats Git统计工具安装"></a>gitstats Git统计工具安装</h1><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aptitude install gitstats</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitstats /path/to/git/repo /path/to/output</span><br></pre></td></tr></tbody></table></figure>
-
-<p>生成HTML格式的Git仓库统计报告。</p>
-
+              <blockquote>
+<p><strong>搭建自己的repo代码服务器</strong></p>
+</blockquote>
+<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p><img src="/img/20240229/Untitled.png"></p>
+          
       
     </div>
     
@@ -1141,7 +531,331 @@ registry:latest:这个是刚才pull下来的镜像</p>
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tools/" rel="tag">Tools</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2024/02/28/2024-02-29-RKrepo%E4%BB%A3%E7%A0%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/#more">阅读全文 &gt;&gt;</a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2024-01-12-CI-CD体系" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2024/01/11/2024-01-12-CI-CD%E4%BD%93%E7%B3%BB/" class="article-date">
+      <time datetime="2024-01-11T16:00:00.000Z" itemprop="datePublished">2024-01-12</time>
+</a>
+
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2024/01/11/2024-01-12-CI-CD%E4%BD%93%E7%B3%BB/">CI/CD体系</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <blockquote>
+<p>Gitlab+Gerrit+Jenkins</p>
+</blockquote>
+<h1 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h1><p><img src="/img/20240112/Untitled.png"></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/DevOps/">DevOps</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2024/01/11/2024-01-12-CI-CD%E4%BD%93%E7%B3%BB/#more">阅读全文 &gt;&gt;</a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2023-07-24-Ultralytics" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/07/23/2023-07-24-Ultralytics/" class="article-date">
+      <time datetime="2023-07-23T16:00:00.000Z" itemprop="datePublished">2023-07-24</time>
+</a>
+
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/07/23/2023-07-24-Ultralytics/">Ultralytics</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="YOLOv7"><a href="#YOLOv7" class="headerlink" title="YOLOv7"></a>YOLOv7</h2><p><a target="_blank" rel="noopener" href="https://github.com/WongKinYiu/yolov7.git">https://github.com/WongKinYiu/yolov7.git</a></p>
+<p><strong>yolov7搭配环境</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014613075/article/details/127728506">https://blog.csdn.net/u014613075/article/details/127728506</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51963216/article/details/125858784">https://blog.csdn.net/qq_51963216/article/details/125858784</a></p>
+<p><strong>yolov7模型训练结果分析以及如何评估yolov7模型训练的效果</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43397302/article/details/127073824">Bookmark: https://blog.csdn.net/weixin_43397302/article/details/127073824</a></p>
+<p><strong>基于YOLOv5的疲劳驾驶检测系统（Python+清新界面+数据集）</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_32892383/article/details/129368345">https://blog.csdn.net/qq_32892383/article/details/129368345</a></p>
+<p><strong>基于Perclos＆改进YOLOv7的疲劳驾驶DMS检测系统（源码＆教程）</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_73650442/article/details/128001511">https://blog.csdn.net/m0_73650442/article/details/128001511</a></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/AI-%E5%A4%A7%E6%A8%A1%E5%9E%8B/">AI/大模型</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/YOLO/" rel="tag">YOLO</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2023/07/23/2023-07-24-Ultralytics/#more">阅读全文 &gt;&gt;</a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2023-07-19-OpenVPN部署" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/07/18/2023-07-19-OpenVPN%E9%83%A8%E7%BD%B2/" class="article-date">
+      <time datetime="2023-07-18T16:00:00.000Z" itemprop="datePublished">2023-07-19</time>
+</a>
+
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/07/18/2023-07-19-OpenVPN%E9%83%A8%E7%BD%B2/">OpenVPN部署</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p><a target="_blank" rel="noopener" href="https://frps.cn/14.html">Bookmark: https://frps.cn/14.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.spacesafe.top/archives/1557">Bookmark: https://www.spacesafe.top/archives/1557</a></p>
+<h1 id="服务端安装"><a href="#服务端安装" class="headerlink" title="服务端安装"></a>服务端安装</h1><p><a target="_blank" rel="noopener" href="https://github.com/Nyr/openvpn-install"><code>https://github.com/Nyr/openvpn-install</code></a></p>
+<h1 id="生成配置文件"><a href="#生成配置文件" class="headerlink" title="生成配置文件"></a>生成配置文件</h1><p>通过</p>
+<p><code>bash openvpn-install.sh</code></p>
+<p>生成客户端配置，管理客户端账号</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@dns ~]# bash openvpn-install.sh</span><br><span class="line"></span><br><span class="line">OpenVPN is already installed.</span><br><span class="line"></span><br><span class="line">Select an option:</span><br><span class="line">   1) Add a new client</span><br><span class="line">   2) Revoke an existing client</span><br><span class="line">   3) Remove OpenVPN</span><br><span class="line">   4) Exit</span><br><span class="line">Option: 1</span><br></pre></td></tr></tbody></table></figure>
+
+<p><em>重启</em></p>
+<p><code>systemctl restart openvpn@service</code></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E7%BD%91%E7%BB%9C-%E5%AE%89%E5%85%A8/">网络/安全</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deploy/" rel="tag">Deploy</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2023/07/18/2023-07-19-OpenVPN%E9%83%A8%E7%BD%B2/#more">阅读全文 &gt;&gt;</a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2023-05-08-智慧酒店系统方案" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/05/07/2023-05-08-%E6%99%BA%E6%85%A7%E9%85%92%E5%BA%97%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%A1%88/" class="article-date">
+      <time datetime="2023-05-07T18:57:00.000Z" itemprop="datePublished">2023-05-08</time>
+</a>
+
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/05/07/2023-05-08-%E6%99%BA%E6%85%A7%E9%85%92%E5%BA%97%E7%B3%BB%E7%BB%9F%E6%96%B9%E6%A1%88/">智慧酒店系统方案</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <blockquote>
+<p>本文整理了智慧酒店系统的主要设备和PMS（酒店管理系统）方案。</p>
+</blockquote>
+<h2 id="客房控制设备供应商"><a href="#客房控制设备供应商" class="headerlink" title="客房控制设备供应商"></a>客房控制设备供应商</h2><h3 id="1-爱瑟菲（iisfree）"><a href="#1-爱瑟菲（iisfree）" class="headerlink" title="1. 爱瑟菲（iisfree）"></a>1. 爱瑟菲（iisfree）</h3><ul>
+<li>官网：<a target="_blank" rel="noopener" href="http://www.iisfree.com.cn/">http://www.iisfree.com.cn/</a></li>
+</ul>
+<h3 id="2-广州日顺"><a href="#2-广州日顺" class="headerlink" title="2. 广州日顺"></a>2. 广州日顺</h3><ul>
+<li>官网：<a target="_blank" rel="noopener" href="http://www.gzrishun.com/">http://www.gzrishun.com/</a></li>
+</ul>
+<h3 id="3-惠州尊宝（JoboSmart）"><a href="#3-惠州尊宝（JoboSmart）" class="headerlink" title="3. 惠州尊宝（JoboSmart）"></a>3. 惠州尊宝（JoboSmart）</h3><ul>
+<li>官网：<a target="_blank" rel="noopener" href="https://www.jobosmartech.com/">https://www.jobosmartech.com/</a></li>
+</ul>
+<h3 id="4-南京普杰"><a href="#4-南京普杰" class="headerlink" title="4. 南京普杰"></a>4. 南京普杰</h3><ul>
+<li>官网：<a target="_blank" rel="noopener" href="http://www.pujie88.com/">http://www.pujie88.com/</a></li>
+</ul>
+<h2 id="PMS酒店管理系统"><a href="#PMS酒店管理系统" class="headerlink" title="PMS酒店管理系统"></a>PMS酒店管理系统</h2><h3 id="传统PMS"><a href="#传统PMS" class="headerlink" title="传统PMS"></a>传统PMS</h3><ul>
+<li><strong>Opera</strong>: <a target="_blank" rel="noopener" href="https://www.oracle.com/cn/industries/hospitality/products/opera-sales-catering-services/">https://www.oracle.com/cn/industries/hospitality/products/opera-sales-catering-services/</a></li>
+<li><strong>桑弧</strong>: <a target="_blank" rel="noopener" href="http://www.sanghu.cn/">http://www.sanghu.cn/</a></li>
+<li><strong>千里马</strong>: <a target="_blank" rel="noopener" href="http://www.armitage.com.cn/">http://www.armitage.com.cn/</a></li>
+<li><strong>金天鹅</strong>: <a target="_blank" rel="noopener" href="http://www.jdglrj.com/">http://www.jdglrj.com/</a></li>
+</ul>
+<h3 id="云PMS"><a href="#云PMS" class="headerlink" title="云PMS"></a>云PMS</h3><ul>
+<li><strong>罗盘</strong>: <a target="_blank" rel="noopener" href="https://www.luopan.com/">https://www.luopan.com/</a></li>
+<li><strong>智选云</strong>: <a target="_blank" rel="noopener" href="http://www.ccshis.com/">http://www.ccshis.com/</a></li>
+<li><strong>云天龙</strong>: <a target="_blank" rel="noopener" href="http://pms.yaduo.com/">http://pms.yaduo.com/</a></li>
+<li><strong>住哲</strong>: <a target="_blank" rel="noopener" href="http://www.zhuzher.com/">http://www.zhuzher.com/</a></li>
+<li><strong>民宿云</strong>: <a target="_blank" rel="noopener" href="http://www.minsuyun.com/">http://www.minsuyun.com/</a></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/">智能家居</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SmartHotel/" rel="tag">SmartHotel</a></li></ul>
     </div>
 
       
@@ -1163,7 +877,7 @@ registry:latest:这个是刚才pull下来的镜像</p>
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&lt;&lt; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">…</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/4/">Next &gt;&gt;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&lt;&lt; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">…</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/4/">Next &gt;&gt;</a>
     </nav>
   
 </div>
