@@ -121,7 +121,7 @@ html {
   font-size: 16px;
 }
 body {
-  font-family: "Lucida Grande", Verdana, "Helvetica Neue", Arial, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+  font-family: Charter, Helvetica, Arial, sans-serif, "LXGW WenKai Lite";
   background: #fff;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
@@ -138,7 +138,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Times, Georgia, serif;
+  font-family: Charter, Helvetica, Arial, sans-serif, "LXGW WenKai Lite";
   font-weight: bold;
 }
 h1,
@@ -148,7 +148,7 @@ h3 {
 }
 h1 {
   font-size: 1.6rem;
-  font-family: "Segoe UI", "Lucida Grande", Verdana, "Helvetica Neue", Arial, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+  font-family: Charter, Helvetica, Arial, sans-serif, "LXGW WenKai Lite";
 }
 h2 {
   font-size: 1.4rem;
@@ -1042,7 +1042,7 @@ color
   -webkit-box-shadow: 0 0 0.8em rgba(0,0,0,0.6);
   box-shadow: 0 0 0.8em rgba(0,0,0,0.6);
   color: #fff;
-  font-family: "Lucida Grande", Verdana, "Helvetica Neue", Arial, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+  font-family: Charter, Helvetica, Arial, sans-serif, "LXGW WenKai Lite";
   font-size: 0.9em;
   background: rgba(0,0,0,0.65);
 }
@@ -2094,7 +2094,7 @@ aside.comment-bar:active {
 }
 .article-entry pre,
 .article-entry code {
-  font-family: Menlo, Consolas, "Source Code Pro", Inconsolata, Monaco, monospace, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei";
+  font-family: Menlo, Consolas, "Source Code Pro", Inconsolata, Monaco, monospace, "LXGW WenKai Lite";
   font-size: 1em;
 }
 .article-entry pre code {
@@ -2185,7 +2185,7 @@ aside.comment-bar:active {
 .article-entry .gist .gist-file .gist-meta {
   background: rgba(249,249,249,0.5);
   color: #8e908c;
-  font: 0.85em "Lucida Grande", Verdana, "Helvetica Neue", Arial;
+  font: 0.85em Charter, Helvetica, Arial, sans-serif, "LXGW WenKai Lite";
   text-shadow: 0 0;
   padding: 0;
   margin-top: 1em;
@@ -2269,7 +2269,7 @@ pre .javascript .function {
 }
 #footer {
   font-size: 0.8rem;
-  font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+  font-family: Charter, Helvetica, Arial, sans-serif, "LXGW WenKai Lite";
   text-shadow: 0 1px #fff;
   position: absolute;
   bottom: 20px;
@@ -2690,7 +2690,7 @@ pre .javascript .function {
   border-radius: 0 5px 5px 0;
   margin: 5px 9px 5px 8px;
   opacity: 0.75;
-  font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei" "Lucida Grande", Verdana, "Helvetica Neue", Arial;
+  font-family: Charter, Helvetica, Arial, sans-serif, "LXGW WenKai Lite";
 }
 .tagcloud a.color0 {
   background: #ba8f6c;
@@ -3025,7 +3025,7 @@ p.no-result {
   padding-bottom: 0.5em;
   text-align: left;
   color: #808080;
-  font-family: Times, Georgia serif;
+  font-family: Charter, Helvetica, Arial, sans-serif, "LXGW WenKai Lite";
   border-bottom: 2px solid #d3d3d3;
 }
 body {
