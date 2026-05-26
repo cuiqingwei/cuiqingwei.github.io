@@ -12,9 +12,11 @@
       .sub{font:400 20px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#cbd5e1}
       .card-title{font:700 27px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#0f172a}
       .card-sub{font:500 18px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#334155}
+      .card-title-long{font:700 23px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#0f172a}
       .tag{font:700 15px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#0f172a}
       .small{font:500 15px -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#64748b}
       .repo{font:600 17px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#475569}
+      .repo-long{font:600 14px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#475569}
     </style>
   </defs>
   <rect width="1200" height="720" rx="0" fill="url(#bg)"/>
@@ -63,10 +65,11 @@
     <rect x="628" y="420" width="500" height="190" rx="18" fill="#ede9fe"/>
     <rect x="658" y="449" width="64" height="64" rx="16" fill="#7c3aed"/>
     <text x="676" y="491" font-size="34" fill="#fff" font-family="Arial">✓</text>
-    <text x="746" y="466" class="card-title">claude-desktop-buddy-bridge</text>
-    <text x="746" y="498" class="repo">cuiqingwei/claude-desktop-buddy-bridge</text>
-    <text x="658" y="545" class="card-sub">Claude Code CLI 到 M5StickC Plus 的 BLE 审批桥</text>
-    <text x="658" y="575" class="small">用实体按键 approve / deny 敏感操作，把 AI 权限控制拉回手边。</text>
+    <text x="746" y="456" class="card-title-long">claude-desktop-</text>
+    <text x="746" y="484" class="card-title-long">buddy-bridge</text>
+    <text x="746" y="512" class="repo-long">cuiqingwei/claude-desktop-buddy-bridge</text>
+    <text x="658" y="548" class="card-sub">Claude Code CLI 到 M5StickC Plus 的 BLE 审批桥</text>
+    <text x="658" y="578" class="small">用实体按键 approve / deny 敏感操作，把 AI 权限控制拉回手边。</text>
     <rect x="986" y="452" width="98" height="30" rx="15" fill="#ddd6fe"/>
     <text x="1011" y="473" class="tag">硬件</text>
   </g>
